@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN" id="html-root">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI多媒体推荐系统</title>
+  <!-- 静态版本：直接使用相对路径引用资源 -->
+  <link rel="icon" type="image/png" href="static/images/home-icon.png">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-left">
+      <a href="index.html" class="navbar-brand">
+        <img src="static/images/home-icon.png" alt="首页" class="home-icon">
+        <span class="re-text">RE</span>
+      </a>
+    </div>
+    <div class="navbar-center">
+      <!-- 这些链接在纯静态环境下需要对应的静态页面（help.html 等），目前仅首页可用 -->
+      <a href="index.html" class="nav-link active" data-page="home" data-i18n-key="nav.home">首页</a>
+      <a href="help.html" class="nav-link" data-page="help" data-i18n-key="nav.help">帮助</a>
+      <a href="progress.html" class="nav-link" data-page="progress" data-i18n-key="nav.progress">研发进度</a>
+      <a href="ai-enhance.html" class="nav-link" data-page="ai-enhance" data-i18n-key="nav.aiEnhance">AI增强</a>
+      <a href="contact.html" class="nav-link" data-page="contact" data-i18n-key="nav.contact">加入我们</a>
+    </div>
+    <div class="navbar-right">
+      <button class="navbar-menu-toggle" id="nav-menu-btn" type="button">
+        <div class="navbar-menu-icon"></div>
+        <span>目录</span>
+      </button>
+      <a href="https://github.com/LiiiKiii/Reinforcement-Ebook-System" target="_blank" rel="noopener noreferrer" class="navbar-btn github-btn" title="GitHub仓库">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <button class="navbar-btn" id="language-btn" title="切换语言">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span id="language-text">中文</span>
+      </button>
+      <button class="navbar-btn" id="theme-btn" title="切换主题">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-moon" style="display: block;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-sun" style="display: none;">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 移动端下拉菜单 -->
+  <div class="navbar-menu-dropdown">
+    <div class="navbar-center">
+      <a href="index.html" class="nav-link" data-page="home">首页</a>
+      <a href="help.html" class="nav-link" data-page="help">帮助</a>
+      <a href="progress.html" class="nav-link" data-page="progress">研发进度</a>
+      <a href="ai-enhance.html" class="nav-link" data-page="ai-enhance">AI增强</a>
+      <a href="contact.html" class="nav-link" data-page="contact">加入我们</a>
+    </div>
+  </div>
+
+  <div class="container" id="main-container">
+    <!-- Hero Section -->
+    <section class="home-hero">
+      <h1 class="home-main-title" data-i18n-key="home.title">AI多媒体推荐系统</h1>
+      <p class="home-subtitle" data-i18n-key="home.subtitle">智能推荐，精确匹配</p>
+    </section>
+    
+    <!-- 内容包装器 -->
+    <div class="content-wrapper">
+    <!-- 主内容区域：左侧 -->
+    <div class="main-content" id="main-content">
+
+    <!-- 步骤1: 上传文件夹 -->
+    <section class="card step-card">
+      <div class="step-header">
+        <span class="step-number">1</span>
+        <h2 data-i18n-key="home.step1.title">上传文件</h2>
+      </div>
+      <div class="step-content">
+        <div class="upload-area" id="upload-area">
+          <input type="file" id="folder-input" accept=".zip" style="display: none;">
+          <div class="upload-box">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <p data-i18n-key="home.upload.hint">上传zip文件</p>
+            <small data-i18n-key="home.upload.note">支持.zip格式，需包含至少10个txt或pdf文档</small>
+          </div>
+        </div>
+        <div id="upload-status" class="status-message"></div>
+        <button id="upload-btn" class="btn btn-primary" disabled data-i18n-key="home.upload.button">开始上传</button>
+      </div>
+    </section>
+
+    <!-- 步骤2: 处理中 -->
+    <section class="card step-card" id="processing-section" style="display: none;">
+      <div class="step-header">
+        <span class="step-number">2</span>
+        <h2 data-i18n-key="home.step2.title">处理中</h2>
+      </div>
+      <div class="step-content">
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill">
+              <span class="progress-percent" id="progress-percent">0%</span>
+            </div>
+          </div>
+          <p id="progress-text" class="progress-text">准备开始...</p>
+        </div>
+        <div class="progress-steps" id="progress-steps">
+          <div class="progress-step" data-step="start">
+            <div class="step-indicator"></div>
+            <div class="step-content-inner">
+              <div class="step-title" data-i18n-key="home.progress.step.init">初始化</div>
+              <div class="step-status" data-i18n-key="home.progress.status.pending">等待中...</div>
+            </div>
+          </div>
+          <div class="progress-step" data-step="extract_keywords">
+            <div class="step-indicator"></div>
+            <div class="step-content-inner">
+              <div class="step-title" data-i18n-key="home.progress.step.extract">提取关键词</div>
+              <div class="step-status" data-i18n-key="home.progress.status.pending">等待中...</div>
+            </div>
+          </div>
+          <div class="progress-step" data-step="search_resources">
+            <div class="step-indicator"></div>
+            <div class="step-content-inner">
+              <div class="step-title" data-i18n-key="home.progress.step.search">搜索资源</div>
+              <div class="step-status" data-i18n-key="home.progress.status.pending">等待中...</div>
+            </div>
+          </div>
+          <div class="progress-step" data-step="recommend">
+            <div class="step-indicator"></div>
+            <div class="step-content-inner">
+              <div class="step-title" data-i18n-key="home.progress.step.recommend">推荐筛选</div>
+              <div class="step-status" data-i18n-key="home.progress.status.pending">等待中...</div>
+            </div>
+          </div>
+          <div class="progress-step" data-step="complete">
+            <div class="step-indicator"></div>
+            <div class="step-content-inner">
+              <div class="step-title" data-i18n-key="home.progress.step.complete">完成</div>
+              <div class="step-status" data-i18n-key="home.progress.status.pending">等待中...</div>
+            </div>
+          </div>
+        </div>
+        <div id="processing-details" class="processing-details"></div>
+      </div>
+    </section>
+
+    <!-- 步骤3: 结果展示 -->
+    <section class="card step-card" id="results-section" style="display: none;">
+      <div class="step-header">
+        <span class="step-number">3</span>
+        <h2 data-i18n-key="home.step3.title">处理结果</h2>
+      </div>
+      <div class="step-content">
+        <div class="results-summary">
+          <h3 data-i18n-key="home.results.keywords">提取的关键词/主题</h3>
+          <div id="keywords-display" class="keywords-list"></div>
+        </div>
+
+        <div class="results-stats">
+          <h3 data-i18n-key="home.results.stats">资源统计</h3>
+          <div class="stats-section">
+            <h4 class="stats-section-title" data-i18n-key="home.results.found">找到的资源</h4>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-label" data-i18n-key="home.results.found.txt">找到的文本资源</div>
+                <div class="stat-value" id="txt-found">0</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label" data-i18n-key="home.results.found.video">找到的视频资源</div>
+                <div class="stat-value" id="video-found">0</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-label" data-i18n-key="home.results.found.code">找到的代码资源</div>
+                <div class="stat-value" id="code-found">0</div>
+              </div>
+            </div>
+          </div>
+          <div class="stats-section">
+            <h4 class="stats-section-title" data-i18n-key="home.results.recommended">推荐的资源</h4>
+            <div class="stats-grid">
+              <div class="stat-card highlight">
+                <div class="stat-label" data-i18n-key="home.results.recommended.txt">推荐的文本资源</div>
+                <div class="stat-value" id="txt-recommended">0</div>
+                <div class="recommend-count-control-inline">
+                  <label for="txt-count-slider" class="slider-label">
+                    <span data-i18n-key="home.results.displayCount">显示数量:</span> <span id="txt-count-value">5</span>
+                  </label>
+                  <input 
+                    type="range" 
+                    id="txt-count-slider" 
+                    min="1" 
+                    max="20" 
+                    value="5" 
+                    step="1"
+                    class="recommend-count-slider"
+                  />
+                </div>
+              </div>
+              <div class="stat-card highlight">
+                <div class="stat-label" data-i18n-key="home.results.recommended.video">推荐的视频资源</div>
+                <div class="stat-value" id="video-recommended">0</div>
+                <div class="recommend-count-control-inline">
+                  <label for="video-count-slider" class="slider-label">
+                    <span data-i18n-key="home.results.displayCount">显示数量:</span> <span id="video-count-value">5</span>
+                  </label>
+                  <input 
+                    type="range" 
+                    id="video-count-slider" 
+                    min="1" 
+                    max="20" 
+                    value="5" 
+                    step="1"
+                    class="recommend-count-slider"
+                  />
+                </div>
+              </div>
+              <div class="stat-card highlight">
+                <div class="stat-label" data-i18n-key="home.results.recommended.code">推荐的代码资源</div>
+                <div class="stat-value" id="code-recommended">0</div>
+                <div class="recommend-count-control-inline">
+                  <label for="code-count-slider" class="slider-label">
+                    <span data-i18n-key="home.results.displayCount">显示数量:</span> <span id="code-count-value">5</span>
+                  </label>
+                  <input 
+                    type="range" 
+                    id="code-count-slider" 
+                    min="1" 
+                    max="20" 
+                    value="5" 
+                    step="1"
+                    class="recommend-count-slider"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+    
+    <!-- 右侧面板：进度和结果展示 -->
+    <div class="right-panel" id="right-panel">
+      <!-- 处理进度窗口 -->
+      <div class="panel-section" id="progress-panel">
+        <div class="panel-header">
+          <h3 data-i18n-key="home.panel.progress">📊 处理进度</h3>
+        </div>
+        <div class="panel-content">
+          <div class="terminal-output" id="terminal-output">
+            <div class="terminal-line" data-i18n-key="home.panel.waiting">等待开始处理...</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 结果展示窗口 -->
+      <div class="panel-section" id="results-panel" style="display: none;">
+        <div class="panel-header">
+          <h3 data-i18n-key="home.panel.resources">📚 推荐资源</h3>
+        </div>
+        <div class="panel-content">
+          <!-- 文本资源 -->
+          <div class="resource-category" id="txt-resources">
+            <h4 class="category-title">
+              <span class="category-icon">📄</span>
+              <span data-i18n-key="home.resources.txt">文本资源</span> (<span id="txt-count">0</span>)
+            </h4>
+            <div class="resource-list" id="txt-list"></div>
+          </div>
+          
+          <!-- 视频资源 -->
+          <div class="resource-category" id="video-resources">
+            <h4 class="category-title">
+              <span class="category-icon">🎥</span>
+              <span data-i18n-key="home.resources.video">视频资源</span> (<span id="video-count">0</span>)
+            </h4>
+            <div class="resource-list" id="video-list"></div>
+          </div>
+          
+          <!-- 代码资源 -->
+          <div class="resource-category" id="code-resources">
+            <h4 class="category-title">
+              <span class="category-icon">💻</span>
+              <span data-i18n-key="home.resources.code">代码资源</span> (<span id="code-count">0</span>)
+            </h4>
+            <div class="resource-list" id="code-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- 浮窗切换按钮 -->
+  <div class="view-toggle-float" id="view-toggle-float" style="display: none;">
+    <button class="view-toggle-btn" id="view-toggle-btn" title="切换视图">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+      <span id="view-toggle-text" data-i18n-key="home.viewToggle.resourcesOnly">仅显示推荐资源</span>
+    </button>
+  </div>
+
+  <!-- 静态版本也直接使用 main.js，但上传/处理相关接口在 GitHub Pages 上需要指向你部署的后端地址 -->
+  <script src="static/js/main.js"></script>
+</body>
+</html>
+
