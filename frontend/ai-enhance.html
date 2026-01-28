@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-CN" id="html-root">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI增强</title>
+  <link rel="icon" type="image/png" href="static/images/home-icon.png">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/ai-enhance.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-left">
+      <a href="index.html" class="navbar-brand">
+        <img src="static/images/home-icon.png" alt="首页" class="home-icon">
+        <span class="re-text">RE</span>
+      </a>
+    </div>
+    <div class="navbar-center">
+      <a href="index.html" class="nav-link" data-page="home" data-i18n-key="nav.home">首页</a>
+      <a href="help.html" class="nav-link" data-page="help" data-i18n-key="nav.help">帮助</a>
+      <a href="progress.html" class="nav-link" data-page="progress" data-i18n-key="nav.progress">研发进度</a>
+      <a href="ai-enhance.html" class="nav-link active" data-page="ai-enhance" data-i18n-key="nav.aiEnhance">AI增强</a>
+      <a href="contact.html" class="nav-link" data-page="contact" data-i18n-key="nav.contact">加入我们</a>
+    </div>
+    <div class="navbar-right">
+      <button class="navbar-menu-toggle" id="nav-menu-btn" type="button">
+        <div class="navbar-menu-icon"></div>
+        <span>目录</span>
+      </button>
+      <a href="https://github.com/LiiiKiii/Reinforcement-Ebook-System" target="_blank" rel="noopener noreferrer" class="navbar-btn github-btn" title="GitHub仓库">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <button class="navbar-btn" id="language-btn" title="切换语言">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span id="language-text">中文</span>
+      </button>
+      <button class="navbar-btn" id="theme-btn" title="切换主题">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-moon" style="display: block;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-sun" style="display: none;">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 移动端下拉菜单 -->
+  <div class="navbar-menu-dropdown">
+    <div class="navbar-center">
+      <a href="index.html" class="nav-link" data-page="home">首页</a>
+      <a href="help.html" class="nav-link" data-page="help">帮助</a>
+      <a href="progress.html" class="nav-link" data-page="progress">研发进度</a>
+      <a href="ai-enhance.html" class="nav-link" data-page="ai-enhance">AI增强</a>
+      <a href="contact.html" class="nav-link" data-page="contact">加入我们</a>
+    </div>
+  </div>
+
+  <div class="ai-enhance-container">
+    <!-- Hero Section -->
+    <section class="ai-enhance-hero">
+      <h1 class="ai-enhance-main-title" data-i18n-key="ai.title">AI增强</h1>
+      <p class="ai-enhance-subtitle" data-i18n-key="ai.subtitle">使用您的API密钥解锁更强大的AI功能</p>
+      
+      <!-- 功能说明区域 -->
+      <div class="features-section scroll-fade-in">
+        <div class="features-grid">
+          <div class="feature-card scroll-fade-in">
+            <div class="feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 class="feature-name" data-i18n-key="ai.feature.summary.title">智能摘要</h3>
+            <p class="feature-description" data-i18n-key="ai.feature.summary.desc">使用AI自动生成文档摘要，快速了解内容要点</p>
+          </div>
+          <div class="feature-card scroll-fade-in">
+            <div class="feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v7a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 15z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <h3 class="feature-name" data-i18n-key="ai.feature.understand.title">内容理解</h3>
+            <p class="feature-description" data-i18n-key="ai.feature.understand.desc">深度理解文档内容，提供更精准的资源推荐</p>
+          </div>
+          <div class="feature-card scroll-fade-in">
+            <div class="feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-name" data-i18n-key="ai.feature.qa.title">智能问答</h3>
+            <p class="feature-description" data-i18n-key="ai.feature.qa.desc">基于您的文档内容，提供智能问答服务</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- API Key 管理区域 -->
+    <section class="api-key-section scroll-fade-in">
+      <div class="api-key-card">
+        <div class="api-key-header">
+          <h2 class="api-key-title" data-i18n-key="ai.apikey.title">API密钥管理</h2>
+          <p class="api-key-description" data-i18n-key="ai.apikey.desc">您的API密钥仅存储在本地浏览器中，不会上传到服务器，确保您的隐私安全</p>
+        </div>
+
+        <!-- OpenAI API Key -->
+        <div class="api-key-item">
+          <div class="api-key-label-area">
+            <label for="openai-key" class="api-key-label">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path>
+              </svg>
+              OpenAI API Key
+            </label>
+            <span class="api-key-status" id="openai-status" data-i18n-key="ai.apikey.status.none">未设置</span>
+          </div>
+          <div class="api-key-input-group">
+            <input 
+              type="password" 
+              id="openai-key" 
+              class="api-key-input" 
+              placeholder="sk-..."
+              autocomplete="off"
+            >
+            <button class="api-key-toggle-btn" id="openai-toggle" title="显示/隐藏">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+            <button class="api-key-save-btn" id="openai-save" data-i18n-key="ai.apikey.btn.save">保存</button>
+            <button class="api-key-delete-btn" id="openai-delete" style="display: none;" data-i18n-key="ai.apikey.btn.delete">删除</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 隐私安全提示 -->
+      <div class="privacy-notice scroll-fade-in">
+        <div class="privacy-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            <path d="M9 12l2 2 4-4"></path>
+          </svg>
+        </div>
+        <div class="privacy-content">
+          <h3 class="privacy-title" data-i18n-key="ai.privacy.title">隐私保护承诺</h3>
+          <ul class="privacy-list">
+            <li data-i18n-key="ai.privacy.item1">所有API密钥仅存储在您的浏览器本地，不会上传到服务器</li>
+            <li data-i18n-key="ai.privacy.item2">我们不会收集、存储或传输您的API密钥信息</li>
+            <li data-i18n-key="ai.privacy.item3">您可以随时删除已保存的API密钥</li>
+            <li data-i18n-key="ai.privacy.item4">建议定期更换API密钥以确保安全</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="static/js/main.js"></script>
+  <script src="static/js/ai-enhance.js"></script>
+</body>
+</html>
+

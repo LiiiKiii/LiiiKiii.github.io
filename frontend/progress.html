@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="zh-CN" id="html-root">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>研发进度</title>
+  <link rel="icon" type="image/png" href="static/images/home-icon.png">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/progress.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-left">
+      <a href="index.html" class="navbar-brand">
+        <img src="static/images/home-icon.png" alt="首页" class="home-icon">
+        <span class="re-text">RE</span>
+      </a>
+    </div>
+    <div class="navbar-center">
+      <a href="index.html" class="nav-link" data-page="home" data-i18n-key="nav.home">首页</a>
+      <a href="help.html" class="nav-link" data-page="help" data-i18n-key="nav.help">帮助</a>
+      <a href="progress.html" class="nav-link active" data-page="progress" data-i18n-key="nav.progress">研发进度</a>
+      <a href="ai-enhance.html" class="nav-link" data-page="ai-enhance" data-i18n-key="nav.aiEnhance">AI增强</a>
+      <a href="contact.html" class="nav-link" data-page="contact" data-i18n-key="nav.contact">加入我们</a>
+    </div>
+    <div class="navbar-right">
+      <button class="navbar-menu-toggle" id="nav-menu-btn" type="button">
+        <div class="navbar-menu-icon"></div>
+        <span>目录</span>
+      </button>
+      <a href="https://github.com/LiiiKiii/Reinforcement-Ebook-System" target="_blank" rel="noopener noreferrer" class="navbar-btn github-btn" title="GitHub仓库">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <button class="navbar-btn" id="language-btn" title="切换语言">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span id="language-text">中文</span>
+      </button>
+      <button class="navbar-btn" id="theme-btn" title="切换主题">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-moon" style="display: block;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-sun" style="display: none;">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 移动端下拉菜单 -->
+  <div class="navbar-menu-dropdown">
+    <div class="navbar-center">
+      <a href="index.html" class="nav-link" data-page="home">首页</a>
+      <a href="help.html" class="nav-link" data-page="help">帮助</a>
+      <a href="progress.html" class="nav-link" data-page="progress">研发进度</a>
+      <a href="ai-enhance.html" class="nav-link" data-page="ai-enhance">AI增强</a>
+      <a href="contact.html" class="nav-link" data-page="contact">加入我们</a>
+    </div>
+  </div>
+
+  <div class="progress-container">
+    <!-- Hero Section -->
+    <section class="progress-hero">
+      <h1 class="progress-main-title" data-i18n-key="progress.title">研发进度</h1>
+      <p class="progress-subtitle" data-i18n-key="progress.subtitle">持续创新，不断优化</p>
+    </section>
+
+    <!-- 横向时间线（替换原来的三个方块） -->
+    <section class="progress-overview-timeline">
+      <div class="overview-timeline">
+        <!-- 阶段 1: 项目启动 -->
+        <div class="overview-timeline-item completed">
+          <div class="overview-marker">
+            <div class="overview-dot"></div>
+          </div>
+          <div class="overview-content">
+            <h3 class="overview-title" data-i18n-key="progress.overview.stage1">项目启动</h3>
+          </div>
+          <div class="overview-connector"></div>
+        </div>
+
+        <!-- 阶段 2: 实现框架 -->
+        <div class="overview-timeline-item completed">
+          <div class="overview-marker">
+            <div class="overview-dot"></div>
+          </div>
+          <div class="overview-content">
+            <h3 class="overview-title" data-i18n-key="progress.overview.stage2">实现框架</h3>
+          </div>
+          <div class="overview-connector"></div>
+        </div>
+
+        <!-- 阶段 3: 方法与评估 -->
+        <div class="overview-timeline-item in-progress">
+          <div class="overview-marker">
+            <div class="overview-dot"></div>
+          </div>
+          <div class="overview-content">
+            <h3 class="overview-title" data-i18n-key="progress.overview.stage3">方法与评估</h3>
+          </div>
+          <div class="overview-connector"></div>
+        </div>
+
+        <!-- 阶段 4: 优化与落地 -->
+        <div class="overview-timeline-item upcoming">
+          <div class="overview-marker">
+            <div class="overview-dot"></div>
+          </div>
+          <div class="overview-content">
+            <h3 class="overview-title" data-i18n-key="progress.overview.stage4">优化与落地</h3>
+          </div>
+          <div class="overview-connector"></div>
+        </div>
+
+        <!-- 阶段 5: 交付 -->
+        <div class="overview-timeline-item upcoming">
+          <div class="overview-marker">
+            <div class="overview-dot"></div>
+          </div>
+          <div class="overview-content">
+            <h3 class="overview-title" data-i18n-key="progress.overview.stage5">交付</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 研发时间线（保持原来的垂直时间线） -->
+    <section class="progress-timeline scroll-fade-in">
+      <h2 class="section-title scroll-fade-in" data-i18n-key="progress.timeline.title">研发时间线</h2>
+      
+      <div class="timeline">
+        <!-- 阶段 1 -->
+        <div class="timeline-item completed scroll-fade-in">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-i18n-key="progress.timeline.stage1.date">2025年10月 - 12月</div>
+            <h3 class="timeline-title" data-i18n-key="progress.timeline.stage1.title">项目启动与需求分析</h3>
+            <p class="timeline-description" data-i18n-key="progress.timeline.stage1.desc">完成项目需求调研，确定技术栈和开发方向，制定详细的产品规划和技术架构设计。</p>
+            <div class="timeline-features">
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage1.tag1">需求分析</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage1.tag2">技术选型</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage1.tag3">架构设计</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段 2 -->
+        <div class="timeline-item in-progress scroll-fade-in">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-i18n-key="progress.timeline.stage2.date">2026年1月 - 2月</div>
+            <h3 class="timeline-title" data-i18n-key="progress.timeline.stage2.title">核心功能开发</h3>
+            <p class="timeline-description" data-i18n-key="progress.timeline.stage2.desc">实现关键词提取、资源搜索、推荐算法等核心功能模块开发，并对其进行基础测试与优化。</p>
+            <div class="timeline-features">
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage2.tag1">关键词提取</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage2.tag2">资源搜索</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage2.tag3">推荐算法</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage2.tag4">文件处理</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段 3 -->
+        <div class="timeline-item upcoming scroll-fade-in">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-i18n-key="progress.timeline.stage3.date">2026年3月</div>
+            <h3 class="timeline-title" data-i18n-key="progress.timeline.stage3.title">用户界面设计与实现</h3>
+            <p class="timeline-description" data-i18n-key="progress.timeline.stage3.desc">设计并实现现代化的用户界面。完成网页开发，实现响应式布局和流畅的动画效果。</p>
+            <div class="timeline-features">
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage3.tag1">UI设计</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage3.tag2">前端开发</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage3.tag3">响应式布局</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage3.tag4">动画效果</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段 4 -->
+        <div class="timeline-item upcoming scroll-fade-in">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-i18n-key="progress.timeline.stage4.date">2026年4月</div>
+            <h3 class="timeline-title" data-i18n-key="progress.timeline.stage4.title">优化与落地</h3>
+            <p class="timeline-description" data-i18n-key="progress.timeline.stage4.desc">优化相关算法和系统性能，对网站进行整合和兼容性测试，并进一步提升用户体验。</p>
+            <div class="timeline-features">
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage4.tag1">算法优化</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage4.tag2">性能优化</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage4.tag3">用户体验</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage4.tag4">实时反馈</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段 5 -->
+        <div class="timeline-item upcoming scroll-fade-in">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-i18n-key="progress.timeline.stage5.date">2026年5月</div>
+            <h3 class="timeline-title" data-i18n-key="progress.timeline.stage5.title">交付</h3>
+            <p class="timeline-description" data-i18n-key="progress.timeline.stage5.desc">交付网站，并进行后续的维护和优化。</p>
+          </div>
+        </div>
+
+        <!-- 阶段 6 -->
+        <div class="timeline-item upcoming scroll-fade-in">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date" data-i18n-key="progress.timeline.stage6.date">2026年6月</div>
+            <h3 class="timeline-title" data-i18n-key="progress.timeline.stage6.title">未来规划</h3>
+            <p class="timeline-description" data-i18n-key="progress.timeline.stage6.desc">计划拓展移动端应用、API接口开放、社区功能等。持续收集用户反馈，不断迭代优化平台。</p>
+            <div class="timeline-features">
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage6.tag1">移动端</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage6.tag2">API开放</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage6.tag3">社区功能</span>
+              <span class="feature-tag" data-i18n-key="progress.timeline.stage6.tag4">用户反馈</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 功能模块详情 -->
+    <section class="progress-modules scroll-fade-in">
+      <h2 class="section-title scroll-fade-in" data-i18n-key="progress.modules.title">功能模块</h2>
+      
+      <div class="modules-grid">
+        <div class="module-card completed scroll-fade-in">
+          <div class="module-header">
+            <div class="module-icon">📄</div>
+            <div class="module-status completed" data-i18n-key="progress.modules.status.done">已完成</div>
+          </div>
+          <h3 class="module-title" data-i18n-key="progress.modules.file.title">文件处理</h3>
+          <p class="module-description" data-i18n-key="progress.modules.file.desc">支持ZIP文件上传、PDF自动转换、文本提取等功能，提供完整的文件处理流程。</p>
+          <div class="module-progress">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" style="width: 100%"></div>
+            </div>
+            <span>100%</span>
+          </div>
+        </div>
+
+        <div class="module-card completed scroll-fade-in">
+          <div class="module-header">
+            <div class="module-icon">🔍</div>
+            <div class="module-status completed" data-i18n-key="progress.modules.status.done">已完成</div>
+          </div>
+          <h3 class="module-title" data-i18n-key="progress.modules.keyword.title">关键词提取</h3>
+          <p class="module-description" data-i18n-key="progress.modules.keyword.desc">基于TF-IDF和TextRank算法，智能提取文档中的关键主题和概念。</p>
+          <div class="module-progress">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" style="width: 100%"></div>
+            </div>
+            <span>100%</span>
+          </div>
+        </div>
+
+        <div class="module-card completed scroll-fade-in">
+          <div class="module-header">
+            <div class="module-icon">🌐</div>
+            <div class="module-status completed" data-i18n-key="progress.modules.status.done">已完成</div>
+          </div>
+          <h3 class="module-title" data-i18n-key="progress.modules.search.title">多源搜索</h3>
+          <p class="module-description" data-i18n-key="progress.modules.search.desc">集成Wikipedia、YouTube、GitHub等多个数据源，提供全面的资源搜索能力。</p>
+          <div class="module-progress">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" style="width: 100%"></div>
+            </div>
+            <span>100%</span>
+          </div>
+        </div>
+
+        <div class="module-card completed scroll-fade-in">
+          <div class="module-header">
+            <div class="module-icon">🎯</div>
+            <div class="module-status completed" data-i18n-key="progress.modules.status.done">已完成</div>
+          </div>
+          <h3 class="module-title" data-i18n-key="progress.modules.recommend.title">智能推荐</h3>
+          <p class="module-description" data-i18n-key="progress.modules.recommend.desc">基于相似度计算的推荐算法，为用户推荐最相关的学习资源。</p>
+          <div class="module-progress">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" style="width: 100%"></div>
+            </div>
+            <span>100%</span>
+          </div>
+        </div>
+
+        <div class="module-card in-progress scroll-fade-in">
+          <div class="module-header">
+            <div class="module-icon">🤖</div>
+            <div class="module-status in-progress" data-i18n-key="progress.modules.status.doing">进行中</div>
+          </div>
+          <h3 class="module-title" data-i18n-key="progress.modules.ai.title">AI增强</h3>
+          <p class="module-description" data-i18n-key="progress.modules.ai.desc">集成大语言模型，提供智能摘要生成、内容理解等AI增强功能。</p>
+          <div class="module-progress">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" style="width: 60%"></div>
+            </div>
+            <span>60%</span>
+          </div>
+        </div>
+
+        <div class="module-card in-progress scroll-fade-in">
+          <div class="module-header">
+            <div class="module-icon">🌍</div>
+            <div class="module-status in-progress" data-i18n-key="progress.modules.status.doing">进行中</div>
+          </div>
+          <h3 class="module-title" data-i18n-key="progress.modules.lang.title">多语言支持</h3>
+          <p class="module-description" data-i18n-key="progress.modules.lang.desc">支持中英文界面切换，未来将扩展更多语言支持。</p>
+          <div class="module-progress">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" style="width: 40%"></div>
+            </div>
+            <span>40%</span>
+          </div>
+        </div>
+
+        <div class="module-card in-progress scroll-fade-in">
+          <div class="module-header">
+            <div class="module-icon">📱</div>
+            <div class="module-status in-progress" data-i18n-key="progress.modules.status.doing">进行中</div>
+          </div>
+          <h3 class="module-title" data-i18n-key="progress.modules.mobile.title">移动端应用</h3>
+          <p class="module-description" data-i18n-key="progress.modules.mobile.desc">开发iOS和Android移动应用，让用户随时随地访问推荐系统。</p>
+          <div class="module-progress">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" style="width: 0%"></div>
+            </div>
+            <span>0%</span>
+          </div>
+        </div>
+
+        <div class="module-card upcoming scroll-fade-in">
+          <div class="module-header">
+            <div class="module-icon">🔌</div>
+            <div class="module-status upcoming" data-i18n-key="progress.modules.status.todo">计划中</div>
+          </div>
+          <h3 class="module-title" data-i18n-key="progress.modules.api.title">API接口</h3>
+          <p class="module-description" data-i18n-key="progress.modules.api.desc">提供RESTful API接口，支持第三方应用集成和二次开发。</p>
+          <div class="module-progress">
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" style="width: 0%"></div>
+            </div>
+            <span>0%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="static/js/main.js"></script>
+  <script src="static/js/progress.js"></script>
+</body>
+</html>
+

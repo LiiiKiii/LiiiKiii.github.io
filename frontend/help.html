@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="zh-CN" id="html-root">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>帮助</title>
+  <link rel="icon" type="image/png" href="static/images/home-icon.png">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/help.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-left">
+      <a href="index.html" class="navbar-brand">
+        <img src="static/images/home-icon.png" alt="首页" class="home-icon">
+        <span class="re-text">RE</span>
+      </a>
+    </div>
+    <div class="navbar-center">
+      <a href="index.html" class="nav-link" data-page="home" data-i18n-key="nav.home">首页</a>
+      <a href="help.html" class="nav-link active" data-page="help" data-i18n-key="nav.help">帮助</a>
+      <a href="progress.html" class="nav-link" data-page="progress" data-i18n-key="nav.progress">研发进度</a>
+      <a href="ai-enhance.html" class="nav-link" data-page="ai-enhance" data-i18n-key="nav.aiEnhance">AI增强</a>
+      <a href="contact.html" class="nav-link" data-page="contact" data-i18n-key="nav.contact">加入我们</a>
+    </div>
+    <div class="navbar-right">
+      <button class="navbar-menu-toggle" id="nav-menu-btn" type="button">
+        <div class="navbar-menu-icon"></div>
+        <span>目录</span>
+      </button>
+      <a href="https://github.com/LiiiKiii/Reinforcement-Ebook-System" target="_blank" rel="noopener noreferrer" class="navbar-btn github-btn" title="GitHub仓库">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <button class="navbar-btn" id="language-btn" title="切换语言">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span id="language-text">中文</span>
+      </button>
+      <button class="navbar-btn" id="theme-btn" title="切换主题">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-moon" style="display: block;">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="theme-icon-sun" style="display: none;">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 移动端下拉菜单 -->
+  <div class="navbar-menu-dropdown">
+    <div class="navbar-center">
+      <a href="index.html" class="nav-link" data-page="home">首页</a>
+      <a href="help.html" class="nav-link" data-page="help">帮助</a>
+      <a href="progress.html" class="nav-link" data-page="progress">研发进度</a>
+      <a href="ai-enhance.html" class="nav-link" data-page="ai-enhance">AI增强</a>
+      <a href="contact.html" class="nav-link" data-page="contact">加入我们</a>
+    </div>
+  </div>
+
+  <div class="help-container">
+    <!-- 大标题 -->
+    <section class="help-hero">
+      <h1 class="help-main-title" data-i18n-key="help.title">帮助</h1>
+    </section>
+
+    <!-- 以下内容与模板版一致，只是去掉了 Jinja 模板语法 -->
+    <!-- About Product 部分 -->
+    <section class="help-section">
+      <h2 class="help-section-title" data-i18n-key="help.section.product">关于产品</h2>
+      <div class="help-carousel-wrapper">
+        <div class="help-carousel" id="product-carousel">
+          <div class="help-card" data-detail="our-aim">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.ourAim.title">愿景</h3>
+              <p class="help-card-description" data-i18n-key="help.card.ourAim.desc">为AI学习者提供资源推荐服务</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="how-to-use">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.quickStart.title">快速开始</h3>
+              <p class="help-card-description" data-i18n-key="help.card.quickStart.desc">了解如何使用本系统</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="features">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.features.title">主要功能</h3>
+              <p class="help-card-description" data-i18n-key="help.card.features.desc">探索系统的核心功能</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="workflow">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.workflow.title">工作流程</h3>
+              <p class="help-card-description" data-i18n-key="help.card.workflow.desc">了解系统的工作流程和处理步骤</p>
+            </div>
+          </div>
+        </div>
+        <button class="help-carousel-btn help-carousel-btn-prev" aria-label="上一个">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          &lt;
+        </button>
+        <button class="help-carousel-btn help-carousel-btn-next" aria-label="下一个">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+          &gt;
+        </button>
+      </div>
+    </section>
+
+    <!-- About AI 部分 -->
+    <section class="help-section">
+      <h2 class="help-section-title" data-i18n-key="help.section.tech">关于技术</h2>
+      <div class="help-carousel-wrapper">
+        <div class="help-carousel" id="ai-carousel">
+          <div class="help-card" data-detail="nlp">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.nlp.title">自然语言处理</h3>
+              <p class="help-card-description" data-i18n-key="help.card.nlp.desc">将繁杂输入转为可处理文本</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="keyword-extraction">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.keyword.title">关键词提取</h3>
+              <p class="help-card-description" data-i18n-key="help.card.keyword.desc">将文本信息提取精炼成关键词</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="semantic-similarity">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.semantic.title">语义相似度计算</h3>
+              <p class="help-card-description" data-i18n-key="help.card.semantic.desc">检查文档和资源是否匹配</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="mmr">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.mmr.title">MMR</h3>
+              <p class="help-card-description" data-i18n-key="help.card.mmr.desc">去除部分意思相近的关键词</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="recommendation">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.recommend.title">推荐算法</h3>
+              <p class="help-card-description" data-i18n-key="help.card.recommend.desc">推荐最合适的资源</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="openai-llm">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.llm.title">OpenAI LLM</h3>
+              <p class="help-card-description" data-i18n-key="help.card.llm.desc">根据资源智能生成简介</p>
+            </div>
+          </div>
+        </div>
+        <button class="help-carousel-btn help-carousel-btn-prev" aria-label="上一个">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          &lt;
+        </button>
+        <button class="help-carousel-btn help-carousel-btn-next" aria-label="下一个">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+          &gt;
+        </button>
+      </div>
+    </section>
+
+    <!-- About Innovation 部分 -->
+    <section class="help-section">
+      <h2 class="help-section-title" data-i18n-key="help.section.innovation">关于创新</h2>
+      <div class="help-carousel-wrapper">
+        <div class="help-carousel" id="innovation-carousel">
+          <div class="help-card" data-detail="innovation-concept">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.innovation.title">产品优势</h3>
+              <p class="help-card-description" data-i18n-key="help.card.innovation.desc">相较同类竞品的优势</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="technical-innovation">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.techInnovation.title">技术创新</h3>
+              <p class="help-card-description" data-i18n-key="help.card.techInnovation.desc">了解系统的技术创新点</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="user-experience">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.ux.title">用户体验</h3>
+              <p class="help-card-description" data-i18n-key="help.card.ux.desc">优化用户体验的创新设计</p>
+            </div>
+          </div>
+          <div class="help-card" data-detail="future-development">
+            <div class="help-card-content">
+              <h3 class="help-card-title" data-i18n-key="help.card.future.title">未来规划</h3>
+              <p class="help-card-description" data-i18n-key="help.card.future.desc">系统的未来发展方向</p>
+            </div>
+          </div>
+        </div>
+        <button class="help-carousel-btn help-carousel-btn-prev" aria-label="上一个">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          &lt;
+        </button>
+        <button class="help-carousel-btn help-carousel-btn-next" aria-label="下一个">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+          &gt;
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- 详细内容模态框 -->
+  <div class="help-modal" id="help-modal">
+    <div class="help-modal-overlay"></div>
+    <div class="help-modal-content">
+      <button class="help-modal-close" aria-label="关闭">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="help-modal-body" id="help-modal-body">
+        <!-- 内容将通过JavaScript动态加载 -->
+      </div>
+    </div>
+  </div>
+
+  <script src="static/js/main.js"></script>
+  <script src="static/js/help.js"></script>
+</body>
+</html>
+
