@@ -701,9 +701,10 @@ function displayResourceList(type, resources, listId, countId) {
       };
       buttonArea.appendChild(visitBtn);
       
-      // 下载按钮（视频资源不显示，Wikipedia文本资源不显示）
+      // 下载按钮（视频不显示；Wikipedia 文本不显示；Google Scholar 仅显示前往）
       const isWikipedia = resource.source && resource.source.toLowerCase().includes('wikipedia');
-      if (type !== 'video' && !(type === 'txt' && isWikipedia)) {
+      const isGoogleScholar = resource.source && resource.source.toLowerCase().includes('google scholar');
+      if (type !== 'video' && !(type === 'txt' && isWikipedia) && !isGoogleScholar) {
         const downloadBtn = document.createElement('button');
         downloadBtn.className = 'resource-action-btn resource-btn-download';
         const downloadText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.resources.download'] : I18N_MAP['zh-CN']['home.resources.download'];
@@ -916,6 +917,7 @@ function formatFileSize(bytes) {
 // 简单的中英文文案表
 const I18N_MAP = {
   'zh-CN': {
+    'nav.toc': '目录',
     'nav.home': '首页',
     'nav.help': '帮助',
     'nav.progress': '研发进度',
@@ -1105,6 +1107,7 @@ const I18N_MAP = {
     'home.resources.wikipediaArticle': '这是关于{title}的百科文章。'
   },
   'en-US': {
+    'nav.toc': 'Menu',
     'nav.home': 'Home',
     'nav.help': 'Help',
     'nav.progress': 'Progress',
