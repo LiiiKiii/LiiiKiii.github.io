@@ -37,11 +37,14 @@
 
 ### 1.4 参考文献
 
-1. Salton, G., & Buckley, C. (1988). Term-weighting approaches in automatic text retrieval. *Information processing & management*, 24(5), 513-523.
+1. Salton, G., & Buckley, C. (1988). Term-weighting approaches in automatic text retrieval. *Information processing & management*, 24(5), 513-523.  
+   **概要**：系统比较了多种词权重方法（含 TF-IDF 变体）在文本检索中的表现，奠定了 TF-IDF 在信息检索中的理论基础。读后在本系统中：用 scikit-learn 的 TfidfVectorizer、ngram_range=(1,3) 对用户文档做向量化并提取候选关键词权重，作为关键词提取阶段的核心实现。
 
-2. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge university press. (Chapter 6: Scoring, term weighting and the vector space model)
+2. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge university press. (Chapter 6: Scoring, term weighting and the vector space model)  
+   **概要**：介绍向量空间模型、词权重与打分机制，是理解 TF-IDF 与检索排序的标准教材章节。读后在本系统中：据此配置 max_df/min_df/sublinear_tf 等参数，并沿用同一套向量空间思路在推荐阶段做用户文档与资源的相似度计算。
 
-3. Ramos, J. (2003). Using tf-idf to determine word relevance in document queries. *Proceedings of the first instructional conference on machine learning*.
+3. Ramos, J. (2003). Using tf-idf to determine word relevance in document queries. *Proceedings of the first instructional conference on machine learning*.  
+   **概要**：说明如何用 TF-IDF 判断词在文档与查询中的相关性，为关键词提取提供实用依据。读后在本系统中：据此用 TF-IDF 权重筛选与用户文档最相关的词/短语，作为后续多源搜索的查询词。
 
 ---
 
@@ -76,9 +79,11 @@
 
 ### 2.4 参考文献
 
-1. Carbonell, J., & Goldstein, J. (1998). The use of MMR, diversity-based reranking for reordering documents and producing summaries. *Proceedings of the 21st annual international ACM SIGIR conference on Research and development in information retrieval*, 335-336.
+1. Carbonell, J., & Goldstein, J. (1998). The use of MMR, diversity-based reranking for reordering documents and producing summaries. *Proceedings of the 21st annual international ACM SIGIR conference on Research and development in information retrieval*, 335-336.  
+   **概要**：提出 MMR 算法，通过平衡相关性与多样性对文档重排序并用于摘要，是多样性排序的经典文献。读后在本系统中：在 keyword_extractor.py 中自实现 mmr_select()，在 TF-IDF 候选词上按 λ·sim_to_query − (1−λ)·sim_to_selected 选 Top-K 关键词，避免关键词过于重复、提高搜索覆盖面。
 
-2. Chen, J., Zhuang, F., Hong, X., Ao, X., & Xie, X. (2018). Attention-based hierarchical neural query suggestion. *Proceedings of the 41st International ACM SIGIR Conference on Research & Development in Information Retrieval*, 1093-1096.
+2. Chen, J., Zhuang, F., Hong, X., Ao, X., & Xie, X. (2018). Attention-based hierarchical neural query suggestion. *Proceedings of the 41st International ACM SIGIR Conference on Research & Development in Information Retrieval*, 1093-1096.  
+   **概要**：将多样性思想与神经查询建议结合，说明在检索与推荐中平衡相关性与多样性的重要性。读后在本系统中：据此在关键词选择阶段强调多样性，使 MMR 选出的词能覆盖文档不同主题，从而在多源搜索时获得更丰富的资源。
 
 ---
 
@@ -112,11 +117,14 @@
 
 ### 3.4 参考文献
 
-1. Salton, G., & McGill, M. J. (1986). *Introduction to modern information retrieval*. McGraw-Hill. (Chapter 3: Automatic indexing)
+1. Salton, G., & McGill, M. J. (1986). *Introduction to modern information retrieval*. McGraw-Hill. (Chapter 3: Automatic indexing)  
+   **概要**：介绍自动索引与向量表示，奠定用余弦相似度比较文档的向量空间模型基础。读后在本系统中：在 recommender.py 中用 TF-IDF 将用户文档与候选资源向量化后，用 sklearn 的 cosine_similarity 计算相似度并据此排序推荐。
 
-2. Singhal, A. (2001). Modern information retrieval: A brief overview. *IEEE Data Eng. Bull.*, 24(4), 35-43.
+2. Singhal, A. (2001). Modern information retrieval: A brief overview. *IEEE Data Eng. Bull.*, 24(4), 35-43.  
+   **概要**：概述现代信息检索的核心概念与度量（含相似度），便于理解检索排序与评估。读后在本系统中：据此设定相似度阈值（≥0.05）过滤低相关资源，并按相似度降序取 Top-K 作为最终推荐结果。
 
-3. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge university press. (Chapter 6: Scoring, term weighting and the vector space model)
+3. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge university press. (Chapter 6: Scoring, term weighting and the vector space model)  
+   **概要**：讲解词权重、向量空间模型与打分，是理解 TF-IDF 与余弦相似度结合使用的标准参考。读后在本系统中：将用户文档与资源（标题+内容/描述）统一用 TF-IDF 向量化后再算余弦相似度，实现基于内容的推荐排序。
 
 ---
 
@@ -150,9 +158,11 @@
 
 ### 4.4 参考文献
 
-1. Olston, C., & Najork, M. (2010). Web crawling. *Foundations and Trends in Information Retrieval*, 4(3), 175-246.
+1. Olston, C., & Najork, M. (2010). Web crawling. *Foundations and Trends in Information Retrieval*, 4(3), 175-246.  
+   **概要**：综述网络爬虫的架构、策略与可扩展性，为多源网页抓取与解析提供理论和方法参考。读后在本系统中：在 resource_searcher.py 中用 requests 抓取 Wikipedia、Google Scholar、arXiv、YouTube、GitHub 等页面，用正则与 JSON 解析提取标题、链接、摘要等，实现无付费 API 的多源资源获取。
 
-2. Baeza-Yates, R., & Ribeiro-Neto, B. (2011). *Modern information retrieval: the concepts and technology behind search* (2nd ed.). Pearson Education. (Chapter 17: Web retrieval)
+2. Baeza-Yates, R., & Ribeiro-Neto, B. (2011). *Modern information retrieval: the concepts and technology behind search* (2nd ed.). Pearson Education. (Chapter 17: Web retrieval)  
+   **概要**：介绍 Web 检索与爬取的基本概念和技术，说明如何从多源网络数据中获取和利用信息。读后在本系统中：按“文本 / 视频 / 代码”三类分别对接学术站与视频/代码平台，对每个关键词依次请求各源、合并去重，形成当前多源搜索流程。
 
 ---
 
@@ -185,9 +195,11 @@
 
 ### 5.4 参考文献
 
-1. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge university press. (Chapter 2: The term vocabulary and postings lists - 关于停用词和文本预处理)
+1. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge university press. (Chapter 2: The term vocabulary and postings lists - 关于停用词和文本预处理)  
+   **概要**：讲解词表、倒排索引及停用词与文本预处理，为基于规则的过滤与清洗提供术语与流程依据。读后在本系统中：实现 is_english_content()（字符集比例）、AI_RELEVANT_KEYWORDS 列表和 is_irrelevant_url() 等规则，对多源抓取结果做英文检测与 AI 相关度过滤。
 
-2. Jurafsky, D., & Martin, J. H. (2020). *Speech and language processing: An introduction to natural language processing, computational linguistics, and speech recognition* (3rd ed.). Draft. (Chapter 2: Regular Expressions, Text Normalization, Edit Distance)
+2. Jurafsky, D., & Martin, J. H. (2020). *Speech and language processing: An introduction to natural language processing, computational linguistics, and speech recognition* (3rd ed.). Draft. (Chapter 2: Regular Expressions, Text Normalization, Edit Distance)  
+   **概要**：介绍正则表达式、文本规范化与编辑距离，为 URL/标题等规则过滤与文本清洗提供方法支持。读后在本系统中：用正则实现 is_irrelevant_url() 排除报告/政策类链接，以及 clean_extracted_content() 按行去除联系方式、部门信息、导航文本等噪声。
 
 ---
 
@@ -221,11 +233,14 @@
 
 ### 6.4 参考文献
 
-1. Lops, P., de Gemmis, M., & Semeraro, G. (2011). Content-based recommender systems: State of the art and trends. *Recommender systems handbook*, 73-105.
+1. Lops, P., de Gemmis, M., & Semeraro, G. (2011). Content-based recommender systems: State of the art and trends. *Recommender systems handbook*, 73-105.  
+   **概要**：综述基于内容推荐系统的原理、技术与趋势，说明 CBF 的适用场景与实现思路。读后在本系统中：采用“用户文档 TF-IDF 向量 + 资源 TF-IDF 向量 + 余弦相似度 + 阈值”的 CBF 流程，在 recommender.py 中实现 recommend_best_resources()，不依赖用户行为数据即可做冷启动推荐。
 
-2. Ricci, F., Rokach, L., & Shapira, B. (2015). *Recommender systems handbook* (2nd ed.). Springer. (Chapter 3: Content-based recommendations)
+2. Ricci, F., Rokach, L., & Shapira, B. (2015). *Recommender systems handbook* (2nd ed.). Springer. (Chapter 3: Content-based recommendations)  
+   **概要**：系统介绍基于内容的推荐方法（特征表示、相似度、冷启动等），是 CBF 的权威教材章节。读后在本系统中：用标题+内容/描述作为资源特征、用户文档合并为单一向量，按内容相似度排序并取 Top-K，并针对 txt/video/code 分别用 content 或 description 参与向量化。
 
-3. Aggarwal, C. C. (2016). *Recommender systems: The textbook*. Springer. (Chapter 2: Neighborhood-based collaborative filtering, Chapter 3: Model-based collaborative filtering)
+3. Aggarwal, C. C. (2016). *Recommender systems: The textbook*. Springer. (Chapter 2: Neighborhood-based collaborative filtering, Chapter 3: Model-based collaborative filtering)  
+   **概要**：对比协同过滤与基于内容等方法，帮助理解 CBF 在推荐系统整体框架中的位置与取舍。读后在本系统中：明确选用 CBF 而非协同过滤，因本系统无多用户行为数据、且“文档—资源”内容匹配与 AI/ML 学习资源场景契合。
 
 ---
 
@@ -260,11 +275,14 @@
 
 ### 7.4 参考文献
 
-1. OpenAI. (2023). GPT-3.5 Turbo. *OpenAI API Documentation*. https://platform.openai.com/docs/models/gpt-3-5
+1. OpenAI. (2023). GPT-3.5 Turbo. *OpenAI API Documentation*. https://platform.openai.com/docs/models/gpt-3-5  
+   **概要**：说明 GPT-3.5 Turbo 的接口与用法，为调用 Chat Completions API 生成摘要提供官方依据。读后在本系统中：在 ai_summarizer.py 中调用 OpenAI Chat Completions（GPT-3.5-turbo），传入资源标题与内容/描述，生成面向用户的简短摘要；无 API Key 或调用失败时走规则 fallback。
 
-2. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). Language models are unsupervised multitask learners. *OpenAI blog*, 1(8), 9.
+2. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). Language models are unsupervised multitask learners. *OpenAI blog*, 1(8), 9.  
+   **概要**：介绍 GPT-2 的预训练与多任务能力，有助于理解大语言模型为何能用于生成连贯摘要。读后在本系统中：据此采用“先 AI 生成、失败再规则抽取”的策略，在 generate_resource_summary() 中优先用 GPT 生成自然句摘要，fallback 时从正文/摘要中取前 2–3 句或基于标题与来源生成简短说明。
 
-3. Nenkova, A., & McKeown, K. (2012). A survey of text summarization techniques. *Mining text data*, 43-76.
+3. Nenkova, A., & McKeown, K. (2012). A survey of text summarization techniques. *Mining text data*, 43-76.  
+   **概要**：综述抽取式与生成式摘要方法，为设计 AI 摘要与规则 fallback 提供技术背景。读后在本系统中：fallback 路径对 arXiv/Scholar 提取摘要字段、对网页按句抽取引导句，并统一对摘要做 clean 去噪声，保证无 API 时仍能输出可读简介。
 
 ---
 
@@ -297,9 +315,11 @@
 
 ### 8.4 参考文献
 
-1. W3C. (2015). Server-Sent Events. *W3C Recommendation*. https://www.w3.org/TR/eventsource/
+1. W3C. (2015). Server-Sent Events. *W3C Recommendation*. https://www.w3.org/TR/eventsource/  
+   **概要**：定义 SSE 的协议格式与浏览器行为，为用 SSE 实现实时进度推送提供标准依据。读后在本系统中：在 app.py 的 /process 路由用 Flask Response + stream_with_context 按步骤 yield `data: {json}\n\n`，前端 main.js 用 fetch + ReadableStream 解析事件并更新进度条与终端文案，实现上传后的实时进度反馈。
 
-2. Garrett, J. J. (2005). Ajax: A new approach to web applications. *Adaptive Path*, 18.
+2. Garrett, J. J. (2005). Ajax: A new approach to web applications. *Adaptive Path*, 18.  
+   **概要**：提出 Ajax 范式，说明异步请求与流式数据如何改善 Web 应用体验，与 SSE 的用途一脉相承。读后在本系统中：采用“单次请求、服务端持续推送”的方式替代轮询，在处理关键词提取、多源搜索、推荐等各阶段发送 type/progress/message，减少前端轮询并提升长时间任务时的体验。
 
 ---
 
@@ -332,11 +352,14 @@
 
 ### 9.4 参考文献
 
-1. Marcotte, E. (2010). Responsive web design. *A List Apart*, 306.
+1. Marcotte, E. (2010). Responsive web design. *A List Apart*, 306.  
+   **概要**：提出响应式设计概念，说明用流体布局与媒体查询适配多端，是前端响应式的基础文献。读后在本系统中：在 style.css、help.css、progress.css、contact.css 等中用 @media (max-width: 768px)/(480px) 做断点，导航栏窄屏改为下拉菜单，卡片与表单随宽度调整，实现全站响应式布局。
 
-2. W3C. (2021). Media Queries Level 4. *W3C Candidate Recommendation*. https://www.w3.org/TR/mediaqueries-4/
+2. W3C. (2021). Media Queries Level 4. *W3C Candidate Recommendation*. https://www.w3.org/TR/mediaqueries-4/  
+   **概要**：定义媒体查询语法与特性，为用 `@media` 实现移动端/桌面端样式切换提供标准参考。读后在本系统中：用媒体查询控制 .navbar-center 的显示/隐藏与 .navbar-menu-dropdown 的展开，并配合 main.js 中监听 resize 与点击关闭菜单，保证小屏下目录与导航可用。
 
-3. MDN Web Docs. (2024). Responsive design. *MDN Web Docs*. https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
+3. MDN Web Docs. (2024). Responsive design. *MDN Web Docs*. https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design  
+   **概要**：介绍响应式设计的实践要点（布局、断点、图片等），便于实现多端适配。读后在本系统中：对首页、帮助、进度、联系、AI 增强等页的栅格与弹性布局做断点内调整，保证在手机与平板上阅读和操作顺畅。
 
 ---
 
@@ -370,9 +393,11 @@
 
 ### 10.4 参考文献
 
-1. W3C. (2024). Internationalization Best Practices: Specifying Language in XHTML & HTML Content. *W3C Working Group Note*. https://www.w3.org/International/techniques/developing-specs
+1. W3C. (2024). Internationalization Best Practices: Specifying Language in XHTML & HTML Content. *W3C Working Group Note*. https://www.w3.org/International/techniques/developing-specs  
+   **概要**：说明在 HTML 中指定语言与国际化最佳实践，为 `lang` 属性与 i18n 设计提供规范依据。读后在本系统中：在模板根元素设置 `lang` 与 `id="html-root"`，在 main.js 的 applyLanguage() 中根据当前语言设置 html 的 lang，并配合 data-i18n-key 做内容切换，保证界面语言与无障碍一致。
 
-2. MDN Web Docs. (2024). Internationalization. *MDN Web Docs*. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+2. MDN Web Docs. (2024). Internationalization. *MDN Web Docs*. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions  
+   **概要**：介绍 JavaScript 国际化与本地化思路，为客户端多语言切换与翻译键设计提供参考。读后在本系统中：在 main.js 中维护 I18N_MAP（zh-CN / en-US），用 data-i18n-key 绑定文案，applyLanguage(lang) 遍历 [data-i18n-key] 更新 textContent，语言偏好存 localStorage 并在 loadPreferences 时恢复。
 
 ---
 
@@ -406,11 +431,14 @@
 
 ### 11.4 参考文献
 
-1. Salton, G., & Buckley, C. (1988). Term-weighting approaches in automatic text retrieval. *Information processing & management*, 24(5), 513-523.
+1. Salton, G., & Buckley, C. (1988). Term-weighting approaches in automatic text retrieval. *Information processing & management*, 24(5), 513-523.  
+   **概要**：比较多种词权重方法（含 TF-IDF），为“TF-IDF 向量化 + 相似度”流程提供检索理论依据。读后在本系统中：将 TF-IDF 用于“文档→关键词”和“文档+资源→相似度”两处，在 keyword_extractor 与 recommender 中统一采用 TF-IDF 向量化，形成从上传到推荐的完整流水线。
 
-2. Carbonell, J., & Goldstein, J. (1998). The use of MMR, diversity-based reranking for reordering documents and producing summaries. *Proceedings of the 21st annual international ACM SIGIR conference on Research and development in information retrieval*, 335-336.
+2. Carbonell, J., & Goldstein, J. (1998). The use of MMR, diversity-based reranking for reordering documents and producing summaries. *Proceedings of the 21st annual international ACM SIGIR conference on Research and development in information retrieval*, 335-336.  
+   **概要**：提出 MMR 多样性重排序，说明如何在相关性与多样性之间权衡，与 TF-IDF 关键词选择结合使用。读后在本系统中：在 TF-IDF 候选词之后接入 MMR 选 Top-K 关键词，再对这些关键词做多源搜索与 CBF 推荐，使“少而多样的关键词”驱动“多而相关的资源”的整条流程一致。
 
-3. Lops, P., de Gemmis, M., & Semeraro, G. (2011). Content-based recommender systems: State of the art and trends. *Recommender systems handbook*, 73-105.
+3. Lops, P., de Gemmis, M., & Semeraro, G. (2011). Content-based recommender systems: State of the art and trends. *Recommender systems handbook*, 73-105.  
+   **概要**：综述 CBF 的技术路线与评估，支撑“TF-IDF + 余弦相似度”作为内容推荐核心组件的选择。读后在本系统中：在 keyword_extractor → resource_searcher → recommender 三模块中串联“TF-IDF + MMR + 多源搜索 + 过滤 + TF-IDF 相似度 + Top-K”，实现无需用户行为数据的端到端推荐流程。
 
 ---
 
@@ -444,9 +472,11 @@
 
 ### 12.4 参考文献
 
-1. Olston, C., & Najork, M. (2010). Web crawling. *Foundations and Trends in Information Retrieval*, 4(3), 175-246.
+1. Olston, C., & Najork, M. (2010). Web crawling. *Foundations and Trends in Information Retrieval*, 4(3), 175-246.  
+   **概要**：综述爬虫架构与策略，为多源网页抓取及与过滤流程的配合提供方法与可扩展性参考。读后在本系统中：在 resource_searcher 中先对 Wikipedia/Scholar/arXiv/YouTube/GitHub 做抓取与解析，再对结果依次做 filter_english_content、AI 关键词过滤、is_irrelevant_url、clean_extracted_content，把“多源抓取”与“多层过滤”做成一条流水线。
 
-2. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge university press. (Chapter 2: The term vocabulary and postings lists)
+2. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge university press. (Chapter 2: The term vocabulary and postings lists)  
+   **概要**：讲解词表与文本预处理，为多源结果上的英文检测、关键词过滤与内容清洗提供术语基础。读后在本系统中：用字符集比例做英文检测、用 AI_RELEVANT_KEYWORDS 做相关性过滤、用正则做 URL/标题与内容清洗，保证进入推荐阶段的资源已是英文且与 AI/ML 主题相关、噪声已去除。
 
 ---
 
@@ -479,9 +509,11 @@
 
 ### 13.4 参考文献
 
-1. W3C. (2024). Web Storage. *W3C Recommendation*. https://www.w3.org/TR/webstorage/
+1. W3C. (2024). Web Storage. *W3C Recommendation*. https://www.w3.org/TR/webstorage/  
+   **概要**：定义 localStorage/sessionStorage 的接口与行为，为用本地存储持久化主题偏好提供标准依据。读后在本系统中：用 localStorage.setItem('theme', 'light'|'dark') 保存主题，页面加载时在 loadPreferences() 中读取并给 body 添加或移除 light-mode 类，实现主题切换且刷新后仍生效。
 
-2. MDN Web Docs. (2024). Using the Web Storage API. *MDN Web Docs*. https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API
+2. MDN Web Docs. (2024). Using the Web Storage API. *MDN Web Docs*. https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API  
+   **概要**：说明 Web Storage API 的用法与注意点，便于正确实现主题等用户偏好的保存与恢复。读后在本系统中：主题按钮点击时切换 body.light-mode 并写入 localStorage，与语言偏好一起在 loadPreferences 中恢复，保证主题与语言都在客户端持久化、无需后端。
 
 ---
 
@@ -507,7 +539,7 @@
 - **浏览器原生**：Intersection Observer是浏览器原生API，无需第三方库，性能好
 - **GPU加速**：使用 `transform` 和 `opacity` 的动画可以利用GPU加速，流畅度高
 
-### 13.3 实际效果
+### 14.3 实际效果
 
 - **动画流畅**：在测试中，滚动渐入动画在桌面和移动设备上均流畅，无明显卡顿
 - **性能影响**：Intersection Observer的开销远低于滚动事件监听，对页面性能影响可忽略
@@ -515,11 +547,14 @@
 
 ### 14.4 参考文献
 
-1. W3C. (2024). Intersection Observer. *W3C Working Draft*. https://www.w3.org/TR/intersection-observer/
+1. W3C. (2024). Intersection Observer. *W3C Working Draft*. https://www.w3.org/TR/intersection-observer/  
+   **概要**：定义 Intersection Observer API，说明如何高效检测元素进入视口，为滚动渐入动画提供标准依据。读后在本系统中：在 progress.js、help.js 等中实现 initScrollFadeIn()，对 .scroll-fade-in 元素创建 IntersectionObserver，进入视口时添加 .visible 类，用 CSS opacity/transform 做淡入上滑，并在可见后 unobserve 避免重复触发。
 
-2. MDN Web Docs. (2024). Intersection Observer API. *MDN Web Docs*. https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+2. MDN Web Docs. (2024). Intersection Observer API. *MDN Web Docs*. https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API  
+   **概要**：介绍 API 的用法与典型场景（懒加载、曝光统计、动画触发），便于实现滚动触发的渐入效果。读后在本系统中：在帮助、进度等长页面对卡片/区块使用 .scroll-fade-in，用 Intersection Observer 替代 scroll 事件监听，减少重绘、保证滚动时渐入动画流畅。
 
-3. Google Developers. (2024). Optimize JavaScript Execution. *Web Fundamentals*. https://web.dev/optimize-javascript-execution/
+3. Google Developers. (2024). Optimize JavaScript Execution. *Web Fundamentals*. https://web.dev/optimize-javascript-execution/  
+   **概要**：说明如何减少 JS 执行对渲染的影响，与使用 Intersection Observer 替代滚动监听的优化思路一致。读后在本系统中：采用 Intersection Observer 驱动动画而非在 scroll 中频繁读 offsetTop/getBoundingClientRect，并仅用 opacity 与 transform 做动画以利于合成层，减轻长页面滚动时的卡顿。
 
 ---
 
@@ -552,11 +587,14 @@
 
 ### 15.4 参考文献
 
-1. pdfplumber Documentation. (2024). *pdfplumber*. https://github.com/jsvine/pdfplumber
+1. pdfplumber Documentation. (2024). *pdfplumber*. https://github.com/jsvine/pdfplumber  
+   **概要**：pdfplumber 的官方文档，说明如何从 PDF 中提取文本与表格，为本项目优先采用的 PDF 解析方式提供依据。读后在本系统中：在 file_utils.convert_all_pdfs_to_txt() 中优先用 pdfplumber 从用户上传的 ZIP 内 PDF 提取文本并写入 TXT，供后续关键词提取与相似度计算使用。
 
-2. PyPDF2 Documentation. (2024). *PyPDF2*. https://github.com/py-pdf/PyPDF2
+2. PyPDF2 Documentation. (2024). *PyPDF2*. https://github.com/py-pdf/PyPDF2  
+   **概要**：PyPDF2 的用法说明，作为 pdfplumber 失败时的备用库，保证 PDF 文本提取的容错性。读后在本系统中：当 pdfplumber 提取失败或不可用时，在 convert_all_pdfs_to_txt() 中回退到 PyPDF2 提取同一 PDF，减少因单库问题导致的整份文档无法处理的情况。
 
-3. Smith, L. (2010). An overview of the Tesseract OCR engine. *Proceedings of the 9th international conference on Document analysis and recognition*, 629-633. (关于OCR的参考，用于未来扩展扫描版PDF支持)
+3. Smith, L. (2010). An overview of the Tesseract OCR engine. *Proceedings of the 9th international conference on Document analysis and recognition*, 629-633. (关于OCR的参考，用于未来扩展扫描版PDF支持)  
+   **概要**：介绍 Tesseract OCR 的原理与能力，为将来支持扫描版 PDF 的 OCR 扩展提供技术参考。读后在本系统中：当前仅支持含内嵌文本的 PDF；该文献作为扩展依据，后续若支持扫描版 PDF，可在此流程前增加 OCR 步骤生成文本再进入现有 pipeline。
 
 ---
 
@@ -587,9 +625,11 @@
 
 ### 16.4 参考文献
 
-1. Werkzeug Documentation. (2024). *werkzeug.utils.secure_filename*. https://werkzeug.palletsprojects.com/en/stable/utils/#werkzeug.utils.secure_filename
+1. Werkzeug Documentation. (2024). *werkzeug.utils.secure_filename*. https://werkzeug.palletsprojects.com/en/stable/utils/#werkzeug.utils.secure_filename  
+   **概要**：说明 `secure_filename` 如何净化文件名并降低路径遍历风险，为安全处理上传文件名提供官方依据。读后在本系统中：在 app.py 上传处理与 file_utils 中对待写入磁盘的文件名先调用 secure_filename，再经自定义 sanitize_filename 处理特殊字符与长度，并将文件仅写入 data/uploads 等指定目录，避免路径遍历与非法路径。
 
-2. OWASP. (2021). Path Traversal. *OWASP Top 10*. https://owasp.org/www-community/attacks/Path_Traversal
+2. OWASP. (2021). Path Traversal. *OWASP Top 10*. https://owasp.org/www-community/attacks/Path_Traversal  
+   **概要**：介绍路径遍历攻击的原理与防护，强调对用户输入路径与文件名的校验与清理的必要性。读后在本系统中：不信任用户提供的文件名与路径，对所有解压与保存路径做基于 BASE_DIR 的限定，结合 secure_filename 与 sanitize_filename，并在保存结果/输出时同样使用清理后的名称，降低 Path Traversal 风险。
 
 ---
 
@@ -620,9 +660,11 @@
 
 ### 17.4 参考文献
 
-1. W3C. (2015). Server-Sent Events. *W3C Recommendation*. https://www.w3.org/TR/eventsource/
+1. W3C. (2015). Server-Sent Events. *W3C Recommendation*. https://www.w3.org/TR/eventsource/  
+   **概要**：规定 SSE 的协议与事件格式，为后端流式推送进度、前端实时更新提供标准依据。读后在本系统中：/process 使用符合 SSE 规范的 `data: {...}\n\n` 按步骤推送 type、progress、message；前端用 fetch + ReadableStream 解析行并更新进度条与终端区域，实现“上传后处理”的实时进度反馈而不轮询。
 
-2. Garrett, J. J. (2005). Ajax: A new approach to web applications. *Adaptive Path*, 18.
+2. Garrett, J. J. (2005). Ajax: A new approach to web applications. *Adaptive Path*, 18.  
+   **概要**：提出 Ajax 与异步数据更新范式，说明为何流式/增量更新能改善长时间任务时的用户体验。读后在本系统中：采用单次 /process 请求 + 服务端持续推送进度事件的方式，在关键词提取、各源搜索、推荐等每个子步骤完成后立即推送一条事件，前端据此更新 UI，使用户在几分钟的处理过程中能持续看到进度而非长时间白屏。
 
 ---
 
