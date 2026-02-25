@@ -40,21 +40,13 @@ def measure_with_resources(
 ) -> Dict[str, Any]:
     """
     多次执行 func()，统计耗时与资源占用（需 psutil）。
-    返回: avg_time, total_time, cpu_avg_pct, cpu_peak_pct, mem_peak_mb
+    返回: avg_time_s, total_time_s, t_full_s, cpu_avg_pct, cpu_peak_pct, mem_peak_mb
     """
     times: list[float] = []
     all_cpu: list[float] = []
     all_mem: list[float] = []
 
     for _ in range(repeat):
-        if _HAS_PSUTIL:
-            sample_thread = threading.Thread(
-                target=lambda: _sample_process_resources(pid, stop),
-                daemon=True,
-            )
-            # 实际把结果收集到 all_cpu / all_mem 需要改设计，这里简化为单次运行采样
-            pass
-
         start = time.perf_counter()
         if _HAS_PSUTIL:
             proc = psutil.Process(os.getpid())
@@ -150,8 +142,6 @@ def main() -> None:
 
     print("\n=== 性能测试结束 ===")
     print("将上述 t_full_s / cpu_avg_pct / mem_peak_mb 填入 evaluation_objective 结果表。")
-    for r in results:
-        print(r)
 
 
 if __name__ == "__main__":
