@@ -1,0 +1,1313 @@
+{
+  "txt": [
+    {
+      "title": "Computer vision - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Image classification ) Computerized information extraction from images Part of a series on Artificial intelligence (AI) Computer vision tasks include methods for acquiring , processing , analyzing , and understanding digital images , and extraction of high-dimensional data from the real world in order to produce numerical or symbolic information, e.g. in the form of decisions. 1 2 3 4 \"Understanding\" in this context signifies the transformation of visual images into descriptions of the world that make sense to thought processes and can elicit appropriate action. This image understanding can be seen as the disentangling of symbolic information from image data using models constructed with the aid of geometry , physics , statistics , and learning theory. The scientific discipline of computer vision is concerned with the theory behind artificial systems that extract information from images. Image data can take many forms, such as video sequences, views from multiple cameras, multi-dimensional data from a 3D scanner , 3D point clouds from LiDaR sensors, or medical scanning devices. The technological discipline of computer vision seeks to apply its theories and models to the construction of computer vision systems. Subdisciplines of computer vision include scene reconstruction , object detection , event detection , activity recognition , video tracking , object recognition , 3D pose estimation , learning, indexing, motion estimation , visual servoing , 3D scene modeling , and image restoration. Computer vision is an interdisciplinary field that deals with how computers can be made to gain high-level understanding from digital images or videos. From the perspective of engineering , it seeks to automate tasks that the human visual system can do. 5 6 7 \"Computer vision is concerned with the automatic extraction, analysis, and understanding of useful information from a single image or a sequence of images. It involves the development of a theoretical and algorithmic basis to achieve automatic visual understanding.\" 8 As a scientific discipline , computer vision is concerned with the theory behind artificial systems that extract information from images. The image data can take many forms, such as video sequences, views from multiple cameras, or multi-dimensional data from a medical scanner. 9 As a technological discipline, computer vision seeks to apply its theories and models for the construction of computer vision systems. Machine vision refers to a systems engineering discipline, especially in the context of factory automation. In more recent times, the terms computer vision and machine vision have converged to a greater degree. 10 13 In the late 1960s, computer vision began at universities that were pioneering artificial intelligence. It was meant to mimic the human visual system as a stepping stone to endowing robots with intelligent behavior. 11 In 1966, it was believed that this could be achieved through an undergraduate summer project, 12 by attaching a camera to a computer and having it \"describe what it saw\". 13 14 What distinguished computer vision from the prevalent field of digital image processing at that time was a desire to extract three-dimensional structure from images with the goal of achieving full scene understanding. Studies in the 1970s formed the early foundations for many of the computer vision algorithms that exist today, including extraction of edges from images, labeling of lines, non-polyhedral and polyhedral modeling , representation of objects as interconnections of smaller structures, optical flow , and motion estimation. 11 The next decade saw studies based on more rigorous mathematical analysis and quantitative aspects of computer vision. These include the concept of scale-space , the inference of shape from various cues such as shading , texture and focus, and contour models known as snakes. With the advent of optimization methods for camera calibration, it was realized that a lot of the ideas were already explored in bundle adjustment theory from the field of photogrammetry. This led to methods for sparse 3-D reconstructions of scenes from multiple images. Progress was made on the dense stereo correspondence problem and further multi-view stereo techniques. At the same time, variations of graph cut were used to solve image segmentation. This decade also marked the first time statistical learning techniques were used in practice to recognize faces in images (see Eigenface ). Toward the end of the 1990s, a significant change came about with the increased interaction between the fields of computer graphics and computer vision. This included image-based rendering , image morphing , view interpolation, panoramic image stitching and early light-field rendering. 11 Recent work has seen the resurgence of feature -based methods used in conjunction with machine learning techniques and complex optimization frameworks.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/image_classification",
+      "type": "txt"
+    },
+    {
+      "title": "A survey of image classification methods and techniques for improving classification performance",
+      "content": "论文标题: A survey of image classification methods and techniques for improving classification performance\n\n作者/来源: D Lu, Q Weng - International journal of Remote sensing, 2007 - Taylor &amp; Francis\n\n摘要: … Image classification is a complex process that may be affected by many factors. This … image \nclassification. The emphasis is placed on the summarization of major advanced classification …\n\n论文链接: https://www.tandfonline.com/doi/abs/10.1080/01431160600746456\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/01431160600746456",
+      "type": "txt"
+    },
+    {
+      "title": "Review of image classification algorithms based on convolutional neural networks",
+      "content": "论文标题: Review of image classification algorithms based on convolutional neural networks\n\n作者/来源: L Chen, S Li, Q Bai, J Yang, S Jiang, Y Miao - Remote Sensing, 2021 - mdpi.com\n\n摘要: … classification accuracy. In this review, which focuses on the application of CNNs to image \nclassification … comparison of various image classification methods mentioned in this article. …\n\n论文链接: https://www.mdpi.com/2072-4292/13/22/4712\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.mdpi.com/2072-4292/13/22/4712",
+      "type": "txt"
+    },
+    {
+      "title": "Survey on SVM and their application in image classification",
+      "content": "论文标题: Survey on SVM and their application in image classification\n\n作者/来源: MA Chandra, SS Bedi - International Journal of Information Technology, 2021 - Springer\n\n摘要: … Here this paper discusses the some important technique for the image classification. … \nclassification, with SVM, here, this paper discusses the different approaches of image classification …\n\n论文链接: https://link.springer.com/article/10.1007/s41870-017-0080-1\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/article/10.1007/s41870-017-0080-1",
+      "type": "txt"
+    },
+    {
+      "title": "MobileNetV3 for image classification",
+      "content": "论文标题: MobileNetV3 for image classification\n\n作者/来源: S Qian, C Ning, Y Hu - … on Big Data, Artificial Intelligence and …, 2021 - ieeexplore.ieee.org\n\n摘要: … of image classification tasks among MobileNetV3 and certain standard CNN models based \non the image … MobileNetV3 models can complete image classification tasks with much higher …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/9389905/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9389905/",
+      "type": "txt"
+    },
+    {
+      "title": "Deep convolutional neural networks for image classification: A comprehensive review",
+      "content": "论文标题: Deep convolutional neural networks for image classification: A comprehensive review\n\n作者/来源: W Rawat, Z Wang - Neural computation, 2017 - ieeexplore.ieee.org\n\n摘要: … In this review, which focuses on the application of CNNs to image classification tasks, we \ncover their development, from their predecessors up to recent state-of-the-art deep learning …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/8016501/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8016501/",
+      "type": "txt"
+    },
+    {
+      "title": "Exploring the significance of using perceptually relevant image decolorization method for scene classification",
+      "content": "论文标题: Exploring the significance of using perceptually relevant image decolorization method for scene classification\n\n作者: V. Sowmya, D. Govind, K. P. Soman\n\n摘要: A color image contains luminance and chrominance components representing the intensity and color information respectively. The objective of the work presented in this paper is to show the significance of incorporating the chrominance information for the task of scene classification. An improved color-to-grayscale image conversion algorithm by effectively incorporating the chrominance information is proposed using color-to-gay structure similarity index (C2G-SSIM) and singular value decomposition (SVD) to improve the perceptual quality of the converted grayscale images. The experimental result analysis based on the image quality assessment for image decolorization called C2G-SSIM and success rate (Cadik and COLOR250 datasets) shows that the proposed image decolorization technique performs better than 8 existing benchmark algorithms for image decolorization. In the second part of the paper, the effectiveness of incorporating the chrominance component in scene classification task is demon...\n\narXiv链接: http://arxiv.org/abs/1712.10152v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1712.10152v1",
+      "type": "txt"
+    },
+    {
+      "title": "Classification of Shoulder X-Ray Images with Deep Learning Ensemble Models",
+      "content": "论文标题: Classification of Shoulder X-Ray Images with Deep Learning Ensemble Models\n\n作者: Fatih Uysal, Fırat Hardalaç, Ozan Peker, Tolga Tolunay, Nil Tokgöz\n\n摘要: Fractures occur in the shoulder area, which has a wider range of motion than other joints in the body, for various reasons. To diagnose these fractures, data gathered from Xradiation (X-ray), magnetic resonance imaging (MRI), or computed tomography (CT) are used. This study aims to help physicians by classifying shoulder images taken from X-ray devices as fracture / non-fracture with artificial intelligence. For this purpose, the performances of 26 deep learning-based pretrained models in the detection of shoulder fractures were evaluated on the musculoskeletal radiographs (MURA) dataset, and two ensemble learning models (EL1 and EL2) were developed. The pretrained models used are ResNet, ResNeXt, DenseNet, VGG, Inception, MobileNet, and their spinal fully connected (Spinal FC) versions. In the EL1 and EL2 models developed using pretrained models with the best performance, test accuracy was 0.8455,0.8472, Cohens kappa was 0.6907, 0.6942 and the area that was related with fracture class...\n\narXiv链接: http://arxiv.org/abs/2102.00515v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2102.00515v3",
+      "type": "txt"
+    },
+    {
+      "title": "Texture image analysis and texture classification methods - A review",
+      "content": "论文标题: Texture image analysis and texture classification methods - A review\n\n作者: Laleh Armi, Shervan Fekri-Ershad\n\n摘要: Tactile texture refers to the tangible feel of a surface and visual texture refers to see the shape or contents of the image. In the image processing, the texture can be defined as a function of spatial variation of the brightness intensity of the pixels. Texture is the main term used to define objects or concepts of a given image. Texture analysis plays an important role in computer vision cases such as object recognition, surface defect detection, pattern recognition, medical image analysis, etc. Since now many approaches have been proposed to describe texture images accurately. Texture analysis methods usually are classified into four categories: statistical methods, structural, model-based and transform-based methods. This paper discusses the various methods used for texture or analysis in details. New researches shows the power of combinational methods for texture analysis, which can't be in specific category. This paper provides a review on well known combinational methods in a s...\n\narXiv链接: http://arxiv.org/abs/1904.06554v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1904.06554v1",
+      "type": "txt"
+    },
+    {
+      "title": "Computer vision - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Computerized information extraction from images Part of a series on Artificial intelligence (AI) Computer vision tasks include methods for acquiring , processing , analyzing , and understanding digital images , and extraction of high-dimensional data from the real world in order to produce numerical or symbolic information, e.g. in the form of decisions. 1 2 3 4 \"Understanding\" in this context signifies the transformation of visual images into descriptions of the world that make sense to thought processes and can elicit appropriate action. This image understanding can be seen as the disentangling of symbolic information from image data using models constructed with the aid of geometry , physics , statistics , and learning theory. The scientific discipline of computer vision is concerned with the theory behind artificial systems that extract information from images. Image data can take many forms, such as video sequences, views from multiple cameras, multi-dimensional data from a 3D scanner , 3D point clouds from LiDaR sensors, or medical scanning devices. The technological discipline of computer vision seeks to apply its theories and models to the construction of computer vision systems. Subdisciplines of computer vision include scene reconstruction , object detection , event detection , activity recognition , video tracking , object recognition , 3D pose estimation , learning, indexing, motion estimation , visual servoing , 3D scene modeling , and image restoration. Computer vision is an interdisciplinary field that deals with how computers can be made to gain high-level understanding from digital images or videos. From the perspective of engineering , it seeks to automate tasks that the human visual system can do. 5 6 7 \"Computer vision is concerned with the automatic extraction, analysis, and understanding of useful information from a single image or a sequence of images. It involves the development of a theoretical and algorithmic basis to achieve automatic visual understanding.\" 8 As a scientific discipline , computer vision is concerned with the theory behind artificial systems that extract information from images. The image data can take many forms, such as video sequences, views from multiple cameras, or multi-dimensional data from a medical scanner. 9 As a technological discipline, computer vision seeks to apply its theories and models for the construction of computer vision systems. Machine vision refers to a systems engineering discipline, especially in the context of factory automation. In more recent times, the terms computer vision and machine vision have converged to a greater degree. 10 13 In the late 1960s, computer vision began at universities that were pioneering artificial intelligence. It was meant to mimic the human visual system as a stepping stone to endowing robots with intelligent behavior. 11 In 1966, it was believed that this could be achieved through an undergraduate summer project, 12 by attaching a camera to a computer and having it \"describe what it saw\". 13 14 What distinguished computer vision from the prevalent field of digital image processing at that time was a desire to extract three-dimensional structure from images with the goal of achieving full scene understanding. Studies in the 1970s formed the early foundations for many of the computer vision algorithms that exist today, including extraction of edges from images, labeling of lines, non-polyhedral and polyhedral modeling , representation of objects as interconnections of smaller structures, optical flow , and motion estimation. 11 The next decade saw studies based on more rigorous mathematical analysis and quantitative aspects of computer vision. These include the concept of scale-space , the inference of shape from various cues such as shading , texture and focus, and contour models known as snakes. With the advent of optimization methods for camera calibration, it was realized that a lot of the ideas were already explored in bundle adjustment theory from the field of photogrammetry. This led to methods for sparse 3-D reconstructions of scenes from multiple images. Progress was made on the dense stereo correspondence problem and further multi-view stereo techniques. At the same time, variations of graph cut were used to solve image segmentation. This decade also marked the first time statistical learning techniques were used in practice to recognize faces in images (see Eigenface ). Toward the end of the 1990s, a significant change came about with the increased interaction between the fields of computer graphics and computer vision. This included image-based rendering , image morphing , view interpolation, panoramic image stitching and early light-field rendering. 11 Recent work has seen the resurgence of feature -based methods used in conjunction with machine learning techniques and complex optimization frameworks.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/computer_vision",
+      "type": "txt"
+    },
+    {
+      "title": "Deep learning for computer vision: A brief review",
+      "content": "论文标题: Deep learning for computer vision: A brief review\n\n作者/来源: A Voulodimos, N Doulamis, A Doulamis… - Computational …, 2018 - Wiley Online Library\n\n摘要: … The overview is intended to be useful to computer vision and … the art in deep learning for \ncomputer vision tasks, such as object … learning algorithms to key computer vision tasks, such as …\n\n论文链接: https://onlinelibrary.wiley.com/doi/abs/10.1155/2018/7068349\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1155/2018/7068349",
+      "type": "txt"
+    },
+    {
+      "title": "Computer vision",
+      "content": "论文标题: Computer vision\n\n作者/来源: G Stockman, LG Shapiro - 2001 - dl.acm.org\n\n摘要: From the Publisher: Computer Vision presents the necessary theory and techniques for students \nand practitioners who will work in fields where significant information must be extracted …\n\n论文链接: https://dl.acm.org/doi/abs/10.5555/558008\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://dl.acm.org/doi/abs/10.5555/558008",
+      "type": "txt"
+    },
+    {
+      "title": "Computer vision: algorithms and applications",
+      "content": "论文标题: Computer vision: algorithms and applications\n\n作者/来源: R Szeliski - 2022 - books.google.com\n\n摘要: … doing computer vision research in … in computer vision to students in both computer science \nand electrical engineering. I prefer students to have either an image processing or a computer …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=QptXEAAAQBAJ&amp;oi=fnd&amp;pg=PR9&amp;dq=computer+vision&amp;ots=BNBgt_Vwvp&amp;sig=Hxl5pwHjxMw0e1Eeymz6MHVQzMw\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=QptXEAAAQBAJ&amp;oi=fnd&amp;pg=PR9&amp;dq=computer+vision&amp;ots=BNBgt_Vwvp&amp;sig=Hxl5pwHjxMw0e1Eeymz6MHVQzMw",
+      "type": "txt"
+    },
+    {
+      "title": "A perspective on range finding techniques for computer vision",
+      "content": "论文标题: A perspective on range finding techniques for computer vision\n\n作者/来源: RA Jarvis - IEEE Transactions on Pattern Analysis and …, 1983 - ieeexplore.ieee.org\n\n摘要: … contributing little to our understanding of human vision, are certainly acceptable in indoor … \nthis analysis outside the scope of legitimate computer vision. That both intensity and range …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/4767365/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/4767365/",
+      "type": "txt"
+    },
+    {
+      "title": "Emerging topics in computer vision",
+      "content": "论文标题: Emerging topics in computer vision\n\n作者/来源: G Medioni, SB Kang - 2004 - dl.acm.org\n\n摘要: … computer vision innovations. Gerard Medioni and Sing Bing Kang present advances in \ncomputer vision … introduce important new topics such as vision for special effects and the tensor …\n\n论文链接: https://dl.acm.org/doi/abs/10.5555/993884\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://dl.acm.org/doi/abs/10.5555/993884",
+      "type": "txt"
+    },
+    {
+      "title": "WiCV 2019: The Sixth Women In Computer Vision Workshop",
+      "content": "论文标题: WiCV 2019: The Sixth Women In Computer Vision Workshop\n\n作者: Irene Amerini, Elena Balashova, Sayna Ebrahimi, Kathryn Leonard, Arsha Nagrani\n\n摘要: In this paper we present the Women in Computer Vision Workshop - WiCV 2019, organized in conjunction with CVPR 2019. This event is meant for increasing the visibility and inclusion of women researchers in the computer vision field. Computer vision and machine learning have made incredible progress over the past years, but the number of female researchers is still low both in academia and in industry. WiCV is organized especially for the following reason: to raise visibility of female researchers, to increase collaborations between them, and to provide mentorship to female junior researchers in the field. In this paper, we present a report of trends over the past years, along with a summary of statistics regarding presenters, attendees, and sponsorship for the current workshop.\n\narXiv链接: http://arxiv.org/abs/1909.10225v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1909.10225v1",
+      "type": "txt"
+    },
+    {
+      "title": "Spatial Monitoring and Insect Behavioural Analysis Using Computer Vision for Precision Pollination",
+      "content": "论文标题: Spatial Monitoring and Insect Behavioural Analysis Using Computer Vision for Precision Pollination\n\n作者: Malika Nisal Ratnayake, Don Chathurika Amarathunga, Asaduz Zaman, Adrian G. Dyer, Alan Dorin\n\n摘要: Insects are the most important global pollinator of crops and play a key role in maintaining the sustainability of natural ecosystems. Insect pollination monitoring and management are therefore essential for improving crop production and food security. Computer vision facilitated pollinator monitoring can intensify data collection over what is feasible using manual approaches. The new data it generates may provide a detailed understanding of insect distributions and facilitate fine-grained analysis sufficient to predict their pollination efficacy and underpin precision pollination. Current computer vision facilitated insect tracking in complex outdoor environments is restricted in spatial coverage and often constrained to a single insect species. This limits its relevance to agriculture. Therefore, in this article we introduce a novel system to facilitate markerless data capture for insect counting, insect motion tracking, behaviour analysis and pollination prediction across large agri...\n\narXiv链接: http://arxiv.org/abs/2205.04675v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2205.04675v2",
+      "type": "txt"
+    },
+    {
+      "title": "Global Adaptive Filtering Layer for Computer Vision",
+      "content": "论文标题: Global Adaptive Filtering Layer for Computer Vision\n\n作者: Viktor Shipitsin, Iaroslav Bespalov, Dmitry V. Dylov\n\n摘要: We devise a universal adaptive neural layer to \"learn\" optimal frequency filter for each image together with the weights of the base neural network that performs some computer vision task. The proposed approach takes the source image in the spatial domain, automatically selects the best frequencies from the frequency domain, and transmits the inverse-transform image to the main neural network. Remarkably, such a simple add-on layer dramatically improves the performance of the main network regardless of its design. We observe that the light networks gain a noticeable boost in the performance metrics; whereas, the training of the heavy ones converges faster when our adaptive layer is allowed to \"learn\" alongside the main architecture. We validate the idea in four classical computer vision tasks: classification, segmentation, denoising, and erasing, considering popular natural and medical data benchmarks.\n\narXiv链接: http://arxiv.org/abs/2010.01177v4\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2010.01177v4",
+      "type": "txt"
+    },
+    {
+      "title": "Convolutional neural network - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Convolutional neural networks ) Type of feedforward neural network Part of a series on Machine learning and data mining A convolutional neural network ( CNN ) is a type of feedforward neural network that learns features via filter (or kernel ) optimization. This type of deep learning network has been applied to process and make predictions from many different types of data including text, images and audio. 1 CNNs are the de-facto standard in deep learning-based approaches to computer vision 2 and image processing , and have only recently been replaced—in some cases—by newer architectures such as the transformer. Vanishing gradients and exploding gradients, seen during backpropagation in earlier neural networks, are prevented by the regularization that comes from using shared weights over fewer connections. 3 4 For example, for each neuron in the fully-connected layer, 10,000 weights would be required for processing an image sized 100 × 100 pixels. However, applying cascaded convolution (or cross-correlation) kernels, 5 6 only 25 weights for each convolutional layer are required to process 5x5-sized tiles. 7 8 Higher-layer features are extracted from wider context windows, compared to lower-layer features. Some applications of CNNs include: image and video recognition , 9 recommender systems , 10 image classification , image segmentation , medical image analysis , natural language processing , 11 brain–computer interfaces , 12 and financial time series. 13 CNNs are also known as shift invariant or space invariant artificial neural networks , based on the shared-weight architecture of the convolution kernels or filters that slide along input features and provide translation- equivariant responses known as feature maps. 14 15 Counter-intuitively, most convolutional neural networks are not invariant to translation , due to the downsampling operation they apply to the input. 16 Feedforward neural networks are usually fully connected networks, that is, each neuron in one layer is connected to all neurons in the next layer. The \"full connectivity\" of these networks makes them prone to overfitting data. Typical ways of regularization, or preventing overfitting, include: penalizing parameters during training (such as weight decay) or trimming connectivity (skipped connections, dropout, etc.) Robust datasets also increase the probability that CNNs will learn the generalized principles that characterize a given dataset rather than the biases of a poorly-populated set. 17 Convolutional networks were inspired by biological processes 18 19 20 21 in that the connectivity pattern between neurons resembles the organization of the animal visual cortex. Individual cortical neurons respond to stimuli only in a restricted region of the visual field known as the receptive field. The receptive fields of different neurons partially overlap such that they cover the entire visual field. CNNs use relatively little pre-processing compared to other image classification algorithms. This means that the network learns to optimize the filters (or kernels) through automated learning, whereas in traditional algorithms these filters are hand-engineered. This simplifies and automates the process, enhancing efficiency and scalability overcoming human-intervention bottlenecks. Comparison of the LeNet (1995) and AlexNet (2012) convolution, pooling and dense layers A convolutional neural network consists of an input layer, hidden layers and an output layer. In a convolutional neural network, the hidden layers include one or more layers that perform convolutions. Typically this includes a layer that performs a dot product of the convolution kernel with the layer's input matrix. This product is usually the Frobenius inner product , and its activation function is commonly ReLU. As the convolution kernel slides along the input matrix for the layer, the convolution operation generates a feature map, which in turn contributes to the input of the next layer. This is followed by other layers such as pooling layers , fully connected layers, and normalization layers. Here it should be noted how close a convolutional neural network is to a matched filter. 22 In a CNN, the input is a tensor with shape: (number of inputs) × (input height) × (input width) × (input channels ) After passing through a convolutional layer, the image becomes abstracted to a feature map, also called an activation map, with shape: (number of inputs) × (feature map height) × (feature map width) × (feature map channels ). Convolutional layers convolve the input and pass its result to the next layer. This is similar to the response of a neuron in the visual cortex to a specific stimulus. 23 Each convolutional neuron processes data only for its receptive field.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/convolutional_neural_networks",
+      "type": "txt"
+    },
+    {
+      "title": "A survey of convolutional neural networks: analysis, applications, and prospects",
+      "content": "论文标题: A survey of convolutional neural networks: analysis, applications, and prospects\n\n作者/来源: Z Li, F Liu, W Yang, S Peng… - … on neural networks and …, 2021 - ieeexplore.ieee.org\n\n摘要: … Micheli [55] proposed the first graph convolution neural network based on spatial domain, \ncalled neural network for graphs (NN4G). It performs convolutions by accumulating a neighbor …\n\n论文链接: https://ieeexplore.ieee.org/document/9451544/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/document/9451544/",
+      "type": "txt"
+    },
+    {
+      "title": "An introduction to convolutional neural networks",
+      "content": "论文标题: An introduction to convolutional neural networks\n\n作者/来源: K O&#39;shea, R Nash - arXiv preprint arXiv:1511.08458, 2015 - arxiv.org\n\n摘要: … This paper has outlined the basic concepts of Convolutional Neural Networks, … the network \nin most image analysis tasks. Research in the field of image analysis using neural networks …\n\n论文链接: https://arxiv.org/abs/1511.08458\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://arxiv.org/abs/1511.08458",
+      "type": "txt"
+    },
+    {
+      "title": "Recent advances in convolutional neural networks",
+      "content": "论文标题: Recent advances in convolutional neural networks\n\n作者/来源: J Gu, Z Wang, J Kuen, L Ma, A Shahroudy, B Shuai… - Pattern recognition, 2018 - Elsevier\n\n摘要: … of deep neural networks, convolutional neural networks have … units, the research on \nconvolutional neural networks has been … applications of convolutional neural networks in …\n\n论文链接: https://www.sciencedirect.com/science/article/pii/S0031320317304120\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0031320317304120",
+      "type": "txt"
+    },
+    {
+      "title": "Convolutional neural networks",
+      "content": "论文标题: Convolutional neural networks\n\n作者/来源: N Ketkar, J Moolayil - Deep learning with Python: learn best practices of …, 2021 - Springer\n\n摘要: … layers of a neural network with the convolution operation have less capacity than that of a \nfully connected network. That is, there exists datasets that a fully connected network will be …\n\n论文链接: https://link.springer.com/chapter/10.1007/978-1-4842-5364-9_6\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/chapter/10.1007/978-1-4842-5364-9_6",
+      "type": "txt"
+    },
+    {
+      "title": "Introduction to convolutional neural networks",
+      "content": "论文标题: Introduction to convolutional neural networks\n\n作者/来源: J Wu - National Key Lab for Novel Software Technology …, 2017 - project.inria.fr\n\n摘要: … This is a note that describes how a Convolutional Neural Network (CNN) operates from a … \nThe Convolutional Neural Network (CNN) has shown excellent performance in many …\n\n论文链接: https://project.inria.fr/quidiasante/files/2021/06/CNN.pdf\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://project.inria.fr/quidiasante/files/2021/06/CNN.pdf",
+      "type": "txt"
+    },
+    {
+      "title": "Towards Dropout Training for Convolutional Neural Networks",
+      "content": "论文标题: Towards Dropout Training for Convolutional Neural Networks\n\n作者: Haibing Wu, Xiaodong Gu\n\n摘要: Recently, dropout has seen increasing use in deep learning. For deep convolutional neural networks, dropout is known to work well in fully-connected layers. However, its effect in convolutional and pooling layers is still not clear. This paper demonstrates that max-pooling dropout is equivalent to randomly picking activation based on a multinomial distribution at training time. In light of this insight, we advocate employing our proposed probabilistic weighted pooling, instead of commonly used max-pooling, to act as model averaging at test time. Empirical evidence validates the superiority of probabilistic weighted pooling. We also empirically show that the effect of convolutional dropout is not trivial, despite the dramatically reduced possibility of over-fitting due to the convolutional architecture. Elaborately designing dropout training simultaneously in max-pooling and fully-connected layers, we achieve state-of-the-art performance on MNIST, and very competitive results on CIFAR-1...\n\narXiv链接: http://arxiv.org/abs/1512.00242v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1512.00242v1",
+      "type": "txt"
+    },
+    {
+      "title": "Acute Lymphoblastic Leukemia Detection Using Hypercomplex-Valued Convolutional Neural Networks",
+      "content": "论文标题: Acute Lymphoblastic Leukemia Detection Using Hypercomplex-Valued Convolutional Neural Networks\n\n作者: Guilherme Vieira, Marcos Eduardo Valle\n\n摘要: This paper features convolutional neural networks defined on hypercomplex algebras applied to classify lymphocytes in blood smear digital microscopic images. Such classification is helpful for the diagnosis of acute lymphoblast leukemia (ALL), a type of blood cancer. We perform the classification task using eight hypercomplex-valued convolutional neural networks (HvCNNs) along with real-valued convolutional networks. Our results show that HvCNNs perform better than the real-valued model, showcasing higher accuracy with a much smaller number of parameters. Moreover, we found that HvCNNs based on Clifford algebras processing HSV-encoded images attained the highest observed accuracies. Precisely, our HvCNN yielded an average accuracy rate of 96.6% using the ALL-IDB2 dataset with a 50% train-test split, a value extremely close to the state-of-the-art models but using a much simpler architecture with significantly fewer parameters.\n\narXiv链接: http://arxiv.org/abs/2205.13273v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2205.13273v1",
+      "type": "txt"
+    },
+    {
+      "title": "The Deep Arbitrary Polynomial Chaos Neural Network or how Deep Artificial Neural Networks could benefit from Data-Driven Homogeneous Chaos Theory",
+      "content": "论文标题: The Deep Arbitrary Polynomial Chaos Neural Network or how Deep Artificial Neural Networks could benefit from Data-Driven Homogeneous Chaos Theory\n\n作者: Sergey Oladyshkin, Timothy Praditia, Ilja Kröker, Farid Mohammadi, Wolfgang Nowak\n\n摘要: Artificial Intelligence and Machine learning have been widely used in various fields of mathematical computing, physical modeling, computational science, communication science, and stochastic analysis. Approaches based on Deep Artificial Neural Networks (DANN) are very popular in our days. Depending on the learning task, the exact form of DANNs is determined via their multi-layer architecture, activation functions and the so-called loss function. However, for a majority of deep learning approaches based on DANNs, the kernel structure of neural signal processing remains the same, where the node response is encoded as a linear superposition of neural activity, while the non-linearity is triggered by the activation functions. In the current paper, we suggest to analyze the neural signal processing in DANNs from the point of view of homogeneous chaos theory as known from polynomial chaos expansion (PCE). From the PCE perspective, the (linear) response on each node of a DANN could be seen a...\n\narXiv链接: http://arxiv.org/abs/2306.14753v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2306.14753v1",
+      "type": "txt"
+    },
+    {
+      "title": "Feature learning - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Representation learning ) Set of learning techniques in machine learning Part of a series on Machine learning and data mining Diagram of the feature learning paradigm in ML for application to downstream tasks, which can be applied to either raw data such as images or text, or to an initial set of features of the data. Feature learning is intended to result in faster training or better performance in task-specific settings than if the data was input directly (compare transfer learning ). 1 In machine learning , feature learning or representation learning 2 is a set of techniques that allow a system to automatically discover the representations needed for feature detection or classification from raw data. This replaces manual feature engineering and allows a machine to both learn the features and use them to perform a specific task. Feature learning is motivated by the fact that ML tasks such as classification often require input that is mathematically and computationally convenient to process. However, real-world data, such as image, video, and sensor data, have not yielded to attempts to algorithmically define specific features. An alternative is to discover such features or representations through examination, without relying on explicit algorithms. Feature learning can be either supervised, unsupervised, or self-supervised: In supervised feature learning , features are learned using labeled input data. Labeled data includes input-label pairs where the input is given to the model, and it must produce the ground truth label as the output. 3 This can be leveraged to generate feature representations with the model which result in high label prediction accuracy. Examples include supervised neural networks , multilayer perceptrons , and dictionary learning. In unsupervised feature learning , features are learned with unlabeled input data by analyzing the relationship between points in the dataset. 4 Examples include dictionary learning, independent component analysis , matrix factorization , 5 and various forms of clustering. 6 7 8 In self-supervised feature learning , features are learned using unlabeled data like unsupervised learning, however input-label pairs are constructed from each data point, enabling learning the structure of the data through supervised methods such as gradient descent. 9 Classical examples include word embeddings and autoencoders. 10 11 Self-supervised learning has since been applied to many modalities through the use of deep neural network architectures such as convolutional neural networks and transformers. 9 Supervised feature learning is learning features from labeled data. The data label allows the system to compute an error term, the degree to which the system fails to produce the label, which can then be used as feedback to correct the learning process (reduce/minimize the error). Approaches include: Dictionary learning develops a set (dictionary) of representative elements from the input data such that each data point can be represented as a weighted sum of the representative elements. The dictionary elements and the weights may be found by minimizing the average representation error (over the input data), together with L1 regularization on the weights to enable sparsity (i.e., the representation of each data point has only a few nonzero weights). Supervised dictionary learning exploits both the structure underlying the input data and the labels for optimizing the dictionary elements. For example, this 12 supervised dictionary learning technique applies dictionary learning on classification problems by jointly optimizing the dictionary elements, weights for representing data points, and parameters of the classifier based on the input data. In particular, a minimization problem is formulated, where the objective function consists of the classification error, the representation error, an L1 regularization on the representing weights for each data point (to enable sparse representation of data), and an L2 regularization on the parameters of the classifier. Neural networks are a family of learning algorithms that use a \"network\" consisting of multiple layers of inter-connected nodes. It is inspired by the animal nervous system, where the nodes are viewed as neurons and edges are viewed as synapses. Each edge has an associated weight, and the network defines computational rules for passing input data from the network's input layer to the output layer. A network function associated with a neural network characterizes the relationship between input and output layers, which is parameterized by the weights. With appropriately defined network functions, various learning tasks can be performed by minimizing a cost function over the network function (weights).",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/representation_learning",
+      "type": "txt"
+    },
+    {
+      "title": "Representation learning: A review and new perspectives",
+      "content": "论文标题: Representation learning: A review and new perspectives\n\n作者/来源: Y Bengio, A Courville, P Vincent - IEEE transactions on pattern …, 2013 - ieeexplore.ieee.org\n\n摘要: … As discussed below, we hypothesize that representation learning algorithms have an \nadvantage for such tasks because they learn representations that capture underlying factors, a …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/6472238/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/6472238/",
+      "type": "txt"
+    },
+    {
+      "title": "Network representation learning: A survey",
+      "content": "论文标题: Network representation learning: A survey\n\n作者/来源: D Zhang, J Yin, X Zhu, C Zhang - IEEE transactions on Big Data, 2018 - ieeexplore.ieee.org\n\n摘要: … art network representation learning techniques according to the underlying learning \nmechanisms… We summarize evaluation protocols used for validating network representation …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/8395024/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8395024/",
+      "type": "txt"
+    },
+    {
+      "title": "Contrastive representation learning: A framework and review",
+      "content": "论文标题: Contrastive representation learning: A framework and review\n\n作者/来源: PH Le-Khac, G Healy, AF Smeaton - Ieee Access, 2020 - ieeexplore.ieee.org\n\n摘要: … In this paper, we formulate and discuss a Contrastive Representation Learning (CRL) \nframework, which potentially represents another paradigm shift from architectureengineering to …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/9226466/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9226466/",
+      "type": "txt"
+    },
+    {
+      "title": "Matryoshka representation learning",
+      "content": "论文标题: Matryoshka representation learning\n\n作者/来源: A Kusupati, G Bhatt, A Rege… - Advances in …, 2022 - proceedings.neurips.cc\n\n摘要: … consistent halving until the representation size hits a … representation learning settings. For \nthe ease of exposition, we present the formulation for fully supervised representation learning …\n\n论文链接: https://proceedings.neurips.cc/paper_files/paper/2022/hash/c32319f4868da7613d78af9993100e42-Abstract-Conference.html\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/c32319f4868da7613d78af9993100e42-Abstract-Conference.html",
+      "type": "txt"
+    },
+    {
+      "title": "Representation learning on graphs: Methods and applications",
+      "content": "论文标题: Representation learning on graphs: Methods and applications\n\n作者/来源: WL Hamilton, R Ying, J Leskovec - arXiv preprint arXiv:1709.05584, 2017 - arxiv.org\n\n摘要: … We will assume that the primary input to our representation learning algorithm is an \nundirected graph G = (V,E) with associated binary adjacency matrix A.We also assume that the …\n\n论文链接: https://arxiv.org/abs/1709.05584\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://arxiv.org/abs/1709.05584",
+      "type": "txt"
+    },
+    {
+      "title": "Learning Cross-Lingual Sentence Representations via a Multi-task Dual-Encoder Model",
+      "content": "论文标题: Learning Cross-Lingual Sentence Representations via a Multi-task Dual-Encoder Model\n\n作者: Muthuraman Chidambaram, Yinfei Yang, Daniel Cer, Steve Yuan, Yun-Hsuan Sung\n\n摘要: A significant roadblock in multilingual neural language modeling is the lack of labeled non-English data. One potential method for overcoming this issue is learning cross-lingual text representations that can be used to transfer the performance from training on English tasks to non-English tasks, despite little to no task-specific non-English data. In this paper, we explore a natural setup for learning cross-lingual sentence representations: the dual-encoder. We provide a comprehensive evaluation of our cross-lingual representations on a number of monolingual, cross-lingual, and zero-shot/few-shot learning tasks, and also give an analysis of different learned cross-lingual embedding spaces.\n\narXiv链接: http://arxiv.org/abs/1810.12836v4\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1810.12836v4",
+      "type": "txt"
+    },
+    {
+      "title": "On the Interpretability and Evaluation of Graph Representation Learning",
+      "content": "论文标题: On the Interpretability and Evaluation of Graph Representation Learning\n\n作者: Antonia Gogoglou, C. Bayan Bruss, Keegan E. Hines\n\n摘要: With the rising interest in graph representation learning, a variety of approaches have been proposed to effectively capture a graph's properties. While these approaches have improved performance in graph machine learning tasks compared to traditional graph techniques, they are still perceived as techniques with limited insight into the information encoded in these representations. In this work, we explore methods to interpret node embeddings and propose the creation of a robust evaluation framework for comparing graph representation learning algorithms and hyperparameters. We test our methods on graphs with different properties and investigate the relationship between embedding training parameters and the ability of the produced embedding to recover the structure of the original graph in a downstream task.\n\narXiv链接: http://arxiv.org/abs/1910.03081v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1910.03081v1",
+      "type": "txt"
+    },
+    {
+      "title": "Meta-Learning Representations for Continual Learning",
+      "content": "论文标题: Meta-Learning Representations for Continual Learning\n\n作者: Khurram Javed, Martha White\n\n摘要: A continual learning agent should be able to build on top of existing knowledge to learn on new data quickly while minimizing forgetting. Current intelligent systems based on neural network function approximators arguably do the opposite---they are highly prone to forgetting and rarely trained to facilitate future learning. One reason for this poor behavior is that they learn from a representation that is not explicitly trained for these two goals. In this paper, we propose OML, an objective that directly minimizes catastrophic interference by learning representations that accelerate future learning and are robust to forgetting under online updates in continual learning. We show that it is possible to learn naturally sparse representations that are more effective for online updating. Moreover, our algorithm is complementary to existing continual learning strategies, such as MER and GEM. Finally, we demonstrate that a basic online updating strategy on representations learned by OML is c...\n\narXiv链接: http://arxiv.org/abs/1905.12588v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1905.12588v2",
+      "type": "txt"
+    },
+    {
+      "title": "Object detection - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Computer technology related to computer vision and image processing Objects detected with OpenCV's Deep Neural Network module (dnn) by using a YOLOv3 model trained on COCO dataset capable to detect objects of 80 common classes Object detection is a computer technology related to computer vision and image processing that deals with detecting instances of semantic objects of a certain class (such as humans, buildings, or cars) in digital images and videos. Object detection has applications in many areas of computer vision, including image retrieval and video surveillance. It is widely used in computer vision tasks such as image annotation , 2 vehicle counting, 3 activity recognition , 4 face detection , face recognition , video object co-segmentation. It is also used in tracking objects , for example tracking a ball during a football match, tracking movement of a cricket bat, or tracking a person in a video. Often, the test images are sampled from a different data distribution, making the object detection task significantly more difficult. 5 To address the challenges caused by the domain gap between training and test data, many unsupervised domain adaptation approaches have been proposed. 5 6 7 8 9 A simple and straightforward solution for reducing the domain gap is to apply an image-to-image translation approach, such as cycle-GAN. 10 Among other uses, cross-domain object detection is applied in autonomous driving, where models can be trained on a vast amount of video game scenes, since the labels can be generated without manual labor. Every object class has its own special features that help in classifying the class – for example all circles are round. Object class detection uses these special features. For example, when looking for circles, objects that are at a particular distance from a point (i.e. the center) are sought. Similarly, when looking for squares, objects that are perpendicular at corners and have equal side lengths are needed. A similar approach is used for face identification where eyes, nose, and lips can be found and features like skin color and distance between eyes can be found. Intersection over union as a similarity measure for object detection on images an important task in computer vision For object localization, true positive is often measured by the thresholded intersection over union. For example, if there is a traffic sign in the image, with a bounding box drawn by a human (\"ground truth label\"), then a neural network has detected the traffic sign (a true positive ) at 0.5 threshold iff it has drawn a bounding box whose IoU with the ground truth is above 0.5. Otherwise, the bounding box is a false positive. If there is only a single ground truth bounding box, but multiple predictions, then the IoU of each prediction is calculated. The prediction with the highest IoU is a true positive if it is above threshold, else it is a false positive. All other predicted bounding boxes are false positives. If there is no prediction with an IoU above the threshold, then the ground truth label has a false negative. For simultaneous object localization and classification, a true positive is one where the class label is correct, and the bounding box has an IoU exceeding the threshold. Simultaneous object localization and classification is benchmarked by the mean average precision (mAP). The average precision (AP) of the network for a class of objects is the area under the precision-recall curve as the confidence threshold is varied. The mAP is the average of AP over all classes. Simplified example of training a neural network in object detection: The network is trained by multiple images that are known to depict starfish and sea urchins , which are correlated with \"nodes\" that represent visual features. The starfish match with a ringed texture and a star outline, whereas most sea urchins match with a striped texture and oval shape. However, the instance of a ring textured sea urchin creates a weakly weighted association between them. Subsequent run of the network on an input image (left): 11 The network correctly detects the starfish. However, the weakly weighted association between ringed texture and sea urchin also confers a weak signal to the latter from one of two intermediate nodes. In addition, a shell that was not included in the training gives a weak signal for the oval shape, also resulting in a weak signal for the sea urchin output. These weak signals may result in a false positive result for sea urchin. In reality, textures and outlines would not be represented by single nodes, but rather by associated weight patterns of multiple nodes. Methods for object detection generally fall into either neural network-based or non-neural approaches. For non-neural approaches, it becomes necessary to first define features using one of the methods below, then using a technique such as support vector machine (SVM) to do the classification.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/object_detection",
+      "type": "txt"
+    },
+    {
+      "title": "Object detection in 20 years: A survey",
+      "content": "论文标题: Object detection in 20 years: A survey\n\n作者/来源: Z Zou, K Chen, Z Shi, Y Guo, J Ye - Proceedings of the IEEE, 2023 - ieeexplore.ieee.org\n\n摘要: … ABSTRACT | Object detection, as of one the most fundamental and … of object detection and \nits profound impact on the entire computer vision field. If we consider today’s object detection …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/10028728/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10028728/",
+      "type": "txt"
+    },
+    {
+      "title": "Object detection with deep learning: A review",
+      "content": "论文标题: Object detection with deep learning: A review\n\n作者/来源: ZQ Zhao, P Zheng, S Xu, X Wu - IEEE transactions on neural …, 2019 - ieeexplore.ieee.org\n\n摘要: … In this paper, we provide a review of deep learning-based object detection frameworks… object \ndetection architectures along with some modifications and useful tricks to improve detection …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/8627998/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8627998/",
+      "type": "txt"
+    },
+    {
+      "title": "Object detection",
+      "content": "论文标题: Object detection\n\n作者/来源: Y Amit, P Felzenszwalb, R Girshick - Computer vision: A reference guide, 2021 - Springer\n\n摘要: … object detection is to detect all instances of objects from one or several known classes, such \nas people, cars, or faces in an image. Typically only a small number of objects … detection is …\n\n论文链接: https://link.springer.com/content/pdf/10.1007/978-3-030-63416-2_660.pdf\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-63416-2_660.pdf",
+      "type": "txt"
+    },
+    {
+      "title": "A trainable system for object detection",
+      "content": "论文标题: A trainable system for object detection\n\n作者/来源: C Papageorgiou, T Poggio - International journal of computer vision, 2000 - Springer\n\n摘要: … trainable object detection system as applied to the domains of face, people, and car detection, \n… on the scene structure or the number of objects present and does not use any motion or …\n\n论文链接: https://link.springer.com/article/10.1023/a:1008162616689\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/article/10.1023/a:1008162616689",
+      "type": "txt"
+    },
+    {
+      "title": "A review of object detection techniques",
+      "content": "论文标题: A review of object detection techniques\n\n作者/来源: X Zou - 2019 International conference on smart grid and …, 2019 - ieeexplore.ieee.org\n\n摘要: … Object detection is widely used in computer vision tasN including pedestrian detection, face \nrecognition, face detection, etc. At present, the approach of object detection has been largely …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/8901325/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8901325/",
+      "type": "txt"
+    },
+    {
+      "title": "Oriented object detection in optical remote sensing images using deep learning: a survey",
+      "content": "论文标题: Oriented object detection in optical remote sensing images using deep learning: a survey\n\n作者: Kun Wang, Zi Wang, Zhang Li, Ang Su, Xichao Teng\n\n摘要: Oriented object detection is a fundamental yet challenging task in remote sensing (RS), aiming to locate and classify objects with arbitrary orientations. Recent advancements in deep learning have significantly enhanced the capabilities of oriented object detection methods. Given the rapid development of this field, a comprehensive survey of the recent advances in oriented object detection is presented in this paper. Specifically, we begin by tracing the technical evolution from horizontal object detection to oriented object detection and highlighting the specific related challenges, including feature misalignment, spatial misalignment, oriented bounding box (OBB) regression problems, and common issues encountered in RS. Subsequently, we further categorize the existing methods into detection frameworks, OBB regression techniques, feature representation approaches, and solutions to common issues and provide an in-depth discussion of how these methods address the above challenges. In add...\n\narXiv链接: http://arxiv.org/abs/2302.10473v6\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2302.10473v6",
+      "type": "txt"
+    },
+    {
+      "title": "Object Contour and Edge Detection with RefineContourNet",
+      "content": "论文标题: Object Contour and Edge Detection with RefineContourNet\n\n作者: Andre Peter Kelm, Vijesh Soorya Rao, Udo Zoelzer\n\n摘要: A ResNet-based multi-path refinement CNN is used for object contour detection. For this task, we prioritise the effective utilization of the high-level abstraction capability of a ResNet, which leads to state-of-the-art results for edge detection. Keeping our focus in mind, we fuse the high, mid and low-level features in that specific order, which differs from many other approaches. It uses the tensor with the highest-levelled features as the starting point to combine it layer-by-layer with features of a lower abstraction level until it reaches the lowest level. We train this network on a modified PASCAL VOC 2012 dataset for object contour detection and evaluate on a refined PASCAL-val dataset reaching an excellent performance and an Optimal Dataset Scale (ODS) of 0.752. Furthermore, by fine-training on the BSDS500 dataset we reach state-of-the-art results for edge-detection with an ODS of 0.824.\n\narXiv链接: http://arxiv.org/abs/1904.13353v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1904.13353v2",
+      "type": "txt"
+    },
+    {
+      "title": "Exploring Depth Contribution for Camouflaged Object Detection",
+      "content": "论文标题: Exploring Depth Contribution for Camouflaged Object Detection\n\n作者: Mochu Xiang, Jing Zhang, Yunqiu Lv, Aixuan Li, Yiran Zhong\n\n摘要: Camouflaged object detection (COD) aims to segment camouflaged objects hiding in the environment, which is challenging due to the similar appearance of camouflaged objects and their surroundings. Research in biology suggests depth can provide useful object localization cues for camouflaged object discovery. In this paper, we study the depth contribution for camouflaged object detection, where the depth maps are generated with existing monocular depth estimation (MDE) methods. Due to the domain gap between the MDE dataset and our COD dataset, the generated depth maps are not accurate enough to be directly used. We then introduce two solutions to avoid the noisy depth maps from dominating the training process. Firstly, we present an auxiliary depth estimation branch (\"ADE\"), aiming to regress the depth maps. We find that \"ADE\" is especially necessary for our \"generated depth\" scenario. Secondly, we introduce a multi-modal confidence-aware loss function via a generative adversarial networ...\n\narXiv链接: http://arxiv.org/abs/2106.13217v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2106.13217v3",
+      "type": "txt"
+    },
+    {
+      "title": "Image segmentation - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Semantic segmentation ) Partitioning a digital image into segments Model of a segmented left human femur. It shows the outer surface (red), the surface between compact bone and spongy bone (green) and the surface of the bone marrow (blue). In digital image processing and computer vision , image segmentation is the process of partitioning a digital image into multiple image segments , also known as image regions or image objects ( sets of pixels ). The goal of segmentation is to simplify and/or change the representation of an image into something that is more meaningful and easier to analyze. 1 2 Image segmentation is typically used to locate objects and boundaries (lines, curves, etc.) in images. More precisely, image segmentation is the process of assigning a label to every pixel in an image such that pixels with the same label share certain characteristics. The result of image segmentation is a set of segments that collectively cover the entire image, or a set of contours extracted from the image (see edge detection ). Each of the pixels in a region are similar with respect to some characteristic or computed property, 3 such as color , intensity , or texture. Adjacent regions are significantly different with respect to the same characteristic(s). 1 When applied to a stack of images, typical in medical imaging , the resulting contours after image segmentation can be used to create 3D reconstructions with the help of geometry reconstruction algorithms like marching cubes. 8 Locate tumors and other pathologies 9 10 Measure tissue volumes 11 12 Diagnosis, study of anatomical structure 13 Surgery planning Virtual surgery simulation Intra-surgery navigation Radiotherapy 14 Digital Pathology and Histopathology. Nuclei instance segmentation in variously stained whole slide images (WSIs) refers to the automatic delineation of individual cells' nuclei borders. cell counting, morphometric feature extraction, tumor grading, prognostic biomarker extraction). 15 The modern approach to the problem is the use of deep learning architectures developed to encompass the main challenges of separating overlapping or fused nuclei. 16 17 18 The availability of few humanly-annotated datasets poses another challenge to the problem. 19 20 21 Object detection 22 Pedestrian detection Face detection Brake light detection Locate objects in satellite images (roads, forests, crops, etc.) Recognition Tasks Face recognition Fingerprint recognition Iris recognition Prohibited Item at Airport security checkpoints Traffic control systems Video surveillance Video object co-segmentation and action localization 23 24 Several general-purpose algorithms and techniques have been developed for image segmentation. To be useful, these techniques must typically be combined with a domain's specific knowledge in order to effectively solve the domain's segmentation problems. There are two classes of segmentation techniques. Classical computer vision approaches AI based techniques Semantic segmentation is an approach detecting, for every pixel, the belonging class. 25 For example, in a figure with many people, all the pixels belonging to persons will have the same class id and the pixels in the background will be classified as background. 26 Instance segmentation is an approach that identifies, for every pixel, the specific belonging instance of the object. It detects each distinct object of interest in the image. 27 For example, when each person in a figure is segmented as an individual object. Panoptic segmentation combines both semantic and instance segmentation. Like semantic segmentation, panoptic segmentation is an approach that identifies, for every pixel, the belonging class. Moreover, like in instance segmentation, panoptic segmentation distinguishes different instances of the same class. 28 The simplest method of image segmentation is called the thresholding method. This method is based on a clip-level (or a threshold value) to turn a gray-scale image into a binary image. The key of this method is to select the threshold value (or values when multiple-levels are selected). Several popular methods are used in industry including the maximum entropy method, balanced histogram thresholding , Otsu's method (maximum variance), and k-means clustering. Recently, methods have been developed for thresholding computed tomography (CT) images. The key idea is that, unlike Otsu's method, the thresholds are derived from the radiographs instead of the (reconstructed) image. 29 30 New methods suggest the use of multi-dimensional, fuzzy rule-based, non-linear thresholds. In these approaches, the decision regarding each pixel's membership in a segment is based on multi-dimensional rules derived from fuzzy logic and evolutionary algorithms, considering factors such as image lighting, environment, and application. 31 Source image Image after running k -means with k = 16.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/semantic_segmentation",
+      "type": "txt"
+    },
+    {
+      "title": "A review of semantic segmentation using deep neural networks",
+      "content": "论文标题: A review of semantic segmentation using deep neural networks\n\n作者/来源: Y Guo, Y Liu, T Georgiou, MS Lew - International journal of multimedia …, 2018 - Springer\n\n摘要: … Specifically, humans can perform image segmentation without … Performing segmentation \nwithout knowing the exact identity … we review the field of semantic segmentation as pertaining to …\n\n论文链接: https://link.springer.com/article/10.1007/s13735-017-0141-z\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/article/10.1007/s13735-017-0141-z",
+      "type": "txt"
+    },
+    {
+      "title": "A review on deep learning techniques applied to semantic segmentation",
+      "content": "论文标题: A review on deep learning techniques applied to semantic segmentation\n\n作者/来源: A Garcia-Garcia, S Orts-Escolano, S Oprea… - arXiv preprint arXiv …, 2017 - arxiv.org\n\n摘要: … semantic segmentation or scene understanding. This paper provides a review on deep \nlearning methods for semantic segmentation … of the art of semantic segmentation using deep …\n\n论文链接: https://arxiv.org/abs/1704.06857\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://arxiv.org/abs/1704.06857",
+      "type": "txt"
+    },
+    {
+      "title": "A brief survey on semantic segmentation with deep learning",
+      "content": "论文标题: A brief survey on semantic segmentation with deep learning\n\n作者/来源: S Hao, Y Zhou, Y Guo - Neurocomputing, 2020 - Elsevier\n\n摘要: … Semantic segmentation is a challenging task in computer vision. In recent years, the performance \nof semantic segmentation … deep-learning-based semantic segmentation methods. We …\n\n论文链接: https://www.sciencedirect.com/science/article/pii/S0925231220305476\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0925231220305476",
+      "type": "txt"
+    },
+    {
+      "title": "Bisenet: Bilateral segmentation network for real-time semantic segmentation",
+      "content": "论文标题: Bisenet: Bilateral segmentation network for real-time semantic segmentation\n\n作者/来源: C Yu, J Wang, C Peng, C Gao… - Proceedings of the …, 2018 - openaccess.thecvf.com\n\n摘要: … Semantic segmentation requires both rich spatial information … with a novel Bilateral \nSegmentation Network (BiSeNet). We … the speed and segmentation performance on Cityscapes, …\n\n论文链接: http://openaccess.thecvf.com/content_ECCV_2018/html/Changqian_Yu_BiSeNet_Bilateral_Segmentation_ECCV_2018_paper.html\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "http://openaccess.thecvf.com/content_ECCV_2018/html/Changqian_Yu_BiSeNet_Bilateral_Segmentation_ECCV_2018_paper.html",
+      "type": "txt"
+    },
+    {
+      "title": "Segmenter: Transformer for semantic segmentation",
+      "content": "论文标题: Segmenter: Transformer for semantic segmentation\n\n作者/来源: R Strudel, R Garcia, I Laptev… - Proceedings of the …, 2021 - openaccess.thecvf.com\n\n摘要: … 58] suggests limitations of convolutional architectures for segmentation. To overcome \nthese limitations, we formulate the problem of semantic segmentation as a sequence-to-sequence …\n\n论文链接: http://openaccess.thecvf.com/content/ICCV2021/html/Strudel_Segmenter_Transformer_for_Semantic_Segmentation_ICCV_2021_paper.html\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "http://openaccess.thecvf.com/content/ICCV2021/html/Strudel_Segmenter_Transformer_for_Semantic_Segmentation_ICCV_2021_paper.html",
+      "type": "txt"
+    },
+    {
+      "title": "3D Kidneys and Kidney Tumor Semantic Segmentation using Boundary-Aware Networks",
+      "content": "论文标题: 3D Kidneys and Kidney Tumor Semantic Segmentation using Boundary-Aware Networks\n\n作者: Andriy Myronenko, Ali Hatamizadeh\n\n摘要: Automated segmentation of kidneys and kidney tumors is an important step in quantifying the tumor's morphometrical details to monitor the progression of the disease and accurately compare decisions regarding the kidney tumor treatment. Manual delineation techniques are often tedious, error-prone and require expert knowledge for creating unambiguous representation of kidneys and kidney tumors segmentation. In this work, we propose an end-to-end boundary aware fully Convolutional Neural Networks (CNNs) for reliable kidney and kidney tumor semantic segmentation from arterial phase abdominal 3D CT scans. We propose a segmentation network consisting of an encoder-decoder architecture that specifically accounts for organ and tumor edge information by devising a dedicated boundary branch supervised by edge-aware loss terms. We have evaluated our model on 2019 MICCAI KiTS Kidney Tumor Segmentation Challenge dataset and our method has achieved dice scores of 0.9742 and 0.8103 for kidney and tum...\n\narXiv链接: http://arxiv.org/abs/1909.06684v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1909.06684v1",
+      "type": "txt"
+    },
+    {
+      "title": "Decoupling Continual Semantic Segmentation",
+      "content": "论文标题: Decoupling Continual Semantic Segmentation\n\n作者: Yifu Guo, Yuquan Lu, Wentao Zhang, Zishan Xu, Dexia Chen\n\n摘要: Continual Semantic Segmentation (CSS) requires learning new classes without forgetting previously acquired knowledge, addressing the fundamental challenge of catastrophic forgetting in dense prediction tasks. However, existing CSS methods typically employ single-stage encoder-decoder architectures where segmentation masks and class labels are tightly coupled, leading to interference between old and new class learning and suboptimal retention-plasticity balance. We introduce DecoupleCSS, a novel two-stage framework for CSS. By decoupling class-aware detection from class-agnostic segmentation, DecoupleCSS enables more effective continual learning, preserving past knowledge while learning new classes. The first stage leverages pre-trained text and image encoders, adapted using LoRA, to encode class-specific information and generate location-aware prompts. In the second stage, the Segment Anything Model (SAM) is employed to produce precise segmentation masks, ensuring that segmentation kno...\n\narXiv链接: http://arxiv.org/abs/2508.05065v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2508.05065v2",
+      "type": "txt"
+    },
+    {
+      "title": "SegNeXt: Rethinking Convolutional Attention Design for Semantic Segmentation",
+      "content": "论文标题: SegNeXt: Rethinking Convolutional Attention Design for Semantic Segmentation\n\n作者: Meng-Hao Guo, Cheng-Ze Lu, Qibin Hou, Zhengning Liu, Ming-Ming Cheng\n\n摘要: We present SegNeXt, a simple convolutional network architecture for semantic segmentation. Recent transformer-based models have dominated the field of semantic segmentation due to the efficiency of self-attention in encoding spatial information. In this paper, we show that convolutional attention is a more efficient and effective way to encode contextual information than the self-attention mechanism in transformers. By re-examining the characteristics owned by successful segmentation models, we discover several key components leading to the performance improvement of segmentation models. This motivates us to design a novel convolutional attention network that uses cheap convolutional operations. Without bells and whistles, our SegNeXt significantly improves the performance of previous state-of-the-art methods on popular benchmarks, including ADE20K, Cityscapes, COCO-Stuff, Pascal VOC, Pascal Context, and iSAID. Notably, SegNeXt outperforms EfficientNet-L2 w/ NAS-FPN and achieves 90.6% ...\n\narXiv链接: http://arxiv.org/abs/2209.08575v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2209.08575v1",
+      "type": "txt"
+    },
+    {
+      "title": "Facial recognition system - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Face recognition ) Technology capable of matching a face from an image against a database of faces This article's factual accuracy may be compromised due to out-of-date information. Please help update this article to reflect recent events or newly available information. ( June 2022 ) Facial recognition software at a US airport Automatic ticket gate with face recognition system in Osaka Metro Morinomiya Station A facial recognition system 1 is a technology potentially capable of matching a human face from a digital image or a video frame against a database of faces. Such a system is typically employed to authenticate users through ID verification services , and works by pinpointing and measuring facial features from a given image. 2 Development on similar systems began in the 1960s as a form of computer application. Since their inception, facial recognition systems have seen wider uses in recent times on smartphones and in other forms of technology, such as robotics. Because computerized facial recognition involves the measurement of a human's physiological characteristics, facial recognition systems are categorized as biometrics. Although the accuracy of facial recognition systems as a biometric technology is lower than iris recognition , fingerprint image acquisition , palm recognition or voice recognition , it is widely adopted due to its contactless process. 3 Facial recognition systems have been deployed in advanced human–computer interaction , video surveillance , law enforcement , passenger screening, decisions on employment and housing, and automatic indexing of images. 4 5 Facial recognition systems are employed throughout the world today by governments and private companies. 6 Their effectiveness varies, and some systems have previously been scrapped because of their ineffectiveness. The use of facial recognition systems has also raised controversy, with claims that the systems violate citizens' privacy, commonly make incorrect identifications, encourage gender norms 7 8 and racial profiling , 9 and do not protect important biometric data. The appearance of synthetic media such as deepfakes has also raised concerns about its security. 10 These claims have led to the ban of facial recognition systems in several cities in the United States. 11 Growing societal concerns led social networking company Meta Platforms to shut down its Facebook facial recognition system in 2021, deleting the face-scan data of more than one billion users. 12 13 The change represented one of the largest shifts in facial recognition usage in the technology's history. IBM also stopped offering facial recognition technology due to similar concerns. 14 Automated facial recognition was pioneered in the 1960s by Woody Bledsoe , Helen Chan Wolf , and Charles Bisson, whose work focused on teaching computers to recognize human faces. 15 Their early facial recognition project was dubbed \"man-machine\" because a human first needed to establish the coordinates of facial features in a photograph before they could be used by a computer for recognition. Using a graphics tablet , a human would pinpoint facial features coordinates, such as the pupil centers, the inside and outside corners of eyes, and the widows peak in the hairline. The coordinates were used to calculate 20 individual distances, including the width of the mouth and of the eyes. A human could process about 40 pictures an hour, building a database of these computed distances. A computer would then automatically compare the distances for each photograph, calculate the difference between the distances, and return the closed records as a possible match. 15 In 1970, Takeo Kanade publicly demonstrated a face-matching system that located anatomical features such as the chin and calculated the distance ratio between facial features without human intervention. Later tests revealed that the system could not always reliably identify facial features. Nonetheless, interest in the subject grew and in 1977 Kanade published the first detailed book on facial recognition technology. The FERET tests found that while the performance of existing automated facial recognition systems varied, a handful of existing methods could viably be used to recognize faces in still images taken in a controlled environment. 17 The FERET tests spawned three US companies that sold automated facial recognition systems. Viisage Technology was established by an identification card defense contractor in 1996 to commercially exploit the rights to the facial recognition algorithm developed by Alex Pentland at MIT. 18 Following the 1993 FERET face-recognition vendor test, the Department of Motor Vehicles (DMV) offices in West Virginia and New Mexico became the first DMV offices to use automated facial recognition systems to prevent people from obtaining multiple driving licenses using different names.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/face_recognition",
+      "type": "txt"
+    },
+    {
+      "title": "Face recognition: A literature survey",
+      "content": "论文标题: Face recognition: A literature survey\n\n作者/来源: W Zhao, R Chellappa, PJ Phillips… - ACM computing surveys …, 2003 - dl.acm.org\n\n摘要: … For example, recognition of face images acquired in an … of still- and video-based face \nrecognition research. There are two … into the studies of machine recognition of faces. To provide a …\n\n论文链接: https://dl.acm.org/doi/abs/10.1145/954339.954342\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://dl.acm.org/doi/abs/10.1145/954339.954342",
+      "type": "txt"
+    },
+    {
+      "title": "Face recognition: A literature review",
+      "content": "论文标题: Face recognition: A literature review\n\n作者/来源: AS Tolba, AH El-Baz, AA El-Harby - International Journal of Signal …, 2006 - academia.edu\n\n摘要: … of major human face recognition research. We first present an overview of face recognition \nand its applications. Then, a literature review of the most recent face recognition techniques is …\n\n论文链接: https://www.academia.edu/download/45074949/Face-Recognition-A-Literature-Review.pdf\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.academia.edu/download/45074949/Face-Recognition-A-Literature-Review.pdf",
+      "type": "txt"
+    },
+    {
+      "title": "A review of face recognition technology",
+      "content": "论文标题: A review of face recognition technology\n\n作者/来源: L Li, X Mu, S Li, H Peng - IEEE access, 2020 - ieeexplore.ieee.org\n\n摘要: … technologies of face recognition. We introduce the research of face recognition for real … \nstandards and the general databases of face recognition. We give a forward-looking view of …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/9145558/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9145558/",
+      "type": "txt"
+    },
+    {
+      "title": "Understanding face recognition",
+      "content": "论文标题: Understanding face recognition\n\n作者/来源: V Bruce, A Young - British journal of psychology, 1986 - Wiley Online Library\n\n摘要: … face recognition … face recognition, and also to point to where the gaps in our knowledge \nlie. It is also used to compare and contrast the recognition of people’s faces with the recognition …\n\n论文链接: https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1111/j.2044-8295.1986.tb02199.x\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://bpspsychub.onlinelibrary.wiley.com/doi/abs/10.1111/j.2044-8295.1986.tb02199.x",
+      "type": "txt"
+    },
+    {
+      "title": "Past, present, and future of face recognition: A review",
+      "content": "论文标题: Past, present, and future of face recognition: A review\n\n作者/来源: I Adjabi, A Ouahabi, A Benzaoui, A Taleb-Ahmed - Electronics, 2020 - mdpi.com\n\n摘要: … to changes in facial expressions. This review presents the history of face recognition technology, \n… We specifically concentrate on the most recent databases, 2D and 3D face recognition …\n\n论文链接: https://www.mdpi.com/2079-9292/9/8/1188\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.mdpi.com/2079-9292/9/8/1188",
+      "type": "txt"
+    },
+    {
+      "title": "A robust, low-cost approach to Face Detection and Face Recognition",
+      "content": "论文标题: A robust, low-cost approach to Face Detection and Face Recognition\n\n作者: Divya Jyoti, Aman Chadha, Pallavi Vaidya, M. Mani Roja\n\n摘要: In the domain of Biometrics, recognition systems based on iris, fingerprint or palm print scans etc. are often considered more dependable due to extremely low variance in the properties of these entities with respect to time. However, over the last decade data processing capability of computers has increased manifold, which has made real-time video content analysis possible. This shows that the need of the hour is a robust and highly automated Face Detection and Recognition algorithm with credible accuracy rate. The proposed Face Detection and Recognition system using Discrete Wavelet Transform (DWT) accepts face frames as input from a database containing images from low cost devices such as VGA cameras, webcams or even CCTV's, where image quality is inferior. Face region is then detected using properties of L*a*b* color space and only Frontal Face is extracted such that all additional background is eliminated. Further, this extracted image is converted to grayscale and its dimensions ...\n\narXiv链接: http://arxiv.org/abs/1111.1090v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1111.1090v1",
+      "type": "txt"
+    },
+    {
+      "title": "ID-Booth: Identity-consistent Face Generation with Diffusion Models",
+      "content": "论文标题: ID-Booth: Identity-consistent Face Generation with Diffusion Models\n\n作者: Darian Tomašević, Fadi Boutros, Chenhao Lin, Naser Damer, Vitomir Štruc\n\n摘要: Recent advances in generative modeling have enabled the generation of high-quality synthetic data that is applicable in a variety of domains, including face recognition. Here, state-of-the-art generative models typically rely on conditioning and fine-tuning of powerful pretrained diffusion models to facilitate the synthesis of realistic images of a desired identity. Yet, these models often do not consider the identity of subjects during training, leading to poor consistency between generated and intended identities. In contrast, methods that employ identity-based training objectives tend to overfit on various aspects of the identity, and in turn, lower the diversity of images that can be generated. To address these issues, we present in this paper a novel generative diffusion-based framework, called ID-Booth. ID-Booth consists of a denoising network responsible for data generation, a variational auto-encoder for mapping images to and from a lower-dimensional latent space and a text enc...\n\narXiv链接: http://arxiv.org/abs/2504.07392v6\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2504.07392v6",
+      "type": "txt"
+    },
+    {
+      "title": "SDFR: Synthetic Data for Face Recognition Competition",
+      "content": "论文标题: SDFR: Synthetic Data for Face Recognition Competition\n\n作者: Hatef Otroshi Shahreza, Christophe Ecabert, Anjith George, Alexander Unnervik, Sébastien Marcel\n\n摘要: Large-scale face recognition datasets are collected by crawling the Internet and without individuals' consent, raising legal, ethical, and privacy concerns. With the recent advances in generative models, recently several works proposed generating synthetic face recognition datasets to mitigate concerns in web-crawled face recognition datasets. This paper presents the summary of the Synthetic Data for Face Recognition (SDFR) Competition held in conjunction with the 18th IEEE International Conference on Automatic Face and Gesture Recognition (FG 2024) and established to investigate the use of synthetic data for training face recognition models. The SDFR competition was split into two tasks, allowing participants to train face recognition systems using new synthetic datasets and/or existing ones. In the first task, the face recognition backbone was fixed and the dataset size was limited, while the second task provided almost complete freedom on the model backbone, the dataset, and the tra...\n\narXiv链接: http://arxiv.org/abs/2404.04580v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2404.04580v2",
+      "type": "txt"
+    },
+    {
+      "title": "Medical imaging - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Technique and process of creating visual representations of the interior of a body Medical diagnostic method Medical imaging One frame of a CT scan of the chest showing the heart and lungs ICD-10-PCS B ICD-9 87 - 88 MeSH 003952 D 003952 OPS-301 code 3 MedlinePlus 007451 Medical imaging is the technique and process of imaging the interior of a body for clinical analysis and medical intervention, as well as visual representation of the function of some organs or tissues ( physiology ). Medical imaging seeks to reveal internal structures hidden by the skin and bones, as well as to diagnose and treat disease. Medical imaging also establishes a database of normal anatomy and physiology to make it possible to identify abnormalities. Although imaging of removed organs and tissues can be performed for medical reasons, such procedures are usually considered part of pathology instead of medical imaging. citation needed Measurement and recording techniques that are not primarily designed to produce images , such as electroencephalography (EEG), magnetoencephalography (MEG), electrocardiography (ECG), and others, represent other technologies that produce data susceptible to representation as a parameter graph versus time or maps that contain data about the measurement locations. In a limited comparison, these technologies can be considered forms of medical imaging in another discipline of medical instrumentation. As of 2010, 5 billion medical imaging studies had been conducted worldwide. 1 Radiation exposure from medical imaging in 2006 made up about 50% of total ionizing radiation exposure in the United States. 2 Medical imaging equipment is manufactured using technology from the semiconductor industry , including CMOS integrated circuit chips, power semiconductor devices , sensors such as image sensors (particularly CMOS sensors ) and biosensors , and processors such as microcontrollers , microprocessors , digital signal processors , media processors and system-on-chip devices. As of 2015 update , annual shipments of medical imaging chips amount to 46 million units and $1.1 billion. 3 The term \" noninvasive \" is used to denote a procedure where no instrument is introduced into a patient's body, which is the case for most imaging techniques used. In 1972, engineer Godfrey Hounsfield from the British company EMI invented the X-ray computed tomography device for head diagnosis, which is commonly referred to as computed tomography (CT). The CT nucleus method is based on the projecting X-rays through a section of the human head, which are then processed by computer to reconstruct the cross-sectional image, known as image reconstruction. In 1975, EMI successfully developed a CT device for the entire body, enabling the clear acquisition of tomographic images of various parts of the human body. This revolutionary diagnostic technique earned Hounsfield and physicist Allan Cormack the Nobel Prize in Physiology or Medicine in 1979. 4 Digital image processing technology for medical applications was inducted into the Space Foundation 's Space Technology Hall of Fame in 1994. 5 By 2010, over 5 billion medical imaging studies had been conducted worldwide. 1 6 Radiation exposure from medical imaging in 2006 accounted for about 50% of total ionizing radiation exposure in the United States. 7 Medical imaging equipment is manufactured using technology from the semiconductor industry , including CMOS integrated circuit chips, power semiconductor devices , sensors such as image sensors (particularly CMOS sensors ) and biosensors , as well as processors like microcontrollers , microprocessors , digital signal processors , media processors and system-on-chip devices. As of 2015 update , annual shipments of medical imaging chips reached 46 million units, generating a market value of $1.1 billion. 8 9 Plain X-ray of the wrist and hand In the clinical context, \"invisible light\" medical imaging is generally equated to radiology or \"clinical imaging\". \"Visible light\" medical imaging involves digital video or still pictures that can be seen without special equipment. Dermatology and wound care are two modalities that use visible light imagery. Interpretation of medical images is generally undertaken by a physician specialising in radiology known as a radiologist ; however, this may be undertaken by any healthcare professional who is trained and certified in radiological clinical evaluation. Increasingly interpretation is being undertaken by non-physicians, for example radiographers frequently train in interpretation as part of expanded practice. Diagnostic radiography designates the technical aspects of medical imaging and in particular the acquisition of medical images.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/medical_imaging",
+      "type": "txt"
+    },
+    {
+      "title": "A comparative study of medical imaging techniques",
+      "content": "论文标题: A comparative study of medical imaging techniques\n\n作者/来源: H Kasban, MAM El-Bendary… - International Journal of …, 2015 - ilearn.th-deg.de\n\n摘要: … This paper presents a comparative study between the different medical imaging techniques, \nthe concepts, benefits, risks and applications of these techniques will present with details. A …\n\n论文链接: https://ilearn.th-deg.de/pluginfile.php/480243/mod_book/chapter/8248/updated_JXIJSIS2015.pdf\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ilearn.th-deg.de/pluginfile.php/480243/mod_book/chapter/8248/updated_JXIJSIS2015.pdf",
+      "type": "txt"
+    },
+    {
+      "title": "Fundamentals of medical imaging",
+      "content": "论文标题: Fundamentals of medical imaging\n\n作者/来源: P Suetens - 2017 - books.google.com\n\n摘要: … This book explains the applied mathematical and physical principles of medical imaging \nand image computing. It gives a complete survey of how medical images are obtained and how …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=8-HFDgAAQBAJ&amp;oi=fnd&amp;pg=PR9&amp;dq=medical+imaging&amp;ots=3r2jf4OJY2&amp;sig=fdE7WBBWsD-HmATOjR2hEG1TjYM\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=8-HFDgAAQBAJ&amp;oi=fnd&amp;pg=PR9&amp;dq=medical+imaging&amp;ots=3r2jf4OJY2&amp;sig=fdE7WBBWsD-HmATOjR2hEG1TjYM",
+      "type": "txt"
+    },
+    {
+      "title": "Computed medical imaging",
+      "content": "论文标题: Computed medical imaging\n\n作者/来源: GN Hounsfield - Science, 1980 - science.org\n\n摘要: In preparing this paper I realized that I would be speaking to a general audience and have \ntherefore included a description of computed tomography (CT) and some ofmy early …\n\n论文链接: https://www.science.org/doi/abs/10.1126/science.6997993\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.science.org/doi/abs/10.1126/science.6997993",
+      "type": "txt"
+    },
+    {
+      "title": "Medical imaging: A review",
+      "content": "论文标题: Medical imaging: A review\n\n作者/来源: D Ganguly, S Chakraborty, M Balitanas… - … Conference on Security …, 2010 - Springer\n\n摘要: … to store and retrieve images for future purpose needs some convenient process to store \nthose images in details. This paper is a tutorial review of the medical image processing and …\n\n论文链接: https://link.springer.com/chapter/10.1007/978-3-642-16444-6_63\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-16444-6_63",
+      "type": "txt"
+    },
+    {
+      "title": "Principles of medical imaging",
+      "content": "论文标题: Principles of medical imaging\n\n作者/来源: KK Shung, M Smith, BMW Tsui - 2012 - books.google.com\n\n摘要: … a graduate course in medical imaging at the Bioengineering Program … medical imaging \nmodalities, namely, X-ray including CT and digital radiography, ultrasound, radionuclide imaging …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=fUH_HrIHh30C&amp;oi=fnd&amp;pg=PP1&amp;dq=medical+imaging&amp;ots=yJcnBO9Fh4&amp;sig=cuiguyfqExh2IxTns1a-1wbXMgI\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=fUH_HrIHh30C&amp;oi=fnd&amp;pg=PP1&amp;dq=medical+imaging&amp;ots=yJcnBO9Fh4&amp;sig=cuiguyfqExh2IxTns1a-1wbXMgI",
+      "type": "txt"
+    },
+    {
+      "title": "Automatic Landmarks Correspondence Detection in Medical Images with an Application to Deformable Image Registration",
+      "content": "论文标题: Automatic Landmarks Correspondence Detection in Medical Images with an Application to Deformable Image Registration\n\n作者: Monika Grewal, Jan Wiersma, Henrike Westerveld, Peter A. N. Bosman, Tanja Alderliesten\n\n摘要: Purpose: Deformable Image Registration (DIR) can benefit from additional guidance using corresponding landmarks in the images. However, the benefits thereof are largely understudied, especially due to the lack of automatic landmark detection methods for three-dimensional (3D) medical images.   Approach: We present a Deep Convolutional Neural Network (DCNN), called DCNN-Match, that learns to predict landmark correspondences in 3D images in a self-supervised manner. We trained DCNN-Match on pairs of Computed Tomography (CT) scans containing simulated deformations. We explored five variants of DCNN-Match that use different loss functions and assessed their effect on the spatial density of predicted landmarks and the associated matching errors. We also tested DCNN-Match variants in combination with the open-source registration software Elastix to assess the impact of predicted landmarks in providing additional guidance to DIR.   Results: We tested our approach on lower-abdominal CT scans f...\n\narXiv链接: http://arxiv.org/abs/2109.02722v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2109.02722v2",
+      "type": "txt"
+    },
+    {
+      "title": "SADM: Sequence-Aware Diffusion Model for Longitudinal Medical Image Generation",
+      "content": "论文标题: SADM: Sequence-Aware Diffusion Model for Longitudinal Medical Image Generation\n\n作者: Jee Seok Yoon, Chenghao Zhang, Heung-Il Suk, Jia Guo, Xiaoxiao Li\n\n摘要: Human organs constantly undergo anatomical changes due to a complex mix of short-term (e.g., heartbeat) and long-term (e.g., aging) factors. Evidently, prior knowledge of these factors will be beneficial when modeling their future state, i.e., via image generation. However, most of the medical image generation tasks only rely on the input from a single image, thus ignoring the sequential dependency even when longitudinal data is available. Sequence-aware deep generative models, where model input is a sequence of ordered and timestamped images, are still underexplored in the medical imaging domain that is featured by several unique challenges: 1) Sequences with various lengths; 2) Missing data or frame, and 3) High dimensionality. To this end, we propose a sequence-aware diffusion model (SADM) for the generation of longitudinal medical images. Recently, diffusion models have shown promising results in high-fidelity image generation. Our method extends this new technique by introducing a...\n\narXiv链接: http://arxiv.org/abs/2212.08228v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2212.08228v2",
+      "type": "txt"
+    },
+    {
+      "title": "Deep learning and its application to medical image segmentation",
+      "content": "论文标题: Deep learning and its application to medical image segmentation\n\n作者: Holger R. Roth, Chen Shen, Hirohisa Oda, Masahiro Oda, Yuichiro Hayashi\n\n摘要: One of the most common tasks in medical imaging is semantic segmentation. Achieving this segmentation automatically has been an active area of research, but the task has been proven very challenging due to the large variation of anatomy across different patients. However, recent advances in deep learning have made it possible to significantly improve the performance of image recognition and semantic segmentation methods in the field of computer vision. Due to the data driven approaches of hierarchical feature learning in deep learning frameworks, these advances can be translated to medical images without much difficulty. Several variations of deep convolutional neural networks have been successfully applied to medical images. Especially fully convolutional architectures have been proven efficient for segmentation of 3D medical images. In this article, we describe how to build a 3D fully convolutional network (FCN) that can process 3D images in order to produce automatic semantic segmen...\n\narXiv链接: http://arxiv.org/abs/1803.08691v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1803.08691v1",
+      "type": "txt"
+    },
+    {
+      "title": "Transfer learning - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Machine learning technique Illustration of transfer learning Part of a series on Machine learning and data mining Transfer learning ( TL ) is a technique in machine learning (ML) in which knowledge learned from a task is re-used in order to boost performance on a related task. 1 For example, for image classification , knowledge gained while learning to recognize cars could be applied when trying to recognize trucks. This topic is related to the psychological literature on transfer of learning , although practical ties between the two fields are limited. Reusing or transferring information from previously learned tasks to new tasks has the potential to significantly improve learning efficiency. 2 Since transfer learning makes use of training with multiple objective functions it is related to cost-sensitive machine learning and multi-objective optimization. 3 In 1976, Bozinovski and Fulgosi published a paper addressing transfer learning in neural network training. 4 5 The paper gives a mathematical and geometrical model of the topic. In 1981, a report considered the application of transfer learning to a dataset of images representing letters of computer terminals, experimentally demonstrating positive and negative transfer learning. 6 In 1992, Lorien Pratt formulated the discriminability-based transfer (DBT) algorithm. 7 By 1998, the field had advanced to include multi-task learning , 8 along with more formal theoretical foundations. 9 Influential publications on transfer learning include the book Learning to Learn in 1998, 10 a 2009 survey 11 and a 2019 survey. 12 Ng said in his NIPS 2016 tutorial 13 14 that TL would become the next driver of machine learning commercial success after supervised learning. In the 2020 paper, \"Rethinking Pre-Training and self-training\", 15 Zoph et al. reported that pre-training can hurt accuracy, and advocate self-training instead. The definition of transfer learning is given in terms of domains and tasks. A domain D {\\displaystyle {\\mathcal {D}}} consists of: a feature space X {\\displaystyle {\\mathcal {X}}} and a marginal probability distribution P ( X ) {\\displaystyle P(X)} , where X = { x 1 ,. , x n } &#x2208; X {\\displaystyle X=\\{x_{1},...,x_{n}\\}\\in {\\mathcal {X}}}. Given a specific domain, D = { X , P ( X ) } {\\displaystyle {\\mathcal {D}}=\\{{\\mathcal {X}},P(X)\\}} , a task consists of two components: a label space Y {\\displaystyle {\\mathcal {Y}}} and an objective predictive function f : X &#x2192; Y {\\displaystyle f:{\\mathcal {X}}\\rightarrow {\\mathcal {Y}}}. The function f {\\displaystyle f} is used to predict the corresponding label f ( x ) {\\displaystyle f(x)} of a new instance x {\\displaystyle x}. This task, denoted by T = { Y , f ( x ) } {\\displaystyle {\\mathcal {T}}=\\{{\\mathcal {Y}},f(x)\\}} , is learned from the training data consisting of pairs { x i , y i } {\\displaystyle \\{x_{i},y_{i}\\}} , where x i &#x2208; X {\\displaystyle x_{i}\\in {\\mathcal {X}}} and y i &#x2208; Y {\\displaystyle y_{i}\\in {\\mathcal {Y}}}. 16 Given a source domain D S {\\displaystyle {\\mathcal {D}}_{S}} and learning task T S {\\displaystyle {\\mathcal {T}}_{S}} , a target domain D T {\\displaystyle {\\mathcal {D}}_{T}} and learning task T T {\\displaystyle {\\mathcal {T}}_{T}} , where D S &#x2260; D T {\\displaystyle {\\mathcal {D}}_{S}\\neq {\\mathcal {D}}_{T}} , or T S &#x2260; T T {\\displaystyle {\\mathcal {T}}_{S}\\neq {\\mathcal {T}}_{T}} , transfer learning aims to help improve the learning of the target predictive function f T ( &#x22C5; ) {\\displaystyle f_{T}(\\cdot )} in D T {\\displaystyle {\\mathcal {D}}_{T}} using the knowledge in D S {\\displaystyle {\\mathcal {D}}_{S}} and T S {\\displaystyle {\\mathcal {T}}_{S}}. 16 Algorithms for transfer learning are available in Markov logic networks 17 and Bayesian networks. 18 Transfer learning has been applied to cancer subtype discovery, 19 building utilization, 20 21 general game playing , 22 text classification , 23 24 digit recognition, 25 medical imaging and spam filtering. 26 In 2020, it was discovered that, due to their similar physical natures, transfer learning is possible between electromyographic (EMG) signals from the muscles and classifying the behaviors of electroencephalographic (EEG) brainwaves, from the gesture recognition domain to the mental state recognition domain. It was noted that this relationship worked in both directions, showing that electroencephalographic can likewise be used to classify EMG. 27 The experiments noted that the accuracy of neural networks and convolutional neural networks were improved 28 through transfer learning both prior to any learning (compared to standard random weight distribution) and at the end of the learning process (asymptote). That is, results are improved by exposure to another domain. Moreover, the end-user of a pre-trained model can change the structure of fully-connected layers to improve performance.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/transfer_learning",
+      "type": "txt"
+    },
+    {
+      "title": "A survey of transfer learning",
+      "content": "论文标题: A survey of transfer learning\n\n作者/来源: K Weiss, TM Khoshgoftaar, DD Wang - Journal of Big data, 2016 - Springer\n\n摘要: … transfer learning solutions an attractive approach. There are many machine learning \napplications that transfer learning … a researcher interested in transfer learning with an overview of …\n\n论文链接: https://link.springer.com/article/10.1186/S40537-016-0043-6\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/article/10.1186/S40537-016-0043-6",
+      "type": "txt"
+    },
+    {
+      "title": "Transfer learning",
+      "content": "论文标题: Transfer learning\n\n作者/来源: L Torrey, J Shavlik - Handbook of research on machine learning …, 2010 - igi-global.com\n\n摘要: … distinction between transfer learning and multi-task learning (… learning is clearly closely \nrelated to transfer, but it does not involve designated source and target tasks; instead the learning …\n\n论文链接: https://www.igi-global.com/chapter/transfer-learning/36988\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.igi-global.com/chapter/transfer-learning/36988",
+      "type": "txt"
+    },
+    {
+      "title": "A comprehensive survey on transfer learning",
+      "content": "论文标题: A comprehensive survey on transfer learning\n\n作者/来源: F Zhuang, Z Qi, K Duan, D Xi, Y Zhu… - Proceedings of the …, 2020 - ieeexplore.ieee.org\n\n摘要: … representative transfer learning approaches, especially homogeneous transfer learning \napproaches, from the perspectives of data and model. The applications of transfer learning are …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/9134370/\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9134370/",
+      "type": "txt"
+    },
+    {
+      "title": "Transfer learning",
+      "content": "论文标题: Transfer learning\n\n作者/来源: SJ Pan - Learning, 2020 - api.taylorfrancis.com\n\n摘要: … transfer learning settings, namely homogenous transfer learning and heterogeneous transfer \nlearning… the negative transfer issue and other research issues of transfer learning. After that…\n\n论文链接: https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&amp;identifierValue=10.1201/b17320-26&amp;type=chapterpdf\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&amp;identifierValue=10.1201/b17320-26&amp;type=chapterpdf",
+      "type": "txt"
+    },
+    {
+      "title": "Transfer learning: a friendly introduction",
+      "content": "论文标题: Transfer learning: a friendly introduction\n\n作者/来源: A Hosna, E Merry, J Gyalmo, Z Alom, Z Aung… - Journal of big …, 2022 - Springer\n\n摘要: … of the ways is to transfer knowledge between the tasks [1]. This philosophy has inspired \nTransfer Learning(TL): to improve data gathering and learn in machine learning (ML) using the …\n\n论文链接: https://link.springer.com/article/10.1186/s40537-022-00652-w\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/article/10.1186/s40537-022-00652-w",
+      "type": "txt"
+    },
+    {
+      "title": "Federated and Transfer Learning: A Survey on Adversaries and Defense Mechanisms",
+      "content": "论文标题: Federated and Transfer Learning: A Survey on Adversaries and Defense Mechanisms\n\n作者: Ehsan Hallaji, Roozbeh Razavi-Far, Mehrdad Saif\n\n摘要: The advent of federated learning has facilitated large-scale data exchange amongst machine learning models while maintaining privacy. Despite its brief history, federated learning is rapidly evolving to make wider use more practical. One of the most significant advancements in this domain is the incorporation of transfer learning into federated learning, which overcomes fundamental constraints of primary federated learning, particularly in terms of security. This chapter performs a comprehensive survey on the intersection of federated and transfer learning from a security point of view. The main goal of this study is to uncover potential vulnerabilities and defense mechanisms that might compromise the privacy and performance of systems that use federated and transfer learning.\n\narXiv链接: http://arxiv.org/abs/2207.02337v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2207.02337v1",
+      "type": "txt"
+    },
+    {
+      "title": "Transfer Learning Toolkit: Primers and Benchmarks",
+      "content": "论文标题: Transfer Learning Toolkit: Primers and Benchmarks\n\n作者: Fuzhen Zhuang, Keyu Duan, Tongjia Guo, Yongchun Zhu, Dongbo Xi\n\n摘要: The transfer learning toolkit wraps the codes of 17 transfer learning models and provides integrated interfaces, allowing users to use those models by calling a simple function. It is easy for primary researchers to use this toolkit and to choose proper models for real-world applications. The toolkit is written in Python and distributed under MIT open source license. In this paper, the current state of this toolkit is described and the necessary environment setting and usage are introduced.\n\narXiv链接: http://arxiv.org/abs/1911.08967v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1911.08967v1",
+      "type": "txt"
+    },
+    {
+      "title": "Predicting concentration levels of air pollutants by transfer learning and recurrent neural network",
+      "content": "论文标题: Predicting concentration levels of air pollutants by transfer learning and recurrent neural network\n\n作者: Iat Hang Fong, Tengyue Li, Simon Fong, Raymond K. Wong, Antonio J. Tallón-Ballesteros\n\n摘要: Air pollution (AP) poses a great threat to human health, and people are paying more attention than ever to its prediction. Accurate prediction of AP helps people to plan for their outdoor activities and aids protecting human health. In this paper, long-short term memory (LSTM) recurrent neural networks (RNNs) have been used to predict the future concentration of air pollutants (APS) in Macau. Additionally, meteorological data and data on the concentration of APS have been utilized. Moreover, in Macau, some air quality monitoring stations (AQMSs) have less observed data in quantity, and, at the same time, some AQMSs recorded less observed data of certain types of APS. Therefore, the transfer learning and pre-trained neural networks have been employed to assist AQMSs with less observed data to build a neural network with high prediction accuracy. The experimental sample covers a period longer than 12-year and includes daily measurements from several APS as well as other more classical me...\n\narXiv链接: http://arxiv.org/abs/2502.01654v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2502.01654v1",
+      "type": "txt"
+    }
+  ],
+  "video": [
+    {
+      "title": "Image classification vs Object detection vs Image Segmentation | Deep Learning Tutorial 28",
+      "url": "https://www.youtube.com/watch?v=taC5pMCm70U",
+      "description": "YouTube视频: Image classification vs Object detection vs Image Segmentation | Deep Learning Tutorial 28",
+      "video_id": "taC5pMCm70U",
+      "thumbnail": "https://i.ytimg.com/vi/taC5pMCm70U/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuwKo4HDBlBRvLReSpbhSevJ5m_w",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS231N | Spring 2025 | Lecture 5: Image Classification with CNNs",
+      "url": "https://www.youtube.com/watch?v=f3g1zGdxptI",
+      "description": "YouTube视频: Stanford CS231N | Spring 2025 | Lecture 5: Image Classification with CNNs",
+      "video_id": "f3g1zGdxptI",
+      "thumbnail": "https://i.ytimg.com/vi/f3g1zGdxptI/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhiIGIoYjAP&rs=AOn4CLAZiASgrKJ2tokh2kQ7E3--mA-RKQ",
+      "type": "video"
+    },
+    {
+      "title": "What are Convolutional Neural Networks (CNNs)?",
+      "url": "https://www.youtube.com/watch?v=QzY57FaENXg",
+      "description": "YouTube视频: What are Convolutional Neural Networks (CNNs)?",
+      "video_id": "QzY57FaENXg",
+      "thumbnail": "https://i.ytimg.com/vi/QzY57FaENXg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWD5Gcqt7zF0Ha8gYh4G5DepNRRw",
+      "type": "video"
+    },
+    {
+      "title": "Lecture 2 | Image Classification",
+      "url": "https://www.youtube.com/watch?v=OoUX-nOEjG0",
+      "description": "YouTube视频: Lecture 2 | Image Classification",
+      "video_id": "OoUX-nOEjG0",
+      "thumbnail": "https://i.ytimg.com/vi/OoUX-nOEjG0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDHOuHhyqlFGBtk-3C9yz5NQvTCuA",
+      "type": "video"
+    },
+    {
+      "title": "Transformers are outperforming CNNs in image classification",
+      "url": "https://www.youtube.com/watch?v=g8IgDWBA88Y",
+      "description": "YouTube视频: Transformers are outperforming CNNs in image classification",
+      "video_id": "g8IgDWBA88Y",
+      "thumbnail": "https://i.ytimg.com/vi/g8IgDWBA88Y/hq720_2.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhyIFYoNjAP&rs=AOn4CLDUjsj13yejiTJ1ZXjxNNOzxv6zbw",
+      "type": "video"
+    },
+    {
+      "title": "Image Classification",
+      "url": "https://www.youtube.com/watch?v=Fv_dCWzppQM",
+      "description": "YouTube视频: Image Classification",
+      "video_id": "Fv_dCWzppQM",
+      "thumbnail": "https://i.ytimg.com/vi/Fv_dCWzppQM/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB4geAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLB4TsoMqCMi-AooYcnpouXkFkYCTg",
+      "type": "video"
+    },
+    {
+      "title": "What Are Vision Language Models? How AI Sees & Understands Images",
+      "url": "https://www.youtube.com/watch?v=lOD_EE96jhM",
+      "description": "YouTube视频: What Are Vision Language Models? How AI Sees & Understands Images",
+      "video_id": "lOD_EE96jhM",
+      "thumbnail": "https://i.ytimg.com/vi/lOD_EE96jhM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCnBzNguKPcpqGGTrcvXxBDtrDV4A",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS231N | Spring 2025 | Lecture 2: Image Classification with Linear Classifiers",
+      "url": "https://www.youtube.com/watch?v=pdqofxJeBN8",
+      "description": "YouTube视频: Stanford CS231N | Spring 2025 | Lecture 2: Image Classification with Linear Classifiers",
+      "video_id": "pdqofxJeBN8",
+      "thumbnail": "https://i.ytimg.com/vi/pdqofxJeBN8/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLDKFco5uhSwY00wKt2z0rddsBkRZA",
+      "type": "video"
+    },
+    {
+      "title": "Computer Vision: Crash Course Computer Science #35",
+      "url": "https://www.youtube.com/watch?v=-4E2-0sxVUM",
+      "description": "YouTube视频: Computer Vision: Crash Course Computer Science #35",
+      "video_id": "-4E2-0sxVUM",
+      "thumbnail": "https://i.ytimg.com/vi/-4E2-0sxVUM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBgsMYOiodASmwHqR9d9KYAJj_j3A",
+      "type": "video"
+    },
+    {
+      "title": "Why Computer Vision Is a Hard Problem for AI",
+      "url": "https://www.youtube.com/watch?v=YOKPo-I6cgs",
+      "description": "YouTube视频: Why Computer Vision Is a Hard Problem for AI",
+      "video_id": "YOKPo-I6cgs",
+      "thumbnail": "https://i.ytimg.com/vi/YOKPo-I6cgs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBDXAv2799pc9DB1UAFRnD3YoNxGA",
+      "type": "video"
+    },
+    {
+      "title": "What is Computer Vision? | Introduction",
+      "url": "https://www.youtube.com/watch?v=wVE8SFMSBJ0",
+      "description": "YouTube视频: What is Computer Vision? | Introduction",
+      "video_id": "wVE8SFMSBJ0",
+      "thumbnail": "https://i.ytimg.com/vi/wVE8SFMSBJ0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCYWqSRyn0zEtgqNB7EjAg-DditOg",
+      "type": "video"
+    },
+    {
+      "title": "Computer Vision Explained",
+      "url": "https://www.youtube.com/watch?v=jVwvnWRYcdk",
+      "description": "YouTube视频: Computer Vision Explained",
+      "video_id": "jVwvnWRYcdk",
+      "thumbnail": "https://i.ytimg.com/vi/jVwvnWRYcdk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCafD5mqOhc68JL3NHT-6_1G-RIUQ",
+      "type": "video"
+    },
+    {
+      "title": "Computer Vision: The Camera Matrix",
+      "url": "https://www.youtube.com/watch?v=Hz8kz5aeQ44",
+      "description": "YouTube视频: Computer Vision: The Camera Matrix",
+      "video_id": "Hz8kz5aeQ44",
+      "thumbnail": "https://i.ytimg.com/vi/Hz8kz5aeQ44/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCB4_QBQ8bYE9WtLkXA52pnou9mkg",
+      "type": "video"
+    },
+    {
+      "title": "Lecture 1: Introduction to Machine Vision",
+      "url": "https://www.youtube.com/watch?v=tY2gczObpfU",
+      "description": "YouTube视频: Lecture 1: Introduction to Machine Vision",
+      "video_id": "tY2gczObpfU",
+      "thumbnail": "https://i.ytimg.com/vi/tY2gczObpfU/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIFAoMjAP&rs=AOn4CLCRC4hHHmakRhBvKu8aqLkw0OdXSg",
+      "type": "video"
+    },
+    {
+      "title": "But what is a convolution?",
+      "url": "https://www.youtube.com/watch?v=KuXjwB4LzSA",
+      "description": "YouTube视频: But what is a convolution?",
+      "video_id": "KuXjwB4LzSA",
+      "thumbnail": "https://i.ytimg.com/vi/KuXjwB4LzSA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBD_EqI4E471OWLIHXUpo84mSOJMA",
+      "type": "video"
+    },
+    {
+      "title": "Convolutional Neural Networks Explained (CNN Visualized)",
+      "url": "https://www.youtube.com/watch?v=pj9-rr1wDhM",
+      "description": "YouTube视频: Convolutional Neural Networks Explained (CNN Visualized)",
+      "video_id": "pj9-rr1wDhM",
+      "thumbnail": "https://i.ytimg.com/vi/pj9-rr1wDhM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDm8RDD5Fp3-kDABIZBcVY5ovW5_w",
+      "type": "video"
+    },
+    {
+      "title": "CNN: Convolutional Neural Networks Explained - Computerphile",
+      "url": "https://www.youtube.com/watch?v=py5byOOHZM8",
+      "description": "YouTube视频: CNN: Convolutional Neural Networks Explained - Computerphile",
+      "video_id": "py5byOOHZM8",
+      "thumbnail": "https://i.ytimg.com/vi/py5byOOHZM8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDxhr9LXdWIycPcUpkyhgmw3vOJyg",
+      "type": "video"
+    },
+    {
+      "title": "What is a convolutional neural network (CNN)?",
+      "url": "https://www.youtube.com/watch?v=K_BHmztRTpA",
+      "description": "YouTube视频: What is a convolutional neural network (CNN)?",
+      "video_id": "K_BHmztRTpA",
+      "thumbnail": "https://i.ytimg.com/vi/K_BHmztRTpA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA5K4ij0lNxE-kaf1Ff-eFNlpDITA",
+      "type": "video"
+    },
+    {
+      "title": "What is a Convolutional Neural Network (CNN)?",
+      "url": "https://www.youtube.com/watch?v=ixF5WNpTzCA",
+      "description": "YouTube视频: What is a Convolutional Neural Network (CNN)?",
+      "video_id": "ixF5WNpTzCA",
+      "thumbnail": "https://i.ytimg.com/vi/ixF5WNpTzCA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDbgl9h5VbEkoYbk8itEaXu1RgjTw",
+      "type": "video"
+    },
+    {
+      "title": "Neural Networks Explained in 5 minutes",
+      "url": "https://www.youtube.com/watch?v=jmmW0F0biz0",
+      "description": "YouTube视频: Neural Networks Explained in 5 minutes",
+      "video_id": "jmmW0F0biz0",
+      "thumbnail": "https://i.ytimg.com/vi/jmmW0F0biz0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZY9iTa5eDilpg1E2Cq1QwKRHkOQ",
+      "type": "video"
+    },
+    {
+      "title": "Convolutional Networks",
+      "url": "https://www.youtube.com/watch?v=jajksuQW4mc",
+      "description": "YouTube视频: Convolutional Networks",
+      "video_id": "jajksuQW4mc",
+      "thumbnail": "https://i.ytimg.com/vi/jajksuQW4mc/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLC1FVb_R0D17jrCi0gqAYDRyxCy2Q",
+      "type": "video"
+    },
+    {
+      "title": "Lec 11. Representation Learning: Reconstruction-Based",
+      "url": "https://www.youtube.com/watch?v=QxOzQRtd440",
+      "description": "YouTube视频: Lec 11. Representation Learning: Reconstruction-Based",
+      "video_id": "QxOzQRtd440",
+      "thumbnail": "https://i.ytimg.com/vi/QxOzQRtd440/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGIoWzAP&rs=AOn4CLARRHlP4uYiBnI801SRgP-sS70XZQ",
+      "type": "video"
+    },
+    {
+      "title": "Lec 12. Representation Learning: Similarity-Based",
+      "url": "https://www.youtube.com/watch?v=yUh1fEGGdl4",
+      "description": "YouTube视频: Lec 12. Representation Learning: Similarity-Based",
+      "video_id": "yUh1fEGGdl4",
+      "thumbnail": "https://i.ytimg.com/vi/yUh1fEGGdl4/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIF8oQDAP&rs=AOn4CLCLM36iWOi3veKJGVeVtvSnE9Pdgw",
+      "type": "video"
+    },
+    {
+      "title": "Lec 13. Representation Learning: Theory",
+      "url": "https://www.youtube.com/watch?v=-eC0-5mXHQg",
+      "description": "YouTube视频: Lec 13. Representation Learning: Theory",
+      "video_id": "-eC0-5mXHQg",
+      "thumbnail": "https://i.ytimg.com/vi/-eC0-5mXHQg/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IFooJTAP&rs=AOn4CLD_8Y4iW_0-bNZyqD5XhAKM8iDqhg",
+      "type": "video"
+    },
+    {
+      "title": "Lec 15. Generative Models: Representation Learning Meets Generative Modeling",
+      "url": "https://www.youtube.com/watch?v=8zzfcYIELdo",
+      "description": "YouTube视频: Lec 15. Generative Models: Representation Learning Meets Generative Modeling",
+      "video_id": "8zzfcYIELdo",
+      "thumbnail": "https://i.ytimg.com/vi/8zzfcYIELdo/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIFIoKjAP&rs=AOn4CLCU0ET481aaYTdzWAnZwCSpZqYlVw",
+      "type": "video"
+    },
+    {
+      "title": "L6: Representation learning: part 1",
+      "url": "https://www.youtube.com/watch?v=1V_M4JxygGk",
+      "description": "YouTube视频: L6: Representation learning: part 1",
+      "video_id": "1V_M4JxygGk",
+      "thumbnail": "https://i.ytimg.com/vi/1V_M4JxygGk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrdnLQ-PTyeIaM87PRA82ZF75vOg",
+      "type": "video"
+    },
+    {
+      "title": "From Deep Learning of Disentangled Representations to Higher-level Cognition",
+      "url": "https://www.youtube.com/watch?v=Yr1mOzC93xs",
+      "description": "YouTube视频: From Deep Learning of Disentangled Representations to Higher-level Cognition",
+      "video_id": "Yr1mOzC93xs",
+      "thumbnail": "https://i.ytimg.com/vi/Yr1mOzC93xs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAIiiNiV1FvhKfKsj6LI9mhv2dsJQ",
+      "type": "video"
+    },
+    {
+      "title": "7.4: Embeddings & Representation Learning",
+      "url": "https://www.youtube.com/watch?v=0f2q3d6Sy-w",
+      "description": "YouTube视频: 7.4: Embeddings & Representation Learning",
+      "video_id": "0f2q3d6Sy-w",
+      "thumbnail": "https://i.ytimg.com/vi/0f2q3d6Sy-w/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARhlIF8oVDAP&rs=AOn4CLBzLKxD9jbGqKpp_fafrDcPBgO1HQ",
+      "type": "video"
+    },
+    {
+      "title": "Autoencoders | Deep Learning Animated",
+      "url": "https://www.youtube.com/watch?v=hZ4a4NgM3u0",
+      "description": "YouTube视频: Autoencoders | Deep Learning Animated",
+      "video_id": "hZ4a4NgM3u0",
+      "thumbnail": "https://i.ytimg.com/vi/hZ4a4NgM3u0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCcIo3-sgWF57jp7fs93IzQDFIhCA",
+      "type": "video"
+    },
+    {
+      "title": "How to Train YOLO Object Detection Models in Google Colab (YOLO26, YOLO11, YOLOv8)",
+      "url": "https://www.youtube.com/watch?v=r0RspiLG260",
+      "description": "YouTube视频: How to Train YOLO Object Detection Models in Google Colab (YOLO26, YOLO11, YOLOv8)",
+      "video_id": "r0RspiLG260",
+      "thumbnail": "https://i.ytimg.com/vi/r0RspiLG260/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLARKbXrpcK2z_eCxET_Rnk2rCnptA",
+      "type": "video"
+    },
+    {
+      "title": "How computers learn to recognize objects instantly | Joseph Redmon",
+      "url": "https://www.youtube.com/watch?v=Cgxsv1riJhI",
+      "description": "YouTube视频: How computers learn to recognize objects instantly | Joseph Redmon",
+      "video_id": "Cgxsv1riJhI",
+      "thumbnail": "https://i.ytimg.com/vi/Cgxsv1riJhI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC_pMilJ8YrUrPBIujT2N7ewxkxpQ",
+      "type": "video"
+    },
+    {
+      "title": "CenterNet: Objects as Points – Anchor Free Object Detection Explained",
+      "url": "https://www.youtube.com/watch?v=h7WejF3QLDM",
+      "description": "YouTube视频: CenterNet: Objects as Points – Anchor Free Object Detection Explained",
+      "video_id": "h7WejF3QLDM",
+      "thumbnail": "https://i.ytimg.com/vi/h7WejF3QLDM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCIfcMH95fltVKoPTXldmfjXf9nHQ",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS231N | Spring 2025 | Lecture 9: Object Detection, Image Segmentation, Visualizing",
+      "url": "https://www.youtube.com/watch?v=PTypu6GqEd4",
+      "description": "YouTube视频: Stanford CS231N | Spring 2025 | Lecture 9: Object Detection, Image Segmentation, Visualizing",
+      "video_id": "PTypu6GqEd4",
+      "thumbnail": "https://i.ytimg.com/vi/PTypu6GqEd4/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLCQrOTO5Mjv-CGwFudW8HRljHOIJg",
+      "type": "video"
+    },
+    {
+      "title": "Object Detection in 10 minutes with YOLOv5 & Python!",
+      "url": "https://www.youtube.com/watch?v=fu2tfOV9vbY",
+      "description": "YouTube视频: Object Detection in 10 minutes with YOLOv5 & Python!",
+      "video_id": "fu2tfOV9vbY",
+      "thumbnail": "https://i.ytimg.com/vi/fu2tfOV9vbY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDFQywCsJ6kfVGWOPomz59vUoWtIw",
+      "type": "video"
+    },
+    {
+      "title": "Object detection with Python FULL COURSE | Computer vision",
+      "url": "https://www.youtube.com/watch?v=UL2cfTTqdNo",
+      "description": "YouTube视频: Object detection with Python FULL COURSE | Computer vision",
+      "video_id": "UL2cfTTqdNo",
+      "thumbnail": "https://i.ytimg.com/vi/UL2cfTTqdNo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD8VnoEdLBz82AJ60av3j14Qff4mw",
+      "type": "video"
+    },
+    {
+      "title": "What is YOLO algorithm? | Deep Learning Tutorial 31 (Tensorflow, Keras & Python)",
+      "url": "https://www.youtube.com/watch?v=ag3DLKsl2vk",
+      "description": "YouTube视频: What is YOLO algorithm? | Deep Learning Tutorial 31 (Tensorflow, Keras & Python)",
+      "video_id": "ag3DLKsl2vk",
+      "thumbnail": "https://i.ytimg.com/vi/ag3DLKsl2vk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2hCB4eJWrOGw5WWS4TPXgYdVnCg",
+      "type": "video"
+    },
+    {
+      "title": "Build A Semantic Segmentation Model in 8 Minutes with DeepLab V3",
+      "url": "https://www.youtube.com/watch?v=p1p3O91IFf4",
+      "description": "YouTube视频: Build A Semantic Segmentation Model in 8 Minutes with DeepLab V3",
+      "video_id": "p1p3O91IFf4",
+      "thumbnail": "https://i.ytimg.com/vi/p1p3O91IFf4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDzFOrYERW01V0RcJEalhM1auQ86A",
+      "type": "video"
+    },
+    {
+      "title": "Lecture 11 | Detection and Segmentation",
+      "url": "https://www.youtube.com/watch?v=nDPWywWRIRo",
+      "description": "YouTube视频: Lecture 11 | Detection and Segmentation",
+      "video_id": "nDPWywWRIRo",
+      "thumbnail": "https://i.ytimg.com/vi/nDPWywWRIRo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDzezHnmQ7ZWCANDCD7uXXTJFBJfw",
+      "type": "video"
+    },
+    {
+      "title": "Semantic Segmentation Tutorial | Training a Semantic Segmentation Network | Great Learning",
+      "url": "https://www.youtube.com/watch?v=nuO926-RLQI",
+      "description": "YouTube视频: Semantic Segmentation Tutorial | Training a Semantic Segmentation Network | Great Learning",
+      "video_id": "nuO926-RLQI",
+      "thumbnail": "https://i.ytimg.com/vi/nuO926-RLQI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDpm_P7KL1xLv5ELEVTB74QBDL5IQ",
+      "type": "video"
+    },
+    {
+      "title": "K-means & Image Segmentation - Computerphile",
+      "url": "https://www.youtube.com/watch?v=yR7k19YBqiw",
+      "description": "YouTube视频: K-means & Image Segmentation - Computerphile",
+      "video_id": "yR7k19YBqiw",
+      "thumbnail": "https://i.ytimg.com/vi/yR7k19YBqiw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA_Y5LXTYueMefASkLhKH36przC_Q",
+      "type": "video"
+    },
+    {
+      "title": "Lecture 53 : Semantic Segmentation - I",
+      "url": "https://www.youtube.com/watch?v=RV2HMPwVNTY",
+      "description": "YouTube视频: Lecture 53 : Semantic Segmentation - I",
+      "video_id": "RV2HMPwVNTY",
+      "thumbnail": "https://i.ytimg.com/vi/RV2HMPwVNTY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBCrbx_ZNA_BVpM0cSR-Dmm5gmCg",
+      "type": "video"
+    },
+    {
+      "title": "#57 Semantic Segmentation | Machine Learning for Engineering & Science Applications",
+      "url": "https://www.youtube.com/watch?v=_N7HRnBgoCw",
+      "description": "YouTube视频: #57 Semantic Segmentation | Machine Learning for Engineering & Science Applications",
+      "video_id": "_N7HRnBgoCw",
+      "thumbnail": "https://i.ytimg.com/vi/_N7HRnBgoCw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA8xI6ug-001HzMQwBucsCEjZ52Pg",
+      "type": "video"
+    },
+    {
+      "title": "How does facial recognition work?",
+      "url": "https://www.youtube.com/watch?v=MIfuySogx2A",
+      "description": "YouTube视频: How does facial recognition work?",
+      "video_id": "MIfuySogx2A",
+      "thumbnail": "https://i.ytimg.com/vi/MIfuySogx2A/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA7_Iedd2wsU-3-o01uBKfeetkJ0A",
+      "type": "video"
+    },
+    {
+      "title": "Use of facial recognition technology at supermarkets raises questions",
+      "url": "https://www.youtube.com/watch?v=UPm42xqIy_U",
+      "description": "YouTube视频: Use of facial recognition technology at supermarkets raises questions",
+      "video_id": "UPm42xqIy_U",
+      "thumbnail": "https://i.ytimg.com/vi/UPm42xqIy_U/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOLayDNGT_7_x69VK-OYG2SwEDFg",
+      "type": "video"
+    },
+    {
+      "title": "What facial recognition steals from us",
+      "url": "https://www.youtube.com/watch?v=cc0dqW2HCRc",
+      "description": "YouTube视频: What facial recognition steals from us",
+      "video_id": "cc0dqW2HCRc",
+      "thumbnail": "https://i.ytimg.com/vi/cc0dqW2HCRc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDeF5tths6PAs0wsNfoputP4s2NYQ",
+      "type": "video"
+    },
+    {
+      "title": "Is Facial Recognition Invading Your Privacy?",
+      "url": "https://www.youtube.com/watch?v=f5qgOqNQ7zY",
+      "description": "YouTube视频: Is Facial Recognition Invading Your Privacy?",
+      "video_id": "f5qgOqNQ7zY",
+      "thumbnail": "https://i.ytimg.com/vi/f5qgOqNQ7zY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC_x3ti_pDfXzITD48kpAzW6qMq6A",
+      "type": "video"
+    },
+    {
+      "title": "AI facial recognition: A threat to privacy?",
+      "url": "https://www.youtube.com/watch?v=AD26zhpyiSk",
+      "description": "YouTube视频: AI facial recognition: A threat to privacy?",
+      "video_id": "AD26zhpyiSk",
+      "thumbnail": "https://i.ytimg.com/vi/AD26zhpyiSk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBsZ9C-i9IkozF_nkCiIWnuQUgHiQ",
+      "type": "video"
+    },
+    {
+      "title": "Police don’t want you to know about this facial recognition trial",
+      "url": "https://www.youtube.com/watch?v=xoTHXsmXWgw",
+      "description": "YouTube视频: Police don’t want you to know about this facial recognition trial",
+      "video_id": "xoTHXsmXWgw",
+      "thumbnail": "https://i.ytimg.com/vi/xoTHXsmXWgw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAvCiKb3PTp4EyIYi7gjoeQOWMLPw",
+      "type": "video"
+    },
+    {
+      "title": "C4W4L01 What is face recognition",
+      "url": "https://www.youtube.com/watch?v=-FfMVnwXrZ0",
+      "description": "YouTube视频: C4W4L01 What is face recognition",
+      "video_id": "-FfMVnwXrZ0",
+      "thumbnail": "https://i.ytimg.com/vi/-FfMVnwXrZ0/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBg0unIpq7BVXawr5bJPKYiifwuuw",
+      "type": "video"
+    },
+    {
+      "title": "China: facial recognition and state control",
+      "url": "https://www.youtube.com/watch?v=lH2gMNrUuEY",
+      "description": "YouTube视频: China: facial recognition and state control",
+      "video_id": "lH2gMNrUuEY",
+      "thumbnail": "https://i.ytimg.com/vi/lH2gMNrUuEY/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCDs0NQnOZSfmp78QgAol0q1PRO_A",
+      "type": "video"
+    },
+    {
+      "title": "Ultrasound medical imaging | Mechanical waves and sound | Physics | Khan Academy",
+      "url": "https://www.youtube.com/watch?v=sTcqtljxLOk",
+      "description": "YouTube视频: Ultrasound medical imaging | Mechanical waves and sound | Physics | Khan Academy",
+      "video_id": "sTcqtljxLOk",
+      "thumbnail": "https://i.ytimg.com/vi/sTcqtljxLOk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAA6nxtbTF3E7Jx4XOKLQFIm9jeQg",
+      "type": "video"
+    },
+    {
+      "title": "Diagnostic Imaging Explained (X-Ray / CT Scan / Ultrasound / MRI)",
+      "url": "https://www.youtube.com/watch?v=0d_P5kXkAvE",
+      "description": "YouTube视频: Diagnostic Imaging Explained (X-Ray / CT Scan / Ultrasound / MRI)",
+      "video_id": "0d_P5kXkAvE",
+      "thumbnail": "https://i.ytimg.com/vi/0d_P5kXkAvE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDaSU5NUn20KuvGTrwdnq-30_zOGA",
+      "type": "video"
+    },
+    {
+      "title": "Behind the scenes: Medical imaging",
+      "url": "https://www.youtube.com/watch?v=gs6tcHqq7E0",
+      "description": "YouTube视频: Behind the scenes: Medical imaging",
+      "video_id": "gs6tcHqq7E0",
+      "thumbnail": "https://i.ytimg.com/vi/gs6tcHqq7E0/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARgWIF0ocjAP&rs=AOn4CLDX-1IuCmImzkT35JiAg4TGZ_lYrg",
+      "type": "video"
+    },
+    {
+      "title": "What’s the Difference Between an X-ray, MRI and a CT? | Medical Advice With Doctor ER",
+      "url": "https://www.youtube.com/watch?v=F0ilx92F9TI",
+      "description": "YouTube视频: What’s the Difference Between an X-ray, MRI and a CT? | Medical Advice With Doctor ER",
+      "video_id": "F0ilx92F9TI",
+      "thumbnail": "https://i.ytimg.com/vi/F0ilx92F9TI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBTAW3ZasQqhUrYaCfrnVdj1EykMw",
+      "type": "video"
+    },
+    {
+      "title": "How does an MRI machine work?",
+      "url": "https://www.youtube.com/watch?v=nFkBhUYynUw",
+      "description": "YouTube视频: How does an MRI machine work?",
+      "video_id": "nFkBhUYynUw",
+      "thumbnail": "https://i.ytimg.com/vi/nFkBhUYynUw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAiBvDDLXpQPZQHRL6xu0-ZdNboCg",
+      "type": "video"
+    },
+    {
+      "title": "Create Infinite Medical Imaging Data with Generative AI",
+      "url": "https://www.youtube.com/watch?v=YHTSdd8-bnc",
+      "description": "YouTube视频: Create Infinite Medical Imaging Data with Generative AI",
+      "video_id": "YHTSdd8-bnc",
+      "thumbnail": "https://i.ytimg.com/vi/YHTSdd8-bnc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAU_e8ZfqCEiPbz9aSM_o-eFv008g",
+      "type": "video"
+    },
+    {
+      "title": "MRIs Are Insane",
+      "url": "https://www.youtube.com/watch?v=Ycyf07_rpZo",
+      "description": "YouTube视频: MRIs Are Insane",
+      "video_id": "Ycyf07_rpZo",
+      "thumbnail": "https://i.ytimg.com/vi/Ycyf07_rpZo/hq720_2.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhyIE0oOzAP&rs=AOn4CLBTUekUvrFEhZxE3sI36o_8zsIlPg",
+      "type": "video"
+    },
+    {
+      "title": "So You Want to Be a RADIOLOGIST [Ep. 16]",
+      "url": "https://www.youtube.com/watch?v=DzpjRBLnKEM",
+      "description": "YouTube视频: So You Want to Be a RADIOLOGIST [Ep. 16]",
+      "video_id": "DzpjRBLnKEM",
+      "thumbnail": "https://i.ytimg.com/vi/DzpjRBLnKEM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWEm-16rVsJDorBNrp0m9A7Wbp3w",
+      "type": "video"
+    },
+    {
+      "title": "What is Transfer Learning?",
+      "url": "https://www.youtube.com/watch?v=BqqfQnyjmgg",
+      "description": "YouTube视频: What is Transfer Learning?",
+      "video_id": "BqqfQnyjmgg",
+      "thumbnail": "https://i.ytimg.com/vi/BqqfQnyjmgg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCuYpnARBiB_unVfr8TkdkDqsn6bQ",
+      "type": "video"
+    },
+    {
+      "title": "Transfer Learning (C3W2L07)",
+      "url": "https://www.youtube.com/watch?v=yofjFQddwHE",
+      "description": "YouTube视频: Transfer Learning (C3W2L07)",
+      "video_id": "yofjFQddwHE",
+      "thumbnail": "https://i.ytimg.com/vi/yofjFQddwHE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDgJEIUcHpatKff30U_zb_chfIELQ",
+      "type": "video"
+    },
+    {
+      "title": "Transfer Learning | Deep Learning Tutorial 27 (Tensorflow, Keras & Python)",
+      "url": "https://www.youtube.com/watch?v=LsdxvjLWkIY",
+      "description": "YouTube视频: Transfer Learning | Deep Learning Tutorial 27 (Tensorflow, Keras & Python)",
+      "video_id": "LsdxvjLWkIY",
+      "thumbnail": "https://i.ytimg.com/vi/LsdxvjLWkIY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBjb7wnTvqjRGzrtHW8pbzkq_koA",
+      "type": "video"
+    },
+    {
+      "title": "4: Deep Learning for Computer Vision – Transfer Learning and Fine-Tuning; Intro to HuggingFace",
+      "url": "https://www.youtube.com/watch?v=8xh7Y0pBrCE",
+      "description": "YouTube视频: 4: Deep Learning for Computer Vision – Transfer Learning and Fine-Tuning; Intro to HuggingFace",
+      "video_id": "8xh7Y0pBrCE",
+      "thumbnail": "https://i.ytimg.com/vi/8xh7Y0pBrCE/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhTIF8oZTAP&rs=AOn4CLBCK2BrXO5dx3qowq2nve5GJvlh_g",
+      "type": "video"
+    },
+    {
+      "title": "Transfer learning and Transformer models (ML Tech Talks)",
+      "url": "https://www.youtube.com/watch?v=LE3NfEULV6k",
+      "description": "YouTube视频: Transfer learning and Transformer models (ML Tech Talks)",
+      "video_id": "LE3NfEULV6k",
+      "thumbnail": "https://i.ytimg.com/vi/LE3NfEULV6k/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClrD__H3WWlB-DewF5k2zD50FPlg",
+      "type": "video"
+    },
+    {
+      "title": "Lec 18. Transfer Learning: Models",
+      "url": "https://www.youtube.com/watch?v=tNfuZ9Imt3M",
+      "description": "YouTube视频: Lec 18. Transfer Learning: Models",
+      "video_id": "tNfuZ9Imt3M",
+      "thumbnail": "https://i.ytimg.com/vi/tNfuZ9Imt3M/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIFMoRTAP&rs=AOn4CLAsNvNou2Uxz7oVd1wnnR412299Xw",
+      "type": "video"
+    },
+    {
+      "title": "What is Zero-Shot Learning?",
+      "url": "https://www.youtube.com/watch?v=pVpr4GYLzAo",
+      "description": "YouTube视频: What is Zero-Shot Learning?",
+      "video_id": "pVpr4GYLzAo",
+      "thumbnail": "https://i.ytimg.com/vi/pVpr4GYLzAo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAWJWr8xdkWjEHhzoWU7nCwywFc4Q",
+      "type": "video"
+    },
+    {
+      "title": "What Is ‘Transfer of Learning’ and How Does It Help Students?",
+      "url": "https://www.youtube.com/watch?v=N8QfkT8L9lo",
+      "description": "YouTube视频: What Is ‘Transfer of Learning’ and How Does It Help Students?",
+      "video_id": "N8QfkT8L9lo",
+      "thumbnail": "https://i.ytimg.com/vi/N8QfkT8L9lo/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBdIW_D9vcLjomGsfYT7JJspzfpKg",
+      "type": "video"
+    }
+  ],
+  "code": [
+    {
+      "title": "deep-learning-for-image-processing",
+      "url": "https://github.com/WZMIAOMIAO/deep-learning-for-image-processing",
+      "description": "GitHub代码仓库: deep-learning-for-image-processing",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "pytorch-grad-cam",
+      "url": "https://github.com/jacobgil/pytorch-grad-cam",
+      "description": "GitHub代码仓库: pytorch-grad-cam",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "have-fun-with-machine-learning",
+      "url": "https://github.com/humphd/have-fun-with-machine-learning",
+      "description": "GitHub代码仓库: have-fun-with-machine-learning",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "awesome-image-classification",
+      "url": "https://github.com/weiaicunzai/awesome-image-classification",
+      "description": "GitHub代码仓库: awesome-image-classification",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "DeepDanbooru",
+      "url": "https://github.com/KichangKim/DeepDanbooru",
+      "description": "GitHub代码仓库: DeepDanbooru",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Awesome-Backbones",
+      "url": "https://github.com/Fafa-DL/Awesome-Backbones",
+      "description": "GitHub代码仓库: Awesome-Backbones",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "url": "https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "description": "GitHub代码仓库: 500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "skyvern",
+      "url": "https://github.com/Skyvern-AI/skyvern",
+      "description": "GitHub代码仓库: skyvern",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "vision",
+      "url": "https://github.com/pytorch/vision",
+      "description": "GitHub代码仓库: vision",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "deep-learning-drizzle",
+      "url": "https://github.com/kmario23/deep-learning-drizzle",
+      "description": "GitHub代码仓库: deep-learning-drizzle",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "awesome-deep-vision",
+      "url": "https://github.com/kjw0612/awesome-deep-vision",
+      "description": "GitHub代码仓库: awesome-deep-vision",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "cnn-explainer",
+      "url": "https://github.com/poloclub/cnn-explainer",
+      "description": "GitHub代码仓库: cnn-explainer",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "pytorch-cnn-visualizations",
+      "url": "https://github.com/utkuozbulak/pytorch-cnn-visualizations",
+      "description": "GitHub代码仓库: pytorch-cnn-visualizations",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "cnn-text-classification-tf",
+      "url": "https://github.com/dennybritz/cnn-text-classification-tf",
+      "description": "GitHub代码仓库: cnn-text-classification-tf",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "stockpredictionai",
+      "url": "https://github.com/borisbanushev/stockpredictionai",
+      "description": "GitHub代码仓库: stockpredictionai",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "coursera-deep-learning-specialization",
+      "url": "https://github.com/amanchadha/coursera-deep-learning-specialization",
+      "description": "GitHub代码仓库: coursera-deep-learning-specialization",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "MTCNN_face_detection_alignment",
+      "url": "https://github.com/kpzhang93/MTCNN_face_detection_alignment",
+      "description": "GitHub代码仓库: MTCNN_face_detection_alignment",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "rcnn",
+      "url": "https://github.com/rbgirshick/rcnn",
+      "description": "GitHub代码仓库: rcnn",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "deep-high-resolution-net.pytorch",
+      "url": "https://github.com/leoxiaobin/deep-high-resolution-net.pytorch",
+      "description": "GitHub代码仓库: deep-high-resolution-net.pytorch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "GraphSAGE",
+      "url": "https://github.com/williamleif/GraphSAGE",
+      "description": "GitHub代码仓库: GraphSAGE",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "deepmd-kit",
+      "url": "https://github.com/deepmodeling/deepmd-kit",
+      "description": "GitHub代码仓库: deepmd-kit",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Mask_RCNN",
+      "url": "https://github.com/matterport/Mask_RCNN",
+      "description": "GitHub代码仓库: Mask_RCNN",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "PaddleDetection",
+      "url": "https://github.com/PaddlePaddle/PaddleDetection",
+      "description": "GitHub代码仓库: PaddleDetection",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "deep_learning_object_detection",
+      "url": "https://github.com/hoya012/deep_learning_object_detection",
+      "description": "GitHub代码仓库: deep_learning_object_detection",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "segmentation_models.pytorch",
+      "url": "https://github.com/qubvel-org/segmentation_models.pytorch",
+      "description": "GitHub代码仓库: segmentation_models.pytorch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Pytorch-UNet",
+      "url": "https://github.com/milesial/Pytorch-UNet",
+      "description": "GitHub代码仓库: Pytorch-UNet",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "mmsegmentation",
+      "url": "https://github.com/open-mmlab/mmsegmentation",
+      "description": "GitHub代码仓库: mmsegmentation",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "PaddleSeg",
+      "url": "https://github.com/PaddlePaddle/PaddleSeg",
+      "description": "GitHub代码仓库: PaddleSeg",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "semantic-segmentation-pytorch",
+      "url": "https://github.com/CSAILVision/semantic-segmentation-pytorch",
+      "description": "GitHub代码仓库: semantic-segmentation-pytorch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "pytorch-semseg",
+      "url": "https://github.com/meetps/pytorch-semseg",
+      "description": "GitHub代码仓库: pytorch-semseg",
+      "source": "GitHub",
+      "type": "code"
+    }
+  ]
+}

@@ -756,10 +756,10 @@ This section reports what the implemented prototype produces in practice and sum
 
 \subsection{Pilot Corpus and Produced Outputs}
 
-To validate the end-to-end workflow, the current prototype was exercised on two focused AI/ML corpora bundled with the project. The first corpus, \emph{foundations\_ml}, contains ten documents centred on introductory machine learning concepts such as supervised learning, optimisation, feature engineering, and model evaluation. The second corpus, \emph{nlp\_transformers}, contains ten documents centred on modern NLP topics such as tokenization, attention, transformers, language-model pretraining, and retrieval-augmented generation. Across both corpora, the total token count is 3,177 words. Each corpus individually satisfies the system's minimum ten-document upload threshold while remaining coherent enough to represent a realistic learner scenario.
-The documents were selected deliberately to preserve topical focus inside each corpus rather than mixing unrelated AI directions into one bundle. In other words, the evaluation no longer relies on a single topic-diverse corpus; it now uses two controlled ten-document corpora that better match how the recommender is supposed to infer learning intent from a coherent input set.
+To validate the end-to-end workflow, the current prototype was exercised on three focused AI/ML corpora bundled with the project. The first corpus, \emph{foundations\_ml}, contains ten documents centred on introductory machine learning concepts such as supervised learning, optimisation, feature engineering, and model evaluation. The second corpus, \emph{nlp\_transformers}, contains ten documents centred on modern NLP topics such as tokenization, attention, transformers, language-model pretraining, and retrieval-augmented generation. The third corpus, \emph{vision\_representation}, contains ten documents centred on computer vision topics such as convolutional networks, image classification, object detection, transfer learning, and visual representation learning. Across the three corpora, the total token count is 4,528 words. Each corpus individually satisfies the system's minimum ten-document upload threshold while remaining coherent enough to represent a realistic learner scenario.
+The documents were selected deliberately to preserve topical focus inside each corpus rather than mixing unrelated AI directions into one bundle. In other words, the evaluation no longer relies on a single topic-diverse corpus; it now uses three controlled ten-document corpora that better match how the recommender is supposed to infer learning intent from a coherent input set.
 
-In the current focused-corpus setup, each corpus produces ten final topic phrases after TF-IDF weighting, MMR selection, and post-processing for redundancy reduction. The foundations corpus yields phrases such as \emph{machine learning}, \emph{model evaluation}, and \emph{feature engineering}, while the NLP corpus yields phrases such as \emph{natural language processing}, \emph{attention mechanisms}, and \emph{large language models}. Across both corpora, multi-source retrieval returned 365 unique resources after de-duplication, comprising 176 text items, 144 videos, and 45 code repositories or notebooks. After recommendation and balancing, the final exported output contained 30 resources in total, with each corpus contributing a 15-item multimodal recommendation package.
+In the current focused-corpus setup, each corpus produces ten final topic phrases after TF-IDF weighting, MMR selection, and post-processing for redundancy reduction. The foundations corpus yields phrases such as \emph{machine learning}, \emph{model evaluation}, and \emph{feature engineering}; the NLP corpus yields phrases such as \emph{natural language processing}, \emph{attention mechanisms}, and \emph{large language models}; and the vision corpus yields phrases such as \emph{image classification}, \emph{transfer learning}, and \emph{medical imaging}. Across the three corpora, multi-source retrieval returned 542 unique resources after de-duplication, comprising 257 text items, 210 videos, and 75 code repositories or notebooks. After recommendation and balancing, the final exported output contained 45 resources in total, with each corpus contributing a 15-item multimodal recommendation package.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
@@ -771,16 +771,16 @@ In the current focused-corpus setup, each corpus produces ten final topic phrase
 \hline\hline
 Metric & Value\\
 \hline
-Corpus setting & 2 corpora (20 documents total)\\
-Total corpus words & 3,177\\
+Corpus setting & 3 corpora (30 documents total)\\
+Total corpus words & 4,528\\
 Final extracted keywords & 10 per corpus\\
-Raw text resources & 176\\
-Raw video resources & 144\\
-Raw code resources & 45\\
-Final recommended text resources & 10\\
-Final recommended video resources & 10\\
-Final recommended code resources & 10\\
-Total final recommended items & 30\\
+Raw text resources & 257\\
+Raw video resources & 210\\
+Raw code resources & 75\\
+Final recommended text resources & 15\\
+Final recommended video resources & 15\\
+Final recommended code resources & 15\\
+Total final recommended items & 45\\
 \hline\hline
 \end{tabular}
 \end{table}
@@ -800,7 +800,7 @@ The distribution of resource types across pipeline stages is also informative. F
 \label{fig:resource_type_distribution}
 \end{figure}
 
-The figure therefore highlights two distinct roles of the recommendation stage. The first is \emph{compression}: it reduces 365 candidates to 30 visible outputs across the two corpora. The second is \emph{pedagogical balancing}: it prevents the system from simply returning the most common type of result. In the present implementation, this balancing happens by selecting top resources per modality within each corpus rather than globally ranking all resources together. This strategy is intentionally simple, but it aligns well with the educational motivation of the project, which is not just to find relevant resources but to provide complementary forms of reinforcement.
+The figure therefore highlights two distinct roles of the recommendation stage. The first is \emph{compression}: it reduces 542 candidates to 45 visible outputs across the three corpora. The second is \emph{pedagogical balancing}: it prevents the system from simply returning the most common type of result. In the present implementation, this balancing happens by selecting top resources per modality within each corpus rather than globally ranking all resources together. This strategy is intentionally simple, but it aligns well with the educational motivation of the project, which is not just to find relevant resources but to provide complementary forms of reinforcement.
 
 \subsection{Observed Impact of Code Optimisation}
 
@@ -902,7 +902,7 @@ A practical strength of the current evaluation is that it is directly tied to pr
 \hline\hline
 Asset & Role in evaluation\\
 \hline
-Focused corpora & Supply two coherent ten-document AI/ML corpora for repeatable end-to-end testing.\\
+Focused corpora & Supply three coherent ten-document AI/ML corpora for repeatable end-to-end testing.\\
 Evaluation JSON & Stores keyword and resource metrics used for tables and plot generation.\\
 Evaluation runner & Produces baseline-vs-pipeline metrics and exports dissertation figures.\\
 Performance harness & Measures deterministic local stages of the implemented codebase.\\
@@ -915,11 +915,11 @@ This reproducibility-oriented setup is especially important for a final-year pro
 
 \subsection{Keyword Extraction Results (RQ1)}
 
-Table~\ref{tab:keyword_quality} summarises the aggregate keyword comparison across the two focused corpora. The naive frequency baseline preserves full document coverage, while the TF-IDF + MMR pipeline sacrifices some literal coverage (100\% to 85\%) in exchange for a stronger AI-domain signal, raising keyword AI relevance from 20\% to 35\%. In both corpora, the implemented method produces more topic-bearing multi-word phrases than the unigram baseline.
+Table~\ref{tab:keyword_quality} summarises the aggregate keyword comparison across the three focused corpora. The naive frequency baseline preserves full document coverage, while the TF-IDF + MMR pipeline sacrifices some literal coverage (100\% to 86.67\%) in exchange for a stronger AI-domain signal, raising keyword AI relevance from 13.33\% to 30.74\%. Across all three corpora, the implemented method produces more topic-bearing multi-word phrases than the unigram baseline.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
-\caption{Keyword Extraction Aggregated Across Two Focused 10-Document Corpora}
+\caption{Keyword Extraction Aggregated Across Three Focused 10-Document Corpora}
 \label{tab:keyword_quality}
 \centering
 \footnotesize
@@ -927,24 +927,24 @@ Table~\ref{tab:keyword_quality} summarises the aggregate keyword comparison acro
 \hline\hline
 Method & Keywords & Coverage (\%) & AI rel. (\%)\\
 \hline
-Simple frequency baseline & 10 & 100.00 & 20.00\\
-TF-IDF + MMR & 10 & 85.00 & 35.00\\
+Simple frequency baseline & 10 & 100.00 & 13.33\\
+TF-IDF + MMR & 10 & 86.67 & 30.74\\
 \hline\hline
 \end{tabular}
 \end{table}
 
-The selected phrases from the AI-Pedia pipeline are more descriptive than the unigram baseline. Instead of returning broad words such as \emph{learning}, \emph{models}, or \emph{text}, the implemented method surfaces topic-bearing phrases such as \emph{model evaluation}, \emph{feature engineering}, \emph{attention mechanisms}, and \emph{large language models}. This is an important qualitative outcome, because the downstream search stage benefits from queries that already encode concept boundaries within each focused corpus. The lexical diversity score of the phrase-based method is slightly lower than that of the unigram baseline, and the coverage proxy also drops on the NLP corpus because a smaller set of specific phrases cannot literally touch every document. In practice, however, the phrase-based output is more usable for retrieval because it encodes topic structure rather than generic high-frequency tokens.
+The selected phrases from the AI-Pedia pipeline are more descriptive than the unigram baseline. Instead of returning broad words such as \emph{learning}, \emph{models}, or \emph{text}, the implemented method surfaces topic-bearing phrases such as \emph{model evaluation}, \emph{attention mechanisms}, \emph{large language models}, and \emph{transfer learning}. This is an important qualitative outcome, because the downstream search stage benefits from queries that already encode concept boundaries within each focused corpus. The lexical diversity score of the phrase-based method is slightly lower than that of the unigram baseline, and the coverage proxy also drops on the more specialised corpora because a smaller set of specific phrases cannot literally touch every document. In practice, however, the phrase-based output is more usable for retrieval because it encodes topic structure rather than generic high-frequency tokens.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.45\textwidth]{figures/evaluation_precision_comparison.png}
-\caption{Keyword extraction comparison between a simple frequency baseline and the implemented TF-IDF + MMR pipeline, aggregated across two focused corpora. The implemented method improves AI-domain focus and produces more meaningful topic phrases, although it sacrifices some literal coverage on the more specialised NLP corpus.}
+\caption{Keyword extraction comparison between a simple frequency baseline and the implemented TF-IDF + MMR pipeline, aggregated across three focused corpora. The implemented method improves AI-domain focus and produces more meaningful topic phrases, although it sacrifices some literal coverage on the more specialised corpora.}
 \label{fig:keyword_comparison}
 \end{figure}
 
 \subsection{Resource Quality After Ranking (RQ2 and RQ3)}
 
-Table~\ref{tab:pipeline_comparison} reports the aggregate resource-quality comparison across both focused corpora. The raw search stage returns 365 resources across three modalities. Reducing this set to a balanced top-five-per-type recommendation list for each corpus yields an overall 91.78\% reduction in candidate volume, which is substantial from a user-experience perspective because it transforms a large and noisy set into two small, manageable reinforcement packages.
+Table~\ref{tab:pipeline_comparison} reports the aggregate resource-quality comparison across all three focused corpora. The raw search stage returns 542 resources across three modalities. Reducing this set to a balanced top-five-per-type recommendation list for each corpus yields an overall 91.70\% reduction in candidate volume, which is substantial from a user-experience perspective because it transforms a large and noisy set into three small, manageable reinforcement packages.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
@@ -956,34 +956,34 @@ Table~\ref{tab:pipeline_comparison} reports the aggregate resource-quality compa
 \hline\hline
 Metric & Raw search & Top-$K$ unranked & Top-$K$ ranked\\
 \hline
-Total resources & 365 & 30 & 30\\
-AI relevance (\%) & 80.55 & 83.33 & 90.00\\
-Authority score (\%) & 34.52 & 40.00 & 66.67\\
+Total resources & 542 & 45 & 45\\
+AI relevance (\%) & 78.41 & 86.67 & 93.33\\
+Authority score (\%) & 35.98 & 40.00 & 66.67\\
 Valid URLs (\%) & 100.00 & 100.00 & 100.00\\
-Noise reduction (\%) & 0.00 & 91.78 & 91.78\\
+Noise reduction (\%) & 0.00 & 91.70 & 91.70\\
 Cross-platform diversity & 3 & 3 & 3\\
 \hline\hline
 \end{tabular}
 \end{table}
 
-Two observations are important here. First, even the raw search stage already has high AI relevance (80.55\%), which indicates that the system’s query construction and search-source design are directionally correct across both focused learner scenarios. Second, the ranking stage improves both \emph{authority} and measured AI relevance in the final pooled top-$K$ set. Specifically, authority rises from 40.00\% in the unranked top-$K$ set to 66.67\% in the CBF-ranked set, while AI relevance increases from 83.33\% to 90.00\% and valid URLs remain at 100\%.
+Two observations are important here. First, even the raw search stage already has high AI relevance (78.41\%), which indicates that the system’s query construction and search-source design are directionally correct across all three focused learner scenarios. Second, the ranking stage improves both \emph{authority} and measured AI relevance in the final pooled top-$K$ set. Specifically, authority rises from 40.00\% in the unranked top-$K$ set to 66.67\% in the CBF-ranked set, while AI relevance increases from 86.67\% to 93.33\% and valid URLs remain at 100\%.
 
 This behaviour is encouraging for an educational recommender. On the focused multi-corpus evaluation, the ranking stage again behaves as a quality-shaping mechanism rather than a superficial reshuffle. The resulting picture is cleaner: ranking improves source quality, raises measured topical relevance, and still compresses a large candidate pool into compact multimodal recommendation packages. In other words, the recommendation stage is not only filtering for similarity, but also reshaping the final list toward more trustworthy learning resources.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.45\textwidth]{figures/evaluation_pipeline_comparison.png}
-\caption{Comparison of raw search, unranked top-$K$, and CBF-ranked top-$K$ outputs, aggregated across two focused corpora. Ranking improves both AI relevance and source authority, and the main compression effect comes from reducing the candidate pool from 365 resources to 30.}
+\caption{Comparison of raw search, unranked top-$K$, and CBF-ranked top-$K$ outputs, aggregated across three focused corpora. Ranking improves both AI relevance and source authority, and the main compression effect comes from reducing the candidate pool from 542 resources to 45.}
 \label{fig:pipeline_comparison}
 \end{figure}
 
 \subsection{Interpretation and Limitations of the Current Evaluation}
 
-Taken together, the current focused-corpus evaluation supports three preliminary conclusions. For \textbf{RQ1}, the implemented keyword extraction stage is more domain-focused than a naive frequency baseline, even though its higher phrase specificity slightly reduces a literal coverage proxy. For \textbf{RQ2}, multi-source retrieval successfully produces a broad candidate pool spanning text, video, and code resources across multiple learner scenarios, and the final recommendation stage reduces that pool to balanced output sets suitable for user consumption. For \textbf{RQ3}, CBF-based ranking again appears most valuable as a \emph{quality-shaping} mechanism, particularly by increasing the proportion of authoritative sources in the final result set.
+Taken together, the current focused-corpus evaluation supports three preliminary conclusions. For \textbf{RQ1}, the implemented keyword extraction stage is more domain-focused than a naive frequency baseline, even though its higher phrase specificity slightly reduces a literal coverage proxy. For \textbf{RQ2}, multi-source retrieval successfully produces a broad candidate pool spanning text, video, and code resources across three learner scenarios, and the final recommendation stage reduces that pool to balanced output sets suitable for user consumption. For \textbf{RQ3}, CBF-based ranking again appears most valuable as a \emph{quality-shaping} mechanism, particularly by increasing the proportion of authoritative sources in the final result set.
 
-At the same time, this evaluation remains a pilot rather than a final summative study. The setup now uses two focused corpora that each meet the system's ten-document input threshold, but the overall benchmark is still relatively small, the web sources are live and therefore volatile, and no human relevance judgements have yet been collected. In addition, metrics such as keyword diversity and AI-keyword matching are still proxy measures rather than substitutes for expert assessment. The current results should therefore be interpreted as evidence that the implementation is functioning coherently and that the main design choices are measurable, not as the final word on educational effectiveness.
+At the same time, this evaluation remains a pilot rather than a final summative study. The setup now uses three focused corpora that each meet the system's ten-document input threshold, but the overall benchmark is still relatively small, the web sources are live and therefore volatile, and no human relevance judgements have yet been collected. In addition, metrics such as keyword diversity and AI-keyword matching are still proxy measures rather than substitutes for expert assessment. The current results should therefore be interpreted as evidence that the implementation is functioning coherently and that the main design choices are measurable, not as the final word on educational effectiveness.
 
-The next stage of evaluation should extend this pilot in three directions. First, the benchmark should be enlarged beyond the current two focused corpora and expanded into additional topic clusters such as computer vision and reinforcement learning. Second, human annotations should be added for relevance, usefulness, and learning value. Third, a controlled user study should compare AI-Pedia with manual search or other learning-support tools. Even so, the present pilot is already valuable because it converts the paper’s claims from purely architectural statements into reproducible, code-backed observations.
+The next stage of evaluation should extend this pilot in three directions. First, the benchmark should be enlarged beyond the current three focused corpora and expanded into additional topic clusters such as reinforcement learning, graph learning, or multimodal study packs. Second, human annotations should be added for relevance, usefulness, and learning value. Third, a controlled user study should compare AI-Pedia with manual search or other learning-support tools. Even so, the present pilot is already valuable because it converts the paper’s claims from purely architectural statements into reproducible, code-backed observations.
 
 \subsection{Threats to Validity}
 
@@ -1003,7 +1003,7 @@ Another useful insight is that the project benefits from classical information-r
 
 \subsection{Trade-offs Revealed by the Pilot Evaluation}
 
-The focused multi-corpus evaluation revealed a useful shift between compression and quality improvement. Across the two ten-document corpora, the unranked top-$K$ resource sets already achieved strong AI relevance, but the final ranked sets improved the result further. In aggregate, the ranked output increased authority from 40.00\% to 66.67\% while also increasing measured AI relevance from 83.33\% to 90.00\%. In an educational setting, that combination is desirable: the recommendation stage is not merely filtering items down to smaller lists, but actively reshaping the output toward more trustworthy and more clearly AI-focused resources.
+The focused multi-corpus evaluation revealed a useful shift between compression and quality improvement. Across the three ten-document corpora, the unranked top-$K$ resource sets already achieved strong AI relevance, but the final ranked sets improved the result further. In aggregate, the ranked output increased authority from 40.00\% to 66.67\% while also increasing measured AI relevance from 86.67\% to 93.33\%. In an educational setting, that combination is desirable: the recommendation stage is not merely filtering items down to smaller lists, but actively reshaping the output toward more trustworthy and more clearly AI-focused resources.
 
 This observation suggests that the ranking stage should not be judged by a single metric. In fact, one contribution of the current work is to show that educational recommenders need multi-dimensional evaluation. Relevance, authority, modality balance, novelty, and accessibility all matter, and they may move in different directions after a ranking change. The current evaluation design begins to expose those relationships. Even though the corpus is small, it already shows why it is misleading to ask only whether ranking improves relevance. A more useful question is whether ranking shapes the final recommendation set in ways that better support the learner's goals.
 
@@ -1023,7 +1023,7 @@ The pilot evaluation reported in this dissertation is useful, but it should be u
 
 \subsection{Phase 1: Larger-Scale Offline Benchmarking}
 
-The first next step is to scale the current pilot into a larger offline benchmark. In practical terms, this means expanding beyond the current two focused ten-document corpora and assembling additional AI/ML corpora for scenarios such as computer vision and reinforcement learning. Each corpus should represent a realistic learner scenario rather than a grab-bag of unrelated topics. For each topic cluster, multiple document sets should be created with different levels of quality and completeness, such as concise lecture notes, fragmented revision notes, textbook extracts, and mixed-source study packs.
+The first next step is to scale the current pilot into a larger offline benchmark. In practical terms, this means expanding beyond the current three focused ten-document corpora and assembling additional AI/ML corpora for scenarios such as reinforcement learning, graph learning, or mixed multimodal study packs. Each corpus should represent a realistic learner scenario rather than a grab-bag of unrelated topics. For each topic cluster, multiple document sets should be created with different levels of quality and completeness, such as concise lecture notes, fragmented revision notes, textbook extracts, and mixed-source study packs.
 
 The purpose of this phase is twofold. First, it would make it possible to test whether the keyword extraction stage remains stable across different document styles and topic granularities. Second, it would allow the ranking stage to be examined under more varied retrieval conditions, where some queries are broad, some are highly specific, and some contain noisy terminology. The current evaluator already provides much of the infrastructure needed for this phase. What is mainly missing is a broader benchmark corpus and a small amount of dataset-management tooling.
 
@@ -1109,7 +1109,7 @@ Finally, qualitative feedback should be treated as data rather than anecdote. If
 \section{Conclusion}
 This paper presented AI-Pedia, an AI-powered multimedia resource recommendation system for machine learning education. The system addresses a practical gap in existing study workflows: learners often have a private corpus of notes and readings, but still need support in locating high-value external reinforcement materials across text, video, and code platforms.
 
-AI-Pedia's core contribution is a learner-driven reinforcement pipeline that transforms a student's private AI/ML materials into curated external resource recommendations. The system combines established information retrieval and recommender-system methods (TF-IDF, MMR, and CBF) with multi-source retrieval from Wikipedia, Google Scholar, arXiv, YouTube, and GitHub. The current focused-corpus evaluation shows that the implementation is operational and measurable across more than one learner scenario: the keyword extraction stage improves AI-domain focus over a naive frequency baseline (35\% vs. 20\% keyword AI relevance), the retrieval stage generates a broad multimodal candidate pool, and the final ranked recommendation set reduces raw candidates by 91.78\% while increasing authority from 40.00\% to 66.67\% and AI relevance from 83.33\% to 90.00\% relative to an unranked top-$K$ set.
+AI-Pedia's core contribution is a learner-driven reinforcement pipeline that transforms a student's private AI/ML materials into curated external resource recommendations. The system combines established information retrieval and recommender-system methods (TF-IDF, MMR, and CBF) with multi-source retrieval from Wikipedia, Google Scholar, arXiv, YouTube, and GitHub. The current focused-corpus evaluation shows that the implementation is operational and measurable across multiple learner scenarios: the keyword extraction stage improves AI-domain focus over a naive frequency baseline (30.74\% vs. 13.33\% keyword AI relevance), the retrieval stage generates a broad multimodal candidate pool, and the final ranked recommendation set reduces raw candidates by 91.70\% while increasing authority from 40.00\% to 66.67\% and AI relevance from 86.67\% to 93.33\% relative to an unranked top-$K$ set.
 
 These pilot results do not yet constitute a final user-study claim, but they do support the central design rationale of the project. In particular, they show that the modular pipeline is not merely architecturally plausible; it produces reproducible outputs, exposes measurable tradeoffs, and is sufficiently interpretable to support further evaluation and refinement.
 
@@ -1125,7 +1125,7 @@ Key lessons learned during this project include:
 
 We acknowledge several limitations of this work:
 \begin{itemize}
-\item \textbf{Evaluation scope}: The present evaluation is a pilot on two focused ten-document corpora rather than a full-scale user study, so the reported numbers should be treated as formative evidence.
+\item \textbf{Evaluation scope}: The present evaluation is a pilot on three focused ten-document corpora rather than a full-scale user study, so the reported numbers should be treated as formative evidence.
 \item \textbf{Domain specificity}: The system was designed and evaluated for AI/ML education; adaptation to other domains would require curating domain-specific keyword lists and potentially adjusting filtering rules.
 \item \textbf{Resource volatility}: External resources, especially YouTube videos and GitHub repositories, may change or become unavailable over time, affecting recommendation stability.
 \item \textbf{External latency}: The slowest part of the full workflow is live web retrieval rather than local ranking, so responsiveness depends partly on third-party services and network conditions.
@@ -1155,10 +1155,10 @@ In conclusion, AI-Pedia demonstrates that a reinforcement-oriented recommendatio
 \hline\hline
 Area & Main finding\\
 \hline
-Keyword extraction & TF-IDF + MMR improved keyword AI relevance from 20.00\% to 35.00\%, while sacrificing some literal coverage in exchange for more topic-specific phrases.\\
-Resource retrieval & Multi-source search returned 365 candidates across text, video, and code resources over two focused learner scenarios.\\
-Recommendation stage & Final output compressed 365 candidates to 30 balanced recommendations with 91.78\% noise reduction.\\
-Ranking effect & CBF-based ranking increased authority from 40.00\% to 66.67\% and AI relevance from 83.33\% to 90.00\%.\\
+Keyword extraction & TF-IDF + MMR improved keyword AI relevance from 13.33\% to 30.74\%, while sacrificing some literal coverage in exchange for more topic-specific phrases.\\
+Resource retrieval & Multi-source search returned 542 candidates across text, video, and code resources over three focused learner scenarios.\\
+Recommendation stage & Final output compressed 542 candidates to 45 balanced recommendations with 91.70\% noise reduction.\\
+Ranking effect & CBF-based ranking increased authority from 40.00\% to 66.67\% and AI relevance from 86.67\% to 93.33\%.\\
 Local performance & Deterministic local stages remained lightweight, with sub-0.2 second average runtime and about 171 MB peak memory.\\
 Engineering outcome & Evaluation and performance scripts now produce reproducible outputs suitable for direct inclusion in the dissertation.\\
 \hline\hline
