@@ -22,6 +22,7 @@ An intelligent resource recommendation system focused on AI/Machine Learning dom
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Quick Start](#quick-start)
+- [Deployment](#deployment)
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
@@ -144,6 +145,42 @@ This project also provides a **pure frontend static version** that can be hosted
 - The static site will:
   - Fully render the modern UI, theme switch, i18n, animations, etc.
   - But any backend‑dependent features (ZIP upload, keyword extraction, recommendation pipeline, contact form submission, etc.) will **not** actually run on GitHub Pages unless you point the JS API calls to a separately deployed Flask backend
+
+## Deployment
+
+For the purposes of a final-year project, AI-Pedia should be understood as a **deployable containerised prototype**. The repository includes a `Dockerfile`, `docker-compose.yml`, `.env.example`, and a `/health` endpoint, so the full Flask-based system can be started in a reproducible way rather than only as a local development script.
+
+### Deploy with Docker Compose
+
+1. Copy the environment template:
+
+```bash
+cp .env.example .env
+```
+
+2. (Optional) add your OpenAI API key to `.env` if you want LLM-generated summaries.
+
+3. Build and run the system:
+
+```bash
+docker compose up --build
+```
+
+4. Open the web interface:
+
+```text
+http://localhost:5000
+```
+
+5. Verify the health endpoint if needed:
+
+```bash
+curl http://localhost:5000/health
+```
+
+### Deployment Scope
+
+This is sufficient to satisfy a typical university requirement that the system be **deployable and runnable**. It is not yet positioned as a fully production-hardened public service. In particular, a stronger internet-facing deployment would still benefit from a WSGI server such as Gunicorn, reverse proxying, stricter rate limiting, and more operational hardening.
 
 ## Configuration
 
