@@ -799,7 +799,7 @@ The distribution of resource types across pipeline stages is also informative. F
 \label{fig:resource_type_distribution}
 \end{figure}
 
-The figure therefore highlights two distinct roles of the recommendation stage. The first is \emph{compression}: it reduces 75 candidates to 15 visible outputs. The second is \emph{pedagogical balancing}: it prevents the system from simply returning the most common type of result. In the present implementation, this balancing happens by selecting top resources per modality rather than globally ranking all resources together. This strategy is intentionally simple, but it aligns well with the educational motivation of the project, which is not just to find relevant resources but to provide complementary forms of reinforcement.
+The figure therefore highlights two distinct roles of the recommendation stage. The first is \emph{compression}: it reduces 103 candidates to 15 visible outputs. The second is \emph{pedagogical balancing}: it prevents the system from simply returning the most common type of result. In the present implementation, this balancing happens by selecting top resources per modality rather than globally ranking all resources together. This strategy is intentionally simple, but it aligns well with the educational motivation of the project, which is not just to find relevant resources but to provide complementary forms of reinforcement.
 
 \subsection{Observed Impact of Code Optimisation}
 
@@ -819,8 +819,9 @@ Component & Change & Practical effect\\
 \texttt{app.py} & Reuses existing summaries at presentation time and only generates them lazily when absent. & Reduces repeated latency in the user-facing interface and keeps summary generation aligned with actual display needs.\\
 \texttt{backend/core/keyword\_extractor.py} & Added redundancy pruning after MMR selection. & Prevents phrases such as short/long containment variants from crowding the keyword set and improves search-query usefulness.\\
 \texttt{test/evaluation\_pipeline/metrics.py} & Reworked metrics to cover coverage, diversity, AI relevance, authority, novelty, URL validity, and modality counts. & Turns evaluation from an informal inspection task into a repeatable metric-based process suitable for inclusion in the dissertation.\\
-\texttt{test/evaluation\_pipeline/evaluator.py} & Rewrote the evaluator so it can actually run end-to-end and export JSON plus chart outputs. & Makes the reported results reproducible and directly links the codebase to the paper’s tables and figures.\\
-\texttt{test/performance/run\_performance\_tests.py} & Replaced placeholder timing logic with measurements of keyword extraction, ranking, and combined local pipeline stages. & Provides genuine implementation-level performance evidence instead of superficial script execution.\\
+\texttt{backend/core/resource\_searcher.py} & Added a shared HTTP session with retry-aware GET handling for repeated source queries. & Reduces repeated connection overhead and makes retrieval behaviour more stable across evaluation reruns.\\
+\texttt{test/evaluation\_pipeline/evaluator.py} & Rewrote the evaluator so it can actually run end-to-end and export JSON, CSV, LaTeX tables, and chart outputs. & Makes the reported results reproducible and directly links the codebase to the paper’s tables and figures.\\
+\texttt{test/performance/run\_performance\_tests.py} & Replaced placeholder timing logic with measurements of keyword extraction, ranking, and combined local pipeline stages, and exported paper-ready artefacts. & Provides genuine implementation-level performance evidence instead of superficial script execution.\\
 \hline\hline
 \end{tabular}
 \end{table*}
@@ -841,9 +842,9 @@ In addition to end-to-end output inspection, the project includes a small local 
 \hline\hline
 Stage & Avg. time (s) & Peak memory (MB) & Notes\\
 \hline
-Keyword extraction & 0.15 & 141.88 & TF-IDF + MMR only\\
-Ranking pipeline & 0.17 & 142.73 & CBF over cached resources\\
-Local combined pipeline & 0.18 & 143.00 & Excludes web search latency\\
+Keyword extraction & 0.17 & 170.56 & TF-IDF + MMR only\\
+Ranking pipeline & 0.13 & 170.92 & CBF over cached resources\\
+Local combined pipeline & 0.16 & 171.64 & Excludes web search latency\\
 \hline\hline
 \end{tabular}
 \end{table}
@@ -880,7 +881,7 @@ This design is intentionally modest but defensible. It allows the current codeba
 \item \textbf{Coverage}: percentage of documents represented by at least one extracted keyword;
 \item \textbf{Keyword AI relevance}: percentage of extracted keywords containing AI/ML-specific terminology;
 \item \textbf{Keyword diversity}: lexical diversity proxy over the selected keyword set;
-\item \textbf{Resource AI relevance}: percentage of recommended items whose title, description, or URL contains AI/ML evidence;
+\item \textbf{Resource AI relevance}: percentage of recommended items whose title, description, or URL contains AI/ML evidence, after normalising separators such as hyphens and underscores so repository names like \texttt{deep-learning} are not under-counted;
 \item \textbf{Authority score}: percentage of resources from trusted sources such as arXiv, Wikipedia, Google Scholar, or GitHub;
 \item \textbf{Valid URL percentage}: percentage of returned items with syntactically valid HTTP(S) URLs;
 \item \textbf{Noise reduction}: percentage reduction from the raw candidate set to the final displayed set.
@@ -888,7 +889,7 @@ This design is intentionally modest but defensible. It allows the current codeba
 
 \subsection{Reproducibility Protocol}
 
-A practical strength of the current evaluation is that it is directly tied to project scripts rather than to manually assembled spreadsheet calculations. The keyword and resource metrics are produced by \texttt{test/evaluation\_pipeline/evaluator.py}, while local timing measurements are produced by \texttt{test/performance/run\_performance\_tests.py}. The evaluator consumes a local corpus folder, runs the extraction and recommendation pipeline, writes a structured JSON report, and exports chart images that are reused in this dissertation. This is useful both academically and practically: it reduces the risk of reporting stale numbers and makes it easier to rerun the study after later code changes.
+A practical strength of the current evaluation is that it is directly tied to project scripts rather than to manually assembled spreadsheet calculations. The keyword and resource metrics are produced by \texttt{test/evaluation\_pipeline/evaluator.py}, while local timing measurements are produced by \texttt{test/performance/run\_performance\_tests.py}. The evaluator consumes a local corpus folder, runs the extraction and recommendation pipeline, writes a structured JSON report, exports CSV and LaTeX summary tables, and regenerates chart images that are reused in this dissertation. This is useful both academically and practically: it reduces the risk of reporting stale numbers and makes it easier to rerun the study after later code changes.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
@@ -942,7 +943,7 @@ The selected phrases from the AI-Pedia pipeline are more descriptive than the un
 
 \subsection{Resource Quality After Ranking (RQ2 and RQ3)}
 
-Table~\ref{tab:pipeline_comparison} reports the main resource-quality comparison. The raw search stage returns 75 resources across three modalities. Reducing this set to a balanced top-five-per-type recommendation list yields an 80\% reduction in candidate volume, which is substantial from a user-experience perspective because it transforms a large and noisy set into a small, manageable reinforcement package.
+Table~\ref{tab:pipeline_comparison} reports the main resource-quality comparison. The raw search stage returns 103 resources across three modalities. Reducing this set to a balanced top-five-per-type recommendation list yields an 85.44\% reduction in candidate volume, which is substantial from a user-experience perspective because it transforms a large and noisy set into a small, manageable reinforcement package.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
@@ -954,24 +955,24 @@ Table~\ref{tab:pipeline_comparison} reports the main resource-quality comparison
 \hline\hline
 Metric & Raw search & Top-$K$ unranked & Top-$K$ ranked\\
 \hline
-Total resources & 75 & 15 & 15\\
-AI relevance (\%) & 81.33 & 93.33 & 86.67\\
-Authority score (\%) & 41.33 & 40.00 & 60.00\\
+Total resources & 103 & 15 & 15\\
+AI relevance (\%) & 83.50 & 93.33 & 93.33\\
+Authority score (\%) & 37.86 & 40.00 & 66.67\\
 Valid URLs (\%) & 100.00 & 100.00 & 100.00\\
-Noise reduction (\%) & 0.00 & 80.00 & 80.00\\
+Noise reduction (\%) & 0.00 & 85.44 & 85.44\\
 Cross-platform diversity & 3 & 3 & 3\\
 \hline\hline
 \end{tabular}
 \end{table}
 
-Two observations are important here. First, even the raw search stage already has relatively high AI relevance (81.33\%), which indicates that the system’s query construction and search-source design are directionally correct. Second, the ranking stage improves \emph{authority} much more clearly than it improves every other metric. Specifically, authority rises from 40.00\% in the unranked top-$K$ set to 60.00\% in the CBF-ranked set, while valid URLs remain at 100\%. In other words, ranking does not simply preserve relevance; it shifts the recommendation list toward more trustworthy sources.
+Two observations are important here. First, even the raw search stage already has high AI relevance (83.50\%), which indicates that the system’s query construction and search-source design are directionally correct. Second, the ranking stage improves \emph{authority} much more clearly than it changes any other metric. Specifically, authority rises from 40.00\% in the unranked top-$K$ set to 66.67\% in the CBF-ranked set, while valid URLs remain at 100\% and AI relevance is preserved at 93.33\%.
 
-The slight drop in AI relevance from 93.33\% to 86.67\% between the unranked and ranked top-$K$ sets should not be hidden. On this small pilot corpus, the first-returned items for some queries are already strongly AI-themed, so a pure AI-keyword percentage favours the unranked set. The ranked set nevertheless appears stronger on source quality, which is desirable for an educational recommender. This is a useful design insight rather than a failure: on a small corpus, authority and topical specificity can trade off against one another, and the current system already exposes that tradeoff in a measurable way.
+This behaviour is encouraging for an educational recommender. After normalising hyphenated repository names and similar slugs in the evaluation script, the ranked list no longer appears artificially weaker on AI relevance. The resulting picture is cleaner: ranking primarily improves source quality, while the main compression effect still comes from reducing a large candidate pool to a small balanced reinforcement package. In other words, the recommendation stage is not only filtering for similarity, but also reshaping the final list toward more trustworthy learning resources.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.45\textwidth]{figures/evaluation_pipeline_comparison.png}
-\caption{Comparison of raw search, unranked top-$K$, and CBF-ranked top-$K$ outputs. Ranking preserves a compact final set and improves source authority, while the main compression effect comes from reducing the candidate pool from 75 resources to 15.}
+\caption{Comparison of raw search, unranked top-$K$, and CBF-ranked top-$K$ outputs. Ranking preserves strong AI relevance while improving source authority, and the main compression effect comes from reducing the candidate pool from 103 resources to 15.}
 \label{fig:pipeline_comparison}
 \end{figure}
 

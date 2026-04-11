@@ -1,0 +1,4 @@
+stage,total_resources,ai_relevance_pct,authority_score_pct,valid_url_pct,noise_reduction_pct,cross_platform_diversity
+Raw search,103,83.5,37.86,100.0,0.0,3
+Top-k unranked,15,93.33,40.0,100.0,85.44,3
+Top-k ranked,15,93.33,66.67,100.0,85.44,3

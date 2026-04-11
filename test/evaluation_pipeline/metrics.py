@@ -55,7 +55,12 @@ class EvaluationMetrics:
         url = resource.get("url", "")
         content = resource.get("content", "")
         source = resource.get("source", "")
-        return f"{title} {description} {url} {content} {source}".lower()
+        text = f"{title} {description} {url} {content} {source}".lower()
+        # 统一把常见连接符归一化为空格，避免 deep-learning / neural_network 等资源名
+        # 在 AI 相关性评估中被错误当成“不含 deep learning / neural network”。
+        text = re.sub(r"[-_/]+", " ", text)
+        text = re.sub(r"\s+", " ", text).strip()
+        return text
 
     def flatten_resources(self, resource_groups: Dict[str, List[Dict[str, Any]]]) -> List[Dict[str, Any]]:
         flattened: List[Dict[str, Any]] = []

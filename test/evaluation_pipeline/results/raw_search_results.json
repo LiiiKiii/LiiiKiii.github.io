@@ -9,9 +9,9 @@
     },
     {
       "title": "Neural networks",
-      "content": "论文标题: Neural networks\n\n作者/来源: H Abdi, D Valentin, B Edelman - 1999 - books.google.com\n\n摘要: … Because neural network models have strong relationships with statistical models, we \nalso discuss the interpretation of neural networks as statistical models in each chapter. The …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=ZEID3w9STOUC&amp;oi=fnd&amp;pg=PA1&amp;dq=neural+networks&amp;ots=sAOzvXOH1L&amp;sig=Haehm8AB8aqCiptj7gsB3B7J420\n\n请访问链接查看完整论文。",
+      "content": "论文标题: Neural networks\n\n作者/来源: H Abdi, D Valentin, B Edelman - 1999 - books.google.com\n\n摘要: … Because neural network models have strong relationships with statistical models, we \nalso discuss the interpretation of neural networks as statistical models in each chapter. The …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=ZEID3w9STOUC&amp;oi=fnd&amp;pg=PA1&amp;dq=neural+networks&amp;ots=sAOzvXPG1L&amp;sig=x22cOP63lLkUwhoOdQuf0jSMJTs\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=ZEID3w9STOUC&amp;oi=fnd&amp;pg=PA1&amp;dq=neural+networks&amp;ots=sAOzvXOH1L&amp;sig=Haehm8AB8aqCiptj7gsB3B7J420",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=ZEID3w9STOUC&amp;oi=fnd&amp;pg=PA1&amp;dq=neural+networks&amp;ots=sAOzvXPG1L&amp;sig=x22cOP63lLkUwhoOdQuf0jSMJTs",
       "type": "txt"
     },
     {
@@ -30,9 +30,9 @@
     },
     {
       "title": "An introduction to neural networks",
-      "content": "论文标题: An introduction to neural networks\n\n作者/来源: JA Anderson - 1995 - books.google.com\n\n摘要: … This book introduces some important neural network algorithms and has been used as a \ntextbook for a college-level neural network course. The main emphasis is on the biology and …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=_ib4vPdB76gC&amp;oi=fnd&amp;pg=PP11&amp;dq=neural+networks&amp;ots=WdfxK8tQZe&amp;sig=Q3lEfiCapHiqdCl1-inNn3InHeY\n\n请访问链接查看完整论文。",
+      "content": "论文标题: An introduction to neural networks\n\n作者/来源: JA Anderson - 1995 - books.google.com\n\n摘要: … This book introduces some important neural network algorithms and has been used as a \ntextbook for a college-level neural network course. The main emphasis is on the biology and …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=_ib4vPdB76gC&amp;oi=fnd&amp;pg=PP11&amp;dq=neural+networks&amp;ots=WdfxK8uPZe&amp;sig=LIvKz6FxUhCq5V9CUNKaH4MXqwg\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=_ib4vPdB76gC&amp;oi=fnd&amp;pg=PP11&amp;dq=neural+networks&amp;ots=WdfxK8tQZe&amp;sig=Q3lEfiCapHiqdCl1-inNn3InHeY",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=_ib4vPdB76gC&amp;oi=fnd&amp;pg=PP11&amp;dq=neural+networks&amp;ots=WdfxK8uPZe&amp;sig=LIvKz6FxUhCq5V9CUNKaH4MXqwg",
       "type": "txt"
     },
     {
@@ -57,6 +57,13 @@
       "type": "txt"
     },
     {
+      "title": "Hierarchical Attentional Hybrid Neural Networks for Document Classification",
+      "content": "论文标题: Hierarchical Attentional Hybrid Neural Networks for Document Classification\n\n作者: Jader Abreu, Luis Fred, David Macêdo, Cleber Zanchettin\n\n摘要: Document classification is a challenging task with important applications. The deep learning approaches to the problem have gained much attention recently. Despite the progress, the proposed models do not incorporate the knowledge of the document structure in the architecture efficiently and not take into account the contexting importance of words and sentences. In this paper, we propose a new approach based on a combination of convolutional neural networks, gated recurrent units, and attention mechanisms for document classification tasks. The main contribution of this work is the use of convolution layers to extract more meaningful, generalizable and abstract features by the hierarchical representation. The proposed method in this paper improves the results of the current attention-based approaches for document classification.\n\narXiv链接: http://arxiv.org/abs/1901.06610v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1901.06610v2",
+      "type": "txt"
+    },
+    {
       "title": "Machine learning - Wikipedia",
       "content": "From Wikipedia, the free encyclopedia Study of algorithms that improve automatically through experience Part of a series on Machine learning and data mining Part of a series on Artificial intelligence (AI) Machine learning ( ML ) is a field of study in artificial intelligence concerned with the development and study of statistical algorithms that can learn from data and generalize to unseen data, and thus perform tasks without explicit programming language instructions. 1 Within a subdiscipline of machine learning, advances in the field of deep learning have allowed neural networks , a class of statistical algorithms, to surpass many previous machine learning approaches in performance. Statistics and mathematical optimisation (mathematical programming) methods compose the foundations of machine learning. Data mining is a related field of study, focusing on exploratory data analysis (EDA) through unsupervised learning. 3 4 From a theoretical viewpoint, probably approximately correct learning provides a mathematical and statistical framework for describing machine learning. Most traditional machine learning and deep learning algorithms can be described as empirical risk minimisation under this framework. The term machine learning was coined in 1959 by Arthur Samuel , an IBM employee and pioneer in the field of computer gaming and artificial intelligence. 5 6 The synonym self-teaching computers was also used during this time period. 7 8 The earliest machine learning program was introduced in the 1950s when Arthur Samuel invented a computer program that calculated the winning chance in checkers for each side, but the history of machine learning roots back to decades of human desire and effort to study human cognitive processes. 9 In 1949, Canadian psychologist Donald Hebb published the book The Organization of Behavior , in which he introduced a theoretical neural structure formed by certain interactions among nerve cells. 10 Hebb's model of neurons interacting with one another set a groundwork for how AIs and machine learning algorithms work under nodes, or artificial neurons used by computers to communicate data. 9 By the early 1960s, an experimental \"learning machine\" with punched tape memory, called Cybertron, had been developed by Raytheon Company to analyse sonar signals, electrocardiograms , and speech patterns using rudimentary reinforcement learning. It was repetitively \"trained\" by a human operator/teacher to recognise patterns and equipped with a \" goof \" button to cause it to reevaluate incorrect decisions. 12 Interest related to pattern recognition continued into the 1970s, as described by Duda and Hart in 1973. 13 In 1981, a report was given on using teaching strategies so that an artificial neural network learns to recognise 40 characters (26 letters, 10 digits, and 4 special symbols) from a computer terminal. Mitchell provided a widely quoted, more formal definition of the algorithms studied in the machine learning field: \"A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T , as measured by P , improves with experience E .\" 15 This definition of the tasks in which machine learning is concerned offers a fundamentally operational definition rather than defining the field in cognitive terms. This follows Alan Turing 's proposal in his paper \" Computing Machinery and Intelligence \", in which the question, \"Can machines think?\", is replaced by asking whether machines can convincingly imitate a human in its responses to human-posed questions. 16 17 Modern-day Machine Learning algorithms are broken into 3 algorithm types: Supervised Learning Algorithms, Unsupervised Learning Algorithms, and Reinforcement Learning Algorithms. 18 Current Supervised Learning Algorithms have objectives of classification and regression. Current Unsupervised Learning Algorithms have objectives of clustering, dimensionality reduction, and association rule. Current Reinforcement Learning Algorithms focus on decisions that must be made with respect to some previous, unknown time and are broken down to either be studies of model-based methods or model-free methods. In 2014 Ian Goodfellow and others introduced generative adversarial networks (GANs) with realistic data synthesis. 19 By 2016 AlphaGo obtained victory against top human players using reinforcement learning techniques. 20 Deep learning is a subset of machine learning, which is itself a subset of artificial intelligence. 21 As a scientific endeavour, machine learning grew out of the quest for artificial intelligence (AI). They attempted to approach the problem with various symbolic methods, as well as what were then termed \" neural networks \"; these were mostly perceptrons and other models that were later found to be reinventions of the generalised linear models of statistics. 22 Probabilistic reasoning was also employed, especially in automated medical diagnosis.",
       "source": "Wikipedia",
@@ -65,16 +72,16 @@
     },
     {
       "title": "Machine learning",
-      "content": "论文标题: Machine learning\n\n作者/来源: ZH Zhou - 2021 - books.google.com\n\n摘要: … from data is called learning or training. The … machine learning is to find or approximate \nground-truth. In this book, models are sometimes called learners, which are machine learning …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=ctM-EAAAQBAJ&amp;oi=fnd&amp;pg=PR6&amp;dq=machine+learning&amp;ots=o_PnS2Pz5n&amp;sig=tOkGNcasozNaKE5gIriVmeDT2yo\n\n请访问链接查看完整论文。",
+      "content": "论文标题: Machine learning\n\n作者/来源: ZH Zhou - 2021 - books.google.com\n\n摘要: … from data is called learning or training. The … machine learning is to find or approximate \nground-truth. In this book, models are sometimes called learners, which are machine learning …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=ctM-EAAAQBAJ&amp;oi=fnd&amp;pg=PR6&amp;dq=machine+learning&amp;ots=o_PnS2Qy5n&amp;sig=SXWIefcGBpkgT7r-kTqyOU89oWw\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=ctM-EAAAQBAJ&amp;oi=fnd&amp;pg=PR6&amp;dq=machine+learning&amp;ots=o_PnS2Pz5n&amp;sig=tOkGNcasozNaKE5gIriVmeDT2yo",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=ctM-EAAAQBAJ&amp;oi=fnd&amp;pg=PR6&amp;dq=machine+learning&amp;ots=o_PnS2Qy5n&amp;sig=SXWIefcGBpkgT7r-kTqyOU89oWw",
       "type": "txt"
     },
     {
       "title": "Machine learning",
-      "content": "论文标题: Machine learning\n\n作者/来源: E Alpaydin - 2021 - books.google.com\n\n摘要: MIT presents a concise primer on machine learning—computer programs that learn from \ndata and the basis of applications like voice recognition and driverless cars. No in-depth …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=Eyk5EAAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=machine+learning&amp;ots=WRzPabUoxK&amp;sig=USq3rxsIJYaS7lSHXxeBYdeoBQo\n\n请访问链接查看完整论文。",
+      "content": "论文标题: Machine learning\n\n作者/来源: E Alpaydin - 2021 - books.google.com\n\n摘要: MIT presents a concise primer on machine learning—computer programs that learn from \ndata and the basis of applications like voice recognition and driverless cars. No in-depth …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=Eyk5EAAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=machine+learning&amp;ots=WRzPabVnxK&amp;sig=Geaisff8m2RdeoaRABNEc6Bnpts\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=Eyk5EAAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=machine+learning&amp;ots=WRzPabUoxK&amp;sig=USq3rxsIJYaS7lSHXxeBYdeoBQo",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=Eyk5EAAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=machine+learning&amp;ots=WRzPabVnxK&amp;sig=Geaisff8m2RdeoaRABNEc6Bnpts",
       "type": "txt"
     },
     {
@@ -110,6 +117,13 @@
       "content": "论文标题: DOME: Recommendations for supervised machine learning validation in biology\n\n作者: Ian Walsh, Dmytro Fishman, Dario Garcia-Gasulla, Tiina Titma, Gianluca Pollastri\n\n摘要: Modern biology frequently relies on machine learning to provide predictions and improve decision processes. There have been recent calls for more scrutiny on machine learning performance and possible limitations. Here we present a set of community-wide recommendations aiming to help establish standards of supervised machine learning validation in biology. Adopting a structured methods description for machine learning based on data, optimization, model, evaluation (DOME) will aim to help both reviewers and readers to better understand and assess the performance and limitations of a method or outcome. The recommendations are formulated as questions to anyone wishing to pursue implementation of a machine learning algorithm. Answers to these questions can be easily included in the supplementary material of published papers.\n\narXiv链接: http://arxiv.org/abs/2006.16189v4\n\n请访问链接查看完整论文。",
       "source": "arXiv",
       "url": "http://arxiv.org/abs/2006.16189v4",
+      "type": "txt"
+    },
+    {
+      "title": "Learning Curves for Decision Making in Supervised Machine Learning: A Survey",
+      "content": "论文标题: Learning Curves for Decision Making in Supervised Machine Learning: A Survey\n\n作者: Felix Mohr, Jan N. van Rijn\n\n摘要: Learning curves are a concept from social sciences that has been adopted in the context of machine learning to assess the performance of a learning algorithm with respect to a certain resource, e.g., the number of training examples or the number of training iterations. Learning curves have important applications in several machine learning contexts, most notably in data acquisition, early stopping of model training, and model selection. For instance, learning curves can be used to model the performance of the combination of an algorithm and its hyperparameter configuration, providing insights into their potential suitability at an early stage and often expediting the algorithm selection process. Various learning curve models have been proposed to use learning curves for decision making. Some of these models answer the binary decision question of whether a given algorithm at a certain budget will outperform a certain reference performance, whereas more complex models predict the entire ...\n\narXiv链接: http://arxiv.org/abs/2201.12150v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2201.12150v2",
       "type": "txt"
     },
     {
@@ -166,6 +180,13 @@
       "content": "论文标题: A Comprehensive Review of State-of-The-Art Methods for Java Code Generation from Natural Language Text\n\n作者: Jessica López Espejel, Mahaman Sanoussi Yahaya Alassan, El Mehdi Chouham, Walid Dahhane, El Hassane Ettifouri\n\n摘要: Java Code Generation consists in generating automatically Java code from a Natural Language Text. This NLP task helps in increasing programmers' productivity by providing them with immediate solutions to the simplest and most repetitive tasks. Code generation is a challenging task because of the hard syntactic rules and the necessity of a deep understanding of the semantic aspect of the programming language. Many works tried to tackle this task using either RNN-based, or Transformer-based models. The latter achieved remarkable advancement in the domain and they can be divided into three groups: (1) encoder-only models, (2) decoder-only models, and (3) encoder-decoder models. In this paper, we provide a comprehensive review of the evolution and progress of deep learning models in Java code generation task. We focus on the most important methods and present their merits and limitations, as well as the objective functions used by the community. In addition, we provide a detailed descripti...\n\narXiv链接: http://arxiv.org/abs/2306.06371v1\n\n请访问链接查看完整论文。",
       "source": "arXiv",
       "url": "http://arxiv.org/abs/2306.06371v1",
+      "type": "txt"
+    },
+    {
+      "title": "Towards the Study of Morphological Processing of the Tangkhul Language",
+      "content": "论文标题: Towards the Study of Morphological Processing of the Tangkhul Language\n\n作者: Mirinso Shadang, Navanath Saharia, Thoudam Doren Singh\n\n摘要: There is no or little work on natural language processing of Tangkhul language. The current work is a humble beginning of morphological processing of this language using an unsupervised approach. We use a small corpus collected from different sources of text books, short stories and articles of other topics. Based on the experiments carried out, the morpheme identification task using morphessor gives reasonable and interesting output despite using a small corpus.\n\narXiv链接: http://arxiv.org/abs/2006.16212v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2006.16212v1",
       "type": "txt"
     },
     {
@@ -247,9 +268,9 @@
     },
     {
       "title": "Image processing: the fundamentals",
-      "content": "论文标题: Image processing: the fundamentals\n\n作者/来源: MMP Petrou, C Petrou - 2010 - books.google.com\n\n摘要: … 75 How can we create the image transformation matrices from the Haar and Walsh … do we \nperform ICA in image processing in practice? 274 How do we apply ICA to signal processing? …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=w3BpSIxN9ZYC&amp;oi=fnd&amp;pg=PR23&amp;dq=image+processing&amp;ots=3NevdCZBWy&amp;sig=qTYdP2KlCfXxHjhwKLwabep4fo8\n\n请访问链接查看完整论文。",
+      "content": "论文标题: Image processing: the fundamentals\n\n作者/来源: MMP Petrou, C Petrou - 2010 - books.google.com\n\n摘要: … 75 How can we create the image transformation matrices from the Haar and Walsh … do we \nperform ICA in image processing in practice? 274 How do we apply ICA to signal processing? …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=w3BpSIxN9ZYC&amp;oi=fnd&amp;pg=PR23&amp;dq=image+processing&amp;ots=3NevdCZKWD&amp;sig=lQkzWZ2BPybN2sRzywByRo3QpiA\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=w3BpSIxN9ZYC&amp;oi=fnd&amp;pg=PR23&amp;dq=image+processing&amp;ots=3NevdCZBWy&amp;sig=qTYdP2KlCfXxHjhwKLwabep4fo8",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=w3BpSIxN9ZYC&amp;oi=fnd&amp;pg=PR23&amp;dq=image+processing&amp;ots=3NevdCZKWD&amp;sig=lQkzWZ2BPybN2sRzywByRo3QpiA",
       "type": "txt"
     },
     {
@@ -278,6 +299,13 @@
       "content": "论文标题: Underdetermined Blind Source Separation via Weighted Simplex Shrinkage Regularization and Quantum Deep Image Prior\n\n作者: Chia-Hsiang Lin, Si-Sheng Young\n\n摘要: As most optical satellites remotely acquire multispectral images (MSIs) with limited spatial resolution, multispectral unmixing (MU) becomes a critical signal processing technology for analyzing the pure material spectra for high-precision classification and identification. Unlike the widely investigated hyperspectral unmixing (HU) problem, MU is much more challenging as it corresponds to the underdetermined blind source separation (BSS) problem, where the number of sources is larger than the number of available multispectral bands. In this article, we transform MU into its overdetermined counterpart (i.e., HU) by inventing a radically new quantum deep image prior (QDIP), which relies on the virtual band-splitting task conducted on the observed MSI for generating the virtual hyperspectral image (HSI). Then, we perform HU on the virtual HSI to obtain the virtual hyperspectral sources. Though HU is overdetermined, it still suffers from the ill-posed issue, for which we employ the convex ...\n\narXiv链接: http://arxiv.org/abs/2603.25384v1\n\n请访问链接查看完整论文。",
       "source": "arXiv",
       "url": "http://arxiv.org/abs/2603.25384v1",
+      "type": "txt"
+    },
+    {
+      "title": "Single-Pixel Compressive Imaging in Shift-Invariant Spaces via Exact Wavelet Frames",
+      "content": "论文标题: Single-Pixel Compressive Imaging in Shift-Invariant Spaces via Exact Wavelet Frames\n\n作者: Tin Vlašić, Damir Seršić\n\n摘要: This paper introduces a novel framework for single-pixel imaging via compressive sensing (CS) in shift-invariant (SI) spaces by exploiting the sparsity property of a wavelet representation. We reinterpret the acquisition procedure of a single-pixel camera as filtering of the observed signal with continuous-domain functions that lie in an SI subspace spanned by the integer shifts of the box function. The signal is modeled by an arbitrary SI generator whose special case is the box function, which, as we show in the paper, is conventionally used in single-pixel imaging. We propose to use separable B-spline generators which are intuitively complemented by sparsity-inducing spline wavelets. The SI models of the acquisition and the underlying signal lead to an exact discretization of an inherently continuous-domain inverse problem to a finite-dimensional problem of CS type. By solving the CS optimization problem, a parametric representation of the signal is obtained. Such a representation of...\n\narXiv链接: http://arxiv.org/abs/2106.00404v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2106.00404v2",
       "type": "txt"
     }
   ],
@@ -315,6 +343,38 @@
       "type": "video"
     },
     {
+      "title": "Explained In A Minute: Neural Networks",
+      "url": "https://www.youtube.com/watch?v=rEDzUT3ymw4",
+      "description": "YouTube视频: Explained In A Minute: Neural Networks",
+      "video_id": "rEDzUT3ymw4",
+      "thumbnail": "https://i.ytimg.com/vi/rEDzUT3ymw4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGG6KmaRBFLpPlh2EABUpA9nCcBg",
+      "type": "video"
+    },
+    {
+      "title": "Neural Networks and Deep Learning: Crash Course AI #3",
+      "url": "https://www.youtube.com/watch?v=oV3ZY6tJiA0",
+      "description": "YouTube视频: Neural Networks and Deep Learning: Crash Course AI #3",
+      "video_id": "oV3ZY6tJiA0",
+      "thumbnail": "https://i.ytimg.com/vi/oV3ZY6tJiA0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBmxprXipfMnOfTMDhErriRVejliA",
+      "type": "video"
+    },
+    {
+      "title": "Dendrites: Why Biological Neurons Are Deep Neural Networks",
+      "url": "https://www.youtube.com/watch?v=hmtQPrH-gC4",
+      "description": "YouTube视频: Dendrites: Why Biological Neurons Are Deep Neural Networks",
+      "video_id": "hmtQPrH-gC4",
+      "thumbnail": "https://i.ytimg.com/vi/hmtQPrH-gC4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDMIHCiAJyAYEuZrHqGvvEifeMQ5A",
+      "type": "video"
+    },
+    {
+      "title": "Neural Networks - Lecture 5 - CS50's Introduction to Artificial Intelligence with Python 2020",
+      "url": "https://www.youtube.com/watch?v=J1QD9hLDEDY",
+      "description": "YouTube视频: Neural Networks - Lecture 5 - CS50's Introduction to Artificial Intelligence with Python 2020",
+      "video_id": "J1QD9hLDEDY",
+      "thumbnail": "https://i.ytimg.com/vi/J1QD9hLDEDY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5DOB3Om9IzAX04EL5xfmliRb7Mw",
+      "type": "video"
+    },
+    {
       "title": "Stanford CS229 I Machine Learning I Building Large Language Models (LLMs)",
       "url": "https://www.youtube.com/watch?v=9vM4p9NN0Ts",
       "description": "YouTube视频: Stanford CS229 I Machine Learning I Building Large Language Models (LLMs)",
@@ -331,6 +391,14 @@
       "type": "video"
     },
     {
+      "title": "Machine Learning for Everybody – Full Course",
+      "url": "https://www.youtube.com/watch?v=i_LwzRVP7bg",
+      "description": "YouTube视频: Machine Learning for Everybody – Full Course",
+      "video_id": "i_LwzRVP7bg",
+      "thumbnail": "https://i.ytimg.com/vi/i_LwzRVP7bg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5gPfHa7NUFEhJ5oMVIyDG3zjJtg",
+      "type": "video"
+    },
+    {
       "title": "Computer Scientist Explains Machine Learning in 5 Levels of Difficulty | WIRED",
       "url": "https://www.youtube.com/watch?v=5q87K1WaoFI",
       "description": "YouTube视频: Computer Scientist Explains Machine Learning in 5 Levels of Difficulty | WIRED",
@@ -339,11 +407,35 @@
       "type": "video"
     },
     {
-      "title": "Machine Learning for Everybody – Full Course",
-      "url": "https://www.youtube.com/watch?v=i_LwzRVP7bg",
-      "description": "YouTube视频: Machine Learning for Everybody – Full Course",
-      "video_id": "i_LwzRVP7bg",
-      "thumbnail": "https://i.ytimg.com/vi/i_LwzRVP7bg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5gPfHa7NUFEhJ5oMVIyDG3zjJtg",
+      "title": "A Gentle Introduction to Machine Learning",
+      "url": "https://www.youtube.com/watch?v=Gv9_4yMHFhI",
+      "description": "YouTube视频: A Gentle Introduction to Machine Learning",
+      "video_id": "Gv9_4yMHFhI",
+      "thumbnail": "https://i.ytimg.com/vi/Gv9_4yMHFhI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAZDBA8WYWiR2kR-p8ZGPPDD00ZyQ",
+      "type": "video"
+    },
+    {
+      "title": "What is Machine Learning?",
+      "url": "https://www.youtube.com/watch?v=f_uwKZIAeM0",
+      "description": "YouTube视频: What is Machine Learning?",
+      "video_id": "f_uwKZIAeM0",
+      "thumbnail": "https://i.ytimg.com/vi/f_uwKZIAeM0/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhBIGUoZTAP&rs=AOn4CLDdO5IvCezN9Mgshbkgi-84j2Gjpw",
+      "type": "video"
+    },
+    {
+      "title": "What is Machine Learning?",
+      "url": "https://www.youtube.com/watch?v=9gGnTQTYNaE",
+      "description": "YouTube视频: What is Machine Learning?",
+      "video_id": "9gGnTQTYNaE",
+      "thumbnail": "https://i.ytimg.com/vi/9gGnTQTYNaE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyQeLI5-DfA37uS7_GqtRJe7nmWA",
+      "type": "video"
+    },
+    {
+      "title": "Machine Learning & Artificial Intelligence: Crash Course Computer Science #34",
+      "url": "https://www.youtube.com/watch?v=z-EtmaFJieY",
+      "description": "YouTube视频: Machine Learning & Artificial Intelligence: Crash Course Computer Science #34",
+      "video_id": "z-EtmaFJieY",
+      "thumbnail": "https://i.ytimg.com/vi/z-EtmaFJieY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCFZsDh0s_QGv2Nlt1v6jyBQfYBw",
       "type": "video"
     },
     {
@@ -379,6 +471,38 @@
       "type": "video"
     },
     {
+      "title": "Large Language Models explained briefly",
+      "url": "https://www.youtube.com/watch?v=LPZh9BOjkQs",
+      "description": "YouTube视频: Large Language Models explained briefly",
+      "video_id": "LPZh9BOjkQs",
+      "thumbnail": "https://i.ytimg.com/vi/LPZh9BOjkQs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLATsTncbvO7P7_ANyrCKHuFAAI6MQ",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1)",
+      "url": "https://www.youtube.com/watch?v=fNxaJsNG3-s",
+      "description": "YouTube视频: Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1)",
+      "video_id": "fNxaJsNG3-s",
+      "thumbnail": "https://i.ytimg.com/vi/fNxaJsNG3-s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9Wt-etaXxVl2rulNnvjWLTMtmJQ",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing Explained | NLP Basics",
+      "url": "https://www.youtube.com/watch?v=pph11STqtXQ",
+      "description": "YouTube视频: Natural Language Processing Explained | NLP Basics",
+      "video_id": "pph11STqtXQ",
+      "thumbnail": "https://i.ytimg.com/vi/pph11STqtXQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5XCE4KvhsTGw9MKd13dXK3d88GA",
+      "type": "video"
+    },
+    {
+      "title": "7. Natural Language Processing (NLP), Part 1",
+      "url": "https://www.youtube.com/watch?v=IiD3YZkkCmE",
+      "description": "YouTube视频: 7. Natural Language Processing (NLP), Part 1",
+      "video_id": "IiD3YZkkCmE",
+      "thumbnail": "https://i.ytimg.com/vi/IiD3YZkkCmE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD-RvjsHssaJGuTDTJ4W-nOXA9xGw",
+      "type": "video"
+    },
+    {
       "title": "RAG vs. Fine Tuning",
       "url": "https://www.youtube.com/watch?v=00Q0G84kq3M",
       "description": "YouTube视频: RAG vs. Fine Tuning",
@@ -403,11 +527,51 @@
       "type": "video"
     },
     {
+      "title": "What are Transformers (Machine Learning Model)?",
+      "url": "https://www.youtube.com/watch?v=ZXiruGOCn9s",
+      "description": "YouTube视频: What are Transformers (Machine Learning Model)?",
+      "video_id": "ZXiruGOCn9s",
+      "thumbnail": "https://i.ytimg.com/vi/ZXiruGOCn9s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDoVV6mNeCGT-G_xiSE_qjuGZVLrg",
+      "type": "video"
+    },
+    {
+      "title": "Using pre-trained models in TensorFlow | Machine Learning for web developers",
+      "url": "https://www.youtube.com/watch?v=iTlj3gMYzw8",
+      "description": "YouTube视频: Using pre-trained models in TensorFlow | Machine Learning for web developers",
+      "video_id": "iTlj3gMYzw8",
+      "thumbnail": "https://i.ytimg.com/vi/iTlj3gMYzw8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_NwaIZqYd65CU5as7Xo74bgJ6pg",
+      "type": "video"
+    },
+    {
+      "title": "Transformers, explained: Understand the model behind GPT, BERT, and T5",
+      "url": "https://www.youtube.com/watch?v=SZorAJ4I-sA",
+      "description": "YouTube视频: Transformers, explained: Understand the model behind GPT, BERT, and T5",
+      "video_id": "SZorAJ4I-sA",
+      "thumbnail": "https://i.ytimg.com/vi/SZorAJ4I-sA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCi9n2KxgH_wwCyf9XWhc9IYZ7SAQ",
+      "type": "video"
+    },
+    {
+      "title": "How Large Language Models Work",
+      "url": "https://www.youtube.com/watch?v=5sLYAQS9sWQ",
+      "description": "YouTube视频: How Large Language Models Work",
+      "video_id": "5sLYAQS9sWQ",
+      "thumbnail": "https://i.ytimg.com/vi/5sLYAQS9sWQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBMIu1HBggVmDsm-RVixJEYct57kQ",
+      "type": "video"
+    },
+    {
       "title": "What Is Image Processing? – Vision Campus",
       "url": "https://www.youtube.com/watch?v=QMLbTEQJCaI",
       "description": "YouTube视频: What Is Image Processing? – Vision Campus",
       "video_id": "QMLbTEQJCaI",
       "thumbnail": "https://i.ytimg.com/vi/QMLbTEQJCaI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCzJZA9MuaSMUfnfV8LaotE0gENxA",
+      "type": "video"
+    },
+    {
+      "title": "But what is a convolution?",
+      "url": "https://www.youtube.com/watch?v=KuXjwB4LzSA",
+      "description": "YouTube视频: But what is a convolution?",
+      "video_id": "KuXjwB4LzSA",
+      "thumbnail": "https://i.ytimg.com/vi/KuXjwB4LzSA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBD_EqI4E471OWLIHXUpo84mSOJMA",
       "type": "video"
     },
     {
@@ -432,6 +596,30 @@
       "description": "YouTube视频: Overview | Image Processing I",
       "video_id": "vqRzOGg9mi8",
       "thumbnail": "https://i.ytimg.com/vi/vqRzOGg9mi8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6KWJ5_prunJBr-7aqOKeiEZm61Q",
+      "type": "video"
+    },
+    {
+      "title": "But how do AI images and videos actually work? | Guest video by Welch Labs",
+      "url": "https://www.youtube.com/watch?v=iv-5mZ_9CPY",
+      "description": "YouTube视频: But how do AI images and videos actually work? | Guest video by Welch Labs",
+      "video_id": "iv-5mZ_9CPY",
+      "thumbnail": "https://i.ytimg.com/vi/iv-5mZ_9CPY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAgaTuWeACmtgNhDVpUVVPH7BM84A",
+      "type": "video"
+    },
+    {
+      "title": "Getting Started with Image Processing",
+      "url": "https://www.youtube.com/watch?v=nAVgUfk-ALE",
+      "description": "YouTube视频: Getting Started with Image Processing",
+      "video_id": "nAVgUfk-ALE",
+      "thumbnail": "https://i.ytimg.com/vi/nAVgUfk-ALE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBcpFqMy3R5F14VqadJKx3P3AUwGA",
+      "type": "video"
+    },
+    {
+      "title": "How Does JPEG Work, Like, For Real Though? - #shorts",
+      "url": "https://www.youtube.com/watch?v=qMcw-uNT21I",
+      "description": "YouTube视频: How Does JPEG Work, Like, For Real Though? - #shorts",
+      "video_id": "qMcw-uNT21I",
+      "thumbnail": "https://i.ytimg.com/vi/qMcw-uNT21I/hq720_2.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARgRIGgocjAP&rs=AOn4CLCOLbHxjavIoEtPUkThK7zdx6-fIA",
       "type": "video"
     }
   ],
@@ -465,6 +653,20 @@
       "type": "code"
     },
     {
+      "title": "nndl.github.io",
+      "url": "https://github.com/nndl/nndl.github.io",
+      "description": "GitHub代码仓库: nndl.github.io",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "neural-networks-and-deep-learning",
+      "url": "https://github.com/mnielsen/neural-networks-and-deep-learning",
+      "description": "GitHub代码仓库: neural-networks-and-deep-learning",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
       "title": "tensorflow",
       "url": "https://github.com/tensorflow/tensorflow",
       "description": "GitHub代码仓库: tensorflow",
@@ -489,6 +691,20 @@
       "title": "awesome-machine-learning",
       "url": "https://github.com/josephmisiti/awesome-machine-learning",
       "description": "GitHub代码仓库: awesome-machine-learning",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "scikit-learn",
+      "url": "https://github.com/scikit-learn/scikit-learn",
+      "description": "GitHub代码仓库: scikit-learn",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "url": "https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "description": "GitHub代码仓库: 500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
       "source": "GitHub",
       "type": "code"
     },

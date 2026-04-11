@@ -1,0 +1,39 @@
+{
+  "has_psutil": true,
+  "results": [
+    {
+      "runs": 3,
+      "total_time_s": 0.4977,
+      "avg_time_s": 0.1659,
+      "t_full_s": 0.1659,
+      "cpu_avg_pct": 0.0,
+      "cpu_peak_pct": 0.0,
+      "mem_peak_mb": 170.56,
+      "module": "keyword_extraction",
+      "status": "ok"
+    },
+    {
+      "runs": 3,
+      "total_time_s": 0.3958,
+      "avg_time_s": 0.1319,
+      "t_full_s": 0.1319,
+      "cpu_avg_pct": 0.0,
+      "cpu_peak_pct": 0.0,
+      "mem_peak_mb": 170.92,
+      "module": "ranking_pipeline",
+      "status": "ok"
+    },
+    {
+      "runs": 3,
+      "total_time_s": 0.4669,
+      "avg_time_s": 0.1556,
+      "t_full_s": 0.1556,
+      "cpu_avg_pct": 0.0,
+      "cpu_peak_pct": 0.0,
+      "mem_peak_mb": 171.64,
+      "module": "local_pipeline",
+      "status": "ok",
+      "note": "Measures deterministic local stages only, excluding external web search latency."
+    }
+  ]
+}

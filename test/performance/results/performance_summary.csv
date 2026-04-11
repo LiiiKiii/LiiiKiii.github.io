@@ -1,0 +1,4 @@
+module,status,runs,total_time_s,avg_time_s,cpu_avg_pct,cpu_peak_pct,mem_peak_mb,note
+keyword_extraction,ok,3,0.4977,0.1659,0.0,0.0,170.56,
+ranking_pipeline,ok,3,0.3958,0.1319,0.0,0.0,170.92,
+local_pipeline,ok,3,0.4669,0.1556,0.0,0.0,171.64,"Measures deterministic local stages only, excluding external web search latency."

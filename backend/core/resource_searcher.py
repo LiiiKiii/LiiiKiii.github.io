@@ -9,6 +9,8 @@
 import os
 import re
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from urllib.parse import quote, urlencode, urlparse, parse_qs
 from typing import List, Dict
 import json
@@ -80,6 +82,32 @@ DEFAULT_HEADERS = {
     "Accept-Encoding": "gzip, deflate",
     "Connection": "keep-alive",
 }
+
+
+def _build_http_session() -> requests.Session:
+    """构建带连接池和轻量重试的HTTP会话，减少重复握手开销。"""
+    session = requests.Session()
+    retry = Retry(
+        total=2,
+        connect=2,
+        read=2,
+        backoff_factor=0.5,
+        status_forcelist=(429, 500, 502, 503, 504),
+        allowed_methods=frozenset(["GET"]),
+        raise_on_status=False,
+    )
+    adapter = HTTPAdapter(max_retries=retry, pool_connections=16, pool_maxsize=16)
+    session.mount("http://", adapter)
+    session.mount("https://", adapter)
+    return session
+
+
+HTTP_SESSION = _build_http_session()
+
+
+def http_get(url: str, headers=None, timeout: int = 15):
+    """统一的GET入口，复用连接并保持原有headers/timeout行为。"""
+    return HTTP_SESSION.get(url, headers=headers or DEFAULT_HEADERS, timeout=timeout)
 
 
 def is_english_content(text: str, min_english_ratio: float = 0.7) -> bool:
@@ -264,7 +292,7 @@ def search_youtube_videos(keyword: str, max_results: int = 10) -> List[Dict]:
         search_url = f"https://www.youtube.com/results?search_query={quote(keyword)}&sp=EgIoAQ%253D%253D"  # 添加英文内容过滤器
         headers = DEFAULT_HEADERS.copy()
         
-        resp = requests.get(search_url, headers=headers, timeout=15)
+        resp = http_get(search_url, headers=headers, timeout=15)
         if resp.status_code == 200:
             # 从HTML中提取视频信息
             html = resp.text
@@ -425,7 +453,7 @@ def fetch_github_code(keyword: str, max_results: int = 10) -> List[Dict]:
         # GitHub搜索URL（搜索代码仓库，添加AI相关关键词以提高相关性）
         search_query = f"{keyword} machine-learning OR deep-learning OR pytorch OR tensorflow"
         search_url = f"https://github.com/search?q={quote(search_query)}&type=repositories&s=stars&o=desc"
-        resp = requests.get(search_url, headers=DEFAULT_HEADERS, timeout=15)
+        resp = http_get(search_url, headers=DEFAULT_HEADERS, timeout=15)
         
         if resp.status_code == 200:
             html = resp.text
@@ -585,7 +613,7 @@ def fetch_wikipedia_article(keyword: str) -> Dict:
     try:
         # 尝试英文Wikipedia
         wiki_url = f"https://en.wikipedia.org/wiki/{quote(keyword.replace(' ', '_'))}"
-        resp = requests.get(wiki_url, headers=DEFAULT_HEADERS, timeout=10)
+        resp = http_get(wiki_url, headers=DEFAULT_HEADERS, timeout=10)
         
         if resp.status_code == 200:
             html = resp.text
@@ -631,7 +659,7 @@ def fetch_google_scholar_results(keyword: str, max_results: int = 5) -> List[Dic
     try:
         # Google Scholar搜索URL
         search_url = f"https://scholar.google.com/scholar?q={quote(keyword)}"
-        resp = requests.get(search_url, headers=DEFAULT_HEADERS, timeout=15)
+        resp = http_get(search_url, headers=DEFAULT_HEADERS, timeout=15)
         
         if resp.status_code == 200:
             html = resp.text
@@ -716,7 +744,7 @@ def fetch_arxiv_results(keyword: str, max_results: int = 3) -> List[Dict]:
     try:
         # arXiv搜索API（不需要API key）
         search_url = f"http://export.arxiv.org/api/query?search_query=all:{quote(keyword)}&start=0&max_results={max_results}"
-        resp = requests.get(search_url, headers=DEFAULT_HEADERS, timeout=15)
+        resp = http_get(search_url, headers=DEFAULT_HEADERS, timeout=15)
         
         if resp.status_code == 200:
             xml_content = resp.text
@@ -1039,7 +1067,7 @@ def extract_article_content(url: str, max_length: int = 3000) -> str:
     返回文章文本内容（前max_length个字符）
     """
     try:
-        resp = requests.get(url, headers=DEFAULT_HEADERS, timeout=12)
+        resp = http_get(url, headers=DEFAULT_HEADERS, timeout=12)
         if resp.status_code == 200:
             html = resp.text
             
@@ -1221,7 +1249,7 @@ def fetch_google_images(keyword: str, max_results: int = 10) -> List[Dict]:
     try:
         # Google Images搜索URL
         search_url = f"https://www.google.com/search?tbm=isch&q={quote(keyword)}&safe=images"
-        resp = requests.get(search_url, headers=DEFAULT_HEADERS, timeout=15)
+        resp = http_get(search_url, headers=DEFAULT_HEADERS, timeout=15)
         
         if resp.status_code == 200:
             html = resp.text
@@ -1287,7 +1315,7 @@ def fetch_bing_images(keyword: str, max_results: int = 10) -> List[Dict]:
     try:
         # Bing Images搜索URL
         search_url = f"https://www.bing.com/images/search?q={quote(keyword)}&safe=strict"
-        resp = requests.get(search_url, headers=DEFAULT_HEADERS, timeout=15)
+        resp = http_get(search_url, headers=DEFAULT_HEADERS, timeout=15)
         
         if resp.status_code == 200:
             html = resp.text
@@ -1348,7 +1376,7 @@ def fetch_unsplash_images(keyword: str, max_results: int = 5) -> List[Dict]:
     try:
         # Unsplash搜索URL（不需要API key，直接访问搜索页面）
         search_url = f"https://unsplash.com/s/photos/{quote(keyword)}"
-        resp = requests.get(search_url, headers=DEFAULT_HEADERS, timeout=15)
+        resp = http_get(search_url, headers=DEFAULT_HEADERS, timeout=15)
         
         if resp.status_code == 200:
             html = resp.text
@@ -1408,7 +1436,7 @@ def fetch_pexels_images(keyword: str, max_results: int = 5) -> List[Dict]:
     try:
         # Pexels搜索URL（不需要API key，直接访问搜索页面）
         search_url = f"https://www.pexels.com/search/{quote(keyword)}/"
-        resp = requests.get(search_url, headers=DEFAULT_HEADERS, timeout=15)
+        resp = http_get(search_url, headers=DEFAULT_HEADERS, timeout=15)
         
         if resp.status_code == 200:
             html = resp.text
