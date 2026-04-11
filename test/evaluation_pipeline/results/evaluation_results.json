@@ -1,130 +1,376 @@
 {
-  "corpus": {
-    "path": "/Users/macbook/Desktop/AI-Pedia/Project/test/evaluation_pipeline/../../data/test_corpus",
-    "document_count": 10,
-    "word_count_total": 1863
-  },
-  "parameters": {
-    "top_k_keywords": 10,
-    "search_max_per_type": 8,
-    "recommend_top_k": 5
-  },
-  "keyword_reports": {
-    "simple_frequency": {
-      "keyword_count": 10,
-      "coverage": 100.0,
-      "ai_relevance": 30.0,
-      "diversity": 0.9905,
-      "keywords": [
-        "learning",
-        "networks",
-        "neural",
-        "models",
-        "training",
-        "data",
-        "gradient",
-        "processing",
-        "attention",
-        "deep"
-      ]
+  "mode": "focused_multi_corpus",
+  "aggregate": {
+    "corpus": {
+      "mode": "focused_multi_corpus",
+      "corpus_count": 2,
+      "corpora": [
+        "foundations_ml",
+        "nlp_transformers"
+      ],
+      "document_count_total": 20,
+      "word_count_total": 3177
     },
-    "tfidf_mmr": {
-      "keyword_count": 10,
-      "coverage": 100.0,
-      "ai_relevance": 50.0,
-      "diversity": 0.9613,
-      "keywords": [
-        "neural networks",
-        "natural language processing",
-        "machine learning",
-        "recommendation systems",
-        "batch normalization",
-        "pre trained",
-        "deep learning",
-        "attention",
-        "reinforcement learning",
-        "text"
-      ]
+    "parameters": {
+      "top_k_keywords": 10,
+      "search_max_per_type": 8,
+      "recommend_top_k": 5
+    },
+    "keyword_reports": {
+      "simple_frequency": {
+        "keyword_count": 10,
+        "coverage": 100.0,
+        "ai_relevance": 20.0,
+        "diversity": 0.9817
+      },
+      "tfidf_mmr": {
+        "keyword_count": 10,
+        "coverage": 85.0,
+        "ai_relevance": 35.0,
+        "diversity": 0.949
+      }
+    },
+    "resource_reports": {
+      "raw_search": {
+        "total_resources": 365,
+        "ai_relevance": 80.55,
+        "cross_platform_diversity": 3,
+        "authority_score": 34.52,
+        "resource_type_counts": {
+          "txt": 176,
+          "video": 144,
+          "code": 45
+        },
+        "url_validation": {
+          "valid": 365,
+          "invalid": 0,
+          "valid_percentage": 100.0
+        },
+        "novelty": 100.0
+      },
+      "topk_unranked": {
+        "total_resources": 30,
+        "ai_relevance": 83.33,
+        "cross_platform_diversity": 3,
+        "authority_score": 40.0,
+        "resource_type_counts": {
+          "txt": 10,
+          "video": 10,
+          "code": 10
+        },
+        "url_validation": {
+          "valid": 30,
+          "invalid": 0,
+          "valid_percentage": 100.0
+        },
+        "noise_reduction": 91.78,
+        "novelty": 100.0
+      },
+      "topk_ranked": {
+        "total_resources": 30,
+        "ai_relevance": 90.0,
+        "cross_platform_diversity": 3,
+        "authority_score": 66.67,
+        "resource_type_counts": {
+          "txt": 10,
+          "video": 10,
+          "code": 10
+        },
+        "url_validation": {
+          "valid": 30,
+          "invalid": 0,
+          "valid_percentage": 100.0
+        },
+        "noise_reduction": 91.78,
+        "novelty": 100.0
+      }
+    },
+    "resource_type_counts": {
+      "raw_search": {
+        "txt": 176,
+        "video": 144,
+        "code": 45
+      },
+      "topk_unranked": {
+        "txt": 10,
+        "video": 10,
+        "code": 10
+      },
+      "topk_ranked": {
+        "txt": 10,
+        "video": 10,
+        "code": 10
+      }
+    },
+    "improvements": {
+      "keyword_coverage_delta": -15.0,
+      "keyword_ai_relevance_delta": 15.0,
+      "keyword_diversity_delta": -0.0327,
+      "ranking_ai_relevance_delta": 6.67,
+      "ranking_authority_delta": 26.67,
+      "ranking_noise_reduction": 91.78
     }
   },
-  "resource_reports": {
-    "raw_search": {
-      "total_resources": 201,
-      "ai_relevance": 82.59,
-      "cross_platform_diversity": 3,
-      "authority_score": 37.81,
+  "corpora": {
+    "foundations_ml": {
+      "corpus": {
+        "path": "/Users/macbook/Desktop/AI-Pedia/Project/test/evaluation_pipeline/../../data/test_corpora/foundations_ml",
+        "document_count": 10,
+        "word_count_total": 1688
+      },
+      "parameters": {
+        "top_k_keywords": 10,
+        "search_max_per_type": 8,
+        "recommend_top_k": 5
+      },
+      "keyword_reports": {
+        "simple_frequency": {
+          "keyword_count": 10,
+          "coverage": 100.0,
+          "ai_relevance": 10.0,
+          "diversity": 0.9807,
+          "keywords": [
+            "learning",
+            "data",
+            "model",
+            "machine",
+            "training",
+            "validation",
+            "gradient",
+            "feature",
+            "models",
+            "examples"
+          ]
+        },
+        "tfidf_mmr": {
+          "keyword_count": 10,
+          "coverage": 100.0,
+          "ai_relevance": 30.0,
+          "diversity": 0.9487,
+          "keywords": [
+            "machine learning",
+            "train validation test",
+            "model evaluation",
+            "feature engineering",
+            "training set",
+            "linear regression",
+            "precision recall",
+            "supervised learning",
+            "gradient",
+            "deep learning"
+          ]
+        }
+      },
+      "resource_reports": {
+        "raw_search": {
+          "total_resources": 184,
+          "ai_relevance": 90.22,
+          "cross_platform_diversity": 3,
+          "authority_score": 31.52,
+          "resource_type_counts": {
+            "txt": 89,
+            "video": 77,
+            "code": 18
+          },
+          "url_validation": {
+            "valid": 184,
+            "invalid": 0,
+            "valid_percentage": 100.0
+          },
+          "novelty": 100.0
+        },
+        "topk_unranked": {
+          "total_resources": 15,
+          "ai_relevance": 93.33,
+          "cross_platform_diversity": 3,
+          "authority_score": 40.0,
+          "resource_type_counts": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          },
+          "url_validation": {
+            "valid": 15,
+            "invalid": 0,
+            "valid_percentage": 100.0
+          },
+          "noise_reduction": 91.85,
+          "novelty": 100.0
+        },
+        "topk_ranked": {
+          "total_resources": 15,
+          "ai_relevance": 100.0,
+          "cross_platform_diversity": 3,
+          "authority_score": 66.67,
+          "resource_type_counts": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          },
+          "url_validation": {
+            "valid": 15,
+            "invalid": 0,
+            "valid_percentage": 100.0
+          },
+          "noise_reduction": 91.85,
+          "novelty": 100.0
+        }
+      },
       "resource_type_counts": {
-        "txt": 89,
-        "video": 77,
-        "code": 35
+        "raw_search": {
+          "txt": 89,
+          "video": 77,
+          "code": 18
+        },
+        "topk_unranked": {
+          "txt": 5,
+          "video": 5,
+          "code": 5
+        },
+        "topk_ranked": {
+          "txt": 5,
+          "video": 5,
+          "code": 5
+        }
       },
-      "url_validation": {
-        "valid": 201,
-        "invalid": 0,
-        "valid_percentage": 100.0
-      },
-      "novelty": 100.0
+      "improvements": {
+        "keyword_coverage_delta": 0.0,
+        "keyword_ai_relevance_delta": 20.0,
+        "keyword_diversity_delta": -0.032,
+        "ranking_ai_relevance_delta": 6.67,
+        "ranking_authority_delta": 26.67,
+        "ranking_noise_reduction": 91.85
+      }
     },
-    "topk_unranked": {
-      "total_resources": 15,
-      "ai_relevance": 93.33,
-      "cross_platform_diversity": 3,
-      "authority_score": 40.0,
+    "nlp_transformers": {
+      "corpus": {
+        "path": "/Users/macbook/Desktop/AI-Pedia/Project/test/evaluation_pipeline/../../data/test_corpora/nlp_transformers",
+        "document_count": 10,
+        "word_count_total": 1489
+      },
+      "parameters": {
+        "top_k_keywords": 10,
+        "search_max_per_type": 8,
+        "recommend_top_k": 5
+      },
+      "keyword_reports": {
+        "simple_frequency": {
+          "keyword_count": 10,
+          "coverage": 100.0,
+          "ai_relevance": 30.0,
+          "diversity": 0.9827,
+          "keywords": [
+            "models",
+            "language",
+            "text",
+            "attention",
+            "model",
+            "generation",
+            "sequence",
+            "nlp",
+            "transformer",
+            "learning"
+          ]
+        },
+        "tfidf_mmr": {
+          "keyword_count": 10,
+          "coverage": 70.0,
+          "ai_relevance": 40.0,
+          "diversity": 0.9494,
+          "keywords": [
+            "large language models",
+            "text summarization",
+            "natural language processing",
+            "ai pedia",
+            "multi head attention",
+            "machine translation",
+            "question answering",
+            "attention mechanisms",
+            "sequence",
+            "self attention"
+          ]
+        }
+      },
+      "resource_reports": {
+        "raw_search": {
+          "total_resources": 181,
+          "ai_relevance": 70.72,
+          "cross_platform_diversity": 3,
+          "authority_score": 37.57,
+          "resource_type_counts": {
+            "txt": 87,
+            "video": 67,
+            "code": 27
+          },
+          "url_validation": {
+            "valid": 181,
+            "invalid": 0,
+            "valid_percentage": 100.0
+          },
+          "novelty": 100.0
+        },
+        "topk_unranked": {
+          "total_resources": 15,
+          "ai_relevance": 73.33,
+          "cross_platform_diversity": 3,
+          "authority_score": 40.0,
+          "resource_type_counts": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          },
+          "url_validation": {
+            "valid": 15,
+            "invalid": 0,
+            "valid_percentage": 100.0
+          },
+          "noise_reduction": 91.71,
+          "novelty": 100.0
+        },
+        "topk_ranked": {
+          "total_resources": 15,
+          "ai_relevance": 80.0,
+          "cross_platform_diversity": 3,
+          "authority_score": 66.67,
+          "resource_type_counts": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          },
+          "url_validation": {
+            "valid": 15,
+            "invalid": 0,
+            "valid_percentage": 100.0
+          },
+          "noise_reduction": 91.71,
+          "novelty": 100.0
+        }
+      },
       "resource_type_counts": {
-        "txt": 5,
-        "video": 5,
-        "code": 5
+        "raw_search": {
+          "txt": 87,
+          "video": 67,
+          "code": 27
+        },
+        "topk_unranked": {
+          "txt": 5,
+          "video": 5,
+          "code": 5
+        },
+        "topk_ranked": {
+          "txt": 5,
+          "video": 5,
+          "code": 5
+        }
       },
-      "url_validation": {
-        "valid": 15,
-        "invalid": 0,
-        "valid_percentage": 100.0
-      },
-      "noise_reduction": 92.54,
-      "novelty": 100.0
-    },
-    "topk_ranked": {
-      "total_resources": 15,
-      "ai_relevance": 100.0,
-      "cross_platform_diversity": 3,
-      "authority_score": 66.67,
-      "resource_type_counts": {
-        "txt": 5,
-        "video": 5,
-        "code": 5
-      },
-      "url_validation": {
-        "valid": 15,
-        "invalid": 0,
-        "valid_percentage": 100.0
-      },
-      "noise_reduction": 92.54,
-      "novelty": 100.0
+      "improvements": {
+        "keyword_coverage_delta": -30.0,
+        "keyword_ai_relevance_delta": 10.0,
+        "keyword_diversity_delta": -0.0333,
+        "ranking_ai_relevance_delta": 6.67,
+        "ranking_authority_delta": 26.67,
+        "ranking_noise_reduction": 91.71
+      }
     }
-  },
-  "resource_type_counts": {
-    "raw_search": {
-      "txt": 89,
-      "video": 77,
-      "code": 35
-    },
-    "topk_unranked": {
-      "txt": 5,
-      "video": 5,
-      "code": 5
-    },
-    "topk_ranked": {
-      "txt": 5,
-      "video": 5,
-      "code": 5
-    }
-  },
-  "improvements": {
-    "keyword_coverage_delta": 0.0,
-    "keyword_ai_relevance_delta": 20.0,
-    "keyword_diversity_delta": -0.0292,
-    "ranking_ai_relevance_delta": 6.67,
-    "ranking_authority_delta": 26.67,
-    "ranking_noise_reduction": 92.54
   }
 }

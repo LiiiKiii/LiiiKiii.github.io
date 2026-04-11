@@ -1,0 +1,26 @@
+Attention Mechanisms
+
+Attention is a neural computation pattern that allows a model to focus selectively on the most relevant parts of an input when producing an output. It was first popularized in neural machine translation and later became central to transformer models.
+
+Core intuition:
+Instead of compressing all information into a single fixed vector, the model dynamically weighs different tokens or states according to the current context.
+
+Important forms:
+1. additive attention
+2. dot-product attention
+3. self-attention
+4. multi-head attention
+
+Benefits:
+- captures long-range dependencies
+- improves interpretability of token interactions
+- enables parallel sequence processing in transformers
+
+Applications:
+- machine translation
+- text summarization
+- question answering
+- document classification
+- multimodal learning
+
+Attention is central to modern NLP because it gives models a flexible way to represent context and relationships. In AI-Pedia, understanding attention is important because many retrieved resources about modern language models and transformers build directly on this mechanism.

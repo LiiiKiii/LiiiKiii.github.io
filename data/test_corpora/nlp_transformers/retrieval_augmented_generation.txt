@@ -1,0 +1,17 @@
+Retrieval-Augmented Generation
+
+Retrieval-augmented generation, or RAG, combines a language model with an external retrieval system. Instead of relying only on parameters stored inside the model, the system first searches for relevant documents and then conditions generation on the retrieved evidence.
+
+Why RAG is useful:
+1. improves grounding in external sources
+2. reduces hallucination risk
+3. makes it easier to update knowledge without retraining the full model
+4. supports citations or evidence-aware responses
+
+A typical RAG pipeline includes:
+- query formulation
+- retrieval over documents or embeddings
+- reranking or filtering
+- evidence injection into generation
+
+RAG is highly relevant to AI-Pedia because the project aims to support learning through trustworthy external materials rather than depending entirely on a language model's internal memory.

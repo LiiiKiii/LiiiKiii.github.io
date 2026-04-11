@@ -1,0 +1,35 @@
+Transformers and Attention Mechanisms
+
+The Transformer Architecture
+The Transformer model was introduced in the paper "Attention Is All You Need" (2017) by Vaswani et al. It revolutionized natural language processing by replacing recurrent layers with self-attention mechanisms.
+
+Key Innovations:
+1. Self-Attention: Allows the model to weigh the importance of different parts of the input
+2. Multi-Head Attention: Multiple attention mechanisms operating in parallel
+3. Positional Encoding: Adds position information to the sequence
+4. Layer Normalization: Stabilizes training process
+
+Attention Mechanism Details:
+- Query (Q): What we're looking for
+- Key (K): What we're comparing against
+- Value (V): What we retrieve
+- Attention Score: dot product of Q and K, normalized by softmax
+
+Transformer Components:
+- Encoder: Processes input sequence
+- Decoder: Generates output sequence
+- Attention Layers: Core computational blocks
+- Feed-Forward Networks: Additional processing
+
+Popular Transformer Models:
+- BERT: Bidirectional Encoder Representations from Transformers
+- GPT: Generative Pre-trained Transformer
+- T5: Text-to-Text Transfer Transformer
+- ViT: Vision Transformer for image processing
+
+Applications:
+- Machine translation
+- Text summarization
+- Question answering
+- Code generation
+- Image classification

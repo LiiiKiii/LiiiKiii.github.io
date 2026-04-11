@@ -1,0 +1,22 @@
+Machine Learning Training Workflow
+
+A practical machine learning workflow usually follows a sequence of connected stages rather than a single training step.
+
+Typical workflow:
+1. Define the task and target variable
+2. Collect and clean data
+3. Split into train, validation, and test sets
+4. Build a baseline model
+5. Train and tune hyperparameters
+6. Evaluate performance and error patterns
+7. Improve the model or features
+8. Deploy and monitor behaviour
+
+Important engineering concerns:
+- reproducibility of experiments
+- versioning of data and code
+- stable preprocessing
+- fair comparison between models
+- runtime and memory constraints
+
+This workflow mindset is important because modern AI systems are not judged only by accuracy. They are also judged by maintainability, robustness, and clarity of evaluation. A good training workflow therefore combines machine learning theory with software engineering discipline.
