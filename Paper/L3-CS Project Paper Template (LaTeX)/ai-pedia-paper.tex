@@ -810,18 +810,18 @@ Beyond paper-level design, a substantial part of the project involved refining t
 \caption{Engineering Changes Made During Prototype Refinement}
 \label{tab:engineering_changes}
 \centering
-\footnotesize
-\begin{tabular}{@{}p{3.1cm}p{4.7cm}p{6.9cm}@{}}
+\scriptsize
+\begin{tabular}{@{}p{2.3cm}p{4.6cm}p{7.9cm}@{}}
 \hline\hline
 Component & Change & Practical effect\\
 \hline
-\texttt{backend/core/recommender.py} & Removed summary generation during intermediate recommendation, added lightweight domain bonus, stored final \texttt{ranking\_score}. & Avoids duplicate API work, makes ranking more transparent, and improves the authority profile of the final list.\\
+\texttt{recommender.py} & Removed summary generation during intermediate recommendation, added lightweight domain bonus, stored final \texttt{ranking\_score}. & Avoids duplicate API work, makes ranking more transparent, and improves the authority profile of the final list.\\
 \texttt{app.py} & Reuses existing summaries at presentation time and only generates them lazily when absent. & Reduces repeated latency in the user-facing interface and keeps summary generation aligned with actual display needs.\\
-\texttt{backend/core/keyword\_extractor.py} & Added redundancy pruning after MMR selection. & Prevents phrases such as short/long containment variants from crowding the keyword set and improves search-query usefulness.\\
-\texttt{test/evaluation\_pipeline/metrics.py} & Reworked metrics to cover coverage, diversity, AI relevance, authority, novelty, URL validity, and modality counts. & Turns evaluation from an informal inspection task into a repeatable metric-based process suitable for inclusion in the dissertation.\\
-\texttt{backend/core/resource\_searcher.py} & Added a shared HTTP session with retry-aware GET handling for repeated source queries. & Reduces repeated connection overhead and makes retrieval behaviour more stable across evaluation reruns.\\
-\texttt{test/evaluation\_pipeline/evaluator.py} & Rewrote the evaluator so it can actually run end-to-end and export JSON, CSV, LaTeX tables, and chart outputs. & Makes the reported results reproducible and directly links the codebase to the paper’s tables and figures.\\
-\texttt{test/performance/run\_performance\_tests.py} & Replaced placeholder timing logic with measurements of keyword extraction, ranking, and combined local pipeline stages, and exported paper-ready artefacts. & Provides genuine implementation-level performance evidence instead of superficial script execution.\\
+\texttt{keyword\_extractor.py} & Added redundancy pruning after MMR selection. & Prevents phrases such as short/long containment variants from crowding the keyword set and improves search-query usefulness.\\
+\texttt{metrics.py} & Reworked metrics to cover coverage, diversity, AI relevance, authority, novelty, URL validity, and modality counts. & Turns evaluation from an informal inspection task into a repeatable metric-based process suitable for inclusion in the dissertation.\\
+\texttt{resource\_searcher.py} & Added a shared HTTP session with retry-aware GET handling for repeated source queries. & Reduces repeated connection overhead and makes retrieval behaviour more stable across evaluation reruns.\\
+\texttt{evaluator.py} & Rewrote the evaluator so it can actually run end-to-end and export JSON, CSV, LaTeX tables, and chart outputs. & Makes the reported results reproducible and directly links the codebase to the paper’s tables and figures.\\
+\texttt{run\_performance\_tests.py} & Replaced placeholder timing logic with measurements of keyword extraction, ranking, and combined local pipeline stages, and exported paper-ready artefacts. & Provides genuine implementation-level performance evidence instead of superficial script execution.\\
 \hline\hline
 \end{tabular}
 \end{table*}
@@ -832,7 +832,7 @@ These refinements are important for the dissertation because they narrow the gap
 
 In addition to end-to-end output inspection, the project includes a small local performance harness for deterministic stages of the system. The intent is not to claim full internet-scale throughput, since external search latency depends on network conditions and third-party services, but rather to measure the intrinsic cost of the core local stages implemented by the project itself. Table~\ref{tab:local_pipeline_perf} summarises the current measurements.
 
-\begin{table}[!t]
+\begin{table*}[!t]
 \renewcommand{\arraystretch}{1.2}
 \caption{Local Performance of Core Deterministic Stages}
 \label{tab:local_pipeline_perf}
@@ -847,7 +847,7 @@ Ranking pipeline & 0.13 & 170.92 & CBF over cached resources\\
 Local combined pipeline & 0.16 & 171.64 & Excludes web search latency\\
 \hline\hline
 \end{tabular}
-\end{table}
+\end{table*}
 
 These measurements suggest that the main computational cost of the project is not the internal text processing or ranking logic, but the external retrieval stage. This is an encouraging result from an engineering perspective: the local algorithmic stages are lightweight enough to support interactive use, while the slower part of the workflow is clearly attributable to multi-source retrieval over the web. As a result, future optimisation work should focus primarily on search orchestration, caching, and asynchronous retrieval rather than on the TF-IDF/MMR/CBF computation itself.
 
