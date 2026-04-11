@@ -1,123 +1,81 @@
-## AI-Pedia 测试总览（重构版）
+# AI-Pedia Test Suite Overview
 
-本目录对测试方案 **完全重构为「主观 + 客观」两大部分**，并且都围绕两个核心对比：
+This directory contains the **current reproducible evaluation and performance scripts** used by the project.
 
-- **系统 vs NotebookLM 的直接对比**
-- **同一 LLM 在「不经过系统」 vs 「经过系统」时的表现差异（“笨学生”方法）**
+## What lives in `test/`
 
-先通读本文件，再根据需要进入各子目录补充具体实验设计和结果。
+- `evaluation_pipeline/`  
+  Main quantitative evaluation code for keyword extraction, retrieval quality, and ranking quality.
 
-目录结构（建议）：
+- `performance/`  
+  Lightweight local performance benchmarks for the deterministic stages of the pipeline.
 
-- `evaluation_objective/`：**客观评价**（与 NotebookLM 的对比 + “笨学生”方法，包含指标说明和表格模板）
-- `evaluation_subjective/`：**主观评价**（问卷设计、UI 展示、用户主观感受）
-- `performance/`：可选的**底层性能脚本**（如仅对本系统测 tokens/s、延迟等），可按需要保留或扩展
+- `evaluation_objective/` and `evaluation_subjective/`  
+  Earlier planning notes for broader study design. These are **not** the main scripts used to generate the dissertation's current quantitative results.
 
----
+## Important path clarification
 
-### 1. 总体测试目标
+The **evaluation scripts are in `test/`**, but the **input corpora are not stored inside `test/`**.
 
-- **对比 NotebookLM**：在相同输入文本与任务下，评估本系统在：
-  - 学习成效（理解、结构化、应用能力）
-  - 输出质量（正确性、完整性、可教性）
-  - 性能（速度、资源占用 / 近似耗能）
-  上是否具有优势或不同特点。
+Current layout:
 
-- **评估系统“增强效果”**：通过“笨学生”方法，将同一个 LLM 人为限制成一个“只会查找和拼接原文”的弱版本，再与“经过本系统增强后的版本”对比，量化系统带来的提升。
+- Evaluation code: `test/evaluation_pipeline/`
+- Performance code: `test/performance/`
+- Focused evaluation corpora: `data/test_corpora/`
+- Legacy single-corpus input: `data/test_corpus/`
+- Generated evaluation outputs: `test/evaluation_pipeline/results/`
+- Generated performance outputs: `test/performance/results/`
 
-- **收集主观体验**：通过问卷 + UI 对照展示，从学习者视角评估：
-  - 易用性、理解负担
-  - 对学习过程的帮助感
-  - 对结果的信任度与满意度
-  - 相比 NotebookLM 的偏好与使用场景选择
+## Current evaluation design
 
----
+The dissertation's current evaluation uses **three focused learner-scenario corpora**:
 
-### 2. 客观评价概述（详见 `evaluation_objective/README.md`）
+- `data/test_corpora/foundations_ml/`
+- `data/test_corpora/nlp_transformers/`
+- `data/test_corpora/vision_representation/`
 
-**2.1 与 NotebookLM 的直接对比**
+Each corpus contains 10 AI/ML-themed text documents. The evaluation script can run either:
 
-- **数据与任务**：
-  - 选取多种代表性学习材料（教材章节、论文段落、课堂讲义、学生原始笔记等）。
-  - 设计统一的任务类型：概念理解、应用解题、结构化整理等。
-  - 对同一材料，分别在 NotebookLM 和本系统中执行 **完全相同的任务指令**。
+1. **single-corpus mode** for ad hoc testing, or
+2. **focused multi-corpus mode** for the current dissertation evaluation.
 
-- **控制变量**：
-  - 输入文本一致、prompt 模板一致。
-  - LLM 相关参数（温度、max tokens 等）尽量对齐。
+## How to run the current evaluation
 
-- **评价指标**：
-  - **LLM 增强效果**：人工评分（正确性、完整性、结构化程度、可教性）、有标准答案时的正确率、pairwise 偏好（盲测 A/B）。
-  - **系统性能**：响应时间、首次 token 延迟、资源占用（CPU/GPU/内存）等，用作速度与耗能的近似。
+From the project root:
 
-**2.2 “笨学生”方法（系统前后对比）**
+```bash
+python test/evaluation_pipeline/evaluator.py --use-focused-corpora --reuse-cache
+```
 
-- **笨学生设定**：
-  - 用系统 prompt 人为限制 LLM，只允许：
-    - 在文本中查找相关句子并简单拼接；
-    - 进行最基础的重述，不做高阶推理和结构化整理；
-    - 不进行多步计划、不生成教学式讲解。
-  - 如有工具调用，则只允许最原始的全文检索，不启用结构化知识库或复杂 pipeline。
+This regenerates the aggregate results and per-corpus outputs used for the paper.
 
-- **系统增强设定**：
-  - 在同样文本和问题下，开启本系统全部能力：
-    - 自动构建知识结构 / 学习路径；
-    - 主动拆解步骤与解释；
-    - 结合用户已有知识进行教学式输出（若支持）。
+## How to run the performance benchmark
 
-- **对比方式**：
-  - 为每道题目/任务记录两份答案：笨学生版 vs 系统增强版。
-  - 由评审按统一 rubric 打分，并统计：
-    - 平均分差、提升幅度；
-    - 失败/退化案例，用于分析系统局限。
+From the project root:
 
-> 具体设计细节、打分维度和表格模板见 `evaluation_objective/README.md`。
+```bash
+python test/performance/run_performance_tests.py
+```
 
----
+## Main generated files
 
-### 3. 主观评价概述（详见 `evaluation_subjective/README.md`）
+### Evaluation outputs
 
-**3.1 问卷维度**
+- `test/evaluation_pipeline/results/evaluation_results.json`
+- `test/evaluation_pipeline/results/evaluation_tables.tex`
+- `test/evaluation_pipeline/results/keyword_metrics.csv`
+- `test/evaluation_pipeline/results/resource_metrics.csv`
+- `test/evaluation_pipeline/results/corpus_overview.csv`
+- `test/evaluation_pipeline/results/<corpus_name>/...`
 
-主观问卷主要围绕以下维度设计（使用 5 或 7 点李克特量表）：
+### Performance outputs
 
-- **感知学习效果**：是否更容易理解、记住、解决问题。
-- **易用性**：上手难度、流程清晰程度、操作负担。
-- **信任度**：对答案正确性的信任、是否愿意用来检查作业/备考。
-- **透明度与可控性**：是否清楚系统在做什么，是否能掌控过程。
-- **整体满意度与偏好**：整体评分、未来使用意愿、相对 NotebookLM 的偏好。
+- `test/performance/results/performance_results.json`
+- `test/performance/results/performance_summary.csv`
+- `test/performance/results/performance_table.tex`
 
-**3.2 UI 对照与体验流程**
+## Why this matters
 
-- 使用截图或 demo 将：
-  - **NotebookLM 在典型任务下的界面与输出**，
-  - **本系统在同任务下的界面与输出**，
-  并排展示给受试者。
+If you need to explain the repository structure in the dissertation or viva, the most accurate summary is:
 
-- 若本系统具备“学习流程 / 知识结构”特色，可用时间轴或结构化视图展示：
-  - 导入材料 → 自动结构化 → 练习/问答 → 反馈/巩固 的学习闭环。
-
-- 体验流程建议：
-  1. 受试者先用 NotebookLM 完成一组任务；
-  2. 再用本系统完成难度与类型相似的任务（可交叉设计以消除顺序效应）；
-  3. 最后填写主观问卷，并回答若干开放题。
-
-> 具体问卷示例和表格模板见 `evaluation_subjective/README.md`。
-
----
-
-### 4. 实验执行与数据整理建议
-
-- **样本与被试**：
-  - 样本材料覆盖不同学科与不同复杂度；
-  - 被试身份可区分为学生 / 教师 / 研究者等。
-
-- **环境记录**：
-  - 记录硬件环境、网络状况、模型版本等，以便解释速度与表现差异。
-
-- **数据整理**：
-  - 客观指标：统一使用 `evaluation_objective` 中的表格模板；
-  - 主观指标：统一使用 `evaluation_subjective` 中的问卷结果表格；
-  - 若使用 `performance/run_performance_tests.py`，请在客观评价中注明其输出如何映射到论文中的图表或结论。
-
-本 README 只提供总体框架，实际测试时请在各子目录中补充与当前版本系统、NotebookLM 对比相关的具体任务、prompt、数据集及统计脚本。
+> The testing and evaluation scripts live in `test/`, the evaluation corpora live in `data/test_corpora/`, and the generated quantitative outputs are written back to `test/.../results/` for direct inclusion in the dissertation.

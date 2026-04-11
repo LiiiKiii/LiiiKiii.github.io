@@ -1,568 +1,147 @@
-# AI领域多媒体推荐系统 - 评估方法
-
-本文档详细说明该推荐系统项目的各种评估方法和指标。
-
-## 1. 关键词提取质量评估
-
-### 1.1 客观指标
-
-#### 覆盖率 (Coverage)
-- **定义**: 提取的关键词在文档集合中的覆盖程度
-- **计算方法**: 
-  ```
-  Coverage = (包含关键词的文档数) / (总文档数)
-  ```
-- **评估目标**: 覆盖率应 > 80%，确保关键词能代表大部分文档内容
-
-#### TF-IDF 分数分布
-- **定义**: 关键词的TF-IDF分数统计
-- **指标**:
-  - 平均TF-IDF分数
-  - 中位数TF-IDF分数
-  - 最高/最低TF-IDF分数
-- **评估目标**: 分数分布应合理，避免过高或过低
-
-#### 文档频率 (Document Frequency)
-- **定义**: 每个关键词出现在多少个文档中
-- **评估目标**: 
-  - `min_docs` 参数控制（默认3）
-  - 关键词应出现在至少30%的文档中
-
-#### 多样性 (Diversity)
-- **定义**: 使用MMR算法后，关键词之间的相似度
-- **计算方法**:
-  ```python
-  diversity = 1 - average_pairwise_similarity(keywords)
-  ```
-- **评估目标**: 多样性应 > 0.5，确保关键词不重复
-
-### 1.2 主观评估
-
-#### 专家评审
-- 邀请AI/ML领域专家评审提取的关键词
-- 评估维度：
-  - **相关性**: 关键词是否与文档主题相关
-  - **代表性**: 关键词是否能代表文档核心内容
-  - **完整性**: 是否遗漏重要主题
-  - **准确性**: 关键词是否准确（无噪声）
-
-#### 用户满意度调查
-- 询问用户：提取的关键词是否符合预期
-- 评分标准：1-5分（1=完全不相关，5=完全相关）
-
-## 2. 资源搜索质量评估
-
-### 2.1 搜索召回率 (Recall)
-
-#### 按资源类型统计
-- **文本资源召回率**: 
-  ```
-  Recall_txt = (找到的相关文本资源数) / (理论上应找到的相关文本资源总数)
-  ```
-- **视频资源召回率**: 类似计算
-- **代码资源召回率**: 类似计算
-
-#### 多源搜索覆盖率
-- **定义**: 每个关键词从多少个不同来源获取到资源
-- **评估目标**: 每个关键词应至少从2-3个来源获取资源
-
-### 2.2 搜索精确率 (Precision)
-
-#### 相关性精确率
-- **定义**: 搜索到的资源中，真正相关的比例
-- **计算方法**:
-  ```python
-  Precision = (相关资源数) / (总搜索资源数)
-  ```
-- **评估目标**: 精确率应 > 70%
-
-#### 来源质量分布
-- 统计各来源的资源质量：
-  - Wikipedia: 通常质量较高
-  - Google Scholar: 学术质量高
-  - arXiv: 前沿研究
-  - YouTube: 教学视频质量
-  - GitHub: 代码仓库质量
-
-### 2.3 内容质量指标
-
-#### 英文内容比例
-- **定义**: 搜索到的资源中，英文内容的比例
-- **计算方法**:
-  ```python
-  English_ratio = (英文资源数) / (总资源数)
-  ```
-- **评估目标**: 应 > 90%（系统已实现英文过滤）
-
-#### 内容完整性
-- **文本资源**: 是否成功提取文章内容（而非仅链接）
-- **视频资源**: 是否包含视频ID、标题、描述
-- **代码资源**: 是否返回具体仓库链接（而非搜索页面）
-
-#### 噪声过滤效果
-- **定义**: 成功过滤掉的无关内容比例
-- **评估方法**: 
-  - 统计被 `clean_title()` 和 `clean_extracted_content()` 过滤的内容
-  - 人工检查过滤后的资源是否仍有噪声
-
-### 2.4 去重效果
+# AI-Pedia Evaluation Method
 
-#### 重复资源率
-- **定义**: 搜索结果中重复资源的比例
-- **计算方法**:
-  ```python
-  Duplicate_ratio = (重复资源数) / (总资源数)
-  ```
-- **评估目标**: 应 < 5%
-
-## 3. 推荐系统性能评估
-
-### 3.1 推荐精确率 (Precision@K)
+This document describes the **current reproducible evaluation setup** for AI-Pedia.
 
-#### 按资源类型计算
-- **Precision@5**: 推荐的前5个资源中，相关资源的比例
-- **计算方法**:
-  ```python
-  Precision@5 = (前5个推荐中相关资源数) / 5
-  ```
-- **评估目标**: Precision@5 > 0.6
+## 1. Evaluation Goal
 
-#### 整体精确率
-- 对所有资源类型求平均
-
-### 3.2 推荐召回率 (Recall@K)
-
-- **Recall@5**: 推荐的前5个资源覆盖了多少相关资源
-- **计算方法**:
-  ```python
-  Recall@5 = (前5个推荐中相关资源数) / (所有相关资源数)
-  ```
-
-### 3.3 相似度分数分析
-
-#### 相似度分布
-- 统计推荐资源的相似度分数：
-  - 平均相似度
-  - 中位数相似度
-  - 最高/最低相似度
-- **评估目标**: 
-  - 平均相似度应 > 0.1
-  - 最低相似度应 > 0.05（当前阈值）
-
-#### 相似度阈值效果
-- 评估 `min_similarity_threshold = 0.05` 的效果：
-  - 过滤掉了多少低质量资源
-  - 是否误过滤了相关资源
-
-### 3.4 推荐多样性 (Diversity)
-
-#### 资源类型多样性
-- **定义**: 推荐结果中不同资源类型的分布
-- **评估目标**: 应包含多种类型的资源（文本、视频、代码）
-
-#### 主题多样性
-- **定义**: 推荐资源覆盖的主题范围
-- **计算方法**: 使用TF-IDF向量计算推荐资源之间的平均相似度
-- **评估目标**: 相似度应 < 0.7，确保主题不重复
-
-### 3.5 推荐相关性
-
-#### AI关键词匹配率
-- **定义**: 推荐资源中包含AI相关关键词的比例
-- **评估目标**: 应 > 80%
-
-#### 无关内容过滤率
-- **定义**: `is_relevant_resource()` 函数成功过滤的无关资源比例
-- **评估方法**: 统计被过滤的资源数量
-
-## 4. 内容过滤效果评估
-
-### 4.1 英文内容过滤
-
-#### 过滤准确率
-- **定义**: 正确识别英文/非英文内容的准确率
-- **评估方法**: 
-  - 人工标注100个资源样本（英文/非英文）
-  - 计算 `is_english_content()` 的准确率
-- **评估目标**: 准确率应 > 95%
-
-#### 误过滤率
-- **定义**: 英文内容被误判为非英文的比例
-- **评估目标**: 应 < 5%
-
-### 4.2 噪声清理效果
-
-#### 标题清理效果
-- **评估方法**: 
-  - 对比清理前后的标题
-  - 统计清理掉的无关信息（邮箱、URL、部门名等）
-- **评估目标**: 清理后标题应更简洁、相关
-
-#### 内容清理效果
-- **评估方法**:
-  - 对比清理前后的内容
-  - 统计清理掉的无关信息（联系方式、导航、冗余空行等）
-- **评估目标**: 清理后内容应更聚焦于学术内容
-
-### 4.3 相关性过滤
-
-#### AI关键词过滤准确率
-- **定义**: 使用AI关键词列表过滤的准确率
-- **评估方法**: 人工标注资源是否与AI相关，计算过滤准确率
-- **评估目标**: 准确率应 > 85%
-
-#### 无关模式过滤效果
-- **定义**: `is_irrelevant_url()` 和 `is_relevant_resource()` 的过滤效果
-- **评估方法**: 统计成功过滤的无关资源（如RAAC报告、学校建筑报告等）
-
-## 5. 用户体验评估
-
-### 5.1 系统可用性
-
-#### 任务完成率
-- **定义**: 用户成功完成整个流程的比例
-- **评估方法**: 统计上传→处理→下载的成功率
-- **评估目标**: 应 > 90%
-
-#### 错误处理
-- 统计各种错误情况：
-  - PDF转换失败率
-  - 关键词提取失败率
-  - 资源搜索失败率
-  - 推荐生成失败率
-
-### 5.2 用户满意度
-
-#### 推荐质量满意度
-- **调查问题**:
-  - "推荐的资源是否与您的文档相关？" (1-5分)
-  - "推荐的资源是否对您有帮助？" (1-5分)
-  - "您会使用推荐的资源吗？" (是/否)
-
-#### 资源多样性满意度
-- **调查问题**:
-  - "推荐的资源类型是否多样？" (1-5分)
-  - "是否包含了您需要的资源类型？" (是/否)
-
-#### 内容质量满意度
-- **调查问题**:
-  - "资源内容是否清晰、完整？" (1-5分)
-  - "是否有无关信息干扰？" (1-5分，分数越低越好)
-
-### 5.3 系统易用性
-
-#### 操作步骤数
-- 统计用户完成一次推荐需要多少步骤
-- **评估目标**: 应 ≤ 5步
-
-#### 处理时间
-- 统计各阶段处理时间：
-  - PDF转换时间
-  - 关键词提取时间
-  - 资源搜索时间
-  - 推荐生成时间
-  - 总处理时间
-- **评估目标**: 总处理时间应 < 5分钟（取决于文档数量）
-
-#### 国际化体验
-- **语言切换流畅度**: 测试中英文切换的响应时间和界面更新完整性
-- **翻译完整性**: 检查所有页面、模态框、动态内容是否都有对应的翻译
-- **翻译准确性**: 邀请双语用户评估翻译质量
-- **评估目标**: 
-  - 语言切换响应时间 < 200ms
-  - 翻译覆盖率 > 95%
-  - 翻译准确性评分 > 4.0/5.0
-
-#### 移动端体验
-- **布局适配**: 在不同尺寸的移动设备上测试页面布局是否正常
-- **交互流畅度**: 测试移动端的触摸交互、滚动、动画是否流畅
-- **导航易用性**: 评估移动端下拉菜单的易用性
-- **性能表现**: 在移动设备上测试页面加载速度和滚动性能
-- **评估目标**:
-  - 布局适配率 > 95%（主流设备）
-  - 交互流畅度评分 > 4.0/5.0
-  - 页面加载时间 < 3秒（4G网络）
-
-## 6. 系统性能评估
-
-### 6.1 响应时间
-
-#### 各模块处理时间
-- **PDF转换**: 平均每个PDF的转换时间
-- **关键词提取**: 处理时间 vs 文档数量
-- **资源搜索**: 每个关键词的搜索时间
-- **推荐生成**: 相似度计算时间
-
-#### 并发性能
-- 测试系统同时处理多个请求的能力
-- 评估指标：吞吐量（requests/second）
-
-### 6.2 资源消耗
-
-#### 内存使用
-- 监控各阶段的内存占用
-- 评估是否有内存泄漏
-
-#### CPU使用
-- 监控CPU使用率
-- 评估计算密集型操作的性能
-
-#### 网络请求
-- 统计网络请求数量
-- 评估网络请求的失败率和重试机制
-
-### 6.3 可扩展性
-
-#### 文档数量扩展性
-- 测试不同文档数量下的性能：
-  - 10个文档
-  - 50个文档
-  - 100个文档
-  - 500个文档
-
-#### 资源数量扩展性
-- 测试不同资源数量下的推荐性能：
-  - 100个资源
-  - 500个资源
-  - 1000个资源
-  - 5000个资源
-
-## 7. 综合评估指标
-
-### 7.1 F1分数
-- **定义**: 精确率和召回率的调和平均
-- **计算方法**:
-  ```python
-  F1 = 2 * (Precision * Recall) / (Precision + Recall)
-  ```
-- **评估目标**: F1 > 0.65
-
-### 7.2 NDCG (Normalized Discounted Cumulative Gain)
-- **定义**: 考虑排序位置的推荐质量指标
-- **计算方法**: 使用相似度分数作为相关性分数
-- **评估目标**: NDCG@5 > 0.7
-
-### 7.3 MRR (Mean Reciprocal Rank)
-- **定义**: 第一个相关资源出现位置的倒数
-- **评估目标**: MRR > 0.6
-
-## 8. 评估实施建议
-
-### 8.1 自动化评估
-
-#### 单元测试
-- 为各模块编写单元测试
-- 测试覆盖率应 > 80%
-
-#### 集成测试
-- 测试完整流程
-- 使用标准测试数据集
-
-#### 性能测试
-- 使用压力测试工具
-- 监控系统性能指标
-
-### 8.2 人工评估
-
-#### 专家评审
-- 邀请AI/ML领域专家
-- 定期评审推荐质量
-
-#### 用户测试
-- 招募真实用户
-- 收集反馈和建议
-
-### 8.3 持续监控
-
-#### 日志分析
-- 记录关键操作和错误
-- 定期分析日志数据
-
-#### A/B测试
-- 对比不同算法参数的效果
-- 优化系统性能
-
-## 9. 评估报告模板
-
-### 9.1 评估报告结构
-
-```
-1. 执行摘要
-   - 评估目的
-   - 主要发现
-   - 改进建议
-
-2. 关键词提取评估
-   - 覆盖率
-   - 多样性
-   - 专家评审结果
-
-3. 资源搜索评估
-   - 召回率
-   - 精确率
-   - 内容质量
-
-4. 推荐系统评估
-   - Precision@K
-   - Recall@K
-   - 相似度分析
-   - 多样性分析
-
-5. 内容过滤评估
-   - 英文过滤准确率
-   - 噪声清理效果
-   - 相关性过滤效果
-
-6. 用户体验评估
-   - 任务完成率
-   - 用户满意度
-   - 系统易用性
-
-7. 系统性能评估
-   - 响应时间
-   - 资源消耗
-   - 可扩展性
-
-8. 综合评估
-   - F1分数
-   - NDCG
-   - MRR
-
-9. 改进建议
-   - 短期改进
-   - 长期优化
+The project evaluates whether AI-Pedia improves the path from learner documents to external reinforcement resources by examining three stages of the pipeline:
+
+1. **Keyword extraction quality**
+2. **Resource retrieval quality**
+3. **Ranking quality of the final recommendations**
+
+The current dissertation evaluation is a **focused multi-corpus pilot**, designed to test the system across several coherent learner scenarios rather than one mixed-topic corpus.
+
+## 2. Repository Layout for Evaluation
+
+The evaluation assets are split across code, input data, and generated outputs:
+
+- Evaluation code: `test/evaluation_pipeline/`
+- Performance benchmarking code: `test/performance/`
+- Focused evaluation corpora: `data/test_corpora/`
+- Legacy single-corpus input: `data/test_corpus/`
+- Generated evaluation outputs: `test/evaluation_pipeline/results/`
+- Generated performance outputs: `test/performance/results/`
+
+## 3. Current Focused Corpora
+
+The current setup uses three focused corpora:
+
+- `foundations_ml`
+- `nlp_transformers`
+- `vision_representation`
+
+Each corpus contains ten AI/ML-related text documents. The goal is not to simulate the full diversity of the whole field in one bundle, but to test the recommender in several coherent topic clusters that better match realistic learner scenarios.
+
+## 4. Main Scripts
+
+### 4.1 Quantitative evaluation
+
+- `test/evaluation_pipeline/evaluator.py`
+- `test/evaluation_pipeline/metrics.py`
+- `test/evaluation_pipeline/config.py`
+
+### 4.2 Local deterministic performance benchmarking
+
+- `test/performance/run_performance_tests.py`
+
+## 5. How to Run the Current Evaluation
+
+From the project root:
+
+```bash
+python test/evaluation_pipeline/evaluator.py --use-focused-corpora --reuse-cache
 ```
 
-## 10. 评估工具和代码示例
+This regenerates the main evaluation outputs used by the dissertation.
 
-### 10.1 评估脚本结构建议
+For local deterministic performance benchmarking:
 
-```python
-# evaluation/
-#   ├── keyword_evaluator.py      # 关键词提取评估
-#   ├── search_evaluator.py        # 资源搜索评估
-#   ├── recommendation_evaluator.py # 推荐系统评估
-#   ├── content_filter_evaluator.py # 内容过滤评估
-#   ├── user_experience_evaluator.py # 用户体验评估
-#   ├── performance_evaluator.py   # 系统性能评估
-#   └── comprehensive_evaluator.py # 综合评估
+```bash
+python test/performance/run_performance_tests.py
 ```
 
-### 10.2 关键评估函数示例
+## 6. Main Evaluation Outputs
 
-```python
-def evaluate_keyword_extraction(keywords, documents):
-    """评估关键词提取质量"""
-    coverage = calculate_coverage(keywords, documents)
-    diversity = calculate_diversity(keywords)
-    tfidf_scores = calculate_tfidf_scores(keywords, documents)
-    return {
-        'coverage': coverage,
-        'diversity': diversity,
-        'tfidf_stats': tfidf_scores
-    }
+### 6.1 Aggregate outputs
 
-def evaluate_recommendations(recommended, ground_truth):
-    """评估推荐质量"""
-    precision = calculate_precision(recommended, ground_truth)
-    recall = calculate_recall(recommended, ground_truth)
-    f1 = 2 * (precision * recall) / (precision + recall)
-    ndcg = calculate_ndcg(recommended, ground_truth)
-    return {
-        'precision': precision,
-        'recall': recall,
-        'f1': f1,
-        'ndcg': ndcg
-    }
-```
+- `test/evaluation_pipeline/results/evaluation_results.json`
+- `test/evaluation_pipeline/results/evaluation_tables.tex`
+- `test/evaluation_pipeline/results/keyword_metrics.csv`
+- `test/evaluation_pipeline/results/resource_metrics.csv`
+- `test/evaluation_pipeline/results/corpus_overview.csv`
 
-## 11. 基准测试数据集
+### 6.2 Per-corpus outputs
 
-### 11.1 标准测试集
+- `test/evaluation_pipeline/results/<corpus_name>/evaluation_results.json`
+- `test/evaluation_pipeline/results/<corpus_name>/raw_search_results.json`
 
-#### AI/ML文档集合
-- 收集不同主题的AI/ML文档（10-100个）
-- 人工标注相关资源
-- 作为标准测试集
+### 6.3 Performance outputs
 
-#### 标注数据
-- 对测试集中的资源进行人工标注：
-  - 相关性标签（相关/不相关）
-  - 质量标签（高质量/中等/低质量）
-  - 类型标签（文本/视频/代码）
+- `test/performance/results/performance_results.json`
+- `test/performance/results/performance_summary.csv`
+- `test/performance/results/performance_table.tex`
 
-### 11.2 对比基线
+## 7. Evaluation Questions
 
-#### 简单基线
-- 随机推荐
-- 按关键词匹配推荐（无相似度计算）
-- 按来源排序推荐
+The current evaluation addresses three practical questions:
 
-#### 高级基线
-- 仅使用TF-IDF（无MMR）
-- 仅使用余弦相似度（无AI关键词过滤）
-- 无内容清理的版本
+### RQ1. Does the keyword extraction stage produce useful topic signals?
 
-## 12. 持续改进
+This is assessed using:
 
-### 12.1 定期评估
-- 每月进行一次全面评估
-- 根据评估结果调整参数和算法
+- **Coverage**
+- **AI relevance**
+- **Keyword diversity**
 
-### 12.2 用户反馈循环
-- 收集用户反馈
-- 分析反馈数据
-- 改进系统功能
+### RQ2. Does multi-source retrieval produce useful candidate pools?
 
-### 12.3 算法优化
-- 尝试不同的相似度计算方法
-- 优化关键词提取算法
-- 改进内容过滤规则
+This is assessed using:
 
----
+- **AI relevance of retrieved resources**
+- **Authority score**
+- **Valid URL rate**
+- **Modality/platform diversity**
 
-**注意**: 本评估文档应根据实际项目需求进行调整和补充。定期更新评估方法和指标。
+### RQ3. Does ranking improve the final recommendation set?
 
-## 13. 参考文献与测试启示
+This is assessed by comparing raw retrieval, unranked top-K, and ranked top-K outputs using:
 
-本节给出与系统评估/推荐系统测试相关的经典文献，并总结：**(1) 文献主要讲什么；(2) 对本系统测试的启示；(3) 在本系统中具体会怎么做**。
+- **AI relevance**
+- **Authority score**
+- **Noise reduction**
+- **Valid URL rate**
 
-1. Manning, C. D., Raghavan, P., & Schütze, H. (2008). *Introduction to information retrieval*. Cambridge University Press. （第8章：Evaluation in information retrieval）  
-   - **主要内容**：系统介绍信息检索系统的离线评估方法，包括构造测试集、相关性标注以及 Precision、Recall、F1、MAP、nDCG 等经典指标。  
-   - **对本系统测试的启示**：推荐系统同样可以看作“检索相关资源”的过程，需要构建带相关性标注的标准测试集，并用 Precision@K、Recall@K、nDCG@K 等指标定量衡量推荐质量。  
-   - **在本系统中的具体做法**：  
-     - 按本评估文档第 11 章的设计，选取若干 AI/ML 主题，构造包含 10–100 篇文档的测试集，并为每个文档-资源对打相关/不相关标签；  
-     - 在 `test/evaluation_objective/` 中实现离线评估脚本，计算 `Precision@K`、`Recall@K`、`nDCG@K`（K 取 5/10），比较不同算法版本的推荐结果；  
-     - 将这些指标作为“算法是否变好”的硬指标，写入评估报告。
+## 8. Metric Interpretation
 
-2. Shani, G., & Gunawardana, A. (2011). Evaluating recommendation systems. In *Recommender Systems Handbook* (pp. 257–297). Springer.  
-   - **主要内容**：专门讨论推荐系统的评估框架，区分离线评估、在线 A/B 测试和用户研究，并给出 Top-N 推荐、排序质量及多种损失函数的评估方法。  
-   - **对本系统测试的启示**：本系统属于 Top-N 资源推荐，应同时关注“排序质量”（相关的排在前面）和“用户体验”两方面；在实验资源有限的场景中，可以重点采用离线评估 + 小规模用户研究的组合。  
-   - **在本系统中的具体做法**：  
-     - 将本系统离线评估定位为 Top-N 推荐评估，重点使用 Precision@K、Recall@K、nDCG@K、Coverage 等指标；  
-     - 在 `test/performance/` 中设计不同算法配置（有/无 MMR、有/无内容过滤、有/无 AI 摘要）作为“被测版本”，对同一测试集进行对比实验；  
-     - 在评估文档中记录每次大改动后的评估结果，形成“版本对比表”，支撑持续改进。
+### 8.1 Coverage
 
-3. Herlocker, J. L., Konstan, J. A., Terveen, L. G., & Riedl, J. T. (2004). Evaluating collaborative filtering recommender systems. *ACM Transactions on Information Systems (TOIS)*, 22(1), 5–53.  
-   - **主要内容**：虽然主要针对协同过滤，但系统性整理了推荐系统评估的维度，如准确率、多样性、新颖性、覆盖率、鲁棒性与用户满意度等。  
-   - **对本系统测试的启示**：即便是基于内容的推荐，也不应只看“相关性”，还需要关注多样性（是否都是类似资源）、覆盖率（是否总是同一站点）、鲁棒性（站点变动时是否还能给出结果）。  
-   - **在本系统中的具体做法**：  
-     - 在离线评估脚本中增加多样性与覆盖率指标，例如统计不同来源站点数量、不同资源类型分布；  
-     - 在“多源搜索 + 过滤”模块做鲁棒性测试：模拟 Google Scholar / arXiv / YouTube 等站点不可用时，系统是否仍能返回一定数量的可用推荐；  
-     - 对比“多源版本”与“单源版本”在这些指标上的差异，证明多源策略的优势。
+Coverage measures how many documents are touched by the extracted keywords. In the current focused-corpus setup, perfect coverage is not treated as the only sign of quality, because more specific multi-word phrases may intentionally trade literal coverage for better retrieval-oriented topic precision.
 
-4. Myers, G. J., Sandler, C., & Badgett, T. (2011). *The Art of Software Testing* (3rd ed.). Wiley.  
-   - **主要内容**：经典软件测试著作，系统总结了单元测试、集成测试、系统测试及回归测试等方法和测试用例设计原则。  
-   - **对本系统测试的启示**：本系统既有算法模块（关键词提取、推荐）又有工程模块（Flask 后端、多页面前端），需要在算法评估之外，补充功能测试、边界测试和回归测试，保证版本迭代不破坏已有能力。  
-   - **在本系统中的具体做法**：  
-     - 在 `test/` 目录下区分主观评估（用户体验）、客观评估（离线指标）与性能评估，并按“单元 → 集成 → 系统”组织测试用例；  
-     - 为关键模块编写自动化脚本或半自动 checklist，例如上传非法文件、超大 ZIP、无 API Key 情况、网络超时等边界场景；  
-     - 每次修改核心算法或爬取逻辑后，复跑既有测试集与边界用例，作为简单的回归测试流程。
+### 8.2 AI relevance
 
-5. Nielsen, J. (1994). *Usability Engineering*. Morgan Kaufmann.  
-   - **主要内容**：提出可用性工程方法，包括启发式评估、可用性测试和小规模用户实验，强调通过观察用户任务完成情况来发现问题。  
-   - **对本系统测试的启示**：本系统前端包含上传、查看进度、浏览推荐结果等多个步骤，需要通过真实用户任务来评估“易用性”和“可理解性”，而不仅仅是离线指标。  
-   - **在本系统中的具体做法**：  
-     - 设计典型用户任务（例如：用 10 篇 Transformer 论文找到 5 个入门教程和 3 个代码仓库），邀请少量 AI 学习者在页面上完成任务，并记录完成时间与错误；  
-     - 使用简单问卷收集用户对界面清晰度、推荐解释性（摘要/相似度展示）和整体满意度的反馈；  
-     - 将这些主观结果与离线指标（如 Precision@K）对照分析，综合判断系统是否真正帮助用户节省了搜索和筛选时间。
+AI relevance measures whether extracted keywords or recommended resources remain genuinely within the intended AI/ML domain.
+
+### 8.3 Authority score
+
+Authority score estimates how many returned resources come from stronger or more trustworthy sources.
+
+### 8.4 Noise reduction
+
+Noise reduction captures how aggressively the pipeline compresses a large raw candidate pool into a smaller final recommendation set.
+
+## 9. Reproducibility Principle
+
+The evaluation workflow is designed so that the paper does not depend on manually copied spreadsheet numbers.
+
+Instead, the intended process is:
+
+1. run the evaluation scripts,
+2. regenerate JSON, CSV, LaTeX, and figure outputs,
+3. include those outputs in the dissertation.
+
+This keeps the paper synchronized with the actual code behaviour.
+
+## 10. Scope and Limitations
+
+The current results should be understood as a **reproducible pilot evaluation**, not as a full user study. The system has been tested across multiple focused corpora and deterministic performance checks, but future work should still include human annotation, longitudinal study design, and broader deployment-oriented robustness checks.
