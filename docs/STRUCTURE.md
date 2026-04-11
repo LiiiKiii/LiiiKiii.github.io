@@ -4,7 +4,8 @@
 
 ```
 Project/
-├── app.py                      # 主应用入口文件
+├── app.py                      # 主应用入口文件（路由与 SSE 编排）
+├── config.py                   # 路径与可调参数（上传上限、关键词数量、搜索上限等）
 ├── requirements.txt            # Python依赖包列表
 ├── README.md                   # 项目说明文档
 ├── start.sh                    # 启动脚本
@@ -39,7 +40,8 @@ Project/
 │   │   └── ai_summarizer.py        # AI摘要生成模块
 │   └── utils/                  # 工具模块
 │       ├── __init__.py
-│       └── file_utils.py       # 文件处理工具
+│       ├── file_utils.py       # 文件处理工具
+│       └── search_persist.py   # 将原始搜索结果落盘到 data/results/
 │
 ├── data/                       # 数据目录
 │   ├── uploads/               # 用户上传的文件（自动创建）

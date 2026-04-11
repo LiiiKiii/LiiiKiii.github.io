@@ -7,106 +7,48 @@ AI多媒体推荐系统
 专注于AI/机器学习领域的智能多媒体资源推荐系统
 """
 
-import os
-import sys
-import shutil
 import json
+import os
+import shutil
 import smtplib
-from email.mime.text import MIMEText
+import threading
+import time
+import traceback
+from datetime import datetime
 from email.mime.multipart import MIMEMultipart
-from flask import Flask, render_template, request, jsonify, send_file, Response, stream_with_context
+from email.mime.text import MIMEText
+
+from flask import Flask, Response, jsonify, render_template, request, send_file, stream_with_context
 from werkzeug.utils import secure_filename
 
-# 添加backend路径到sys.path
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(BASE_DIR, 'backend'))
-
-# 导入核心模块
+import config as cfg
+from backend.core.ai_summarizer import generate_resource_summary
 from backend.core.keyword_extractor import extract_keywords_from_folder
-from backend.core.resource_searcher import search_all_resources, clean_extracted_content, clean_title
 from backend.core.recommender import recommend_best_resources, save_recommended_resources
+from backend.core.resource_searcher import search_all_resources
 from backend.utils.file_utils import (
-    count_txt_files,
-    count_pdf_files,
-    extract_zip,
-    create_output_zip,
-    sanitize_filename,
+    cleanup_user_data,
     convert_all_pdfs_to_txt,
-    cleanup_user_data
+    count_pdf_files,
+    create_output_zip,
+    extract_zip,
 )
+from backend.utils.search_persist import save_search_results
 
-# 配置路径
-UPLOAD_DIR = os.path.join(BASE_DIR, "data", "uploads")
-RESULTS_DIR = os.path.join(BASE_DIR, "data", "results")
-OUTPUT_DIR = os.path.join(BASE_DIR, "data", "outputs")
+UPLOAD_DIR = cfg.UPLOAD_DIR
+RESULTS_DIR = cfg.RESULTS_DIR
+OUTPUT_DIR = cfg.OUTPUT_DIR
 
-# 确保目录存在
-for dir_path in [UPLOAD_DIR, RESULTS_DIR, OUTPUT_DIR]:
+for dir_path in (UPLOAD_DIR, RESULTS_DIR, OUTPUT_DIR):
     os.makedirs(dir_path, exist_ok=True)
 
-# 创建Flask应用
 app = Flask(
     __name__,
-    template_folder='frontend/templates',
-    static_folder='frontend/static'
+    template_folder="frontend/templates",
+    static_folder="frontend/static",
 )
-app.config['MAX_CONTENT_LENGTH'] = 500 * 1024 * 1024  # 500MB max file size
-app.config['UPLOAD_FOLDER'] = UPLOAD_DIR
-
-
-def save_search_results(all_resources: dict, folder_name: str):
-    """将搜索结果保存到 results/{folder_name}/ 下的子文件夹"""
-    result_folder = os.path.join(RESULTS_DIR, folder_name)
-    os.makedirs(result_folder, exist_ok=True)
-    
-    # 为每种类型创建子文件夹并保存
-    for resource_type, resources in all_resources.items():
-        type_folder = os.path.join(result_folder, resource_type)
-        os.makedirs(type_folder, exist_ok=True)
-        
-        for i, res in enumerate(resources):
-            if resource_type == "txt":
-                # 清理标题
-                cleaned_title = clean_title(res.get('title', 'resource'))
-                filename = f"{i+1}_{sanitize_filename(cleaned_title)[:50]}.txt"
-                filepath = os.path.join(type_folder, filename)
-                content = res.get("content", "")
-                # 清理内容：移除联系方式、部门信息等无关内容
-                cleaned_content = clean_extracted_content(content)
-                metadata = f"Source: {res.get('source', 'Unknown')}\n"
-                metadata += f"URL: {res.get('url', '')}\n"
-                metadata += "\n" + "="*50 + "\n\n"
-                with open(filepath, "w", encoding="utf-8") as f:
-                    f.write(metadata + cleaned_content)
-            
-            elif resource_type == "video":
-                # 清理标题
-                cleaned_title = clean_title(res.get('title', 'video'))
-                filename = f"{i+1}_{sanitize_filename(cleaned_title)[:50]}.txt"
-                filepath = os.path.join(type_folder, filename)
-                content = f"Title: {cleaned_title}\n"
-                content += f"URL: {res.get('url', '')}\n"
-                description = res.get('description', '')
-                if description:
-                    content += f"Description: {description}\n"
-                if res.get("thumbnail"):
-                    content += f"Thumbnail: {res.get('thumbnail')}\n"
-                with open(filepath, "w", encoding="utf-8") as f:
-                    f.write(content)
-            
-            elif resource_type == "code":
-                # 清理标题
-                cleaned_title = clean_title(res.get('title', 'code'))
-                filename = f"{i+1}_{sanitize_filename(cleaned_title)[:50]}.txt"
-                filepath = os.path.join(type_folder, filename)
-                content = f"Title: {cleaned_title}\n"
-                content += f"URL: {res.get('url', '')}\n"
-                content += f"Source: {res.get('source', 'Unknown')}\n"
-                description = res.get('description', '')
-                if description:
-                    content += f"Description: {description}\n"
-                with open(filepath, "w", encoding="utf-8") as f:
-                    f.write(content)
+app.config["MAX_CONTENT_LENGTH"] = cfg.MAX_UPLOAD_BYTES
+app.config["UPLOAD_FOLDER"] = UPLOAD_DIR
 
 
 # ==================== 路由 ====================
@@ -206,11 +148,11 @@ def contact():
             # server.quit()
             
             # 暂时保存到文件（用于测试）
-            contact_log_path = os.path.join(BASE_DIR, "data", "contact_logs.txt")
+            contact_log_path = os.path.join(cfg.DATA_DIR, "contact_logs.txt")
             os.makedirs(os.path.dirname(contact_log_path), exist_ok=True)
             with open(contact_log_path, "a", encoding="utf-8") as f:
                 f.write(f"\n{'='*50}\n")
-                f.write(f"时间: {json.dumps(str(__import__('datetime').datetime.now()), ensure_ascii=False)}\n")
+                f.write(f"时间: {datetime.now().isoformat()}\n")
                 f.write(email_body)
                 f.write(f"\n{'='*50}\n")
             
@@ -283,11 +225,10 @@ def upload_folder():
     
     # 统计有效文件数量：原始txt + 成功转换的PDF数量
     total_valid_files = original_txt_count + conversion_result.get('success_count', 0)
-    if total_valid_files < 10:
-        import shutil
+    if total_valid_files < cfg.MIN_VALID_DOCUMENTS:
         shutil.rmtree(upload_path, ignore_errors=True)
         return jsonify({
-            "error": f"文件夹中有效的txt/pdf文件数量不足（需要至少10个，当前有{total_valid_files}个：{original_txt_count}个txt文件 + {conversion_result.get('success_count', 0)}个成功转换的PDF文件）"
+            "error": f"文件夹中有效的txt/pdf文件数量不足（需要至少{cfg.MIN_VALID_DOCUMENTS}个，当前有{total_valid_files}个：{original_txt_count}个txt文件 + {conversion_result.get('success_count', 0)}个成功转换的PDF文件）"
         }), 400
     
     # 统计信息
@@ -337,7 +278,7 @@ def process_folder():
             
             # 步骤2: 提取关键词
             yield send_progress_event(10, "📝 正在分析文档内容，提取关键词和主题...", "extract_keywords", "正在读取文档并分析内容...")
-            keywords = extract_keywords_from_folder(upload_path, top_k=10)
+            keywords = extract_keywords_from_folder(upload_path, top_k=cfg.KEYWORD_TOP_K)
             if not keywords:
                 yield send_progress_event(0, "❌ 无法提取关键词", "error", "处理失败")
                 return
@@ -355,14 +296,15 @@ def process_folder():
                 progress_queue.append(progress_info)
             
             # 在后台线程中执行搜索，避免阻塞SSE流
-            import threading
             search_result = [None]
             search_error = [None]
             search_done = threading.Event()
             
             def search_thread():
                 try:
-                    result = search_all_resources(keywords, max_per_type=20, progress_callback=progress_callback)
+                    result = search_all_resources(
+                        keywords, max_per_type=cfg.SEARCH_MAX_PER_TYPE, progress_callback=progress_callback
+                    )
                     search_result[0] = result
                 except Exception as e:
                     search_error[0] = e
@@ -384,8 +326,6 @@ def process_folder():
                     }
                     yield f"data: {json.dumps(progress_data, ensure_ascii=False)}\n\n"
                 
-                # 短暂休眠
-                import time
                 time.sleep(0.1)
             
             # 等待搜索完成
@@ -405,7 +345,7 @@ def process_folder():
             
             # 保存搜索结果
             yield send_progress_event(55, "💾 正在保存搜索结果...", "save_results", "正在保存到本地文件...")
-            save_search_results(all_resources, folder_name)
+            save_search_results(all_resources, folder_name, RESULTS_DIR)
             yield send_progress_event(60, "✅ 搜索结果已保存", "results_saved", "")
             
             # 步骤4: 推荐筛选
@@ -414,7 +354,7 @@ def process_folder():
             recommended = recommend_best_resources(
                 upload_path,
                 all_resources,
-                top_k_per_type=20  # 返回更多候选，前端可以动态选择显示数量
+                top_k_per_type=cfg.RECOMMEND_TOP_K_PER_TYPE,
             )
             
             txt_rec_count = len(recommended.get("txt", []))
@@ -444,8 +384,6 @@ def process_folder():
             }
             
             # 准备推荐资源数据（用于前端展示）
-            from backend.core.ai_summarizer import generate_resource_summary
-            
             recommended_resources = {}
             for resource_type, resources in recommended.items():
                 recommended_resources[resource_type] = []
@@ -496,32 +434,16 @@ def process_folder():
             }
             yield f"data: {json.dumps(final_data, ensure_ascii=False)}\n\n"
             
-            # 清理文件（异步，不阻塞响应）
-            import time
+            # 清理上传临时目录（输出保留至用户下载或由 cleanup 路由处理）
             time.sleep(0.5)
             cleanup_folder = os.path.join(UPLOAD_DIR, folder_name)
             if os.path.exists(cleanup_folder):
                 try:
                     shutil.rmtree(cleanup_folder)
-                except:
+                except OSError:
                     pass
-            
-            output_cleanup = os.path.join(OUTPUT_DIR, folder_name)
-            if os.path.exists(output_cleanup):
-                try:
-                    shutil.rmtree(output_cleanup)
-                except:
-                    pass
-            
-            output_zip = os.path.join(OUTPUT_DIR, f"{folder_name}_recommended.zip")
-            if os.path.exists(output_zip):
-                try:
-                    os.remove(output_zip)
-                except:
-                    pass
-                    
+
         except Exception as e:
-            import traceback
             error_data = {
                 "progress": 0,
                 "message": f"❌ 处理失败: {str(e)}",
@@ -564,11 +486,9 @@ def download_output(folder_name):
     
     # 下载后异步清理数据（使用Flask的after_request机制）
     # 注意：这里使用线程来延迟清理，确保文件已发送完成
-    import threading
     def cleanup_after_download():
-        import time
         time.sleep(2)  # 等待2秒确保文件下载开始
-        cleanup_result = cleanup_user_data(folder_name, BASE_DIR)
+        cleanup_result = cleanup_user_data(folder_name, cfg.PROJECT_ROOT)
         print(f"清理用户数据 {folder_name}: {cleanup_result['message']}")
     
     cleanup_thread = threading.Thread(target=cleanup_after_download)
@@ -596,7 +516,7 @@ def get_status(folder_name):
 def cleanup_data(folder_name):
     """手动清理用户数据"""
     try:
-        cleanup_result = cleanup_user_data(folder_name, BASE_DIR)
+        cleanup_result = cleanup_user_data(folder_name, cfg.PROJECT_ROOT)
         if cleanup_result["success"]:
             return jsonify({
                 "success": True,

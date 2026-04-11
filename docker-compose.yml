@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  ai-pedia:
+    build: .
+    container_name: ai-pedia
+    ports:
+      - "5000:5000"
+    environment:
+      # API Configuration
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - FLASK_ENV=${FLASK_ENV:-production}
+      - FLASK_DEBUG=${FLASK_DEBUG:-False}
+    volumes:
+      # Mount data directory for persistence
+      - ./data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - ai-pedia-network
+
+networks:
+  ai-pedia-network:
+    driver: bridge
