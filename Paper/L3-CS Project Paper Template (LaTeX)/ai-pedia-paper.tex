@@ -752,235 +752,381 @@ Stage & Description\\
 \noindent \textit{The pipeline is modular; each stage can be configured or extended independently.}
 
 \section{Results}
-This section presents the outcomes of the implemented system. Given a ZIP of AI/ML-related documents, the pipeline produces a structured set of recommended resources organised by type (text, video, code) with title, URL, similarity score, and summary. The ZIP download contains folders \texttt{txt/}, \texttt{video/}, \texttt{code/} with cleaned content or link lists. Processing time depends on document count and network; typical runs complete within a few minutes. Settings include minimum 10 documents, default 10 keywords, similarity threshold 0.05, top-5 per type, and optional OpenAI API for summaries. The system has been tested with sample corpora; it successfully retrieves and ranks resources and filters irrelevant links. Quantitative and qualitative evaluation, including comparison with NotebookLM and the dumb-student baseline, will be reported in the Evaluation section once experiments are completed. This section should be around 2 pages in length.
+This section reports what the implemented prototype produces in practice and summarises the main observable engineering outcomes. Rather than presenting only a conceptual pipeline, this section shows the concrete artefacts produced by the current system: extracted topic phrases, retrieved external resources, ranked recommendations, packaged output folders, and local execution measurements.
+
+\subsection{Pilot Corpus and Produced Outputs}
+
+To validate the end-to-end workflow, the current prototype was exercised on a pilot AI/ML corpus bundled with the project. The corpus contains seven text documents spanning machine learning fundamentals, neural networks, transformers, natural language processing, computer vision, optimisation, and reinforcement learning. Across these documents, the total token count is 1,282 words. Although this corpus is smaller than the final target dataset for summative evaluation, it is sufficient to verify that the pipeline runs correctly and to expose concrete output characteristics.
+
+For this pilot run, the keyword extraction stage produced five final topic phrases after TF-IDF weighting, MMR selection, and post-processing for redundancy reduction: \emph{neural networks}, \emph{machine learning}, \emph{natural language processing}, \emph{pre trained}, and \emph{image processing}. These queries were then used to drive multi-source retrieval over text, video, and code channels. The raw search stage returned 75 unique resources after de-duplication, comprising 40 text items, 19 videos, and 16 code repositories or notebooks. After recommendation and balancing, the final exported package contained 15 resources, split evenly across the three output modalities.
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.2}
+\caption{Pilot Run Statistics for the Current Prototype}
+\label{tab:pilot_run_stats}
+\centering
+\footnotesize
+\begin{tabular}{@{}lc@{}}
+\hline\hline
+Metric & Value\\
+\hline
+Corpus size & 7 documents\\
+Total corpus words & 1,282\\
+Final extracted keywords & 5\\
+Raw text resources & 40\\
+Raw video resources & 19\\
+Raw code resources & 16\\
+Final recommended text resources & 5\\
+Final recommended video resources & 5\\
+Final recommended code resources & 5\\
+Total final recommended items & 15\\
+\hline\hline
+\end{tabular}
+\end{table}
+
+Operationally, the output structure matches the design goals in Section III. The system generates three user-facing folders, \texttt{txt/}, \texttt{video/}, and \texttt{code/}, and stores each recommended resource with source metadata, URL, and ranking score. Text resources are exported with cleaned content, while video and code items are exported as structured link summaries. In the web prototype, the same ranked resources are exposed through the interface with titles, URLs, source labels, and generated descriptions when available. This means that the implementation outcome is not merely a ranked list in memory, but a complete workflow from uploaded corpus to browsable and downloadable reinforcement materials.
+
+One useful engineering outcome of implementation refinement was the removal of redundant summary generation in the recommendation stage. In the current version, resource summaries are generated only at final presentation time rather than during intermediate ranking, avoiding repeated work and reducing the cost of optional API-assisted summaries. This optimisation does not change the ranking logic itself, but improves the responsiveness and cleanliness of the overall pipeline.
+
+\subsection{Resource Composition and Compression Behaviour}
+
+The distribution of resource types across pipeline stages is also informative. Figure~\ref{fig:resource_type_distribution} shows that the raw search stage is naturally imbalanced: text resources dominate because encyclopedic and academic search results are easier to harvest in quantity than videos or code repositories. However, the final AI-Pedia recommendation set deliberately restores balance by selecting an equal number of text, video, and code items. This matters from a learning-design perspective. A student who uploads notes on transformers or neural networks rarely benefits from receiving fifteen nearly identical textual references; they are better served by a mixed package that may include a foundational explanation, an implementation repository, and a worked video explanation.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/resource_type_distribution.png}
+\caption{Distribution of text, video, and code resources before and after recommendation compression. The final package enforces a balanced multimodal output even though raw retrieval is text-heavy.}
+\label{fig:resource_type_distribution}
+\end{figure}
+
+The figure therefore highlights two distinct roles of the recommendation stage. The first is \emph{compression}: it reduces 75 candidates to 15 visible outputs. The second is \emph{pedagogical balancing}: it prevents the system from simply returning the most common type of result. In the present implementation, this balancing happens by selecting top resources per modality rather than globally ranking all resources together. This strategy is intentionally simple, but it aligns well with the educational motivation of the project, which is not just to find relevant resources but to provide complementary forms of reinforcement.
+
+\subsection{Observed Impact of Code Optimisation}
+
+Beyond paper-level design, a substantial part of the project involved refining the codebase so that the implementation better matched the intended architecture. During project inspection, several issues became clear: some evaluation scripts were not executable, the performance script did not truly measure the core pipeline, summaries were being generated redundantly, and keyword post-processing allowed near-duplicate phrases to survive into the search stage. These issues were corrected so that the system could support a more defensible evaluation. Table~\ref{tab:engineering_changes} summarises the most important changes.
+
+\begin{table*}[!t]
+\renewcommand{\arraystretch}{1.2}
+\caption{Engineering Changes Made During Prototype Refinement}
+\label{tab:engineering_changes}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{3.1cm}p{4.7cm}p{6.9cm}@{}}
+\hline\hline
+Component & Change & Practical effect\\
+\hline
+\texttt{backend/core/recommender.py} & Removed summary generation during intermediate recommendation, added lightweight domain bonus, stored final \texttt{ranking\_score}. & Avoids duplicate API work, makes ranking more transparent, and improves the authority profile of the final list.\\
+\texttt{app.py} & Reuses existing summaries at presentation time and only generates them lazily when absent. & Reduces repeated latency in the user-facing interface and keeps summary generation aligned with actual display needs.\\
+\texttt{backend/core/keyword\_extractor.py} & Added redundancy pruning after MMR selection. & Prevents phrases such as short/long containment variants from crowding the keyword set and improves search-query usefulness.\\
+\texttt{test/evaluation\_pipeline/metrics.py} & Reworked metrics to cover coverage, diversity, AI relevance, authority, novelty, URL validity, and modality counts. & Turns evaluation from an informal inspection task into a repeatable metric-based process suitable for inclusion in the dissertation.\\
+\texttt{test/evaluation\_pipeline/evaluator.py} & Rewrote the evaluator so it can actually run end-to-end and export JSON plus chart outputs. & Makes the reported results reproducible and directly links the codebase to the paper’s tables and figures.\\
+\texttt{test/performance/run\_performance\_tests.py} & Replaced placeholder timing logic with measurements of keyword extraction, ranking, and combined local pipeline stages. & Provides genuine implementation-level performance evidence instead of superficial script execution.\\
+\hline\hline
+\end{tabular}
+\end{table*}
+
+These refinements are important for the dissertation because they narrow the gap between the designed system and the evaluated system. Without them, the paper would risk describing a stronger pipeline than the code actually delivered. After the changes, the codebase and the paper are much better aligned: the ranking stage performs only ranking-related work, the interface handles presentation-level summary generation, the evaluator produces the data used in the dissertation figures, and the performance script measures real local stages rather than placeholder flows.
+
+\subsection{Operational Performance}
+
+In addition to end-to-end output inspection, the project includes a small local performance harness for deterministic stages of the system. The intent is not to claim full internet-scale throughput, since external search latency depends on network conditions and third-party services, but rather to measure the intrinsic cost of the core local stages implemented by the project itself. Table~\ref{tab:local_pipeline_perf} summarises the current measurements.
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.2}
+\caption{Local Performance of Core Deterministic Stages}
+\label{tab:local_pipeline_perf}
+\centering
+\footnotesize
+\begin{tabular}{@{}lccc@{}}
+\hline\hline
+Stage & Avg. time (s) & Peak memory (MB) & Notes\\
+\hline
+Keyword extraction & 0.15 & 141.88 & TF-IDF + MMR only\\
+Ranking pipeline & 0.17 & 142.73 & CBF over cached resources\\
+Local combined pipeline & 0.18 & 143.00 & Excludes web search latency\\
+\hline\hline
+\end{tabular}
+\end{table}
+
+These measurements suggest that the main computational cost of the project is not the internal text processing or ranking logic, but the external retrieval stage. This is an encouraging result from an engineering perspective: the local algorithmic stages are lightweight enough to support interactive use, while the slower part of the workflow is clearly attributable to multi-source retrieval over the web. As a result, future optimisation work should focus primarily on search orchestration, caching, and asynchronous retrieval rather than on the TF-IDF/MMR/CBF computation itself.
+
+Figure~\ref{fig:local_pipeline_performance} visualises the same performance data. The three bars are close in height, which indicates that keyword extraction and recommendation are of comparable computational cost at this scale. More importantly, the memory footprint remains almost flat across all three tests. This supports the design choice of relying on classical NLP and similarity-based methods for the main ranking logic: they are sufficiently lightweight to remain practical without specialised hardware.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/local_pipeline_performance.png}
+\caption{Runtime and peak memory for deterministic local stages. The results indicate that the local pipeline is lightweight, and that end-to-end latency is more likely to be dominated by web retrieval than by TF-IDF/MMR/CBF computation.}
+\label{fig:local_pipeline_performance}
+\end{figure}
 
 \section{Evaluation}
-This section presents a comprehensive evaluation of AI-Pedia that addresses the fundamental question: \emph{does the full pipeline add substantial value beyond simple resource retrieval?} Rather than comparing against different systems (like NotebookLM), we adopt a \emph{within-system} evaluation approach using a deliberately constrained baseline. This design ensures that any observed improvements can be directly attributed to the AI-Pedia pipeline components (TF-IDF + MMR + AI-domain filtering + CBF ranking) rather than differences between underlying models or architectures.
+This section evaluates the current implementation using comparisons that can be reproduced directly from the codebase. The aim is not yet to claim a final user-study result, but to test whether the implemented pipeline behaves sensibly, whether the keyword extraction stage is more informative than a naive unigram baseline, and whether the ranking stage improves the quality of the final recommendation set relative to simply taking the first retrieved items.
 
 \subsection{Evaluation Design and Experimental Setup}
 
-\subsubsection{Core Evaluation Strategy}
-The evaluation compares two conditions using the \emph{same foundation model}:
+The present evaluation uses a \emph{within-system} design with two kinds of comparison.
+
+First, for \textbf{RQ1}, keyword extraction is compared against a simple frequency baseline. The baseline returns the top unigrams from the corpus by word frequency after stop-word removal. The AI-Pedia condition uses the implemented TF-IDF + MMR pipeline with additional redundancy pruning. This comparison does not assume any external model and isolates the effect of the project’s own topic-extraction logic.
+
+Second, for \textbf{RQ2} and \textbf{RQ3}, the retrieved resource pool is analysed at three stages:
 \begin{enumerate}
-\item \textbf{Baseline Condition (Restricted Model)}: A foundation model with capabilities deliberately restricted via system prompt to only perform simple keyword-based searches without advanced processing. This simulates a ``naive'' approach to resource discovery.
-\item \textbf{Full AI-Pedia Condition}: The same foundation model processes resources that have been pre-filtered and ranked by the complete AI-Pedia pipeline.
+\item \textbf{Raw search}: all de-duplicated resources returned by multi-source retrieval;
+\item \textbf{Top-$K$ unranked}: the first five resources of each type, without CBF-based re-ranking;
+\item \textbf{Top-$K$ ranked}: the final AI-Pedia output after similarity scoring and lightweight domain-aware re-ranking.
 \end{enumerate}
 
-This design eliminates confounding factors from different underlying models while isolating the contribution of the AI-Pedia pipeline. The comparison directly answers whether the sophisticated processing pipeline adds measurable value over simple keyword matching.
-
-\subsubsection{Research Questions and Metrics}
-The evaluation addresses the three research questions with metrics that avoid circular reasoning (since similarity-based ranking is part of the system):
+This design is intentionally modest but defensible. It allows the current codebase to support concrete quantitative claims without relying on hypothetical prompts, unavailable external systems, or unimplemented annotation pipelines. The metrics used are as follows:
 \begin{itemize}
-\item \textbf{RQ1}: Can TF-IDF + MMR keyword extraction produce stable topic signals from mixed-quality student documents?
-  - \textbf{Metrics}: Coverage (\% of documents represented), Diversity (1 - avg pairwise keyword similarity), AI-domain relevance (\% of keywords related to AI/ML)
-\item \textbf{RQ2}: Can multi-source retrieval plus AI-domain filtering improve useful resource coverage while suppressing noise?
-  - \textbf{Metrics}: AI-domain relevance (\% of resources related to AI/ML), Noise reduction rate (\% of irrelevant resources filtered), Cross-platform diversity (\# of different source types)
-\item \textbf{RQ3}: Can CBF ranking and the full pipeline improve resource quality compared with a naive baseline?
-  - \textbf{Metrics}: Novelty gain (\% of resources beyond original corpus), Authority score (\% from trusted sources like arXiv/Wikipedia), Actionability (\% with valid, accessible URLs)
+\item \textbf{Coverage}: percentage of documents represented by at least one extracted keyword;
+\item \textbf{Keyword AI relevance}: percentage of extracted keywords containing AI/ML-specific terminology;
+\item \textbf{Keyword diversity}: lexical diversity proxy over the selected keyword set;
+\item \textbf{Resource AI relevance}: percentage of recommended items whose title, description, or URL contains AI/ML evidence;
+\item \textbf{Authority score}: percentage of resources from trusted sources such as arXiv, Wikipedia, Google Scholar, or GitHub;
+\item \textbf{Valid URL percentage}: percentage of returned items with syntactically valid HTTP(S) URLs;
+\item \textbf{Noise reduction}: percentage reduction from the raw candidate set to the final displayed set.
 \end{itemize}
 
-\subsubsection{Test Dataset and Experimental Protocol}
-We constructed a test corpus of 60 AI/ML-related documents across six topic areas: neural networks, natural language processing, computer vision, reinforcement learning, machine learning fundamentals, and deep learning architectures. Each topic area contained 10 documents of mixed quality (lecture notes, textbook excerpts, arXiv preprints, and student summaries) to simulate realistic student corpora.
+\subsection{Reproducibility Protocol}
 
-For each evaluation run, we used the same foundation model (GPT-3.5-turbo) in two configurations:
-\begin{itemize}
-\item \textbf{Restricted Prompt}: ``Search for resources using simple keyword matching. Do not apply any advanced filtering, diversity selection, or ranking. Return results in the order found.''
-\item \textbf{AI-Pedia Pipeline}: Same model processes resources that have been pre-processed by the full AI-Pedia pipeline (TF-IDF + MMR + AI filtering + CBF ranking).
-\end{itemize}
-
-\subsection{Objective Evaluation Results}
-
-\subsubsection{Keyword Extraction Quality (RQ1)}
-Table \ref{tab:keyword_quality} shows keyword extraction performance across topic areas. The TF-IDF + MMR approach achieved high coverage (mean 85\%) and excellent AI-domain focus (94\% of extracted keywords were AI/ML-related). The diversity metric (0.61) indicates that the MMR algorithm successfully prevented redundancy while maintaining relevance.
+A practical strength of the current evaluation is that it is directly tied to project scripts rather than to manually assembled spreadsheet calculations. The keyword and resource metrics are produced by \texttt{test/evaluation\_pipeline/evaluator.py}, while local timing measurements are produced by \texttt{test/performance/run\_performance\_tests.py}. The evaluator consumes a local corpus folder, runs the extraction and recommendation pipeline, writes a structured JSON report, and exports chart images that are reused in this dissertation. This is useful both academically and practically: it reduces the risk of reporting stale numbers and makes it easier to rerun the study after later code changes.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
-\caption{Keyword Extraction Quality by Topic Area}
+\caption{Reproducibility Assets Used in the Current Evaluation}
+\label{tab:reproducibility_assets}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{2.6cm}p{4.8cm}@{}}
+\hline\hline
+Asset & Role in evaluation\\
+\hline
+Pilot corpus (\texttt{data/test\_corpus}) & Supplies seven AI/ML text documents for repeatable end-to-end testing.\\
+\texttt{evaluation\_results.json} & Stores keyword and resource metrics used for tables and plot generation.\\
+\texttt{evaluator.py} & Produces baseline-vs-pipeline metrics and exports dissertation figures.\\
+\texttt{run\_performance\_tests.py} & Measures deterministic local stages of the implemented codebase.\\
+Figures in \texttt{Paper/.../figures} & Provide paper-ready visualisations directly generated from evaluation outputs.\\
+\hline\hline
+\end{tabular}
+\end{table}
+
+This reproducibility-oriented setup is especially important for a final-year project. It ensures that the dissertation can be updated consistently as the implementation changes. For example, when the recommendation logic was altered to include a domain bonus and summary reuse, the same evaluator could be rerun to observe whether the change improved authority, harmed relevance, or affected modality balance. In other words, the evaluation tooling is not an afterthought but part of the engineering contribution itself.
+
+\subsection{Keyword Extraction Results (RQ1)}
+
+Table~\ref{tab:keyword_quality} summarises the pilot-corpus keyword comparison. Both approaches cover all seven documents, but the TF-IDF + MMR pipeline produces a smaller and more interpretable set of multi-word topic phrases. In this pilot run, keyword AI relevance increases from 30\% to 40\%, while diversity remains high in both conditions.
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.2}
+\caption{Keyword Extraction on the Pilot Corpus}
 \label{tab:keyword_quality}
 \centering
 \footnotesize
-\setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}lccc@{}}
 \hline\hline
-Topic & Cov. (\%) & AI rel. (\%) & Div.\\
+Method & Keywords & Coverage (\%) & AI rel. (\%)\\
 \hline
-Neural Networks & 87 & 96 & 0.63\\
-NLP & 83 & 92 & 0.59\\
-Computer Vision & 86 & 95 & 0.62\\
-Reinf.\ learning & 84 & 93 & 0.60\\
-ML fundamentals & 85 & 94 & 0.61\\
-Deep learning arch. & 88 & 97 & 0.64\\
-\textbf{Mean} & \textbf{85} & \textbf{94} & \textbf{0.61}\\
+Simple frequency baseline & 10 & 100.00 & 30.00\\
+TF-IDF + MMR & 5 & 100.00 & 40.00\\
 \hline\hline
 \end{tabular}
 \end{table}
 
-\subsubsection{Resource Filtering and Quality (RQ2)}
-Table \ref{tab:filtering_quality} demonstrates the effectiveness of AI-domain filtering. The pipeline successfully eliminated 68\% of initially retrieved resources as non-AI-related, while preserving high-quality content. Cross-platform diversity increased significantly compared to naive retrieval, indicating that filtering did not merely narrow the scope but improved resource variety.
+The selected phrases from the AI-Pedia pipeline are more descriptive than the unigram baseline. Instead of returning broad words such as \emph{learning}, \emph{processing}, or \emph{machine}, the implemented method surfaces topic-bearing phrases such as \emph{neural networks}, \emph{machine learning}, and \emph{natural language processing}. This is an important qualitative outcome, because the downstream search stage benefits from queries that already encode concept boundaries. The lexical diversity score of the phrase-based method is slightly lower than that of the unigram baseline, but this is mainly because related multi-word phrases naturally share surface tokens. In practice, the phrase-based output is more usable for retrieval even if a purely lexical diversity metric penalises partial overlap.
 
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.2}
-\caption{AI-Domain Filtering Effectiveness}
-\label{tab:filtering_quality}
+\begin{figure}[!t]
 \centering
-\begin{tabular}{lcc}
-\hline\hline
-Metric & Naive Retrieval & AI-Pedia Pipeline\\
-\hline
-Initial Retrieved & 1,247 & 1,247\\
-After AI Filtering & 1,247 & 399\\
-Filtered Out (\%) & 0 & 68\\
-AI Relevance (\%) & 32 & 91\\
-Cross-Platform Sources & 3.2 & 4.7\\
-Valid URLs (\%) & 89 & 94\\
-\hline\hline
-\end{tabular}
-\end{table}
+\includegraphics[width=0.45\textwidth]{figures/evaluation_precision_comparison.png}
+\caption{Keyword extraction comparison between a simple frequency baseline and the implemented TF-IDF + MMR pipeline. The implemented method preserves full document coverage while improving AI-domain focus and producing more meaningful topic phrases.}
+\label{fig:keyword_comparison}
+\end{figure}
 
-\subsubsection{Pipeline Value Assessment: Restricted vs Full System}
-The core evaluation compared the restricted model baseline against the full AI-Pedia pipeline using identical inputs and the same foundation model. Table \ref{tab:pipeline_comparison} shows substantial improvements from the full pipeline across all measured dimensions.
+\subsection{Resource Quality After Ranking (RQ2 and RQ3)}
+
+Table~\ref{tab:pipeline_comparison} reports the main resource-quality comparison. The raw search stage returns 75 resources across three modalities. Reducing this set to a balanced top-five-per-type recommendation list yields an 80\% reduction in candidate volume, which is substantial from a user-experience perspective because it transforms a large and noisy set into a small, manageable reinforcement package.
 
 \begin{table}[!t]
 \renewcommand{\arraystretch}{1.2}
-\caption{Value of Full Pipeline: Restricted Baseline vs. AI-Pedia}
+\caption{Resource Quality Across Retrieval and Ranking Stages}
 \label{tab:pipeline_comparison}
 \centering
-\begin{tabular}{lcc}
+\footnotesize
+\begin{tabular}{@{}lccc@{}}
 \hline\hline
-Metric & Restricted Baseline & AI-Pedia Full\\
+Metric & Raw search & Top-$K$ unranked & Top-$K$ ranked\\
 \hline
-AI Relevance (\%) & 32 & 91\\
-Noise Reduction & 0 & 68\%\\
-Cross-Platform Diversity & 3.2 & 4.7\\
-Novel Resources (\%) & 45 & 78\\
-Authority Score (\%) & 28 & 65\\
-Valid Accessible URLs (\%) & 89 & 94\\
-Processing Time (s) & 45 & 132\\
+Total resources & 75 & 15 & 15\\
+AI relevance (\%) & 81.33 & 93.33 & 86.67\\
+Authority score (\%) & 41.33 & 40.00 & 60.00\\
+Valid URLs (\%) & 100.00 & 100.00 & 100.00\\
+Noise reduction (\%) & 0.00 & 80.00 & 80.00\\
+Cross-platform diversity & 3 & 3 & 3\\
 \hline\hline
 \end{tabular}
 \end{table}
 
-The results demonstrate that the AI-Pedia pipeline dramatically improves resource quality: AI relevance increases from 32\% to 91\%, noise is reduced by 68\%, and the diversity of source platforms increases from 3.2 to 4.7. The trade-off is increased processing time (132s vs 45s), but this is acceptable for a batch recommendation system.
+Two observations are important here. First, even the raw search stage already has relatively high AI relevance (81.33\%), which indicates that the system’s query construction and search-source design are directionally correct. Second, the ranking stage improves \emph{authority} much more clearly than it improves every other metric. Specifically, authority rises from 40.00\% in the unranked top-$K$ set to 60.00\% in the CBF-ranked set, while valid URLs remain at 100\%. In other words, ranking does not simply preserve relevance; it shifts the recommendation list toward more trustworthy sources.
+
+The slight drop in AI relevance from 93.33\% to 86.67\% between the unranked and ranked top-$K$ sets should not be hidden. On this small pilot corpus, the first-returned items for some queries are already strongly AI-themed, so a pure AI-keyword percentage favours the unranked set. The ranked set nevertheless appears stronger on source quality, which is desirable for an educational recommender. This is a useful design insight rather than a failure: on a small corpus, authority and topical specificity can trade off against one another, and the current system already exposes that tradeoff in a measurable way.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.45\textwidth]{figures/evaluation_pipeline_comparison.png}
-\caption{Comparison of resource quality metrics between restricted baseline and full AI-Pedia pipeline. The full pipeline dramatically improves AI relevance and reduces noise while increasing source diversity.}
+\caption{Comparison of raw search, unranked top-$K$, and CBF-ranked top-$K$ outputs. Ranking preserves a compact final set and improves source authority, while the main compression effect comes from reducing the candidate pool from 75 resources to 15.}
 \label{fig:pipeline_comparison}
 \end{figure}
 
-\subsection{Ablation Study: Component Contributions}
+\subsection{Interpretation and Limitations of the Current Evaluation}
 
-To isolate the contribution of each pipeline component, we conducted an ablation study where we systematically disabled: (A) MMR diversity selection, (B) AI-domain filtering, (C) CBF ranking, and (D) content normalization. Table \ref{tab:ablation} shows the individual impact of each component.
+Taken together, the current pilot evaluation supports three preliminary conclusions. For \textbf{RQ1}, the implemented keyword extraction stage is more domain-focused than a naive frequency baseline while preserving document coverage. For \textbf{RQ2}, multi-source retrieval successfully produces a broad candidate pool spanning text, video, and code resources, and the final recommendation stage reduces that pool to a balanced output set suitable for user consumption. For \textbf{RQ3}, CBF-based ranking appears most valuable as a \emph{quality-shaping} mechanism, particularly by increasing the proportion of authoritative sources in the final result set.
 
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.2}
-\caption{Ablation Study: Individual Component Contributions}
-\label{tab:ablation}
-\centering
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}lcc@{}}
-\hline\hline
-Configuration & AI rel. (\%) & Cross-plat.\ div.\\
-\hline
-Full Pipeline & \textbf{91} & \textbf{4.7}\\
-Without MMR (A) & 89 & 3.8\\
-Without AI Filter (B) & 41 & 4.6\\
-Without CBF Ranking (C) & 52 & 3.1\\
-Without Normalization (D) & 88 & 4.5\\
-\hline\hline
-\end{tabular}
-\end{table}
+At the same time, this evaluation remains a pilot rather than a final summative study. The corpus is relatively small, the web sources are live and therefore volatile, and no human relevance judgements have yet been collected. In addition, metrics such as keyword diversity and AI-keyword matching are still proxy measures rather than substitutes for expert assessment. The current results should therefore be interpreted as evidence that the implementation is functioning coherently and that the main design choices are measurable, not as the final word on educational effectiveness.
 
-The AI-domain filter was by far the most critical component, with its removal causing AI relevance to drop from 91\% to 41\%—essentially eliminating the system's domain specialization. CBF ranking was the second most important, contributing 39 percentage points of improvement. MMR primarily benefited diversity (from 3.8 to 4.7 sources), while content normalization provided minor quality improvements.
-
-\subsection{Reliability and Accuracy Advantages}
-
-Unlike pure LLM-based approaches that may suffer from hallucination, outdated knowledge, and unverifiable claims, AI-Pedia's \emph{search-first, summarize-later} architecture ensures all recommendations are grounded in real, accessible resources. Table \ref{tab:reliability_metrics} confirms this reliability advantage.
-
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.2}
-\caption{Reliability and Accuracy Metrics}
-\label{tab:reliability_metrics}
-\centering
-\begin{tabular}{lcc}
-\hline\hline
-Metric & AI-Pedia & LLM-only Approach\\
-\hline
-Valid URLs (\%) & 94 & 78\\
-Accessible Resources (\%) & 89 & 65\\
-Non-hallucinated (\%) & 100 & 82\\
-Up-to-date Content (\%) & 96 & 45\\
-\hline\hline
-\end{tabular}
-\end{table}
-
-The search-first architecture ensures that every recommendation has a verifiable source, eliminating hallucination while providing access to the most current available resources.
-
-\subsection{Scalability and Efficiency Analysis}
-
-Table \ref{tab:scalability_analysis} shows performance across different corpus sizes, demonstrating that the system remains practical for realistic use cases.
-
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.2}
-\caption{Scalability Analysis Across Corpus Sizes}
-\label{tab:scalability_analysis}
-\centering
-\begin{tabular}{lcc}
-\hline\hline
-Corpus Size & Avg. Processing Time (s) & Peak Memory (MB)\\
-\hline
-10 documents & 89 & 245\\
-25 documents & 156 & 387\\
-50 documents & 243 & 521\\
-100 documents & 421 & 789\\
-\hline\hline
-\end{tabular}
-\end{table}
+The next stage of evaluation should extend this pilot in three directions. First, the corpus should be enlarged to the intended 10+ document minimum for full user scenarios, ideally with multiple topic clusters. Second, human annotations should be added for relevance, usefulness, and learning value. Third, a controlled user study should compare AI-Pedia with manual search or other learning-support tools. Even so, the present pilot is already valuable because it converts the paper’s claims from purely architectural statements into reproducible, code-backed observations.
 
 \subsection{Threats to Validity}
 
-We acknowledge several limitations:
-\begin{itemize}
-\item \textbf{Foundation Model Dependency}: Results depend on the specific foundation model used (GPT-3.5-turbo); different models might yield different absolute scores but similar relative improvements.
-\item \textbf{Domain Specificity}: Evaluation focused on AI/ML topics; generalization to other domains would require domain-specific keyword lists and filtering rules.
-\item \textbf{External Resource Volatility}: Web-based resources may change or become unavailable over time, though the search-first approach adapts to current availability.
-\end{itemize}
+Several threats to validity should be acknowledged. \textbf{Internal validity} is limited by the proxy nature of some metrics: AI relevance and authority are useful indicators, but they do not directly measure whether a student learned more effectively from the returned resources. \textbf{Construct validity} is also imperfect because lexical heuristics may classify a resource as AI-related even when its pedagogical quality is weak, and may penalise useful broad resources that do not explicitly mention AI terminology in the title or description. \textbf{External validity} is constrained by the small pilot corpus and the fact that live web search results change over time. Finally, \textbf{system validity} depends partly on third-party platforms such as YouTube, GitHub, arXiv, and Google Scholar, whose interfaces and retrieval behaviour may evolve independently of the codebase.
 
-\subsection{Summary of Evaluation Findings}
+These limitations do not invalidate the current findings, but they do frame them correctly. The present results are best viewed as evidence that the implementation is measurable, coherent, and promising enough to justify a larger study. A stronger summative evaluation would require a larger corpus, stable annotation guidelines, repeated runs across time, and direct user feedback on usefulness and learning support.
 
-The evaluation provides strong evidence that AI-Pedia's full pipeline adds substantial value:
-\begin{itemize}
-\item \textbf{RQ1}: TF-IDF + MMR produces highly focused, AI-relevant keywords (94\% AI relevance) with good diversity (0.61).
-\item \textbf{RQ2}: AI-domain filtering dramatically improves quality by removing 68\% of irrelevant resources while preserving valuable content (91\% AI relevance).
-\item \textbf{RQ3}: The full pipeline substantially outperforms naive retrieval across all metrics: AI relevance (91\% vs 32\%), source diversity (4.7 vs 3.2), and reliability (94\% valid URLs vs 78\%).
-\end{itemize}
+\section{Discussion}
 
-The within-system evaluation design eliminates confounding factors while clearly demonstrating that each pipeline component contributes meaningfully, with AI-domain filtering being the most critical for quality assurance. The search-first architecture ensures reliability and currency that pure LLM approaches cannot match.
+\subsection{Why the Pipeline Matters for Educational Support}
+
+One of the main insights from this project is that educational recommendation for technical subjects benefits from keeping the learner's own material at the centre of the workflow. Many current AI study tools either summarise uploaded documents or answer questions directly from them. That is helpful, but it does not necessarily help a learner move outward toward high-quality reinforcement resources. AI-Pedia takes a different position: the student's own documents are used as evidence of current interest and knowledge focus, and the system then searches outward to locate complementary resources.
+
+This distinction is important because revision and understanding often depend on triangulation. A learner may understand a concept only after reading a different explanation, seeing a worked implementation, or watching a visual walkthrough. The balanced output across text, video, and code is therefore not an incidental design feature but part of the educational argument of the system. In the pilot run, raw retrieval naturally over-produced text resources, but the final recommendation stage restored modality balance. That behaviour illustrates how recommendation logic can serve pedagogical goals rather than simply mirroring whatever type of content is easiest to retrieve in bulk.
+
+Another useful insight is that the project benefits from classical information-retrieval techniques precisely because they are interpretable. TF-IDF, MMR, and CBF do not carry the novelty of recent large language models, but they provide understandable failure modes and measurable intermediate outputs. This matters in a dissertation context. It is much easier to justify why a keyword was chosen, why a resource received a higher score, or why a set of recommendations became more authoritative when the main ranking logic is explicit. The optional summary generation can still add convenience at presentation time, but the core recommendation behaviour remains inspectable.
+
+\subsection{Trade-offs Revealed by the Pilot Evaluation}
+
+The pilot evaluation revealed an especially important trade-off between topical focus and source authority. On the small pilot corpus, the unranked top-$K$ resource set achieved slightly higher AI relevance than the final ranked set. At first glance, this might seem to weaken the case for ranking. However, the ranked set had a much stronger authority profile, improving from 40.00\% to 60.00\%. In an educational setting, that trade-off is defensible and arguably desirable. A system that returns only highly topical but less trustworthy material may not support learning as effectively as one that slightly broadens topical phrasing while favouring reputable sources.
+
+This observation suggests that the ranking stage should not be judged by a single metric. In fact, one contribution of the current work is to show that educational recommenders need multi-dimensional evaluation. Relevance, authority, modality balance, novelty, and accessibility all matter, and they may move in different directions after a ranking change. The current evaluation design begins to expose those relationships. Even though the corpus is small, it already shows why it is misleading to ask only whether ranking improves relevance. A more useful question is whether ranking shapes the final recommendation set in ways that better support the learner's goals.
+
+A second trade-off concerns phrase specificity versus lexical diversity in keyword extraction. The TF-IDF + MMR stage produced better topic phrases than the simple frequency baseline, but the lexical diversity score was slightly lower. Here again, the lower score does not necessarily indicate worse behaviour. Multi-word AI concepts often share component terms, so a lexical diversity proxy can penalise semantically meaningful phrases. This result highlights the need to choose evaluation metrics that reflect downstream usefulness, not just surface-form variation.
+
+\subsection{From Prototype to Deployable System}
+
+From an engineering standpoint, the current codebase is now much closer to a deployable prototype than to a proof-of-concept script collection. The application has a working interface, modular backend components, exportable output folders, and dedicated evaluation and performance scripts. More importantly, the code was refined so that responsibilities are better separated across modules: keyword extraction performs topic discovery, search modules perform retrieval, the recommender performs ranking, and the interface handles final display and lazy summary generation. This modularity makes the system easier to test, optimise, and explain.
+
+However, deployment-quality robustness would still require several improvements. Caching of search results would reduce repeated external latency. Stronger exception handling and retry logic would improve stability when third-party sources are temporarily unavailable. A richer configuration layer could expose ranking weights, domain priors, and source preferences without editing code. Finally, user feedback loops would allow the system to move beyond one-shot recommendation toward adaptive support. These points are not evidence of failure; rather, they show that the current prototype has reached the stage where incremental engineering work can now produce meaningful usability improvements.
+
+Overall, the combination of code refinement and pilot evaluation strengthens the central claim of the project. AI-Pedia is not simply an idea for using AI in education; it is an implemented, inspectable, and extensible recommendation pipeline whose behaviour can already be analysed quantitatively. That makes it a solid basis for a final-year project and a credible foundation for future research or practical deployment.
+
+\section{Extended Evaluation Framework}
+
+The pilot evaluation reported in this dissertation is useful, but it should be understood as the first layer of a stronger evaluation programme rather than as the final layer. Because the project aims to support learning rather than merely rank links, a mature evaluation strategy has to move beyond pipeline sanity checks and capture educational usefulness, recommendation quality, and system robustness together. This section therefore proposes an extended evaluation framework that can be built directly on top of the codebase developed in this project.
+
+\subsection{Phase 1: Larger-Scale Offline Benchmarking}
+
+The first next step is to scale the current pilot into a larger offline benchmark. In practical terms, this means assembling multiple AI/ML corpora instead of a single seven-document bundle. Each corpus should represent a realistic learner scenario, for example introductory machine learning, neural networks, transformers and NLP, computer vision, or reinforcement learning. For each topic cluster, multiple document sets should be created with different levels of quality and completeness, such as concise lecture notes, fragmented revision notes, textbook extracts, and mixed-source study packs.
+
+The purpose of this phase is twofold. First, it would make it possible to test whether the keyword extraction stage remains stable across different document styles and topic granularities. Second, it would allow the ranking stage to be examined under more varied retrieval conditions, where some queries are broad, some are highly specific, and some contain noisy terminology. The current evaluator already provides much of the infrastructure needed for this phase. What is mainly missing is a broader benchmark corpus and a small amount of dataset-management tooling.
+
+Metrics in Phase 1 should remain largely automatic so that repeated runs stay cheap. In addition to the current metrics, it would be useful to record per-topic variance, overlap between repeated runs, and source-level breakdowns of recommended materials. For example, if the system consistently over-relies on Wikipedia for broad queries or GitHub for implementation-heavy topics, that pattern would be worth identifying before a user study begins. The goal of this phase is therefore robustness analysis rather than human-impact analysis.
+
+\subsection{Phase 2: Human Annotation of Recommendation Quality}
+
+Automatic metrics are helpful, but they cannot fully answer whether the returned resources are genuinely useful to learners. A stronger study should therefore introduce human annotation. One realistic design is to sample recommendation sets from multiple corpora and ask annotators to score each returned resource on a short rubric. A four-dimension rubric would be sufficient for an undergraduate project: \textbf{topical relevance}, \textbf{authority/trustworthiness}, \textbf{pedagogical usefulness}, and \textbf{actionability}. Actionability is especially relevant for code and video resources, since a repository may be highly relevant yet difficult for a beginner to use, while a video may be accessible but too shallow to support real reinforcement.
+
+Annotators do not necessarily need to be domain experts, although a small expert calibration step would improve quality. A practical compromise would be to use students with AI/ML coursework experience and provide a clear rubric with examples. Agreement can be checked using inter-rater statistics such as Cohen's kappa or Krippendorff's alpha if time permits. Even a small annotated sample would substantially strengthen the paper, because it would replace purely lexical proxies with judgments about usefulness.
+
+The most important design principle here is separation between the metrics used by the system and the labels used by the evaluators. If human annotators are only asked whether a title contains AI terminology, the evaluation becomes circular. Instead, they should judge whether the resource would genuinely help a learner understand, revise, or apply the topic implied by the uploaded corpus. That makes the evaluation more faithful to the intended purpose of AI-Pedia.
+
+\begin{table*}[!t]
+\renewcommand{\arraystretch}{1.2}
+\caption{Proposed Human Annotation Rubric for Recommendation Quality}
+\label{tab:annotation_rubric}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{2.3cm}p{2.1cm}p{8.6cm}@{}}
+\hline\hline
+Dimension & Suggested scale & Interpretation\\
+\hline
+Topical relevance & 1--5 & How well the resource matches the concepts and skill needs implied by the uploaded corpus. Low scores indicate mismatch; high scores indicate clear topic alignment.\\
+Authority / trustworthiness & 1--5 & Whether the source appears academically credible, technically reliable, and appropriate for study use.\\
+Pedagogical usefulness & 1--5 & Whether the resource would plausibly help a learner understand or reinforce the topic, rather than merely mentioning it.\\
+Actionability & 1--5 & Whether the learner can realistically use the resource immediately, for example by reading it, watching it, or running the code with reasonable effort.\\
+Difficulty fit & 1--5 & Optional dimension capturing whether the resource is too basic, too advanced, or well matched to the likely level of the learner corpus.\\
+Open comment & Free text & Short explanation of strengths, weaknesses, or notable mismatch. Useful for later qualitative analysis.\\
+\hline\hline
+\end{tabular}
+\end{table*}
+
+A rubric of this form would allow the system to be evaluated at a level closer to its intended educational function. It would also create a practical bridge between offline benchmarking and user-centred evaluation, since many of the same dimensions, especially usefulness and difficulty fit, would later matter in live user studies.
+
+\subsection{Phase 3: User-Centred Study Design}
+
+The strongest evaluation would involve actual users interacting with the system. A manageable study for future work would compare AI-Pedia against two alternatives: manual web search and a document-grounded assistant that only answers from the uploaded corpus without recommending external resources. Participants could be given a short study packet, asked to prepare for a targeted mini-task such as explaining transformers or implementing a simple classifier, and then evaluated on both process and outcome.
+
+Possible dependent variables include time-to-find-useful-material, self-reported confidence, perceived usefulness of recommendations, and task performance on a short quiz or implementation exercise. Even if the sample size were small, a study of this kind would add an important dimension that offline metrics cannot capture: whether the combination of text, video, and code recommendations actually helps learners navigate unfamiliar material more effectively than their baseline workflow.
+
+It would also be valuable to collect qualitative feedback. Participants could be asked which resource types they trusted most, whether they preferred breadth or depth, and whether the balanced top-five-per-type strategy felt helpful or restrictive. These responses could inform later ranking changes. For example, some students may value authoritative text sources first and treat videos as secondary reinforcement, whereas others may learn best from code-first examples. Such feedback would point toward richer personalisation in later versions of the system.
+
+\begin{table*}[!t]
+\renewcommand{\arraystretch}{1.2}
+\caption{Proposed Multi-Phase Evaluation Roadmap for AI-Pedia}
+\label{tab:evaluation_roadmap}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{2.0cm}p{3.0cm}p{5.0cm}p{4.2cm}@{}}
+\hline\hline
+Phase & Main objective & Typical inputs and outputs & Main evidence produced\\
+\hline
+Phase 1: Offline benchmark & Stress-test pipeline behaviour across multiple corpora & Multiple topic-specific corpora; automatic evaluator outputs JSON metrics and charts & Stability of keyword extraction, ranking behaviour, modality balance, source distributions\\
+Phase 2: Human annotation & Judge recommendation quality beyond lexical proxies & Sampled recommendation lists with rubric-based ratings from annotators & Relevance, authority, usefulness, and actionability scores grounded in human judgement\\
+Phase 3: User study & Measure learning-support value in realistic use & Participants complete search/revision tasks with AI-Pedia vs baselines & Task success, time-to-resource, confidence, satisfaction, and qualitative feedback\\
+\hline\hline
+\end{tabular}
+\end{table*}
+
+\subsection{Evaluation Hypotheses and Expected Failure Modes}
+
+An advantage of explicitly designing later evaluation phases now is that it clarifies what hypotheses the project is really making. At minimum, AI-Pedia appears to rest on four testable hypotheses. \textbf{H1}: phrase-based keyword extraction will produce better search prompts than simple frequency statistics. \textbf{H2}: multi-source retrieval will surface a broader and more useful set of reinforcement materials than any single-source strategy. \textbf{H3}: ranking will improve the overall usefulness of the final set even when it does not maximise every lexical relevance proxy. \textbf{H4}: learners will benefit from multimodal reinforcement compared with workflows based only on document upload or manual search.
+
+Making these hypotheses explicit is useful because it also reveals likely failure modes. For H1, the system may fail when uploaded documents are extremely short or noisy. For H2, the main risk is that live web retrieval changes over time and introduces volatility. For H3, ranking may over-prioritise authority and under-prioritise niche but valuable resources. For H4, the system may work well for exploratory learning but less well for users who already know exactly which format they prefer. A robust evaluation programme should therefore measure not only average performance but also where and why the system breaks down.
+
+\subsection{Implications for the Current Dissertation}
+
+Even though all three phases are not yet complete, laying out this framework strengthens the dissertation in two ways. First, it shows that the current pilot evaluation is part of a coherent research trajectory rather than a disconnected set of metrics. Second, it demonstrates that the code and data artefacts developed in the project are already organised well enough to support more ambitious studies. The evaluator generates reusable outputs, the figures can be regenerated from JSON, and the modular codebase makes ablation and extension feasible.
+
+In this sense, the project should be judged not only by the current numerical scores, but also by how well it establishes the methodological foundation for a stronger next-stage study. A final-year project cannot usually deliver every layer of an educational recommender evaluation, but it can deliver a defensible prototype, a transparent measurement framework, and a clear path to deeper validation. AI-Pedia now does all three.
+
+\subsection{Statistical Reporting Strategy for Future Runs}
+
+A final design issue worth making explicit is how future runs should be reported once the corpus and annotation budget grow. For offline benchmarking, single-score reporting is not enough. Each experiment should ideally be rerun over multiple corpora and, where retrieval volatility matters, at multiple times. Results should then be summarised using means, standard deviations, and per-topic breakdowns rather than only global averages. This would make it easier to identify whether one component of the pipeline is consistently strong or whether performance is being driven by one especially easy topic cluster.
+
+For pairwise comparisons such as baseline versus TF-IDF + MMR, or unranked top-$K$ versus CBF-ranked top-$K$, the most useful reporting style would combine descriptive and inferential summaries. Descriptive reporting should include absolute scores, percentage deltas, and plots showing variability across corpora. Inferential reporting could then use paired tests if the dataset size becomes large enough, for example paired $t$-tests or non-parametric alternatives across matched corpus conditions. In a project of this scale, significance testing is less important than transparent effect reporting, but even simple paired comparisons would add rigour.
+
+Human-annotation results should likewise be reported with more structure than a single average score. If annotators rate relevance, usefulness, authority, and actionability separately, the paper can show where the system is strong and where it remains weak. For instance, a future version of AI-Pedia might perform well on authority and actionability while remaining only moderate on pedagogical usefulness for beginners. Reporting the four dimensions separately would make such patterns visible and would guide future ranking-weight changes more effectively than a collapsed composite score.
+
+Finally, qualitative feedback should be treated as data rather than anecdote. If participants repeatedly say that code repositories are valuable only when accompanied by explanatory text, or that videos are helpful for orientation but not for deep revision, those patterns can inform subsequent system design. In short, the next-stage evaluation should combine automatic metrics, human ratings, and user narratives in a way that reflects the genuinely multi-dimensional nature of educational recommendation.
+
 \section{Conclusion}
-This paper presented AI-Pedia, an AI-powered multimedia resource recommendation system for machine learning education. The system addresses a key gap in existing AI learning tools: while products like NotebookLM excel at document-grounded explanation and summarisation, they provide limited support for structured reinforcement learning workflows that require discovering external resources across heterogeneous platforms.
+This paper presented AI-Pedia, an AI-powered multimedia resource recommendation system for machine learning education. The system addresses a practical gap in existing study workflows: learners often have a private corpus of notes and readings, but still need support in locating high-value external reinforcement materials across text, video, and code platforms.
 
-AI-Pedia's core contribution is a learner-driven reinforcement pipeline that transforms a student's private AI/ML materials into curated external resource recommendations. The system combines established information retrieval and recommender system methods (TF-IDF, MMR, CBF) with multi-source retrieval from Wikipedia, Google Scholar, arXiv, YouTube, and GitHub. The evaluation demonstrated that this approach improves recommendation relevance (Precision@5: 0.72 vs. 0.58 for NotebookLM), resource diversity (4.2 vs. 2.1 distinct sources), and user satisfaction (4.2/5.0 vs. 3.5/5.0).
+AI-Pedia's core contribution is a learner-driven reinforcement pipeline that transforms a student's private AI/ML materials into curated external resource recommendations. The system combines established information retrieval and recommender-system methods (TF-IDF, MMR, and CBF) with multi-source retrieval from Wikipedia, Google Scholar, arXiv, YouTube, and GitHub. The current pilot evaluation shows that the implementation is operational and measurable: the keyword extraction stage improves AI-domain focus over a naive frequency baseline (40\% vs. 30\% keyword AI relevance), the retrieval stage generates a broad multimodal candidate pool, and the final ranked recommendation set reduces raw candidates by 80\% while increasing authority from 40.00\% to 60.00\% relative to an unranked top-$K$ set.
 
-The ``dumb student'' baseline confirmed that the full pipeline contributes substantially: removing TF-IDF + MMR, AI-domain filtering, and CBF ranking reduced Precision@5 by 43\%. The ablation study further showed that CBF ranking and AI filtering were the most critical components, while MMR primarily improved keyword diversity.
+These pilot results do not yet constitute a final user-study claim, but they do support the central design rationale of the project. In particular, they show that the modular pipeline is not merely architecturally plausible; it produces reproducible outputs, exposes measurable tradeoffs, and is sufficiently interpretable to support further evaluation and refinement.
 
 Key lessons learned during this project include:
 \begin{itemize}
-\item \textbf{Modularity enables evaluation}: Designing the system as a modular pipeline allowed us to isolate and measure the contribution of each component through ablation studies.
-\item \textbf{Domain filtering is essential}: Open web search returns substantial noise; the AI-domain filter removed 34\% of candidates while preserving relevant resources.
-\item \textbf{Transparency builds trust}: Providing similarity scores and source attribution helped users understand and trust recommendations.
-\item \textbf{Fallback mechanisms improve robustness}: The rule-based summary fallback ensured system functionality even when LLM APIs were unavailable.
+\item \textbf{Modularity enables evaluation}: Designing the system as a modular pipeline makes it possible to evaluate keyword extraction, retrieval, and ranking separately rather than treating the recommender as a black box.
+\item \textbf{Query quality matters}: Phrase-based keyword extraction produces more useful search queries than a unigram-only baseline, even on a small pilot corpus.
+\item \textbf{Ranking shapes quality}: The most visible benefit of the current ranking stage is improved source authority, showing that ranking can steer the final output toward more trustworthy reinforcement materials.
+\item \textbf{Engineering details affect usability}: Removing duplicate summary generation reduced unnecessary work and made the overall pipeline cleaner and easier to evaluate.
 \end{itemize}
 
 \subsection{Limitations}
 
 We acknowledge several limitations of this work:
 \begin{itemize}
-\item \textbf{Evaluation scope}: The user study involved 24 participants from a single institution; larger-scale studies across diverse populations would strengthen generalizability.
+\item \textbf{Evaluation scope}: The present evaluation is a pilot on a small bundled corpus rather than a full-scale user study, so the reported numbers should be treated as formative evidence.
 \item \textbf{Domain specificity}: The system was designed and evaluated for AI/ML education; adaptation to other domains would require curating domain-specific keyword lists and potentially adjusting filtering rules.
-\item \textbf{Resource volatility}: External resources (especially YouTube videos and GitHub repositories) may change or become unavailable, affecting recommendation stability over time.
-\item \textbf{Computational cost}: The full pipeline takes approximately 2 minutes to process a typical corpus, which may be prohibitive for real-time applications.
+\item \textbf{Resource volatility}: External resources, especially YouTube videos and GitHub repositories, may change or become unavailable over time, affecting recommendation stability.
+\item \textbf{External latency}: The slowest part of the full workflow is live web retrieval rather than local ranking, so responsiveness depends partly on third-party services and network conditions.
 \end{itemize}
 
 \subsection{Future Work}
@@ -998,20 +1144,21 @@ Several directions for future work emerge from this project:
 In conclusion, AI-Pedia demonstrates that a reinforcement-oriented recommendation system can meaningfully support AI/ML learners by connecting their private study materials to high-value external resources. The evaluation results suggest that the system's modular, interpretable pipeline offers advantages over both generic document-grounded assistants and unguided manual search. While limitations remain, the project provides a foundation for future work on personalized, domain-aware educational recommendation systems.
 
 \begin{table}[!t]
-\renewcommand{\arraystretch}{1.3}
-\caption{Summary of Page Lengths for Sections}
-\label{table_2}
+\renewcommand{\arraystretch}{1.25}
+\caption{Summary of Key Findings from the Current Prototype}
+\label{tab:key_findings_summary}
 \centering
-\begin{tabular}{cc}
+\footnotesize
+\begin{tabular}{@{}p{2.1cm}p{5.0cm}@{}}
 \hline\hline
-Section & Number of Pages\\
+Area & Main finding\\
 \hline
-I. Introduction & 2\\
-II. Related Work & 2-3\\
-III. Methodology & 4-6\\
-IV. Results & 2\\
-V. Evaluation & 1-2\\
-VI. Conclusion & 1\\
+Keyword extraction & TF-IDF + MMR preserved 100\% document coverage and improved keyword AI relevance from 30.00\% to 40.00\%.\\
+Resource retrieval & Multi-source search returned 75 candidates across text, video, and code resources, demonstrating broad external coverage.\\
+Recommendation stage & Final output compressed 75 candidates to 15 balanced recommendations with 80\% noise reduction.\\
+Ranking effect & CBF-based ranking increased authority from 40.00\% to 60.00\% relative to the unranked top-$K$ list.\\
+Local performance & Deterministic local stages remained lightweight, with sub-0.2 second average runtime and about 144 MB peak memory.\\
+Engineering outcome & Evaluation and performance scripts now produce reproducible outputs suitable for direct inclusion in the dissertation.\\
 \hline\hline
 \end{tabular}
 \end{table}

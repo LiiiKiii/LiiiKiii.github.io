@@ -413,16 +413,24 @@ def process_folder():
                         "similarity_score": res.get("similarity_score", 0.0),
                     }
                     
-                    # 对所有资源类型使用AI生成简介
-                    # 传递从请求中获取的API key（如果存在）
-                    summary_result = generate_resource_summary(res, resource_type, openai_api_key=openai_api_key)
-                    if summary_result and summary_result.get("summary"):
-                        resource_data["summary"] = summary_result["summary"]
-                        resource_data["summary_type"] = summary_result.get("summary_type", "ai_generated")
+                    # 摘要只在最终展示阶段按需生成一次，避免重复调用。
+                    existing_summary = res.get("summary")
+                    existing_summary_type = res.get("summary_type")
+                    if existing_summary:
+                        resource_data["summary"] = existing_summary
+                        resource_data["summary_type"] = existing_summary_type or "cached"
                     else:
-                        # OpenAI失败且没有fallback，不显示摘要
-                        resource_data["summary"] = None
-                        resource_data["summary_type"] = None
+                        # 传递从请求中获取的API key（如果存在）
+                        summary_result = generate_resource_summary(res, resource_type, openai_api_key=openai_api_key)
+                        if summary_result and summary_result.get("summary"):
+                            resource_data["summary"] = summary_result["summary"]
+                            resource_data["summary_type"] = summary_result.get("summary_type", "ai_generated")
+                            res["summary"] = resource_data["summary"]
+                            res["summary_type"] = resource_data["summary_type"]
+                        else:
+                            # OpenAI失败且没有fallback，不显示摘要
+                            resource_data["summary"] = None
+                            resource_data["summary_type"] = None
                     
                     # 保留原始content用于其他用途
                     if resource_type == "txt":

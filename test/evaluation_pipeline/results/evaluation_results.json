@@ -1,0 +1,125 @@
+{
+  "corpus": {
+    "path": "data/test_corpus",
+    "document_count": 7,
+    "word_count_total": 1282
+  },
+  "parameters": {
+    "top_k_keywords": 10,
+    "search_max_per_type": 4,
+    "recommend_top_k": 5
+  },
+  "keyword_reports": {
+    "simple_frequency": {
+      "keyword_count": 10,
+      "coverage": 100.0,
+      "ai_relevance": 30.0,
+      "diversity": 0.9923,
+      "keywords": [
+        "learning",
+        "networks",
+        "gradient",
+        "neural",
+        "processing",
+        "features",
+        "attention",
+        "image",
+        "classification",
+        "machine"
+      ]
+    },
+    "tfidf_mmr": {
+      "keyword_count": 5,
+      "coverage": 100.0,
+      "ai_relevance": 40.0,
+      "diversity": 0.9295,
+      "keywords": [
+        "neural networks",
+        "machine learning",
+        "natural language processing",
+        "pre trained",
+        "image processing"
+      ]
+    }
+  },
+  "resource_reports": {
+    "raw_search": {
+      "total_resources": 75,
+      "ai_relevance": 81.33,
+      "cross_platform_diversity": 3,
+      "authority_score": 41.33,
+      "resource_type_counts": {
+        "txt": 40,
+        "video": 19,
+        "code": 16
+      },
+      "url_validation": {
+        "valid": 75,
+        "invalid": 0,
+        "valid_percentage": 100.0
+      },
+      "novelty": 100.0
+    },
+    "topk_unranked": {
+      "total_resources": 15,
+      "ai_relevance": 93.33,
+      "cross_platform_diversity": 3,
+      "authority_score": 40.0,
+      "resource_type_counts": {
+        "txt": 5,
+        "video": 5,
+        "code": 5
+      },
+      "url_validation": {
+        "valid": 15,
+        "invalid": 0,
+        "valid_percentage": 100.0
+      },
+      "noise_reduction": 80.0,
+      "novelty": 100.0
+    },
+    "topk_ranked": {
+      "total_resources": 15,
+      "ai_relevance": 86.67,
+      "cross_platform_diversity": 3,
+      "authority_score": 60.0,
+      "resource_type_counts": {
+        "txt": 5,
+        "video": 5,
+        "code": 5
+      },
+      "url_validation": {
+        "valid": 15,
+        "invalid": 0,
+        "valid_percentage": 100.0
+      },
+      "noise_reduction": 80.0,
+      "novelty": 100.0
+    }
+  },
+  "resource_type_counts": {
+    "raw_search": {
+      "txt": 40,
+      "video": 19,
+      "code": 16
+    },
+    "topk_unranked": {
+      "txt": 5,
+      "video": 5,
+      "code": 5
+    },
+    "topk_ranked": {
+      "txt": 5,
+      "video": 5,
+      "code": 5
+    }
+  },
+  "improvements": {
+    "keyword_coverage_delta": 0.0,
+    "keyword_ai_relevance_delta": 10.0,
+    "keyword_diversity_delta": -0.0628,
+    "ranking_ai_relevance_delta": -6.66,
+    "ranking_authority_delta": 20.0,
+    "ranking_noise_reduction": 80.0
+  }
+}

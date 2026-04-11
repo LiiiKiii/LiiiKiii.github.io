@@ -510,6 +510,41 @@ def extract_keywords_from_folder(folder_path: str, top_k: int = 10, min_docs: in
         top_k=top_k,
         lambda_div=0.7,
     )
-    
-    return selected
+
+    def is_redundant_term(candidate: str, chosen: list) -> bool:
+        cand_norm = normalize_phrase(candidate)
+        cand_tokens = set(cand_norm.split())
+        if not cand_tokens:
+            return True
+
+        for existing in chosen:
+            existing_norm = normalize_phrase(existing)
+            existing_tokens = set(existing_norm.split())
+            if not existing_tokens:
+                continue
+
+            # 完全相同或明显的包含关系，视为冗余
+            if cand_norm == existing_norm:
+                return True
+            if cand_norm in existing_norm or existing_norm in cand_norm:
+                return True
+
+            # 如果较短短语的大部分token都被已有短语覆盖，也视为冗余
+            overlap = len(cand_tokens & existing_tokens) / max(1, min(len(cand_tokens), len(existing_tokens)))
+            if overlap >= 0.8:
+                return True
+
+        return False
+
+    # MMR之后再做一轮冗余短语清理，避免出现“natural language processing”
+    # 与“natural language”“language processing”同时入选。
+    candidate_pool = selected + [term for term in sorted_terms if term not in selected]
+    pruned_selected = []
+    for term in candidate_pool:
+        if not is_redundant_term(term, pruned_selected):
+            pruned_selected.append(term)
+        if len(pruned_selected) >= top_k:
+            break
+
+    return pruned_selected
 

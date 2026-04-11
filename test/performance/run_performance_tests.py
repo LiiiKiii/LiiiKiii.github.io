@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-性能测试脚本（服务于客观评价：与 NotebookLM 对比时的速度与耗能）
+Performance tests for AI-Pedia core local pipeline stages.
 
-产出指标：T_full、可选 T_first_token、CPU 利用率、内存峰值。
-供 evaluation_objective 结果表使用。NotebookLM 需另行测量。
-默认在项目根目录执行：python -m test.performance.run_performance_tests
+Outputs timing and optional CPU/memory usage for:
+- keyword extraction
+- ranking / recommendation
+- a combined local pipeline
+
+Run from project root:
+    python3 test/performance/run_performance_tests.py
 """
 
 import os
 import sys
-import time
+import tempfile
 import threading
-from typing import Any, Callable, Dict
+import time
+from typing import Any, Callable, Dict, List
 
 try:
     import psutil
@@ -33,27 +38,89 @@ def setup_pythonpath() -> None:
 
 setup_pythonpath()
 
+from backend.core.keyword_extractor import extract_keywords_from_folder
+from backend.core.recommender import recommend_best_resources
 
-def measure_with_resources(
-    func: Callable[[], Any],
-    repeat: int = 3,
-) -> Dict[str, Any]:
-    """
-    多次执行 func()，统计耗时与资源占用（需 psutil）。
-    返回: avg_time_s, total_time_s, t_full_s, cpu_avg_pct, cpu_peak_pct, mem_peak_mb
-    """
-    times: list[float] = []
-    all_cpu: list[float] = []
-    all_mem: list[float] = []
+
+SAMPLE_DOCS = [
+    "Machine learning focuses on models, optimization, data, and generalization. Neural networks learn layered representations from examples.",
+    "Deep learning systems use backpropagation, gradient descent, transformers, attention, and embeddings for modern AI tasks.",
+    "Computer vision studies convolutional neural networks, image classification, object detection, and representation learning.",
+    "Natural language processing uses transformers, tokenization, language models, retrieval, and sequence learning.",
+    "Reinforcement learning optimizes policies with rewards, value functions, exploration, and environment feedback.",
+]
+
+
+def make_temp_corpus() -> str:
+    temp_dir = tempfile.mkdtemp(prefix="ai_pedia_perf_")
+    for idx, text in enumerate(SAMPLE_DOCS, start=1):
+        path = os.path.join(temp_dir, f"doc_{idx}.txt")
+        with open(path, "w", encoding="utf-8") as handle:
+            handle.write(text)
+    return temp_dir
+
+
+def sample_resources() -> Dict[str, List[Dict[str, Any]]]:
+    return {
+        "txt": [
+            {
+                "title": "Attention Is All You Need",
+                "url": "https://arxiv.org/abs/1706.03762",
+                "content": "Transformers rely on self-attention and sequence modeling for NLP tasks.",
+                "source": "arXiv",
+            },
+            {
+                "title": "Neural network tutorial",
+                "url": "https://wikipedia.org/wiki/Artificial_neural_network",
+                "content": "Artificial neural networks are learning systems inspired by biological neurons.",
+                "source": "Wikipedia",
+            },
+        ],
+        "video": [
+            {
+                "title": "Transformer basics",
+                "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "description": "Educational overview of transformers, attention, and NLP foundations.",
+                "source": "YouTube",
+            },
+            {
+                "title": "CNN explanation",
+                "url": "https://www.youtube.com/watch?v=aircAruvnKk",
+                "description": "Explains convolutional neural networks and image classification.",
+                "source": "YouTube",
+            },
+        ],
+        "code": [
+            {
+                "title": "TensorFlow examples",
+                "url": "https://github.com/tensorflow/examples",
+                "description": "Example implementations for neural networks, transformers, and vision models.",
+                "source": "GitHub",
+            },
+            {
+                "title": "PyTorch tutorials",
+                "url": "https://github.com/pytorch/tutorials",
+                "description": "PyTorch tutorials covering deep learning, NLP, and reinforcement learning.",
+                "source": "GitHub",
+            },
+        ],
+    }
+
+
+def measure_with_resources(func: Callable[[], Any], repeat: int = 3) -> Dict[str, Any]:
+    times: List[float] = []
+    all_cpu: List[float] = []
+    all_mem: List[float] = []
 
     for _ in range(repeat):
         start = time.perf_counter()
         if _HAS_PSUTIL:
             proc = psutil.Process(os.getpid())
-            cpu_samples: list[float] = []
-            mem_samples: list[float] = []
+            cpu_samples: List[float] = []
+            mem_samples: List[float] = []
             end_evt = threading.Event()
-            def sampler():
+
+            def sampler() -> None:
                 while not end_evt.is_set():
                     try:
                         cpu_samples.append(proc.cpu_percent())
@@ -61,8 +128,10 @@ def measure_with_resources(
                     except Exception:
                         break
                     time.sleep(0.05)
-            t = threading.Thread(target=sampler, daemon=True)
-            t.start()
+
+            thread = threading.Thread(target=sampler, daemon=True)
+            thread.start()
+
         try:
             func()
         finally:
@@ -71,77 +140,91 @@ def measure_with_resources(
                 time.sleep(0.1)
                 all_cpu.extend(cpu_samples)
                 all_mem.extend(mem_samples)
-        elapsed = time.perf_counter() - start
-        times.append(elapsed)
+
+        times.append(time.perf_counter() - start)
 
     total = sum(times)
     avg = total / len(times) if times else 0.0
-    out: Dict[str, Any] = {
+    result: Dict[str, Any] = {
         "runs": repeat,
         "total_time_s": round(total, 4),
         "avg_time_s": round(avg, 4),
         "t_full_s": round(avg, 4),
     }
+
     if _HAS_PSUTIL and all_cpu and all_mem:
-        out["cpu_avg_pct"] = round(sum(all_cpu) / len(all_cpu), 2)
-        out["cpu_peak_pct"] = round(max(all_cpu), 2)
-        out["mem_peak_mb"] = round(max(all_mem), 2)
+        result["cpu_avg_pct"] = round(sum(all_cpu) / len(all_cpu), 2)
+        result["cpu_peak_pct"] = round(max(all_cpu), 2)
+        result["mem_peak_mb"] = round(max(all_mem), 2)
     else:
-        out["cpu_avg_pct"] = None
-        out["cpu_peak_pct"] = None
-        out["mem_peak_mb"] = None
-    return out
+        result["cpu_avg_pct"] = None
+        result["cpu_peak_pct"] = None
+        result["mem_peak_mb"] = None
+
+    return result
 
 
-def test_system_pipeline() -> Dict[str, Any]:
-    """
-    系统级性能测试：模拟或调用真实「用户请求 → 完整响应」的 pipeline。
-    默认用一次简单后端调用或 sleep 占位；你可替换为真实 pipeline 入口。
-    """
+def test_keyword_extraction(corpus_dir: str) -> Dict[str, Any]:
+    result = measure_with_resources(lambda: extract_keywords_from_folder(corpus_dir, top_k=8), repeat=3)
+    result["module"] = "keyword_extraction"
+    result["status"] = "ok"
+    return result
+
+
+def test_ranking_pipeline(corpus_dir: str) -> Dict[str, Any]:
+    resources = sample_resources()
+    result = measure_with_resources(
+        lambda: recommend_best_resources(corpus_dir, resources, top_k_per_type=2),
+        repeat=3,
+    )
+    result["module"] = "ranking_pipeline"
+    result["status"] = "ok"
+    return result
+
+
+def test_local_pipeline(corpus_dir: str) -> Dict[str, Any]:
+    resources = sample_resources()
+
     def _run() -> None:
-        try:
-            from backend.core import recommender as rec
-            user_docs = ["Machine learning and neural networks."] * 2
-            resources = [
-                {"title": f"R{i}", "content": f"Content {i} about ML."}
-                for i in range(20)
-            ]
-            rec.recommend_best_resources(
-                user_docs=user_docs,
-                resources=resources,
-                top_k=5,
-            )
-        except Exception:
-            time.sleep(0.3)
+        extract_keywords_from_folder(corpus_dir, top_k=8)
+        recommend_best_resources(corpus_dir, resources, top_k_per_type=2)
 
     result = measure_with_resources(_run, repeat=3)
-    result["module"] = "system_pipeline"
+    result["module"] = "local_pipeline"
     result["status"] = "ok"
-    result["note"] = "可替换为真实 pipeline（如含 LLM 的完整请求）以测 T_full 与资源"
+    result["note"] = "Measures deterministic local stages only, excluding external web search latency."
     return result
 
 
 def main() -> None:
-    print("=== 性能测试（客观评价：速度与耗能）===")
+    print("=== 性能测试（AI-Pedia 本地核心阶段）===")
     if not _HAS_PSUTIL:
         print("(未安装 psutil，仅输出耗时；安装后可得到 CPU/内存: pip install psutil)")
 
-    results: list[Dict[str, Any]] = []
+    corpus_dir = make_temp_corpus()
+    results: List[Dict[str, Any]] = []
+
     try:
-        res = test_system_pipeline()
-        results.append(res)
-        print("\n--- system_pipeline ---")
-        print(res)
-    except Exception as e:
-        results.append({
-            "module": "system_pipeline",
-            "status": "error",
-            "error": str(e),
-        })
-        print(f"\n[ERROR] system_pipeline: {e}")
+        for runner in (test_keyword_extraction, test_ranking_pipeline, test_local_pipeline):
+            try:
+                result = runner(corpus_dir)
+                results.append(result)
+                print(f"\n--- {result['module']} ---")
+                print(result)
+            except Exception as exc:
+                failure = {
+                    "module": runner.__name__,
+                    "status": "error",
+                    "error": str(exc),
+                }
+                results.append(failure)
+                print(f"\n[ERROR] {runner.__name__}: {exc}")
+    finally:
+        import shutil
+        shutil.rmtree(corpus_dir, ignore_errors=True)
 
     print("\n=== 性能测试结束 ===")
-    print("将上述 t_full_s / cpu_avg_pct / mem_peak_mb 填入 evaluation_objective 结果表。")
+    print("建议在论文中分别报告 keyword_extraction、ranking_pipeline、local_pipeline 三组结果。")
 
 
 if __name__ == "__main__":

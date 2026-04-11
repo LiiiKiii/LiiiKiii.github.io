@@ -25,15 +25,6 @@ except ImportError:
         """简单的标题清理函数"""
         return title
 
-# 导入AI摘要生成函数
-try:
-    from backend.core.ai_summarizer import generate_resource_summary as ai_generate_summary
-    HAS_AI_SUMMARIZER = True
-except ImportError:
-    HAS_AI_SUMMARIZER = False
-    print("Warning: AI summarizer not available, using fallback method")
-
-
 def read_txt_files(folder_path: str) -> List[str]:
     """
     读取文件夹中所有txt文件的内容
@@ -153,6 +144,33 @@ def is_relevant_resource(resource: Dict, user_docs: List[str]) -> bool:
     
     # 默认认为相关（放宽条件，确保有推荐结果）
     return True
+
+
+def compute_domain_bonus(resource: Dict) -> float:
+    """为明显更贴近AI学习场景的资源提供轻量级重排加分。"""
+    try:
+        from backend.core.resource_searcher import AI_RELEVANT_KEYWORDS as ai_keywords
+    except ImportError:
+        ai_keywords = [
+            'machine learning', 'deep learning', 'neural network', 'transformer',
+            'attention', 'computer vision', 'natural language processing', 'reinforcement learning',
+            'pytorch', 'tensorflow', 'github', 'arxiv', 'wikipedia'
+        ]
+
+    title = resource.get("title", "").lower()
+    description = resource.get("description", "").lower()
+    url = resource.get("url", "").lower()
+    source = resource.get("source", "").lower()
+    combined = f"{title} {description} {url} {source}"
+
+    bonus = 0.0
+    if any(keyword in combined for keyword in ai_keywords):
+        bonus += 0.05
+    if any(authority in url for authority in ["arxiv.org", "wikipedia.org", "scholar.google.com", "github.com"]):
+        bonus += 0.03
+    if any(keyword in title for keyword in ai_keywords):
+        bonus += 0.02
+    return bonus
 
 
 def generate_resource_summary_legacy(resource: Dict, resource_type: str) -> str:
@@ -422,26 +440,24 @@ def recommend_best_resources(
             avg_score = sum(score for _, score in similarity_results) / len(similarity_results)
             print(f"  [{resource_type}] 相似度范围: {min_score:.4f} - {max_score:.4f}, 平均: {avg_score:.4f}")
         
-        # 直接按相似度排序（从高到低），不设置阈值
-        sorted_results = sorted(similarity_results, key=lambda x: x[1], reverse=True)
-        print(f"  [{resource_type}] 按相似度排序完成，准备选择前 {top_k_per_type} 个")
+        # 在相似度基础上叠加轻量领域加分，优先保留更像“AI学习资源”的候选。
+        reranked_results = [
+            (res, score, score + compute_domain_bonus(res))
+            for res, score in similarity_results
+        ]
+        sorted_results = sorted(reranked_results, key=lambda x: x[2], reverse=True)
+        print(f"  [{resource_type}] 相似度+领域加分排序完成，准备选择前 {top_k_per_type} 个")
         
         # 直接取前top_k个，多选一些以防被relevance过滤
+        # 摘要生成不在这里做，避免在推荐阶段重复调用AI/摘要逻辑。
+        # 最终展示时再按需生成一次即可。
         top_resources = []
         relevance_filtered = 0
-        for res, score in sorted_results[:top_k_per_type * 2]:  # 多选一些候选
+        for res, score, final_score in sorted_results[:top_k_per_type * 2]:  # 多选一些候选
             # 额外检查：过滤掉明显不相关的资源
             if is_relevant_resource(res, user_docs):
                 res["similarity_score"] = float(score)
-                # 生成内容摘要（优先使用AI，否则使用fallback）
-                if HAS_AI_SUMMARIZER:
-                    try:
-                        res["summary"] = ai_generate_summary(res, resource_type)
-                    except Exception as e:
-                        print(f"AI摘要生成失败，使用fallback: {e}")
-                        res["summary"] = generate_resource_summary_legacy(res, resource_type)
-                else:
-                    res["summary"] = generate_resource_summary_legacy(res, resource_type)
+                res["ranking_score"] = float(final_score)
                 top_resources.append(res)
                 if len(top_resources) >= top_k_per_type:
                     break
