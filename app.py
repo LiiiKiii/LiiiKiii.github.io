@@ -51,6 +51,14 @@ app.config["MAX_CONTENT_LENGTH"] = cfg.MAX_UPLOAD_BYTES
 app.config["UPLOAD_FOLDER"] = UPLOAD_DIR
 
 
+def _env_flag(name, default=False):
+    """Parse boolean-like environment variables."""
+    value = os.getenv(name)
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "on"}
+
+
 # ==================== 路由 ====================
 
 @app.route("/")
@@ -81,6 +89,16 @@ def progress():
 def ai_enhance():
     """AI增强页面"""
     return render_template("ai-enhance.html")
+
+
+@app.route("/health")
+def health():
+    """容器/部署健康检查"""
+    return jsonify({
+        "status": "ok",
+        "service": "ai-pedia",
+        "timestamp": datetime.utcnow().isoformat() + "Z"
+    })
 
 
 @app.route("/contact", methods=["POST"])
@@ -558,4 +576,6 @@ if __name__ == "__main__":
     print("访问地址: http://localhost:5000")
     print("按 Ctrl+C 停止服务")
     print("=" * 50)
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    flask_env = os.getenv("FLASK_ENV", "").strip().lower()
+    debug_mode = _env_flag("FLASK_DEBUG", default=(flask_env == "development"))
+    app.run(host="0.0.0.0", port=5000, debug=debug_mode)
