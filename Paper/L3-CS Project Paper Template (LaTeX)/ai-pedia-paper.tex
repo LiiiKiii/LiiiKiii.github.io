@@ -946,7 +946,7 @@ The selected phrases from the AI-Pedia pipeline are more descriptive than the un
 
 Table~\ref{tab:pipeline_comparison} reports the aggregate resource-quality comparison across all three focused corpora. The raw search stage returns 542 resources across three modalities. Reducing this set to a balanced top-five-per-type recommendation list for each corpus yields an overall 91.70\% reduction in candidate volume, which is substantial from a user-experience perspective because it transforms a large and noisy set into three small, manageable reinforcement packages.
 
-\begin{table}[!t]
+\begin{table*}[!t]
 \renewcommand{\arraystretch}{1.2}
 \caption{Resource Quality Across Retrieval and Ranking Stages}
 \label{tab:pipeline_comparison}
@@ -961,10 +961,10 @@ AI relevance (\%) & 78.41 & 86.67 & 93.33\\
 Authority score (\%) & 35.98 & 40.00 & 66.67\\
 Valid URLs (\%) & 100.00 & 100.00 & 100.00\\
 Noise reduction (\%) & 0.00 & 91.70 & 91.70\\
-Cross-platform diversity & 3 & 3 & 3\\
+Platform diversity & 3 & 3 & 3\\
 \hline\hline
 \end{tabular}
-\end{table}
+\end{table*}
 
 Two observations are important here. First, even the raw search stage already has high AI relevance (78.41\%), which indicates that the system’s query construction and search-source design are directionally correct across all three focused learner scenarios. Second, the ranking stage improves both \emph{authority} and measured AI relevance in the final pooled top-$K$ set. Specifically, authority rises from 40.00\% in the unranked top-$K$ set to 66.67\% in the CBF-ranked set, while AI relevance increases from 86.67\% to 93.33\% and valid URLs remain at 100\%.
 
