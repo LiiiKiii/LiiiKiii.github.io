@@ -18,6 +18,14 @@ import time
 import random
 import unicodedata
 
+VERBOSE_LOGS = os.environ.get("AI_PEDIA_VERBOSE", "0").lower() in {"1", "true", "yes", "on"}
+
+
+def debug_print(*args, force: bool = False, **kwargs) -> None:
+    """默认静默，仅在显式开启 verbose 或关键错误时输出。"""
+    if force or VERBOSE_LOGS:
+        print(*args, **kwargs)
+
 # AI领域的核心关键词列表（用于相关性判断和内容过滤）
 AI_RELEVANT_KEYWORDS = [
     # 核心概念
@@ -204,7 +212,7 @@ def filter_english_content(resources: List[Dict], content_key: str = "content") 
             english_resources.append(res)
         else:
             # 记录过滤掉的非英文资源（用于调试）
-            print(f"  过滤非英文内容: {res.get('title', 'Unknown')[:50]}")
+            debug_print(f"  过滤非英文内容: {res.get('title', 'Unknown')[:50]}")
     
     return english_resources
 
@@ -230,7 +238,7 @@ def search_text_resources(keyword: str, max_results: int = 10) -> List[Dict]:
         wiki_result = fetch_wikipedia_article(keyword)
         if wiki_result:
             results.append(wiki_result)
-            print(f"  找到Wikipedia文章")
+            debug_print(f"  找到Wikipedia文章")
     except Exception as e:
         print(f"Wikipedia search error for {keyword}: {e}")
     
@@ -238,7 +246,7 @@ def search_text_resources(keyword: str, max_results: int = 10) -> List[Dict]:
     try:
         scholar_results = fetch_google_scholar_results(keyword, max_results=5)
         results.extend(scholar_results)
-        print(f"  Google Scholar找到 {len(scholar_results)} 个结果")
+        debug_print(f"  Google Scholar找到 {len(scholar_results)} 个结果")
     except Exception as e:
         print(f"Google Scholar search error for {keyword}: {e}")
     
@@ -246,7 +254,7 @@ def search_text_resources(keyword: str, max_results: int = 10) -> List[Dict]:
     try:
         arxiv_results = fetch_arxiv_results(keyword, max_results=3)
         results.extend(arxiv_results)
-        print(f"  arXiv找到 {len(arxiv_results)} 个结果")
+        debug_print(f"  arXiv找到 {len(arxiv_results)} 个结果")
     except Exception as e:
         print(f"arXiv search error for {keyword}: {e}")
     
@@ -275,7 +283,7 @@ def search_text_resources(keyword: str, max_results: int = 10) -> List[Dict]:
     # 过滤非英文内容
     english_results = filter_english_content(unique_results, content_key="content")
     if len(english_results) < max_results:
-        print(f"  英文内容过滤: {len(unique_results)} -> {len(english_results)} 个结果")
+        debug_print(f"  英文内容过滤: {len(unique_results)} -> {len(english_results)} 个结果")
     
     return english_results[:max_results]
 
@@ -341,7 +349,7 @@ def search_youtube_videos(keyword: str, max_results: int = 10) -> List[Dict]:
     # 过滤非英文内容（视频主要检查标题和描述）
     english_results = filter_english_content(results, content_key="description")
     if len(english_results) < len(results):
-        print(f"  英文内容过滤: {len(results)} -> {len(english_results)} 个结果")
+        debug_print(f"  英文内容过滤: {len(results)} -> {len(english_results)} 个结果")
     
     return english_results[:max_results]
 
@@ -357,7 +365,7 @@ def search_images(keyword: str, max_results: int = 10) -> List[Dict]:
     try:
         google_images = fetch_google_images(keyword, max_results=max_results // 3)
         results.extend(google_images)
-        print(f"  Google Images找到 {len(google_images)} 个结果")
+        debug_print(f"  Google Images找到 {len(google_images)} 个结果")
     except Exception as e:
         print(f"Google Images search error for {keyword}: {e}")
     
@@ -365,7 +373,7 @@ def search_images(keyword: str, max_results: int = 10) -> List[Dict]:
     try:
         bing_images = fetch_bing_images(keyword, max_results=max_results // 3)
         results.extend(bing_images)
-        print(f"  Bing Images找到 {len(bing_images)} 个结果")
+        debug_print(f"  Bing Images找到 {len(bing_images)} 个结果")
     except Exception as e:
         print(f"Bing Images search error for {keyword}: {e}")
     
@@ -373,7 +381,7 @@ def search_images(keyword: str, max_results: int = 10) -> List[Dict]:
     try:
         unsplash_images = fetch_unsplash_images(keyword, max_results=max_results // 4)
         results.extend(unsplash_images)
-        print(f"  Unsplash找到 {len(unsplash_images)} 个结果")
+        debug_print(f"  Unsplash找到 {len(unsplash_images)} 个结果")
     except Exception as e:
         print(f"Unsplash search error for {keyword}: {e}")
     
@@ -381,7 +389,7 @@ def search_images(keyword: str, max_results: int = 10) -> List[Dict]:
     try:
         pexels_images = fetch_pexels_images(keyword, max_results=max_results // 4)
         results.extend(pexels_images)
-        print(f"  Pexels找到 {len(pexels_images)} 个结果")
+        debug_print(f"  Pexels找到 {len(pexels_images)} 个结果")
     except Exception as e:
         print(f"Pexels search error for {keyword}: {e}")
     
@@ -390,7 +398,7 @@ def search_images(keyword: str, max_results: int = 10) -> List[Dict]:
         try:
             generic_images = fetch_generic_image_links(keyword, max_results=3)
             results.extend(generic_images)
-            print(f"  通用图片搜索找到 {len(generic_images)} 个结果")
+            debug_print(f"  通用图片搜索找到 {len(generic_images)} 个结果")
         except Exception as e:
             print(f"Generic image search error for {keyword}: {e}")
     
@@ -406,7 +414,7 @@ def search_images(keyword: str, max_results: int = 10) -> List[Dict]:
     # 过滤非英文内容（图片主要检查标题）
     english_results = filter_english_content(unique_results, content_key="title")
     if len(english_results) < len(unique_results):
-        print(f"  英文内容过滤: {len(unique_results)} -> {len(english_results)} 个结果")
+        debug_print(f"  英文内容过滤: {len(unique_results)} -> {len(english_results)} 个结果")
     
     return english_results[:max_results]
 
@@ -422,7 +430,7 @@ def search_code_resources(keyword: str, max_results: int = 10) -> List[Dict]:
     try:
         github_results = fetch_github_code(keyword, max_results=max_results)
         results.extend(github_results)
-        print(f"  GitHub找到 {len(github_results)} 个代码资源")
+        debug_print(f"  GitHub找到 {len(github_results)} 个代码资源")
     except Exception as e:
         print(f"GitHub search error for {keyword}: {e}")
     
@@ -438,7 +446,7 @@ def search_code_resources(keyword: str, max_results: int = 10) -> List[Dict]:
     # 过滤非英文内容（代码主要检查标题和描述）
     english_results = filter_english_content(unique_results, content_key="description")
     if len(english_results) < len(unique_results):
-        print(f"  英文内容过滤: {len(unique_results)} -> {len(english_results)} 个结果")
+        debug_print(f"  英文内容过滤: {len(unique_results)} -> {len(english_results)} 个结果")
     
     return english_results[:max_results]
 
@@ -1636,7 +1644,7 @@ def search_all_resources(keywords: List[str], max_per_type: int = 10, progress_c
     all_code = []
     
     for i, keyword in enumerate(keywords):
-        print(f"搜索关键词 {i+1}/{len(keywords)}: {keyword}")
+        debug_print(f"搜索关键词 {i+1}/{len(keywords)}: {keyword}")
         
         # 通知进度回调：开始搜索关键词
         if progress_callback:
@@ -1651,7 +1659,7 @@ def search_all_resources(keywords: List[str], max_per_type: int = 10, progress_c
         try:
             txt_results = search_text_resources(keyword, max_per_type * 2)
             all_txt.extend(txt_results)
-            print(f"  找到 {len(txt_results)} 个文本资源")
+            debug_print(f"  找到 {len(txt_results)} 个文本资源")
             
             # 通知进度回调：文本搜索完成
             if progress_callback:
@@ -1667,7 +1675,7 @@ def search_all_resources(keywords: List[str], max_per_type: int = 10, progress_c
         try:
             video_results = search_youtube_videos(keyword, max_per_type)
             all_video.extend(video_results)
-            print(f"  找到 {len(video_results)} 个视频资源")
+            debug_print(f"  找到 {len(video_results)} 个视频资源")
             
             # 通知进度回调：视频搜索完成
             if progress_callback:
@@ -1683,7 +1691,7 @@ def search_all_resources(keywords: List[str], max_per_type: int = 10, progress_c
         try:
             code_results = search_code_resources(keyword, max_per_type)
             all_code.extend(code_results)
-            print(f"  找到 {len(code_results)} 个代码资源")
+            debug_print(f"  找到 {len(code_results)} 个代码资源")
             
             # 通知进度回调：代码搜索完成
             if progress_callback:
@@ -1748,7 +1756,7 @@ def search_all_resources(keywords: List[str], max_per_type: int = 10, progress_c
     # 不去重时清理标题，标题清理应该在保存时进行
     # 这样推荐算法可以使用原始标题进行相似度计算
     
-    print(f"去重后: 文本 {len(all_txt)} -> {len(unique_txt)}, 视频 {len(all_video)} -> {len(unique_video)}, 代码 {len(all_code)} -> {len(unique_code)}")
+    debug_print(f"去重后: 文本 {len(all_txt)} -> {len(unique_txt)}, 视频 {len(all_video)} -> {len(unique_video)}, 代码 {len(all_code)} -> {len(unique_code)}")
     
     return {
         "txt": unique_txt,

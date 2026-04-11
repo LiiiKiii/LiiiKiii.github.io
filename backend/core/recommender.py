@@ -12,6 +12,14 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from typing import List, Dict, Tuple
 
+VERBOSE_LOGS = os.environ.get("AI_PEDIA_VERBOSE", "0").lower() in {"1", "true", "yes", "on"}
+
+
+def debug_print(*args, force: bool = False, **kwargs) -> None:
+    """默认静默，仅在显式开启 verbose 或关键错误时输出。"""
+    if force or VERBOSE_LOGS:
+        print(*args, **kwargs)
+
 # 导入清理函数
 try:
     from backend.core.resource_searcher import clean_extracted_content, clean_title
@@ -114,7 +122,7 @@ def is_relevant_resource(resource: Dict, user_docs: List[str]) -> bool:
             has_academic_keywords = any(keyword in combined_text for keyword in academic_keywords)
             if not has_academic_keywords:
                 # 包含不相关模式且没有学术关键词，判定为不相关
-                print(f"  过滤不相关资源: {resource.get('title', 'Unknown')[:50]} (包含不相关模式)")
+                debug_print(f"  过滤不相关资源: {resource.get('title', 'Unknown')[:50]} (包含不相关模式)")
                 return False
     
     # 检查URL中是否包含明显不相关的路径（如报告、政策等）
@@ -128,7 +136,7 @@ def is_relevant_resource(resource: Dict, user_docs: List[str]) -> bool:
             # 如果URL包含不相关模式，检查是否也包含学术关键词
             has_academic_keywords = any(keyword in combined_text for keyword in academic_keywords)
             if not has_academic_keywords:
-                print(f"  过滤不相关资源: {resource.get('title', 'Unknown')[:50]} (URL包含不相关路径)")
+                debug_print(f"  过滤不相关资源: {resource.get('title', 'Unknown')[:50]} (URL包含不相关路径)")
                 return False
     
     # 放宽条件：如果资源包含任何AI相关关键词，就认为相关
@@ -419,7 +427,7 @@ def recommend_best_resources(
     user_docs = read_txt_files(user_folder_path)
     
     if not user_docs:
-        print("Warning: No user documents found, returning all resources")
+        debug_print("Warning: No user documents found, returning all resources", force=True)
         return all_resources
     
     recommended = {}
@@ -432,13 +440,13 @@ def recommend_best_resources(
         
         # 计算相似度
         similarity_results = compute_similarity(user_docs, resources, resource_type)
-        print(f"  [{resource_type}] 计算了 {len(similarity_results)} 个资源的相似度")
+        debug_print(f"  [{resource_type}] 计算了 {len(similarity_results)} 个资源的相似度")
         
         if similarity_results:
             max_score = max(score for _, score in similarity_results)
             min_score = min(score for _, score in similarity_results)
             avg_score = sum(score for _, score in similarity_results) / len(similarity_results)
-            print(f"  [{resource_type}] 相似度范围: {min_score:.4f} - {max_score:.4f}, 平均: {avg_score:.4f}")
+            debug_print(f"  [{resource_type}] 相似度范围: {min_score:.4f} - {max_score:.4f}, 平均: {avg_score:.4f}")
         
         # 在相似度基础上叠加轻量领域加分，优先保留更像“AI学习资源”的候选。
         reranked_results = [
@@ -446,7 +454,7 @@ def recommend_best_resources(
             for res, score in similarity_results
         ]
         sorted_results = sorted(reranked_results, key=lambda x: x[2], reverse=True)
-        print(f"  [{resource_type}] 相似度+领域加分排序完成，准备选择前 {top_k_per_type} 个")
+        debug_print(f"  [{resource_type}] 相似度+领域加分排序完成，准备选择前 {top_k_per_type} 个")
         
         # 直接取前top_k个，多选一些以防被relevance过滤
         # 摘要生成不在这里做，避免在推荐阶段重复调用AI/摘要逻辑。
@@ -464,7 +472,7 @@ def recommend_best_resources(
             else:
                 relevance_filtered += 1
         
-        print(f"  [{resource_type}] 相关性过滤掉: {relevance_filtered} 个, 最终推荐: {len(top_resources)} 个")
+        debug_print(f"  [{resource_type}] 相关性过滤掉: {relevance_filtered} 个, 最终推荐: {len(top_resources)} 个")
         
         recommended[resource_type] = top_resources
     
