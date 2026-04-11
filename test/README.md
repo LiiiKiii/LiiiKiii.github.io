@@ -10,8 +10,7 @@ This directory contains the **current reproducible evaluation and performance sc
 - `performance/`  
   Lightweight local performance benchmarks for the deterministic stages of the pipeline.
 
-- `evaluation_objective/` and `evaluation_subjective/`  
-  Earlier planning notes for broader study design. These are **not** the main scripts used to generate the dissertation's current quantitative results.
+No legacy evaluation-planning folders are kept here anymore. The goal is for `test/` to reflect the **current runnable evaluation setup**, not older abandoned designs.
 
 ## Important path clarification
 

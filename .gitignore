@@ -13,6 +13,11 @@ __pycache__/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+%OUTDIR%/
+
+# Backup/editor leftovers
+*.bak
+*.backup
 
 # Evaluation/debug leftovers
 *.tmp

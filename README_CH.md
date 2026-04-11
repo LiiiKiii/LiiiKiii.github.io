@@ -50,14 +50,19 @@ Project/
 ├── data/                       # 数据目录（运行时自动创建子目录）
 │   ├── uploads/                # 用户上传的文件
 │   ├── results/                # 搜索结果
-│   └── outputs/                # 最终输出
+│   ├── outputs/                # 最终输出
+│   ├── test_corpus/            # 旧版单语料测试输入
+│   └── test_corpora/           # 当前多语料评估输入（3 组 focused corpora）
 │
 ├── test/                       # 测试与评估
 │   ├── README.md               # 测试总览与说明
-│   ├── performance/            # 性能测试脚本
-│   │   └── run_performance_tests.py
-│   ├── evaluation_subjective/  # 主观评价（问卷、打分模板）
-│   └── evaluation_objective/   # 客观指标（性能 + 质量指标及表格）
+│   ├── evaluation_pipeline/    # 当前可复现评估脚本与结果
+│   │   ├── evaluator.py
+│   │   ├── metrics.py
+│   │   ├── config.py
+│   │   └── results/
+│   └── performance/            # 本地确定性性能测试
+│       └── run_performance_tests.py
 │
 └── docs/                       # 详细文档
     ├── STRUCTURE.md            # 代码结构说明
@@ -75,7 +80,6 @@ Project/
 4. **多源搜索**：
    - 文本资源：Wikipedia、Google Scholar、arXiv、学术网站等
    - 视频资源：YouTube（英文内容优先）
-   - 图片资源：Google Images、Bing Images、Unsplash、Pexels等（图片搜索功能已移除）
    - 代码资源：GitHub、Google Colab、Kaggle、Stack Overflow、Papers with Code等
 5. **AI关键词过滤**：使用AI领域关键词列表（70+个AI/ML核心术语）过滤不相关内容
 6. **CBF推荐系统**：基于内容相似度筛选最相关的AI资源（设置相似度阈值≥0.05）
@@ -166,7 +170,6 @@ chmod +x start.sh
 处理完成后，点击"下载推荐结果"按钮，系统会下载一个zip文件，包含：
 - `txt/` - 推荐的文本资源（已过滤联系方式、部门信息等无关内容）
 - `video/` - 推荐的视频链接
-- `image/` - 推荐的图片链接
 - `code/` - 推荐的代码资源（GitHub、Colab、Kaggle等）
 
 ## 技术说明
@@ -185,7 +188,7 @@ chmod +x start.sh
 
 ### AI摘要生成
 
-- **优先使用OpenAI API**：如果配置了API Key，使用GPT-3.5-turbo生成智能摘要
+- **优先使用OpenAI API**：如果配置了API Key，使用配置的 OpenAI 聊天模型生成智能摘要
 - **智能Fallback**：如果没有API Key或API调用失败，使用基于规则的智能摘要生成
 - **摘要特点**：
   - 不重复标题，提供实质性内容概述

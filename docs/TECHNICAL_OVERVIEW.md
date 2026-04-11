@@ -206,7 +206,7 @@
   - 模块：`backend/core/ai_summarizer.py`
   - 主函数：`generate_resource_summary`、`generate_summary_with_openai`、`generate_summary_with_fallback`、`extract_abstract_from_content`。
   - 模式：
-    1. 优先调用 OpenAI Chat Completions（GPT-3.5-turbo）生成面向用户的简介。
+    1. 优先调用配置的 OpenAI Chat Completions 模型生成面向用户的简介。
     2. 若无 API Key 或调用失败，使用规则型 fallback：\n
        - 抽取 Abstract 字段（针对 arXiv/Scholar）。\n
        - 从正文中选取 2–3 句「较完整的引导句」。\n

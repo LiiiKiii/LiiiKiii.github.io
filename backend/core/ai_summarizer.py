@@ -24,6 +24,9 @@ except ImportError:
     HAS_REQUESTS = False
 
 
+OPENAI_SUMMARY_MODEL = os.environ.get("OPENAI_SUMMARY_MODEL", "gpt-4o-mini")
+
+
 def get_openai_api_key(api_key_from_request: Optional[str] = None) -> Optional[str]:
     """
     获取OpenAI API Key
@@ -135,7 +138,7 @@ def generate_summary_with_openai(content: str, resource_type: str, title: str = 
             from openai import OpenAI
             client = OpenAI(api_key=api_key)
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model=OPENAI_SUMMARY_MODEL,
                 messages=[
                     {"role": "system", "content": "你是一个专业的学术资源推荐助手。请生成简洁的简介，包含三个方面：1)这是关于什么的，2)有什么亮点，3)你能学到什么。要求简洁明了，不要冗长，不要使用'与您的学习资料相关'等模糊表述。"},
                     {"role": "user", "content": prompt}
@@ -149,7 +152,7 @@ def generate_summary_with_openai(content: str, resource_type: str, title: str = 
             # 回退到旧版本API
             openai.api_key = api_key
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model=OPENAI_SUMMARY_MODEL,
                 messages=[
                     {"role": "system", "content": "你是一个专业的学术资源推荐助手。请生成简洁的简介，包含三个方面：1)这是关于什么的，2)有什么亮点，3)你能学到什么。要求简洁明了，不要冗长，不要使用'与您的学习资料相关'等模糊表述。"},
                     {"role": "user", "content": prompt}

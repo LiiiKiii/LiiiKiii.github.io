@@ -1,41 +1,48 @@
-## 性能测试（performance）
+# AI-Pedia 性能测试（performance）
 
-本目录为 **客观评价** 中的「与 NotebookLM 对比」提供 **本系统** 的性能与资源占用数据，用于填写 `evaluation_objective` 中的结果表（响应时间、CPU/内存等）。
+本目录包含 **当前项目实际使用的本地性能基准脚本**，用于衡量 AI-Pedia 中确定性本地阶段的运行开销。
 
-### 定位
+它不是旧版“外部系统对比”草案，而是为当前论文中的性能部分直接提供可复现输出。
 
-- **本脚本只测本系统**：NotebookLM 的延迟与耗能需在浏览器/官方环境中另行测量并填入客观评价表格。
-- **产出指标**（与 `evaluation_objective/README.md` 对齐）：
-  - **T_full**：单次请求从发起到完整响应结束的耗时（秒）。
-  - **T_first_token**（若支持流式）：从发起到首个 token 出现的时间（秒）。
-  - **CPU_avg / CPU_peak**：运行期间 CPU 利用率（%）。
-  - **Mem_peak**：进程内存占用峰值（MB）。
+## 主要用途
 
-### 目录内容
+`run_performance_tests.py` 主要评估以下本地阶段：
 
-- `run_performance_tests.py`：统一入口。内含通用计时与资源统计工具，以及可配置的「系统级」性能测试（可替换为你的真实 pipeline 或 LLM 调用）。
+- 文档读取
+- 关键词提取
+- 资源排序 / 推荐
+- 本地组合 pipeline 的总体耗时
 
-### 使用方式
+## 运行方式
 
 在项目根目录执行：
 
 ```bash
-python -m test.performance.run_performance_tests
+python test/performance/run_performance_tests.py
 ```
 
-输出示例（可抄入客观评价表格）：
+## 生成结果
 
-- `t_full_s`：完整响应耗时
-- `t_first_token_s`：首 token 耗时（若为流式）
-- `cpu_avg_pct` / `cpu_peak_pct`
-- `mem_peak_mb`
+脚本会在 `test/performance/results/` 下生成：
 
-### 可选依赖
+- `performance_results.json`
+- `performance_summary.csv`
+- `performance_table.tex`
 
-- **psutil**：用于统计 CPU、内存。未安装时脚本仍可运行，但资源相关字段为 `null`。安装：`pip install psutil`。
+并为论文图表导出对应结果。
 
-### 与客观评价的衔接
+## 当前定位
 
-1. 用本脚本对本系统做多轮测试，记录平均/中位数填入「本系统」行。
-2. NotebookLM 在相同或相近任务下人工测一次（或多次取平均），填入「NotebookLM」行。
-3. 对比两者在 T_full、资源占用上的差异，写入 `evaluation_objective` 的结论与图表。
+这部分性能测试的目标是回答：
+
+- 本地确定性阶段是否足够轻量
+- 哪些步骤最耗时
+- 当前实现是否适合作为可运行、可部署的课程项目原型
+
+它只依赖当前仓库中的性能脚本与结果目录，不依赖任何已经移除的历史评估草案。
+
+## 使用建议
+
+如果你要在论文或答辩中解释这一部分，最准确的说法是：
+
+> `test/performance/` contains reproducible local benchmarks for the deterministic stages of the AI-Pedia pipeline, and its outputs are exported directly into paper-ready tables and figures.

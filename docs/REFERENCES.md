@@ -251,7 +251,7 @@
 **技术**：融合OpenAI GPT模型与规则型文本提取
 
 **工作流程**：
-1. **优先路径**：调用OpenAI Chat Completions API（GPT-3.5-turbo），生成面向用户的简洁摘要
+1. **优先路径**：调用 OpenAI Chat Completions API（使用可配置的聊天模型）生成面向用户的简洁摘要
 2. **Fallback路径**（当API不可用或失败时）：
    - 对于arXiv/Scholar资源：提取Abstract字段
    - 对于网页资源：从正文中选取2-3句完整的引导句
@@ -275,8 +275,8 @@
 
 ### 7.4 参考文献
 
-1. OpenAI. (2023). GPT-3.5 Turbo. *OpenAI API Documentation*. https://platform.openai.com/docs/models/gpt-3-5  
-   **概要**：说明 GPT-3.5 Turbo 的接口与用法，为调用 Chat Completions API 生成摘要提供官方依据。读后在本系统中：在 ai_summarizer.py 中调用 OpenAI Chat Completions（GPT-3.5-turbo），传入资源标题与内容/描述，生成面向用户的简短摘要；无 API Key 或调用失败时走规则 fallback。
+1. OpenAI. (2024). OpenAI Chat Models. *OpenAI API Documentation*. https://platform.openai.com/docs/models  
+   **概要**：说明 OpenAI 聊天模型的接口与用法，为调用 Chat Completions API 生成摘要提供官方依据。读后在本系统中：在 `ai_summarizer.py` 中调用可配置的 OpenAI Chat Completions 模型，传入资源标题与内容/描述，生成面向用户的简短摘要；无 API Key 或调用失败时走规则 fallback。
 
 2. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., & Sutskever, I. (2019). Language models are unsupervised multitask learners. *OpenAI blog*, 1(8), 9.  
    **概要**：介绍 GPT-2 的预训练与多任务能力，有助于理解大语言模型为何能用于生成连贯摘要。读后在本系统中：据此采用“先 AI 生成、失败再规则抽取”的策略，在 generate_resource_summary() 中优先用 GPT 生成自然句摘要，fallback 时从正文/摘要中取前 2–3 句或基于标题与来源生成简短说明。

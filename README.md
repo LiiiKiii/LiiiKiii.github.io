@@ -307,10 +307,13 @@ AI-Pedia/Project/
 │
 ├── test/                       # Testing & evaluation
 │   ├── README.md               # Test overview
-│   ├── performance/            # Performance tests
-│   │   └── run_performance_tests.py
-│   ├── evaluation_subjective/  # Subjective evaluation (questionnaires, score templates)
-│   └── evaluation_objective/   # Objective metrics (performance + quality metrics & tables)
+│   ├── evaluation_pipeline/    # Reproducible evaluation scripts and outputs
+│   │   ├── evaluator.py
+│   │   ├── metrics.py
+│   │   ├── config.py
+│   │   └── results/
+│   └── performance/            # Local deterministic performance tests
+│       └── run_performance_tests.py
 │
 └── docs/                       # Documentation directory
     ├── STRUCTURE.md            # Project structure documentation
@@ -324,18 +327,16 @@ AI-Pedia/Project/
 
 ## Testing & Evaluation
 
-The project includes a dedicated `test/` directory to support both **qualitative** and **quantitative** evaluation:
+The project includes a dedicated `test/` directory for the **current reproducible evaluation workflow**:
 
-- **`test/README.md`**: High‑level overview of the testing framework and directory layout  
+- **`test/README.md`**: high-level overview of where evaluation code, corpora, and outputs live  
+- **`test/evaluation_pipeline/`**:
+  - quantitative evaluation of keyword extraction, retrieval quality, and ranking quality
+  - supports both legacy single-corpus runs and the current focused multi-corpus setup
+  - exports JSON, CSV, LaTeX tables, and paper-ready figures
 - **`test/performance/run_performance_tests.py`**:
-  - Unified entry for basic performance testing of core modules such as `keyword_extractor` and `recommender`
-  - Designed to be extended with additional tests for `resource_searcher` and `ai_summarizer`
-- **`test/evaluation_subjective/`**:
-  - Templates and guidance for subjective evaluation (usability, satisfaction, trust, etc.)
-  - Suitable for Likert‑scale questionnaires filled by users/experts
-- **`test/evaluation_objective/`**:
-  - Definitions and formulas for objective metrics (coverage, redundancy, noise rate, HitRate@K, etc.)
-  - Ready‑to‑use table templates for recording experiment results and plotting figures
+  - local deterministic performance benchmarking for the main pipeline stages
+  - exports reusable summary files for direct inclusion in the dissertation
 
 ## Core Algorithms
 
@@ -356,7 +357,7 @@ The project includes a dedicated `test/` directory to support both **qualitative
 
 ### AI Summary Generation
 
-1. **Prioritize OpenAI API**: If API Key is configured, use GPT-3.5-turbo to generate intelligent summaries
+1. **Prioritize OpenAI API**: If an API key is configured, use the configured OpenAI chat model to generate intelligent summaries
 2. **Smart Fallback**:
    - Extract Abstract/summary fields
    - Extract first 2-3 meaningful sentences
