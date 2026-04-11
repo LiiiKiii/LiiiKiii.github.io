@@ -1,4 +1,4 @@
-# Reinforcement Ebook System
+# AI-Pedia
 
 <div align="center">
 
@@ -33,7 +33,7 @@ An intelligent resource recommendation system focused on AI/Machine Learning dom
 
 ## Project Overview
 
-**Reinforcement Ebook System** is an intelligent AI/Machine Learning resource recommendation system. The system can:
+**AI-Pedia** is an intelligent AI/Machine Learning resource recommendation system. The system can:
 
 - **Document Analysis**: Extract key themes and keywords from user-uploaded AI/ML related documents
 - **Multi-Source Search**: Automatically search resources from multiple platforms including Wikipedia, Google Scholar, arXiv, YouTube, GitHub, etc.
@@ -220,7 +220,7 @@ After processing is complete, click the "Download Recommendation Results" button
 ## Project Structure
 
 ```
-Reinforcement-Ebook-System/
+AI-Pedia/Project/
 ├── app.py                      # Flask main application entry
 ├── requirements.txt            # Python dependencies list
 ├── README.md / README_CH.md    # Project documentation (EN / CN)
