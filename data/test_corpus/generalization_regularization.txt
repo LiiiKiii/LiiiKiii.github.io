@@ -1,0 +1,32 @@
+Generalization and Regularization in Deep Learning
+
+Why Generalization Matters
+A machine learning model should not only fit the training data, but also perform well on unseen examples. Generalization is the ability to transfer what was learned from the training set to new inputs.
+
+Common Generalization Problems:
+- Overfitting: The model memorizes noise and training details
+- Underfitting: The model is too simple to capture useful patterns
+- Data leakage: Information from validation or test data enters training
+
+Regularization Techniques:
+1. L1 Regularization: Encourages sparse weights
+2. L2 Regularization: Penalizes large parameters
+3. Dropout: Randomly disables neurons during training
+4. Early Stopping: Stops training before validation performance degrades
+5. Data Augmentation: Creates additional training examples
+6. Batch Normalization: Stabilizes activations and can improve robustness
+
+Model Selection Practices:
+- Train / validation / test split
+- Cross-validation for smaller datasets
+- Hyperparameter tuning with a held-out validation set
+- Monitoring validation loss instead of training loss alone
+
+Related Concepts:
+- Bias-variance trade-off
+- Model capacity
+- Sample complexity
+- Robustness to distribution shift
+
+Applications:
+Generalization is critical in computer vision, natural language processing, reinforcement learning, and medical AI, where poor transfer to new data can make a system unreliable.

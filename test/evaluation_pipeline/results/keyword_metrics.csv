@@ -1,3 +1,3 @@
 method,keyword_count,coverage_pct,ai_relevance_pct,diversity
-Simple frequency baseline,10,100.0,30.0,0.9923
-TF-IDF + MMR,5,100.0,40.0,0.9295
+Simple frequency baseline,10,100.0,30.0,0.9905
+TF-IDF + MMR,10,100.0,50.0,0.9613

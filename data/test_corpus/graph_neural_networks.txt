@@ -1,0 +1,31 @@
+Graph Neural Networks
+
+Introduction
+Graph Neural Networks (GNNs) are deep learning models designed for data represented as graphs. A graph contains nodes, edges, and sometimes additional attributes describing relationships between entities.
+
+Why Graphs Matter:
+- Social networks connect users through friendships
+- Citation networks connect papers through references
+- Molecules connect atoms through chemical bonds
+- Knowledge graphs connect entities and facts
+
+Core Ideas:
+1. Message Passing: Nodes aggregate information from neighbors
+2. Node Embeddings: Each node learns a vector representation
+3. Graph Convolution: Generalizes convolution to irregular graph structure
+4. Pooling: Summarizes node information into a graph-level feature
+
+Representative Models:
+- GCN: Graph Convolutional Network
+- GraphSAGE: Neighbor sampling for scalable training
+- GAT: Graph Attention Network using attention weights
+- GIN: Graph Isomorphism Network for expressive structure learning
+
+Tasks:
+- Node classification
+- Link prediction
+- Graph classification
+- Recommender systems on user-item graphs
+
+Applications:
+GNNs are used in recommendation systems, drug discovery, fraud detection, traffic forecasting, and knowledge graph completion. They are especially useful when relational structure contains information that cannot be captured well by independent feature vectors alone.

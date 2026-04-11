@@ -9,9 +9,9 @@
     },
     {
       "title": "Neural networks",
-      "content": "论文标题: Neural networks\n\n作者/来源: H Abdi, D Valentin, B Edelman - 1999 - books.google.com\n\n摘要: … Because neural network models have strong relationships with statistical models, we \nalso discuss the interpretation of neural networks as statistical models in each chapter. The …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=ZEID3w9STOUC&amp;oi=fnd&amp;pg=PA1&amp;dq=neural+networks&amp;ots=sAOzvXPG1L&amp;sig=x22cOP63lLkUwhoOdQuf0jSMJTs\n\n请访问链接查看完整论文。",
+      "content": "论文标题: Neural networks\n\n作者/来源: H Abdi, D Valentin, B Edelman - 1999 - books.google.com\n\n摘要: … Because neural network models have strong relationships with statistical models, we \nalso discuss the interpretation of neural networks as statistical models in each chapter. The …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=ZEID3w9STOUC&amp;oi=fnd&amp;pg=PA1&amp;dq=neural+networks&amp;ots=sAOzvXSEVJ&amp;sig=ST0q6EbJUp0chibCSX72PQ46j9Y\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=ZEID3w9STOUC&amp;oi=fnd&amp;pg=PA1&amp;dq=neural+networks&amp;ots=sAOzvXPG1L&amp;sig=x22cOP63lLkUwhoOdQuf0jSMJTs",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=ZEID3w9STOUC&amp;oi=fnd&amp;pg=PA1&amp;dq=neural+networks&amp;ots=sAOzvXSEVJ&amp;sig=ST0q6EbJUp0chibCSX72PQ46j9Y",
       "type": "txt"
     },
     {
@@ -30,9 +30,9 @@
     },
     {
       "title": "An introduction to neural networks",
-      "content": "论文标题: An introduction to neural networks\n\n作者/来源: JA Anderson - 1995 - books.google.com\n\n摘要: … This book introduces some important neural network algorithms and has been used as a \ntextbook for a college-level neural network course. The main emphasis is on the biology and …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=_ib4vPdB76gC&amp;oi=fnd&amp;pg=PP11&amp;dq=neural+networks&amp;ots=WdfxK8uPZe&amp;sig=LIvKz6FxUhCq5V9CUNKaH4MXqwg\n\n请访问链接查看完整论文。",
+      "content": "论文标题: An introduction to neural networks\n\n作者/来源: JA Anderson - 1995 - books.google.com\n\n摘要: … This book introduces some important neural network algorithms and has been used as a \ntextbook for a college-level neural network course. The main emphasis is on the biology and …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=_ib4vPdB76gC&amp;oi=fnd&amp;pg=PP11&amp;dq=neural+networks&amp;ots=WdfxK8xNRc&amp;sig=aB0TTClRGrvOSwsmrwrtd1RJjV4\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=_ib4vPdB76gC&amp;oi=fnd&amp;pg=PP11&amp;dq=neural+networks&amp;ots=WdfxK8uPZe&amp;sig=LIvKz6FxUhCq5V9CUNKaH4MXqwg",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=_ib4vPdB76gC&amp;oi=fnd&amp;pg=PP11&amp;dq=neural+networks&amp;ots=WdfxK8xNRc&amp;sig=aB0TTClRGrvOSwsmrwrtd1RJjV4",
       "type": "txt"
     },
     {
@@ -61,69 +61,6 @@
       "content": "论文标题: Hierarchical Attentional Hybrid Neural Networks for Document Classification\n\n作者: Jader Abreu, Luis Fred, David Macêdo, Cleber Zanchettin\n\n摘要: Document classification is a challenging task with important applications. The deep learning approaches to the problem have gained much attention recently. Despite the progress, the proposed models do not incorporate the knowledge of the document structure in the architecture efficiently and not take into account the contexting importance of words and sentences. In this paper, we propose a new approach based on a combination of convolutional neural networks, gated recurrent units, and attention mechanisms for document classification tasks. The main contribution of this work is the use of convolution layers to extract more meaningful, generalizable and abstract features by the hierarchical representation. The proposed method in this paper improves the results of the current attention-based approaches for document classification.\n\narXiv链接: http://arxiv.org/abs/1901.06610v2\n\n请访问链接查看完整论文。",
       "source": "arXiv",
       "url": "http://arxiv.org/abs/1901.06610v2",
-      "type": "txt"
-    },
-    {
-      "title": "Machine learning - Wikipedia",
-      "content": "From Wikipedia, the free encyclopedia Study of algorithms that improve automatically through experience Part of a series on Machine learning and data mining Part of a series on Artificial intelligence (AI) Machine learning ( ML ) is a field of study in artificial intelligence concerned with the development and study of statistical algorithms that can learn from data and generalize to unseen data, and thus perform tasks without explicit programming language instructions. 1 Within a subdiscipline of machine learning, advances in the field of deep learning have allowed neural networks , a class of statistical algorithms, to surpass many previous machine learning approaches in performance. Statistics and mathematical optimisation (mathematical programming) methods compose the foundations of machine learning. Data mining is a related field of study, focusing on exploratory data analysis (EDA) through unsupervised learning. 3 4 From a theoretical viewpoint, probably approximately correct learning provides a mathematical and statistical framework for describing machine learning. Most traditional machine learning and deep learning algorithms can be described as empirical risk minimisation under this framework. The term machine learning was coined in 1959 by Arthur Samuel , an IBM employee and pioneer in the field of computer gaming and artificial intelligence. 5 6 The synonym self-teaching computers was also used during this time period. 7 8 The earliest machine learning program was introduced in the 1950s when Arthur Samuel invented a computer program that calculated the winning chance in checkers for each side, but the history of machine learning roots back to decades of human desire and effort to study human cognitive processes. 9 In 1949, Canadian psychologist Donald Hebb published the book The Organization of Behavior , in which he introduced a theoretical neural structure formed by certain interactions among nerve cells. 10 Hebb's model of neurons interacting with one another set a groundwork for how AIs and machine learning algorithms work under nodes, or artificial neurons used by computers to communicate data. 9 By the early 1960s, an experimental \"learning machine\" with punched tape memory, called Cybertron, had been developed by Raytheon Company to analyse sonar signals, electrocardiograms , and speech patterns using rudimentary reinforcement learning. It was repetitively \"trained\" by a human operator/teacher to recognise patterns and equipped with a \" goof \" button to cause it to reevaluate incorrect decisions. 12 Interest related to pattern recognition continued into the 1970s, as described by Duda and Hart in 1973. 13 In 1981, a report was given on using teaching strategies so that an artificial neural network learns to recognise 40 characters (26 letters, 10 digits, and 4 special symbols) from a computer terminal. Mitchell provided a widely quoted, more formal definition of the algorithms studied in the machine learning field: \"A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T , as measured by P , improves with experience E .\" 15 This definition of the tasks in which machine learning is concerned offers a fundamentally operational definition rather than defining the field in cognitive terms. This follows Alan Turing 's proposal in his paper \" Computing Machinery and Intelligence \", in which the question, \"Can machines think?\", is replaced by asking whether machines can convincingly imitate a human in its responses to human-posed questions. 16 17 Modern-day Machine Learning algorithms are broken into 3 algorithm types: Supervised Learning Algorithms, Unsupervised Learning Algorithms, and Reinforcement Learning Algorithms. 18 Current Supervised Learning Algorithms have objectives of classification and regression. Current Unsupervised Learning Algorithms have objectives of clustering, dimensionality reduction, and association rule. Current Reinforcement Learning Algorithms focus on decisions that must be made with respect to some previous, unknown time and are broken down to either be studies of model-based methods or model-free methods. In 2014 Ian Goodfellow and others introduced generative adversarial networks (GANs) with realistic data synthesis. 19 By 2016 AlphaGo obtained victory against top human players using reinforcement learning techniques. 20 Deep learning is a subset of machine learning, which is itself a subset of artificial intelligence. 21 As a scientific endeavour, machine learning grew out of the quest for artificial intelligence (AI). They attempted to approach the problem with various symbolic methods, as well as what were then termed \" neural networks \"; these were mostly perceptrons and other models that were later found to be reinventions of the generalised linear models of statistics. 22 Probabilistic reasoning was also employed, especially in automated medical diagnosis.",
-      "source": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/machine_learning",
-      "type": "txt"
-    },
-    {
-      "title": "Machine learning",
-      "content": "论文标题: Machine learning\n\n作者/来源: ZH Zhou - 2021 - books.google.com\n\n摘要: … from data is called learning or training. The … machine learning is to find or approximate \nground-truth. In this book, models are sometimes called learners, which are machine learning …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=ctM-EAAAQBAJ&amp;oi=fnd&amp;pg=PR6&amp;dq=machine+learning&amp;ots=o_PnS2Qy5n&amp;sig=SXWIefcGBpkgT7r-kTqyOU89oWw\n\n请访问链接查看完整论文。",
-      "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=ctM-EAAAQBAJ&amp;oi=fnd&amp;pg=PR6&amp;dq=machine+learning&amp;ots=o_PnS2Qy5n&amp;sig=SXWIefcGBpkgT7r-kTqyOU89oWw",
-      "type": "txt"
-    },
-    {
-      "title": "Machine learning",
-      "content": "论文标题: Machine learning\n\n作者/来源: E Alpaydin - 2021 - books.google.com\n\n摘要: MIT presents a concise primer on machine learning—computer programs that learn from \ndata and the basis of applications like voice recognition and driverless cars. No in-depth …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=Eyk5EAAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=machine+learning&amp;ots=WRzPabVnxK&amp;sig=Geaisff8m2RdeoaRABNEc6Bnpts\n\n请访问链接查看完整论文。",
-      "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=Eyk5EAAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=machine+learning&amp;ots=WRzPabVnxK&amp;sig=Geaisff8m2RdeoaRABNEc6Bnpts",
-      "type": "txt"
-    },
-    {
-      "title": "Machine learning: Trends, perspectives, and prospects",
-      "content": "论文标题: Machine learning: Trends, perspectives, and prospects\n\n作者/来源: MI Jordan, TM Mitchell - Science, 2015 - science.org\n\n摘要: … Machine learning addresses the question of how to build computers that improve … Recent \nprogress in machine learning has been driven both by the development of new learning …\n\n论文链接: https://www.science.org/doi/abs/10.1126/science.aaa8415\n\n请访问链接查看完整论文。",
-      "source": "Google Scholar",
-      "url": "https://www.science.org/doi/abs/10.1126/science.aaa8415",
-      "type": "txt"
-    },
-    {
-      "title": "What is machine learning?",
-      "content": "论文标题: What is machine learning?\n\n作者/来源: I El Naqa, MJ Murphy - Machine learning in radiation oncology: theory and …, 2015 - Springer\n\n摘要: … A machine learning algorithm is a computational process that … This training is the “learning” \npart of machine learning. The … can practice “lifelong” learning as it processes new data and …\n\n论文链接: https://link.springer.com/chapter/10.1007/978-3-319-18305-3_1\n\n请访问链接查看完整论文。",
-      "source": "Google Scholar",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-319-18305-3_1",
-      "type": "txt"
-    },
-    {
-      "title": "Machine learning for microbiologists",
-      "content": "论文标题: Machine learning for microbiologists\n\n作者/来源: F Asnicar, AM Thomas, A Passerini… - Nature Reviews …, 2024 - nature.com\n\n摘要: … how to evaluate a machine learning model and how … machine learning-based work. The \ntopics presented in this work will allow microbiologists to grasp the potential of machine learning …\n\n论文链接: https://www.nature.com/articles/s41579-023-00984-1\n\n请访问链接查看完整论文。",
-      "source": "Google Scholar",
-      "url": "https://www.nature.com/articles/s41579-023-00984-1",
-      "type": "txt"
-    },
-    {
-      "title": "Changing Data Sources in the Age of Machine Learning for Official Statistics",
-      "content": "论文标题: Changing Data Sources in the Age of Machine Learning for Official Statistics\n\n作者: Cedric De Boom, Michael Reusens\n\n摘要: Data science has become increasingly essential for the production of official statistics, as it enables the automated collection, processing, and analysis of large amounts of data. With such data science practices in place, it enables more timely, more insightful and more flexible reporting. However, the quality and integrity of data-science-driven statistics rely on the accuracy and reliability of the data sources and the machine learning techniques that support them. In particular, changes in data sources are inevitable to occur and pose significant risks that are crucial to address in the context of machine learning for official statistics.   This paper gives an overview of the main risks, liabilities, and uncertainties associated with changing data sources in the context of machine learning for official statistics. We provide a checklist of the most prevalent origins and causes of changing data sources; not only on a technical level but also regarding ownership, ethics, regulation,...\n\narXiv链接: http://arxiv.org/abs/2306.04338v1\n\n请访问链接查看完整论文。",
-      "source": "arXiv",
-      "url": "http://arxiv.org/abs/2306.04338v1",
-      "type": "txt"
-    },
-    {
-      "title": "DOME: Recommendations for supervised machine learning validation in biology",
-      "content": "论文标题: DOME: Recommendations for supervised machine learning validation in biology\n\n作者: Ian Walsh, Dmytro Fishman, Dario Garcia-Gasulla, Tiina Titma, Gianluca Pollastri\n\n摘要: Modern biology frequently relies on machine learning to provide predictions and improve decision processes. There have been recent calls for more scrutiny on machine learning performance and possible limitations. Here we present a set of community-wide recommendations aiming to help establish standards of supervised machine learning validation in biology. Adopting a structured methods description for machine learning based on data, optimization, model, evaluation (DOME) will aim to help both reviewers and readers to better understand and assess the performance and limitations of a method or outcome. The recommendations are formulated as questions to anyone wishing to pursue implementation of a machine learning algorithm. Answers to these questions can be easily included in the supplementary material of published papers.\n\narXiv链接: http://arxiv.org/abs/2006.16189v4\n\n请访问链接查看完整论文。",
-      "source": "arXiv",
-      "url": "http://arxiv.org/abs/2006.16189v4",
-      "type": "txt"
-    },
-    {
-      "title": "Learning Curves for Decision Making in Supervised Machine Learning: A Survey",
-      "content": "论文标题: Learning Curves for Decision Making in Supervised Machine Learning: A Survey\n\n作者: Felix Mohr, Jan N. van Rijn\n\n摘要: Learning curves are a concept from social sciences that has been adopted in the context of machine learning to assess the performance of a learning algorithm with respect to a certain resource, e.g., the number of training examples or the number of training iterations. Learning curves have important applications in several machine learning contexts, most notably in data acquisition, early stopping of model training, and model selection. For instance, learning curves can be used to model the performance of the combination of an algorithm and its hyperparameter configuration, providing insights into their potential suitability at an early stage and often expediting the algorithm selection process. Various learning curve models have been proposed to use learning curves for decision making. Some of these models answer the binary decision question of whether a given algorithm at a certain budget will outperform a certain reference performance, whereas more complex models predict the entire ...\n\narXiv链接: http://arxiv.org/abs/2201.12150v2\n\n请访问链接查看完整论文。",
-      "source": "arXiv",
-      "url": "http://arxiv.org/abs/2201.12150v2",
       "type": "txt"
     },
     {
@@ -190,6 +127,195 @@
       "type": "txt"
     },
     {
+      "title": "Machine learning - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Study of algorithms that improve automatically through experience Part of a series on Machine learning and data mining Part of a series on Artificial intelligence (AI) Machine learning ( ML ) is a field of study in artificial intelligence concerned with the development and study of statistical algorithms that can learn from data and generalize to unseen data, and thus perform tasks without explicit programming language instructions. 1 Within a subdiscipline of machine learning, advances in the field of deep learning have allowed neural networks , a class of statistical algorithms, to surpass many previous machine learning approaches in performance. Statistics and mathematical optimisation (mathematical programming) methods compose the foundations of machine learning. Data mining is a related field of study, focusing on exploratory data analysis (EDA) through unsupervised learning. 3 4 From a theoretical viewpoint, probably approximately correct learning provides a mathematical and statistical framework for describing machine learning. Most traditional machine learning and deep learning algorithms can be described as empirical risk minimisation under this framework. The term machine learning was coined in 1959 by Arthur Samuel , an IBM employee and pioneer in the field of computer gaming and artificial intelligence. 5 6 The synonym self-teaching computers was also used during this time period. 7 8 The earliest machine learning program was introduced in the 1950s when Arthur Samuel invented a computer program that calculated the winning chance in checkers for each side, but the history of machine learning roots back to decades of human desire and effort to study human cognitive processes. 9 In 1949, Canadian psychologist Donald Hebb published the book The Organization of Behavior , in which he introduced a theoretical neural structure formed by certain interactions among nerve cells. 10 Hebb's model of neurons interacting with one another set a groundwork for how AIs and machine learning algorithms work under nodes, or artificial neurons used by computers to communicate data. 9 By the early 1960s, an experimental \"learning machine\" with punched tape memory, called Cybertron, had been developed by Raytheon Company to analyse sonar signals, electrocardiograms , and speech patterns using rudimentary reinforcement learning. It was repetitively \"trained\" by a human operator/teacher to recognise patterns and equipped with a \" goof \" button to cause it to reevaluate incorrect decisions. 12 Interest related to pattern recognition continued into the 1970s, as described by Duda and Hart in 1973. 13 In 1981, a report was given on using teaching strategies so that an artificial neural network learns to recognise 40 characters (26 letters, 10 digits, and 4 special symbols) from a computer terminal. Mitchell provided a widely quoted, more formal definition of the algorithms studied in the machine learning field: \"A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T , as measured by P , improves with experience E .\" 15 This definition of the tasks in which machine learning is concerned offers a fundamentally operational definition rather than defining the field in cognitive terms. This follows Alan Turing 's proposal in his paper \" Computing Machinery and Intelligence \", in which the question, \"Can machines think?\", is replaced by asking whether machines can convincingly imitate a human in its responses to human-posed questions. 16 17 Modern-day Machine Learning algorithms are broken into 3 algorithm types: Supervised Learning Algorithms, Unsupervised Learning Algorithms, and Reinforcement Learning Algorithms. 18 Current Supervised Learning Algorithms have objectives of classification and regression. Current Unsupervised Learning Algorithms have objectives of clustering, dimensionality reduction, and association rule. Current Reinforcement Learning Algorithms focus on decisions that must be made with respect to some previous, unknown time and are broken down to either be studies of model-based methods or model-free methods. In 2014 Ian Goodfellow and others introduced generative adversarial networks (GANs) with realistic data synthesis. 19 By 2016 AlphaGo obtained victory against top human players using reinforcement learning techniques. 20 Deep learning is a subset of machine learning, which is itself a subset of artificial intelligence. 21 As a scientific endeavour, machine learning grew out of the quest for artificial intelligence (AI). They attempted to approach the problem with various symbolic methods, as well as what were then termed \" neural networks \"; these were mostly perceptrons and other models that were later found to be reinventions of the generalised linear models of statistics. 22 Probabilistic reasoning was also employed, especially in automated medical diagnosis.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/machine_learning",
+      "type": "txt"
+    },
+    {
+      "title": "Machine learning",
+      "content": "论文标题: Machine learning\n\n作者/来源: ZH Zhou - 2021 - books.google.com\n\n摘要: … from data is called learning or training. The … machine learning is to find or approximate \nground-truth. In this book, models are sometimes called learners, which are machine learning …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=ctM-EAAAQBAJ&amp;oi=fnd&amp;pg=PR6&amp;dq=machine+learning&amp;ots=o_PnS2TwZp&amp;sig=Wpn9EnzxsR8mYtBkPDKUT7P18V0\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=ctM-EAAAQBAJ&amp;oi=fnd&amp;pg=PR6&amp;dq=machine+learning&amp;ots=o_PnS2TwZp&amp;sig=Wpn9EnzxsR8mYtBkPDKUT7P18V0",
+      "type": "txt"
+    },
+    {
+      "title": "Machine learning",
+      "content": "论文标题: Machine learning\n\n作者/来源: E Alpaydin - 2021 - books.google.com\n\n摘要: MIT presents a concise primer on machine learning—computer programs that learn from \ndata and the basis of applications like voice recognition and driverless cars. No in-depth …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=Eyk5EAAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=machine+learning&amp;ots=WRzPabYlpM&amp;sig=cJ0Nf4qFTWIN4BWHI4JIP95BKpM\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=Eyk5EAAAQBAJ&amp;oi=fnd&amp;pg=PA1&amp;dq=machine+learning&amp;ots=WRzPabYlpM&amp;sig=cJ0Nf4qFTWIN4BWHI4JIP95BKpM",
+      "type": "txt"
+    },
+    {
+      "title": "Machine learning: Trends, perspectives, and prospects",
+      "content": "论文标题: Machine learning: Trends, perspectives, and prospects\n\n作者/来源: MI Jordan, TM Mitchell - Science, 2015 - science.org\n\n摘要: … Machine learning addresses the question of how to build computers that improve … Recent \nprogress in machine learning has been driven both by the development of new learning …\n\n论文链接: https://www.science.org/doi/abs/10.1126/science.aaa8415\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.science.org/doi/abs/10.1126/science.aaa8415",
+      "type": "txt"
+    },
+    {
+      "title": "What is machine learning?",
+      "content": "论文标题: What is machine learning?\n\n作者/来源: I El Naqa, MJ Murphy - Machine learning in radiation oncology: theory and …, 2015 - Springer\n\n摘要: … A machine learning algorithm is a computational process that … This training is the “learning” \npart of machine learning. The … can practice “lifelong” learning as it processes new data and …\n\n论文链接: https://link.springer.com/chapter/10.1007/978-3-319-18305-3_1\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-18305-3_1",
+      "type": "txt"
+    },
+    {
+      "title": "Machine learning for microbiologists",
+      "content": "论文标题: Machine learning for microbiologists\n\n作者/来源: F Asnicar, AM Thomas, A Passerini… - Nature Reviews …, 2024 - nature.com\n\n摘要: … how to evaluate a machine learning model and how … machine learning-based work. The \ntopics presented in this work will allow microbiologists to grasp the potential of machine learning …\n\n论文链接: https://www.nature.com/articles/s41579-023-00984-1\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.nature.com/articles/s41579-023-00984-1",
+      "type": "txt"
+    },
+    {
+      "title": "Changing Data Sources in the Age of Machine Learning for Official Statistics",
+      "content": "论文标题: Changing Data Sources in the Age of Machine Learning for Official Statistics\n\n作者: Cedric De Boom, Michael Reusens\n\n摘要: Data science has become increasingly essential for the production of official statistics, as it enables the automated collection, processing, and analysis of large amounts of data. With such data science practices in place, it enables more timely, more insightful and more flexible reporting. However, the quality and integrity of data-science-driven statistics rely on the accuracy and reliability of the data sources and the machine learning techniques that support them. In particular, changes in data sources are inevitable to occur and pose significant risks that are crucial to address in the context of machine learning for official statistics.   This paper gives an overview of the main risks, liabilities, and uncertainties associated with changing data sources in the context of machine learning for official statistics. We provide a checklist of the most prevalent origins and causes of changing data sources; not only on a technical level but also regarding ownership, ethics, regulation,...\n\narXiv链接: http://arxiv.org/abs/2306.04338v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2306.04338v1",
+      "type": "txt"
+    },
+    {
+      "title": "DOME: Recommendations for supervised machine learning validation in biology",
+      "content": "论文标题: DOME: Recommendations for supervised machine learning validation in biology\n\n作者: Ian Walsh, Dmytro Fishman, Dario Garcia-Gasulla, Tiina Titma, Gianluca Pollastri\n\n摘要: Modern biology frequently relies on machine learning to provide predictions and improve decision processes. There have been recent calls for more scrutiny on machine learning performance and possible limitations. Here we present a set of community-wide recommendations aiming to help establish standards of supervised machine learning validation in biology. Adopting a structured methods description for machine learning based on data, optimization, model, evaluation (DOME) will aim to help both reviewers and readers to better understand and assess the performance and limitations of a method or outcome. The recommendations are formulated as questions to anyone wishing to pursue implementation of a machine learning algorithm. Answers to these questions can be easily included in the supplementary material of published papers.\n\narXiv链接: http://arxiv.org/abs/2006.16189v4\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2006.16189v4",
+      "type": "txt"
+    },
+    {
+      "title": "Learning Curves for Decision Making in Supervised Machine Learning: A Survey",
+      "content": "论文标题: Learning Curves for Decision Making in Supervised Machine Learning: A Survey\n\n作者: Felix Mohr, Jan N. van Rijn\n\n摘要: Learning curves are a concept from social sciences that has been adopted in the context of machine learning to assess the performance of a learning algorithm with respect to a certain resource, e.g., the number of training examples or the number of training iterations. Learning curves have important applications in several machine learning contexts, most notably in data acquisition, early stopping of model training, and model selection. For instance, learning curves can be used to model the performance of the combination of an algorithm and its hyperparameter configuration, providing insights into their potential suitability at an early stage and often expediting the algorithm selection process. Various learning curve models have been proposed to use learning curves for decision making. Some of these models answer the binary decision question of whether a given algorithm at a certain budget will outperform a certain reference performance, whereas more complex models predict the entire ...\n\narXiv链接: http://arxiv.org/abs/2201.12150v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2201.12150v2",
+      "type": "txt"
+    },
+    {
+      "title": "Recommender system - Wikipedia",
+      "content": "1 2 3 The value of these systems becomes particularly evident in scenarios where users must select from a large number of options, such as products, media, or content. 1 4 Major social media platforms and streaming services rely on recommender systems that employ machine learning to analyze user behavior and preferences, thereby enabling personalized content feeds. 5 6 Typically, the suggestions refer to a variety decision-making processes , including the selection of a product, musical selection, or online news source to read. 1 The implementation of recommender systems is pervasive, with commonly recognised examples including the generation of playlist for video and music services, the provision of product recommendations for e-commerce platforms, and the recommendation of content on social media platforms and the open web. Additionally, popular recommender systems have been developed for specific topics, such as restaurants and online dating services. 11 A content discovery platform is a software recommendation platform that employs recommender system tools. It utilizes user metadata in order to identify and suggest relevant content, whilst reducing ongoing maintenance and development costs. A content discovery platform delivers personalized content to websites , mobile devices , and set-top boxes. A large range of content discovery platforms currently exist for various forms of content ranging from news articles and academic journal articles 12 to television. 13 As operators compete to serve as the gateway to home entertainment, personalized television emerges as a key service differentiator. 12 Recommender systems usually make use of either or both collaborative filtering and content-based filtering, as well as other systems such as knowledge-based systems. Collaborative filtering approaches build a model from a user's past behavior (e.g., items previously purchased or selected and/or numerical ratings given to those items) as well as similar decisions made by other users. This model is then used to predict items (or ratings for items) that the user may have an interest in. 14 Content-based filtering approaches utilize a series of discrete, pre-tagged characteristics of an item in order to recommend additional items with similar properties. 15 The differences between collaborative and content-based filtering can be demonstrated by comparing two early music recommender systems, Last.fm and Pandora Radio. We can also look at how these methods are applied in e-commerce, for example, on platforms like Amazon. Last.fm creates a \"station\" of recommended songs by observing what bands and individual tracks the user has listened to on a regular basis and comparing those against the listening behavior of other users. Last.fm will play tracks that do not appear in the user's library, but are often played by other users with similar interests. As this approach leverages the behavior of users, it is an example of a collaborative filtering technique. 16 Pandora uses the properties of a song or artist (a subset of the 450 attributes provided by the Music Genome Project 17 ) to seed a \"station\" that plays music with similar properties. User feedback is used to refine the station's results, deemphasizing certain attributes when a user \"dislikes\" a particular song and emphasizing other attributes when a user \"likes\" a song. This is an example of a content-based approach. In e-commerce, Amazon's well-known \"customers who bought X also bought Y\" feature is a prime example of collaborative filtering. It also uses content-based filtering when it recommends a book by the same author you've previously read or a pair of shoes in a similar style to ones you've viewed. Each type of system has its strengths and weaknesses. In the above example, Last.fm requires a large amount of information about a user to make accurate recommendations. This is an example of the cold start problem, and is common in collaborative filtering systems. 18 19 20 21 22 23 Whereas Pandora needs very little information to start, it is far more limited in scope (for example, it can only make recommendations that are similar to the original seed). In some cases, like in the Gonzalez v. 24 Recommender systems have been the focus of several granted patents, 25 26 27 28 29 and there are more than 50 software libraries 30 that support the development of recommender systems including LensKit, 31 32 RecBole, 33 ReChorus 34 and RecPack. 35 Elaine Rich created the first recommender system in 1979, called Grundy. 36 37 She looked for a way to recommend users books they might like. Her idea was to create a system that asks users specific questions and classifies them into classes of preferences, or \"stereotypes\", depending on their answers. Depending on users' stereotype membership, they would then get recommendations for books they might like. Montaner provided the first overview of recommender systems from an intelligent agent perspective.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/recommendation_systems",
+      "type": "txt"
+    },
+    {
+      "title": "A survey of recommendation systems: recommendation models, techniques, and application fields",
+      "content": "论文标题: A survey of recommendation systems: recommendation models, techniques, and application fields\n\n作者/来源: H Ko, S Lee, Y Park, A Choi - Electronics, 2022 - mdpi.com\n\n摘要: … various detailed studies of recommendation systems interact with the … recommendation \nsystems, this study provides insight to many researchers interested in recommendation systems …\n\n论文链接: https://www.mdpi.com/2079-9292/11/1/141\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.mdpi.com/2079-9292/11/1/141",
+      "type": "txt"
+    },
+    {
+      "title": "Recommendation systems: Principles, methods and evaluation",
+      "content": "论文标题: Recommendation systems: Principles, methods and evaluation\n\n作者/来源: FO Isinkaye, YO Folajimi, BA Ojokoh - Egyptian informatics journal, 2015 - Elsevier\n\n摘要: … Recommender systems solve this problem by searching … in recommendation systems in \norder to serve as a compass for research and practice in the field of recommendation systems. …\n\n论文链接: https://www.sciencedirect.com/science/article/pii/S1110866515000341\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1110866515000341",
+      "type": "txt"
+    },
+    {
+      "title": "Evaluating recommendation systems",
+      "content": "论文标题: Evaluating recommendation systems\n\n作者/来源: G Shani, A Gunawardana - Recommender systems handbook, 2010 - Springer\n\n摘要: … In Section 8.2 we discuss the different experimental settings in which recommender systems \ncan … In Section 8.3 we describe a large variety of properties of recommendation systems that …\n\n论文链接: https://link.springer.com/chapter/10.1007/978-0-387-85820-3_8\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/chapter/10.1007/978-0-387-85820-3_8",
+      "type": "txt"
+    },
+    {
+      "title": "Recommender systems",
+      "content": "论文标题: Recommender systems\n\n作者/来源: P Resnick, HR Varian - Communications of the ACM, 1997 - dl.acm.org\n\n摘要: … The developers of the first recommender system, Tapestry [1], … We prefer the more general \nterm “recommender system” for two … descriptions of five recommender systems. A sixth article …\n\n论文链接: https://dl.acm.org/doi/abs/10.1145/245108.245121\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://dl.acm.org/doi/abs/10.1145/245108.245121",
+      "type": "txt"
+    },
+    {
+      "title": "How good your recommender system is? A survey on evaluations in recommendation",
+      "content": "论文标题: How good your recommender system is? A survey on evaluations in recommendation\n\n作者/来源: T Silveira, M Zhang, X Lin, Y Liu, S Ma - International Journal of Machine …, 2019 - Springer\n\n摘要: … raises: how good a recommender system is? A methodology … accurate results of how good \nour system is with real users [29]. … is to survey evaluations of recommender systems. Section 2 …\n\n论文链接: https://link.springer.com/article/10.1007/s13042-017-0762-9\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/article/10.1007/s13042-017-0762-9",
+      "type": "txt"
+    },
+    {
+      "title": "A Flexible Recommendation System for Cable TV",
+      "content": "论文标题: A Flexible Recommendation System for Cable TV\n\n作者: Diogo Goncalves, Miguel Costa, Francisco M. Couto\n\n摘要: Recommendation systems are being explored by Cable TV operators to improve user satisfaction with services, such as Live TV and Video on Demand (VOD) services. More recently, Catch-up TV has been introduced, allowing users to watch recent broadcast content whenever they want to. These services give users a large set of options from which they can choose from, creating an information overflow problem. Thus, recommendation systems arise as essential tools to solve this problem by helping users in their selection, which increases not only user satisfaction but also user engagement and content consumption. In this paper we present a learning to rank approach that uses contextual information and implicit feedback to improve recommendation systems for a Cable TV operator that provides Live and Catch-up TV services. We compare our approach with existing state-of-the-art algorithms and show that our approach is superior in accuracy, while maintaining high scores of diversity and serendipity.\n\narXiv链接: http://arxiv.org/abs/1609.02451v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1609.02451v2",
+      "type": "txt"
+    },
+    {
+      "title": "A Bayesian Approach to Conversational Recommendation Systems",
+      "content": "论文标题: A Bayesian Approach to Conversational Recommendation Systems\n\n作者: Francesca Mangili, Denis Broggini, Alessandro Antonucci, Marco Alberti, Lorenzo Cimasoni\n\n摘要: We present a conversational recommendation system based on a Bayesian approach. A probability mass function over the items is updated after any interaction with the user, with information-theoretic criteria optimally shaping the interaction and deciding when the conversation should be terminated and the most probable item consequently recommended. Dedicated elicitation techniques for the prior probabilities of the parameters modeling the interactions are derived from basic structural judgements. Such prior information can be combined with historical data to discriminate items with different recommendation histories. A case study based on the application of this approach to \\emph{stagend.com}, an online platform for booking entertainers, is finally discussed together with an empirical analysis showing the advantages in terms of recommendation quality and efficiency.\n\narXiv链接: http://arxiv.org/abs/2002.05063v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2002.05063v1",
+      "type": "txt"
+    },
+    {
+      "title": "Benchmarking Soundtrack Recommendation Systems with SRBench",
+      "content": "论文标题: Benchmarking Soundtrack Recommendation Systems with SRBench\n\n作者: Aleksandar Stupar, Sebastian Michel\n\n摘要: In this work, a benchmark to evaluate the retrieval performance of soundtrack recommendation systems is proposed. Such systems aim at finding songs that are played as background music for a given set of images. The proposed benchmark is based on preference judgments, where relevance is considered a continuous ordinal variable and judgments are collected for pairs of songs with respect to a query (i.e., set of images). To capture a wide variety of songs and images, we use a large space of possible music genres, different emotions expressed through music, and various query-image themes. The benchmark consists of two types of relevance assessments: (i) judgments obtained from a user study, that serve as a \"gold standard\" for (ii) relevance judgments gathered through Amazon's Mechanical Turk. We report on an analysis of relevance judgments based on different levels of user agreement and investigate the performance of two state-of-the-art soundtrack recommendation systems using the proposed...\n\narXiv链接: http://arxiv.org/abs/1308.1224v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1308.1224v1",
+      "type": "txt"
+    },
+    {
+      "title": "Batch normalization - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Method of improving artificial neural network Part of a series on Machine learning and data mining In artificial neural networks , batch normalization (also known as batch norm ) is a normalization technique used to make training faster and more stable by adjusting the inputs to each layer—re-centering them around zero and re-scaling them to a standard size. It was introduced by Sergey Ioffe and Christian Szegedy in 2015. 1 Experts still debate why batch normalization works so well. It was initially thought to tackle internal covariate shift , a problem where parameter initialization and changes in the distribution of the inputs of each layer affect the learning rate of the network. 2 In very deep networks, batch normalization can initially cause a severe gradient explosion —where updates to the network grow uncontrollably large—but this is managed with shortcuts called skip connections in residual networks. 3 Another theory is that batch normalization adjusts data by handling its size and path separately, speeding up training. 4 Each layer in a neural network has inputs that follow a specific distribution, which shifts during training due to two main factors: the random starting values of the network’s settings ( parameter initialization ) and the natural variation in the input data. This shifting pattern affecting the inputs to the network’s inner layers is called internal covariate shift. While a strict definition isn’t fully agreed upon, experiments show that it involves changes in the means and variances of these inputs during training. Batch normalization was first developed to address internal covariate shift. 1 During training, as the parameters of preceding layers adjust, the distribution of inputs to the current layer changes accordingly, such that the current layer needs to constantly readjust to new distributions. This issue is particularly severe in deep networks, because small changes in shallower hidden layers will be amplified as they propagate within the network, resulting in significant shift in deeper hidden layers. Batch normalization was proposed to reduced these unwanted shifts to speed up training and produce more reliable models. Beyond possibly tackling internal covariate shift, batch normalization offers several additional advantages. It allows the network to use a higher learning rate —a setting that controls how quickly the network learns—without causing problems like vanishing or exploding gradients, where updates become too small or too large. It also appears to have a regularizing effect, improving the network’s ability to generalize to new data, reducing the need for dropout , a technique used to prevent overfitting (when a model learns the training data too well and fails on new data). Additionally, networks using batch normalization are less sensitive to the choice of starting settings or learning rates, making them more robust and adaptable. In a neural network, batch normalization is achieved through a normalization step that fixes the means and variances of each layer's inputs. Ideally, the normalization would be conducted over the entire training set, but to use this step jointly with stochastic optimization methods, it is impractical to use the global information. Thus, normalization is restrained to each mini-batch in the training process. Let us use B to denote a mini-batch of size m of the entire training set. The empirical mean and variance of B could thus be denoted as &#x03BC; B = 1 m &#x2211; i = 1 m x i {\\displaystyle \\mu _{B}={\\frac {1}{m}}\\sum _{i=1}^{m}x_{i}} and &#x03C3; B 2 = 1 m &#x2211; i = 1 m ( x i &#x2212; &#x03BC; B ) 2 {\\displaystyle \\sigma _{B}^{2}={\\frac {1}{m}}\\sum _{i=1}^{m}(x_{i}-\\mu _{B})^{2}}. For a layer of the network with d- dimensional input, x = ( x ( 1 ) ,. , x ( d ) ) {\\displaystyle x=(x^{(1)},...,x^{(d)})} , each dimension of its input is then normalized (i.e. re-centered and re-scaled) separately, x &#x005E; i ( k ) = x i ( k ) &#x2212; &#x03BC; B ( k ) ( &#x03C3; B ( k ) ) 2 + &#x03F5; {\\displaystyle {\\hat {x}}_{i}^{(k)}={\\frac {x_{i}^{(k)}-\\mu _{B}^{(k)}}{\\sqrt {\\left(\\sigma _{B}^{(k)}\\right)^{2}+\\epsilon }}}} , where k &#x2208; [ 1 , d ] {\\displaystyle k\\in [1,d]} and i &#x2208; [ 1 , m ] {\\displaystyle i\\in [1,m]} ; &#x03BC; B ( k ) {\\displaystyle \\mu _{B}^{(k)}} and &#x03C3; B ( k ) {\\displaystyle \\sigma _{B}^{(k)}} are the per-dimension mean and standard deviation, respectively. &#x03F5; {\\displaystyle \\epsilon } is added in the denominator for numerical stability and is an arbitrarily small positive constant. The resulting normalized activation x &#x005E; ( k ) {\\displaystyle {\\hat {x}}^{(k)}} have zero mean and unit variance, if &#x03F5; {\\displaystyle \\epsilon } is not taken into account.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/batch_normalization",
+      "type": "txt"
+    },
+    {
+      "title": "Understanding batch normalization",
+      "content": "论文标题: Understanding batch normalization\n\n作者/来源: N Bjorck, CP Gomes, B Selman… - Advances in neural …, 2018 - proceedings.neurips.cc\n\n摘要: … Thus, seemingly, batch normalization yields faster training, … , we train a batch normalized \nnetwork using the learning rate … 1, where we see that a batch normalized networks with such a …\n\n论文链接: https://proceedings.neurips.cc/paper/2018/hash/36072923bfc3cf47745d704feb489480-Abstract.html\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://proceedings.neurips.cc/paper/2018/hash/36072923bfc3cf47745d704feb489480-Abstract.html",
+      "type": "txt"
+    },
+    {
+      "title": "How does batch normalization help optimization?",
+      "content": "论文标题: How does batch normalization help optimization?\n\n作者/来源: S Santurkar, D Tsipras, A Ilyas… - Advances in neural …, 2018 - proceedings.neurips.cc\n\n摘要: … We show that batch normalization causes this landscape to be more well-behaved, inducing \nfavourable properties in Lipschitz-continuity, and predictability of the gradients. We then …\n\n论文链接: https://proceedings.neurips.cc/paper/2018/hash/905056c1ac1dad141560467e0a99e1cf-Abstract.html\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://proceedings.neurips.cc/paper/2018/hash/905056c1ac1dad141560467e0a99e1cf-Abstract.html",
+      "type": "txt"
+    },
+    {
+      "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+      "content": "论文标题: Batch normalization: Accelerating deep network training by reducing internal covariate shift\n\n作者/来源: S Ioffe, C Szegedy - International conference on machine …, 2015 - proceedings.mlr.press\n\n摘要: … 4.2, we apply Batch Normalization to the bestperforming ImageNet classification network, and \n… Using an ensemble of such networks trained with Batch Normalization, we achieve the top-…\n\n论文链接: http://proceedings.mlr.press/v37/ioffe15.html\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "http://proceedings.mlr.press/v37/ioffe15.html",
+      "type": "txt"
+    },
+    {
+      "title": "Recurrent batch normalization",
+      "content": "论文标题: Recurrent batch normalization\n\n作者/来源: T Cooijmans, N Ballas, C Laurent, Ç Gülçehre… - arXiv preprint arXiv …, 2016 - arxiv.org\n\n摘要: … batch normalization to recurrent neural networks. Whereas previous works only apply \nbatch normalization … that it is both possible and beneficial to batch-normalize the hidden-to-hidden …\n\n论文链接: https://arxiv.org/abs/1603.09025\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://arxiv.org/abs/1603.09025",
+      "type": "txt"
+    },
+    {
+      "title": "Decorrelated batch normalization",
+      "content": "论文标题: Decorrelated batch normalization\n\n作者/来源: L Huang, D Yang, B Lang… - Proceedings of the IEEE …, 2018 - openaccess.thecvf.com\n\n摘要: Batch Normalization (BN) is capable of accelerating the training of deep models by centering \nand scaling activations within mini-batches. In this work, we propose Decorrelated Batch …\n\n论文链接: http://openaccess.thecvf.com/content_cvpr_2018/html/Huang_Decorrelated_Batch_Normalization_CVPR_2018_paper.html\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "http://openaccess.thecvf.com/content_cvpr_2018/html/Huang_Decorrelated_Batch_Normalization_CVPR_2018_paper.html",
+      "type": "txt"
+    },
+    {
+      "title": "Constraint Programming Models For Serial Batch Scheduling With Minimum Batch Size",
+      "content": "论文标题: Constraint Programming Models For Serial Batch Scheduling With Minimum Batch Size\n\n作者: Jorge A. Huertas, Pascal Van Hentenryck\n\n摘要: In serial batch (s-batch) scheduling, jobs are grouped in batches and processed sequentially within their batch. This paper considers multiple parallel machines, nonidentical job weights and release times, and sequence-dependent setup times between batches of different families. Although s-batch has been widely studied in the literature, very few papers have taken into account a minimum batch size, typical in practical settings such as semiconductor manufacturing and the metal industry. The problem with this minimum batch size requirement has been mostly tackled with dynamic programming and meta-heuristics, and no article has ever used constraint programming (CP) to do so. This paper fills this gap by proposing, three CP models for s-batching with minimum batch size: (i) an \\textit{Interval Assignment} model that computes and bounds the size of the batches using the presence literals of interval variables of the jobs. (ii) A \\textit{Global} model that exclusively uses global constraint...\n\narXiv链接: http://arxiv.org/abs/2504.08793v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2504.08793v2",
+      "type": "txt"
+    },
+    {
+      "title": "Extended Batch Normalization",
+      "content": "论文标题: Extended Batch Normalization\n\n作者: Chunjie Luo, Jianfeng Zhan, Lei Wang, Wanling Gao\n\n摘要: Batch normalization (BN) has become a standard technique for training the modern deep networks. However, its effectiveness diminishes when the batch size becomes smaller, since the batch statistics estimation becomes inaccurate. That hinders batch normalization's usage for 1) training larger model which requires small batches constrained by memory consumption, 2) training on mobile or embedded devices of which the memory resource is limited. In this paper, we propose a simple but effective method, called extended batch normalization (EBN). For NCHW format feature maps, extended batch normalization computes the mean along the (N, H, W) dimensions, as the same as batch normalization, to maintain the advantage of batch normalization. To alleviate the problem caused by small batch size, extended batch normalization computes the standard deviation along the (N, C, H, W) dimensions, thus enlarges the number of samples from which the standard deviation is computed. We compare extended batch n...\n\narXiv链接: http://arxiv.org/abs/2003.05569v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2003.05569v1",
+      "type": "txt"
+    },
+    {
+      "title": "Small Batch Size Training for Language Models: When Vanilla SGD Works, and Why Gradient Accumulation Is Wasteful",
+      "content": "论文标题: Small Batch Size Training for Language Models: When Vanilla SGD Works, and Why Gradient Accumulation Is Wasteful\n\n作者: Martin Marek, Sanae Lotfi, Aditya Somasundaram, Andrew Gordon Wilson, Micah Goldblum\n\n摘要: Conventional wisdom dictates that small batch sizes make language model pretraining and fine-tuning unstable, motivating gradient accumulation, which trades off the number of optimizer steps for a proportional increase in batch size. While it is common to decrease the learning rate for smaller batch sizes, other hyperparameters are often held fixed. In this work, we revisit small batch sizes all the way down to batch size one, and we propose a rule for scaling Adam hyperparameters to small batch sizes. In particular, rather than holding the decay rate of the second moment fixed across batch sizes, we propose to hold its half-life fixed in terms of tokens. We find that small batch sizes (1) train stably, (2) are consistently more robust to hyperparameter choices, (3) achieve equal or better per-FLOP performance than larger batch sizes, and (4) notably enable stable language model training with vanilla SGD, even without momentum, despite storing no optimizer state. Building on these resu...\n\narXiv链接: http://arxiv.org/abs/2507.07101v4\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2507.07101v4",
+      "type": "txt"
+    },
+    {
       "title": "Pre-trained models: Past, present and future",
       "content": "论文标题: Pre-trained models: Past, present and future\n\n作者/来源: X Han, Z Zhang, N Ding, Y Gu, X Liu, Y Huo, J Qiu… - AI open, 2021 - Elsevier\n\n摘要: … Large-scale pre-trained models (PTMs) such as BERT and … Owing to sophisticated pre-training \nobjectives and huge … In this paper, we take a deep look into the history of pre-training, …\n\n论文链接: https://www.sciencedirect.com/science/article/pii/S2666651021000231\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
@@ -246,66 +372,255 @@
       "type": "txt"
     },
     {
-      "title": "Digital image processing - Wikipedia",
-      "content": "From Wikipedia, the free encyclopedia (Redirected from Image processing ) Algorithmic processing of digitally-represented images Digital image processing is the use of a digital computer to process digital images through an algorithm. 1 2 As a subcategory or field of digital signal processing , digital image processing has many advantages over analog image processing. It allows a much wider range of algorithms to be applied to the input data and can avoid problems such as the build-up of noise and distortion during processing. Since images are defined over two dimensions (perhaps more), digital image processing may be modeled in the form of multidimensional systems. The generation and development of digital image processing are mainly affected by three factors: first, the development of computers; 3 second, the development of mathematics (especially the creation and improvement of discrete mathematics theory ); 4 and third, the demand for a wide range of applications in environment, agriculture, military, industry and medical science has increased. 6 The purpose of early image processing was to improve the quality of the image. In image processing, the input is a low-quality image, and the output is an image with improved quality. Common image processing includes image enhancement, restoration, encoding, and compression. The first successful application was the American Jet Propulsion Laboratory (JPL). They used image processing techniques such as geometric correction, gradation transformation, noise removal, etc. on the thousands of lunar photos sent back by the Space Detector Ranger 7 in 1964, taking into account the position of the Sun and the environment of the Moon. The impact of the successful mapping of the Moon's surface map by the computer has been a success. Later, more complex image processing was performed on the nearly 100,000 photos sent back by the spacecraft, so that the topographic map, color map and panoramic mosaic of the Moon were obtained, which achieved extraordinary results and laid a solid foundation for human landing on the Moon. 7 The cost of processing was fairly high, however, with the computing equipment of that era. That changed in the 1970s, when digital image processing proliferated as cheaper computers and dedicated hardware became available. This led to images being processed in real-time, for some dedicated problems such as television standards conversion. As general-purpose computers became faster, they started to take over the role of dedicated hardware for all but the most specialized and computer-intensive operations. With the fast computers and signal processors available in the 2000s, digital image processing has become the most common form of image processing, and is generally used because it is not only the most versatile method, but also the cheapest. The basis for modern image sensors is metal–oxide–semiconductor (MOS) technology, 8 invented at Bell Labs between 1955 and 1960, 9 10 11 12 13 14 This led to the development of digital semiconductor image sensors, including the charge-coupled device (CCD) and later the CMOS sensor. 8 The charge-coupled device was invented by Willard S. Smith at Bell Labs in 1969. As it was fairly straightforward to fabricate a series of MOS capacitors in a row, they connected a suitable voltage to them so that the charge could be stepped along from one to the next. 8 The CCD is a semiconductor circuit that was later used in the first digital video cameras for television broadcasting. 16 The NMOS active-pixel sensor (APS) was invented by Olympus in Japan during the mid-1980s. This was enabled by advances in MOS semiconductor device fabrication , with MOSFET scaling reaching smaller micron and then sub-micron levels. 17 18 The NMOS APS was fabricated by Tsutomu Nakamura's team at Olympus in 1985. 19 The CMOS active-pixel sensor (CMOS sensor) was later developed by Eric Fossum 's team at the NASA Jet Propulsion Laboratory in 1993. 20 By 2007, sales of CMOS sensors had surpassed CCD sensors. 21 MOS image sensors are widely used in optical mouse technology. The first optical mouse, invented by Richard F. Lyon at Xerox in 1980, used a 5 μm NMOS integrated circuit sensor chip. 22 23 Since the first commercial optical mouse, the IntelliMouse introduced in 1999, most optical mouse devices use CMOS sensors. 24 25 An important development in digital image compression technology was the discrete cosine transform (DCT), a lossy compression technique first proposed by Nasir Ahmed in 1972. 26 DCT compression became the basis for JPEG , which was introduced by the Joint Photographic Experts Group in 1992. 27 JPEG compresses images down to much smaller file sizes, and has become the most widely used image file format on the Internet. 28 Its highly efficient DCT compression algorithm was largely responsible for the wide proliferation of digital images and digital photos , 29 with several billion JPEG images produced every day as of 2015 update.",
+      "title": "Deep learning - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Branch of machine learning Representing images on multiple layers of abstraction in deep learning 1 Part of a series on Artificial intelligence (AI) In machine learning , deep learning ( DL ) focuses on utilizing multilayered neural networks to perform tasks such as classification , regression , and representation learning. The field takes inspiration from biological neuroscience and revolves around stacking artificial neurons into layers and \"training\" them to process data. The adjective \"deep\" refers to the use of multiple layers (ranging from three to several hundred or thousands) in the network. Methods used can be supervised , semi-supervised or unsupervised. 2 Some common deep learning network architectures include fully connected networks , deep belief networks , recurrent neural networks , convolutional neural networks , generative adversarial networks , transformers , and neural radiance fields. These architectures have been applied to fields including computer vision , speech recognition , natural language processing , machine translation , bioinformatics , drug design , medical image analysis , climate science , material inspection and board game programs, where they have produced results comparable to and in some cases surpassing human expert performance. 3 4 5 Early forms of neural networks were inspired by information processing and distributed communication nodes in biological systems , particularly the human brain. However, current neural networks do not intend to model the brain function of organisms, and are generally seen as low-quality models for that purpose. 6 Most modern deep learning models are based on multi-layered neural networks such as convolutional neural networks and transformers , although they can also include propositional formulas or latent variables organized layer-wise in deep generative models such as the nodes in deep belief networks and deep Boltzmann machines. 7 Fundamentally, deep learning refers to a class of machine learning algorithms in which a hierarchy of layers is used to transform input data into a progressively more abstract and composite representation. For example, in an image recognition model, the raw input may be an image (represented as a tensor of pixels ). The first representational layer may attempt to identify basic shapes such as lines and circles, the second layer may compose and encode arrangements of edges, the third layer may encode a nose and eyes, and the fourth layer may recognize that the image contains a face. Importantly, a deep learning process can learn which features to optimally place at which level on its own. Prior to deep learning, machine learning techniques often involved hand-crafted feature engineering to transform the data into a more suitable representation for a classification algorithm to operate on. In the deep learning approach, features are not hand-crafted and the model discovers useful feature representations from the data automatically. This does not eliminate the need for hand-tuning; for example, varying numbers of layers and layer sizes can provide different degrees of abstraction. 8 2 The word \"deep\" in \"deep learning\" refers to the number of layers through which the data is transformed. More precisely, deep learning systems have a substantial credit assignment path (CAP) depth. The CAP is the chain of transformations from input to output. CAPs describe potentially causal connections between input and output. For a feedforward neural network , the depth of the CAPs is that of the network and is the number of hidden layers plus one (as the output layer is also parameterized). For recurrent neural networks , in which a signal may propagate through a layer more than once, the CAP depth is potentially unlimited. CAP of depth two has been shown to be a universal approximator in the sense that it can emulate any function. 10 Beyond that, more layers do not add to the function approximator ability of the network. Deep models (CAP two) are able to extract better features than shallow models and hence, extra layers help in learning the features effectively. Deep learning architectures can be constructed with a greedy layer-by-layer method. 11 Deep learning helps to disentangle these abstractions and pick out which features improve performance. 8 Deep learning algorithms can be applied to unsupervised learning tasks. This is an important benefit because unlabeled data is more abundant than labeled data. Examples of deep structures that can be trained in an unsupervised manner are deep belief networks. 8 12 The term deep learning was introduced to the machine learning community by Rina Dechter in 1986, 13 and to artificial neural networks by Igor Aizenberg and colleagues in 2000, in the context of Boolean threshold neurons. 14 15 The etymology of the term is more complicated.",
       "source": "Wikipedia",
-      "url": "https://en.wikipedia.org/wiki/image_processing",
+      "url": "https://en.wikipedia.org/wiki/deep_learning",
       "type": "txt"
     },
     {
-      "title": "A new generation of the IMAGIC image processing system",
-      "content": "论文标题: A new generation of the IMAGIC image processing system\n\n作者/来源: M Van Heel, G Harauz, EV Orlova, R Schmidt… - Journal of structural …, 1996 - Elsevier\n\n摘要: … The growing number of two- and three-dimensional analysis techniques and the interactive \n… to develop new image processing techniques. Various image processing software systems …\n\n论文链接: https://www.sciencedirect.com/science/article/pii/S1047847796900040\n\n请访问链接查看完整论文。",
+      "title": "Deep learning",
+      "content": "论文标题: Deep learning\n\n作者/来源: Y LeCun, Y Bengio, G Hinton - nature, 2015 - nature.com\n\n摘要: … Deep learning allows computational models that are composed of multiple processing \nlayers to learn … Deep learning discovers intricate structure in large data sets by using the …\n\n论文链接: https://www.nature.com/articles/nature14539\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://www.sciencedirect.com/science/article/pii/S1047847796900040",
+      "url": "https://www.nature.com/articles/nature14539",
       "type": "txt"
     },
     {
-      "title": "Image processing",
-      "content": "论文标题: Image processing\n\n作者/来源: LSG Kovásznay, HM Joseph - Proceedings of the IRE, 1955 - ieeexplore.ieee.org\n\n摘要: A scalar function of two independent variables can be visualized as an image. All mathematical \noperations can be conceived as a modification or processing of the original image. An …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/4055456/\n\n请访问链接查看完整论文。",
+      "title": "Deep learning",
+      "content": "论文标题: Deep learning\n\n作者/来源: I Goodfellow, Y Bengio, A Courville, Y Bengio - 2016 - synapse.koreamed.org\n\n摘要: Kwang Gi Kim https://doi. org/10.4258/hir. 2016.22. 4.351 ing those who are beginning their \ncareers in deep learning and artificial intelligence research. The other target audience …\n\n论文链接: https://synapse.koreamed.org/pdf/10.4258/hir.2016.22.4.351\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://ieeexplore.ieee.org/abstract/document/4055456/",
+      "url": "https://synapse.koreamed.org/pdf/10.4258/hir.2016.22.4.351",
       "type": "txt"
     },
     {
-      "title": "Image processing: the fundamentals",
-      "content": "论文标题: Image processing: the fundamentals\n\n作者/来源: MMP Petrou, C Petrou - 2010 - books.google.com\n\n摘要: … 75 How can we create the image transformation matrices from the Haar and Walsh … do we \nperform ICA in image processing in practice? 274 How do we apply ICA to signal processing? …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=w3BpSIxN9ZYC&amp;oi=fnd&amp;pg=PR23&amp;dq=image+processing&amp;ots=3NevdCZKWD&amp;sig=lQkzWZ2BPybN2sRzywByRo3QpiA\n\n请访问链接查看完整论文。",
+      "title": "Deep learning",
+      "content": "论文标题: Deep learning\n\n作者/来源: Y Bengio, I Goodfellow, A Courville - 2017 - academia.edu\n\n摘要: … The idea of learning the right representation for the data provides one perspective on deep \nlearning. Another perspective on deep learning is that it allows the computer to learn a multi-…\n\n论文链接: https://www.academia.edu/download/62266271/Deep_Learning20200303-80130-1s42zvt.pdf\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=w3BpSIxN9ZYC&amp;oi=fnd&amp;pg=PR23&amp;dq=image+processing&amp;ots=3NevdCZKWD&amp;sig=lQkzWZ2BPybN2sRzywByRo3QpiA",
+      "url": "https://www.academia.edu/download/62266271/Deep_Learning20200303-80130-1s42zvt.pdf",
       "type": "txt"
     },
     {
-      "title": "Image processing in C",
-      "content": "论文标题: Image processing in C\n\n作者/来源: D Phillips - 1994 - academia.edu\n\n摘要: … for gluing together a set of programs like the image processing ones in this book. The appendices \n… Appendix D gives all the image processing algorithms and the chapters in which they …\n\n论文链接: https://www.academia.edu/download/52921594/cips2ed.pdf\n\n请访问链接查看完整论文。",
+      "title": "Deep learning",
+      "content": "论文标题: Deep learning\n\n作者/来源: JD Kelleher - 2019 - books.google.com\n\n摘要: … a deep learning system… deep learning enables data-driven decisions by identifying and \nextracting patterns from large datasets; its ability to learn from complex data makes deep learning …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=b06qDwAAQBAJ&amp;oi=fnd&amp;pg=PR7&amp;dq=deep+learning&amp;ots=_pGYOKkYVS&amp;sig=V5b80MQRPDwQH2zMOraCSj9exl0\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://www.academia.edu/download/52921594/cips2ed.pdf",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=b06qDwAAQBAJ&amp;oi=fnd&amp;pg=PR7&amp;dq=deep+learning&amp;ots=_pGYOKkYVS&amp;sig=V5b80MQRPDwQH2zMOraCSj9exl0",
       "type": "txt"
     },
     {
-      "title": "Image processing",
-      "content": "论文标题: Image processing\n\n作者/来源: TS Huang, WF Schreiber, OJ Tretiak - Proceedings of the IEEE, 2005 - ieeexplore.ieee.org\n\n摘要: … mathematical operations we often want to perform in image processing. Some of these \noperations are linear; eg, Fourier and Hadamard transformation, linear filtering, and correlation. …\n\n论文链接: https://ieeexplore.ieee.org/abstract/document/1450421/\n\n请访问链接查看完整论文。",
+      "title": "Deep learning",
+      "content": "论文标题: Deep learning\n\n作者/来源: N Rusk - Nature Methods, 2016 - nature.com\n\n摘要: … Deep learning does not depend on prior data processing and automatically extracts \nfeatures. To use a simple example, a deep neural network tasked with interpreting shapes …\n\n论文链接: https://www.nature.com/articles/nmeth.3707\n\n请访问链接查看完整论文。",
       "source": "Google Scholar",
-      "url": "https://ieeexplore.ieee.org/abstract/document/1450421/",
+      "url": "https://www.nature.com/articles/nmeth.3707",
       "type": "txt"
     },
     {
-      "title": "Rain Removal from Light Field Images with 4D Convolution and Multi-scale Gaussian Process",
-      "content": "论文标题: Rain Removal from Light Field Images with 4D Convolution and Multi-scale Gaussian Process\n\n作者: Tao Yan, Mingyue Li, Bin Li, Yang Yang, Rynson W. H. Lau\n\n摘要: Existing deraining methods focus mainly on a single input image. However, with just a single input image, it is extremely difficult to accurately detect and remove rain streaks, in order to restore a rain-free image. In contrast, a light field image (LFI) embeds abundant 3D structure and texture information of the target scene by recording the direction and position of each incident ray via a plenoptic camera. LFIs are becoming popular in the computer vision and graphics communities. However, making full use of the abundant information available from LFIs, such as 2D array of sub-views and the disparity map of each sub-view, for effective rain removal is still a challenging problem. In this paper, we propose a novel method, 4D-MGP-SRRNet, for rain streak removal from LFIs. Our method takes as input all sub-views of a rainy LFI. To make full use of the LFI, it adopts 4D convolutional layers to simultaneously process all sub-views of the LFI. In the pipeline, the rain detection network, ...\n\narXiv链接: http://arxiv.org/abs/2208.07735v2\n\n请访问链接查看完整论文。",
+      "title": "Learn to Accumulate Evidence from All Training Samples: Theory and Practice",
+      "content": "论文标题: Learn to Accumulate Evidence from All Training Samples: Theory and Practice\n\n作者: Deep Pandey, Qi Yu\n\n摘要: Evidential deep learning, built upon belief theory and subjective logic, offers a principled and computationally efficient way to turn a deterministic neural network uncertainty-aware. The resultant evidential models can quantify fine-grained uncertainty using the learned evidence. To ensure theoretically sound evidential models, the evidence needs to be non-negative, which requires special activation functions for model training and inference. This constraint often leads to inferior predictive performance compared to standard softmax models, making it challenging to extend them to many large-scale datasets. To unveil the real cause of this undesired behavior, we theoretically investigate evidential models and identify a fundamental limitation that explains the inferior performance: existing evidential activation functions create zero evidence regions, which prevent the model to learn from training samples falling into such regions. A deeper analysis of evidential activation functions ...\n\narXiv链接: http://arxiv.org/abs/2306.11113v2\n\n请访问链接查看完整论文。",
       "source": "arXiv",
-      "url": "http://arxiv.org/abs/2208.07735v2",
+      "url": "http://arxiv.org/abs/2306.11113v2",
       "type": "txt"
     },
     {
-      "title": "Underdetermined Blind Source Separation via Weighted Simplex Shrinkage Regularization and Quantum Deep Image Prior",
-      "content": "论文标题: Underdetermined Blind Source Separation via Weighted Simplex Shrinkage Regularization and Quantum Deep Image Prior\n\n作者: Chia-Hsiang Lin, Si-Sheng Young\n\n摘要: As most optical satellites remotely acquire multispectral images (MSIs) with limited spatial resolution, multispectral unmixing (MU) becomes a critical signal processing technology for analyzing the pure material spectra for high-precision classification and identification. Unlike the widely investigated hyperspectral unmixing (HU) problem, MU is much more challenging as it corresponds to the underdetermined blind source separation (BSS) problem, where the number of sources is larger than the number of available multispectral bands. In this article, we transform MU into its overdetermined counterpart (i.e., HU) by inventing a radically new quantum deep image prior (QDIP), which relies on the virtual band-splitting task conducted on the observed MSI for generating the virtual hyperspectral image (HSI). Then, we perform HU on the virtual HSI to obtain the virtual hyperspectral sources. Though HU is overdetermined, it still suffers from the ill-posed issue, for which we employ the convex ...\n\narXiv链接: http://arxiv.org/abs/2603.25384v1\n\n请访问链接查看完整论文。",
+      "title": "The Modern Mathematics of Deep Learning",
+      "content": "论文标题: The Modern Mathematics of Deep Learning\n\n作者: Julius Berner, Philipp Grohs, Gitta Kutyniok, Philipp Petersen\n\n摘要: We describe the new field of mathematical analysis of deep learning. This field emerged around a list of research questions that were not answered within the classical framework of learning theory. These questions concern: the outstanding generalization power of overparametrized neural networks, the role of depth in deep architectures, the apparent absence of the curse of dimensionality, the surprisingly successful optimization performance despite the non-convexity of the problem, understanding what features are learned, why deep architectures perform exceptionally well in physical problems, and which fine aspects of an architecture affect the behavior of a learning task in which way. We present an overview of modern approaches that yield partial answers to these questions. For selected approaches, we describe the main ideas in more detail.\n\narXiv链接: http://arxiv.org/abs/2105.04026v2\n\n请访问链接查看完整论文。",
       "source": "arXiv",
-      "url": "http://arxiv.org/abs/2603.25384v1",
+      "url": "http://arxiv.org/abs/2105.04026v2",
       "type": "txt"
     },
     {
-      "title": "Single-Pixel Compressive Imaging in Shift-Invariant Spaces via Exact Wavelet Frames",
-      "content": "论文标题: Single-Pixel Compressive Imaging in Shift-Invariant Spaces via Exact Wavelet Frames\n\n作者: Tin Vlašić, Damir Seršić\n\n摘要: This paper introduces a novel framework for single-pixel imaging via compressive sensing (CS) in shift-invariant (SI) spaces by exploiting the sparsity property of a wavelet representation. We reinterpret the acquisition procedure of a single-pixel camera as filtering of the observed signal with continuous-domain functions that lie in an SI subspace spanned by the integer shifts of the box function. The signal is modeled by an arbitrary SI generator whose special case is the box function, which, as we show in the paper, is conventionally used in single-pixel imaging. We propose to use separable B-spline generators which are intuitively complemented by sparsity-inducing spline wavelets. The SI models of the acquisition and the underlying signal lead to an exact discretization of an inherently continuous-domain inverse problem to a finite-dimensional problem of CS type. By solving the CS optimization problem, a parametric representation of the signal is obtained. Such a representation of...\n\narXiv链接: http://arxiv.org/abs/2106.00404v2\n\n请访问链接查看完整论文。",
+      "title": "Deep Learning and Computational Physics (Lecture Notes)",
+      "content": "论文标题: Deep Learning and Computational Physics (Lecture Notes)\n\n作者: Deep Ray, Orazio Pinti, Assad A. Oberai\n\n摘要: These notes were compiled as lecture notes for a course developed and taught at the University of the Southern California. They should be accessible to a typical engineering graduate student with a strong background in Applied Mathematics.   The main objective of these notes is to introduce a student who is familiar with concepts in linear algebra and partial differential equations to select topics in deep learning. These lecture notes exploit the strong connections between deep learning algorithms and the more conventional techniques of computational physics to achieve two goals. First, they use concepts from computational physics to develop an understanding of deep learning algorithms. Not surprisingly, many concepts in deep learning can be connected to similar concepts in computational physics, and one can utilize this connection to better understand these algorithms. Second, several novel deep learning algorithms can be used to solve challenging problems in computational physics. T...\n\narXiv链接: http://arxiv.org/abs/2301.00942v1\n\n请访问链接查看完整论文。",
       "source": "arXiv",
-      "url": "http://arxiv.org/abs/2106.00404v2",
+      "url": "http://arxiv.org/abs/2301.00942v1",
+      "type": "txt"
+    },
+    {
+      "title": "Attention - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Psychological focus, perception and prioritising discrete information Focused attention Part of a series on Cognitive psychology Attention is the concentration of awareness directed at some task or phenomenon while mostly excluding others. 1 Across disciplines, the nature of this directedness is conceptualized in different ways. In cognitive psychology , attention is often described as the allocation of limited cognitive processing resources to a subset of information, thoughts, or tasks. 2 In neuropsychology , attention is understood as a set of mechanisms by which sensory cues and internal goals modulate neuronal tuning and orient behavioral and cognitive processes. Attention is not a unitary phenomenon but an umbrella term for multiple related processes, including selective attention (prioritizing some stimuli over others), sustained attention (maintaining focus), divided attention (sharing resources across tasks), and orienting (shifting focus in space or time). These processes are supported by distributed neural networks in frontal , parietal , and subcortical regions and are closely linked to working memory , executive functions , and consciousness. Patterns of attention also vary across cultures, especially in how individuals attend to context versus focal objects and how children are guided to manage attention in everyday activities. Watson called Juan Luis Vives the father of modern psychology. better source needed In his book De Anima et Vita , Vives argued that the more closely one attends to stimuli, the better they are retained in memory. Berlyne credited the first extended treatment of attention to Nicolas Malebranche , for whom attention is necessary \"to keep our perceptions from being confused and imperfect\". 6 Gottfried Wilhelm Leibniz introduced the concept of apperception , referring to \"the process by which new experience is assimilated to and transformed by the residuum of past experience of an individual to form a new whole\". 7 Apperception is required for a perceived event to become a conscious event. Leibniz emphasized a reflexive, involuntary view of attention (exogenous orienting), while also recognizing voluntary, directed attention (endogenous orienting). Johann Friedrich Herbart agreed with Leibniz's view of apperception but emphasized that new experiences must be tied to those already existing in the mind. Herbart was also among the first to stress the importance of applying mathematical modeling to the study of psychology. 5 In the early 19th century, some theorists argued that people could not attend to more than one stimulus at a time. Later, William Hamilton likened attentional capacity to holding marbles: only a limited number can be held at once before they spill over. He proposed that more than one stimulus can be attended simultaneously. William Stanley Jevons expanded this view, suggesting that people can attend to up to four items at a time. 8 Wilhelm Wundt introduced the systematic study of attention into psychology. He examined mental processing speed by analogy with differences in astronomical measurements: astronomers differed in the times they recorded for star transits, leading to the idea of a personal equation. Wundt argued that such differences reflect the time required to shift voluntary attention from one stimulus to another, rather than mere \"observation error\". Franciscus Donders used mental chronometry to study attention, making it a major topic of investigation. Donders and his students measured the time required to identify a stimulus and select a response, developing the subtractive method to estimate the duration of specific mental processes. He distinguished between simple, choice, and go/no-go reaction times. For example, one can fixate on the letter \"u\" in the word \"house\" while still perceiving \"h\", \"o\", \"s\", and \"e\". A major debate of this period concerned whether it was possible to attend to two things at once (split attention). citation needed William James , in The Principles of Psychology , provided an influential definition: Everyone knows what attention is. It is the taking possession by the mind, in clear and vivid form, of one out of what seem several simultaneously possible objects or trains of thought. Focalization, concentration, of consciousness are of its essence. It implies withdrawal from some things in order to deal effectively with others, and is a condition which has a real opposite in the confused, dazed, scatterbrained state which in French is called distraction, and Zerstreutheit in German. 9 James distinguished between sensorial attention (to physically present stimuli) and intellectual attention (to imagined or remembered objects). He also differentiated immediate from derived attention and identified five major effects of attention: it influences perception, conception, discrimination, memory, and reaction time. Nonetheless, important work was conducted.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/attention",
+      "type": "txt"
+    },
+    {
+      "title": "Fundamental components of attention",
+      "content": "论文标题: Fundamental components of attention\n\n作者/来源: EI Knudsen - Annu. Rev. Neurosci., 2007 - annualreviews.org\n\n摘要: … ) as well as to the cognitive benefits that we associate with attention. … on attention. Nearly \nall this research has focused on various phenomena that are associated with attention. One …\n\n论文链接: https://www.annualreviews.org/content/journals/10.1146/annurev.neuro.30.051606.094256\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.annualreviews.org/content/journals/10.1146/annurev.neuro.30.051606.094256",
+      "type": "txt"
+    },
+    {
+      "title": "Attention is all you need",
+      "content": "论文标题: Attention is all you need\n\n作者/来源: A Vaswani, N Shazeer, N Parmar… - Advances in neural …, 2017 - proceedings.neurips.cc\n\n摘要: … the number of attention heads and the attention key and value dimensions, keeping the \namount of computation constant, as described in Section 3.2.2. While single-head attention is 0.9 …\n\n论文链接: https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html",
+      "type": "txt"
+    },
+    {
+      "title": "Attention and performance",
+      "content": "论文标题: Attention and performance\n\n作者/来源: H Pashler, JC Johnston… - Annual review of …, 2001 - annualreviews.org\n\n摘要: … cognitiveprocesses determine where attention is needed and shift attention accordinglyin a \n… absolute or relative attention-attracting properties cause aninvoluntary shift of attention. The …\n\n论文链接: https://www.annualreviews.org/content/journals/10.1146/annurev.psych.52.1.629\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.annualreviews.org/content/journals/10.1146/annurev.psych.52.1.629",
+      "type": "txt"
+    },
+    {
+      "title": "Attention",
+      "content": "论文标题: Attention\n\n作者/来源: SJ Luck, SP Vecera - Stevens&#39; handbook of experimental …, 2002 - books.google.com\n\n摘要: … , the concept of attention is … attention because the use of attention can be inferred solely on \nthe basis of accurate performance of the task. More precisely, we define task-defined attention …\n\n论文链接: https://books.google.com/books?hl=en&amp;lr=&amp;id=HbGU9ZFAdj8C&amp;oi=fnd&amp;pg=PA235&amp;dq=attention&amp;ots=21MQRJw2RG&amp;sig=LeeniywaJvMRM5VH0ssogPEYndw\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://books.google.com/books?hl=en&amp;lr=&amp;id=HbGU9ZFAdj8C&amp;oi=fnd&amp;pg=PA235&amp;dq=attention&amp;ots=21MQRJw2RG&amp;sig=LeeniywaJvMRM5VH0ssogPEYndw",
+      "type": "txt"
+    },
+    {
+      "title": "Attention to attention",
+      "content": "论文标题: Attention to attention\n\n作者/来源: W Ocasio - Organization science, 2011 - pubsonline.informs.org\n\n摘要: … up executive attention and … attention in organization provide a theoretical alternative to \ntheories of structural determinism or strategic choice, with a particular focus on the role of attention …\n\n论文链接: https://pubsonline.informs.org/doi/abs/10.1287/orsc.1100.0602\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://pubsonline.informs.org/doi/abs/10.1287/orsc.1100.0602",
+      "type": "txt"
+    },
+    {
+      "title": "Visual Attention Network",
+      "content": "论文标题: Visual Attention Network\n\n作者: Meng-Hao Guo, Cheng-Ze Lu, Zheng-Ning Liu, Ming-Ming Cheng, Shi-Min Hu\n\n摘要: While originally designed for natural language processing tasks, the self-attention mechanism has recently taken various computer vision areas by storm. However, the 2D nature of images brings three challenges for applying self-attention in computer vision. (1) Treating images as 1D sequences neglects their 2D structures. (2) The quadratic complexity is too expensive for high-resolution images. (3) It only captures spatial adaptability but ignores channel adaptability. In this paper, we propose a novel linear attention named large kernel attention (LKA) to enable self-adaptive and long-range correlations in self-attention while avoiding its shortcomings. Furthermore, we present a neural network based on LKA, namely Visual Attention Network (VAN). While extremely simple, VAN surpasses similar size vision transformers(ViTs) and convolutional neural networks(CNNs) in various tasks, including image classification, object detection, semantic segmentation, panoptic segmentation, pose estimat...\n\narXiv链接: http://arxiv.org/abs/2202.09741v5\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2202.09741v5",
+      "type": "txt"
+    },
+    {
+      "title": "Beyond Self-attention: External Attention using Two Linear Layers for Visual Tasks",
+      "content": "论文标题: Beyond Self-attention: External Attention using Two Linear Layers for Visual Tasks\n\n作者: Meng-Hao Guo, Zheng-Ning Liu, Tai-Jiang Mu, Shi-Min Hu\n\n摘要: Attention mechanisms, especially self-attention, have played an increasingly important role in deep feature representation for visual tasks. Self-attention updates the feature at each position by computing a weighted sum of features using pair-wise affinities across all positions to capture the long-range dependency within a single sample. However, self-attention has quadratic complexity and ignores potential correlation between different samples. This paper proposes a novel attention mechanism which we call external attention, based on two external, small, learnable, shared memories, which can be implemented easily by simply using two cascaded linear layers and two normalization layers; it conveniently replaces self-attention in existing popular architectures. External attention has linear complexity and implicitly considers the correlations between all data samples. We further incorporate the multi-head mechanism into external attention to provide an all-MLP architecture, external at...\n\narXiv链接: http://arxiv.org/abs/2105.02358v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2105.02358v2",
+      "type": "txt"
+    },
+    {
+      "title": "Grounded Text-to-Image Synthesis with Attention Refocusing",
+      "content": "论文标题: Grounded Text-to-Image Synthesis with Attention Refocusing\n\n作者: Quynh Phung, Songwei Ge, Jia-Bin Huang\n\n摘要: Driven by the scalable diffusion models trained on large-scale datasets, text-to-image synthesis methods have shown compelling results. However, these models still fail to precisely follow the text prompt involving multiple objects, attributes, or spatial compositions. In this paper, we reveal the potential causes in the diffusion model's cross-attention and self-attention layers. We propose two novel losses to refocus attention maps according to a given spatial layout during sampling. Creating the layouts manually requires additional effort and can be tedious. Therefore, we explore using large language models (LLM) to produce these layouts for our method. We conduct extensive experiments on the DrawBench, HRS, and TIFA benchmarks to evaluate our proposed method. We show that our proposed attention refocusing effectively improves the controllability of existing approaches.\n\narXiv链接: http://arxiv.org/abs/2306.05427v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2306.05427v2",
+      "type": "txt"
+    },
+    {
+      "title": "Reinforcement learning - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Field of machine learning The typical framing of a reinforcement learning (RL) scenario: an agent takes actions in an environment, which is interpreted into a reward and a state representation, which are fed back to the agent. Part of a series on Machine learning and data mining In machine learning and optimal control , reinforcement learning ( RL ) is concerned with how an intelligent agent should take actions in a dynamic environment in order to maximize a reward signal. Reinforcement learning is one of the three basic machine learning paradigms , alongside supervised learning and unsupervised learning. While supervised learning and unsupervised learning algorithms respectively attempt to discover patterns in labeled and unlabeled data, reinforcement learning involves training an agent through interactions with its environment. To learn to maximize rewards from these interactions, the agent makes decisions between trying new actions to learn more about the environment (exploration), or using current knowledge of the environment to take the best action (exploitation). The environment is typically stated in the form of a Markov decision process , as many reinforcement learning algorithms use dynamic programming techniques. 2 The main difference between classical dynamic programming methods and reinforcement learning algorithms is that the latter do not assume knowledge of an exact mathematical model of the Markov decision process, and they target large Markov decision processes where exact methods become infeasible. The problems of interest in RL have also been studied in the theory of optimal control , which is concerned mostly with the existence and characterization of optimal solutions, and algorithms for their exact computation, and less with learning or approximation (particularly in the absence of a mathematical model of the environment). Basic reinforcement learning is modeled as a Markov decision process : A set of environment and agent states (the state space), S {\\displaystyle {\\mathcal {S}}} ; A set of actions (the action space), A {\\displaystyle {\\mathcal {A}}} , of the agent; P a ( s , s &#x2032; ) = Pr ( S t + 1 = s &#x2032; &#x2223; S t = s , A t = a ) {\\displaystyle P_{a}(s,s')=\\Pr(S_{t+1}{=}s'\\mid S_{t}{=}s,A_{t}{=}a)} , the transition probability (at time t {\\displaystyle t} ) from state s {\\displaystyle s} to state s &#x2032; {\\displaystyle s'} under action a {\\displaystyle a}. R a ( s , s &#x2032; ) {\\displaystyle R_{a}(s,s')} , the immediate reward after transitioning from s {\\displaystyle s} to s &#x2032; {\\displaystyle s'} under action a {\\displaystyle a}. The purpose of reinforcement learning is for the agent to learn an optimal (or near-optimal) policy that maximizes the reward function or other user-provided reinforcement signal that accumulates from immediate rewards. This is similar to processes that appear to occur in animal psychology. For example, biological brains are hardwired to interpret signals such as pain and hunger as negative reinforcements, and interpret pleasure and food intake as positive reinforcements. In some circumstances, animals learn to adopt behaviors that optimize these rewards. This suggests that animals are capable of reinforcement learning. 4 5 A basic reinforcement learning agent interacts with its environment in discrete time steps. At each time step t , the agent receives the current state S t {\\displaystyle S_{t}} and reward R t {\\displaystyle R_{t}}. It then chooses an action A t {\\displaystyle A_{t}} from the set of available actions, which is subsequently sent to the environment. The environment moves to a new state S t + 1 {\\displaystyle S_{t+1}} and the reward R t + 1 {\\displaystyle R_{t+1}} associated with the transition ( S t , A t , S t + 1 ) {\\displaystyle (S_{t},A_{t},S_{t+1})} is determined. The goal of a reinforcement learning agent is to learn a policy : &#x03C0; : S &#x00D7; A &#x2192; [ 0 , 1 ] &#x03C0; ( s , a ) = Pr ( A t = a &#x2223; S t = s ) {\\displaystyle {\\begin{aligned} \\pi :{\\mathcal {S}}\\times {\\mathcal {A}}\\to [0,1]\\\\ \\pi (s,a)=\\Pr(A_{t}{=}a\\mid S_{t}{=}s)\\end{aligned}}} that maximizes the expected cumulative reward. Formulating the problem as a Markov decision process assumes the agent directly observes the current environmental state; in this case, the problem is said to have full observability. If the agent only has access to a subset of states, or if the observed states are corrupted by noise, the agent is said to have partial observability , and formally the problem must be formulated as a partially observable Markov decision process. In both cases, the set of actions available to the agent can be restricted. For example, the state of an account balance could be restricted to be positive; if the current value of the state is 3 and the state transition attempts to reduce the value by 4, the transition will not be allowed.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/reinforcement_learning",
+      "type": "txt"
+    },
+    {
+      "title": "Reinforcement learning: A survey",
+      "content": "论文标题: Reinforcement learning: A survey\n\n作者/来源: LP Kaelbling, ML Littman, AW Moore - Journal of artificial intelligence …, 1996 - jair.org\n\n摘要: … This paper surveys the field of reinforcement learning from a … learning. Both the historical \nbasis of the field and a broad selection of current work are summarized. Reinforcement learning …\n\n论文链接: https://www.jair.org/index.php/jair/article/view/10166\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.jair.org/index.php/jair/article/view/10166",
+      "type": "txt"
+    },
+    {
+      "title": "Reinforcement learning",
+      "content": "论文标题: Reinforcement learning\n\n作者/来源: MA Wiering, M Van Otterlo - Adaptation, learning, and optimization, 2012 - Springer\n\n摘要: … This includes PhD and master students, researchers in reinforcement learning itself, and \nresearchers in any other field who want to know about reinforcement learning. Having a …\n\n论文链接: https://link.springer.com/content/pdf/10.1007/978-3-642-27645-3.pdf\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-642-27645-3.pdf",
+      "type": "txt"
+    },
+    {
+      "title": "Deep reinforcement learning: An overview",
+      "content": "论文标题: Deep reinforcement learning: An overview\n\n作者/来源: Y Li - arXiv preprint arXiv:1701.07274, 2017 - arxiv.org\n\n摘要: … exciting achievements of deep reinforcement learning (RL). … machine learning, deep learning \nand reinforcement learning. … memory, unsupervised learning, transfer learning, multiagent …\n\n论文链接: https://arxiv.org/abs/1701.07274\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://arxiv.org/abs/1701.07274",
+      "type": "txt"
+    },
+    {
+      "title": "Reinforcement learning",
+      "content": "论文标题: Reinforcement learning\n\n作者/来源: RS Sutton, AG Barto - Journal of Cognitive Neuroscience, 1999 - academia.edu\n\n摘要: … algorithms that learn a … reinforcement learning originated in psychological theorizing, in \nrecent years these ideas have been most extensively developed within the artificial learning …\n\n论文链接: https://www.academia.edu/download/6985553/ivry_rev.pdf\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.academia.edu/download/6985553/ivry_rev.pdf",
+      "type": "txt"
+    },
+    {
+      "title": "Reinforcement learning",
+      "content": "论文标题: Reinforcement learning\n\n作者/来源: AG Barto - Neural systems for control, 1997 - Elsevier\n\n摘要: … Reinforcement learning allows autonomous systems to learn from their experiences instead \n… reinforcement learning research directed toward developing capable artificial learning …\n\n论文链接: https://www.sciencedirect.com/science/article/pii/B9780125264303500039\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.sciencedirect.com/science/article/pii/B9780125264303500039",
+      "type": "txt"
+    },
+    {
+      "title": "Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning",
+      "content": "论文标题: Value Bonuses using Ensemble Errors for Exploration in Reinforcement Learning\n\n作者: Abdul Wahab, Raksha Kumaraswamy, Martha White\n\n摘要: Optimistic value estimates provide one mechanism for directed exploration in reinforcement learning (RL). The agent acts greedily with respect to an estimate of the value plus what can be seen as a value bonus. The value bonus can be learned by estimating a value function on reward bonuses, propagating local uncertainties around rewards. However, this approach only increases the value bonus for an action retroactively, after seeing a higher reward bonus from that state and action. Such an approach does not encourage the agent to visit a state and action for the first time. In this work, we introduce an algorithm for exploration called Value Bonuses with Ensemble errors (VBE), that maintains an ensemble of random action-value functions (RQFs). VBE uses the errors in the estimation of these RQFs to design value bonuses that provide first-visit optimism and deep exploration. The key idea is to design the rewards for these RQFs in such a way that the value bonus can decrease to zero. We sh...\n\narXiv链接: http://arxiv.org/abs/2602.12375v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2602.12375v1",
+      "type": "txt"
+    },
+    {
+      "title": "Causal-Paced Deep Reinforcement Learning",
+      "content": "论文标题: Causal-Paced Deep Reinforcement Learning\n\n作者: Geonwoo Cho, Jaegyun Im, Doyoon Kim, Sundong Kim\n\n摘要: Designing effective task sequences is crucial for curriculum reinforcement learning (CRL), where agents must gradually acquire skills by training on intermediate tasks. A key challenge in CRL is to identify tasks that promote exploration, yet are similar enough to support effective transfer. While recent approach suggests comparing tasks via their Structural Causal Models (SCMs), the method requires access to ground-truth causal structures, an unrealistic assumption in most RL settings. In this work, we propose Causal-Paced Deep Reinforcement Learning (CP-DRL), a curriculum learning framework aware of SCM differences between tasks based on interaction data approximation. This signal captures task novelty, which we combine with the agent's learnability, measured by reward gain, to form a unified objective. Empirically, CP-DRL outperforms existing curriculum methods on the Point Mass benchmark, achieving faster convergence and higher returns. CP-DRL demonstrates reduced variance with com...\n\narXiv链接: http://arxiv.org/abs/2507.02910v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2507.02910v1",
+      "type": "txt"
+    },
+    {
+      "title": "Exploring Hierarchy-Aware Inverse Reinforcement Learning",
+      "content": "论文标题: Exploring Hierarchy-Aware Inverse Reinforcement Learning\n\n作者: Chris Cundy, Daniel Filan\n\n摘要: We introduce a new generative model for human planning under the Bayesian Inverse Reinforcement Learning (BIRL) framework which takes into account the fact that humans often plan using hierarchical strategies. We describe the Bayesian Inverse Hierarchical RL (BIHRL) algorithm for inferring the values of hierarchical planners, and use an illustrative toy model to show that BIHRL retains accuracy where standard BIRL fails. Furthermore, BIHRL is able to accurately predict the goals of `Wikispeedia' game players, with inclusion of hierarchical structure in the model resulting in a large boost in accuracy. We show that BIHRL is able to significantly outperform BIRL even when we only have a weak prior on the hierarchical structure of the plans available to the agent, and discuss the significant challenges that remain for scaling up this framework to more realistic settings.\n\narXiv链接: http://arxiv.org/abs/1807.05037v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1807.05037v1",
+      "type": "txt"
+    },
+    {
+      "title": "Text - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Look up Text , Texts , text , or texts in Wiktionary, the free dictionary. Text may refer to: Text (literary theory) , any object that can be read, including: Religious text , a writing that a religious tradition considers to be sacred Text, a verse or passage from scripture used in expository preaching Textbook , a book of instruction in any branch of study Plain text , unformatted text Text file , a type of computer file opened by most text software Text string , a sequence of characters manipulated by software Text message , a short electronic message designed for communication between mobile phone users tEXt, an ancillary chunk in the PNG image file format Text, the former name of Apple's Messages instant messenger Text (company) , an AI and customer service software company Texts (software), now Beeper (application) , a chat app for several messaging services TEXT , a Swedish band Text Talk (formerly Text ), an academic journal \"Text\", a 2010 bonus track by Mann featuring Jason Derulo from Mann's World , 2010 TxT (film) , a 2006 Filipino horror film Text (film) , a 2019 Russian film \"Text\" ( Not Going Out ) , a 2022 television episode All pages with titles beginning with Text Copy (written) , written material in publications Discourse (disambiguation) Enriched text , formatted text format for e-mail Formatted text , digital text which has styling information beyond minimal semantic elements Rich Text Format , a proprietary document file format by Microsoft SMS (Short Message Service), the \"texting\" function of mobile phones Rich Communication Services (RCS), the modern successor to SMS Tex (disambiguation) TeX , typesetting software Text display , electronic alphanumeric display device Text mode , computer display mode based on characters Text segment , the portion of computer file containing executable instructions Writing , representation of language in a textual medium Topics referred to by the same term Retrieved from \" https://en.wikipedia.org/w/index.php?title=Text oldid=1347065108 \" Category : Disambiguation pages Hidden categories: Short description is different from Wikidata All article disambiguation pages All disambiguation pages",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/text",
+      "type": "txt"
+    },
+    {
+      "title": "What is a text",
+      "content": "论文标题: What is a text\n\n作者/来源: P Ricoeur - From text to action: Essays in hermeneutics, II, 1991 - uni-trier.de\n\n摘要: … What we called masking (occultation) of the surrounding world by the quasi-world of texts \ngives rise to two possibilities. As readers, we can remain in the suspense of the text and treat …\n\n论文链接: https://www.uni-trier.de/fileadmin/fb1/prof/PHI/003/Bilddateien/Text_6.pdf\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.uni-trier.de/fileadmin/fb1/prof/PHI/003/Bilddateien/Text_6.pdf",
+      "type": "txt"
+    },
+    {
+      "title": "What is text, really?",
+      "content": "论文标题: What is text, really?\n\n作者/来源: SJ DeRose, DG Durand, E Mylonas… - ACM SIGDOC Asterisk …, 1997 - dl.acm.org\n\n摘要: … text embodied in a computer system can limit a scholar&#39;s ability to accomplish desired ends \nwith text, … we believe better reflects the realities of text and documents), scholars can begin to …\n\n论文链接: https://dl.acm.org/doi/abs/10.1145/264842.264843\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://dl.acm.org/doi/abs/10.1145/264842.264843",
+      "type": "txt"
+    },
+    {
+      "title": "Text and textuality",
+      "content": "论文标题: Text and textuality\n\n作者/来源: WF Hanks - Annual review of anthropology, 1989 - JSTOR\n\n摘要: … of text as sociocultural product and process, voicing in text, elements of textual organization, \nthe relation of text to power in social contexts, some recent ethnographic studies of text, and …\n\n论文链接: https://www.jstor.org/stable/2155887\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.jstor.org/stable/2155887",
+      "type": "txt"
+    },
+    {
+      "title": "Text within a text",
+      "content": "论文标题: Text within a text\n\n作者/来源: YM Lotman - Soviet psychology, 1988 - Taylor &amp; Francis\n\n摘要: The term text is used ambiguously. One could compile a list of sometimes very different \nmeanings various authors have given this word. What is characteristic, however, is something …\n\n论文链接: https://www.tandfonline.com/doi/abs/10.2753/RPO1061-0405260332\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.tandfonline.com/doi/abs/10.2753/RPO1061-0405260332",
+      "type": "txt"
+    },
+    {
+      "title": "The text within the text",
+      "content": "论文标题: The text within the text\n\n作者/来源: YM Lotman - PMLA, 1994 - cambridge.org\n\n摘要: Translators&#39; note. The first few pages of this essay are not printed here. In this omitted portion \nYury Lotman distinguishes between two major functions of texts. The first function is the …\n\n论文链接: https://www.cambridge.org/core/journals/pmla/article/text-within-the-text/B141A4CA9D31EE9D559F279CA1959BE6\n\n请访问链接查看完整论文。",
+      "source": "Google Scholar",
+      "url": "https://www.cambridge.org/core/journals/pmla/article/text-within-the-text/B141A4CA9D31EE9D559F279CA1959BE6",
+      "type": "txt"
+    },
+    {
+      "title": "Scale-free Characteristics of Multilingual Legal Texts and the Limitations of LLMs",
+      "content": "论文标题: Scale-free Characteristics of Multilingual Legal Texts and the Limitations of LLMs\n\n作者: Haoyang Chen, Kumiko Tanaka-Ishii\n\n摘要: We present a comparative analysis of text complexity across domains using scale-free metrics. We quantify linguistic complexity via Heaps' exponent $β$ (vocabulary growth), Taylor's exponent $α$ (word-frequency fluctuation scaling), compression rate $r$ (redundancy), and entropy. Our corpora span three domains: legal documents (statutes, cases, deeds) as a specialized domain, general natural language texts (literature, Wikipedia), and AI-generated (GPT) text. We find that legal texts exhibit slower vocabulary growth (lower $β$) and higher term consistency (higher $α$) than general texts. Within legal domain, statutory codes have the lowest $β$ and highest $α$, reflecting strict drafting conventions, while cases and deeds show higher $β$ and lower $α$. In contrast, GPT-generated text shows the statistics more aligning with general language patterns. These results demonstrate that legal texts exhibit domain-specific structures and complexities, which current generative models do not full...\n\narXiv链接: http://arxiv.org/abs/2509.17367v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2509.17367v1",
+      "type": "txt"
+    },
+    {
+      "title": "Recurrent Neural Network based Part-of-Speech Tagger for Code-Mixed Social Media Text",
+      "content": "论文标题: Recurrent Neural Network based Part-of-Speech Tagger for Code-Mixed Social Media Text\n\n作者: Raj Nath Patel, Prakash B. Pimpale, M Sasikumar\n\n摘要: This paper describes Centre for Development of Advanced Computing's (CDACM) submission to the shared task-'Tool Contest on POS tagging for Code-Mixed Indian Social Media (Facebook, Twitter, and Whatsapp) Text', collocated with ICON-2016. The shared task was to predict Part of Speech (POS) tag at word level for a given text. The code-mixed text is generated mostly on social media by multilingual users. The presence of the multilingual words, transliterations, and spelling variations make such content linguistically complex. In this paper, we propose an approach to POS tag code-mixed social media text using Recurrent Neural Network Language Model (RNN-LM) architecture. We submitted the results for Hindi-English (hi-en), Bengali-English (bn-en), and Telugu-English (te-en) code-mixed data.\n\narXiv链接: http://arxiv.org/abs/1611.04989v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1611.04989v2",
+      "type": "txt"
+    },
+    {
+      "title": "Expressive Text-to-Image Generation with Rich Text",
+      "content": "论文标题: Expressive Text-to-Image Generation with Rich Text\n\n作者: Songwei Ge, Taesung Park, Jun-Yan Zhu, Jia-Bin Huang\n\n摘要: Plain text has become a prevalent interface for text-to-image synthesis. However, its limited customization options hinder users from accurately describing desired outputs. For example, plain text makes it hard to specify continuous quantities, such as the precise RGB color value or importance of each word. Furthermore, creating detailed text prompts for complex scenes is tedious for humans to write and challenging for text encoders to interpret. To address these challenges, we propose using a rich-text editor supporting formats such as font style, size, color, and footnote. We extract each word's attributes from rich text to enable local style control, explicit token reweighting, precise color rendering, and detailed region synthesis. We achieve these capabilities through a region-based diffusion process. We first obtain each word's region based on attention maps of a diffusion process using plain text. For each region, we enforce its text attributes by creating region-specific detail...\n\narXiv链接: http://arxiv.org/abs/2304.06720v4\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2304.06720v4",
       "type": "txt"
     }
   ],
@@ -343,6 +658,14 @@
       "type": "video"
     },
     {
+      "title": "Neural Networks and Deep Learning: Crash Course AI #3",
+      "url": "https://www.youtube.com/watch?v=oV3ZY6tJiA0",
+      "description": "YouTube视频: Neural Networks and Deep Learning: Crash Course AI #3",
+      "video_id": "oV3ZY6tJiA0",
+      "thumbnail": "https://i.ytimg.com/vi/oV3ZY6tJiA0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBmxprXipfMnOfTMDhErriRVejliA",
+      "type": "video"
+    },
+    {
       "title": "Explained In A Minute: Neural Networks",
       "url": "https://www.youtube.com/watch?v=rEDzUT3ymw4",
       "description": "YouTube视频: Explained In A Minute: Neural Networks",
@@ -351,11 +674,11 @@
       "type": "video"
     },
     {
-      "title": "Neural Networks and Deep Learning: Crash Course AI #3",
-      "url": "https://www.youtube.com/watch?v=oV3ZY6tJiA0",
-      "description": "YouTube视频: Neural Networks and Deep Learning: Crash Course AI #3",
-      "video_id": "oV3ZY6tJiA0",
-      "thumbnail": "https://i.ytimg.com/vi/oV3ZY6tJiA0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBmxprXipfMnOfTMDhErriRVejliA",
+      "title": "Gradient descent, how neural networks learn | Deep Learning Chapter 2",
+      "url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+      "description": "YouTube视频: Gradient descent, how neural networks learn | Deep Learning Chapter 2",
+      "video_id": "IHZwWFHWa-w",
+      "thumbnail": "https://i.ytimg.com/vi/IHZwWFHWa-w/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCXkoNHU4W8j-qcW-B9HhhHS0AuXw",
       "type": "video"
     },
     {
@@ -367,11 +690,67 @@
       "type": "video"
     },
     {
-      "title": "Neural Networks - Lecture 5 - CS50's Introduction to Artificial Intelligence with Python 2020",
-      "url": "https://www.youtube.com/watch?v=J1QD9hLDEDY",
-      "description": "YouTube视频: Neural Networks - Lecture 5 - CS50's Introduction to Artificial Intelligence with Python 2020",
-      "video_id": "J1QD9hLDEDY",
-      "thumbnail": "https://i.ytimg.com/vi/J1QD9hLDEDY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5DOB3Om9IzAX04EL5xfmliRb7Mw",
+      "title": "What is NLP (Natural Language Processing)?",
+      "url": "https://www.youtube.com/watch?v=fLvJ8VdHLA0",
+      "description": "YouTube视频: What is NLP (Natural Language Processing)?",
+      "video_id": "fLvJ8VdHLA0",
+      "thumbnail": "https://i.ytimg.com/vi/fLvJ8VdHLA0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBt1GqOhzJnzhnySSOh6pAml4MYUg",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing: Crash Course AI #7",
+      "url": "https://www.youtube.com/watch?v=oi0JXuL19TA",
+      "description": "YouTube视频: Natural Language Processing: Crash Course AI #7",
+      "video_id": "oi0JXuL19TA",
+      "thumbnail": "https://i.ytimg.com/vi/oi0JXuL19TA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvbfCM9naH47s_xBZLY0UU9TkzsQ",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing with spaCy & Python - Course for Beginners",
+      "url": "https://www.youtube.com/watch?v=dIUTsFT2MeQ",
+      "description": "YouTube视频: Natural Language Processing with spaCy & Python - Course for Beginners",
+      "video_id": "dIUTsFT2MeQ",
+      "thumbnail": "https://i.ytimg.com/vi/dIUTsFT2MeQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLF0wg8z9YDCbNblwoYHrun4nlBw",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing: Crash Course Computer Science #36",
+      "url": "https://www.youtube.com/watch?v=fOvTtapxa9c",
+      "description": "YouTube视频: Natural Language Processing: Crash Course Computer Science #36",
+      "video_id": "fOvTtapxa9c",
+      "thumbnail": "https://i.ytimg.com/vi/fOvTtapxa9c/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAy7rmTf8fP2y_fdpMbZ1J6FCItpg",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1)",
+      "url": "https://www.youtube.com/watch?v=fNxaJsNG3-s",
+      "description": "YouTube视频: Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1)",
+      "video_id": "fNxaJsNG3-s",
+      "thumbnail": "https://i.ytimg.com/vi/fNxaJsNG3-s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9Wt-etaXxVl2rulNnvjWLTMtmJQ",
+      "type": "video"
+    },
+    {
+      "title": "7. Natural Language Processing (NLP), Part 1",
+      "url": "https://www.youtube.com/watch?v=IiD3YZkkCmE",
+      "description": "YouTube视频: 7. Natural Language Processing (NLP), Part 1",
+      "video_id": "IiD3YZkkCmE",
+      "thumbnail": "https://i.ytimg.com/vi/IiD3YZkkCmE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD-RvjsHssaJGuTDTJ4W-nOXA9xGw",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing Explained | NLP Basics",
+      "url": "https://www.youtube.com/watch?v=pph11STqtXQ",
+      "description": "YouTube视频: Natural Language Processing Explained | NLP Basics",
+      "video_id": "pph11STqtXQ",
+      "thumbnail": "https://i.ytimg.com/vi/pph11STqtXQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5XCE4KvhsTGw9MKd13dXK3d88GA",
+      "type": "video"
+    },
+    {
+      "title": "5: Deep Learning for Natural Language – The Basics",
+      "url": "https://www.youtube.com/watch?v=duBLxHjaecQ",
+      "description": "YouTube视频: 5: Deep Learning for Natural Language – The Basics",
+      "video_id": "duBLxHjaecQ",
+      "thumbnail": "https://i.ytimg.com/vi/duBLxHjaecQ/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhZIFkoWTAP&rs=AOn4CLDV3Dj1ahS2A_bxdqMpXTMnl5wS3A",
       "type": "video"
     },
     {
@@ -439,67 +818,131 @@
       "type": "video"
     },
     {
-      "title": "What is NLP (Natural Language Processing)?",
-      "url": "https://www.youtube.com/watch?v=fLvJ8VdHLA0",
-      "description": "YouTube视频: What is NLP (Natural Language Processing)?",
-      "video_id": "fLvJ8VdHLA0",
-      "thumbnail": "https://i.ytimg.com/vi/fLvJ8VdHLA0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBt1GqOhzJnzhnySSOh6pAml4MYUg",
+      "title": "Recommender Systems: Basics, Types, and Design Consideration | Machine Learning | Community Webinar",
+      "url": "https://www.youtube.com/watch?v=Ams4sEn50cw",
+      "description": "YouTube视频: Recommender Systems: Basics, Types, and Design Consideration | Machine Learning | Community Webinar",
+      "video_id": "Ams4sEn50cw",
+      "thumbnail": "https://i.ytimg.com/vi/Ams4sEn50cw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCG5YGtS71Qj1CmIOsr887nzbidJw",
       "type": "video"
     },
     {
-      "title": "Natural Language Processing with spaCy & Python - Course for Beginners",
-      "url": "https://www.youtube.com/watch?v=dIUTsFT2MeQ",
-      "description": "YouTube视频: Natural Language Processing with spaCy & Python - Course for Beginners",
-      "video_id": "dIUTsFT2MeQ",
-      "thumbnail": "https://i.ytimg.com/vi/dIUTsFT2MeQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLF0wg8z9YDCbNblwoYHrun4nlBw",
+      "title": "How Spotify’s AI-Driven Recommendations Work | WSJ Tech Behind",
+      "url": "https://www.youtube.com/watch?v=pGntmcy_HX8",
+      "description": "YouTube视频: How Spotify’s AI-Driven Recommendations Work | WSJ Tech Behind",
+      "video_id": "pGntmcy_HX8",
+      "thumbnail": "https://i.ytimg.com/vi/pGntmcy_HX8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBi4rbMpYZuQRFay5-XJhme2xRl8A",
       "type": "video"
     },
     {
-      "title": "Natural Language Processing: Crash Course AI #7",
-      "url": "https://www.youtube.com/watch?v=oi0JXuL19TA",
-      "description": "YouTube视频: Natural Language Processing: Crash Course AI #7",
-      "video_id": "oi0JXuL19TA",
-      "thumbnail": "https://i.ytimg.com/vi/oi0JXuL19TA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvbfCM9naH47s_xBZLY0UU9TkzsQ",
+      "title": "What is an AI Recommendation Engine?",
+      "url": "https://www.youtube.com/watch?v=gEdePRsDACc",
+      "description": "YouTube视频: What is an AI Recommendation Engine?",
+      "video_id": "gEdePRsDACc",
+      "thumbnail": "https://i.ytimg.com/vi/gEdePRsDACc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDBGKwkO7nqlRxAM5rVaS7Qxbvi6g",
       "type": "video"
     },
     {
-      "title": "Natural Language Processing: Crash Course Computer Science #36",
-      "url": "https://www.youtube.com/watch?v=fOvTtapxa9c",
-      "description": "YouTube视频: Natural Language Processing: Crash Course Computer Science #36",
-      "video_id": "fOvTtapxa9c",
-      "thumbnail": "https://i.ytimg.com/vi/fOvTtapxa9c/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAy7rmTf8fP2y_fdpMbZ1J6FCItpg",
+      "title": "Spotify ML Question - Design a Recommendation System (Full mock interview)",
+      "url": "https://www.youtube.com/watch?v=vyZMYlGBSBM",
+      "description": "YouTube视频: Spotify ML Question - Design a Recommendation System (Full mock interview)",
+      "video_id": "vyZMYlGBSBM",
+      "thumbnail": "https://i.ytimg.com/vi/vyZMYlGBSBM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2jDd2DHk2nmCy1jLmze692zcrBA",
       "type": "video"
     },
     {
-      "title": "Large Language Models explained briefly",
-      "url": "https://www.youtube.com/watch?v=LPZh9BOjkQs",
-      "description": "YouTube视频: Large Language Models explained briefly",
-      "video_id": "LPZh9BOjkQs",
-      "thumbnail": "https://i.ytimg.com/vi/LPZh9BOjkQs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLATsTncbvO7P7_ANyrCKHuFAAI6MQ",
+      "title": "Recommendation systems overview (Building recommendation systems with TensorFlow)",
+      "url": "https://www.youtube.com/watch?v=BthUPVwA59s",
+      "description": "YouTube视频: Recommendation systems overview (Building recommendation systems with TensorFlow)",
+      "video_id": "BthUPVwA59s",
+      "thumbnail": "https://i.ytimg.com/vi/BthUPVwA59s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCFC4JvW_AQWEGoz9W96BuONFL97w",
       "type": "video"
     },
     {
-      "title": "Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1)",
-      "url": "https://www.youtube.com/watch?v=fNxaJsNG3-s",
-      "description": "YouTube视频: Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1)",
-      "video_id": "fNxaJsNG3-s",
-      "thumbnail": "https://i.ytimg.com/vi/fNxaJsNG3-s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9Wt-etaXxVl2rulNnvjWLTMtmJQ",
+      "title": "How Spotify Recommendations work for 500,000,000 users",
+      "url": "https://www.youtube.com/watch?v=jcbRyq14AEo",
+      "description": "YouTube视频: How Spotify Recommendations work for 500,000,000 users",
+      "video_id": "jcbRyq14AEo",
+      "thumbnail": "https://i.ytimg.com/vi/jcbRyq14AEo/hq720_2.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIFAoXDAP&rs=AOn4CLAxIcXRGtw99uwMO-SXU0Tt142c4w",
       "type": "video"
     },
     {
-      "title": "Natural Language Processing Explained | NLP Basics",
-      "url": "https://www.youtube.com/watch?v=pph11STqtXQ",
-      "description": "YouTube视频: Natural Language Processing Explained | NLP Basics",
-      "video_id": "pph11STqtXQ",
-      "thumbnail": "https://i.ytimg.com/vi/pph11STqtXQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5XCE4KvhsTGw9MKd13dXK3d88GA",
+      "title": "Recommender Systems",
+      "url": "https://www.youtube.com/watch?v=Eeg1DEeWUjA",
+      "description": "YouTube视频: Recommender Systems",
+      "video_id": "Eeg1DEeWUjA",
+      "thumbnail": "https://i.ytimg.com/vi/Eeg1DEeWUjA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyXoAFdotuxMVCfD-NiFloOX_nxA",
       "type": "video"
     },
     {
-      "title": "7. Natural Language Processing (NLP), Part 1",
-      "url": "https://www.youtube.com/watch?v=IiD3YZkkCmE",
-      "description": "YouTube视频: 7. Natural Language Processing (NLP), Part 1",
-      "video_id": "IiD3YZkkCmE",
-      "thumbnail": "https://i.ytimg.com/vi/IiD3YZkkCmE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD-RvjsHssaJGuTDTJ4W-nOXA9xGw",
+      "title": "6.2.15 An Introduction to Clustering - Video 8: The Analytics Edge of Recommendation Systems",
+      "url": "https://www.youtube.com/watch?v=sJalJ1A9NDg",
+      "description": "YouTube视频: 6.2.15 An Introduction to Clustering - Video 8: The Analytics Edge of Recommendation Systems",
+      "video_id": "sJalJ1A9NDg",
+      "thumbnail": "https://i.ytimg.com/vi/sJalJ1A9NDg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCZnTfucE38spUKdN1YYH3_38iKTw",
+      "type": "video"
+    },
+    {
+      "title": "Why Does Batch Norm Work? (C2W3L06)",
+      "url": "https://www.youtube.com/watch?v=nUUqwaxLnWs",
+      "description": "YouTube视频: Why Does Batch Norm Work? (C2W3L06)",
+      "video_id": "nUUqwaxLnWs",
+      "thumbnail": "https://i.ytimg.com/vi/nUUqwaxLnWs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5b2fx-mNvoUfoxW8mjaNufGEzmw",
+      "type": "video"
+    },
+    {
+      "title": "How does Batch Normalization Help Optimization?",
+      "url": "https://www.youtube.com/watch?v=EvAVCxZJN2U",
+      "description": "YouTube视频: How does Batch Normalization Help Optimization?",
+      "video_id": "EvAVCxZJN2U",
+      "thumbnail": "https://i.ytimg.com/vi/EvAVCxZJN2U/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAy14yP7bMhduCogoE64MQ784MbJg",
+      "type": "video"
+    },
+    {
+      "title": "How Does Batch Normalization Work",
+      "url": "https://www.youtube.com/watch?v=Jj_w_zOEu4M",
+      "description": "YouTube视频: How Does Batch Normalization Work",
+      "video_id": "Jj_w_zOEu4M",
+      "thumbnail": "https://i.ytimg.com/vi/Jj_w_zOEu4M/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC11nKU5-gepwVSzDsPa_FW8gU-kA",
+      "type": "video"
+    },
+    {
+      "title": "Normalizing Activations in a Network (C2W3L04)",
+      "url": "https://www.youtube.com/watch?v=tNIpEZLv_eg",
+      "description": "YouTube视频: Normalizing Activations in a Network (C2W3L04)",
+      "video_id": "tNIpEZLv_eg",
+      "thumbnail": "https://i.ytimg.com/vi/tNIpEZLv_eg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAc6mObDwzvZxxf2VFIRIcV60KgnQ",
+      "type": "video"
+    },
+    {
+      "title": "L11.2 How BatchNorm Works",
+      "url": "https://www.youtube.com/watch?v=34PDIFvvESc",
+      "description": "YouTube视频: L11.2 How BatchNorm Works",
+      "video_id": "34PDIFvvESc",
+      "thumbnail": "https://i.ytimg.com/vi/34PDIFvvESc/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARhlIGUoZTAP&rs=AOn4CLBCQx0RjFBpWD28QiNwOAJyoKfPVA",
+      "type": "video"
+    },
+    {
+      "title": "SAS Tutorial | What is Batch Normalization",
+      "url": "https://www.youtube.com/watch?v=eMI2JQTaoS0",
+      "description": "YouTube视频: SAS Tutorial | What is Batch Normalization",
+      "video_id": "eMI2JQTaoS0",
+      "thumbnail": "https://i.ytimg.com/vi/eMI2JQTaoS0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCGG6LKO9U_DEwjDQUwjUuGmyW3Kw",
+      "type": "video"
+    },
+    {
+      "title": "Batch Normalization for Dummies",
+      "url": "https://www.youtube.com/watch?v=m5EHHJMQL5M",
+      "description": "YouTube视频: Batch Normalization for Dummies",
+      "video_id": "m5EHHJMQL5M",
+      "thumbnail": "https://i.ytimg.com/vi/m5EHHJMQL5M/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLUPQ9AFiHOw_4J1hZcmB8q5uvwA",
+      "type": "video"
+    },
+    {
+      "title": "Batch Norm At Test Time (C2W3L07)",
+      "url": "https://www.youtube.com/watch?v=5qefnAek8OA",
+      "description": "YouTube视频: Batch Norm At Test Time (C2W3L07)",
+      "video_id": "5qefnAek8OA",
+      "thumbnail": "https://i.ytimg.com/vi/5qefnAek8OA/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCyFzFqVmr-U7-zxQSrIto2eZihvA",
       "type": "video"
     },
     {
@@ -527,6 +970,14 @@
       "type": "video"
     },
     {
+      "title": "🧠 Loading Pretrained Weights from OpenAI – Live Coding with Sebastian Raschka (Chapter 5.5)",
+      "url": "https://www.youtube.com/watch?v=glpWXw9dHWY",
+      "description": "YouTube视频: 🧠 Loading Pretrained Weights from OpenAI – Live Coding with Sebastian Raschka (Chapter 5.5)",
+      "video_id": "glpWXw9dHWY",
+      "thumbnail": "https://i.ytimg.com/vi/glpWXw9dHWY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBYoKjvDSCavkZZyw6wQvvZ9SmpOQ",
+      "type": "video"
+    },
+    {
       "title": "What are Transformers (Machine Learning Model)?",
       "url": "https://www.youtube.com/watch?v=ZXiruGOCn9s",
       "description": "YouTube视频: What are Transformers (Machine Learning Model)?",
@@ -535,91 +986,259 @@
       "type": "video"
     },
     {
-      "title": "Using pre-trained models in TensorFlow | Machine Learning for web developers",
-      "url": "https://www.youtube.com/watch?v=iTlj3gMYzw8",
-      "description": "YouTube视频: Using pre-trained models in TensorFlow | Machine Learning for web developers",
-      "video_id": "iTlj3gMYzw8",
-      "thumbnail": "https://i.ytimg.com/vi/iTlj3gMYzw8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_NwaIZqYd65CU5as7Xo74bgJ6pg",
+      "title": "Democratizing Model Pre-Training",
+      "url": "https://www.youtube.com/watch?v=uY-4R1dWtrw",
+      "description": "YouTube视频: Democratizing Model Pre-Training",
+      "video_id": "uY-4R1dWtrw",
+      "thumbnail": "https://i.ytimg.com/vi/uY-4R1dWtrw/hq720_2.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhJIGEoZTAP&rs=AOn4CLCUD7ywN81fPUldEa4VaZYtmcpnaQ",
       "type": "video"
     },
     {
-      "title": "Transformers, explained: Understand the model behind GPT, BERT, and T5",
-      "url": "https://www.youtube.com/watch?v=SZorAJ4I-sA",
-      "description": "YouTube视频: Transformers, explained: Understand the model behind GPT, BERT, and T5",
-      "video_id": "SZorAJ4I-sA",
-      "thumbnail": "https://i.ytimg.com/vi/SZorAJ4I-sA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCi9n2KxgH_wwCyf9XWhc9IYZ7SAQ",
+      "title": "Let's train an AI model to generate recipes! 🍪 #python #ailearning #huggingface",
+      "url": "https://www.youtube.com/watch?v=x0hInMGWgWU",
+      "description": "YouTube视频: Let's train an AI model to generate recipes! 🍪 #python #ailearning #huggingface",
+      "video_id": "x0hInMGWgWU",
+      "thumbnail": "https://i.ytimg.com/vi/x0hInMGWgWU/hq720_2.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAsoNigIMCAAQARhNIFEoZTAP&rs=AOn4CLD23a8tLXOJcR8JOqX3m9YEcgUgkA",
       "type": "video"
     },
     {
-      "title": "How Large Language Models Work",
-      "url": "https://www.youtube.com/watch?v=5sLYAQS9sWQ",
-      "description": "YouTube视频: How Large Language Models Work",
-      "video_id": "5sLYAQS9sWQ",
-      "thumbnail": "https://i.ytimg.com/vi/5sLYAQS9sWQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBMIu1HBggVmDsm-RVixJEYct57kQ",
+      "title": "Why Deep Learning Works Unreasonably Well [How Models Learn Part 3]",
+      "url": "https://www.youtube.com/watch?v=qx7hirqgfuU",
+      "description": "YouTube视频: Why Deep Learning Works Unreasonably Well [How Models Learn Part 3]",
+      "video_id": "qx7hirqgfuU",
+      "thumbnail": "https://i.ytimg.com/vi/qx7hirqgfuU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRVB4U7zZ1fM4Q25NatBXqBWL28A",
       "type": "video"
     },
     {
-      "title": "What Is Image Processing? – Vision Campus",
-      "url": "https://www.youtube.com/watch?v=QMLbTEQJCaI",
-      "description": "YouTube视频: What Is Image Processing? – Vision Campus",
-      "video_id": "QMLbTEQJCaI",
-      "thumbnail": "https://i.ytimg.com/vi/QMLbTEQJCaI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCzJZA9MuaSMUfnfV8LaotE0gENxA",
+      "title": "Lec 01. Introduction to Deep Learning",
+      "url": "https://www.youtube.com/watch?v=6FkRvTtUc-o",
+      "description": "YouTube视频: Lec 01. Introduction to Deep Learning",
+      "video_id": "6FkRvTtUc-o",
+      "thumbnail": "https://i.ytimg.com/vi/6FkRvTtUc-o/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCfuoVeHgwRPPkjRyIa0Z_imsVhwA",
       "type": "video"
     },
     {
-      "title": "But what is a convolution?",
-      "url": "https://www.youtube.com/watch?v=KuXjwB4LzSA",
-      "description": "YouTube视频: But what is a convolution?",
-      "video_id": "KuXjwB4LzSA",
-      "thumbnail": "https://i.ytimg.com/vi/KuXjwB4LzSA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBD_EqI4E471OWLIHXUpo84mSOJMA",
+      "title": "Machine Learning vs Deep Learning",
+      "url": "https://www.youtube.com/watch?v=q6kJ71tEYqM",
+      "description": "YouTube视频: Machine Learning vs Deep Learning",
+      "video_id": "q6kJ71tEYqM",
+      "thumbnail": "https://i.ytimg.com/vi/q6kJ71tEYqM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_ohzUht0caI7e4xRsgmOwfPA2Nw",
       "type": "video"
     },
     {
-      "title": "Image Processing",
-      "url": "https://www.youtube.com/watch?v=A4IC92HVLLU",
-      "description": "YouTube视频: Image Processing",
-      "video_id": "A4IC92HVLLU",
-      "thumbnail": "https://i.ytimg.com/vi/A4IC92HVLLU/hqdefault.jpg?sqp=-oaymwE2COADEI4CSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhZIFooZTAP&rs=AOn4CLCu7g-PEaAFl_rCpMBeWzhH4Jn_eg",
+      "title": "Deep Learning - Computerphile",
+      "url": "https://www.youtube.com/watch?v=l42lr8AlrHk",
+      "description": "YouTube视频: Deep Learning - Computerphile",
+      "video_id": "l42lr8AlrHk",
+      "thumbnail": "https://i.ytimg.com/vi/l42lr8AlrHk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD10Pbpd9qGCjXMMSf4iF5kXHt8sQ",
       "type": "video"
     },
     {
-      "title": "Convolutions in Image Processing | Week 1, lecture 6 | MIT 18.S191 Fall 2020",
-      "url": "https://www.youtube.com/watch?v=8rrHTtUzyZA",
-      "description": "YouTube视频: Convolutions in Image Processing | Week 1, lecture 6 | MIT 18.S191 Fall 2020",
-      "video_id": "8rrHTtUzyZA",
-      "thumbnail": "https://i.ytimg.com/vi/8rrHTtUzyZA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAq01CWsS6go0x5aK3fUQEpw6IRCw",
+      "title": "Stanford CS230 | Autumn 2025 | Lecture 1: Introduction to Deep Learning",
+      "url": "https://www.youtube.com/watch?v=_NLHFoVNlbg",
+      "description": "YouTube视频: Stanford CS230 | Autumn 2025 | Lecture 1: Introduction to Deep Learning",
+      "video_id": "_NLHFoVNlbg",
+      "thumbnail": "https://i.ytimg.com/vi/_NLHFoVNlbg/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLBbNwoDclDW6Z3Gu4d4xwUaDGOyTg",
       "type": "video"
     },
     {
-      "title": "Overview | Image Processing I",
-      "url": "https://www.youtube.com/watch?v=vqRzOGg9mi8",
-      "description": "YouTube视频: Overview | Image Processing I",
-      "video_id": "vqRzOGg9mi8",
-      "thumbnail": "https://i.ytimg.com/vi/vqRzOGg9mi8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6KWJ5_prunJBr-7aqOKeiEZm61Q",
+      "title": "PyTorch for Deep Learning & Machine Learning – Full Course",
+      "url": "https://www.youtube.com/watch?v=V_xro1bcAuA",
+      "description": "YouTube视频: PyTorch for Deep Learning & Machine Learning – Full Course",
+      "video_id": "V_xro1bcAuA",
+      "thumbnail": "https://i.ytimg.com/vi/V_xro1bcAuA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8D2s8Zh8YMEdaLTh7V-an3pTcng",
       "type": "video"
     },
     {
-      "title": "But how do AI images and videos actually work? | Guest video by Welch Labs",
-      "url": "https://www.youtube.com/watch?v=iv-5mZ_9CPY",
-      "description": "YouTube视频: But how do AI images and videos actually work? | Guest video by Welch Labs",
-      "video_id": "iv-5mZ_9CPY",
-      "thumbnail": "https://i.ytimg.com/vi/iv-5mZ_9CPY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAgaTuWeACmtgNhDVpUVVPH7BM84A",
+      "title": "NewJeans (뉴진스) 'Attention' Official MV (Performance ver.)",
+      "url": "https://www.youtube.com/watch?v=x8RIixqumUc",
+      "description": "YouTube视频: NewJeans (뉴진스) 'Attention' Official MV (Performance ver.)",
+      "video_id": "x8RIixqumUc",
+      "thumbnail": "https://i.ytimg.com/vi/x8RIixqumUc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAKryD_efPH-ZGKZq7ZEcpsdg5A2Q",
       "type": "video"
     },
     {
-      "title": "Getting Started with Image Processing",
-      "url": "https://www.youtube.com/watch?v=nAVgUfk-ALE",
-      "description": "YouTube视频: Getting Started with Image Processing",
-      "video_id": "nAVgUfk-ALE",
-      "thumbnail": "https://i.ytimg.com/vi/nAVgUfk-ALE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBcpFqMy3R5F14VqadJKx3P3AUwGA",
+      "title": "Charlie Puth - Attention (Lyrics)",
+      "url": "https://www.youtube.com/watch?v=-HUJ8vSsr_Q",
+      "description": "YouTube视频: Charlie Puth - Attention (Lyrics)",
+      "video_id": "-HUJ8vSsr_Q",
+      "thumbnail": "https://i.ytimg.com/vi/-HUJ8vSsr_Q/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB8mpN9UE1PyVwF0w5GuotI9_3Tmg",
       "type": "video"
     },
     {
-      "title": "How Does JPEG Work, Like, For Real Though? - #shorts",
-      "url": "https://www.youtube.com/watch?v=qMcw-uNT21I",
-      "description": "YouTube视频: How Does JPEG Work, Like, For Real Though? - #shorts",
-      "video_id": "qMcw-uNT21I",
-      "thumbnail": "https://i.ytimg.com/vi/qMcw-uNT21I/hq720_2.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARgRIGgocjAP&rs=AOn4CLCOLbHxjavIoEtPUkThK7zdx6-fIA",
+      "title": "Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo",
+      "url": "https://www.youtube.com/watch?v=3AyMjyHu1bA",
+      "description": "YouTube视频: Justin Bieber - Intentions (Official Video (Short Version)) ft. Quavo",
+      "video_id": "3AyMjyHu1bA",
+      "thumbnail": "https://i.ytimg.com/vi/3AyMjyHu1bA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAL9YxTWGI_Kowyi2zK5zXVQOFXzw",
+      "type": "video"
+    },
+    {
+      "title": "Attention in transformers, step-by-step | Deep Learning Chapter 6",
+      "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "description": "YouTube视频: Attention in transformers, step-by-step | Deep Learning Chapter 6",
+      "video_id": "eMlx5fFNoYc",
+      "thumbnail": "https://i.ytimg.com/vi/eMlx5fFNoYc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCEoNWK28wXm8DFfAmqzTt9fug2mg",
+      "type": "video"
+    },
+    {
+      "title": "NewJeans (뉴진스) 'Attention' Official MV",
+      "url": "https://www.youtube.com/watch?v=js1CtxSY38I",
+      "description": "YouTube视频: NewJeans (뉴진스) 'Attention' Official MV",
+      "video_id": "js1CtxSY38I",
+      "thumbnail": "https://i.ytimg.com/vi/js1CtxSY38I/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvhb8D138qBtHKPz1n-cPzh0zBwQ",
+      "type": "video"
+    },
+    {
+      "title": "How To Reclaim Your Attention (and your life) - Dr. K",
+      "url": "https://www.youtube.com/watch?v=cqz4-HVE2sY",
+      "description": "YouTube视频: How To Reclaim Your Attention (and your life) - Dr. K",
+      "video_id": "cqz4-HVE2sY",
+      "thumbnail": "https://i.ytimg.com/vi/cqz4-HVE2sY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7eRuBVMkunhH_RwUfTGFvDsUSng",
+      "type": "video"
+    },
+    {
+      "title": "Attention for Neural Networks, Clearly Explained!!!",
+      "url": "https://www.youtube.com/watch?v=PSs6nxngL6k",
+      "description": "YouTube视频: Attention for Neural Networks, Clearly Explained!!!",
+      "video_id": "PSs6nxngL6k",
+      "thumbnail": "https://i.ytimg.com/vi/PSs6nxngL6k/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBWHe4YuDU1L868dpnsfJ6nW2MvNg",
+      "type": "video"
+    },
+    {
+      "title": "NewJeans (뉴진스) 'Attention' Dance Practice (ver.3)",
+      "url": "https://www.youtube.com/watch?v=Sv2MLXAT8Bw",
+      "description": "YouTube视频: NewJeans (뉴진스) 'Attention' Dance Practice (ver.3)",
+      "video_id": "Sv2MLXAT8Bw",
+      "thumbnail": "https://i.ytimg.com/vi/Sv2MLXAT8Bw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBaU89e3-n2WCaCeWSms6RUzNE5xQ",
+      "type": "video"
+    },
+    {
+      "title": "Reinforcement Learning: Crash Course AI #9",
+      "url": "https://www.youtube.com/watch?v=nIgIv4IfJ6s",
+      "description": "YouTube视频: Reinforcement Learning: Crash Course AI #9",
+      "video_id": "nIgIv4IfJ6s",
+      "thumbnail": "https://i.ytimg.com/vi/nIgIv4IfJ6s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBzUgvgzUcyERzrkWgq9JSQmQVVSQ",
+      "type": "video"
+    },
+    {
+      "title": "Reinforcement Learning from Human Feedback (RLHF) Explained",
+      "url": "https://www.youtube.com/watch?v=T_X4XFwKX8k",
+      "description": "YouTube视频: Reinforcement Learning from Human Feedback (RLHF) Explained",
+      "video_id": "T_X4XFwKX8k",
+      "thumbnail": "https://i.ytimg.com/vi/T_X4XFwKX8k/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAdNawOiHs9vkVvz4pGce25xCpzKg",
+      "type": "video"
+    },
+    {
+      "title": "Reinforcement Learning Explained in 90 Seconds | Synopsys​",
+      "url": "https://www.youtube.com/watch?v=C2zw2H1c5Fk",
+      "description": "YouTube视频: Reinforcement Learning Explained in 90 Seconds | Synopsys​",
+      "video_id": "C2zw2H1c5Fk",
+      "thumbnail": "https://i.ytimg.com/vi/C2zw2H1c5Fk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3HJkvx7PasbGUwVAK6_ciirnm_A",
+      "type": "video"
+    },
+    {
+      "title": "Reinforcement Learning Series: Overview of Methods",
+      "url": "https://www.youtube.com/watch?v=i7q8bISGwMQ",
+      "description": "YouTube视频: Reinforcement Learning Series: Overview of Methods",
+      "video_id": "i7q8bISGwMQ",
+      "thumbnail": "https://i.ytimg.com/vi/i7q8bISGwMQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDurVxqGdA8TD9UgK_mITYMhdWF4g",
+      "type": "video"
+    },
+    {
+      "title": "Richard Sutton – Father of RL thinks LLMs are a dead end",
+      "url": "https://www.youtube.com/watch?v=21EYKqUsPfg",
+      "description": "YouTube视频: Richard Sutton – Father of RL thinks LLMs are a dead end",
+      "video_id": "21EYKqUsPfg",
+      "thumbnail": "https://i.ytimg.com/vi/21EYKqUsPfg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCfKFAwyy5tB6UiHHffh6OkjAl7iw",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS230 | Autumn 2025 | Lecture 5: Deep Reinforcement Learning",
+      "url": "https://www.youtube.com/watch?v=4E27qlfYw0A",
+      "description": "YouTube视频: Stanford CS230 | Autumn 2025 | Lecture 5: Deep Reinforcement Learning",
+      "video_id": "4E27qlfYw0A",
+      "thumbnail": "https://i.ytimg.com/vi/4E27qlfYw0A/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLCSNzC4F_QU3h7x7IdAMxFlzyoJkw",
+      "type": "video"
+    },
+    {
+      "title": "AI Learns to Walk (deep reinforcement learning)",
+      "url": "https://www.youtube.com/watch?v=L_4BPjLBF4E",
+      "description": "YouTube视频: AI Learns to Walk (deep reinforcement learning)",
+      "video_id": "L_4BPjLBF4E",
+      "thumbnail": "https://i.ytimg.com/vi/L_4BPjLBF4E/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDAAvCaZpRY58CQEjrKUdFndhCd2A",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS224R Deep Reinforcement Learning | Spring 2025 | Lecture 1: Class Intro",
+      "url": "https://www.youtube.com/watch?v=EvHRQhMX7_w",
+      "description": "YouTube视频: Stanford CS224R Deep Reinforcement Learning | Spring 2025 | Lecture 1: Class Intro",
+      "video_id": "EvHRQhMX7_w",
+      "thumbnail": "https://i.ytimg.com/vi/EvHRQhMX7_w/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLDkCH2S8qoE_0wTV-Ko6EbGEXdMMA",
+      "type": "video"
+    },
+    {
+      "title": "What Dan and Phil Text Each Other 5",
+      "url": "https://www.youtube.com/watch?v=1EFkipijxH8",
+      "description": "YouTube视频: What Dan and Phil Text Each Other 5",
+      "video_id": "1EFkipijxH8",
+      "thumbnail": "https://i.ytimg.com/vi/1EFkipijxH8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBdl7YH5Dqk6REtWfLwLgW69ZZEoQ",
+      "type": "video"
+    },
+    {
+      "title": "\"Mass Text\" - Tay Allyn- Official Music Video",
+      "url": "https://www.youtube.com/watch?v=XMgcHv-HGCY",
+      "description": "YouTube视频: \"Mass Text\" - Tay Allyn- Official Music Video",
+      "video_id": "XMgcHv-HGCY",
+      "thumbnail": "https://i.ytimg.com/vi/XMgcHv-HGCY/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_IBYoEzAP&rs=AOn4CLBxB1wfSImF_75pHOT51xO90loavw",
+      "type": "video"
+    },
+    {
+      "title": "10 Psychological Tricks Over Text To Make Someone Like You",
+      "url": "https://www.youtube.com/watch?v=UjPhHVtxaoE",
+      "description": "YouTube视频: 10 Psychological Tricks Over Text To Make Someone Like You",
+      "video_id": "UjPhHVtxaoE",
+      "thumbnail": "https://i.ytimg.com/vi/UjPhHVtxaoE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDoDE2ZgHI67V-Z449PW735644HdA",
+      "type": "video"
+    },
+    {
+      "title": "Key & Peele - Text Message Confusion - Uncensored",
+      "url": "https://www.youtube.com/watch?v=naleynXS7yo",
+      "description": "YouTube视频: Key & Peele - Text Message Confusion - Uncensored",
+      "video_id": "naleynXS7yo",
+      "thumbnail": "https://i.ytimg.com/vi/naleynXS7yo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBRDc8Z84JrJ6-MsHijE78FXLDUpQ",
+      "type": "video"
+    },
+    {
+      "title": "Celebrities Read Texts from Their Moms",
+      "url": "https://www.youtube.com/watch?v=tRT7DMk7qcw",
+      "description": "YouTube视频: Celebrities Read Texts from Their Moms",
+      "video_id": "tRT7DMk7qcw",
+      "thumbnail": "https://i.ytimg.com/vi/tRT7DMk7qcw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDAwkv81fbp9hhGBPOoBneQN1SzhQ",
+      "type": "video"
+    },
+    {
+      "title": "What Dan and Phil Text Each Other 2",
+      "url": "https://www.youtube.com/watch?v=WcPxcmvZHIc",
+      "description": "YouTube视频: What Dan and Phil Text Each Other 2",
+      "video_id": "WcPxcmvZHIc",
+      "thumbnail": "https://i.ytimg.com/vi/WcPxcmvZHIc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBv98WHP5Lx95sQaAhk_GH_689eQA",
+      "type": "video"
+    },
+    {
+      "title": "FUNNIEST GENDER SWAP ROLEPLAY EVER |  The Watcher Text Story (Part 1)",
+      "url": "https://www.youtube.com/watch?v=VaZuftzpJkY",
+      "description": "YouTube视频: FUNNIEST GENDER SWAP ROLEPLAY EVER |  The Watcher Text Story (Part 1)",
+      "video_id": "VaZuftzpJkY",
+      "thumbnail": "https://i.ytimg.com/vi/VaZuftzpJkY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1vHr4Xbupb1QgA7HccREjSLnGWw",
+      "type": "video"
+    },
+    {
+      "title": "FUNNIEST TEXTS FROM EXS",
+      "url": "https://www.youtube.com/watch?v=114P7DGDpRE",
+      "description": "YouTube视频: FUNNIEST TEXTS FROM EXS",
+      "video_id": "114P7DGDpRE",
+      "thumbnail": "https://i.ytimg.com/vi/114P7DGDpRE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLARBkusqG9UA-MXfG4J_gdO8ACJ5A",
       "type": "video"
     }
   ],
@@ -667,6 +1286,20 @@
       "type": "code"
     },
     {
+      "title": "flair",
+      "url": "https://github.com/flairNLP/flair",
+      "description": "GitHub代码仓库: flair",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "compromise",
+      "url": "https://github.com/spencermountain/compromise",
+      "description": "GitHub代码仓库: compromise",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
       "title": "tensorflow",
       "url": "https://github.com/tensorflow/tensorflow",
       "description": "GitHub代码仓库: tensorflow",
@@ -709,16 +1342,79 @@
       "type": "code"
     },
     {
-      "title": "flair",
-      "url": "https://github.com/flairNLP/flair",
-      "description": "GitHub代码仓库: flair",
+      "title": "Deep-Learning-for-Recommendation-Systems",
+      "url": "https://github.com/robi56/Deep-Learning-for-Recommendation-Systems",
+      "description": "GitHub代码仓库: Deep-Learning-for-Recommendation-Systems",
       "source": "GitHub",
       "type": "code"
     },
     {
-      "title": "compromise",
-      "url": "https://github.com/spencermountain/compromise",
-      "description": "GitHub代码仓库: compromise",
+      "title": "torchrec",
+      "url": "https://github.com/meta-pytorch/torchrec",
+      "description": "GitHub代码仓库: torchrec",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "DeepRec",
+      "url": "https://github.com/imsheridan/DeepRec",
+      "description": "GitHub代码仓库: DeepRec",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Synchronized-BatchNorm-PyTorch",
+      "url": "https://github.com/vacancy/Synchronized-BatchNorm-PyTorch",
+      "description": "GitHub代码仓库: Synchronized-BatchNorm-PyTorch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "IBN-Net",
+      "url": "https://github.com/XingangPan/IBN-Net",
+      "description": "GitHub代码仓库: IBN-Net",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "cnn-models",
+      "url": "https://github.com/cvjena/cnn-models",
+      "description": "GitHub代码仓库: cnn-models",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "FedBN",
+      "url": "https://github.com/med-air/FedBN",
+      "description": "GitHub代码仓库: FedBN",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "recurrent-batch-normalization-pytorch",
+      "url": "https://github.com/jihunchoi/recurrent-batch-normalization-pytorch",
+      "description": "GitHub代码仓库: recurrent-batch-normalization-pytorch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "deep-learning",
+      "url": "https://github.com/tz28/deep-learning",
+      "description": "GitHub代码仓库: deep-learning",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "pytorch-syncbn",
+      "url": "https://github.com/tamakoji/pytorch-syncbn",
+      "description": "GitHub代码仓库: pytorch-syncbn",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "pytorch_bn_fusion",
+      "url": "https://github.com/imedslab/pytorch_bn_fusion",
+      "description": "GitHub代码仓库: pytorch_bn_fusion",
       "source": "GitHub",
       "type": "code"
     },
@@ -744,23 +1440,51 @@
       "type": "code"
     },
     {
-      "title": "deep-learning-for-image-processing",
-      "url": "https://github.com/WZMIAOMIAO/deep-learning-for-image-processing",
-      "description": "GitHub代码仓库: deep-learning-for-image-processing",
+      "title": "annotated_deep_learning_paper_implementations",
+      "url": "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
+      "description": "GitHub代码仓库: annotated_deep_learning_paper_implementations",
       "source": "GitHub",
       "type": "code"
     },
     {
-      "title": "watchtower",
-      "url": "https://github.com/containrrr/watchtower",
-      "description": "GitHub代码仓库: watchtower",
+      "title": "keras",
+      "url": "https://github.com/keras-team/keras",
+      "description": "GitHub代码仓库: keras",
       "source": "GitHub",
       "type": "code"
     },
     {
-      "title": "GPUImage",
-      "url": "https://github.com/BradLarson/GPUImage",
-      "description": "GitHub代码仓库: GPUImage",
+      "title": "DeepLearning-500-questions",
+      "url": "https://github.com/scutan90/DeepLearning-500-questions",
+      "description": "GitHub代码仓库: DeepLearning-500-questions",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "TTS",
+      "url": "https://github.com/coqui-ai/TTS",
+      "description": "GitHub代码仓库: TTS",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "DeepSpeed",
+      "url": "https://github.com/deepspeedai/DeepSpeed",
+      "description": "GitHub代码仓库: DeepSpeed",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Deep-Learning-Papers-Reading-Roadmap",
+      "url": "https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap",
+      "description": "GitHub代码仓库: Deep-Learning-Papers-Reading-Roadmap",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "deeplearningbook-chinese",
+      "url": "https://github.com/exacity/deeplearningbook-chinese",
+      "description": "GitHub代码仓库: deeplearningbook-chinese",
       "source": "GitHub",
       "type": "code"
     }
