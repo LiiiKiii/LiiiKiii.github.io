@@ -661,11 +661,11 @@ The system is implemented in Python using Flask as the main web framework. The p
 At the backend level, the major self-developed modules are:
 
 \begin{itemize}
-\item \texttt{keyword\_extractor.py}: topic extraction and phrase cleaning;
-\item \texttt{resource\_searcher.py}: multi-source retrieval and AI-domain filtering;
-\item \texttt{recommender.py}: content-based ranking and recommendation selection;
+\item Keyword extractor: topic extraction and phrase cleaning;
+\item Resource searcher: multi-source retrieval and AI-domain filtering;
+\item Recommender: content-based ranking and recommendation selection;
 \item \texttt{ai\_summarizer.py}: optional LLM summary generation with fallback behaviour;
-\item \texttt{app.py}: Flask routes, upload handling, progress management, and result packaging.
+\item Web app: Flask routes, upload handling, progress management, and result packaging.
 \end{itemize}
 
 This directly addresses the project requirement to describe not only the conceptual method but also the engineered system and which parts were implemented by the author.
@@ -815,13 +815,13 @@ Beyond paper-level design, a substantial part of the project involved refining t
 \hline\hline
 Component & Change & Practical effect\\
 \hline
-\texttt{recommender.py} & Removed summary generation during intermediate recommendation, added lightweight domain bonus, stored final \texttt{ranking\_score}. & Avoids duplicate API work, makes ranking more transparent, and improves the authority profile of the final list.\\
-\texttt{app.py} & Reuses existing summaries at presentation time and only generates them lazily when absent. & Reduces repeated latency in the user-facing interface and keeps summary generation aligned with actual display needs.\\
-\texttt{keyword\_extractor.py} & Added redundancy pruning after MMR selection. & Prevents phrases such as short/long containment variants from crowding the keyword set and improves search-query usefulness.\\
-\texttt{metrics.py} & Reworked metrics to cover coverage, diversity, AI relevance, authority, novelty, URL validity, and modality counts. & Turns evaluation from an informal inspection task into a repeatable metric-based process suitable for inclusion in the dissertation.\\
-\texttt{resource\_searcher.py} & Added a shared HTTP session with retry-aware GET handling for repeated source queries. & Reduces repeated connection overhead and makes retrieval behaviour more stable across evaluation reruns.\\
-\texttt{evaluator.py} & Rewrote the evaluator so it can actually run end-to-end and export JSON, CSV, LaTeX tables, and chart outputs. & Makes the reported results reproducible and directly links the codebase to the paper’s tables and figures.\\
-\texttt{run\_performance\_tests.py} & Replaced placeholder timing logic with measurements of keyword extraction, ranking, and combined local pipeline stages, and exported paper-ready artefacts. & Provides genuine implementation-level performance evidence instead of superficial script execution.\\
+Recommender & Removed summary generation during intermediate recommendation, added lightweight domain bonus, stored final \texttt{ranking\_score}. & Avoids duplicate API work, makes ranking more transparent, and improves the authority profile of the final list.\\
+Web app & Reuses existing summaries at presentation time and only generates them lazily when absent. & Reduces repeated latency in the user-facing interface and keeps summary generation aligned with actual display needs.\\
+Keyword extractor & Added redundancy pruning after MMR selection. & Prevents phrases such as short/long containment variants from crowding the keyword set and improves search-query usefulness.\\
+Evaluation metrics & Reworked metrics to cover coverage, diversity, AI relevance, authority, novelty, URL validity, and modality counts. & Turns evaluation from an informal inspection task into a repeatable metric-based process suitable for inclusion in the dissertation.\\
+Resource searcher & Added a shared HTTP session with retry-aware GET handling for repeated source queries. & Reduces repeated connection overhead and makes retrieval behaviour more stable across evaluation reruns.\\
+Evaluation runner & Rewrote the evaluator so it can actually run end-to-end and export JSON, CSV, LaTeX tables, and chart outputs. & Makes the reported results reproducible and directly links the codebase to the paper’s tables and figures.\\
+Performance harness & Replaced placeholder timing logic with measurements of keyword extraction, ranking, and combined local pipeline stages, and exported paper-ready artefacts. & Provides genuine implementation-level performance evidence instead of superficial script execution.\\
 \hline\hline
 \end{tabular}
 \end{table*}
@@ -901,11 +901,11 @@ A practical strength of the current evaluation is that it is directly tied to pr
 \hline\hline
 Asset & Role in evaluation\\
 \hline
-Pilot corpus (\texttt{data/test\_corpus}) & Supplies seven AI/ML text documents for repeatable end-to-end testing.\\
-\texttt{evaluation\_results.json} & Stores keyword and resource metrics used for tables and plot generation.\\
-\texttt{evaluator.py} & Produces baseline-vs-pipeline metrics and exports dissertation figures.\\
-\texttt{run\_performance\_tests.py} & Measures deterministic local stages of the implemented codebase.\\
-Figures in \texttt{Paper/.../figures} & Provide paper-ready visualisations directly generated from evaluation outputs.\\
+Pilot corpus & Supplies seven AI/ML text documents for repeatable end-to-end testing.\\
+Evaluation JSON & Stores keyword and resource metrics used for tables and plot generation.\\
+Evaluation runner & Produces baseline-vs-pipeline metrics and exports dissertation figures.\\
+Performance harness & Measures deterministic local stages of the implemented codebase.\\
+Paper figures & Provide paper-ready visualisations directly generated from evaluation outputs.\\
 \hline\hline
 \end{tabular}
 \end{table}
