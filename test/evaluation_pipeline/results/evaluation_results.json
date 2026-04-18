@@ -47,7 +47,10 @@
           "invalid": 0,
           "valid_percentage": 100.0
         },
-        "novelty": 100.0
+        "novelty": 100.0,
+        "input_relevance": 26.38,
+        "avg_input_similarity": 0.0595,
+        "input_relevance_threshold": 0.08
       },
       "topk_unranked": {
         "total_resources": 45,
@@ -65,7 +68,10 @@
           "valid_percentage": 100.0
         },
         "noise_reduction": 91.7,
-        "novelty": 100.0
+        "novelty": 100.0,
+        "input_relevance": 44.44,
+        "avg_input_similarity": 0.0822,
+        "input_relevance_threshold": 0.08
       },
       "topk_ranked": {
         "total_resources": 45,
@@ -83,7 +89,10 @@
           "valid_percentage": 100.0
         },
         "noise_reduction": 91.7,
-        "novelty": 100.0
+        "novelty": 100.0,
+        "input_relevance": 75.56,
+        "avg_input_similarity": 0.1318,
+        "input_relevance_threshold": 0.08
       }
     },
     "resource_type_counts": {
@@ -109,6 +118,7 @@
       "keyword_diversity_delta": -0.0318,
       "ranking_ai_relevance_delta": 6.66,
       "ranking_authority_delta": 26.67,
+      "ranking_input_relevance_delta": 31.12,
       "ranking_noise_reduction": 91.7
     }
   },
@@ -178,7 +188,10 @@
             "invalid": 0,
             "valid_percentage": 100.0
           },
-          "novelty": 100.0
+          "novelty": 100.0,
+          "input_relevance": 34.78,
+          "avg_input_similarity": 0.0732,
+          "input_relevance_threshold": 0.08
         },
         "topk_unranked": {
           "total_resources": 15,
@@ -196,7 +209,10 @@
             "valid_percentage": 100.0
           },
           "noise_reduction": 91.85,
-          "novelty": 100.0
+          "novelty": 100.0,
+          "input_relevance": 33.33,
+          "avg_input_similarity": 0.0763,
+          "input_relevance_threshold": 0.08
         },
         "topk_ranked": {
           "total_resources": 15,
@@ -214,7 +230,10 @@
             "valid_percentage": 100.0
           },
           "noise_reduction": 91.85,
-          "novelty": 100.0
+          "novelty": 100.0,
+          "input_relevance": 60.0,
+          "avg_input_similarity": 0.1287,
+          "input_relevance_threshold": 0.08
         }
       },
       "resource_type_counts": {
@@ -240,6 +259,7 @@
         "keyword_diversity_delta": -0.032,
         "ranking_ai_relevance_delta": 6.67,
         "ranking_authority_delta": 26.67,
+        "ranking_input_relevance_delta": 26.67,
         "ranking_noise_reduction": 91.85
       }
     },
@@ -308,7 +328,10 @@
             "invalid": 0,
             "valid_percentage": 100.0
           },
-          "novelty": 100.0
+          "novelty": 100.0,
+          "input_relevance": 21.55,
+          "avg_input_similarity": 0.0528,
+          "input_relevance_threshold": 0.08
         },
         "topk_unranked": {
           "total_resources": 15,
@@ -326,7 +349,10 @@
             "valid_percentage": 100.0
           },
           "noise_reduction": 91.71,
-          "novelty": 100.0
+          "novelty": 100.0,
+          "input_relevance": 46.67,
+          "avg_input_similarity": 0.0739,
+          "input_relevance_threshold": 0.08
         },
         "topk_ranked": {
           "total_resources": 15,
@@ -344,7 +370,10 @@
             "valid_percentage": 100.0
           },
           "noise_reduction": 91.71,
-          "novelty": 100.0
+          "novelty": 100.0,
+          "input_relevance": 66.67,
+          "avg_input_similarity": 0.1239,
+          "input_relevance_threshold": 0.08
         }
       },
       "resource_type_counts": {
@@ -370,6 +399,7 @@
         "keyword_diversity_delta": -0.0333,
         "ranking_ai_relevance_delta": 6.67,
         "ranking_authority_delta": 26.67,
+        "ranking_input_relevance_delta": 20.0,
         "ranking_noise_reduction": 91.71
       }
     },
@@ -437,7 +467,10 @@
             "invalid": 0,
             "valid_percentage": 100.0
           },
-          "novelty": 100.0
+          "novelty": 100.0,
+          "input_relevance": 37.85,
+          "avg_input_similarity": 0.0714,
+          "input_relevance_threshold": 0.08
         },
         "topk_unranked": {
           "total_resources": 15,
@@ -455,7 +488,10 @@
             "valid_percentage": 100.0
           },
           "noise_reduction": 91.53,
-          "novelty": 100.0
+          "novelty": 100.0,
+          "input_relevance": 46.67,
+          "avg_input_similarity": 0.0995,
+          "input_relevance_threshold": 0.08
         },
         "topk_ranked": {
           "total_resources": 15,
@@ -473,7 +509,10 @@
             "valid_percentage": 100.0
           },
           "noise_reduction": 91.53,
-          "novelty": 100.0
+          "novelty": 100.0,
+          "input_relevance": 100.0,
+          "avg_input_similarity": 0.1636,
+          "input_relevance_threshold": 0.08
         }
       },
       "resource_type_counts": {
@@ -499,6 +538,7 @@
         "keyword_diversity_delta": -0.0302,
         "ranking_ai_relevance_delta": 6.67,
         "ranking_authority_delta": 26.67,
+        "ranking_input_relevance_delta": 53.33,
         "ranking_noise_reduction": 91.53
       }
     }

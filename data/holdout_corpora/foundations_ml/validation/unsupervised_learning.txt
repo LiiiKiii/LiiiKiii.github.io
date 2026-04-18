@@ -1,0 +1,27 @@
+Unsupervised Learning
+
+Unsupervised learning studies patterns in data without labelled targets. Instead of predicting a known answer, the model tries to discover structure, clusters, low-dimensional representations, or latent factors.
+
+Typical unsupervised tasks include:
+- clustering similar examples
+- dimensionality reduction
+- anomaly detection
+- representation learning
+
+Core techniques:
+1. K-means clustering
+2. Hierarchical clustering
+3. Principal component analysis
+4. Autoencoders
+5. Density estimation methods
+
+Why it matters:
+Unsupervised learning is useful when labels are expensive or unavailable. It also supports downstream AI applications by compressing data, extracting useful features, and discovering hidden relationships.
+
+Examples:
+- grouping customers by behaviour
+- compressing high-dimensional image data
+- detecting unusual transactions
+- learning embeddings for later supervised tasks
+
+In the broader AI pipeline, unsupervised learning complements supervised learning by helping models exploit large amounts of raw data. Many modern deep learning systems combine unsupervised or self-supervised pretraining with smaller amounts of labelled fine-tuning data.

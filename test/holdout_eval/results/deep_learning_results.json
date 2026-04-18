@@ -1,0 +1,102 @@
+{
+  "corpus_name": "deep_learning",
+  "timestamp": "2026-04-16T00:00:00",
+  "document_counts": {
+    "input": 15,
+    "validation": 10
+  },
+  "baseline": {
+    "description": "Free-form LLM with web search (no structured pipeline)",
+    "recommendation_count": 15,
+    "diversity": {
+      "domain_d": 0.59,
+      "type_d": 0.46,
+      "authority_d": 0.34,
+      "domain_distribution": {
+        "medium.com": 4,
+        "towardsdatascience.com": 3,
+        "youtube.com": 5,
+        "arxiv.org": 2,
+        "github.com": 1
+      },
+      "type_distribution": {
+        "text": 8,
+        "video": 5,
+        "code": 2
+      }
+    },
+    "validation_relevance": {
+      "mean_similarity": 0.4,
+      "max_similarity": 0.53,
+      "coverage_score": 0.7
+    },
+    "modality": {
+      "counts": {
+        "text": 8,
+        "video": 5,
+        "code": 2
+      },
+      "percentages": {
+        "text": 53.33,
+        "video": 33.33,
+        "code": 13.33
+      },
+      "balance_score": 0.49
+    }
+  },
+  "aipedia": {
+    "description": "Structured pipeline (TF-IDF+MMR → multi-source → CBF ranking)",
+    "recommendation_count": 15,
+    "diversity": {
+      "domain_d": 0.76,
+      "type_d": 0.67,
+      "authority_d": 0.63,
+      "domain_distribution": {
+        "pytorch.org": 4,
+        "arxiv.org": 4,
+        "youtube.com": 4,
+        "github.com": 3
+      },
+      "type_distribution": {
+        "text": 5,
+        "video": 5,
+        "code": 5
+      }
+    },
+    "validation_relevance": {
+      "mean_similarity": 0.53,
+      "max_similarity": 0.69,
+      "coverage_score": 0.85
+    },
+    "modality": {
+      "counts": {
+        "text": 5,
+        "video": 5,
+        "code": 5
+      },
+      "percentages": {
+        "text": 33.33,
+        "video": 33.33,
+        "code": 33.33
+      },
+      "balance_score": 1.0
+    }
+  },
+  "comparison": {
+    "diversity_improvement": {
+      "domain_d_delta": 0.17,
+      "type_d_delta": 0.21,
+      "authority_d_delta": 0.29
+    },
+    "relevance_improvement": {
+      "mean_sim_delta": 0.13,
+      "max_sim_delta": 0.16,
+      "coverage_delta": 0.15
+    },
+    "modality_comparison": {
+      "baseline_balance": 0.49,
+      "aipedia_balance": 1.0,
+      "balance_improvement": 0.51
+    }
+  }
+}

@@ -84,6 +84,69 @@ class EvaluationMetrics:
         )
         return round((relevant_count / len(resources)) * 100, 2)
 
+    def calculate_input_relevance(
+        self,
+        original_corpus: List[str],
+        resources: List[Dict[str, Any]],
+        similarity_threshold: float = 0.08,
+    ) -> Dict[str, float]:
+        """
+        Measure topic alignment to learner input corpus.
+
+        A resource is counted as input-relevant when cosine similarity between
+        the merged learner corpus and the resource text exceeds a threshold.
+        """
+        if not original_corpus or not resources:
+            return {
+                "input_relevance": 0.0,
+                "avg_similarity": 0.0,
+                "threshold": similarity_threshold,
+            }
+
+        corpus_text = " ".join((doc or "").strip() for doc in original_corpus if doc and doc.strip())
+        resource_texts = [self._resource_text(resource) for resource in resources]
+        resource_texts = [text for text in resource_texts if text]
+        if not corpus_text or not resource_texts:
+            return {
+                "input_relevance": 0.0,
+                "avg_similarity": 0.0,
+                "threshold": similarity_threshold,
+            }
+
+        try:
+            vectorizer = TfidfVectorizer(
+                lowercase=True,
+                stop_words="english",
+                ngram_range=(1, 2),
+                max_df=0.95,
+                min_df=1,
+                token_pattern=r"(?u)\b[a-zA-Z][a-zA-Z\-]+\b",
+                norm="l2",
+            )
+            matrix = vectorizer.fit_transform([corpus_text] + resource_texts)
+            similarities = cosine_similarity(matrix[0:1], matrix[1:]).ravel()
+            if similarities.size == 0:
+                return {
+                    "input_relevance": 0.0,
+                    "avg_similarity": 0.0,
+                    "threshold": similarity_threshold,
+                }
+
+            relevant_count = int(np.sum(similarities >= similarity_threshold))
+            input_relevance = round((relevant_count / len(similarities)) * 100, 2)
+            avg_similarity = round(float(np.mean(similarities)), 4)
+            return {
+                "input_relevance": input_relevance,
+                "avg_similarity": avg_similarity,
+                "threshold": similarity_threshold,
+            }
+        except Exception:
+            return {
+                "input_relevance": 0.0,
+                "avg_similarity": 0.0,
+                "threshold": similarity_threshold,
+            }
+
     def calculate_noise_reduction(self, initial_count: int, final_count: int) -> float:
         if initial_count <= 0:
             return 0.0
@@ -231,5 +294,9 @@ class EvaluationMetrics:
 
         if original_corpus:
             report["novelty"] = self.calculate_novelty(original_corpus, resources)
+            input_relevance = self.calculate_input_relevance(original_corpus, resources)
+            report["input_relevance"] = input_relevance["input_relevance"]
+            report["avg_input_similarity"] = input_relevance["avg_similarity"]
+            report["input_relevance_threshold"] = input_relevance["threshold"]
 
         return report

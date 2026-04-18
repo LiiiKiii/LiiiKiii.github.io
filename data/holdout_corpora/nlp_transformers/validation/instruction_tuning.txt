@@ -1,0 +1,18 @@
+Instruction Tuning and Alignment
+
+Instruction tuning adapts a pretrained language model so it can better follow user requests expressed in natural language. Instead of learning only from raw text continuation, the model is optimized on prompt-response pairs that resemble interactive use.
+
+Goals of instruction tuning:
+- improve helpfulness
+- improve obedience to task instructions
+- reduce irrelevant or confusing outputs
+- make the model more suitable for dialogue and assistance
+
+Related alignment ideas:
+1. supervised fine-tuning
+2. reinforcement learning from human feedback
+3. preference optimization
+4. safety filtering and refusal policies
+
+Why it matters for AI-Pedia:
+The project is not just about retrieving resources. It also involves presenting recommendations and optional summaries in a way that is useful to learners. Instruction-tuned models are therefore relevant to the explanatory layer, even if the retrieval and ranking pipeline remains primarily symbolic and heuristic.

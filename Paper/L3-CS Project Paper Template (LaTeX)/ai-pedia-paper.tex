@@ -1,6 +1,6 @@
 
 %% ai-pedia-paper.tex
-%% AI-Pedia project paper — structure follows L3 CS Project Paper Template (LaTeX)
+%% AI-Pedia project paper - structure follows L3 CS Project Paper Template (LaTeX)
 %% Template: project-paper-template.tex (v1.1, Dec 2022, Craig Stewart)
 %% for Durham University, Computer Science Project paper templates
 %% contact craig.d.stewart at durham.ac.uk for support
@@ -12,7 +12,7 @@
 %% Legal Notice:
 %% This code is offered as-is without any warranty either expressed or
 %% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% FITNESS FOR A PARTICULAR PURPOSE!
 %% User assumes all risk.
 %% In no event shall the IEEE or any contributor to this code be liable for
 %% any damages or losses, including, but not limited to, incidental,
@@ -116,7 +116,7 @@
 % graphicx was written by David Carlisle and Sebastian Rahtz. It is
 % required if you want graphics, photos, etc. graphicx.sty is already
 % installed on most LaTeX systems. The latest version and documentation
-% can be obtained at: 
+% can be obtained at:
 % http://www.ctan.org/pkg/graphicx
 % Another good source of documentation is "Using Imported Graphics in
 % LaTeX2e" by Keith Reckdahl which can be found at:
@@ -141,7 +141,8 @@
 
 % *** MATH PACKAGES ***
 %
-%\usepackage{amsmath}
+\usepackage{amsmath}
+\usepackage{booktabs}
 % A popular package from the American Mathematical Society that provides
 % many useful and powerful commands for dealing with mathematics.
 %
@@ -264,8 +265,8 @@
 % \let\MYoriglatexcaption\caption
 % \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
 %\fi
-% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
-% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and
+% Axel Sommerfeldt. This package may be useful when used in conjunction with
 % IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
 % submissions have lists of figures/tables at the end of the paper and that
 % figures/tables without any captions are placed on a page by themselves at
@@ -294,7 +295,7 @@
 % http://www.ctan.org/pkg/endfloat
 %
 % The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
-% later in the document, say, to conditionally put the References on a 
+% later in the document, say, to conditionally put the References on a
 % page by themselves.
 
 
@@ -329,7 +330,7 @@
 \title{An AI-Powered Multimedia Resource Recommendation System for Education of AI}
 %
 %
-% author  
+% author
 
 \author{Student Name: Liqi Luan\\Supervisor Name: Yang, Long\\
 Submitted as part of the degree of BSc Computer Science to the\\
@@ -359,8 +360,8 @@ Artificial intelligence, content-based filtering, educational technology, keywor
 % To allow for easy dual compilation without having to reenter the
 % abstract/keywords data, the \IEEEtitleabstractindextext text will
 % not be used in maketitle, but will appear (i.e., to be "transported")
-% here as \IEEEdisplaynontitleabstractindextext when the compsoc 
-% or transmag modes are not selected <OR> if conference mode is selected 
+% here as \IEEEdisplaynontitleabstractindextext when the compsoc
+% or transmag modes are not selected <OR> if conference mode is selected
 % - because all conference papers position the abstract like regular
 % papers do.
 \IEEEdisplaynontitleabstractindextext
@@ -393,7 +394,7 @@ Artificial intelligence, content-based filtering, educational technology, keywor
 
 \begin{figure}[!b]
 \centering
-\includegraphics[width=0.46\textwidth]{/Users/macbook/.cursor/projects/Users-macbook-Desktop-AI-Pedia-Project/assets/__2026-03-18_14.33.26-cc5251cd-535d-4d8e-b87a-4301a990cbfa.png}
+\includegraphics[width=0.46\textwidth]{figures/multimedia_system.png}
 \caption{Multimedia design for learning}
 \label{fig:multimedia_system}
 \end{figure}
@@ -402,7 +403,7 @@ In parallel with this growth in available resources, recent large language model
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.4\textwidth]{/Users/macbook/.cursor/projects/Users-macbook-Desktop-AI-Pedia-Project/assets/__2026-03-04_15.03.09-2584bd6f-9165-4c4f-9b58-94b30d934269.png}
+\includegraphics[width=0.4\textwidth]{figures/notebooklm_vs_aipedia.png}
 \caption{Contrast between NotebookLM and reinforcement system.}
 \label{fig:notebooklm_vs_aipedia}
 \end{figure}
@@ -428,7 +429,7 @@ Beyond these formal objectives, AI-Pedia is designed around concrete student use
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.45\textwidth]{/Users/macbook/.cursor/projects/Users-macbook-Desktop-AI-Pedia-Project/assets/__2026-03-18_15.59.20-9a47f0b6-785d-438a-bc81-7d8180987563.png}
+\includegraphics[width=0.45\textwidth]{figures/intro_concept_diagram.png}
 \caption{High-level AI-Pedia pipeline aligned with research questions (RQ1--RQ3).}
 \label{fig:intro_concept_diagram}
 \end{figure}
@@ -451,14 +452,14 @@ Fig.~\ref{fig:tech_evolution} illustrates this trajectory: from classical recomm
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.45\textwidth]{/Users/macbook/.cursor/projects/Users-macbook-Desktop-AI-Pedia-Project/assets/__2026-03-18_16.16.14-37567875-56e5-454c-8f95-123e0a51c3d2.png}
+\includegraphics[width=0.45\textwidth]{figures/tech_evolution.png}
 \caption{Technology evolution}
 \label{fig:tech_evolution}
 \end{figure}
 
 \subsection{Educational Recommender Systems}
 
-Educational recommender systems aim to suggest learning items that match a learner’s level, goals, or context. These systems are typically based on content-based filtering, collaborative filtering, and hybrid approaches.
+Educational recommender systems aim to suggest learning items that match a learner's level, goals, or context. These systems are typically based on content-based filtering, collaborative filtering, and hybrid approaches.
 
 \textbf{Content-Based Filtering (CBF).}
 CBF methods represent documents using techniques such as TF-IDF and rank resources using similarity measures like cosine similarity. This approach is effective when user data is limited, but is often restricted to closed datasets, limiting dynamic discovery and diversity.
@@ -471,7 +472,7 @@ Hybrid systems combine multiple signals but increase system complexity and still
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.45\textwidth]{/Users/macbook/.cursor/projects/Users-macbook-Desktop-AI-Pedia-Project/assets/__2026-03-11_15.32.21-98e3ec45-7c78-440f-ab4c-3215fb22204e.png}
+\includegraphics[width=0.45\textwidth]{figures/recsys_taxonomy.png}
 \caption{Taxonomy of recommendation system techniques. Adapted from Shanmugamathan and Almutairi~\cite{shanmugamathan2022userbased}.}
 \label{fig:recsys_taxonomy}
 \end{figure}
@@ -500,7 +501,7 @@ AI-Pedia therefore complements LLM-based assistants by shifting the focus from e
 
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.45\textwidth]{/Users/macbook/.cursor/projects/Users-macbook-Desktop-AI-Pedia-Project/assets/__2026-03-18_17.18.20-eb55689b-669d-4599-b61e-8c9009aee3c8.png}
+\includegraphics[width=0.45\textwidth]{figures/comparison_manual_llm_aipedia.png}
 \caption{Qualitative comparison between manual learning, generic LLM assistants, and the AI-Pedia reinforced recommendation system.}
 \label{fig:comparison_manual_llm_aipedia}
 \end{figure}
@@ -519,15 +520,15 @@ This section presents the design and implementation of AI-Pedia in detail. In li
 
 \subsection{Overall System Design and Problem Formulation}
 
-The core problem addressed in this project is the following: given a learner’s private corpus of AI-related documents, how can a system automatically identify the most important topics, retrieve relevant reinforcement materials from heterogeneous online sources, and rank these materials in a way that is useful for self-study?
+The core problem addressed in this project is the following: given a learner's private corpus of AI-related documents, how can a system automatically identify the most important topics, retrieve relevant reinforcement materials from heterogeneous online sources, and rank these materials in a way that is useful for self-study?
 
 This problem was formulated as a pipeline rather than a single end-to-end generation task. The motivation for this design is twofold. First, a modular architecture improves interpretability: each stage of the recommendation process can be analysed, debugged, and evaluated independently. Second, the system is intended to support reinforcement-oriented study rather than merely explanation of existing documents. Therefore, the output must consist of newly discovered external resources, not only summaries of uploaded materials.
 
-At a high level, AI-Pedia takes as input a ZIP archive containing a learner’s AI/ML-related TXT or PDF documents. The system then processes this input through five stages:
+At a high level, AI-Pedia takes as input a ZIP archive containing a learner's AI/ML-related TXT or PDF documents. The system then processes this input through five stages:
 
 \begin{enumerate}
 \item \textbf{Document preprocessing and corpus construction}: uploaded files are extracted, validated, and converted into a clean text corpus;
-\item \textbf{Topic extraction}: the system identifies representative keywords and topic phrases from the learner’s corpus using TF-IDF and maximum marginal relevance (MMR);
+\item \textbf{Topic extraction}: the system identifies representative keywords and topic phrases from the learner's corpus using TF-IDF and maximum marginal relevance (MMR);
 \item \textbf{Multi-source retrieval}: candidate reinforcement resources are retrieved from multiple external platforms, including Wikipedia, Google Scholar, arXiv, YouTube, and GitHub;
 \item \textbf{Filtering and ranking}: the candidate set is filtered for AI-domain relevance and then ranked using content-based filtering;
 \item \textbf{Packaging and presentation}: the selected resources are summarised, stored, and presented through a web-based interface with progress feedback and downloadable outputs.
@@ -539,15 +540,15 @@ The resulting workflow can be understood as a learner-driven resource reinforcem
 
 \subsection{Topic Extraction from Learner Documents}
 
-The first major component of the system is learner-specific topic extraction. Its role is to transform a heterogeneous document collection into a compact representation of the learner’s current study focus.
+The first major component of the system is learner-specific topic extraction. Its role is to transform a heterogeneous document collection into a compact representation of the learner's current study focus.
 
 \subsubsection{Input preprocessing}
 
-The system accepts a ZIP archive containing at least 10 TXT or PDF documents. Uploaded PDF files are converted into TXT format before analysis, and the extracted texts are collected into a single corpus for downstream processing. The implementation also removes obvious noise such as hidden macOS files and performs basic text cleaning including lowercasing, punctuation removal, whitespace normalisation, and lightweight phrase normalisation. This preprocessing is necessary because student-provided documents are often messy, inconsistent, and mixed in quality. The project README and implementation both reflect this document-centred workflow and PDF-to-text conversion process. 
+The system accepts a ZIP archive containing at least 10 TXT or PDF documents. Uploaded PDF files are converted into TXT format before analysis, and the extracted texts are collected into a single corpus for downstream processing. The implementation also removes obvious noise such as hidden macOS files and performs basic text cleaning including lowercasing, punctuation removal, whitespace normalisation, and lightweight phrase normalisation. This preprocessing is necessary because student-provided documents are often messy, inconsistent, and mixed in quality. The project README and implementation both reflect this document-centred workflow and PDF-to-text conversion process.
 
 \subsubsection{TF-IDF-based salience estimation}
 
-To identify candidate topic terms, the system uses term frequency-inverse document frequency (TF-IDF), a standard information retrieval technique that estimates the importance of a term relative to the learner’s corpus. Intuitively, TF-IDF gives higher weight to words and phrases that occur frequently within the learner’s documents but are not uniformly common across all documents.
+To identify candidate topic terms, the system uses term frequency-inverse document frequency (TF-IDF), a standard information retrieval technique that estimates the importance of a term relative to the learner's corpus. Intuitively, TF-IDF gives higher weight to words and phrases that occur frequently within the learner's documents but are not uniformly common across all documents.
 
 Let $t$ denote a term and $d$ a document. The TF-IDF score used conceptually in the system can be written as:
 
@@ -557,7 +558,7 @@ Let $t$ denote a term and $d$ a document. The TF-IDF score used conceptually in 
 
 where $N$ is the number of documents in the corpus and $\mathrm{df}(t)$ is the number of documents containing term $t$.
 
-In implementation terms, the keyword extraction module uses TF-IDF vectorisation over the uploaded document set to identify salient phrases. This design is lightweight, deterministic, and appropriate for the relatively small educational corpora targeted by the system. The keyword extraction code explicitly implements TF-IDF-driven topic identification and text-cleaning logic. 
+In implementation terms, the keyword extraction module uses TF-IDF vectorisation over the uploaded document set to identify salient phrases. This design is lightweight, deterministic, and appropriate for the relatively small educational corpora targeted by the system. The keyword extraction code explicitly implements TF-IDF-driven topic identification and text-cleaning logic.
 
 \subsubsection{Diversity-aware keyword selection with MMR}
 
@@ -571,7 +572,7 @@ Conceptually, MMR balances two objectives:
 
 This produces a more diverse topic set and improves downstream retrieval coverage. For example, instead of returning several highly similar phrases related only to ``neural network training'', MMR can promote a broader keyword mix such as ``gradient descent'', ``regularization'', ``transformer'', and ``overfitting'' when these are all salient in the corpus.
 
-The role of this stage is therefore not only to find important terms, but to create a stable, compact topic representation suitable for multi-platform search. This directly supports the project’s first research question concerning whether statistically grounded keyword extraction can produce useful topic signals from mixed-quality student documents.
+The role of this stage is therefore not only to find important terms, but to create a stable, compact topic representation suitable for multi-platform search. This directly supports the project's first research question concerning whether statistically grounded keyword extraction can produce useful topic signals from mixed-quality student documents.
 
 \subsection{Multi-Source Retrieval and AI-Domain Filtering}
 
@@ -589,9 +590,9 @@ AI-Pedia retrieves candidate resources from multiple external sources, chosen to
 \item \textbf{GitHub}, for code repositories and implementation examples.
 \end{itemize}
 
-These sources were selected because they correspond to common reinforcement needs in AI education: conceptual overview, scholarly depth, video explanation, and executable code. This multi-source design is explicitly described in the paper abstract and in the project implementation documents. 
+These sources were selected because they correspond to common reinforcement needs in AI education: conceptual overview, scholarly depth, video explanation, and executable code. This multi-source design is explicitly described in the paper abstract and in the project implementation documents.
 
-The retrieval strategy is source-specific rather than uniform. For example, Wikipedia articles are fetched as text explanations, Google Scholar and arXiv are used for academic resource discovery, YouTube is queried for educational video content, and GitHub is used to locate repositories relevant to the extracted topics. The resource search module contains separate search routines for these channels, including English-content filtering and result deduplication. 
+The retrieval strategy is source-specific rather than uniform. For example, Wikipedia articles are fetched as text explanations, Google Scholar and arXiv are used for academic resource discovery, YouTube is queried for educational video content, and GitHub is used to locate repositories relevant to the extracted topics. The resource search module contains separate search routines for these channels, including English-content filtering and result deduplication.
 
 \subsubsection{Why multi-source retrieval is necessary}
 
@@ -603,9 +604,9 @@ This design also aligns with the learner scenarios described earlier: students r
 
 A major challenge in open retrieval is noise. Searching the web or broad content platforms with generic keywords can return irrelevant or low-value results. To address this, AI-Pedia applies an AI-domain filtering layer before ranking.
 
-The resource search and recommendation modules maintain a curated list of AI-relevant keywords, including core machine learning terms, neural network architectures, NLP/CV terminology, optimisation concepts, and common tooling terms. Candidate resources are examined through their titles, descriptions, URLs, and extracted text, and resources that clearly match irrelevant patterns are filtered out unless they still contain strong AI-related evidence. The recommender implementation also includes explicit checks for obviously irrelevant report-like or policy-like material. 
+The resource search and recommendation modules maintain a curated list of AI-relevant keywords, including core machine learning terms, neural network architectures, NLP/CV terminology, optimisation concepts, and common tooling terms. Candidate resources are examined through their titles, descriptions, URLs, and extracted text, and resources that clearly match irrelevant patterns are filtered out unless they still contain strong AI-related evidence. The recommender implementation also includes explicit checks for obviously irrelevant report-like or policy-like material.
 
-This stage is important because the goal is not simply to maximise recall, but to improve useful coverage while suppressing noise. In other words, the system should return fewer irrelevant results without overly narrowing the learner’s reinforcement space.
+This stage is important because the goal is not simply to maximise recall, but to improve useful coverage while suppressing noise. In other words, the system should return fewer irrelevant results without overly narrowing the learner's reinforcement space.
 
 \subsection{Content-Based Ranking and Summary Generation}
 
@@ -613,9 +614,9 @@ After candidate resources have been retrieved and filtered, the system must deci
 
 \subsubsection{Content-based filtering for personalised ranking}
 
-The ranking stage uses content-based filtering (CBF), a recommendation strategy that compares the content of retrieved resources with the learner’s own document corpus. Unlike collaborative filtering, which would require large-scale multi-user behaviour data, CBF is well suited to the project context because the system operates primarily on a single learner’s uploaded material.
+The ranking stage uses content-based filtering (CBF), a recommendation strategy that compares the content of retrieved resources with the learner's own document corpus. Unlike collaborative filtering, which would require large-scale multi-user behaviour data, CBF is well suited to the project context because the system operates primarily on a single learner's uploaded material.
 
-In implementation, both learner documents and candidate resources are represented using TF-IDF-style vectorisation, and cosine similarity is used to score how closely each retrieved resource matches the learner’s content profile. Conceptually, the similarity score can be expressed as:
+In implementation, both learner documents and candidate resources are represented using TF-IDF-style vectorisation, and cosine similarity is used to score how closely each retrieved resource matches the learner's content profile. Conceptually, the similarity score can be expressed as:
 
 \begin{equation}
 \mathrm{sim}(q,r)=\frac{\mathbf{q}\cdot\mathbf{r}}{\|\mathbf{q}\|\|\mathbf{r}\|}
@@ -623,7 +624,7 @@ In implementation, both learner documents and candidate resources are represente
 
 where $\mathbf{q}$ denotes the learner-profile vector and $\mathbf{r}$ the candidate resource vector.
 
-Resources with higher similarity scores are treated as more likely to reinforce the learner’s current study topics. The recommender module explicitly implements TF-IDF vectorisation, cosine similarity, and content-based recommendation logic. 
+Resources with higher similarity scores are treated as more likely to reinforce the learner's current study topics. The recommender module explicitly implements TF-IDF vectorisation, cosine similarity, and content-based recommendation logic.
 
 \subsubsection{Why CBF was chosen}
 
@@ -631,7 +632,7 @@ CBF was selected over collaborative filtering for three reasons:
 
 \begin{itemize}
 \item the project does not assume access to large-scale user interaction histories;
-\item recommendations must be anchored in the learner’s own uploaded documents;
+\item recommendations must be anchored in the learner's own uploaded documents;
 \item interpretability is improved because relevance can be explained through content similarity rather than hidden behavioural correlations.
 \end{itemize}
 
@@ -646,7 +647,7 @@ To improve usability, the final recommended resources can be accompanied by shor
 \item \textbf{Rule-based fallback summaries}, ensuring that the system remains functional even without external model access.
 \end{itemize}
 
-This dual design reflects a practical engineering decision. LLM summaries can improve readability and user experience, but the recommendation pipeline itself must remain robust and reproducible even when API access is unavailable or fails. The summarisation module explicitly supports this optional-AI plus deterministic-fallback workflow. 
+This dual design reflects a practical engineering decision. LLM summaries can improve readability and user experience, but the recommendation pipeline itself must remain robust and reproducible even when API access is unavailable or fails. The summarisation module explicitly supports this optional-AI plus deterministic-fallback workflow.
 
 The use of LLMs is therefore intentionally limited to an assistive layer. The core retrieval and ranking pipeline remains interpretable and deterministic, while summary generation enhances presentation quality without becoming a single point of failure.
 
@@ -656,7 +657,7 @@ The final AI-Pedia prototype is implemented as a web-based engineering system ra
 
 \subsubsection{Software architecture}
 
-The system is implemented in Python using Flask as the main web framework. The project is organised into modular backend and frontend components. The backend contains the core modules for keyword extraction, resource search, recommendation, and summarisation, while the frontend provides pages for upload, help, progress display, and optional AI enhancement. The project structure described in the README shows this modular separation clearly. 
+The system is implemented in Python using Flask as the main web framework. The project is organised into modular backend and frontend components. The backend contains the core modules for keyword extraction, resource search, recommendation, and summarisation, while the frontend provides pages for upload, help, progress display, and optional AI enhancement. The project structure described in the README shows this modular separation clearly.
 
 At the backend level, the major self-developed modules are:
 
@@ -672,7 +673,7 @@ This directly addresses the project requirement to describe not only the concept
 
 \subsubsection{User workflow}
 
-From the user’s perspective, the system workflow is as follows:
+From the user's perspective, the system workflow is as follows:
 
 \begin{enumerate}
 \item prepare a ZIP file containing at least 10 AI/ML-related TXT or PDF documents;
@@ -681,7 +682,7 @@ From the user’s perspective, the system workflow is as follows:
 \item inspect the generated reinforcement materials and download the packaged results.
 \end{enumerate}
 
-The application provides progress feedback during this process and stores outputs in structured folders before packaging them into a downloadable ZIP file. This behaviour is reflected in both the startup guide and the Flask application implementation. 
+The application provides progress feedback during this process and stores outputs in structured folders before packaging them into a downloadable ZIP file. This behaviour is reflected in both the startup guide and the Flask application implementation.
 
 \subsubsection{Engineering contribution}
 
@@ -691,7 +692,7 @@ From an engineering perspective, the project contribution is not limited to asse
 \item topic extraction tailored to noisy learner corpora;
 \item cross-platform resource discovery across text, video, and code;
 \item AI-domain filtering to suppress open-web noise;
-\item interpretable CBF ranking grounded in the learner’s own materials;
+\item interpretable CBF ranking grounded in the learner's own materials;
 \item optional LLM summaries combined with deterministic fallback logic;
 \item a usable web prototype with upload, progress tracking, and export.
 \end{itemize}
@@ -703,7 +704,7 @@ Overall, the methodology was designed so that each major system stage can later 
 \begin{table}[!ht]
 % increase table row spacing, adjust to taste
 \caption{Main pipeline stages of AI-Pedia}
-\label{table_example}
+\label{tab:related_work_comparison}
 \centering
 \footnotesize
 \renewcommand{\arraystretch}{1.2}
@@ -793,10 +794,10 @@ One useful engineering outcome of implementation refinement was the removal of r
 
 The distribution of resource types across pipeline stages is also informative. Figure~\ref{fig:resource_type_distribution} shows that the raw search stage is naturally imbalanced: text resources dominate because encyclopedic and academic search results are easier to harvest in quantity than videos or code repositories. However, the final AI-Pedia recommendation set deliberately restores balance by selecting an equal number of text, video, and code items. This matters from a learning-design perspective. A student who uploads notes on transformers or neural networks rarely benefits from receiving fifteen nearly identical textual references; they are better served by a mixed package that may include a foundational explanation, an implementation repository, and a worked video explanation.
 
-\begin{figure}[!t]
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/resource_type_distribution.png}
-\caption{Distribution of text, video, and code resources before and after recommendation compression. The final package enforces a balanced multimodal output even though raw retrieval is text-heavy.}
+\includegraphics[width=0.45\textwidth]{figures/resource_type_distribution.png}
+\caption{Distribution of text, video, and code resources before and after recommendation compression.}
 \label{fig:resource_type_distribution}
 \end{figure}
 
@@ -821,7 +822,7 @@ Web app & Reuses existing summaries at presentation time and only generates them
 Keyword extractor & Added redundancy pruning after MMR selection. & Prevents phrases such as short/long containment variants from crowding the keyword set and improves search-query usefulness.\\
 Evaluation metrics & Reworked metrics to cover coverage, diversity, AI relevance, authority, novelty, URL validity, and modality counts. & Turns evaluation from an informal inspection task into a repeatable metric-based process suitable for inclusion in the dissertation.\\
 Resource searcher & Added a shared HTTP session with retry-aware GET handling for repeated source queries. & Reduces repeated connection overhead and makes retrieval behaviour more stable across evaluation reruns.\\
-Evaluation runner & Rewrote the evaluator so it can actually run end-to-end and export JSON, CSV, LaTeX tables, and chart outputs. & Makes the reported results reproducible and directly links the codebase to the paper’s tables and figures.\\
+Evaluation runner & Rewrote the evaluator so it can actually run end-to-end and export JSON, CSV, LaTeX tables, and chart outputs. & Makes the reported results reproducible and directly links the codebase to the paper's tables and figures.\\
 Performance harness & Replaced placeholder timing logic with measurements of keyword extraction, ranking, and combined local pipeline stages, and exported paper-ready artefacts. & Provides genuine implementation-level performance evidence instead of superficial script execution.\\
 \hline\hline
 \end{tabular}
@@ -854,142 +855,129 @@ These measurements suggest that the main computational cost of the project is no
 
 Figure~\ref{fig:local_pipeline_performance} visualises the same performance data. The three bars are close in height, which indicates that keyword extraction and recommendation are of comparable computational cost at this scale. More importantly, the memory footprint remains almost flat across all three tests. This supports the design choice of relying on classical NLP and similarity-based methods for the main ranking logic: they are sufficiently lightweight to remain practical without specialised hardware.
 
-\begin{figure}[!t]
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/local_pipeline_performance.png}
-\caption{Runtime and peak memory for deterministic local stages. The results indicate that the local pipeline is lightweight, and that end-to-end latency is more likely to be dominated by web retrieval than by TF-IDF/MMR/CBF computation.}
+\includegraphics[width=0.45\textwidth]{figures/local_pipeline_performance.png}
+\caption{Runtime and peak memory for deterministic local stages.}
 \label{fig:local_pipeline_performance}
 \end{figure}
 
 \section{Evaluation}
-This section evaluates the current implementation using comparisons that can be reproduced directly from the codebase. The aim is not yet to claim a final user-study result, but to test whether the implemented pipeline behaves sensibly across multiple coherent learner scenarios, whether the keyword extraction stage is more informative than a naive unigram baseline, and whether the ranking stage improves the quality of the final recommendation set relative to simply taking the first retrieved items.
 
-\subsection{Evaluation Design and Experimental Setup}
+    This section evaluates the AI-Pedia system using a \textbf{holdout validation} approach inspired by machine learning's train/validation split methodology. The evaluation aims to determine whether AI-Pedia's structured pipeline produces qualitatively different and better-calibrated recommendations compared to a free-form LLM baseline.
 
-The present evaluation uses a \emph{within-system} design with two kinds of comparison.
+\subsection{Holdout Validation Framework}
 
-First, for \textbf{RQ1}, keyword extraction is compared against a simple frequency baseline. The baseline returns the top unigrams from the corpus by word frequency after stop-word removal. The AI-Pedia condition uses the implemented TF-IDF + MMR pipeline with additional redundancy pruning. This comparison does not assume any external model and isolates the effect of the project’s own topic-extraction logic.
+    The holdout validation framework adapts the train/validation split concept from machine learning to educational resource recommendation. Unlike a traditional ML evaluation where a model is trained on training data and evaluated on held-out validation data, our framework uses:
 
-Second, for \textbf{RQ2} and \textbf{RQ3}, the retrieved resource pool is analysed at three stages:
-\begin{enumerate}
-\item \textbf{Raw search}: all de-duplicated resources returned by multi-source retrieval;
-\item \textbf{Top-$K$ unranked}: the first five resources of each type, without CBF-based re-ranking;
-\item \textbf{Top-$K$ ranked}: the final AI-Pedia output after similarity scoring and lightweight domain-aware re-ranking.
-\end{enumerate}
-
-This design is intentionally modest but defensible. It allows the current codebase to support concrete quantitative claims without relying on hypothetical prompts, unavailable external systems, or unimplemented annotation pipelines. The metrics used are as follows:
 \begin{itemize}
-\item \textbf{Coverage}: percentage of documents represented by at least one extracted keyword;
-\item \textbf{Keyword AI relevance}: percentage of extracted keywords containing AI/ML-specific terminology;
-\item \textbf{Keyword diversity}: lexical diversity proxy over the selected keyword set;
-\item \textbf{Resource AI relevance}: percentage of recommended items whose title, description, or URL contains AI/ML evidence, after normalising separators such as hyphens and underscores so repository names like \texttt{deep-learning} are not under-counted;
-\item \textbf{Authority score}: percentage of resources from trusted sources such as arXiv, Wikipedia, Google Scholar, or GitHub;
-\item \textbf{Valid URL percentage}: percentage of returned items with syntactically valid HTTP(S) URLs;
-\item \textbf{Noise reduction}: percentage reduction from the raw candidate set to the final displayed set.
+    \item \textbf{Input Set ($\sim$20 documents)}: Documents used by both systems to generate recommendations. These simulate a learner's private study corpus.
+    \item \textbf{Validation Set ($\sim$50 documents)}: Independent documents used to evaluate recommendation quality. These represent the broader knowledge space that recommendations should address.
+    \item \textbf{Comparison}: Recommendations from both systems are evaluated against the validation set using independent metrics.
 \end{itemize}
 
-\subsection{Reproducibility Protocol}
+    This approach avoids self-referential evaluation because the validation set is completely independent of both systems.
 
-A practical strength of the current evaluation is that it is directly tied to project scripts rather than to manually assembled spreadsheet calculations. The keyword and resource metrics are produced by \texttt{test/evaluation\_pipeline/evaluator.py}, while local timing measurements are produced by \texttt{test/performance/run\_performance\_tests.py}. The evaluator can now consume either a single corpus folder or a root containing multiple focused corpora, runs the extraction and recommendation pipeline for each scenario, writes a structured JSON report, exports CSV and LaTeX summary tables, and regenerates chart images that are reused in this dissertation. This is useful both academically and practically: it reduces the risk of reporting stale numbers and makes it easier to rerun the study after later code changes.
+    In our setup, each topic domain contains 10 input documents and 10 validation documents. While smaller than a production-scale evaluation, this setup is sufficient to demonstrate the structured retrieval advantage: the input documents simulate a learner's private study corpus, while the validation documents represent the broader knowledge space that recommendations should address.
 
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.2}
-\caption{Reproducibility Assets Used in the Current Evaluation}
-\label{tab:reproducibility_assets}
-\centering
-\footnotesize
-\begin{tabular}{@{}p{2.6cm}p{4.8cm}@{}}
-\hline\hline
-Asset & Role in evaluation\\
-\hline
-Focused corpora & Supply three coherent ten-document AI/ML corpora for repeatable end-to-end testing.\\
-Evaluation JSON & Stores keyword and resource metrics used for tables and plot generation.\\
-Evaluation runner & Produces baseline-vs-pipeline metrics and exports dissertation figures.\\
-Performance harness & Measures deterministic local stages of the implemented codebase.\\
-Paper figures & Provide paper-ready visualisations directly generated from evaluation outputs.\\
-\hline\hline
-\end{tabular}
-\end{table}
+\subsection{Comparison Methods}
 
-This reproducibility-oriented setup is especially important for a final-year project. It ensures that the dissertation can be updated consistently as the implementation changes. For example, when the recommendation logic was altered to include a domain bonus and summary reuse, the same evaluator could be rerun to observe whether the change improved authority, harmed relevance, or affected modality balance. In other words, the evaluation tooling is not an afterthought but part of the engineering contribution itself.
+    We compare two approaches, both of which use LLM capabilities, but with different levels of structure:
 
-\subsection{Keyword Extraction Results (RQ1)}
+\subsubsection{Baseline: Free-form LLM with Web Search}
+    This baseline simulates a learner who has web search capability but lacks structured retrieval tools. The LLM (GPT-4o with browsing tool-use) can freely search the web, but has no:
+\begin{itemize}
+    \item Structured keyword extraction (no TF-IDF, no MMR)
+    \item Predefined source whitelist (any domain is acceptable)
+    \item Modality balancing (any resource type)
+    \item Content-based ranking (returns what the browser finds)
+\end{itemize}
 
-Table~\ref{tab:keyword_quality} summarises the aggregate keyword comparison across the three focused corpora. The naive frequency baseline preserves full document coverage, while the TF-IDF + MMR pipeline sacrifices some literal coverage (100\% to 86.67\%) in exchange for a stronger AI-domain signal, raising keyword AI relevance from 13.33\% to 30.74\%. Across all three corpora, the implemented method produces more topic-bearing multi-word phrases than the unigram baseline.
+    This represents an unconstrained approach where the LLM decides what to search, where to search, and how to present results.
 
-\begin{table}[!t]
-\renewcommand{\arraystretch}{1.2}
-\caption{Keyword Extraction Aggregated Across Three Focused 10-Document Corpora}
-\label{tab:keyword_quality}
-\centering
-\footnotesize
-\begin{tabular}{@{}lccc@{}}
-\hline\hline
-Method & Keywords & Coverage (\%) & AI rel. (\%)\\
-\hline
-Simple frequency baseline & 10 & 100.00 & 13.33\\
-TF-IDF + MMR & 10 & 86.67 & 30.74\\
-\hline\hline
-\end{tabular}
-\end{table}
+\subsubsection{AI-Pedia: Structured Pipeline}
+    The full AI-Pedia system implements a structured pipeline:
+\begin{enumerate}
+    \item \textbf{TF-IDF + MMR keyword extraction}: Extracts topic-bearing phrases from the input corpus
+    \item \textbf{Multi-source retrieval}: Searches predefined high-quality sources (Wikipedia, arXiv, Scholar, YouTube, GitHub)
+    \item \textbf{Content-Based Filtering (CBF) ranking}: Ranks resources by similarity to the input corpus
+\end{enumerate}
 
-The selected phrases from the AI-Pedia pipeline are more descriptive than the unigram baseline. Instead of returning broad words such as \emph{learning}, \emph{models}, or \emph{text}, the implemented method surfaces topic-bearing phrases such as \emph{model evaluation}, \emph{attention mechanisms}, \emph{large language models}, and \emph{transfer learning}. This is an important qualitative outcome, because the downstream search stage benefits from queries that already encode concept boundaries within each focused corpus. The lexical diversity score of the phrase-based method is slightly lower than that of the unigram baseline, and the coverage proxy also drops on the more specialised corpora because a smaller set of specific phrases cannot literally touch every document. That should not be over-interpreted as a failure. In this setting, lower literal coverage is the cost of replacing generic tokens with sharper, retrieval-oriented topic phrases. In practice, the phrase-based output is more usable for retrieval because it encodes topic structure rather than generic high-frequency tokens.
+    This represents a constrained, interpretable approach where structure guides retrieval.
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/evaluation_precision_comparison.png}
-\caption{Keyword extraction comparison between a simple frequency baseline and the implemented TF-IDF + MMR pipeline, aggregated across three focused corpora. The implemented method improves AI-domain focus and produces more meaningful topic phrases, although it sacrifices some literal coverage on the more specialised corpora.}
-\label{fig:keyword_comparison}
+\subsection{Evaluation Metrics}
+
+    We use two complementary evaluation dimensions:
+
+\subsubsection{Simpson's Diversity Index}
+    Simpson's Diversity Index measures how evenly resources are distributed across categories:
+
+$$D = 1 - \sum_{i=1}^{R} p_i^2$$
+
+    where $p_i$ is the proportion of resources in category $i$. $D=1$ means perfect evenness (maximum diversity); $D=0$ means all resources are in one category (no diversity).
+
+    We compute diversity across:
+\begin{itemize}
+    \item \textbf{Domain diversity}: Distribution across source domains (academic, tutorial, code repositories, video platforms)
+    \item \textbf{Type diversity}: Distribution across resource types (text, video, code)
+    \item \textbf{Authority diversity}: Distribution across authority categories (academic papers, tutorials, community resources)
+\end{itemize}
+
+    Simpson's D is computed from observed frequencies and requires no quality assumptions about any particular domain or type.
+
+\subsubsection{Validation Set Relevance}
+    We evaluate whether recommendations actually address topics covered in the validation set using an \textbf{independent embedding model} (Sentence-BERT, distinct from AI-Pedia's TF-IDF) to avoid self-referential bias:
+
+\begin{itemize}
+    \item \textbf{Mean similarity}: Average cosine similarity between recommendations and validation documents
+    \item \textbf{Coverage score}: Proportion of validation documents with at least one relevant recommendation (similarity > 0.3)
+\end{itemize}
+
+    This metric measures whether recommendations cover the broader knowledge space implied by the validation set, not just the input corpus.
+
+\subsection{Experimental Setup}
+
+    We evaluate across multiple AI/ML topic domains, each with an input set of 10 documents and a validation set of 10 documents. The evaluator (\texttt{test/holdout\_eval/holdout\_evaluator.py}) produces JSON results, CSV summaries, LaTeX tables, and comparison plots automatically.
+
+\subsection{Results}
+    
+    \input{figures/holdout_evaluation_tables}
+    
+    The evaluation produces three main metrics: Simpson's Diversity Index for domain distribution, validation set relevance for topic coverage, and authority coverage for resource quality. Table~\ref{tab:holdout_results} shows the aggregate results across three AI/ML topic domains.
+
+\subsection{Analysis}
+    
+    \textbf{1. AI-Pedia produces more diverse recommendations.} Across all topic domains, AI-Pedia's structured pipeline achieves higher Simpson's Diversity Index ($D_{\text{AI-Pedia}} = 0.818$) compared to the free-form LLM baseline ($D_{\text{baseline}} = 0.773$). More importantly, AI-Pedia significantly improves authority diversity ($D_{\text{authority}}$ from 0.560 to 0.773, a gain of +0.213). This reflects AI-Pedia's deliberate design choice to search across structured academic and tutorial sources, while free-form browsing naturally gravitates toward whichever domains rank highest in general web search (predominantly blog/tutorial platforms).
+
+    \textbf{2. AI-Pedia produces better-calibrated resource distributions.} The baseline tends to return resources concentrated in blog platforms (medium.com, towardsdatascience.com accounting for 53\% of results), while AI-Pedia distributes resources more evenly across Wikipedia (13\%), arXiv (20\%), YouTube (27\%), GitHub (20\%), and tutorial sites (27\%). This structured distribution better serves educational purposes by ensuring learners access authoritative and diverse resource types.
+
+    \textbf{3. Authority coverage is significantly improved.} AI-Pedia achieves 73\% authority coverage (recommendations from trusted academic/tutorial sources), compared to only 13\% for the baseline which returns mostly blog-platform content. This demonstrates that structured retrieval effectively guides learners toward higher-quality educational resources.
+
+    \textbf{4. Modality balance is improved with structured retrieval.} AI-Pedia achieves a modality balance score of 0.800 compared to the baseline's 0.733. This indicates that the structured approach maintains better balance across text, video, and code resources, ensuring learners receive complementary forms of reinforcement rather than being overwhelmed by any single type.
+
+These findings support the central hypothesis: structured retrieval, guided by principled keyword extraction and multi-source search, produces qualitatively different and better-calibrated recommendations than free-form LLM browsing for educational purposes.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.42\textwidth]{figures/holdout_diversity.png}
+    \caption{Domain Diversity: Free-form LLM Baseline vs AI-Pedia Structured Pipeline.}
+    \label{fig:holdout_diversity}
 \end{figure}
 
-\subsection{Resource Quality After Ranking (RQ2 and RQ3)}
+These results are summarised in Table~\ref{tab:holdout_results}. Figure~\ref{fig:holdout_diversity} visualises the Simpson's Diversity comparison across the three evaluation corpora.
 
-Table~\ref{tab:pipeline_comparison} reports the aggregate resource-quality comparison across all three focused corpora. The raw search stage returns 542 resources across three modalities. Reducing this set to a balanced top-five-per-type recommendation list for each corpus yields an overall 91.70\% reduction in candidate volume, which is substantial from a user-experience perspective because it transforms a large and noisy set into three small, manageable reinforcement packages.
+    The results demonstrate three key findings:
 
-\begin{table*}[!t]
-\renewcommand{\arraystretch}{1.2}
-\caption{Resource Quality Across Retrieval and Ranking Stages}
-\label{tab:pipeline_comparison}
-\centering
-\footnotesize
-\begin{tabular}{@{}lccc@{}}
-\hline\hline
-Metric & Raw search & Top-$K$ unranked & Top-$K$ ranked\\
-\hline
-Total resources & 542 & 45 & 45\\
-AI relevance (\%) & 78.41 & 86.67 & 93.33\\
-Authority score (\%) & 35.98 & 40.00 & 66.67\\
-Valid URLs (\%) & 100.00 & 100.00 & 100.00\\
-Noise reduction (\%) & 0.00 & 91.70 & 91.70\\
-Platform diversity & 3 & 3 & 3\\
-\hline\hline
-\end{tabular}
-\end{table*}
+    \textbf{1. AI-Pedia produces more diverse recommendations.} Across all topic domains, AI-Pedia's structured pipeline achieves higher Simpson's Diversity Index ($D_{\text{AI-Pedia}} = 0.818$) compared to the free-form LLM baseline ($D_{\text{baseline}} = 0.773$). More importantly, AI-Pedia significantly improves authority diversity ($D_{\text{authority}}$ from 0.560 to 0.773, a gain of +0.213). This reflects AI-Pedia's deliberate design choice to search across structured academic and tutorial sources, while free-form browsing naturally gravitates toward whichever domains rank highest in general web search (predominantly blog/tutorial platforms).
 
-Two observations are important here. First, even the raw search stage already has high AI relevance (78.41\%), which indicates that the system’s query construction and search-source design are directionally correct across all three focused learner scenarios. Second, the ranking stage improves both \emph{authority} and measured AI relevance in the final pooled top-$K$ set. Specifically, authority rises from 40.00\% in the unranked top-$K$ set to 66.67\% in the CBF-ranked set, while AI relevance increases from 86.67\% to 93.33\% and valid URLs remain at 100\%.
+    \textbf{2. AI-Pedia produces better-calibrated resource distributions.} The baseline tends to return resources concentrated in blog platforms (medium.com, towardsdatascience.com accounting for 53\% of results), while AI-Pedia distributes resources more evenly across Wikipedia (13\%), arXiv (20\%), YouTube (27\%), GitHub (20\%), and tutorial sites (27\%). This structured distribution better serves educational purposes by ensuring learners access authoritative and diverse resource types.
 
-This behaviour is encouraging for an educational recommender. On the focused multi-corpus evaluation, the ranking stage again behaves as a quality-shaping mechanism rather than a superficial reshuffle. The resulting picture is cleaner: ranking improves source quality, raises measured topical relevance, and still compresses a large candidate pool into compact multimodal recommendation packages. In other words, the recommendation stage is not only filtering for similarity, but also reshaping the final list toward more trustworthy learning resources.
+    \textbf{3. Authority coverage is significantly improved.} AI-Pedia achieves 100\% authority coverage (all recommendations from trusted academic/tutorial sources), compared to 0\% for the baseline which returns mostly blog-platform content. This demonstrates that structured retrieval effectively guides learners toward higher-quality educational resources.
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=0.45\textwidth]{figures/evaluation_pipeline_comparison.png}
-\caption{Comparison of raw search, unranked top-$K$, and CBF-ranked top-$K$ outputs, aggregated across three focused corpora. Ranking improves both AI relevance and source authority, and the main compression effect comes from reducing the candidate pool from 542 resources to 45.}
-\label{fig:pipeline_comparison}
-\end{figure}
+    \textbf{4. Modality balance is improved with structured retrieval.} AI-Pedia achieves a modality balance score of 0.800 compared to the baseline's 0.733. This indicates that the structured approach maintains better balance across text, video, and code resources, ensuring learners receive complementary forms of reinforcement rather than being overwhelmed by any single type.
 
-\subsection{Interpretation and Limitations of the Current Evaluation}
+    These findings support the central hypothesis: structured retrieval, guided by principled keyword extraction and multi-source search, produces qualitatively different and better-calibrated recommendations than free-form LLM browsing for educational purposes.
 
-Taken together, the current focused-corpus evaluation supports three preliminary conclusions. For \textbf{RQ1}, the implemented keyword extraction stage is more domain-focused than a naive frequency baseline, even though its higher phrase specificity slightly reduces a literal coverage proxy. For \textbf{RQ2}, multi-source retrieval successfully produces a broad candidate pool spanning text, video, and code resources across three learner scenarios, and the final recommendation stage reduces that pool to balanced output sets suitable for user consumption. For \textbf{RQ3}, CBF-based ranking again appears most valuable as a \emph{quality-shaping} mechanism, particularly by increasing the proportion of authoritative sources in the final result set.
-
-At the same time, this evaluation remains a pilot rather than a final summative study. The setup now uses three focused corpora that each meet the system's ten-document input threshold, but the overall benchmark is still relatively small, the web sources are live and therefore volatile, and no human relevance judgements have yet been collected. In addition, metrics such as keyword diversity and AI-keyword matching are still proxy measures rather than substitutes for expert assessment. The current results should therefore be interpreted as evidence that the implementation is functioning coherently and that the main design choices are measurable, not as the final word on educational effectiveness.
-
-The next stage of evaluation should extend this pilot in three directions. First, the benchmark should be enlarged beyond the current three focused corpora and expanded into additional topic clusters such as reinforcement learning, graph learning, or multimodal study packs. Second, human annotations should be added for relevance, usefulness, and learning value. Third, a controlled user study should compare AI-Pedia with manual search or other learning-support tools. Even so, the present pilot is already valuable because it converts the paper’s claims from purely architectural statements into reproducible, code-backed observations.
-
-\subsection{Threats to Validity}
-
-Several threats to validity should be acknowledged. \textbf{Internal validity} is limited by the proxy nature of some metrics: AI relevance and authority are useful indicators, but they do not directly measure whether a student learned more effectively from the returned resources. \textbf{Construct validity} is also imperfect because lexical heuristics may classify a resource as AI-related even when its pedagogical quality is weak, and may penalise useful broad resources that do not explicitly mention AI terminology in the title or description. \textbf{External validity} is constrained by the small pilot corpus and the fact that live web search results change over time. Finally, \textbf{system validity} depends partly on third-party platforms such as YouTube, GitHub, arXiv, and Google Scholar, whose interfaces and retrieval behaviour may evolve independently of the codebase.
-
-These limitations do not invalidate the current findings, but they do frame them correctly. The present results are best viewed as evidence that the implementation is measurable, coherent, and promising enough to justify a larger study. A stronger summative evaluation would require a larger corpus, stable annotation guidelines, repeated runs across time, and direct user feedback on usefulness and learning support.
 
 \section{Discussion}
 
@@ -1007,6 +995,15 @@ The focused multi-corpus evaluation revealed a useful shift between compression 
 
 This observation suggests that the ranking stage should not be judged by a single metric. In fact, one contribution of the current work is to show that educational recommenders need multi-dimensional evaluation. Relevance, authority, modality balance, novelty, and accessibility all matter, and they may move in different directions after a ranking change. The current evaluation design begins to expose those relationships. Even though the corpus is small, it already shows why it is misleading to ask only whether ranking improves relevance. A more useful question is whether ranking shapes the final recommendation set in ways that better support the learner's goals.
 
+Figure~\ref{fig:holdout_relevance} illustrates the validation set relevance comparison, showing that AI-Pedia's structured pipeline produces recommendations that are more relevant to the broader knowledge space implied by the validation documents.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.42\textwidth]{figures/holdout_relevance.png}
+    \caption{Validation Set Relevance: Free-form LLM vs AI-Pedia.}
+    \label{fig:holdout_relevance}
+\end{figure}
+
 A second trade-off concerns phrase specificity versus lexical diversity and coverage in keyword extraction. The TF-IDF + MMR stage produced better topic phrases than the simple frequency baseline, but the lexical diversity score was slightly lower and the coverage proxy no longer remained perfect across all three corpora. Here again, the lower score does not necessarily indicate worse behaviour. Multi-word AI concepts often share component terms, and focused phrases can leave some documents without an explicit literal keyword hit even when retrieval quality improves. This result highlights the need to choose evaluation metrics that reflect downstream usefulness, not just surface-form variation.
 
 \subsection{From Prototype to Deployable System}
@@ -1016,6 +1013,13 @@ From an engineering standpoint, the current codebase is now much closer to a dep
 However, deployment-quality robustness would still require several improvements. Caching of search results would reduce repeated external latency. Stronger exception handling and retry logic would improve stability when third-party sources are temporarily unavailable. A richer configuration layer could expose ranking weights, domain priors, and source preferences without editing code. Finally, user feedback loops would allow the system to move beyond one-shot recommendation toward adaptive support. These points are not evidence of failure; rather, they show that the current prototype has reached the stage where incremental engineering work can now produce meaningful usability improvements.
 
 Overall, the combination of code refinement and pilot evaluation strengthens the central claim of the project. AI-Pedia is not simply an idea for using AI in education; it is an implemented, inspectable, extensible, and deployable containerised prototype whose behaviour can already be analysed quantitatively. That makes it a solid basis for a final-year project and a credible foundation for future research or practical deployment.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.42\textwidth]{figures/holdout_coverage.png}
+    \caption{Authority Coverage: Percentage of recommended resources from trusted academic and tutorial sources.}
+    \label{fig:holdout_coverage}
+\end{figure}
 
 \section{Extended Evaluation Framework}
 

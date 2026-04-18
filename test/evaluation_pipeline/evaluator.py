@@ -202,6 +202,11 @@ class EvaluationRunner:
                 resource_reports["topk_ranked"]["authority_score"] - resource_reports["topk_unranked"]["authority_score"],
                 2,
             ),
+            "ranking_input_relevance_delta": round(
+                resource_reports["topk_ranked"].get("input_relevance", 0.0)
+                - resource_reports["topk_unranked"].get("input_relevance", 0.0),
+                2,
+            ),
             "ranking_noise_reduction": resource_reports["topk_ranked"].get("noise_reduction", 0.0),
         }
 
@@ -358,6 +363,11 @@ class EvaluationRunner:
                 aggregate["resource_reports"]["topk_ranked"]["authority_score"] - aggregate["resource_reports"]["topk_unranked"]["authority_score"],
                 2,
             ),
+            "ranking_input_relevance_delta": round(
+                aggregate["resource_reports"]["topk_ranked"].get("input_relevance", 0.0)
+                - aggregate["resource_reports"]["topk_unranked"].get("input_relevance", 0.0),
+                2,
+            ),
             "ranking_noise_reduction": aggregate["resource_reports"]["topk_ranked"].get("noise_reduction", 0.0),
         }
 
@@ -411,6 +421,7 @@ class EvaluationRunner:
                 "stage": "Raw search",
                 "total_resources": raw["total_resources"],
                 "ai_relevance_pct": raw["ai_relevance"],
+                "input_relevance_pct": raw.get("input_relevance", 0.0),
                 "authority_score_pct": raw["authority_score"],
                 "valid_url_pct": raw["url_validation"]["valid_percentage"],
                 "noise_reduction_pct": raw.get("noise_reduction", 0.0),
@@ -420,6 +431,7 @@ class EvaluationRunner:
                 "stage": "Top-k unranked",
                 "total_resources": unranked["total_resources"],
                 "ai_relevance_pct": unranked["ai_relevance"],
+                "input_relevance_pct": unranked.get("input_relevance", 0.0),
                 "authority_score_pct": unranked["authority_score"],
                 "valid_url_pct": unranked["url_validation"]["valid_percentage"],
                 "noise_reduction_pct": unranked.get("noise_reduction", 0.0),
@@ -429,6 +441,7 @@ class EvaluationRunner:
                 "stage": "Top-k ranked",
                 "total_resources": ranked["total_resources"],
                 "ai_relevance_pct": ranked["ai_relevance"],
+                "input_relevance_pct": ranked.get("input_relevance", 0.0),
                 "authority_score_pct": ranked["authority_score"],
                 "valid_url_pct": ranked["url_validation"]["valid_percentage"],
                 "noise_reduction_pct": ranked.get("noise_reduction", 0.0),
@@ -438,7 +451,7 @@ class EvaluationRunner:
         resource_csv = os.path.join(output_dir, "resource_metrics.csv")
         self.save_csv(
             resource_csv,
-            ["stage", "total_resources", "ai_relevance_pct", "authority_score_pct", "valid_url_pct", "noise_reduction_pct", "cross_platform_diversity"],
+            ["stage", "total_resources", "ai_relevance_pct", "input_relevance_pct", "authority_score_pct", "valid_url_pct", "noise_reduction_pct", "cross_platform_diversity"],
             resource_rows,
         )
         exported["resource_csv"] = resource_csv
@@ -475,6 +488,7 @@ Metric & Raw search & Top-$K$ unranked & Top-$K$ ranked\\\\
 \\hline
 Total resources & {raw['total_resources']} & {unranked['total_resources']} & {ranked['total_resources']}\\\\
 AI relevance (\\%) & {raw['ai_relevance']:.2f} & {unranked['ai_relevance']:.2f} & {ranked['ai_relevance']:.2f}\\\\
+Input relevance (\\%) & {raw.get('input_relevance', 0.0):.2f} & {unranked.get('input_relevance', 0.0):.2f} & {ranked.get('input_relevance', 0.0):.2f}\\\\
 Authority score (\\%) & {raw['authority_score']:.2f} & {unranked['authority_score']:.2f} & {ranked['authority_score']:.2f}\\\\
 Valid URLs (\\%) & {raw['url_validation']['valid_percentage']:.2f} & {unranked['url_validation']['valid_percentage']:.2f} & {ranked['url_validation']['valid_percentage']:.2f}\\\\
 Noise reduction (\\%) & {raw.get('noise_reduction', 0.0):.2f} & {unranked.get('noise_reduction', 0.0):.2f} & {ranked.get('noise_reduction', 0.0):.2f}\\\\
@@ -496,11 +510,26 @@ Cross-platform diversity & {raw['cross_platform_diversity']} & {unranked['cross_
         unranked = summary["resource_reports"]["topk_unranked"]
         ranked = summary["resource_reports"]["topk_ranked"]
         labels = ["Raw search", "Top-k unranked", "CBF ranked"]
-        metrics = ["ai_relevance", "authority_score", "valid_url_pct"]
+        metrics = ["ai_relevance", "input_relevance", "authority_score", "valid_url_pct"]
         values = {
-            "Raw search": [raw["ai_relevance"], raw["authority_score"], raw["url_validation"]["valid_percentage"]],
-            "Top-k unranked": [unranked["ai_relevance"], unranked["authority_score"], unranked["url_validation"]["valid_percentage"]],
-            "CBF ranked": [ranked["ai_relevance"], ranked["authority_score"], ranked["url_validation"]["valid_percentage"]],
+            "Raw search": [
+                raw["ai_relevance"],
+                raw.get("input_relevance", 0.0),
+                raw["authority_score"],
+                raw["url_validation"]["valid_percentage"],
+            ],
+            "Top-k unranked": [
+                unranked["ai_relevance"],
+                unranked.get("input_relevance", 0.0),
+                unranked["authority_score"],
+                unranked["url_validation"]["valid_percentage"],
+            ],
+            "CBF ranked": [
+                ranked["ai_relevance"],
+                ranked.get("input_relevance", 0.0),
+                ranked["authority_score"],
+                ranked["url_validation"]["valid_percentage"],
+            ],
         }
 
         x = range(len(metrics))
@@ -509,7 +538,7 @@ Cross-platform diversity & {raw['cross_platform_diversity']} & {unranked['cross_
         for idx, label in enumerate(labels):
             offset = [pos + (idx - 1) * width for pos in x]
             plt.bar(offset, values[label], width=width, label=label)
-        plt.xticks(list(x), ["AI relevance", "Authority", "Valid URLs"])
+        plt.xticks(list(x), ["AI relevance", "Input relevance", "Authority", "Valid URLs"])
         plt.ylabel("Percentage")
         plt.ylim(0, 100)
         plt.title("AI-Pedia pipeline quality comparison")

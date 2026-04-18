@@ -1,0 +1,24 @@
+Model Evaluation and Validation
+
+Model evaluation measures how well a machine learning system performs on data that was not used directly for fitting parameters. Good evaluation is essential because a model that performs well on the training set may still fail on new examples.
+
+Common practices:
+1. Train, validation, and test split
+2. Cross-validation for limited data
+3. Hyperparameter tuning on validation data only
+4. Reporting task-appropriate metrics
+
+Typical metrics:
+- accuracy for balanced classification
+- precision and recall for imbalanced classification
+- F1 score for combined quality
+- ROC-AUC for ranking behaviour
+- mean squared error and mean absolute error for regression
+
+Important cautions:
+- avoid data leakage
+- do not tune on the test set
+- compare against simple baselines
+- consider robustness, not just average score
+
+In educational AI systems, evaluation should include not only predictive accuracy but also usefulness, trustworthiness, and clarity. That is why recommendation systems often require both automated metrics and human judgement rather than a single numerical score.

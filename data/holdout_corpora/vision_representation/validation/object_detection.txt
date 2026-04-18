@@ -1,0 +1,24 @@
+Object Detection
+
+Object detection extends image classification by locating objects as well as identifying them. Instead of predicting only a single label for the full image, the model must predict bounding boxes and categories for multiple objects.
+
+Representative model families:
+- R-CNN and Faster R-CNN
+- YOLO
+- SSD
+- transformer-based detectors such as DETR
+
+Important ideas:
+1. region proposals or dense prediction
+2. intersection-over-union for box quality
+3. non-maximum suppression for duplicate boxes
+4. precision-recall trade-offs under different confidence thresholds
+
+Applications:
+- autonomous driving
+- surveillance
+- retail analytics
+- robotics
+- medical imaging
+
+Object detection is more complex than image classification because it combines recognition with localisation. It therefore provides a richer test case for visual representation learning and practical AI system design.

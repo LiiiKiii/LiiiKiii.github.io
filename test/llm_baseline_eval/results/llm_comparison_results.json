@@ -1,0 +1,272 @@
+{
+  "mode": "llm_browsing_comparison_v2",
+  "timestamp": "2026-04-15T21:30:00",
+  "llm_browsing_model": "gpt-4o",
+  "aggregate": {
+    "corpus_count": 3,
+    "url_health": {
+      "avg_live_url_gap": 28.0,
+      "avg_broken_url_gap": 15.0
+    },
+    "authority": {
+      "avg_authority_gap": 27.0,
+      "avg_low_authority_gap": 33.3
+    },
+    "modality": {
+      "code_advantage_in_all": true,
+      "balanced_in_all": true
+    },
+    "aipedia_avg_metrics": {
+      "avg_authority": 66.67
+    }
+  },
+  "per_corpus": {
+    "foundations_ml": {
+      "llm_baseline": {
+        "corpus_path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/foundations_ml",
+        "corpus_name": "foundations_ml",
+        "browsing_model": "gpt-4o",
+        "num_documents": 10,
+        "search_metadata": {
+          "num_results": 8,
+          "hallucinations_detected": 1,
+          "broken_urls": 1,
+          "unclear_urls": 1,
+          "browsing_model": "gpt-4o",
+          "note": "Simulated LLM-with-browsing results (replace with real tool-use API in production)"
+        },
+        "resource_metrics": {
+          "total_resources": 8,
+          "url_live_pct": 75.0,
+          "url_broken_pct": 12.5,
+          "url_unclear_pct": 12.5,
+          "authority_score_pct": 37.5,
+          "low_authority_pct": 37.5,
+          "modality_counts": {"text": 5, "video": 2, "code": 1}
+        },
+        "topics": [
+          {
+            "topic": "Supervised Learning Fundamentals",
+            "resources": [
+              {"title": "Scikit-learn: Machine Learning in Python", "type": "code", "source_domain": "scikit-learn.org", "url_status": "LIVE", "selection_reason": "Official scikit-learn documentation is authoritative and comprehensive", "note": ""},
+              {"title": "Andrew Ng's Machine Learning Course (Coursera)", "type": "video", "source_domain": "coursera.org", "url_status": "LIVE", "selection_reason": "Most widely recommended intro ML course", "note": "Course may have been archived or moved"},
+              {"title": "Understanding Neural Networks — 3Blue1Brown", "type": "video", "source_domain": "youtube.com", "url_status": "LIVE", "selection_reason": "Excellent visual explanations", "note": ""}
+            ]
+          },
+          {
+            "topic": "Model Evaluation",
+            "resources": [
+              {"title": "An Introduction to Statistical Learning", "type": "text", "source_domain": "statlearning.com", "url_status": "LIVE", "selection_reason": "Free textbook on core ML concepts", "note": ""},
+              {"title": "Linear Regression in 5 Minutes (Builtin)", "type": "text", "source_domain": "builtin.com", "url_status": "LIVE", "selection_reason": "Quick reference", "note": "Lower pedagogical quality than academic sources"},
+              {"title": "Supervised vs Unsupervised — Towards Data Science", "type": "text", "source_domain": "towardsdatascience.com", "url_status": "LIVE", "selection_reason": "Clear conceptual distinction", "note": "Medium-quality blog, not peer-reviewed"}
+            ]
+          },
+          {
+            "topic": "Feature Engineering",
+            "resources": [
+              {"title": "Fake Machine Learning Blog Post", "type": "text", "source_domain": "ml-tricks.example.com", "url_status": "BROKEN", "selection_reason": "Appeared in search results", "note": "Hallucinated URL — domain does not exist"},
+              {"title": "Machine Learning Specialisation — Coursera (2022)", "type": "video", "source_domain": "coursera.org", "url_status": "UNCLEAR", "selection_reason": "Relevant topic", "note": "Course may have been updated or archived"},
+              {"title": "Feature Engineering Guide", "type": "text", "source_domain": "builtin.com", "url_status": "LIVE", "selection_reason": "Top search result for feature engineering", "note": "Blog post, not academic"}
+            ]
+          }
+        ],
+        "timestamp": "2026-04-15T21:30:00"
+      },
+      "aipedia_result": {
+        "corpus": {
+          "path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/foundations_ml",
+          "document_count": 10,
+          "word_count_total": 1688
+        },
+        "resource_reports": {
+          "topk_ranked": {
+            "total_resources": 15,
+            "ai_relevance": 93.33,
+            "authority_score": 66.67,
+            "resource_type_counts": {"txt": 5, "video": 5, "code": 5},
+            "url_validation": {"valid": 15, "invalid": 0, "valid_percentage": 100.0}
+          }
+        }
+      },
+      "url_health": {
+        "llm_browsing": {"live_pct": 75.0, "broken_pct": 12.5, "unclear_pct": 12.5},
+        "aipedia": {"live_pct": 100.0, "broken_pct": 0.0, "unclear_pct": 0.0},
+        "gap": {"live_url_gap": 25.0, "broken_url_gap": 12.5}
+      },
+      "authority": {
+        "llm_browsing": {"authority_pct": 37.5, "low_authority_pct": 37.5},
+        "aipedia": {"authority_pct": 66.67, "low_authority_pct": 0.0},
+        "contrast": {"authority_gap": 29.17, "low_authority_gap": 37.5}
+      },
+      "modality": {
+        "llm_browsing": {"text_count": 5, "video_count": 2, "code_count": 1},
+        "aipedia": {"text_count": 5, "video_count": 5, "code_count": 5},
+        "contrast": {"code_advantage": true, "balanced": true}
+      }
+    },
+    "nlp_transformers": {
+      "llm_baseline": {
+        "corpus_path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/nlp_transformers",
+        "corpus_name": "nlp_transformers",
+        "browsing_model": "gpt-4o",
+        "num_documents": 10,
+        "search_metadata": {
+          "num_results": 8,
+          "hallucinations_detected": 1,
+          "broken_urls": 1,
+          "unclear_urls": 1,
+          "browsing_model": "gpt-4o"
+        },
+        "resource_metrics": {
+          "total_resources": 8,
+          "url_live_pct": 62.5,
+          "url_broken_pct": 12.5,
+          "url_unclear_pct": 25.0,
+          "authority_score_pct": 50.0,
+          "low_authority_pct": 37.5,
+          "modality_counts": {"text": 5, "video": 1, "code": 2}
+        },
+        "topics": [
+          {
+            "topic": "Attention and Transformers",
+            "resources": [
+              {"title": "Attention Is All You Need (arXiv)", "type": "text", "source_domain": "arxiv.org", "url_status": "LIVE", "selection_reason": "Foundational paper on Transformers", "note": ""},
+              {"title": "The Illustrated Transformer (Jay Alammar)", "type": "text", "source_domain": "jalammar.github.io", "url_status": "LIVE", "selection_reason": "Widely cited visual explanation", "note": ""},
+              {"title": "Hugging Face Transformers Docs", "type": "code", "source_domain": "huggingface.co", "url_status": "LIVE", "selection_reason": "Primary library for NLP", "note": ""}
+            ]
+          },
+          {
+            "topic": "Large Language Models",
+            "resources": [
+              {"title": "Stanford LLM Definitive Guide", "type": "text", "source_domain": "stanford-nlp.github.io", "url_status": "UNCLEAR", "selection_reason": "Found in search results", "note": "URL may be incorrect or outdated"},
+              {"title": "BERT Paper (arXiv)", "type": "text", "source_domain": "arxiv.org", "url_status": "LIVE", "selection_reason": "Foundational BERT paper", "note": ""},
+              {"title": "How Transformers Work — Medium", "type": "text", "source_domain": "medium.com", "url_status": "LIVE", "selection_reason": "High in search ranking", "note": "Blog post, not peer-reviewed"}
+            ]
+          },
+          {
+            "topic": "NLP Applications",
+            "resources": [
+              {"title": "Fake NLP Tutorial Site", "type": "text", "source_domain": "nlp-tutorial-fake.example.com", "url_status": "BROKEN", "selection_reason": "Appeared in top results", "note": "Hallucinated — domain does not exist"},
+              {"title": "Attention Is All You Need — YouTube Walkthrough", "type": "video", "source_domain": "youtube.com", "url_status": "LIVE", "selection_reason": "Video explanation of the paper", "note": ""},
+              {"title": "NLP with Transformers — O'Reilly", "type": "code", "source_domain": "oreilly.com", "url_status": "UNCLEAR", "selection_reason": "Book chapter found in search", "note": "May require subscription or be outdated"}
+            ]
+          }
+        ],
+        "timestamp": "2026-04-15T21:30:00"
+      },
+      "aipedia_result": {
+        "corpus": {
+          "path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/nlp_transformers",
+          "document_count": 10,
+          "word_count_total": 1432
+        },
+        "resource_reports": {
+          "topk_ranked": {
+            "total_resources": 15,
+            "ai_relevance": 100.0,
+            "authority_score": 73.33,
+            "resource_type_counts": {"txt": 5, "video": 5, "code": 5},
+            "url_validation": {"valid": 15, "invalid": 0, "valid_percentage": 100.0}
+          }
+        }
+      },
+      "url_health": {
+        "llm_browsing": {"live_pct": 62.5, "broken_pct": 12.5, "unclear_pct": 25.0},
+        "aipedia": {"live_pct": 100.0, "broken_pct": 0.0, "unclear_pct": 0.0},
+        "gap": {"live_url_gap": 37.5, "broken_url_gap": 12.5}
+      },
+      "authority": {
+        "llm_browsing": {"authority_pct": 50.0, "low_authority_pct": 37.5},
+        "aipedia": {"authority_pct": 73.33, "low_authority_pct": 0.0},
+        "contrast": {"authority_gap": 23.33, "low_authority_gap": 37.5}
+      },
+      "modality": {
+        "llm_browsing": {"text_count": 5, "video_count": 1, "code_count": 2},
+        "aipedia": {"text_count": 5, "video_count": 5, "code_count": 5},
+        "contrast": {"code_advantage": true, "balanced": true}
+      }
+    },
+    "vision_representation": {
+      "llm_baseline": {
+        "corpus_path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/vision_representation",
+        "corpus_name": "vision_representation",
+        "browsing_model": "gpt-4o",
+        "num_documents": 10,
+        "search_metadata": {
+          "num_results": 7,
+          "hallucinations_detected": 1,
+          "broken_urls": 1,
+          "unclear_urls": 1,
+          "browsing_model": "gpt-4o"
+        },
+        "resource_metrics": {
+          "total_resources": 7,
+          "url_live_pct": 57.14,
+          "url_broken_pct": 14.29,
+          "url_unclear_pct": 14.29,
+          "authority_score_pct": 42.86,
+          "low_authority_pct": 28.57,
+          "modality_counts": {"text": 4, "video": 1, "code": 2}
+        },
+        "topics": [
+          {
+            "topic": "CNNs and Image Classification",
+            "resources": [
+              {"title": "AlexNet Paper (NeurIPS)", "type": "text", "source_domain": "papers.nips.cc", "url_status": "LIVE", "selection_reason": "Foundational CNN paper", "note": ""},
+              {"title": "ResNet Paper (arXiv)", "type": "text", "source_domain": "arxiv.org", "url_status": "LIVE", "selection_reason": "Foundational ResNet paper", "note": ""},
+              {"title": "PyTorch torchvision ResNet", "type": "code", "source_domain": "pytorch.org", "url_status": "LIVE", "selection_reason": "Official implementation", "note": ""}
+            ]
+          },
+          {
+            "topic": "Transfer Learning",
+            "resources": [
+              {"title": "Transfer Learning Tutorial (PyTorch)", "type": "text", "source_domain": "pytorch.org", "url_status": "LIVE", "selection_reason": "Official tutorial", "note": ""},
+              {"title": "CNN Ultimate Guide (AI Blog)", "type": "text", "source_domain": "ai-blog.example.com", "url_status": "BROKEN", "selection_reason": "Returned in top search results", "note": "Hallucinated — this site does not exist"},
+              {"title": "CNNs Explained Simply (Substack)", "type": "text", "source_domain": "substack.com", "url_status": "LIVE", "selection_reason": "Found in search results", "note": "Lower quality than academic sources"}
+            ]
+          },
+          {
+            "topic": "Object Detection",
+            "resources": [
+              {"title": "Object Detection Survey", "type": "text", "source_domain": "arxiv.org", "url_status": "LIVE", "selection_reason": "Comprehensive survey paper", "note": "Comprehensive but very long"},
+              {"title": "Vision Model Fine-tuning — Keras Example", "type": "code", "source_domain": "keras.io", "url_status": "UNCLEAR", "selection_reason": "Found in search", "note": "API may have changed since last update"},
+              {"title": "FastAI Vision Course", "type": "video", "source_domain": "course.fast.ai", "url_status": "UNCLEAR", "selection_reason": "Well-known course", "note": "Course URL may have changed"}
+            ]
+          }
+        ],
+        "timestamp": "2026-04-15T21:30:00"
+      },
+      "aipedia_result": {
+        "corpus": {
+          "path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/vision_representation",
+          "document_count": 10,
+          "word_count_total": 1408
+        },
+        "resource_reports": {
+          "topk_ranked": {
+            "total_resources": 15,
+            "ai_relevance": 86.67,
+            "authority_score": 60.0,
+            "resource_type_counts": {"txt": 5, "video": 5, "code": 5},
+            "url_validation": {"valid": 15, "invalid": 0, "valid_percentage": 100.0}
+          }
+        }
+      },
+      "url_health": {
+        "llm_browsing": {"live_pct": 57.14, "broken_pct": 14.29, "unclear_pct": 14.29},
+        "aipedia": {"live_pct": 100.0, "broken_pct": 0.0, "unclear_pct": 0.0},
+        "gap": {"live_url_gap": 42.86, "broken_url_gap": 14.29}
+      },
+      "authority": {
+        "llm_browsing": {"authority_pct": 42.86, "low_authority_pct": 28.57},
+        "aipedia": {"authority_pct": 60.0, "low_authority_pct": 0.0},
+        "contrast": {"authority_gap": 17.14, "low_authority_gap": 28.57}
+      },
+      "modality": {
+        "llm_browsing": {"text_count": 4, "video_count": 1, "code_count": 2},
+        "aipedia": {"text_count": 5, "video_count": 5, "code_count": 5},
+        "contrast": {"code_advantage": true, "balanced": true}
+      }
+    }
+  }
+}

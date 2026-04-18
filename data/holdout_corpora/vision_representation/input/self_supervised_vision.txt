@@ -1,0 +1,19 @@
+Self-Supervised Learning for Vision
+
+Self-supervised learning aims to learn useful visual representations without relying on manual class labels. Instead, the model is trained using surrogate objectives derived from the data itself.
+
+Examples of self-supervised ideas:
+- contrastive learning on augmented image pairs
+- masked image modeling
+- predicting transformations or image patches
+- cross-view consistency objectives
+
+Why it matters:
+1. labels are expensive to collect
+2. raw image data is abundant
+3. pretrained representations can transfer to many tasks
+4. self-supervised methods reduce dependence on fully supervised pipelines
+
+Representative methods include SimCLR, MoCo, BYOL, DINO, and masked autoencoding approaches.
+
+Self-supervised vision is important in modern AI because it shifts learning from annotation-heavy pipelines toward representation-rich foundation models.
