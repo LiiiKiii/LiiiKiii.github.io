@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI摘要生成模块
-使用AI API为资源生成智能摘要
+可选LLM摘要生成模块
+使用OpenAI API或规则型fallback为资源生成摘要
 """
 
 import os
@@ -149,7 +149,7 @@ def generate_summary_with_openai(content: str, resource_type: str, title: str = 
             )
             summary = response.choices[0].message.content.strip()
         except (ImportError, AttributeError):
-            # 回退到旧版本API
+            # 兼容较早的 openai Python SDK
             openai.api_key = api_key
             response = openai.ChatCompletion.create(
                 model=OPENAI_SUMMARY_MODEL,

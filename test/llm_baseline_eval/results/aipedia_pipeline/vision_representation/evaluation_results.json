@@ -1,0 +1,139 @@
+{
+  "corpus": {
+    "path": "data/test_corpora/vision_representation",
+    "document_count": 10,
+    "word_count_total": 1351
+  },
+  "parameters": {
+    "top_k_keywords": 10,
+    "search_max_per_type": 8,
+    "recommend_top_k": 5
+  },
+  "keyword_reports": {
+    "simple_frequency": {
+      "keyword_count": 10,
+      "coverage": 100.0,
+      "ai_relevance": 0.0,
+      "diversity": 0.9887,
+      "keywords": [
+        "image",
+        "learning",
+        "vision",
+        "classification",
+        "visual",
+        "model",
+        "networks",
+        "computer",
+        "features",
+        "representation"
+      ]
+    },
+    "tfidf_mmr": {
+      "keyword_count": 9,
+      "coverage": 90.0,
+      "ai_relevance": 22.22,
+      "diversity": 0.9585,
+      "keywords": [
+        "image classification",
+        "computer vision",
+        "convolutional neural networks",
+        "representation learning",
+        "object detection",
+        "semantic segmentation",
+        "face recognition",
+        "medical imaging",
+        "transfer learning"
+      ]
+    }
+  },
+  "resource_reports": {
+    "raw_search": {
+      "total_resources": 124,
+      "ai_relevance": 69.35,
+      "cross_platform_diversity": 3,
+      "authority_score": 45.16,
+      "resource_type_counts": {
+        "txt": 36,
+        "video": 68,
+        "code": 20
+      },
+      "url_validation": {
+        "valid": 124,
+        "invalid": 0,
+        "valid_percentage": 100.0
+      },
+      "novelty": 100.0,
+      "input_relevance": 45.97,
+      "avg_input_similarity": 0.0765,
+      "input_relevance_threshold": 0.08
+    },
+    "topk_unranked": {
+      "total_resources": 15,
+      "ai_relevance": 93.33,
+      "cross_platform_diversity": 3,
+      "authority_score": 66.67,
+      "resource_type_counts": {
+        "txt": 5,
+        "video": 5,
+        "code": 5
+      },
+      "url_validation": {
+        "valid": 15,
+        "invalid": 0,
+        "valid_percentage": 100.0
+      },
+      "noise_reduction": 87.9,
+      "novelty": 100.0,
+      "input_relevance": 60.0,
+      "avg_input_similarity": 0.1119,
+      "input_relevance_threshold": 0.08
+    },
+    "topk_ranked": {
+      "total_resources": 15,
+      "ai_relevance": 100.0,
+      "cross_platform_diversity": 3,
+      "authority_score": 66.67,
+      "resource_type_counts": {
+        "txt": 5,
+        "video": 5,
+        "code": 5
+      },
+      "url_validation": {
+        "valid": 15,
+        "invalid": 0,
+        "valid_percentage": 100.0
+      },
+      "noise_reduction": 87.9,
+      "novelty": 100.0,
+      "input_relevance": 86.67,
+      "avg_input_similarity": 0.1501,
+      "input_relevance_threshold": 0.08
+    }
+  },
+  "resource_type_counts": {
+    "raw_search": {
+      "txt": 36,
+      "video": 68,
+      "code": 20
+    },
+    "topk_unranked": {
+      "txt": 5,
+      "video": 5,
+      "code": 5
+    },
+    "topk_ranked": {
+      "txt": 5,
+      "video": 5,
+      "code": 5
+    }
+  },
+  "improvements": {
+    "keyword_coverage_delta": -10.0,
+    "keyword_ai_relevance_delta": 22.22,
+    "keyword_diversity_delta": -0.0302,
+    "ranking_ai_relevance_delta": 6.67,
+    "ranking_authority_delta": 0.0,
+    "ranking_input_relevance_delta": 26.67,
+    "ranking_noise_reduction": 87.9
+  }
+}

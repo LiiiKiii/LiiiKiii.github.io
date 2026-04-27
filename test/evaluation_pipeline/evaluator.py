@@ -597,9 +597,7 @@ def default_paper_figures_dir() -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="AI-Pedia evaluation runner")
-    parser.add_argument("--corpus", type=str, default=EvalConfig.TEST_CORPUS_PATH)
     parser.add_argument("--corpora-root", type=str, default=EvalConfig.TEST_CORPORA_ROOT)
-    parser.add_argument("--use-focused-corpora", action="store_true")
     parser.add_argument("--output", type=str, default=EvalConfig.OUTPUT_DIR)
     parser.add_argument("--plots-dir", type=str, default=None)
     parser.add_argument("--tables-dir", type=str, default=None)
@@ -610,24 +608,14 @@ def main() -> None:
     args = parser.parse_args()
 
     runner = EvaluationRunner()
-    if args.use_focused_corpora:
-        results = runner.run_batch(
-            corpora_root=args.corpora_root,
-            output_dir=args.output,
-            top_k_keywords=args.top_k_keywords,
-            search_max_per_type=args.search_max_per_type,
-            recommend_top_k=args.recommend_top_k,
-            reuse_cache=args.reuse_cache,
-        )
-    else:
-        results = runner.run_single(
-            corpus_path=args.corpus,
-            output_dir=args.output,
-            top_k_keywords=args.top_k_keywords,
-            search_max_per_type=args.search_max_per_type,
-            recommend_top_k=args.recommend_top_k,
-            reuse_cache=args.reuse_cache,
-        )
+    results = runner.run_batch(
+        corpora_root=args.corpora_root,
+        output_dir=args.output,
+        top_k_keywords=args.top_k_keywords,
+        search_max_per_type=args.search_max_per_type,
+        recommend_top_k=args.recommend_top_k,
+        reuse_cache=args.reuse_cache,
+    )
 
     plots_dir = args.plots_dir or default_paper_figures_dir() or args.output
     tables_dir = args.tables_dir or args.output

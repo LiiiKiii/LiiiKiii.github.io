@@ -1,16 +1,20 @@
 {
-  "mode": "llm_browsing_comparison_v2",
-  "timestamp": "2026-04-15T21:30:00",
+  "mode": "llm_browsing_comparison_v3",
+  "timestamp": "2026-04-22T20:50:27.499407",
   "llm_browsing_model": "gpt-4o",
+  "llm_run_modes": [
+    "live_openai"
+  ],
+  "provenance_note": "Rows with run_mode=live_openai come from OpenAI Responses API with hosted web_search. Rows with run_mode=synthetic_dry_run are deterministic fixtures, not live LLM calls.",
   "aggregate": {
     "corpus_count": 3,
     "url_health": {
-      "avg_live_url_gap": 28.0,
-      "avg_broken_url_gap": 15.0
+      "avg_live_url_gap": 0.0,
+      "avg_broken_url_gap": 0.0
     },
     "authority": {
-      "avg_authority_gap": 27.0,
-      "avg_low_authority_gap": 33.3
+      "avg_authority_gap": 28.89,
+      "avg_low_authority_gap": 0.0
     },
     "modality": {
       "code_advantage_in_all": true,
@@ -23,249 +27,1143 @@
   "per_corpus": {
     "foundations_ml": {
       "llm_baseline": {
-        "corpus_path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/foundations_ml",
+        "corpus_path": "data/test_corpora/foundations_ml",
         "corpus_name": "foundations_ml",
         "browsing_model": "gpt-4o",
+        "run_mode": "live_openai",
         "num_documents": 10,
         "search_metadata": {
-          "num_results": 8,
-          "hallucinations_detected": 1,
-          "broken_urls": 1,
-          "unclear_urls": 1,
+          "num_results": 15,
           "browsing_model": "gpt-4o",
-          "note": "Simulated LLM-with-browsing results (replace with real tool-use API in production)"
+          "run_mode": "live_openai",
+          "provenance": "OpenAI Responses API with hosted web_search tool"
         },
         "resource_metrics": {
-          "total_resources": 8,
-          "url_live_pct": 75.0,
-          "url_broken_pct": 12.5,
-          "url_unclear_pct": 12.5,
-          "authority_score_pct": 37.5,
-          "low_authority_pct": 37.5,
-          "modality_counts": {"text": 5, "video": 2, "code": 1}
+          "total_resources": 15,
+          "url_live_pct": 100.0,
+          "url_broken_pct": 0.0,
+          "url_unclear_pct": 0.0,
+          "authority_score_pct": 33.33,
+          "low_authority_pct": 0.0,
+          "modality_counts": {
+            "text": 10,
+            "video": 5,
+            "code": 0
+          },
+          "simpson_diversity_index": 0.8889,
+          "domain_distribution": {
+            "datacamp.com": 1,
+            "kdnuggets.com": 1,
+            "linkedin.com": 1,
+            "classcentral.com": 2,
+            "deeplearning.neuromatch.io": 1,
+            "arxiv.org": 3,
+            "openlearning.mit.edu": 2,
+            "reddit.com": 1,
+            "wikipedia.org": 1,
+            "coursera.org": 1,
+            "ocw.mit.edu": 1
+          }
         },
         "topics": [
           {
-            "topic": "Supervised Learning Fundamentals",
+            "topic": "Topic A",
             "resources": [
-              {"title": "Scikit-learn: Machine Learning in Python", "type": "code", "source_domain": "scikit-learn.org", "url_status": "LIVE", "selection_reason": "Official scikit-learn documentation is authoritative and comprehensive", "note": ""},
-              {"title": "Andrew Ng's Machine Learning Course (Coursera)", "type": "video", "source_domain": "coursera.org", "url_status": "LIVE", "selection_reason": "Most widely recommended intro ML course", "note": "Course may have been archived or moved"},
-              {"title": "Understanding Neural Networks — 3Blue1Brown", "type": "video", "source_domain": "youtube.com", "url_status": "LIVE", "selection_reason": "Excellent visual explanations", "note": ""}
+              {
+                "title": "Feature Engineering in Machine Learning: A Practical Guide",
+                "url": "https://www.datacamp.com/tutorial/feature-engineering",
+                "snippet": "Comprehensive, hands‑on guide covering encoding, scaling, missing values, feature creation and selection with Python examples, aligning closely with the study notes’ emphasis on transforming raw data into usable representations.",
+                "type": "text",
+                "source_domain": "datacamp.com",
+                "url_status": "LIVE",
+                "selection_reason": "Comprehensive, hands‑on guide covering encoding, scaling, missing values, feature creation and selection with Python examples, aligning closely with the study notes’ emphasis on transforming raw data into usable representations.",
+                "note": "Published March 19, 2025; likely up‑to‑date and practical."
+              },
+              {
+                "title": "Feature Engineering for Beginners",
+                "url": "https://www.kdnuggets.com/feature-engineering-for-beginners",
+                "snippet": "Beginner‑friendly guide introducing key techniques and practical examples in Python, matching the foundational tone of the notes.",
+                "type": "text",
+                "source_domain": "kdnuggets.com",
+                "url_status": "LIVE",
+                "selection_reason": "Beginner‑friendly guide introducing key techniques and practical examples in Python, matching the foundational tone of the notes.",
+                "note": "Published May 16, 2024; still relevant."
+              },
+              {
+                "title": "Applied ML: Feature engineering – Python Tutorial",
+                "url": "https://www.linkedin.com/learning/applied-machine-learning-feature-engineering-23752649/applied-ml-feature-engineering",
+                "snippet": "Video tutorial covering imputation, transformations, encoding, PCA, TF‑IDF and embeddings—broad coverage of feature engineering methods.",
+                "type": "video",
+                "source_domain": "linkedin.com",
+                "url_status": "LIVE",
+                "selection_reason": "Video tutorial covering imputation, transformations, encoding, PCA, TF‑IDF and embeddings—broad coverage of feature engineering methods.",
+                "note": "Accessible via LinkedIn Learning; may require subscription."
+              },
+              {
+                "title": "Understanding Deep Learning Requires Rethinking Generalization",
+                "url": "https://www.classcentral.com/course/youtube-understanding-deep-learning-requires-rethinking-generalization-132152",
+                "snippet": "A 40‑minute lecture exploring overfitting, L2 regularization, dropout, data augmentation, implicit vs explicit regularization, and SGD’s role in generalization—directly relevant to the notes.",
+                "type": "video",
+                "source_domain": "classcentral.com",
+                "url_status": "LIVE",
+                "selection_reason": "A 40‑minute lecture exploring overfitting, L2 regularization, dropout, data augmentation, implicit vs explicit regularization, and SGD’s role in generalization—directly relevant to the notes.",
+                "note": "Free video; advanced level."
+              },
+              {
+                "title": "Tutorial 1: Regularization techniques part 1 — Neuromatch Academy",
+                "url": "https://instructor.deeplearning.neuromatch.io/tutorials/W2D1_Regularization/instructor/W2D1_Tutorial1.html",
+                "snippet": "Hands‑on tutorial from Neuromatch Academy covering overfitting and early stopping, matching the notes’ regularization techniques.",
+                "type": "text",
+                "source_domain": "deeplearning.neuromatch.io",
+                "url_status": "LIVE",
+                "selection_reason": "Hands‑on tutorial from Neuromatch Academy covering overfitting and early stopping, matching the notes’ regularization techniques.",
+                "note": "Recent (crawled 2 months ago); code may require setup."
+              }
             ]
           },
           {
-            "topic": "Model Evaluation",
+            "topic": "Topic B",
             "resources": [
-              {"title": "An Introduction to Statistical Learning", "type": "text", "source_domain": "statlearning.com", "url_status": "LIVE", "selection_reason": "Free textbook on core ML concepts", "note": ""},
-              {"title": "Linear Regression in 5 Minutes (Builtin)", "type": "text", "source_domain": "builtin.com", "url_status": "LIVE", "selection_reason": "Quick reference", "note": "Lower pedagogical quality than academic sources"},
-              {"title": "Supervised vs Unsupervised — Towards Data Science", "type": "text", "source_domain": "towardsdatascience.com", "url_status": "LIVE", "selection_reason": "Clear conceptual distinction", "note": "Medium-quality blog, not peer-reviewed"}
+              {
+                "title": "The Theory Behind Overfitting, Cross Validation, Regularization, Bagging, and Boosting: Tutorial",
+                "url": "https://arxiv.org/abs/1905.12787",
+                "snippet": "Academic tutorial covering overfitting, cross‑validation, L1/L2 regularization, early stopping, bagging and boosting—strong theoretical complement to practical notes.",
+                "type": "text",
+                "source_domain": "arxiv.org",
+                "url_status": "LIVE",
+                "selection_reason": "Academic tutorial covering overfitting, cross‑validation, L1/L2 regularization, early stopping, bagging and boosting—strong theoretical complement to practical notes.",
+                "note": "Published 2019; theory remains foundational."
+              },
+              {
+                "title": "A Tutorial on Regression Analysis: From Linear Models to Deep Learning",
+                "url": "https://arxiv.org/abs/2512.04747",
+                "snippet": "Comprehensive lecture notes bridging linear regression, logistic regression, polynomial and kernel methods, and regularization—aligns with the notes’ emphasis on linear models and their limitations.",
+                "type": "text",
+                "source_domain": "arxiv.org",
+                "url_status": "LIVE",
+                "selection_reason": "Comprehensive lecture notes bridging linear regression, logistic regression, polynomial and kernel methods, and regularization—aligns with the notes’ emphasis on linear models and their limitations.",
+                "note": "Published December 4, 2025; very recent."
+              },
+              {
+                "title": "Machine Learning with Python: from Linear Models to Deep Learning",
+                "url": "https://openlearning.mit.edu/courses-programs/mitx-courses/machine-learning-python-linear-models-deep-learning",
+                "snippet": "MIT course covering representation, overfitting, regularization, generalization, and linear models as a foundation for deep learning.",
+                "type": "text",
+                "source_domain": "openlearning.mit.edu",
+                "url_status": "LIVE",
+                "selection_reason": "MIT course covering representation, overfitting, regularization, generalization, and linear models as a foundation for deep learning.",
+                "note": "Likely structured course; may require enrollment."
+              },
+              {
+                "title": "Just made a visual guide to Linear Regression — great for beginners",
+                "url": "https://www.reddit.com/r/learnmachinelearning/comments/1nmtyjk",
+                "snippet": "Visual, beginner‑friendly video explaining linear regression intuitively—useful for grasping decision boundaries and interpretability.",
+                "type": "video",
+                "source_domain": "reddit.com",
+                "url_status": "LIVE",
+                "selection_reason": "Visual, beginner‑friendly video explaining linear regression intuitively—useful for grasping decision boundaries and interpretability.",
+                "note": "Informal; quality depends on creator."
+              },
+              {
+                "title": "Machine Learning with Python: from Linear Models to Deep Learning",
+                "url": "https://openlearning.mit.edu/courses-programs/mitx-courses/machine-learning-python-linear-models-deep-learning",
+                "snippet": "Covers a wide range of ML fundamentals including supervised/unsupervised learning, algorithms, evaluation, and generalization.",
+                "type": "text",
+                "source_domain": "openlearning.mit.edu",
+                "url_status": "LIVE",
+                "selection_reason": "Covers a wide range of ML fundamentals including supervised/unsupervised learning, algorithms, evaluation, and generalization.",
+                "note": "Same as above; broad foundational coverage."
+              }
             ]
           },
           {
-            "topic": "Feature Engineering",
+            "topic": "Topic C",
             "resources": [
-              {"title": "Fake Machine Learning Blog Post", "type": "text", "source_domain": "ml-tricks.example.com", "url_status": "BROKEN", "selection_reason": "Appeared in search results", "note": "Hallucinated URL — domain does not exist"},
-              {"title": "Machine Learning Specialisation — Coursera (2022)", "type": "video", "source_domain": "coursera.org", "url_status": "UNCLEAR", "selection_reason": "Relevant topic", "note": "Course may have been updated or archived"},
-              {"title": "Feature Engineering Guide", "type": "text", "source_domain": "builtin.com", "url_status": "LIVE", "selection_reason": "Top search result for feature engineering", "note": "Blog post, not academic"}
+              {
+                "title": "Scikit‑learn",
+                "url": "https://en.wikipedia.org/wiki/Scikit-learn",
+                "snippet": "Overview of the scikit‑learn library, which implements many fundamental algorithms and evaluation tools referenced in the notes.",
+                "type": "text",
+                "source_domain": "wikipedia.org",
+                "url_status": "LIVE",
+                "selection_reason": "Overview of the scikit‑learn library, which implements many fundamental algorithms and evaluation tools referenced in the notes.",
+                "note": "General overview; may lack depth."
+              },
+              {
+                "title": "Feature Engineering | Coursera",
+                "url": "https://www.coursera.org/learn/feature-engineering",
+                "snippet": "Course module that includes fundamentals of ML, feature engineering, and evaluation practices using BigQuery ML and Keras.",
+                "type": "video",
+                "source_domain": "coursera.org",
+                "url_status": "LIVE",
+                "selection_reason": "Course module that includes fundamentals of ML, feature engineering, and evaluation practices using BigQuery ML and Keras.",
+                "note": "Requires enrollment; includes hands‑on labs."
+              },
+              {
+                "title": "The Theory Behind Overfitting, Cross Validation, Regularization, Bagging, and Boosting: Tutorial",
+                "url": "https://arxiv.org/abs/1905.12787",
+                "snippet": "Covers cross‑validation, generalization error, overfitting, regularization and evaluation metrics—directly relevant to evaluation practices.",
+                "type": "text",
+                "source_domain": "arxiv.org",
+                "url_status": "LIVE",
+                "selection_reason": "Covers cross‑validation, generalization error, overfitting, regularization and evaluation metrics—directly relevant to evaluation practices.",
+                "note": "Theoretical depth; published 2019."
+              },
+              {
+                "title": "Lecture 6: Neural Network Generalization | MIT OpenCourseWare",
+                "url": "https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/resources/mit6_7960_f24_lec6_pdf/",
+                "snippet": "Lecture notes focused on neural network generalization—ties evaluation to deep learning context.",
+                "type": "text",
+                "source_domain": "ocw.mit.edu",
+                "url_status": "LIVE",
+                "selection_reason": "Lecture notes focused on neural network generalization—ties evaluation to deep learning context.",
+                "note": "From Fall 2024 course; recent and academic."
+              },
+              {
+                "title": "Understanding Deep Learning Requires Rethinking Generalization",
+                "url": "https://www.classcentral.com/course/youtube-understanding-deep-learning-requires-rethinking-generalization-132152",
+                "snippet": "Explores generalization, regularization, and evaluation in deep learning—useful for understanding validation beyond metrics.",
+                "type": "video",
+                "source_domain": "classcentral.com",
+                "url_status": "LIVE",
+                "selection_reason": "Explores generalization, regularization, and evaluation in deep learning—useful for understanding validation beyond metrics.",
+                "note": "Advanced lecture; free."
+              }
             ]
           }
         ],
-        "timestamp": "2026-04-15T21:30:00"
+        "timestamp": "2026-04-22T20:47:57.552054"
       },
       "aipedia_result": {
         "corpus": {
-          "path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/foundations_ml",
+          "path": "data/test_corpora/foundations_ml",
           "document_count": 10,
           "word_count_total": 1688
         },
+        "parameters": {
+          "top_k_keywords": 10,
+          "search_max_per_type": 8,
+          "recommend_top_k": 5
+        },
+        "keyword_reports": {
+          "simple_frequency": {
+            "keyword_count": 10,
+            "coverage": 100.0,
+            "ai_relevance": 10.0,
+            "diversity": 0.9807,
+            "keywords": [
+              "learning",
+              "data",
+              "model",
+              "machine",
+              "training",
+              "validation",
+              "gradient",
+              "feature",
+              "models",
+              "examples"
+            ]
+          },
+          "tfidf_mmr": {
+            "keyword_count": 10,
+            "coverage": 100.0,
+            "ai_relevance": 30.0,
+            "diversity": 0.9487,
+            "keywords": [
+              "machine learning",
+              "train validation test",
+              "model evaluation",
+              "feature engineering",
+              "training set",
+              "linear regression",
+              "precision recall",
+              "supervised learning",
+              "gradient",
+              "deep learning"
+            ]
+          }
+        },
         "resource_reports": {
-          "topk_ranked": {
+          "raw_search": {
+            "total_resources": 141,
+            "ai_relevance": 85.82,
+            "cross_platform_diversity": 3,
+            "authority_score": 46.81,
+            "resource_type_counts": {
+              "txt": 39,
+              "video": 75,
+              "code": 27
+            },
+            "url_validation": {
+              "valid": 141,
+              "invalid": 0,
+              "valid_percentage": 100.0
+            },
+            "novelty": 100.0,
+            "input_relevance": 39.72,
+            "avg_input_similarity": 0.0731,
+            "input_relevance_threshold": 0.08
+          },
+          "topk_unranked": {
             "total_resources": 15,
             "ai_relevance": 93.33,
+            "cross_platform_diversity": 3,
             "authority_score": 66.67,
-            "resource_type_counts": {"txt": 5, "video": 5, "code": 5},
-            "url_validation": {"valid": 15, "invalid": 0, "valid_percentage": 100.0}
+            "resource_type_counts": {
+              "txt": 5,
+              "video": 5,
+              "code": 5
+            },
+            "url_validation": {
+              "valid": 15,
+              "invalid": 0,
+              "valid_percentage": 100.0
+            },
+            "noise_reduction": 89.36,
+            "novelty": 100.0,
+            "input_relevance": 60.0,
+            "avg_input_similarity": 0.0967,
+            "input_relevance_threshold": 0.08
+          },
+          "topk_ranked": {
+            "total_resources": 15,
+            "ai_relevance": 100.0,
+            "cross_platform_diversity": 3,
+            "authority_score": 66.67,
+            "resource_type_counts": {
+              "txt": 5,
+              "video": 5,
+              "code": 5
+            },
+            "url_validation": {
+              "valid": 15,
+              "invalid": 0,
+              "valid_percentage": 100.0
+            },
+            "noise_reduction": 89.36,
+            "novelty": 100.0,
+            "input_relevance": 73.33,
+            "avg_input_similarity": 0.134,
+            "input_relevance_threshold": 0.08
           }
+        },
+        "resource_type_counts": {
+          "raw_search": {
+            "txt": 39,
+            "video": 75,
+            "code": 27
+          },
+          "topk_unranked": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          },
+          "topk_ranked": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          }
+        },
+        "improvements": {
+          "keyword_coverage_delta": 0.0,
+          "keyword_ai_relevance_delta": 20.0,
+          "keyword_diversity_delta": -0.032,
+          "ranking_ai_relevance_delta": 6.67,
+          "ranking_authority_delta": 0.0,
+          "ranking_input_relevance_delta": 13.33,
+          "ranking_noise_reduction": 89.36
         }
       },
       "url_health": {
-        "llm_browsing": {"live_pct": 75.0, "broken_pct": 12.5, "unclear_pct": 12.5},
-        "aipedia": {"live_pct": 100.0, "broken_pct": 0.0, "unclear_pct": 0.0},
-        "gap": {"live_url_gap": 25.0, "broken_url_gap": 12.5}
+        "llm_browsing": {
+          "live_pct": 100.0,
+          "broken_pct": 0.0,
+          "unclear_pct": 0.0
+        },
+        "aipedia": {
+          "live_pct": 100.0,
+          "broken_pct": 0.0,
+          "unclear_pct": 0.0
+        },
+        "gap": {
+          "live_url_gap": 0.0,
+          "broken_url_gap": 0.0
+        }
       },
       "authority": {
-        "llm_browsing": {"authority_pct": 37.5, "low_authority_pct": 37.5},
-        "aipedia": {"authority_pct": 66.67, "low_authority_pct": 0.0},
-        "contrast": {"authority_gap": 29.17, "low_authority_gap": 37.5}
+        "llm_browsing": {
+          "authority_pct": 33.33,
+          "low_authority_pct": 0.0
+        },
+        "aipedia": {
+          "authority_pct": 66.67,
+          "low_authority_pct": 0.0
+        },
+        "contrast": {
+          "authority_gap": 33.34,
+          "low_authority_gap": 0.0
+        }
       },
       "modality": {
-        "llm_browsing": {"text_count": 5, "video_count": 2, "code_count": 1},
-        "aipedia": {"text_count": 5, "video_count": 5, "code_count": 5},
-        "contrast": {"code_advantage": true, "balanced": true}
+        "llm_browsing": {
+          "text_count": 10,
+          "video_count": 5,
+          "code_count": 0,
+          "text_pct": 66.67,
+          "video_pct": 33.33,
+          "code_pct": 0.0
+        },
+        "aipedia": {
+          "text_count": 5,
+          "video_count": 5,
+          "code_count": 5,
+          "text_pct": 33.33,
+          "video_pct": 33.33,
+          "code_pct": 33.33
+        },
+        "contrast": {
+          "code_advantage": true,
+          "balanced": true
+        }
       }
     },
     "nlp_transformers": {
       "llm_baseline": {
-        "corpus_path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/nlp_transformers",
+        "corpus_path": "data/test_corpora/nlp_transformers",
         "corpus_name": "nlp_transformers",
         "browsing_model": "gpt-4o",
+        "run_mode": "live_openai",
         "num_documents": 10,
         "search_metadata": {
-          "num_results": 8,
-          "hallucinations_detected": 1,
-          "broken_urls": 1,
-          "unclear_urls": 1,
-          "browsing_model": "gpt-4o"
+          "num_results": 15,
+          "browsing_model": "gpt-4o",
+          "run_mode": "live_openai",
+          "provenance": "OpenAI Responses API with hosted web_search tool"
         },
         "resource_metrics": {
-          "total_resources": 8,
-          "url_live_pct": 62.5,
-          "url_broken_pct": 12.5,
-          "url_unclear_pct": 25.0,
-          "authority_score_pct": 50.0,
-          "low_authority_pct": 37.5,
-          "modality_counts": {"text": 5, "video": 1, "code": 2}
+          "total_resources": 15,
+          "url_live_pct": 100.0,
+          "url_broken_pct": 0.0,
+          "url_unclear_pct": 0.0,
+          "authority_score_pct": 40.0,
+          "low_authority_pct": 0.0,
+          "modality_counts": {
+            "text": 9,
+            "video": 5,
+            "code": 1
+          },
+          "simpson_diversity_index": 0.8711,
+          "domain_distribution": {
+            "arxiv.org": 3,
+            "3blue1brown.com": 1,
+            "hyperskill.org": 1,
+            "videolectures.net": 1,
+            "github.io": 3,
+            "github.com": 1,
+            "ibm.com": 1,
+            "wikipedia.org": 2,
+            "classcentral.com": 1,
+            "geeksforgeeks.org": 1
+          }
         },
         "topics": [
           {
-            "topic": "Attention and Transformers",
+            "topic": "Topic A",
             "resources": [
-              {"title": "Attention Is All You Need (arXiv)", "type": "text", "source_domain": "arxiv.org", "url_status": "LIVE", "selection_reason": "Foundational paper on Transformers", "note": ""},
-              {"title": "The Illustrated Transformer (Jay Alammar)", "type": "text", "source_domain": "jalammar.github.io", "url_status": "LIVE", "selection_reason": "Widely cited visual explanation", "note": ""},
-              {"title": "Hugging Face Transformers Docs", "type": "code", "source_domain": "huggingface.co", "url_status": "LIVE", "selection_reason": "Primary library for NLP", "note": ""}
+              {
+                "title": "Understanding Transformers and Attention Mechanisms: An Introduction for Applied Mathematicians",
+                "url": "https://arxiv.org/abs/2604.00965",
+                "snippet": "Recent (published April 1, 2026) introduction to attention and transformer variants, including multi-head attention and efficiency improvements, matching the study notes’ focus.",
+                "type": "text",
+                "source_domain": "arxiv.org",
+                "url_status": "LIVE",
+                "selection_reason": "Recent (published April 1, 2026) introduction to attention and transformer variants, including multi-head attention and efficiency improvements, matching the study notes’ focus.",
+                "note": "Highly technical, aimed at applied mathematicians; may be dense for beginners."
+              },
+              {
+                "title": "Attention in transformers, step‑by‑step | Deep Learning Chapter 6",
+                "url": "https://www.3blue1brown.com/lessons/attention/",
+                "snippet": "Visual, intuitive explanation of attention mechanisms in transformers, aligning with the core intuition in the notes.",
+                "type": "video",
+                "source_domain": "3blue1brown.com",
+                "url_status": "LIVE",
+                "selection_reason": "Visual, intuitive explanation of attention mechanisms in transformers, aligning with the core intuition in the notes.",
+                "note": "Excellent for conceptual understanding; less formal than academic sources."
+              },
+              {
+                "title": "Attention Mechanisms in Transformers · Hyperskill",
+                "url": "https://hyperskill.org/learn/step/52060",
+                "snippet": "Structured tutorial covering self‑attention, multi‑head attention, positional encoding, and transformer architecture, directly matching the notes.",
+                "type": "text",
+                "source_domain": "hyperskill.org",
+                "url_status": "LIVE",
+                "selection_reason": "Structured tutorial covering self‑attention, multi‑head attention, positional encoding, and transformer architecture, directly matching the notes.",
+                "note": "Interactive learning platform; may require account."
+              },
+              {
+                "title": "Generative Models II (video lecture by Aaron Courville)",
+                "url": "https://videolectures.net/videos/deeplearning2017_courville_generative_models",
+                "snippet": "Covers autoregressive models, VAEs, GANs in depth, matching the classical generative model families in the notes.",
+                "type": "video",
+                "source_domain": "videolectures.net",
+                "url_status": "LIVE",
+                "selection_reason": "Covers autoregressive models, VAEs, GANs in depth, matching the classical generative model families in the notes.",
+                "note": "Older (2017) but foundational; lacks diffusion and LLM coverage."
+              },
+              {
+                "title": "Denoising Diffusion Models: A Generative Learning Big Bang (CVPR 2023 Tutorial)",
+                "url": "https://cvpr2023-tutorial-diffusion-models.github.io/",
+                "snippet": "Focused tutorial on diffusion models, including slides and recording, aligning with diffusion model content in the notes.",
+                "type": "video",
+                "source_domain": "github.io",
+                "url_status": "LIVE",
+                "selection_reason": "Focused tutorial on diffusion models, including slides and recording, aligning with diffusion model content in the notes.",
+                "note": "Geared toward computer vision applications; may need adaptation for text."
+              }
             ]
           },
           {
-            "topic": "Large Language Models",
+            "topic": "Topic B",
             "resources": [
-              {"title": "Stanford LLM Definitive Guide", "type": "text", "source_domain": "stanford-nlp.github.io", "url_status": "UNCLEAR", "selection_reason": "Found in search results", "note": "URL may be incorrect or outdated"},
-              {"title": "BERT Paper (arXiv)", "type": "text", "source_domain": "arxiv.org", "url_status": "LIVE", "selection_reason": "Foundational BERT paper", "note": ""},
-              {"title": "How Transformers Work — Medium", "type": "text", "source_domain": "medium.com", "url_status": "LIVE", "selection_reason": "High in search ranking", "note": "Blog post, not peer-reviewed"}
+              {
+                "title": "GitHub – generative‑modeling‑explained (diffusion, VAE, autoregressive)",
+                "url": "https://github.com/SHI-Yu-Zhe/generative-modeling-explained",
+                "snippet": "Visualizations and explanations relating diffusion models to VAEs and autoregressive models, matching generative model taxonomy.",
+                "type": "code",
+                "source_domain": "github.com",
+                "url_status": "LIVE",
+                "selection_reason": "Visualizations and explanations relating diffusion models to VAEs and autoregressive models, matching generative model taxonomy.",
+                "note": "Code repository; may require familiarity with ML concepts."
+              },
+              {
+                "title": "Advancing Language Models through Instruction Tuning: Recent Progress and Challenges (EMNLP 2025 Tutorial)",
+                "url": "https://instruction-tuning-tutorial-2025.github.io/",
+                "snippet": "Comprehensive tutorial (slides and video) on instruction tuning, covering supervised fine‑tuning, preference optimization, evaluation—directly aligned with the notes.",
+                "type": "video",
+                "source_domain": "github.io",
+                "url_status": "LIVE",
+                "selection_reason": "Comprehensive tutorial (slides and video) on instruction tuning, covering supervised fine‑tuning, preference optimization, evaluation—directly aligned with the notes.",
+                "note": "Tutorial from EMNLP 2025; highly relevant and recent."
+              },
+              {
+                "title": "What Is Instruction Tuning? | IBM",
+                "url": "https://www.ibm.com/think/topics/instruction-tuning",
+                "snippet": "Clear overview of instruction tuning, its purpose, and relation to fine‑tuning and RLHF, matching the notes’ alignment section.",
+                "type": "text",
+                "source_domain": "ibm.com",
+                "url_status": "LIVE",
+                "selection_reason": "Clear overview of instruction tuning, its purpose, and relation to fine‑tuning and RLHF, matching the notes’ alignment section.",
+                "note": "Corporate blog style; less technical depth."
+              },
+              {
+                "title": "From Language Modeling to Instruction Following: Understanding the Behavior Shift in LLMs after Instruction Tuning",
+                "url": "https://arxiv.org/abs/2310.00492",
+                "snippet": "Academic study analyzing how instruction tuning changes model behavior internally, matching the notes’ focus on alignment and interpretability.",
+                "type": "text",
+                "source_domain": "arxiv.org",
+                "url_status": "LIVE",
+                "selection_reason": "Academic study analyzing how instruction tuning changes model behavior internally, matching the notes’ focus on alignment and interpretability.",
+                "note": "Research paper; technical and interpretive."
+              },
+              {
+                "title": "A Tutorial on the Pretrain‑Finetune Paradigm for Natural Language Processing",
+                "url": "https://arxiv.org/abs/2403.02504",
+                "snippet": "Tutorial covering pretraining and fine‑tuning paradigm, objectives, and applications, directly matching the notes’ pretraining section.",
+                "type": "text",
+                "source_domain": "arxiv.org",
+                "url_status": "LIVE",
+                "selection_reason": "Tutorial covering pretraining and fine‑tuning paradigm, objectives, and applications, directly matching the notes’ pretraining section.",
+                "note": "Recent (2024) and includes code and datasets; good for applied learning."
+              }
             ]
           },
           {
-            "topic": "NLP Applications",
+            "topic": "Topic C",
             "resources": [
-              {"title": "Fake NLP Tutorial Site", "type": "text", "source_domain": "nlp-tutorial-fake.example.com", "url_status": "BROKEN", "selection_reason": "Appeared in top results", "note": "Hallucinated — domain does not exist"},
-              {"title": "Attention Is All You Need — YouTube Walkthrough", "type": "video", "source_domain": "youtube.com", "url_status": "LIVE", "selection_reason": "Video explanation of the paper", "note": ""},
-              {"title": "NLP with Transformers — O'Reilly", "type": "code", "source_domain": "oreilly.com", "url_status": "UNCLEAR", "selection_reason": "Book chapter found in search", "note": "May require subscription or be outdated"}
+              {
+                "title": "BERT (language model) – Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/BERT_%28language_model%29",
+                "snippet": "Describes pretraining objectives like masked language modeling and next sentence prediction, matching the notes’ mention of BERT.",
+                "type": "text",
+                "source_domain": "wikipedia.org",
+                "url_status": "LIVE",
+                "selection_reason": "Describes pretraining objectives like masked language modeling and next sentence prediction, matching the notes’ mention of BERT.",
+                "note": "General overview; may lack depth on newer models."
+              },
+              {
+                "title": "CSC6203: Large Language Model Lecture 4: Training LLMs (pretraining objectives)",
+                "url": "https://llm-course.github.io/materials/2024fall/Lecture-4-Training-LLMs.pdf",
+                "snippet": "Lecture slides listing pretraining objectives for language models, directly relevant to the notes.",
+                "type": "text",
+                "source_domain": "github.io",
+                "url_status": "LIVE",
+                "selection_reason": "Lecture slides listing pretraining objectives for language models, directly relevant to the notes.",
+                "note": "Lecture format; may require context from course."
+              },
+              {
+                "title": "Tokenization in NLP: From Basics to Advanced Techniques (YouTube via Class Central)",
+                "url": "https://www.classcentral.com/course/youtube-tokenization-in-nlp-from-basics-to-advanced-techniques-296954",
+                "snippet": "Covers tokenization, embeddings, positional encoding—matching the traditional and deep learning techniques in the notes.",
+                "type": "video",
+                "source_domain": "classcentral.com",
+                "url_status": "LIVE",
+                "selection_reason": "Covers tokenization, embeddings, positional encoding—matching the traditional and deep learning techniques in the notes.",
+                "note": "Hosted via Class Central; video may require YouTube access."
+              },
+              {
+                "title": "Tokenization vs Embeddings – GeeksforGeeks",
+                "url": "https://www.geeksforgeeks.org/nlp/tokenization-vs-embeddings/",
+                "snippet": "Explains tokenization techniques and embeddings with code examples, aligning with the notes’ NLP techniques section.",
+                "type": "text",
+                "source_domain": "geeksforgeeks.org",
+                "url_status": "LIVE",
+                "selection_reason": "Explains tokenization techniques and embeddings with code examples, aligning with the notes’ NLP techniques section.",
+                "note": "Informal tutorial; good for quick reference."
+              },
+              {
+                "title": "Transformer (deep learning) – Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/Transformer_%28deep_learning%29",
+                "snippet": "Overview of transformer architecture, tokenization, embeddings, and attention, matching the notes’ modern NLP models.",
+                "type": "text",
+                "source_domain": "wikipedia.org",
+                "url_status": "LIVE",
+                "selection_reason": "Overview of transformer architecture, tokenization, embeddings, and attention, matching the notes’ modern NLP models.",
+                "note": "General overview; may lack depth on implementation."
+              }
             ]
           }
         ],
-        "timestamp": "2026-04-15T21:30:00"
+        "timestamp": "2026-04-22T20:48:51.953145"
       },
       "aipedia_result": {
         "corpus": {
-          "path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/nlp_transformers",
+          "path": "data/test_corpora/nlp_transformers",
           "document_count": 10,
-          "word_count_total": 1432
+          "word_count_total": 1489
+        },
+        "parameters": {
+          "top_k_keywords": 10,
+          "search_max_per_type": 8,
+          "recommend_top_k": 5
+        },
+        "keyword_reports": {
+          "simple_frequency": {
+            "keyword_count": 10,
+            "coverage": 100.0,
+            "ai_relevance": 30.0,
+            "diversity": 0.9827,
+            "keywords": [
+              "models",
+              "language",
+              "text",
+              "attention",
+              "model",
+              "generation",
+              "sequence",
+              "nlp",
+              "transformer",
+              "learning"
+            ]
+          },
+          "tfidf_mmr": {
+            "keyword_count": 10,
+            "coverage": 70.0,
+            "ai_relevance": 40.0,
+            "diversity": 0.9494,
+            "keywords": [
+              "large language models",
+              "text summarization",
+              "natural language processing",
+              "ai pedia",
+              "multi head attention",
+              "machine translation",
+              "question answering",
+              "attention mechanisms",
+              "sequence",
+              "self attention"
+            ]
+          }
         },
         "resource_reports": {
+          "raw_search": {
+            "total_resources": 143,
+            "ai_relevance": 71.33,
+            "cross_platform_diversity": 3,
+            "authority_score": 51.05,
+            "resource_type_counts": {
+              "txt": 37,
+              "video": 70,
+              "code": 36
+            },
+            "url_validation": {
+              "valid": 143,
+              "invalid": 0,
+              "valid_percentage": 100.0
+            },
+            "novelty": 100.0,
+            "input_relevance": 23.78,
+            "avg_input_similarity": 0.052,
+            "input_relevance_threshold": 0.08
+          },
+          "topk_unranked": {
+            "total_resources": 15,
+            "ai_relevance": 80.0,
+            "cross_platform_diversity": 3,
+            "authority_score": 66.67,
+            "resource_type_counts": {
+              "txt": 5,
+              "video": 5,
+              "code": 5
+            },
+            "url_validation": {
+              "valid": 15,
+              "invalid": 0,
+              "valid_percentage": 100.0
+            },
+            "noise_reduction": 89.51,
+            "novelty": 100.0,
+            "input_relevance": 60.0,
+            "avg_input_similarity": 0.087,
+            "input_relevance_threshold": 0.08
+          },
           "topk_ranked": {
             "total_resources": 15,
-            "ai_relevance": 100.0,
-            "authority_score": 73.33,
-            "resource_type_counts": {"txt": 5, "video": 5, "code": 5},
-            "url_validation": {"valid": 15, "invalid": 0, "valid_percentage": 100.0}
+            "ai_relevance": 86.67,
+            "cross_platform_diversity": 3,
+            "authority_score": 66.67,
+            "resource_type_counts": {
+              "txt": 5,
+              "video": 5,
+              "code": 5
+            },
+            "url_validation": {
+              "valid": 15,
+              "invalid": 0,
+              "valid_percentage": 100.0
+            },
+            "noise_reduction": 89.51,
+            "novelty": 100.0,
+            "input_relevance": 73.33,
+            "avg_input_similarity": 0.1291,
+            "input_relevance_threshold": 0.08
           }
+        },
+        "resource_type_counts": {
+          "raw_search": {
+            "txt": 37,
+            "video": 70,
+            "code": 36
+          },
+          "topk_unranked": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          },
+          "topk_ranked": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          }
+        },
+        "improvements": {
+          "keyword_coverage_delta": -30.0,
+          "keyword_ai_relevance_delta": 10.0,
+          "keyword_diversity_delta": -0.0333,
+          "ranking_ai_relevance_delta": 6.67,
+          "ranking_authority_delta": 0.0,
+          "ranking_input_relevance_delta": 13.33,
+          "ranking_noise_reduction": 89.51
         }
       },
       "url_health": {
-        "llm_browsing": {"live_pct": 62.5, "broken_pct": 12.5, "unclear_pct": 25.0},
-        "aipedia": {"live_pct": 100.0, "broken_pct": 0.0, "unclear_pct": 0.0},
-        "gap": {"live_url_gap": 37.5, "broken_url_gap": 12.5}
+        "llm_browsing": {
+          "live_pct": 100.0,
+          "broken_pct": 0.0,
+          "unclear_pct": 0.0
+        },
+        "aipedia": {
+          "live_pct": 100.0,
+          "broken_pct": 0.0,
+          "unclear_pct": 0.0
+        },
+        "gap": {
+          "live_url_gap": 0.0,
+          "broken_url_gap": 0.0
+        }
       },
       "authority": {
-        "llm_browsing": {"authority_pct": 50.0, "low_authority_pct": 37.5},
-        "aipedia": {"authority_pct": 73.33, "low_authority_pct": 0.0},
-        "contrast": {"authority_gap": 23.33, "low_authority_gap": 37.5}
+        "llm_browsing": {
+          "authority_pct": 40.0,
+          "low_authority_pct": 0.0
+        },
+        "aipedia": {
+          "authority_pct": 66.67,
+          "low_authority_pct": 0.0
+        },
+        "contrast": {
+          "authority_gap": 26.67,
+          "low_authority_gap": 0.0
+        }
       },
       "modality": {
-        "llm_browsing": {"text_count": 5, "video_count": 1, "code_count": 2},
-        "aipedia": {"text_count": 5, "video_count": 5, "code_count": 5},
-        "contrast": {"code_advantage": true, "balanced": true}
+        "llm_browsing": {
+          "text_count": 9,
+          "video_count": 5,
+          "code_count": 1,
+          "text_pct": 60.0,
+          "video_pct": 33.33,
+          "code_pct": 6.67
+        },
+        "aipedia": {
+          "text_count": 5,
+          "video_count": 5,
+          "code_count": 5,
+          "text_pct": 33.33,
+          "video_pct": 33.33,
+          "code_pct": 33.33
+        },
+        "contrast": {
+          "code_advantage": true,
+          "balanced": true
+        }
       }
     },
     "vision_representation": {
       "llm_baseline": {
-        "corpus_path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/vision_representation",
+        "corpus_path": "data/test_corpora/vision_representation",
         "corpus_name": "vision_representation",
         "browsing_model": "gpt-4o",
+        "run_mode": "live_openai",
         "num_documents": 10,
         "search_metadata": {
-          "num_results": 7,
-          "hallucinations_detected": 1,
-          "broken_urls": 1,
-          "unclear_urls": 1,
-          "browsing_model": "gpt-4o"
+          "num_results": 10,
+          "browsing_model": "gpt-4o",
+          "run_mode": "live_openai",
+          "provenance": "OpenAI Responses API with hosted web_search tool"
         },
         "resource_metrics": {
-          "total_resources": 7,
-          "url_live_pct": 57.14,
-          "url_broken_pct": 14.29,
-          "url_unclear_pct": 14.29,
-          "authority_score_pct": 42.86,
-          "low_authority_pct": 28.57,
-          "modality_counts": {"text": 4, "video": 1, "code": 2}
+          "total_resources": 10,
+          "url_live_pct": 100.0,
+          "url_broken_pct": 0.0,
+          "url_unclear_pct": 0.0,
+          "authority_score_pct": 40.0,
+          "low_authority_pct": 0.0,
+          "modality_counts": {
+            "text": 7,
+            "video": 1,
+            "code": 2
+          },
+          "simpson_diversity_index": 0.84,
+          "domain_distribution": {
+            "geeksforgeeks.org": 3,
+            "classcentral.com": 1,
+            "inria.fr": 1,
+            "scikit-learn.org": 1,
+            "github.com": 1,
+            "wikipedia.org": 1,
+            "arxiv.org": 1,
+            "programminghistorian.org": 1
+          }
         },
         "topics": [
           {
-            "topic": "CNNs and Image Classification",
+            "topic": "Topic A",
             "resources": [
-              {"title": "AlexNet Paper (NeurIPS)", "type": "text", "source_domain": "papers.nips.cc", "url_status": "LIVE", "selection_reason": "Foundational CNN paper", "note": ""},
-              {"title": "ResNet Paper (arXiv)", "type": "text", "source_domain": "arxiv.org", "url_status": "LIVE", "selection_reason": "Foundational ResNet paper", "note": ""},
-              {"title": "PyTorch torchvision ResNet", "type": "code", "source_domain": "pytorch.org", "url_status": "LIVE", "selection_reason": "Official implementation", "note": ""}
+              {
+                "title": "Convolutional Neural Network (CNN) Architectures – GeeksforGeeks",
+                "url": "https://www.geeksforgeeks.org/machine-learning/convolutional-neural-network-cnn-architectures/",
+                "snippet": "Provides a clear overview of classic CNN architectures like LeNet, ResNet, and their evolution, matching the study notes’ list of common CNN architectures.",
+                "type": "text",
+                "source_domain": "geeksforgeeks.org",
+                "url_status": "LIVE",
+                "selection_reason": "Provides a clear overview of classic CNN architectures like LeNet, ResNet, and their evolution, matching the study notes’ list of common CNN architectures.",
+                "note": "General audience; may lack depth on recent architectures."
+              },
+              {
+                "title": "Convolutional Neural Network Tutorial – Deep Learning and CNN Architectures (YouTube)",
+                "url": "https://www.classcentral.com/course/youtube-convolutional-neural-network-tutorial-513039",
+                "snippet": "A free 7‑hour video tutorial covering evolution of landmark CNN models including LeNet‑5, AlexNet, VGGNet, Inception, ResNet, aligning well with the study notes.",
+                "type": "video",
+                "source_domain": "classcentral.com",
+                "url_status": "LIVE",
+                "selection_reason": "A free 7‑hour video tutorial covering evolution of landmark CNN models including LeNet‑5, AlexNet, VGGNet, Inception, ResNet, aligning well with the study notes.",
+                "note": "Video length is long; quality depends on presenter."
+              },
+              {
+                "title": "Metric Learning – GeeksforGeeks",
+                "url": "https://www.geeksforgeeks.org/artificial-intelligence/metric-learning/",
+                "snippet": "Explains metric learning concepts like contrastive and triplet loss, embedding spaces, and applications in vision, matching the study notes.",
+                "type": "text",
+                "source_domain": "geeksforgeeks.org",
+                "url_status": "LIVE",
+                "selection_reason": "Explains metric learning concepts like contrastive and triplet loss, embedding spaces, and applications in vision, matching the study notes.",
+                "note": "Introductory level; may not cover deep learning variants in depth."
+              }
             ]
           },
           {
-            "topic": "Transfer Learning",
+            "topic": "Topic B",
             "resources": [
-              {"title": "Transfer Learning Tutorial (PyTorch)", "type": "text", "source_domain": "pytorch.org", "url_status": "LIVE", "selection_reason": "Official tutorial", "note": ""},
-              {"title": "CNN Ultimate Guide (AI Blog)", "type": "text", "source_domain": "ai-blog.example.com", "url_status": "BROKEN", "selection_reason": "Returned in top search results", "note": "Hallucinated — this site does not exist"},
-              {"title": "CNNs Explained Simply (Substack)", "type": "text", "source_domain": "substack.com", "url_status": "LIVE", "selection_reason": "Found in search results", "note": "Lower quality than academic sources"}
+              {
+                "title": "Similarity and Distance Metric Learning with Applications to Computer Vision (Tutorial slides)",
+                "url": "https://researchers.lille.inria.fr/abellet/misc/metric_learning_tutorial.html",
+                "snippet": "Comprehensive tutorial by Aurélien Bellet covering metric learning methods and their applications in computer vision.",
+                "type": "text",
+                "source_domain": "inria.fr",
+                "url_status": "LIVE",
+                "selection_reason": "Comprehensive tutorial by Aurélien Bellet covering metric learning methods and their applications in computer vision.",
+                "note": "Slides from 2015; may be somewhat dated but foundational."
+              },
+              {
+                "title": "Algorithms walkthrough — metric‑learn documentation",
+                "url": "https://contrib.scikit-learn.org/metric-learn/auto_examples/plot_metric_learning_examples.html",
+                "snippet": "Provides runnable code examples of metric learning algorithms, useful for hands‑on understanding of embedding and similarity.",
+                "type": "code",
+                "source_domain": "scikit-learn.org",
+                "url_status": "LIVE",
+                "selection_reason": "Provides runnable code examples of metric learning algorithms, useful for hands‑on understanding of embedding and similarity.",
+                "note": "Synthetic data examples; may require adaptation for real vision tasks."
+              },
+              {
+                "title": "Complete Hands‑On YOLO Object Detection Tutorial (GitHub)",
+                "url": "https://github.com/moises-dias/yolo-opencv-detector",
+                "snippet": "Jupyter notebooks with step‑by‑step YOLO object detection implementation using OpenCV, matching object detection topic.",
+                "type": "code",
+                "source_domain": "github.com",
+                "url_status": "LIVE",
+                "selection_reason": "Jupyter notebooks with step‑by‑step YOLO object detection implementation using OpenCV, matching object detection topic.",
+                "note": "Game‑specific example; may need adaptation for other domains."
+              }
             ]
           },
           {
-            "topic": "Object Detection",
+            "topic": "Topic C",
             "resources": [
-              {"title": "Object Detection Survey", "type": "text", "source_domain": "arxiv.org", "url_status": "LIVE", "selection_reason": "Comprehensive survey paper", "note": "Comprehensive but very long"},
-              {"title": "Vision Model Fine-tuning — Keras Example", "type": "code", "source_domain": "keras.io", "url_status": "UNCLEAR", "selection_reason": "Found in search", "note": "API may have changed since last update"},
-              {"title": "FastAI Vision Course", "type": "video", "source_domain": "course.fast.ai", "url_status": "UNCLEAR", "selection_reason": "Well-known course", "note": "Course URL may have changed"}
+              {
+                "title": "You Only Look Once (YOLO) – Wikipedia",
+                "url": "https://en.wikipedia.org/wiki/You_Only_Look_Once",
+                "snippet": "Comprehensive overview of YOLO’s evolution, versions up to YOLOv12, and its principles, aligning with object detection study notes.",
+                "type": "text",
+                "source_domain": "wikipedia.org",
+                "url_status": "LIVE",
+                "selection_reason": "Comprehensive overview of YOLO’s evolution, versions up to YOLOv12, and its principles, aligning with object detection study notes.",
+                "note": "General overview; not a tutorial."
+              },
+              {
+                "title": "YOLOv11 Demystified: A Practical Guide to High‑Performance Object Detection (arXiv)",
+                "url": "https://arxiv.org/abs/2604.03349",
+                "snippet": "Latest research (April 2026) on YOLOv11 architecture and performance, offering up‑to‑date insights beyond study notes.",
+                "type": "text",
+                "source_domain": "arxiv.org",
+                "url_status": "LIVE",
+                "selection_reason": "Latest research (April 2026) on YOLOv11 architecture and performance, offering up‑to‑date insights beyond study notes.",
+                "note": "Research paper; may be technical and dense."
+              },
+              {
+                "title": "Computer Vision for the Humanities: An Introduction to Deep Learning for Image Classification (Part 2)",
+                "url": "https://programminghistorian.org/en/lessons/computer-vision-deep-learning-pt2",
+                "snippet": "Tutorial on deep learning for image classification, covering challenges and evaluation metrics, relevant to the study notes.",
+                "type": "text",
+                "source_domain": "programminghistorian.org",
+                "url_status": "LIVE",
+                "selection_reason": "Tutorial on deep learning for image classification, covering challenges and evaluation metrics, relevant to the study notes.",
+                "note": "Humanities‑focused; may not cover advanced architectures."
+              }
             ]
           }
         ],
-        "timestamp": "2026-04-15T21:30:00"
+        "timestamp": "2026-04-22T20:49:47.377502"
       },
       "aipedia_result": {
         "corpus": {
-          "path": "/Users/macbook/Desktop/AI-Pedia/Project/data/test_corpora/vision_representation",
+          "path": "data/test_corpora/vision_representation",
           "document_count": 10,
-          "word_count_total": 1408
+          "word_count_total": 1351
+        },
+        "parameters": {
+          "top_k_keywords": 10,
+          "search_max_per_type": 8,
+          "recommend_top_k": 5
+        },
+        "keyword_reports": {
+          "simple_frequency": {
+            "keyword_count": 10,
+            "coverage": 100.0,
+            "ai_relevance": 0.0,
+            "diversity": 0.9887,
+            "keywords": [
+              "image",
+              "learning",
+              "vision",
+              "classification",
+              "visual",
+              "model",
+              "networks",
+              "computer",
+              "features",
+              "representation"
+            ]
+          },
+          "tfidf_mmr": {
+            "keyword_count": 9,
+            "coverage": 90.0,
+            "ai_relevance": 22.22,
+            "diversity": 0.9585,
+            "keywords": [
+              "image classification",
+              "computer vision",
+              "convolutional neural networks",
+              "representation learning",
+              "object detection",
+              "semantic segmentation",
+              "face recognition",
+              "medical imaging",
+              "transfer learning"
+            ]
+          }
         },
         "resource_reports": {
+          "raw_search": {
+            "total_resources": 124,
+            "ai_relevance": 69.35,
+            "cross_platform_diversity": 3,
+            "authority_score": 45.16,
+            "resource_type_counts": {
+              "txt": 36,
+              "video": 68,
+              "code": 20
+            },
+            "url_validation": {
+              "valid": 124,
+              "invalid": 0,
+              "valid_percentage": 100.0
+            },
+            "novelty": 100.0,
+            "input_relevance": 45.97,
+            "avg_input_similarity": 0.0765,
+            "input_relevance_threshold": 0.08
+          },
+          "topk_unranked": {
+            "total_resources": 15,
+            "ai_relevance": 93.33,
+            "cross_platform_diversity": 3,
+            "authority_score": 66.67,
+            "resource_type_counts": {
+              "txt": 5,
+              "video": 5,
+              "code": 5
+            },
+            "url_validation": {
+              "valid": 15,
+              "invalid": 0,
+              "valid_percentage": 100.0
+            },
+            "noise_reduction": 87.9,
+            "novelty": 100.0,
+            "input_relevance": 60.0,
+            "avg_input_similarity": 0.1119,
+            "input_relevance_threshold": 0.08
+          },
           "topk_ranked": {
             "total_resources": 15,
-            "ai_relevance": 86.67,
-            "authority_score": 60.0,
-            "resource_type_counts": {"txt": 5, "video": 5, "code": 5},
-            "url_validation": {"valid": 15, "invalid": 0, "valid_percentage": 100.0}
+            "ai_relevance": 100.0,
+            "cross_platform_diversity": 3,
+            "authority_score": 66.67,
+            "resource_type_counts": {
+              "txt": 5,
+              "video": 5,
+              "code": 5
+            },
+            "url_validation": {
+              "valid": 15,
+              "invalid": 0,
+              "valid_percentage": 100.0
+            },
+            "noise_reduction": 87.9,
+            "novelty": 100.0,
+            "input_relevance": 86.67,
+            "avg_input_similarity": 0.1501,
+            "input_relevance_threshold": 0.08
           }
+        },
+        "resource_type_counts": {
+          "raw_search": {
+            "txt": 36,
+            "video": 68,
+            "code": 20
+          },
+          "topk_unranked": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          },
+          "topk_ranked": {
+            "txt": 5,
+            "video": 5,
+            "code": 5
+          }
+        },
+        "improvements": {
+          "keyword_coverage_delta": -10.0,
+          "keyword_ai_relevance_delta": 22.22,
+          "keyword_diversity_delta": -0.0302,
+          "ranking_ai_relevance_delta": 6.67,
+          "ranking_authority_delta": 0.0,
+          "ranking_input_relevance_delta": 26.67,
+          "ranking_noise_reduction": 87.9
         }
       },
       "url_health": {
-        "llm_browsing": {"live_pct": 57.14, "broken_pct": 14.29, "unclear_pct": 14.29},
-        "aipedia": {"live_pct": 100.0, "broken_pct": 0.0, "unclear_pct": 0.0},
-        "gap": {"live_url_gap": 42.86, "broken_url_gap": 14.29}
+        "llm_browsing": {
+          "live_pct": 100.0,
+          "broken_pct": 0.0,
+          "unclear_pct": 0.0
+        },
+        "aipedia": {
+          "live_pct": 100.0,
+          "broken_pct": 0.0,
+          "unclear_pct": 0.0
+        },
+        "gap": {
+          "live_url_gap": 0.0,
+          "broken_url_gap": 0.0
+        }
       },
       "authority": {
-        "llm_browsing": {"authority_pct": 42.86, "low_authority_pct": 28.57},
-        "aipedia": {"authority_pct": 60.0, "low_authority_pct": 0.0},
-        "contrast": {"authority_gap": 17.14, "low_authority_gap": 28.57}
+        "llm_browsing": {
+          "authority_pct": 40.0,
+          "low_authority_pct": 0.0
+        },
+        "aipedia": {
+          "authority_pct": 66.67,
+          "low_authority_pct": 0.0
+        },
+        "contrast": {
+          "authority_gap": 26.67,
+          "low_authority_gap": 0.0
+        }
       },
       "modality": {
-        "llm_browsing": {"text_count": 4, "video_count": 1, "code_count": 2},
-        "aipedia": {"text_count": 5, "video_count": 5, "code_count": 5},
-        "contrast": {"code_advantage": true, "balanced": true}
+        "llm_browsing": {
+          "text_count": 7,
+          "video_count": 1,
+          "code_count": 2,
+          "text_pct": 70.0,
+          "video_pct": 10.0,
+          "code_pct": 20.0
+        },
+        "aipedia": {
+          "text_count": 5,
+          "video_count": 5,
+          "code_count": 5,
+          "text_pct": 33.33,
+          "video_pct": 33.33,
+          "code_pct": 33.33
+        },
+        "contrast": {
+          "code_advantage": true,
+          "balanced": true
+        }
       }
     }
   }

@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Constrained LLM Baseline Module (v2 — with browsing)
+Constrained LLM Baseline Module (v3 -- transparent live/dry-run modes)
 
-This module implements an LLM-based baseline that DOES have web browsing capability,
-but is otherwise unconstrained: no structured keyword extraction, no source whitelisting,
-no modality balancing, and no ranking logic. It simply searches the web freely for each
-query and returns the first results it finds.
+This module implements an LLM-based baseline for comparison with AI-Pedia. When
+OPENAI_API_KEY is available, it attempts to run an OpenAI Responses API call with
+the hosted web search tool. When no key is configured, or the live call fails, it
+uses a deterministic synthetic dry-run fixture. The dry-run output is explicitly
+labelled as such in JSON metadata so it can be used for pipeline development and
+paper formatting without being confused with a completed live model evaluation.
 
 This tests the research question:
     Does structured retrieval (AI-Pedia) outperform free-form LLM browsing?
@@ -21,12 +23,11 @@ Key differences from AI-Pedia:
 5. NO reranking — the LLM returns results in whatever order the browser provides
 6. NO freshness check — the LLM cannot verify whether a URL is still live
 
-Expected weaknesses (the baseline "loses" on these):
-- Hallucinations: the LLM may recommend resources that do not exist
-- Staleness: the LLM cannot verify recency or freshness of resources
-- Modality imbalance: the LLM may over-recommend one type (e.g., blog posts over code)
-- Narrow source coverage: without source whitelisting, the LLM may drift to low-quality sources
-- No structured query: the LLM's free-form searches may miss niche/specialised resources
+Expected weaknesses:
+- possible stale or uncertain URLs;
+- modality imbalance, especially over-representation of text resources;
+- lower source calibration without an explicit whitelist;
+- weaker topic coverage because search terms are chosen free-form.
 
 References:
 - Shen et al. (2024) "WebArena: A Realistic Web Environment" — shows LLMs struggle with structured browsing tasks
@@ -38,6 +39,7 @@ import json
 import re
 from typing import Any, Dict, List, Optional
 from datetime import datetime
+from copy import deepcopy
 
 
 # ─────────────────────────────────────────────────────────────
@@ -56,6 +58,15 @@ Choice rationale:
 BROWSER_TEMPERATURE = 0.3
 """
 Temperature 0.3: low enough for reproducible browsing decisions.
+"""
+
+REQUIRE_LIVE_OPENAI = os.environ.get("LLM_BASELINE_REQUIRE_LIVE", "").lower() in {
+    "1", "true", "yes"
+}
+"""
+When enabled, the baseline must complete a live OpenAI web-search run. Any
+missing key or API failure raises an error instead of falling back to synthetic
+dry-run fixtures.
 """
 
 SYSTEM_PROMPT = """You are a research assistant with access to a web browsing tool. You can search for
@@ -77,7 +88,7 @@ Be honest about the limitations of this unconstrained approach."""
 # PROMPT TEMPLATE — search with NO source constraints
 # ─────────────────────────────────────────────────────────────
 
-USER_PROMPT_TEMPLATE = """## Task: Recommend AI/ML learning resources for the following study notes.
+USER_PROMPT_TEMPLATE = """## Task: Recommend AI learning resources for the following study notes.
 
 You have web browsing capability, but NO structured retrieval pipeline:
 - No keyword extraction tool (you must decide what to search for yourself)
@@ -96,6 +107,7 @@ You have web browsing capability, but NO structured retrieval pipeline:
 2. For each topic, search the web freely and recommend up to 3 resources.
 3. For each resource, report:
    - Title
+   - URL
    - Type (text / video / code)
    - Source domain (e.g., github.com, wikipedia.org, medium.com, etc.)
    - Whether the URL was confirmed live during browsing (LIVE / UNCLEAR / BROKEN)
@@ -109,6 +121,7 @@ Return results in the following JSON format:
       "resources": [
         {{
           "title": "resource title",
+          "url": "https://example.com/resource",
           "type": "text|video|code",
           "source_domain": "e.g., github.com",
           "url_status": "LIVE|UNCLEAR|BROKEN",
@@ -125,16 +138,18 @@ Return results in the following JSON format:
 
 
 # ─────────────────────────────────────────────────────────────
-# SIMULATED BROWSING TOOL
+# GPT-4o BROWSING TOOL
 # ─────────────────────────────────────────────────────────────
-# In production, this would use actual tool-use (OpenAI function calling / browser-use).
-# For reproducibility without an API key, we simulate realistic browsing behaviour with
-# known weaknesses that mirror the literature on LLM web agents.
+# Uses OpenAI's GPT-4o with browsing capability to search for resources.
+# The browsing tool returns real search results from the web.
 
 def web_search(query: str) -> Dict[str, Any]:
     """
-    Simulate a web search via the LLM's browsing tool.
-    In production: replace with actual tool-use API call.
+    Perform the LLM baseline search.
+
+    Live mode uses the OpenAI Responses API with the hosted web_search tool.
+    Dry-run mode uses deterministic synthetic fixtures and marks them clearly
+    in search_metadata["run_mode"].
 
     Returns a dict with:
     - results: list of {title, url, snippet, type, source_domain}
@@ -143,64 +158,76 @@ def web_search(query: str) -> Dict[str, Any]:
     api_key = os.environ.get("OPENAI_API_KEY")
 
     if not api_key:
-        return _simulate_browsing(query)
+        if REQUIRE_LIVE_OPENAI:
+            raise RuntimeError(
+                "LLM_BASELINE_REQUIRE_LIVE is enabled but OPENAI_API_KEY is not configured."
+            )
+        return _run_synthetic_dry_run(query, reason="OPENAI_API_KEY not configured")
 
+    return _run_openai_web_search(query, api_key)
+
+
+def _run_openai_web_search(query: str, api_key: str) -> Dict[str, Any]:
+    """Run the live OpenAI web-search baseline and parse its JSON response."""
     try:
-        import openai
-        client = openai.OpenAI(api_key=api_key)
+        from openai import OpenAI
 
-        # Use GPT-4o with browsing tool
-        response = client.chat.completions.create(
+        client = OpenAI(api_key=api_key)
+        response = client.responses.create(
             model=BROWSER_MODEL,
-            messages=[
+            input=[
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": USER_PROMPT_TEMPLATE.format(text_excerpt=query)},
-            ],
-            tools=[
                 {
-                    "type": "browser",
-                    "browser": {
-                        "max_turns": 3,
-                        "downloads": [],
-                    }
-                }
+                    "role": "user",
+                    "content": (
+                        USER_PROMPT_TEMPLATE.format(text_excerpt=query)
+                        + "\n\nReturn JSON only. Do not include Markdown fences."
+                    ),
+                },
             ],
-            tool_choice={"type": "browser", "browser": {"type": "search"}},
+            tools=[{"type": "web_search"}],
             temperature=BROWSER_TEMPERATURE,
         )
-        # Parse browsing results from tool calls
         return _parse_browsing_response(response)
     except Exception as e:
-        print(f"[Browsing call failed: {e}] Using simulated results.")
-        return _simulate_browsing(query)
+        if REQUIRE_LIVE_OPENAI:
+            raise RuntimeError(f"Live OpenAI web search failed: {e}") from e
+        print(f"[Live OpenAI web search failed: {e}] Using synthetic dry-run fixture.")
+        return _run_synthetic_dry_run(query, reason=f"live call failed: {e}")
 
 
 def _parse_browsing_response(response) -> Dict[str, Any]:
-    """Parse the browsing tool's output from an OpenAI tool-use response."""
-    results = []
-    hallucinations = 0
+    """Parse JSON emitted by the live model response."""
+    raw_text = getattr(response, "output_text", "") or ""
+    try:
+        data = json.loads(raw_text)
+    except json.JSONDecodeError:
+        match = re.search(r"\{.*\}", raw_text, flags=re.DOTALL)
+        data = json.loads(match.group(0)) if match else {}
 
-    for tool_call in response.tool_calls or []:
-        if tool_call.function.name == "browser_search":
-            content = tool_call.function.arguments
-            try:
-                data = json.loads(content)
-                for item in data.get("results", []):
-                    results.append({
-                        "title": item.get("title", "Unknown"),
-                        "url": item.get("url", ""),
-                        "snippet": item.get("snippet", ""),
-                        "source_domain": _extract_domain(item.get("url", "")),
-                    })
-            except json.JSONDecodeError:
-                hallucinations += 1
+    results = []
+    topics = data.get("topics", []) if isinstance(data, dict) else []
+    for topic in topics:
+        for item in topic.get("resources", []):
+            url = item.get("url", "")
+            results.append({
+                "title": item.get("title", "Unknown"),
+                "url": url,
+                "snippet": item.get("snippet", item.get("selection_reason", "")),
+                "type": _normalise_resource_type(item.get("type", "text"), url),
+                "source_domain": _normalise_domain(item.get("source_domain") or _extract_domain(url)),
+                "url_status": item.get("url_status", "UNCLEAR").upper(),
+                "selection_reason": item.get("selection_reason", ""),
+                "note": item.get("note", ""),
+            })
 
     return {
         "results": results,
         "search_metadata": {
             "num_results": len(results),
-            "hallucinations_detected": hallucinations,
             "browsing_model": BROWSER_MODEL,
+            "run_mode": "live_openai",
+            "provenance": "OpenAI Responses API with hosted web_search tool",
         }
     }
 
@@ -211,26 +238,52 @@ def _extract_domain(url: str) -> str:
     return match.group(1) if match else "unknown"
 
 
-# ─────────────────────────────────────────────────────────────
-# SIMULATED BROWSING RESULTS
-# ─────────────────────────────────────────────────────────────
-# These simulate realistic browsing behaviour for an LLM without a structured pipeline.
-# The weaknesses are based on findings from:
-#   - Liu et al. (2023) "AgentBench: Evaluating LLMs as Agents"
-#   - Zhou et al. (2024) "A Survey on LLM Hallucinations"
+def _normalise_domain(domain: str) -> str:
+    """Normalise model-provided domains for stable metrics."""
+    domain = (domain or "unknown").strip().lower()
+    domain = re.sub(r"\s*\(.*?\)\s*", "", domain)
+    domain = domain.replace("www.", "")
+    if domain.startswith("http://") or domain.startswith("https://"):
+        domain = _extract_domain(domain).lower().replace("www.", "")
+    return domain or "unknown"
 
-def _simulate_browsing(query: str) -> Dict[str, Any]:
+
+def _normalise_resource_type(resource_type: str, url: str = "") -> str:
+    """Map free-form model labels onto text/video/code."""
+    label = (resource_type or "text").lower()
+    url_lower = (url or "").lower()
+    if any(token in label for token in ["video", "youtube", "lecture", "course"]):
+        return "video"
+    if any(token in label for token in ["code", "github", "repository", "repo", "notebook"]):
+        return "code"
+    if "youtube.com" in url_lower or "youtu.be" in url_lower:
+        return "video"
+    if "github.com" in url_lower or "gitlab.com" in url_lower:
+        return "code"
+    return "text"
+
+
+# ─────────────────────────────────────────────────────────────
+# SYNTHETIC DRY-RUN RESULTS
+# ─────────────────────────────────────────────────────────────
+
+def _run_synthetic_dry_run(query: str, reason: str = "dry-run requested") -> Dict[str, Any]:
     """
-    Simulate realistic LLM-with-browsing results with known weaknesses:
-    - Some results are hallucinated (no real URL or URL is wrong)
-    - Some URLs are broken or redirected
-    - Source distribution is unbalanced (over-represents blogs, under-represents code)
-    - Video coverage is inconsistent
-    - No structured de-duplication
+    Return deterministic synthetic resources for evaluator development.
+
+    These fixtures are not claimed as live LLM outputs. They are plausible
+    free-form-search outputs used to exercise the comparison pipeline when
+    API access is unavailable.
     """
     # Detect corpus area from query
     query_lower = query.lower()
-    if "transformer" in query_lower or "nlp" in query_lower or "attention" in query_lower:
+    if "foundations_ml" in query_lower:
+        area = "foundations_ml"
+    elif "nlp_transformers" in query_lower:
+        area = "nlp"
+    elif "vision_representation" in query_lower:
+        area = "vision"
+    elif "transformer" in query_lower or "nlp" in query_lower or "attention" in query_lower:
         area = "nlp"
     elif "vision" in query_lower or "image" in query_lower or "cnn" in query_lower:
         area = "vision"
@@ -351,11 +404,11 @@ def _simulate_browsing(query: str) -> Dict[str, Any]:
         ],
     }
 
-    results = browsing_results.get(area, browsing_results["general"])
+    results = deepcopy(browsing_results.get(area, browsing_results["general"]))
 
-    # Simulate some failures
+    # Check URL status
     import random
-    random.seed(42)  # deterministic simulation
+    random.seed(42)  # deterministic for reproducibility
 
     hallucinated_count = 0
     broken_count = 0
@@ -382,10 +435,11 @@ def _simulate_browsing(query: str) -> Dict[str, Any]:
             "broken_urls": broken_count,
             "unclear_urls": unclear_count,
             "browsing_model": BROWSER_MODEL,
+            "run_mode": "synthetic_dry_run",
+            "provenance": "deterministic local fixture, not a live LLM call",
             "note": (
-                "Simulated LLM-with-browsing results based on realistic failure modes: "
-                "hallucinated URLs, stale results, modality imbalance. "
-                "In production, replace _simulate_browsing with real tool-use API calls."
+                "Synthetic dry-run baseline used because live OpenAI web search was not run. "
+                f"Reason: {reason}."
             ),
         },
     }
@@ -401,7 +455,7 @@ def run_llm_baseline(corpus_path: str) -> Dict[str, Any]:
 
     Steps:
     1. Load corpus documents
-    2. Simulate web browsing (in production: GPT-4o tool-use)
+    2. Run GPT-4o with web browsing
     3. Parse returned resources
     4. Compute URL health and Simpson's Diversity Index
 
@@ -416,10 +470,11 @@ def run_llm_baseline(corpus_path: str) -> Dict[str, Any]:
         raise ValueError(f"No documents found in {corpus_path}")
 
     # Build text excerpt for browsing query
-    text_excerpt = "\n\n".join(doc[:1500] for doc in documents[:5])
+    corpus_name = os.path.basename(corpus_path)
+    text_excerpt = f"Corpus: {corpus_name}\n\n" + "\n\n".join(doc[:1500] for doc in documents[:5])
 
-    # Simulate browsing (replace with real API call in production)
-    browsing_output = _simulate_browsing(text_excerpt)
+    # Run live OpenAI web search if configured; otherwise use labelled dry-run data.
+    browsing_output = web_search(text_excerpt)
     resources = browsing_output.get("results", [])
     metadata = browsing_output.get("search_metadata", {})
 
@@ -444,6 +499,9 @@ def run_llm_baseline(corpus_path: str) -> Dict[str, Any]:
     simpson_d = 1.0 - sum((count / max(total, 1)) ** 2 for count in domain_counts.values())
     simpson_d = round(simpson_d, 4)
 
+    modality_counts = _count_modalities(resources)
+    authority_score_pct, low_authority_pct = _authority_metrics(resources)
+
     # Group resources by topic (for qualitative inspection)
     topics = []
     if browsing_output.get("results"):
@@ -457,8 +515,9 @@ def run_llm_baseline(corpus_path: str) -> Dict[str, Any]:
 
     return {
         "corpus_path": corpus_path,
-        "corpus_name": os.path.basename(corpus_path),
+        "corpus_name": corpus_name,
         "browsing_model": BROWSER_MODEL,
+        "run_mode": metadata.get("run_mode", "unknown"),
         "num_documents": len(documents),
         "search_metadata": metadata,
         "resource_metrics": {
@@ -466,6 +525,9 @@ def run_llm_baseline(corpus_path: str) -> Dict[str, Any]:
             "url_live_pct": url_live_pct,
             "url_broken_pct": url_broken_pct,
             "url_unclear_pct": url_unclear_pct,
+            "authority_score_pct": authority_score_pct,
+            "low_authority_pct": low_authority_pct,
+            "modality_counts": modality_counts,
             "simpson_diversity_index": simpson_d,
             "domain_distribution": dict(domain_counts),
         },
@@ -505,6 +567,34 @@ def _count_modalities(resources: List[Dict]) -> Dict[str, int]:
         if rtype in counts:
             counts[rtype] += 1
     return counts
+
+
+def _authority_metrics(resources: List[Dict]) -> tuple:
+    """Estimate high/low authority share from source domains."""
+    authority_domains = {
+        "arxiv.org", "wikipedia.org", "en.wikipedia.org", "github.com",
+        "huggingface.co", "pytorch.org", "scikit-learn.org", "papers.nips.cc",
+        "coursera.org", "statlearning.com", "youtube.com", "www.youtube.com",
+    }
+    low_authority_domains = {
+        "medium.com", "towardsdatascience.com", "builtin.com", "substack.com",
+        "ai-blog.example.com", "ml-tricks.example.com",
+        "nlp-tutorial-hub.example.com",
+    }
+    total = max(len(resources), 1)
+    authority = 0
+    low_authority = 0
+    for r in resources:
+        domain = r.get("source_domain") or _extract_domain(r.get("url", ""))
+        domain = domain.lower().replace("www.", "")
+        if domain in authority_domains:
+            authority += 1
+        if domain in low_authority_domains or domain.endswith(".example.com"):
+            low_authority += 1
+    return (
+        round(authority / total * 100, 2),
+        round(low_authority / total * 100, 2),
+    )
 
 
 def save_results(result: Dict[str, Any], output_dir: str) -> str:
@@ -561,7 +651,7 @@ def _build_url_health_table(rows):
     if not rows:
         return "% No data"
     header = (
-        "%% Auto-generated by llm_baseline.py (v3 - external metrics only)\n"
+        "%% Auto-generated by llm_baseline.py (v3 - transparent live/dry-run modes)\n"
         "\\begin{table}[!t]\n"
         "\\small\n"
         "\\caption{URL Health: LLM-with-Browsing vs AI-Pedia}\n"
@@ -586,7 +676,7 @@ def _build_diversity_table(rows):
     if not rows:
         return "% No data"
     header = (
-        "%% Auto-generated by llm_baseline.py (v3 - external metrics only)\n"
+        "%% Auto-generated by llm_baseline.py (v3 - transparent live/dry-run modes)\n"
         "\\begin{table}[!t]\n"
         "\\small\n"
         "\\caption{Domain Diversity: Simpson's Diversity Index}\n"
@@ -599,8 +689,8 @@ def _build_diversity_table(rows):
     )
     body = ""
     for r in rows:
-        body += f"{r['corpus']} & {r['simpson_d']:.2f} & \\textbf{{0.75}} \\\\\n"
-    body += "\\hline\\hline\n\\end{tabular}\n\\end{table}\n"
+        body += f"{r['corpus']} & {r['simpson_d']:.2f} & \\textbf{{0.86}} \\\\\n"
+    footer = "\\hline\\hline\n\\end{tabular}\n\\end{table}\n"
     return header + body + footer
 
 
@@ -609,7 +699,7 @@ def _build_comparison_latex(rows: List[Dict]) -> str:
         return "% No data"
 
     header = (
-        "%% Auto-generated by llm_baseline.py (v2 - with browsing)\n"
+        "%% Auto-generated by llm_baseline.py (v3 - transparent live/dry-run modes)\n"
         "\\begin{table}[!t]\n"
         "\\small\n"
         "\\caption{LLM-with-Browsing Baseline vs AI-Pedia Pipeline}\n"

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-LLM Baseline vs AI-Pedia Comparison Evaluator (v2 — with browsing)
+LLM Baseline vs AI-Pedia Comparison Evaluator (v3 -- transparent live/dry-run modes)
 
 Compares the LLM-with-browsing baseline (constrained by no structured pipeline)
 against the full AI-Pedia pipeline on:
@@ -14,6 +14,10 @@ against the full AI-Pedia pipeline on:
 Key research question:
     Does structured retrieval (AI-Pedia) outperform free-form LLM browsing?
     Specifically in: URL validity, authority coverage, and modality balance.
+
+If OPENAI_API_KEY is unavailable, the LLM baseline module emits explicitly
+labelled synthetic dry-run fixtures. These are useful for reproducible pipeline
+development and paper layout, but should not be reported as live LLM calls.
 
 Usage:
     python evaluator.py --corpora-root ../data/test_corpora --output results/
@@ -45,7 +49,7 @@ except ImportError:
 class ComparisonEvaluator:
     """
     Side-by-side comparison between:
-    - LLM-with-browsing baseline (GPT-4o, unconstrained search, no pipeline)
+    - LLM-with-browsing baseline (live OpenAI call or labelled dry-run fixture)
     - AI-Pedia pipeline (TF-IDF+MMR → multi-source retrieval → CBF ranking)
 
     Evaluation dimensions (all external, model-independent):
@@ -241,10 +245,19 @@ class ComparisonEvaluator:
         # ── Aggregate ──
         aggregate = self._aggregate(comparison_results)
 
+        llm_modes = sorted({
+            result.get("run_mode", "unknown") for result in all_llm_results.values()
+        })
         final = {
-            "mode": "llm_browsing_comparison_v2",
+            "mode": "llm_browsing_comparison_v3",
             "timestamp": self._iso_now(),
             "llm_browsing_model": llm_result.get("browsing_model", "gpt-4o"),
+            "llm_run_modes": llm_modes,
+            "provenance_note": (
+                "Rows with run_mode=live_openai come from OpenAI Responses API "
+                "with hosted web_search. Rows with run_mode=synthetic_dry_run "
+                "are deterministic fixtures, not live LLM calls."
+            ),
             "aggregate": aggregate,
             "per_corpus": comparison_results,
         }
@@ -270,12 +283,9 @@ class ComparisonEvaluator:
         if n == 0:
             return {}
 
-        def avg(d: Dict, *keys: str) -> float:
-            vals = [d]
-            for k in keys:
-                vals = [v.get(k) for v in vals if isinstance(v, dict)]
-            numerics = [float(v) for v in vals if v is not None]
-            return round(sum(numerics) / len(numerics), 2) if numerics else 0.0
+        def avg_metric(rows: List[Dict[str, Any]], key: str) -> float:
+            vals = [float(row.get(key, 0.0)) for row in rows if row.get(key) is not None]
+            return round(sum(vals) / len(vals), 2) if vals else 0.0
 
         # URL health aggregation
         url_health_deltas = [c["url_health"]["gap"] for c in per_corpus.values()]
@@ -309,10 +319,7 @@ class ComparisonEvaluator:
                 "balanced_in_all": all(balanced_flags),
             },
             "aipedia_avg_metrics": {
-                "avg_authority": avg(
-                    {k: v.get("authority_score", 0) for k, v in enumerate(aipedia_metrics)},
-                    *[str(i) for i in range(n)]
-                ) if aipedia_metrics else 0.0,
+                "avg_authority": avg_metric(aipedia_metrics, "authority_score"),
             },
         }
         return aggregate

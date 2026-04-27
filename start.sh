@@ -36,13 +36,13 @@ export OPENAI_API_KEY="PUT YOUR OPENAI API KEY HERE"
 echo ""
 if [ -z "$OPENAI_API_KEY" ]; then
     echo "提示: 未检测到 OPENAI_API_KEY 环境变量"
-    echo "  - 如需使用AI摘要功能，请设置API Key（可选）"
+    echo "  - 如需使用LLM摘要功能，请设置API Key（可选）"
     echo "  - 设置方法1: 在终端运行: export OPENAI_API_KEY='your-key-here'"
     echo "  - 设置方法2: 编辑此脚本，在下方添加: export OPENAI_API_KEY='your-key-here'"
-    echo "  - 如果没有API Key，系统会使用智能fallback方法生成摘要"
+    echo "  - 如果没有API Key，系统会使用规则型fallback方法生成摘要"
     echo ""
 else
-    echo "✓ 检测到 OPENAI_API_KEY，将使用AI生成摘要"
+    echo "✓ 检测到 OPENAI_API_KEY，将使用LLM生成摘要"
     echo ""
 fi
 
@@ -61,4 +61,3 @@ echo ""
 
 # 使用 env 命令显式传递环境变量，确保 Python 进程能正确继承
 env OPENAI_API_KEY="$OPENAI_API_KEY" python3 app.py
-

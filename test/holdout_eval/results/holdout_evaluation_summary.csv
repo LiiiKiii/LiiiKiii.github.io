@@ -1,4 +1,0 @@
-corpus,baseline_d,aipedia_d,delta_d,baseline_rel,aipedia_rel,delta_rel,baseline_cov,aipedia_cov,delta_cov
-foundations_ml,0.7733,0.8178,0.0445,0.0013,0.0017,0.0004,0.1333,0.7333,0.6
-nlp_transformers,0.7733,0.8178,0.0445,0.0041,0.0021,-0.002,0.1333,0.7333,0.6
-vision_representation,0.7733,0.8178,0.0445,0.0013,0.0019,0.0006,0.1333,0.7333,0.6

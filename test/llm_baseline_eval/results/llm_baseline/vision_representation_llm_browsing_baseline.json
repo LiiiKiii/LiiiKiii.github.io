@@ -1,0 +1,145 @@
+{
+  "corpus_path": "data/test_corpora/vision_representation",
+  "corpus_name": "vision_representation",
+  "browsing_model": "gpt-4o",
+  "run_mode": "live_openai",
+  "num_documents": 10,
+  "search_metadata": {
+    "num_results": 10,
+    "browsing_model": "gpt-4o",
+    "run_mode": "live_openai",
+    "provenance": "OpenAI Responses API with hosted web_search tool"
+  },
+  "resource_metrics": {
+    "total_resources": 10,
+    "url_live_pct": 100.0,
+    "url_broken_pct": 0.0,
+    "url_unclear_pct": 0.0,
+    "authority_score_pct": 40.0,
+    "low_authority_pct": 0.0,
+    "modality_counts": {
+      "text": 7,
+      "video": 1,
+      "code": 2
+    },
+    "simpson_diversity_index": 0.84,
+    "domain_distribution": {
+      "geeksforgeeks.org": 3,
+      "classcentral.com": 1,
+      "inria.fr": 1,
+      "scikit-learn.org": 1,
+      "github.com": 1,
+      "wikipedia.org": 1,
+      "arxiv.org": 1,
+      "programminghistorian.org": 1
+    }
+  },
+  "topics": [
+    {
+      "topic": "Topic A",
+      "resources": [
+        {
+          "title": "Convolutional Neural Network (CNN) Architectures – GeeksforGeeks",
+          "url": "https://www.geeksforgeeks.org/machine-learning/convolutional-neural-network-cnn-architectures/",
+          "snippet": "Provides a clear overview of classic CNN architectures like LeNet, ResNet, and their evolution, matching the study notes’ list of common CNN architectures.",
+          "type": "text",
+          "source_domain": "geeksforgeeks.org",
+          "url_status": "LIVE",
+          "selection_reason": "Provides a clear overview of classic CNN architectures like LeNet, ResNet, and their evolution, matching the study notes’ list of common CNN architectures.",
+          "note": "General audience; may lack depth on recent architectures."
+        },
+        {
+          "title": "Convolutional Neural Network Tutorial – Deep Learning and CNN Architectures (YouTube)",
+          "url": "https://www.classcentral.com/course/youtube-convolutional-neural-network-tutorial-513039",
+          "snippet": "A free 7‑hour video tutorial covering evolution of landmark CNN models including LeNet‑5, AlexNet, VGGNet, Inception, ResNet, aligning well with the study notes.",
+          "type": "video",
+          "source_domain": "classcentral.com",
+          "url_status": "LIVE",
+          "selection_reason": "A free 7‑hour video tutorial covering evolution of landmark CNN models including LeNet‑5, AlexNet, VGGNet, Inception, ResNet, aligning well with the study notes.",
+          "note": "Video length is long; quality depends on presenter."
+        },
+        {
+          "title": "Metric Learning – GeeksforGeeks",
+          "url": "https://www.geeksforgeeks.org/artificial-intelligence/metric-learning/",
+          "snippet": "Explains metric learning concepts like contrastive and triplet loss, embedding spaces, and applications in vision, matching the study notes.",
+          "type": "text",
+          "source_domain": "geeksforgeeks.org",
+          "url_status": "LIVE",
+          "selection_reason": "Explains metric learning concepts like contrastive and triplet loss, embedding spaces, and applications in vision, matching the study notes.",
+          "note": "Introductory level; may not cover deep learning variants in depth."
+        }
+      ]
+    },
+    {
+      "topic": "Topic B",
+      "resources": [
+        {
+          "title": "Similarity and Distance Metric Learning with Applications to Computer Vision (Tutorial slides)",
+          "url": "https://researchers.lille.inria.fr/abellet/misc/metric_learning_tutorial.html",
+          "snippet": "Comprehensive tutorial by Aurélien Bellet covering metric learning methods and their applications in computer vision.",
+          "type": "text",
+          "source_domain": "inria.fr",
+          "url_status": "LIVE",
+          "selection_reason": "Comprehensive tutorial by Aurélien Bellet covering metric learning methods and their applications in computer vision.",
+          "note": "Slides from 2015; may be somewhat dated but foundational."
+        },
+        {
+          "title": "Algorithms walkthrough — metric‑learn documentation",
+          "url": "https://contrib.scikit-learn.org/metric-learn/auto_examples/plot_metric_learning_examples.html",
+          "snippet": "Provides runnable code examples of metric learning algorithms, useful for hands‑on understanding of embedding and similarity.",
+          "type": "code",
+          "source_domain": "scikit-learn.org",
+          "url_status": "LIVE",
+          "selection_reason": "Provides runnable code examples of metric learning algorithms, useful for hands‑on understanding of embedding and similarity.",
+          "note": "Synthetic data examples; may require adaptation for real vision tasks."
+        },
+        {
+          "title": "Complete Hands‑On YOLO Object Detection Tutorial (GitHub)",
+          "url": "https://github.com/moises-dias/yolo-opencv-detector",
+          "snippet": "Jupyter notebooks with step‑by‑step YOLO object detection implementation using OpenCV, matching object detection topic.",
+          "type": "code",
+          "source_domain": "github.com",
+          "url_status": "LIVE",
+          "selection_reason": "Jupyter notebooks with step‑by‑step YOLO object detection implementation using OpenCV, matching object detection topic.",
+          "note": "Game‑specific example; may need adaptation for other domains."
+        }
+      ]
+    },
+    {
+      "topic": "Topic C",
+      "resources": [
+        {
+          "title": "You Only Look Once (YOLO) – Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/You_Only_Look_Once",
+          "snippet": "Comprehensive overview of YOLO’s evolution, versions up to YOLOv12, and its principles, aligning with object detection study notes.",
+          "type": "text",
+          "source_domain": "wikipedia.org",
+          "url_status": "LIVE",
+          "selection_reason": "Comprehensive overview of YOLO’s evolution, versions up to YOLOv12, and its principles, aligning with object detection study notes.",
+          "note": "General overview; not a tutorial."
+        },
+        {
+          "title": "YOLOv11 Demystified: A Practical Guide to High‑Performance Object Detection (arXiv)",
+          "url": "https://arxiv.org/abs/2604.03349",
+          "snippet": "Latest research (April 2026) on YOLOv11 architecture and performance, offering up‑to‑date insights beyond study notes.",
+          "type": "text",
+          "source_domain": "arxiv.org",
+          "url_status": "LIVE",
+          "selection_reason": "Latest research (April 2026) on YOLOv11 architecture and performance, offering up‑to‑date insights beyond study notes.",
+          "note": "Research paper; may be technical and dense."
+        },
+        {
+          "title": "Computer Vision for the Humanities: An Introduction to Deep Learning for Image Classification (Part 2)",
+          "url": "https://programminghistorian.org/en/lessons/computer-vision-deep-learning-pt2",
+          "snippet": "Tutorial on deep learning for image classification, covering challenges and evaluation metrics, relevant to the study notes.",
+          "type": "text",
+          "source_domain": "programminghistorian.org",
+          "url_status": "LIVE",
+          "selection_reason": "Tutorial on deep learning for image classification, covering challenges and evaluation metrics, relevant to the study notes.",
+          "note": "Humanities‑focused; may not cover advanced architectures."
+        }
+      ]
+    }
+  ],
+  "timestamp": "2026-04-22T20:49:47.377502"
+}

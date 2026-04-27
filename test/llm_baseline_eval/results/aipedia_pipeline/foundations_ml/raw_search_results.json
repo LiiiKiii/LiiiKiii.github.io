@@ -1,0 +1,1070 @@
+{
+  "txt": [
+    {
+      "title": "Machine learning - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Study of algorithms that improve automatically through experience Part of a series on Machine learning and data mining Part of a series on Artificial intelligence (AI) Machine learning ( ML ) is a field of study in artificial intelligence concerned with the development and study of statistical algorithms that can learn from data and generalize to unseen data, and thus perform tasks without explicit programming language instructions. 1 Within a subdiscipline of machine learning, advances in the field of deep learning have allowed neural networks , a class of statistical algorithms, to surpass many previous machine learning approaches in performance. Statistics and mathematical optimisation (mathematical programming) methods compose the foundations of machine learning. Data mining is a related field of study, focusing on exploratory data analysis (EDA) through unsupervised learning. 3 4 From a theoretical viewpoint, probably approximately correct learning provides a mathematical and statistical framework for describing machine learning. Most traditional machine learning and deep learning algorithms can be described as empirical risk minimisation under this framework. The term machine learning was coined in 1959 by Arthur Samuel , an IBM employee and pioneer in the field of computer gaming and artificial intelligence. 5 6 The synonym self-teaching computers was also used during this time period. 7 8 The earliest machine learning program was introduced in the 1950s when Arthur Samuel invented a computer program that calculated the winning chance in checkers for each side, but the history of machine learning roots back to decades of human desire and effort to study human cognitive processes. 9 In 1949, Canadian psychologist Donald Hebb published the book The Organization of Behavior , in which he introduced a theoretical neural structure formed by certain interactions among nerve cells. 10 Hebb's model of neurons interacting with one another set a groundwork for how AIs and machine learning algorithms work under nodes, or artificial neurons used by computers to communicate data. 9 By the early 1960s, an experimental \"learning machine\" with punched tape memory, called Cybertron, had been developed by Raytheon Company to analyse sonar signals, electrocardiograms , and speech patterns using rudimentary reinforcement learning. It was repetitively \"trained\" by a human operator/teacher to recognise patterns and equipped with a \" goof \" button to cause it to reevaluate incorrect decisions. 12 Interest related to pattern recognition continued into the 1970s, as described by Duda and Hart in 1973. 13 In 1981, a report was given on using teaching strategies so that an artificial neural network learns to recognise 40 characters (26 letters, 10 digits, and 4 special symbols) from a computer terminal. Mitchell provided a widely quoted, more formal definition of the algorithms studied in the machine learning field: \"A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T , as measured by P , improves with experience E .\" 15 This definition of the tasks in which machine learning is concerned offers a fundamentally operational definition rather than defining the field in cognitive terms. This follows Alan Turing 's proposal in his paper \" Computing Machinery and Intelligence \", in which the question, \"Can machines think?\", is replaced by asking whether machines can convincingly imitate a human in its responses to human-posed questions. 16 17 Modern-day Machine Learning algorithms are broken into 3 algorithm types: Supervised Learning Algorithms, Unsupervised Learning Algorithms, and Reinforcement Learning Algorithms. 18 Current Supervised Learning Algorithms have objectives of classification and regression. Current Unsupervised Learning Algorithms have objectives of clustering, dimensionality reduction, and association rule. Current Reinforcement Learning Algorithms focus on decisions that must be made with respect to some previous, unknown time and are broken down to either be studies of model-based methods or model-free methods. In 2014 Ian Goodfellow and others introduced generative adversarial networks (GANs) with realistic data synthesis. 19 By 2016 AlphaGo obtained victory against top human players using reinforcement learning techniques. 20 Deep learning is a subset of machine learning, which is itself a subset of artificial intelligence. 21 As a scientific endeavour, machine learning grew out of the quest for artificial intelligence (AI). They attempted to approach the problem with various symbolic methods, as well as what were then termed \" neural networks \"; these were mostly perceptrons and other models that were later found to be reinventions of the generalised linear models of statistics. 22 Probabilistic reasoning was also employed, especially in automated medical diagnosis.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/machine_learning",
+      "type": "txt"
+    },
+    {
+      "title": "Changing Data Sources in the Age of Machine Learning for Official Statistics",
+      "content": "论文标题: Changing Data Sources in the Age of Machine Learning for Official Statistics\n\n作者: Cedric De Boom, Michael Reusens\n\n摘要: Data science has become increasingly essential for the production of official statistics, as it enables the automated collection, processing, and analysis of large amounts of data. With such data science practices in place, it enables more timely, more insightful and more flexible reporting. However, the quality and integrity of data-science-driven statistics rely on the accuracy and reliability of the data sources and the machine learning techniques that support them. In particular, changes in data sources are inevitable to occur and pose significant risks that are crucial to address in the context of machine learning for official statistics.   This paper gives an overview of the main risks, liabilities, and uncertainties associated with changing data sources in the context of machine learning for official statistics. We provide a checklist of the most prevalent origins and causes of changing data sources; not only on a technical level but also regarding ownership, ethics, regulation,...\n\narXiv链接: http://arxiv.org/abs/2306.04338v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2306.04338v1",
+      "type": "txt"
+    },
+    {
+      "title": "DOME: Recommendations for supervised machine learning validation in biology",
+      "content": "论文标题: DOME: Recommendations for supervised machine learning validation in biology\n\n作者: Ian Walsh, Dmytro Fishman, Dario Garcia-Gasulla, Tiina Titma, Gianluca Pollastri\n\n摘要: Modern biology frequently relies on machine learning to provide predictions and improve decision processes. There have been recent calls for more scrutiny on machine learning performance and possible limitations. Here we present a set of community-wide recommendations aiming to help establish standards of supervised machine learning validation in biology. Adopting a structured methods description for machine learning based on data, optimization, model, evaluation (DOME) will aim to help both reviewers and readers to better understand and assess the performance and limitations of a method or outcome. The recommendations are formulated as questions to anyone wishing to pursue implementation of a machine learning algorithm. Answers to these questions can be easily included in the supplementary material of published papers.\n\narXiv链接: http://arxiv.org/abs/2006.16189v4\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2006.16189v4",
+      "type": "txt"
+    },
+    {
+      "title": "Learning Curves for Decision Making in Supervised Machine Learning: A Survey",
+      "content": "论文标题: Learning Curves for Decision Making in Supervised Machine Learning: A Survey\n\n作者: Felix Mohr, Jan N. van Rijn\n\n摘要: Learning curves are a concept from social sciences that has been adopted in the context of machine learning to assess the performance of a learning algorithm with respect to a certain resource, e.g., the number of training examples or the number of training iterations. Learning curves have important applications in several machine learning contexts, most notably in data acquisition, early stopping of model training, and model selection. For instance, learning curves can be used to model the performance of the combination of an algorithm and its hyperparameter configuration, providing insights into their potential suitability at an early stage and often expediting the algorithm selection process. Various learning curve models have been proposed to use learning curves for decision making. Some of these models answer the binary decision question of whether a given algorithm at a certain budget will outperform a certain reference performance, whereas more complex models predict the entire ...\n\narXiv链接: http://arxiv.org/abs/2201.12150v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2201.12150v2",
+      "type": "txt"
+    },
+    {
+      "title": "MLIM: Vision-and-Language Model Pre-training with Masked Language and Image Modeling",
+      "content": "论文标题: MLIM: Vision-and-Language Model Pre-training with Masked Language and Image Modeling\n\n作者: Tarik Arici, Mehmet Saygin Seyfioglu, Tal Neiman, Yi Xu, Son Train\n\n摘要: Vision-and-Language Pre-training (VLP) improves model performance for downstream tasks that require image and text inputs. Current VLP approaches differ on (i) model architecture (especially image embedders), (ii) loss functions, and (iii) masking policies. Image embedders are either deep models like ResNet or linear projections that directly feed image-pixels into the transformer. Typically, in addition to the Masked Language Modeling (MLM) loss, alignment-based objectives are used for cross-modality interaction, and RoI feature regression and classification tasks for Masked Image-Region Modeling (MIRM). Both alignment and MIRM objectives mostly do not have ground truth. Alignment-based objectives require pairings of image and text and heuristic objective functions. MIRM relies on object detectors. Masking policies either do not take advantage of multi-modality or are strictly coupled with alignments generated by other models. In this paper, we present Masked Language and Image Modeli...\n\narXiv链接: http://arxiv.org/abs/2109.12178v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2109.12178v1",
+      "type": "txt"
+    },
+    {
+      "title": "A simple way to speedup Gauss Elimination",
+      "content": "论文标题: A simple way to speedup Gauss Elimination\n\n作者: Sivaram Ambikasaran\n\n摘要: This article looks at a simple modification to speedup the conventional Gauss Elimination. The proposed modification speeds up the conventional Gauss Elimination by a factor of nearly 9/7 (in the asymptotic limit).\n\narXiv链接: http://arxiv.org/abs/1101.4081v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1101.4081v3",
+      "type": "txt"
+    },
+    {
+      "title": "Verification, Validation and Integrity of Distributed and Interchanged Rule Based Policies and Contracts in the Semantic Web",
+      "content": "论文标题: Verification, Validation and Integrity of Distributed and Interchanged Rule Based Policies and Contracts in the Semantic Web\n\n作者: Adrian Paschke\n\n摘要: Rule-based policy and contract systems have rarely been studied in terms of their software engineering properties. This is a serious omission, because in rule-based policy or contract representation languages rules are being used as a declarative programming language to formalize real-world decision logic and create IS production systems upon. This paper adopts an SE methodology from extreme programming, namely test driven development, and discusses how it can be adapted to verification, validation and integrity testing (V&amp;V&amp;I) of policy and contract specifications. Since, the test-driven approach focuses on the behavioral aspects and the drawn conclusions instead of the structure of the rule base and the causes of faults, it is independent of the complexity of the rule language and the system under test and thus much easier to use and understand for the rule engineer and the user.\n\narXiv链接: http://arxiv.org/abs/cs/0609119v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/cs/0609119v2",
+      "type": "txt"
+    },
+    {
+      "title": "Statistical model validation - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Model evaluation ) Evaluating whether a chosen statistical model is appropriate or not In statistics , model validation is the task of evaluating whether a chosen statistical model is appropriate or not. To combat this, model validation is used to test whether a statistical model can hold up to permutations in the data. Model validation is also called model criticism or model evaluation. This topic is not to be confused with the closely related task of model selection , the process of discriminating between multiple candidate models: model validation does not concern so much the conceptual design of models as it tests only the consistency between a chosen model and its stated outputs. There are many ways to validate a model. Residual plots plot the difference between the actual data and the model's predictions: correlations in the residual plots may indicate a flaw in the model. Cross validation is a method of model validation that iteratively refits the model, each time leaving out just a small sample and comparing whether the samples left out are predicted by the model: there are many kinds of cross validation. Predictive simulation is used to compare simulated data to actual data. External validation involves fitting the model to new data. Akaike information criterion estimates the quality of a model. To emphasize, what this means is that there is no one-size-fits-all method to validating a model. These are two abstract examples and any actual model validation will have to consider far more intricacies than describes here but these example illustrate that model validation methods are always going to be circumstantial. In general, models can be validated using existing data or with new data, and both methods are discussed more in the following subsections, and a note of caution is provided, too. Validation based on existing data involves analyzing the goodness of fit of the model or analyzing whether the residuals seem to be random (i.e. residual diagnostics ). This method involves using analyses of the models closeness to the data and trying to understand how well the model predicts its own data. One example of this method is in Figure 1, which shows a polynomial function fit to some data. We see that the polynomial function does not conform well to the data, which appears linear, and might invalidate this polynomial model. Commonly, statistical models on existing data are validated using a validation set, which may also be referred to as a holdout set. A validation set is a set of data points that the user leaves out when fitting a statistical model. After the statistical model is fitted, the validation set is used as a measure of the model's error. If the model fits well on the initial data but has a large error on the validation set, this is a sign of overfitting. Data (black dots), which was generated via the straight line and some added noise, is perfectly fitted by a curvy polynomial. If new data becomes available, an existing model can be validated by assessing whether the new data is predicted by the old model. With this in mind, a modern approach is to validate a neural network is to test its performance on domain-shifted data. This ascertains if the model learned domain-invariant features. 1 A model can be validated only relative to some application area. 2 3 A model that is valid for one application might be invalid for some other applications. As an example, consider the curve in Figure 1: if the application only used inputs from the interval [0, 2], then the curve might well be an acceptable model. When doing a validation, there are three notable causes of potential difficulty, according to the Encyclopedia of Statistical Sciences. 4 The three causes are these: lack of data; lack of control of the input variables; uncertainty about the underlying probability distributions and correlations. The usual methods for dealing with difficulties in validation include the following: checking the assumptions made in constructing the model; examining the available data and related model outputs; applying expert judgment. 2 Note that expert judgment commonly requires expertise in the application area. 2 Expert judgment can sometimes be used to assess the validity of a prediction without obtaining real data: e.g. for the curve in Figure 1, an expert might well be able to assess that a substantial extrapolation will be invalid. Additionally, expert judgment can be used in Turing -type tests, where experts are presented with both real data and related model outputs and then asked to distinguish between the two. 5 For some classes of statistical models, specialized methods of performing validation are available. As an example, if the statistical model was obtained via a regression , then specialized analyses for regression model validation exist and are generally employed. This section needs expansion. You can help by adding missing information.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/model_evaluation",
+      "type": "txt"
+    },
+    {
+      "title": "Normalization of peer-evaluation measures of group research quality across academic disciplines",
+      "content": "论文标题: Normalization of peer-evaluation measures of group research quality across academic disciplines\n\n作者: Ralph Kenna, Bertrand Berche\n\n摘要: Peer-evaluation based measures of group research quality such as the UK's Research Assessment Exercise (RAE), which do not employ bibliometric analyses, cannot directly avail of such methods to normalize research impact across disciplines. This is seen as a conspicuous flaw of such exercises and calls have been made to find a remedy. Here a simple, systematic solution is proposed based upon a mathematical model for the relationship between research quality and group quantity. This model manifests both the Matthew effect and a phenomenon akin to the Ringelmann effect and reveals the existence of two critical masses for each academic discipline: a lower value, below which groups are vulnerable, and an upper value beyond which the dependency of quality on quantity reduces and plateaus appear when the critical masses are large. A possible normalization procedure is then to pitch these plateaus at similar levels. We examine the consequences of this procedure at RAE for a multitude of academ...\n\narXiv链接: http://arxiv.org/abs/1006.3863v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1006.3863v2",
+      "type": "txt"
+    },
+    {
+      "title": "Vision-Language Model for Object Detection and Segmentation: A Review and Evaluation",
+      "content": "论文标题: Vision-Language Model for Object Detection and Segmentation: A Review and Evaluation\n\n作者: Yongchao Feng, Yajie Liu, Shuai Yang, Wenrui Cai, Jinqing Zhang\n\n摘要: Vision-Language Model (VLM) have gained widespread adoption in Open-Vocabulary (OV) object detection and segmentation tasks. Despite they have shown promise on OV-related tasks, their effectiveness in conventional vision tasks has thus far been unevaluated. In this work, we present the systematic review of VLM-based detection and segmentation, view VLM as the foundational model and conduct comprehensive evaluations across multiple downstream tasks for the first time: 1) The evaluation spans eight detection scenarios (closed-set detection, domain adaptation, crowded objects, etc.) and eight segmentation scenarios (few-shot, open-world, small object, etc.), revealing distinct performance advantages and limitations of various VLM architectures across tasks. 2) As for detection tasks, we evaluate VLMs under three finetuning granularities: \\textit{zero prediction}, \\textit{visual fine-tuning}, and \\textit{text prompt}, and further analyze how different finetuning strategies impact performan...\n\narXiv链接: http://arxiv.org/abs/2504.09480v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2504.09480v1",
+      "type": "txt"
+    },
+    {
+      "title": "FFT: Towards Harmlessness Evaluation and Analysis for LLMs with Factuality, Fairness, Toxicity",
+      "content": "论文标题: FFT: Towards Harmlessness Evaluation and Analysis for LLMs with Factuality, Fairness, Toxicity\n\n作者: Shiyao Cui, Zhenyu Zhang, Yilong Chen, Wenyuan Zhang, Tianyun Liu\n\n摘要: The widespread of generative artificial intelligence has heightened concerns about the potential harms posed by AI-generated texts, primarily stemming from factoid, unfair, and toxic content. Previous researchers have invested much effort in assessing the harmlessness of generative language models. However, existing benchmarks are struggling in the era of large language models (LLMs), due to the stronger language generation and instruction following capabilities, as well as wider applications. In this paper, we propose FFT, a new benchmark with 2116 elaborated-designed instances, for LLM harmlessness evaluation with factuality, fairness, and toxicity. To investigate the potential harms of LLMs, we evaluate 9 representative LLMs covering various parameter scales, training stages, and creators. Experiments show that the harmlessness of LLMs is still under-satisfactory, and extensive analysis derives some insightful findings that could inspire future research for harmless LLM research.\n\narXiv链接: http://arxiv.org/abs/2311.18580v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2311.18580v2",
+      "type": "txt"
+    },
+    {
+      "title": "Feature engineering - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Extracting features from raw data for machine learning Part of a series on Machine learning and data mining This article needs to be updated. Please help update this article to reflect recent events or newly available information. ( February 2024 ) Feature engineering is a preprocessing step in supervised machine learning and statistical modeling 1 which transforms raw data into a more effective set of inputs. Each input comprises several attributes, known as features. By providing models with relevant information, feature engineering significantly enhances their predictive accuracy and decision-making capability. 2 3 4 Beyond machine learning, the principles of feature engineering are applied in various scientific fields, including physics. For example, physicists construct dimensionless numbers such as the Reynolds number in fluid dynamics , the Nusselt number in heat transfer , and the Archimedes number in sedimentation. They also develop first approximations of solutions, such as analytical solutions for the strength of materials in mechanics. 5 One of the applications of feature engineering has been clustering of feature-objects or sample-objects in a dataset. Especially, feature engineering based on matrix decomposition has been extensively used for data clustering under non-negativity constraints on the feature coefficients. These include Non-Negative Matrix Factorization (NMF), 6 Non-Negative Matrix-Tri Factorization (NMTF), 7 Non-Negative Tensor Decomposition/Factorization (NTF/NTD), 8 etc. The non-negativity constraints on coefficients of the feature vectors mined by the above-stated algorithms yields a part-based representation, and different factor matrices exhibit natural clustering properties. Several extensions of the above-stated feature engineering methods have been reported in literature, including orthogonality-constrained factorization for hard clustering, and manifold learning to overcome inherent issues with these algorithms. Other classes of feature engineering algorithms include leveraging a common hidden structure across multiple inter-related datasets to obtain a consensus (common) clustering scheme. An example is Multi-view Classification based on Consensus Matrix Decomposition (MCMD), 2 which mines a common clustering scheme across multiple datasets. MCMD is designed to output two types of class labels (scale-variant and scale-invariant clustering), and: is computationally robust to missing information, can obtain shape- and scale-based outliers, and can handle high-dimensional data effectively. Coupled matrix and tensor decompositions are popular in multi-view feature engineering. 9 Feature engineering in machine learning and statistical modeling involves selecting, creating, transforming, and extracting data features. Key components include feature creation from existing data, transforming and imputing missing or invalid features, reducing data dimensionality through methods like Principal Components Analysis (PCA), Independent Component Analysis (ICA), and Linear Discriminant Analysis (LDA), and selecting the most relevant features for model training based on importance scores and correlation matrices. 10 Features vary in significance. 11 Even relatively insignificant features may contribute to a model. Feature selection can reduce the number of features to prevent a model from becoming too specific to the training data set (overfitting). 12 Feature explosion occurs when the number of identified features is too large for effective model estimation or optimization. Common causes include: Feature templates - implementing feature templates instead of coding new features Feature combinations - combinations that cannot be represented by a linear system Feature explosion can be limited via techniques such as regularization , kernel methods , and feature selection. 14 Machine learning software that incorporates automated feature engineering has been commercially available since 2016. 15 Related academic literature can be roughly separated into two types: Multi-relational Decision Tree Learning (MRDTL) uses a supervised algorithm that is similar to a decision tree. Deep Feature Synthesis uses simpler methods. citation needed Multi-relational Decision Tree Learning (MRDTL) extends traditional decision tree methods to relational databases , handling complex data relationships across tables. It innovatively uses selection graphs as decision nodes , refined systematically until a specific termination criterion is reached. 14 Most MRDTL studies base implementations on relational databases, which results in many redundant operations. These redundancies can be reduced by using techniques such as tuple id propagation.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/feature_engineering",
+      "type": "txt"
+    },
+    {
+      "title": "FLFE: A Communication-Efficient and Privacy-Preserving Federated Feature Engineering Framework",
+      "content": "论文标题: FLFE: A Communication-Efficient and Privacy-Preserving Federated Feature Engineering Framework\n\n作者: Pei Fang, Zhendong Cai, Hui Chen, QingJiang Shi\n\n摘要: Feature engineering is the process of using domain knowledge to extract features from raw data via data mining techniques and is a key step to improve the performance of machine learning algorithms. In the multi-party feature engineering scenario (features are stored in many different IoT devices), direct and unlimited multivariate feature transformations will quickly exhaust memory, power, and bandwidth of devices, not to mention the security of information threatened. Given this, we present a framework called FLFE to conduct privacy-preserving and communication-preserving multi-party feature transformations. The framework pre-learns the pattern of the feature to directly judge the usefulness of the transformation on a feature. Explored the new useful feature, the framework forsakes the encryption-based algorithm for the well-designed feature exchange mechanism, which largely decreases the communication overhead under the premise of confidentiality. We made experiments on datasets of ...\n\narXiv链接: http://arxiv.org/abs/2009.02557v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2009.02557v1",
+      "type": "txt"
+    },
+    {
+      "title": "Morescient GAI for Software Engineering (Extended Version)",
+      "content": "论文标题: Morescient GAI for Software Engineering (Extended Version)\n\n作者: Marcus Kessel, Colin Atkinson\n\n摘要: The ability of Generative AI (GAI) technology to automatically check, synthesize and modify software engineering artifacts promises to revolutionize all aspects of software engineering. Using GAI for software engineering tasks is consequently one of the most rapidly expanding fields of software engineering research, with over a hundred LLM-based code models having been published since 2021. However, the overwhelming majority of existing code models share a major weakness - they are exclusively trained on the syntactic facet of software, significantly lowering their trustworthiness in tasks dependent on software semantics. To address this problem, a new class of \"Morescient\" GAI is needed that is \"aware\" of (i.e., trained on) both the semantic and static facets of software. This, in turn, will require a new generation of software observation platforms capable of generating large quantities of execution observations in a structured and readily analyzable way. In this paper, we present a ...\n\narXiv链接: http://arxiv.org/abs/2406.04710v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2406.04710v2",
+      "type": "txt"
+    },
+    {
+      "title": "Web Engineering",
+      "content": "论文标题: Web Engineering\n\n作者: Yogesh Deshpande, San Murugesan, Athula Ginige, Steve Hansen, Daniel Schwabe\n\n摘要: Web Engineering is the application of systematic, disciplined and quantifiable approaches to development, operation, and maintenance of Web-based applications. It is both a pro-active approach and a growing collection of theoretical and empirical research in Web application development. This paper gives an overview of Web Engineering by addressing the questions: a) why is it needed? b) what is its domain of operation? c) how does it help and what should it do to improve Web application development? and d) how should it be incorporated in education and training? The paper discusses the significant differences that exist between Web applications and conventional software, the taxonomy of Web applications, the progress made so far and the research issues and experience of creating a specialisation at the master's level. The paper reaches a conclusion that Web Engineering at this stage is a moving target since Web technologies are constantly evolving, making new types of applications possi...\n\narXiv链接: http://arxiv.org/abs/cs/0306108v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/cs/0306108v1",
+      "type": "txt"
+    },
+    {
+      "title": "Training, validation, and test data sets - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Training set ) Tasks in machine learning Part of a series on Machine learning and data mining In machine learning , a common task is the study and construction of algorithms that can learn from and make predictions on data. 1 Such algorithms function by making data-driven predictions or decisions, 2 through building a mathematical model from input data. These input data used to build the model are usually divided into multiple data sets. In particular, three data sets are commonly used in different stages of the creation of the model: training, validation, and testing sets. The model is initially fit on a training data set , 3 which is a set of examples used to fit the parameters (e.g. weights of connections between neurons in artificial neural networks ) of the model. a naive Bayes classifier ) is trained on the training data set using a supervised learning method, for example using optimization methods such as gradient descent or stochastic gradient descent. In practice, the training data set often consists of pairs of an input vector (or scalar) and the corresponding output vector (or scalar), where the answer key is commonly denoted as the target (or label ). The current model is run with the training data set and produces a result, which is then compared with the target , for each input vector in the training data set. Based on the result of the comparison and the specific learning algorithm being used, the parameters of the model are adjusted. The model fitting can include both variable selection and parameter estimation. Successively, the fitted model is used to predict the responses for the observations in a second data set called the validation data set. 3 The validation data set provides an unbiased evaluation of a model fit on the training data set while tuning the model's hyperparameters 5 (e.g. the number of hidden units—layers and layer widths—in a neural network 4 ). Validation data sets can be used for regularization by early stopping (stopping training when the error on the validation data set increases, as this is a sign of over-fitting to the training data set). 6 This simple procedure is complicated in practice by the fact that the validation data set's error may fluctuate during training, producing multiple local minima. This complication has led to the creation of many ad-hoc rules for deciding when over-fitting has truly begun. 6 Finally, the test data set is a data set used to provide an unbiased evaluation of a model fit on the training data set. 5 When the data in the test data set has never been used (for example in cross-validation ), the test data set is called a holdout data set. The term \"validation set\" is sometimes used instead of \"test set\" in some literature (e.g., if the original data set was partitioned into only two subsets, the test set might be referred to as the validation set). 5 Deciding the sizes and strategies for data set division in training, test and validation sets is very dependent on the problem and data available. 7 Simplified example of training a neural network in object detection: The network is trained by multiple images that are known to depict starfish and sea urchins , which are correlated with \"nodes\" that represent visual features. The starfish match with a ringed texture and a star outline, whereas most sea urchins match with a striped texture and oval shape. However, the instance of a ring textured sea urchin creates a weakly weighted association between them. Subsequent run of the network on an input image (left): 8 The network correctly detects the starfish. However, the weakly weighted association between ringed texture and sea urchin also confers a weak signal to the latter from one of two intermediate nodes. In addition, a shell that was not included in the training gives a weak signal for the oval shape, also resulting in a weak signal for the sea urchin output. These weak signals may result in a false positive result for sea urchin. In reality, textures and outlines would not be represented by single nodes, but rather by associated weight patterns of multiple nodes. A training data set is a data set of examples used during the learning process and is used to fit the parameters (e.g., weights) of, for example, a classifier. 9 10 For classification tasks, a supervised learning algorithm looks at the training data set to determine, or learn, the optimal combinations of variables that will generate a good predictive model. 11 The goal is to produce a trained (fitted) model that generalizes well to new, unknown data. 12 The fitted model is evaluated using “new” examples from the held-out data sets (validation and test data sets) to estimate the model’s accuracy in classifying new data. 5 To reduce the risk of issues such as over-fitting, the examples in the validation and test data sets should not be used to train the model.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/training_set",
+      "type": "txt"
+    },
+    {
+      "title": "Coded Beam Training",
+      "content": "论文标题: Coded Beam Training\n\n作者: Tianyue Zheng, Jieao Zhu, Qiumo Yu, Yongli Yan, Linglong Dai\n\n摘要: In extremely large-scale multiple input multiple output (XL-MIMO) systems for future sixth-generation (6G) communications, codebook-based beam training stands out as a promising technology to acquire channel state information (CSI). Despite their effectiveness, when the pilot overhead is limited, existing beam training methods suffer from significant achievable rate degradation for remote users with low signal-to-noise ratio (SNR). To tackle this challenge, leveraging the error-correcting capability of channel codes, we introduce channel coding theory into hierarchical beam training to extend the coverage area. Specifically, we establish the duality between hierarchical beam training and channel coding, and the proposed coded beam training scheme serves as a general framework. Then, we present two specific implementations exemplified by coded beam training methods based on Hamming codes and convolutional codes, during which the beam encoding and decoding processes are refined respectiv...\n\narXiv链接: http://arxiv.org/abs/2401.01673v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2401.01673v2",
+      "type": "txt"
+    },
+    {
+      "title": "Fast Beam Training for IRS-Assisted Multiuser Communications",
+      "content": "论文标题: Fast Beam Training for IRS-Assisted Multiuser Communications\n\n作者: Changsheng You, Beixiong Zheng, Rui Zhang\n\n摘要: In this letter, we consider an intelligent reflecting surface (IRS)-assisted multiuser communication system, where an IRS is deployed to provide virtual line-of-sight (LoS) links between an access point (AP) and multiple users. We consider the practical codebook-based IRS passive beamforming and study efficient design for IRS reflect beam training, which is challenging due to the large number of IRS reflecting elements. In contrast to the conventional single-beam training, we propose a new multi-beam training method by dividing the IRS reflecting elements into multiple sub-arrays and designing their simultaneous multi-beam steering over time. By simply comparing the received signal power over time, each user can detect its optimal IRS beam direction with a high probability, even without searching over all possible beam directions as the single-beam training. Simulation results show that our proposed multi-beam training significantly reduces the training time of conventional single-beam...\n\narXiv链接: http://arxiv.org/abs/2005.11652v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2005.11652v2",
+      "type": "txt"
+    },
+    {
+      "title": "Dequantization of Mathematics, idempotent semirings and fuzzy sets",
+      "content": "论文标题: Dequantization of Mathematics, idempotent semirings and fuzzy sets\n\n作者: G. L. Litvinov\n\n摘要: In this talk a brief survey of basic ideas of Idempotent Mathematics is presented. Relations between this theory and the theory of fuzzy sets as well as the possibility theory and some applications (including computer applications) are discussed.\n\narXiv链接: http://arxiv.org/abs/1209.1718v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1209.1718v1",
+      "type": "txt"
+    },
+    {
+      "title": "Linear regression - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Statistical modeling method Part of a series on Regression analysis Models Linear regression Simple regression Polynomial regression General linear model Generalized linear model Vector generalized linear model Discrete choice Binomial regression Binary regression Logistic regression Multinomial logistic regression Mixed logit Probit Multinomial probit Ordered logit Ordered probit Poisson Multilevel model Fixed effects Random effects Linear mixed-effects model Nonlinear mixed-effects model Nonlinear regression Nonparametric Semiparametric Robust Quantile Isotonic Principal components Least angle Local Segmented Errors-in-variables Estimation Least squares Linear Non-linear Ordinary Weighted Generalized Generalized estimating equation Partial Total Non-negative Ridge regression Regularized Least absolute deviations Iteratively reweighted Bayesian Bayesian multivariate Least-squares spectral analysis Background Regression validation Mean and predicted response Errors and residuals Goodness of fit Studentized residual Gauss–Markov theorem Mathematics portal In statistics , linear regression is a model that estimates the relationship between a scalar response ( dependent variable ) and one or more explanatory variables ( regressor or independent variable ). \" Linear regression is linear in its unknown parameters (i.e., the parameters appear only to the first power) not necessarily in variables.\" From a mathematical perspective , X and Y are treated as variables, and the parameters are considered fixed constants but from a statistics perspective , the focus is on the parameters. Once we substitute observed data for X and Y, the model becomes a function of the parameters, which then behave like variables that need to be estimated. Examples of linear regression Y = &#x03B2; 0 + &#x03B2; 1 X + &#x03F5; {\\displaystyle Y=\\beta _{0}+\\beta _{1}X+\\epsilon } Y = &#x03B2; 0 + &#x03B2; 1 X 2 + &#x03F5; {\\displaystyle Y=\\beta _{0}+\\beta _{1}X^{2}+\\epsilon } Y = &#x03B2; 0 + &#x03B2; 1 l n X + &#x03F5; {\\displaystyle Y=\\beta _{0}+\\beta _{1}lnX+\\epsilon } In the above equations, the coefficients (parameters) are linear (i.e., raised to the power of 1). Examples of non-linear regression Y = &#x03B2; 0 + &#x03B2; 1 2 X + &#x03F5; {\\displaystyle Y=\\beta _{0}+\\beta _{1}^{2}X+\\epsilon } Y = l n &#x03B2; 1 X + &#x03F5; {\\displaystyle Y=ln\\beta _{1}X+\\epsilon } In the above equations, the coefficients (parameters) are non-linear. A model with exactly one explanatory variable is a simple linear regression ; a model with two or more explanatory variables is a multiple linear regression. 1 This term is distinct from multivariate linear regression , which predicts multiple correlated dependent variables rather than a single dependent variable. 2 In linear regression, the relationships are modeled using linear predictor functions whose unknown model parameters are estimated from the data. Most commonly, the conditional mean of the response given the values of the explanatory variables (or predictors) is assumed to be an affine function of those values; less commonly, the conditional median or some other quantile is used. Like all forms of regression analysis , linear regression focuses on the conditional probability distribution of the response given the values of the predictors, rather than on the joint probability distribution of all of these variables, which is the domain of multivariate analysis. Linear regression is also a type of machine learning algorithm , more specifically a supervised algorithm, that learns from the labelled datasets and maps the data points to the most optimized linear functions that can be used for prediction on new datasets. 3 Linear regression was the first type of regression analysis to be studied rigorously, and to be used extensively in practical applications. 4 This is because models which depend linearly on their unknown parameters are easier to fit than models which are non-linearly related to their parameters and because the statistical properties of the resulting estimators are easier to determine. Linear regression has many practical uses. Most applications fall into one of the following two broad categories: If the goal is to reduce error, i.e. variance in prediction or forecasting , linear regression can be used to fit a predictive model to an observed data set of values of the response and explanatory variables. After developing such a model, if additional values of the explanatory variables are collected without an accompanying response value, the fitted model can be used to make a prediction of the response.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/linear_regression",
+      "type": "txt"
+    },
+    {
+      "title": "A Performance Study of Data Mining Techniques: Multiple Linear Regression vs. Factor Analysis",
+      "content": "论文标题: A Performance Study of Data Mining Techniques: Multiple Linear Regression vs. Factor Analysis\n\n作者: Abhishek Taneja, R. K. Chauhan\n\n摘要: The growing volume of data usually creates an interesting challenge for the need of data analysis tools that discover regularities in these data. Data mining has emerged as disciplines that contribute tools for data analysis, discovery of hidden knowledge, and autonomous decision making in many application domains. The purpose of this study is to compare the performance of two data mining techniques viz., factor analysis and multiple linear regression for different sample sizes on three unique sets of data. The performance of the two data mining techniques is compared on following parameters like mean square error (MSE), R-square, R-Square adjusted, condition number, root mean square error(RMSE), number of variables included in the prediction model, modified coefficient of efficiency, F-value, and test of normality. These parameters have been computed using various data mining tools like SPSS, XLstat, Stata, and MS-Excel. It is seen that for all the given dataset, factor analysis outpe...\n\narXiv链接: http://arxiv.org/abs/1108.5592v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1108.5592v1",
+      "type": "txt"
+    },
+    {
+      "title": "Adaptive Optimizable Gaussian Process Regression Linear Least Squares Regression Filtering Method for SEM Images",
+      "content": "论文标题: Adaptive Optimizable Gaussian Process Regression Linear Least Squares Regression Filtering Method for SEM Images\n\n作者: D. Chee Yong Ong, I. Bukhori, K. S. Sim, K. Beng Gan\n\n摘要: Scanning Electron Microscopy (SEM) images often suffer from noise contamination, which degrades image quality and affects further analysis. This research presents a complete approach to estimate their Signal-to-Noise Ratio (SNR) and noise variance (NV), and enhance image quality using NV-guided Wiener filter. The main idea of this study is to use a good SNR estimation technique and infuse a machine learning model to estimate NV of the SEM image, which then guides the wiener filter to remove the noise, providing a more robust and accurate SEM image filtering pipeline. First, we investigate five different SNR estimation techniques, namely Nearest Neighbourhood (NN) method, First-Order Linear Interpolation (FOL) method, Nearest Neighbourhood with First-Order Linear Interpolation (NN+FOL) method, Non-Linear Least Squares Regression (NLLSR) method, and Linear Least Squares Regression (LSR) method. It is shown that LSR method to perform better than the rest. Then, Support Vector Machines (SV...\n\narXiv链接: http://arxiv.org/abs/2510.07895v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2510.07895v1",
+      "type": "txt"
+    },
+    {
+      "title": "Admissibility of the usual confidence interval in linear regression",
+      "content": "论文标题: Admissibility of the usual confidence interval in linear regression\n\n作者: Paul Kabaila, Khageswor Giri, Hannes Leeb\n\n摘要: Consider a linear regression model with independent and identically normally distributed random errors. Suppose that the parameter of interest is a specified linear combination of the regression parameters. We prove that the usual confidence interval for this parameter is admissible within a broad class of confidence intervals.\n\narXiv链接: http://arxiv.org/abs/1001.2939v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1001.2939v1",
+      "type": "txt"
+    },
+    {
+      "title": "Precision and recall - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Precision recall ) Pattern-recognition performance metrics Precision and recall In pattern recognition, information retrieval , object detection and classification (machine learning) , precision and recall are performance metrics that apply to data retrieved from a collection , corpus or sample space. Precision (also called positive predictive value ) is the fraction of relevant instances among the retrieved instances. Written as a formula: Precision = Relevant retrieved instances All&#xA0; retrieved &#xA0;instances {\\displaystyle {\\text{Precision}}={\\frac {\\text{Relevant retrieved instances}}{{\\text{All }}{\\textbf {retrieved}}{\\text{ instances}}}}} Recall (also known as sensitivity ) is the fraction of relevant instances that were retrieved. Written as a formula: Recall = Relevant retrieved instances All&#xA0; relevant &#xA0;instances {\\displaystyle {\\text{Recall}}={\\frac {\\text{Relevant retrieved instances}}{{\\text{All }}{\\textbf {relevant}}{\\text{ instances}}}}} Both precision and recall are therefore based on relevance. Consider a computer program for recognizing dogs (the relevant element) in a digital photograph. Upon processing a picture which contains ten cats and twelve dogs, the program identifies eight dogs. Of the eight elements identified as dogs, only five actually are dogs ( true positives ), while the other three are cats ( false positives ). Seven dogs were missed ( false negatives ), and seven cats were correctly excluded ( true negatives ). The program's precision is then 5/8 (true positives / selected elements) while its recall is 5/12 (true positives / relevant elements). Adopting a hypothesis-testing approach, where in this case, the null hypothesis is that a given item is irrelevant (not a dog), absence of type I and type II errors (perfect specificity and sensitivity ) corresponds respectively to perfect precision (no false positives) and perfect recall (no false negatives). More generally, recall is simply the complement of the type II error rate (i.e., one minus the type II error rate). Precision is related to the type I error rate, but in a slightly more complicated way, as it also depends upon the prior distribution of seeing a relevant vs. The above cat and dog example contained 8 5 = 3 type I errors (false positives) out of 10 total cats (true negatives), for a type I error rate of 3/10, and 12 5 = 7 type II errors (false negatives), for a type II error rate of 7/12. Precision can be seen as a measure of quality, and recall as a measure of quantity. Higher precision means that an algorithm returns more relevant results than irrelevant ones, and high recall means that an algorithm returns most of the relevant results (whether or not irrelevant ones are also returned). A dog classifier example. This classifier successfully identified 5 images as containing a dog, but misidentified 3 cats as being dogs. In a classification task, the precision for a class is the number of true positives (i.e. the number of items correctly labelled as belonging to the positive class) divided by the total number of elements labelled as belonging to the positive class (i.e. the sum of true positives and false positives , which are items incorrectly labelled as belonging to the class). Recall in this context is defined as the number of true positives divided by the total number of elements that actually belong to the positive class (i.e. the sum of true positives and false negatives , which are items which were not labelled as belonging to the positive class but should have been). Precision and recall are not particularly useful metrics when used in isolation. For instance, it is possible to have perfect recall by simply retrieving every single item. Likewise, it is possible to achieve perfect precision by selecting only a very small number of extremely likely items. In a classification task, a precision score of 1.0 for a class C means that every item labelled as belonging to class C does indeed belong to class C (but says nothing about the number of items from class C that were not labelled correctly) whereas a recall of 1.0 means that every item from class C was labelled as belonging to class C (but says nothing about how many items from other classes were incorrectly also labelled as belonging to class C). Often, there is an inverse relationship between precision and recall, where it is possible to increase one at the cost of reducing the other, but context may dictate if one is more valued in a given situation: A smoke detector is generally designed to commit many Type I errors (to alert in many situations when there is no danger), because the cost of a Type II error (failing to sound an alarm during a major fire) is prohibitively high. As such, smoke detectors are designed with recall in mind (to catch all real danger), even while giving little weight to the losses in precision (and making many false alarms).",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/precision_recall",
+      "type": "txt"
+    },
+    {
+      "title": "Microstructures and Accuracy of Graph Recall by Large Language Models",
+      "content": "论文标题: Microstructures and Accuracy of Graph Recall by Large Language Models\n\n作者: Yanbang Wang, Hejie Cui, Jon Kleinberg\n\n摘要: Graphs data is crucial for many applications, and much of it exists in the relations described in textual format. As a result, being able to accurately recall and encode a graph described in earlier text is a basic yet pivotal ability that LLMs need to demonstrate if they are to perform reasoning tasks that involve graph-structured information. Human performance at graph recall has been studied by cognitive scientists for decades, and has been found to often exhibit certain structural patterns of bias that align with human handling of social relationships. To date, however, we know little about how LLMs behave in analogous graph recall tasks: do their recalled graphs also exhibit certain biased patterns, and if so, how do they compare with humans and affect other graph reasoning tasks? In this work, we perform the first systematical study of graph recall by LLMs, investigating the accuracy and biased microstructures (local structural patterns) in their recall. We find that LLMs not onl...\n\narXiv链接: http://arxiv.org/abs/2402.11821v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2402.11821v3",
+      "type": "txt"
+    },
+    {
+      "title": "Precision Spectroscopy of Molecular Hydrogen Ions: Towards Frequency Metrology of Particle Masses",
+      "content": "论文标题: Precision Spectroscopy of Molecular Hydrogen Ions: Towards Frequency Metrology of Particle Masses\n\n作者: B. Roth, J. Koelemeij, S. Schiller, L. Hilico, J. -Ph. Karr\n\n摘要: We describe the current status of high-precision ab initio calculations of the spectra of molecular hydrogen ions (H_2^+ and HD^+) and of two experiments for vibrational spectroscopy. The perspectives for a comparison between theory and experiment at a level of 1 ppb are considered.\n\narXiv链接: http://arxiv.org/abs/physics/0612106v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/physics/0612106v1",
+      "type": "txt"
+    },
+    {
+      "title": "Precision and Recall Reject Curves for Classification",
+      "content": "论文标题: Precision and Recall Reject Curves for Classification\n\n作者: Lydia Fischer, Patricia Wollstadt\n\n摘要: For some classification scenarios, it is desirable to use only those classification instances that a trained model associates with a high certainty. To obtain such high-certainty instances, previous work has proposed accuracy-reject curves. Reject curves allow to evaluate and compare the performance of different certainty measures over a range of thresholds for accepting or rejecting classifications. However, the accuracy may not be the most suited evaluation metric for all applications, and instead precision or recall may be preferable. This is the case, for example, for data with imbalanced class distributions. We therefore propose reject curves that evaluate precision and recall, the recall-reject curve and the precision-reject curve. Using prototype-based classifiers from learning vector quantization, we first validate the proposed curves on artificial benchmark data against the accuracy reject curve as a baseline. We then show on imbalanced benchmarks and medical, real-world data ...\n\narXiv链接: http://arxiv.org/abs/2308.08381v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2308.08381v3",
+      "type": "txt"
+    },
+    {
+      "title": "Supervised learning - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Machine learning paradigm In supervised learning, the training data is labeled with the expected answers, while in unsupervised learning , the model identifies patterns or structures in unlabeled data. In machine learning , supervised learning ( SL ) is a type of machine learning paradigm where an algorithm learns to map input data to a specific output based on example input-output pairs. This process involves training a statistical model using labeled data , meaning each piece of input data is provided with the correct output. The term \"supervised\" refers to the role of a teacher or supervisor who provides this training data, guiding the algorithm towards correct predictions. 1 For instance, if you want a model to identify cats in images, supervised learning would involve feeding it many images of cats (inputs) that are explicitly labeled \"cat\" (outputs). The goal of supervised learning is for the trained model to accurately predict the output for new, unseen data. 2 This requires the algorithm to effectively generalize from the training examples, a quality measured by its generalization error. Supervised learning is commonly used for tasks like classification (predicting a category, e.g., spam or not spam) and regression (predicting a continuous value, e.g., house prices). To solve a given problem of supervised learning, the following steps must be performed: A wide range of supervised learning algorithms are available, each with its strengths and weaknesses. There is no single learning algorithm that works best on all supervised learning problems (see the No free lunch theorem ). There are four major issues to consider in supervised learning: A first issue is the tradeoff between bias and variance. 3 Imagine that we have available several different, but equally good, training data sets. A learning algorithm is biased for a particular input x {\\displaystyle x} if, when trained on each of these data sets, it is systematically incorrect when predicting the correct output for x {\\displaystyle x}. A learning algorithm has high variance for a particular input x {\\displaystyle x} if it predicts different output values when trained on different training sets. The prediction error of a learned classifier is related to the sum of the bias and the variance of the learning algorithm. 4 Generally, there is a tradeoff between bias and variance. A learning algorithm with low bias must be \"flexible\" so that it can fit the data well. But if the learning algorithm is too flexible, it will fit each training data set differently, and hence have high variance. A key aspect of many supervised learning methods is that they are able to adjust this tradeoff between bias and variance (either automatically or by providing a bias/variance parameter that the user can adjust). The second issue is of the amount of training data available relative to the complexity of the \"true\" function (classifier or regression function). If the true function is simple, then an \"inflexible\" learning algorithm with high bias and low variance will be able to learn it from a small amount of data. But if the true function is highly complex (e.g., because it involves complex interactions among many different input features and behaves differently in different parts of the input space), then the function will only be able to learn with a large amount of training data paired with a \"flexible\" learning algorithm with low bias and high variance. A third issue is the dimensionality of the input space. If the input feature vectors have large dimensions, learning the function can be difficult even if the true function only depends on a small number of those features. This is because the many \"extra\" dimensions can confuse the learning algorithm and cause it to have high variance. Hence, input data of large dimensions typically requires tuning the classifier to have low variance and high bias. In practice, if the engineer can manually remove irrelevant features from the input data, it will likely improve the accuracy of the learned function. In addition, there are many algorithms for feature selection that seek to identify the relevant features and discard the irrelevant ones. This is an instance of the more general strategy of dimensionality reduction , which seeks to map the input data into a lower-dimensional space prior to running the supervised learning algorithm. A fourth issue is the degree of noise in the desired output values (the supervisory target variables ). If the desired output values are often incorrect (because of human error or sensor errors), then the learning algorithm should not attempt to find a function that exactly matches the training examples. Attempting to fit the data too carefully leads to overfitting. You can overfit even when there are no measurement errors (stochastic noise) if the function you are trying to learn is too complex for your learning model.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/supervised_learning",
+      "type": "txt"
+    },
+    {
+      "title": "Active WeaSuL: Improving Weak Supervision with Active Learning",
+      "content": "论文标题: Active WeaSuL: Improving Weak Supervision with Active Learning\n\n作者: Samantha Biegel, Rafah El-Khatib, Luiz Otavio Vilas Boas Oliveira, Max Baak, Nanne Aben\n\n摘要: The availability of labelled data is one of the main limitations in machine learning. We can alleviate this using weak supervision: a framework that uses expert-defined rules $\\boldsymbolλ$ to estimate probabilistic labels $p(y|\\boldsymbolλ)$ for the entire data set. These rules, however, are dependent on what experts know about the problem, and hence may be inaccurate or may fail to capture important parts of the problem-space. To mitigate this, we propose Active WeaSuL: an approach that incorporates active learning into weak supervision. In Active WeaSuL, experts do not only define rules, but they also iteratively provide the true label for a small set of points where the weak supervision model is most likely to be mistaken, which are then used to better estimate the probabilistic labels. In this way, the weak labels provide a warm start, which active learning then improves upon. We make two contributions: 1) a modification of the weak supervision loss function, such that the expert-...\n\narXiv链接: http://arxiv.org/abs/2104.14847v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2104.14847v1",
+      "type": "txt"
+    },
+    {
+      "title": "Learning to Impute: A General Framework for Semi-supervised Learning",
+      "content": "论文标题: Learning to Impute: A General Framework for Semi-supervised Learning\n\n作者: Wei-Hong Li, Chuan-Sheng Foo, Hakan Bilen\n\n摘要: Recent semi-supervised learning methods have shown to achieve comparable results to their supervised counterparts while using only a small portion of labels in image classification tasks thanks to their regularization strategies. In this paper, we take a more direct approach for semi-supervised learning and propose learning to impute the labels of unlabeled samples such that a network achieves better generalization when it is trained on these labels. We pose the problem in a learning-to-learn formulation which can easily be incorporated to the state-of-the-art semi-supervised techniques and boost their performance especially when the labels are limited. We demonstrate that our method is applicable to both classification and regression problems including image classification and facial landmark detection tasks.\n\narXiv链接: http://arxiv.org/abs/1912.10364v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1912.10364v3",
+      "type": "txt"
+    },
+    {
+      "title": "Tradeoffs Between Contrastive and Supervised Learning: An Empirical Study",
+      "content": "论文标题: Tradeoffs Between Contrastive and Supervised Learning: An Empirical Study\n\n作者: Ananya Karthik, Mike Wu, Noah Goodman, Alex Tamkin\n\n摘要: Contrastive learning has made considerable progress in computer vision, outperforming supervised pretraining on a range of downstream datasets. However, is contrastive learning the better choice in all situations? We demonstrate two cases where it is not. First, under sufficiently small pretraining budgets, supervised pretraining on ImageNet consistently outperforms a comparable contrastive model on eight diverse image classification datasets. This suggests that the common practice of comparing pretraining approaches at hundreds or thousands of epochs may not produce actionable insights for those with more limited compute budgets. Second, even with larger pretraining budgets we identify tasks where supervised learning prevails, perhaps because the object-centric bias of supervised pretraining makes the model more resilient to common corruptions and spurious foreground-background correlations. These results underscore the need to characterize tradeoffs of different pretraining objective...\n\narXiv链接: http://arxiv.org/abs/2112.05340v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2112.05340v1",
+      "type": "txt"
+    },
+    {
+      "title": "Gradient - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Multivariate derivative (mathematics) This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. Find sources: \"Gradient\" – news · newspapers · books · scholar · JSTOR ( January 2018 ) ( Learn how and when to remove this message ) The gradient, represented by the blue arrows, denotes the direction of greatest change of a scalar function. The values of the function are represented in greyscale and increase in value from white (low) to dark (high). Part of a series of articles about Calculus &#x222B; a b f &#x2032; ( t ) d t = f ( b ) &#x2212; f ( a ) {\\displaystyle \\int _{a}^{b}f'(t)\\,dt=f(b)-f(a)} Fundamental theorem Limits Continuity Rolle's theorem Mean value theorem Inverse function theorem In vector calculus , the gradient of a scalar-valued differentiable function f {\\displaystyle f} of several variables is the vector field (or vector-valued function ) &#x2207; f {\\displaystyle \\nabla f} whose value at a point p {\\displaystyle p} gives the direction and the rate of fastest increase. The gradient transforms like a vector under change of basis of the space of variables of f {\\displaystyle f}. If the gradient of a function is non-zero at a point p {\\displaystyle p} , the direction of the gradient is the direction in which the function increases most quickly from p {\\displaystyle p} , and the magnitude of the gradient is the rate of increase in that direction, the greatest absolute directional derivative. 1 Further, a point where the gradient is the zero vector is known as a stationary point. The gradient thus plays a fundamental role in optimization theory , machine learning , and artificial intelligence , where it is used to minimize a function by gradient descent. In coordinate-free terms, the gradient of a function f ( r ) {\\displaystyle f(\\mathbf {r} )} may be defined by: d f = &#x2207; f &#x22C5; d r {\\displaystyle df=\\nabla f\\cdot d\\mathbf {r} } where d f {\\displaystyle df} is the total infinitesimal change in f {\\displaystyle f} for an infinitesimal displacement d r {\\displaystyle d\\mathbf {r} } , and is seen to be maximal when d r {\\displaystyle d\\mathbf {r} } is in the direction of the gradient &#x2207; f {\\displaystyle \\nabla f}. The nabla symbol &#x2207; {\\displaystyle \\nabla } , written as an upside-down triangle and pronounced \"del\", denotes the vector differential operator. When a coordinate system is used in which the basis vectors are not functions of position, the gradient is given by the vector a whose components are the partial derivatives of f {\\displaystyle f} at p {\\displaystyle p}. 2 That is, for f &#x003A; R n &#x2192; R {\\displaystyle f\\colon \\mathbb {R} ^{n}\\to \\mathbb {R} } , its gradient &#x2207; f &#x003A; R n &#x2192; R n {\\displaystyle \\nabla f\\colon \\mathbb {R} ^{n}\\to \\mathbb {R} ^{n}} is defined at the point p = ( x 1 , &#x2026; , x n ) {\\displaystyle p=(x_{1},\\ldots ,x_{n})} in n -dimensional space as the vector b &#x2207; f ( p ) = [ &#x2202; f &#x2202; x 1 ( p ) &#x22EE; &#x2202; f &#x2202; x n ( p ) ] {\\displaystyle \\nabla f(p)={\\begin{bmatrix}{\\frac {\\partial f}{\\partial x_{1}}}(p)\\\\\\vdots \\\\{\\frac {\\partial f}{\\partial x_{n}}}(p)\\end{bmatrix}}}. Note that the above definition for gradient is defined for the function f {\\displaystyle f} only if f {\\displaystyle f} is differentiable at p {\\displaystyle p}. There can be functions for which partial derivatives exist in every direction but fail to be differentiable. Furthermore, this definition as the vector of partial derivatives is only valid when the basis of the coordinate system is orthonormal. For any other basis, the metric tensor at that point needs to be taken into account. For example, the function f ( x , y ) = x 2 y x 2 + y 2 {\\displaystyle f(x,y)={\\frac {x^{2}y}{x^{2}+y^{2}}}} unless at origin where f ( 0 , 0 ) = 0 {\\displaystyle f(0,0)=0} , is not differentiable at the origin as it does not have a well defined tangent plane despite having well defined partial derivatives in every direction at the origin. 3 In this particular example, under rotation of x-y coordinate system, the above formula for gradient fails to transform like a vector (gradient becomes dependent on choice of basis for coordinate system) and also fails to point towards the 'steepest ascent' in some orientations. For differentiable functions where the formula for gradient holds, it can be shown to always transform as a vector under transformation of the basis so as to always point towards the fastest increase. The gradient is dual to the total derivative d f {\\displaystyle df} : the value of the gradient at a point is a tangent vector – a vector at each point; while the value of the derivative at a point is a co tangent vector – a linear functional on vectors.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/gradient",
+      "type": "txt"
+    },
+    {
+      "title": "Gradient Testing and Estimation by Comparisons",
+      "content": "论文标题: Gradient Testing and Estimation by Comparisons\n\n作者: Xiwen Tao, Chenyi Zhang, Helin Wang, Yexin Zhang, Tongyang Li\n\n摘要: We study gradient testing and gradient estimation of smooth functions using only a comparison oracle that, given two points, indicates which one has the larger function value. For any smooth $f\\colon\\mathbb R^n\\to\\mathbb R$, $\\mathbf{x}\\in\\mathbb R^n$, and $\\varepsilon&gt;0$, we design a gradient testing algorithm that determines whether the normalized gradient $\\nabla f(\\mathbf{x})/\\|\\nabla f(\\mathbf{x})\\|$ is $\\varepsilon$-close or $2\\varepsilon$-far from a given unit vector $\\mathbf{v}$ using $O(1)$ queries, as well as a gradient estimation algorithm that outputs an $\\varepsilon$-estimate of $\\nabla f(\\mathbf{x})/\\|\\nabla f(\\mathbf{x})\\|$ using $O(n\\log(1/\\varepsilon))$ queries which we prove to be optimal. Furthermore, we study gradient estimation in the quantum comparison oracle model where queries can be made in superpositions, and develop a quantum algorithm using $O(\\log (n/\\varepsilon))$ queries.\n\narXiv链接: http://arxiv.org/abs/2405.11454v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2405.11454v2",
+      "type": "txt"
+    },
+    {
+      "title": "Quadratic Gradient: A Unified Framework Bridging Gradient Descent and Newton-Type Methods by Synthesizing Hessians and Gradients",
+      "content": "论文标题: Quadratic Gradient: A Unified Framework Bridging Gradient Descent and Newton-Type Methods by Synthesizing Hessians and Gradients\n\n作者: John Chiang\n\n摘要: Accelerating the convergence of second-order optimization, particularly Newton-type methods, remains a pivotal challenge in algorithmic research. In this paper, we extend previous work on the \\textbf{Quadratic Gradient (QG)} and rigorously validate its applicability to general convex numerical optimization problems. We introduce a novel variant of the Quadratic Gradient that departs from the conventional fixed Hessian Newton framework. We present a new way to build a new version of the quadratic gradient. This new quadratic gradient doesn't satisfy the convergence conditions of the fixed Hessian Newton's method. However, experimental results show that it sometimes has a better performance than the original one in convergence rate. While this variant relaxes certain classical convergence constraints, it maintains a positive-definite Hessian proxy and demonstrates comparable, or in some cases superior, empirical performance in convergence rates. Furthermore, we demonstrate that both the ...\n\narXiv链接: http://arxiv.org/abs/2209.03282v4\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2209.03282v4",
+      "type": "txt"
+    },
+    {
+      "title": "Gradient Equilibrium in Online Learning: Theory and Applications",
+      "content": "论文标题: Gradient Equilibrium in Online Learning: Theory and Applications\n\n作者: Anastasios N. Angelopoulos, Michael I. Jordan, Ryan J. Tibshirani\n\n摘要: We present a new perspective on online learning that we refer to as gradient equilibrium: a sequence of iterates achieves gradient equilibrium if the average of gradients of losses along the sequence converges to zero. In general, this condition is not implied by, nor implies, sublinear regret. It turns out that gradient equilibrium is achievable by standard online learning methods such as gradient descent and mirror descent with constant step sizes (rather than decaying step sizes, as is usually required for no regret). Further, as we show through examples, gradient equilibrium translates into an interpretable and meaningful property in online prediction problems spanning regression, classification, quantile estimation, and others. Notably, we show that the gradient equilibrium framework can be used to develop a debiasing scheme for black-box predictions under arbitrary distribution shift, based on simple post hoc online descent updates. We also show that post hoc gradient updates can...\n\narXiv链接: http://arxiv.org/abs/2501.08330v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2501.08330v3",
+      "type": "txt"
+    },
+    {
+      "title": "Deep learning - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Branch of machine learning Representing images on multiple layers of abstraction in deep learning 1 Part of a series on Artificial intelligence (AI) In machine learning , deep learning ( DL ) focuses on utilizing multilayered neural networks to perform tasks such as classification , regression , and representation learning. The field takes inspiration from biological neuroscience and revolves around stacking artificial neurons into layers and \"training\" them to process data. The adjective \"deep\" refers to the use of multiple layers (ranging from three to several hundred or thousands) in the network. Methods used can be supervised , semi-supervised or unsupervised. 2 Some common deep learning network architectures include fully connected networks , deep belief networks , recurrent neural networks , convolutional neural networks , generative adversarial networks , transformers , and neural radiance fields. These architectures have been applied to fields including computer vision , speech recognition , natural language processing , machine translation , bioinformatics , drug design , medical image analysis , climate science , material inspection and board game programs, where they have produced results comparable to and in some cases surpassing human expert performance. 3 4 5 Early forms of neural networks were inspired by information processing and distributed communication nodes in biological systems , particularly the human brain. However, current neural networks do not intend to model the brain function of organisms, and are generally seen as low-quality models for that purpose. 6 Most modern deep learning models are based on multi-layered neural networks such as convolutional neural networks and transformers , although they can also include propositional formulas or latent variables organized layer-wise in deep generative models such as the nodes in deep belief networks and deep Boltzmann machines. 7 Fundamentally, deep learning refers to a class of machine learning algorithms in which a hierarchy of layers is used to transform input data into a progressively more abstract and composite representation. For example, in an image recognition model, the raw input may be an image (represented as a tensor of pixels ). The first representational layer may attempt to identify basic shapes such as lines and circles, the second layer may compose and encode arrangements of edges, the third layer may encode a nose and eyes, and the fourth layer may recognize that the image contains a face. Importantly, a deep learning process can learn which features to optimally place at which level on its own. Prior to deep learning, machine learning techniques often involved hand-crafted feature engineering to transform the data into a more suitable representation for a classification algorithm to operate on. In the deep learning approach, features are not hand-crafted and the model discovers useful feature representations from the data automatically. This does not eliminate the need for hand-tuning; for example, varying numbers of layers and layer sizes can provide different degrees of abstraction. 8 2 The word \"deep\" in \"deep learning\" refers to the number of layers through which the data is transformed. More precisely, deep learning systems have a substantial credit assignment path (CAP) depth. The CAP is the chain of transformations from input to output. CAPs describe potentially causal connections between input and output. For a feedforward neural network , the depth of the CAPs is that of the network and is the number of hidden layers plus one (as the output layer is also parameterized). For recurrent neural networks , in which a signal may propagate through a layer more than once, the CAP depth is potentially unlimited. CAP of depth two has been shown to be a universal approximator in the sense that it can emulate any function. 10 Beyond that, more layers do not add to the function approximator ability of the network. Deep models (CAP two) are able to extract better features than shallow models and hence, extra layers help in learning the features effectively. Deep learning architectures can be constructed with a greedy layer-by-layer method. 11 Deep learning helps to disentangle these abstractions and pick out which features improve performance. 8 Deep learning algorithms can be applied to unsupervised learning tasks. This is an important benefit because unlabeled data is more abundant than labeled data. Examples of deep structures that can be trained in an unsupervised manner are deep belief networks. 8 12 The term deep learning was introduced to the machine learning community by Rina Dechter in 1986, 13 and to artificial neural networks by Igor Aizenberg and colleagues in 2000, in the context of Boolean threshold neurons. 14 15 The etymology of the term is more complicated.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/deep_learning",
+      "type": "txt"
+    },
+    {
+      "title": "Learn to Accumulate Evidence from All Training Samples: Theory and Practice",
+      "content": "论文标题: Learn to Accumulate Evidence from All Training Samples: Theory and Practice\n\n作者: Deep Pandey, Qi Yu\n\n摘要: Evidential deep learning, built upon belief theory and subjective logic, offers a principled and computationally efficient way to turn a deterministic neural network uncertainty-aware. The resultant evidential models can quantify fine-grained uncertainty using the learned evidence. To ensure theoretically sound evidential models, the evidence needs to be non-negative, which requires special activation functions for model training and inference. This constraint often leads to inferior predictive performance compared to standard softmax models, making it challenging to extend them to many large-scale datasets. To unveil the real cause of this undesired behavior, we theoretically investigate evidential models and identify a fundamental limitation that explains the inferior performance: existing evidential activation functions create zero evidence regions, which prevent the model to learn from training samples falling into such regions. A deeper analysis of evidential activation functions ...\n\narXiv链接: http://arxiv.org/abs/2306.11113v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2306.11113v2",
+      "type": "txt"
+    },
+    {
+      "title": "The Modern Mathematics of Deep Learning",
+      "content": "论文标题: The Modern Mathematics of Deep Learning\n\n作者: Julius Berner, Philipp Grohs, Gitta Kutyniok, Philipp Petersen\n\n摘要: We describe the new field of mathematical analysis of deep learning. This field emerged around a list of research questions that were not answered within the classical framework of learning theory. These questions concern: the outstanding generalization power of overparametrized neural networks, the role of depth in deep architectures, the apparent absence of the curse of dimensionality, the surprisingly successful optimization performance despite the non-convexity of the problem, understanding what features are learned, why deep architectures perform exceptionally well in physical problems, and which fine aspects of an architecture affect the behavior of a learning task in which way. We present an overview of modern approaches that yield partial answers to these questions. For selected approaches, we describe the main ideas in more detail.\n\narXiv链接: http://arxiv.org/abs/2105.04026v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2105.04026v2",
+      "type": "txt"
+    },
+    {
+      "title": "Deep Learning and Computational Physics (Lecture Notes)",
+      "content": "论文标题: Deep Learning and Computational Physics (Lecture Notes)\n\n作者: Deep Ray, Orazio Pinti, Assad A. Oberai\n\n摘要: These notes were compiled as lecture notes for a course developed and taught at the University of the Southern California. They should be accessible to a typical engineering graduate student with a strong background in Applied Mathematics.   The main objective of these notes is to introduce a student who is familiar with concepts in linear algebra and partial differential equations to select topics in deep learning. These lecture notes exploit the strong connections between deep learning algorithms and the more conventional techniques of computational physics to achieve two goals. First, they use concepts from computational physics to develop an understanding of deep learning algorithms. Not surprisingly, many concepts in deep learning can be connected to similar concepts in computational physics, and one can utilize this connection to better understand these algorithms. Second, several novel deep learning algorithms can be used to solve challenging problems in computational physics. T...\n\narXiv链接: http://arxiv.org/abs/2301.00942v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2301.00942v1",
+      "type": "txt"
+    }
+  ],
+  "video": [
+    {
+      "title": "Stanford CS229 I Machine Learning I Building Large Language Models (LLMs)",
+      "url": "https://www.youtube.com/watch?v=9vM4p9NN0Ts",
+      "description": "YouTube视频: Stanford CS229 I Machine Learning I Building Large Language Models (LLMs)",
+      "video_id": "9vM4p9NN0Ts",
+      "thumbnail": "https://i.ytimg.com/vi/9vM4p9NN0Ts/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoWDAP&rs=AOn4CLAkzupviVlheO8hQYbTm-UNV-Otmg",
+      "type": "video"
+    },
+    {
+      "title": "Machine Learning for Everybody – Full Course",
+      "url": "https://www.youtube.com/watch?v=i_LwzRVP7bg",
+      "description": "YouTube视频: Machine Learning for Everybody – Full Course",
+      "video_id": "i_LwzRVP7bg",
+      "thumbnail": "https://i.ytimg.com/vi/i_LwzRVP7bg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5gPfHa7NUFEhJ5oMVIyDG3zjJtg",
+      "type": "video"
+    },
+    {
+      "title": "AI, Machine Learning, Deep Learning and Generative AI Explained",
+      "url": "https://www.youtube.com/watch?v=qYNweeDHiyU",
+      "description": "YouTube视频: AI, Machine Learning, Deep Learning and Generative AI Explained",
+      "video_id": "qYNweeDHiyU",
+      "thumbnail": "https://i.ytimg.com/vi/qYNweeDHiyU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDqKEjbYKsQ5UOPed6OpHoLzjvSqw",
+      "type": "video"
+    },
+    {
+      "title": "11. Introduction to Machine Learning",
+      "url": "https://www.youtube.com/watch?v=h0e2HAPTGF4",
+      "description": "YouTube视频: 11. Introduction to Machine Learning",
+      "video_id": "h0e2HAPTGF4",
+      "thumbnail": "https://i.ytimg.com/vi/h0e2HAPTGF4/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLBzBlO_7G61g2WdNjPlskJa3K0O0Q",
+      "type": "video"
+    },
+    {
+      "title": "Computer Scientist Explains Machine Learning in 5 Levels of Difficulty | WIRED",
+      "url": "https://www.youtube.com/watch?v=5q87K1WaoFI",
+      "description": "YouTube视频: Computer Scientist Explains Machine Learning in 5 Levels of Difficulty | WIRED",
+      "video_id": "5q87K1WaoFI",
+      "thumbnail": "https://i.ytimg.com/vi/5q87K1WaoFI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAcF9fy4FHrUKQRvgRKU1Qz65ClgQ",
+      "type": "video"
+    },
+    {
+      "title": "AI vs Machine Learning",
+      "url": "https://www.youtube.com/watch?v=4RixMPF4xis",
+      "description": "YouTube视频: AI vs Machine Learning",
+      "video_id": "4RixMPF4xis",
+      "thumbnail": "https://i.ytimg.com/vi/4RixMPF4xis/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAGWFlnWMT-Cgpy_QXlflBuP-h3Ug",
+      "type": "video"
+    },
+    {
+      "title": "A Gentle Introduction to Machine Learning",
+      "url": "https://www.youtube.com/watch?v=Gv9_4yMHFhI",
+      "description": "YouTube视频: A Gentle Introduction to Machine Learning",
+      "video_id": "Gv9_4yMHFhI",
+      "thumbnail": "https://i.ytimg.com/vi/Gv9_4yMHFhI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAZDBA8WYWiR2kR-p8ZGPPDD00ZyQ",
+      "type": "video"
+    },
+    {
+      "title": "Machine Learning vs Deep Learning",
+      "url": "https://www.youtube.com/watch?v=q6kJ71tEYqM",
+      "description": "YouTube视频: Machine Learning vs Deep Learning",
+      "video_id": "q6kJ71tEYqM",
+      "thumbnail": "https://i.ytimg.com/vi/q6kJ71tEYqM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_ohzUht0caI7e4xRsgmOwfPA2Nw",
+      "type": "video"
+    },
+    {
+      "title": "Machine Learning Fundamentals: Cross Validation",
+      "url": "https://www.youtube.com/watch?v=fSytzGwwBVw",
+      "description": "YouTube视频: Machine Learning Fundamentals: Cross Validation",
+      "video_id": "fSytzGwwBVw",
+      "thumbnail": "https://i.ytimg.com/vi/fSytzGwwBVw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClzFfKc7G5EW0GK8av08ZhER7N2w",
+      "type": "video"
+    },
+    {
+      "title": "Training and testing",
+      "url": "https://www.youtube.com/watch?v=P2NqrFp8usY",
+      "description": "YouTube视频: Training and testing",
+      "video_id": "P2NqrFp8usY",
+      "thumbnail": "https://i.ytimg.com/vi/P2NqrFp8usY/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIEYoNDAP&rs=AOn4CLCVGNuiJCL8xifSzVa-w-NMeP4kDQ",
+      "type": "video"
+    },
+    {
+      "title": "K-Fold Cross Validation - Intro to Machine Learning",
+      "url": "https://www.youtube.com/watch?v=TIgfjmp-4BA",
+      "description": "YouTube视频: K-Fold Cross Validation - Intro to Machine Learning",
+      "video_id": "TIgfjmp-4BA",
+      "thumbnail": "https://i.ytimg.com/vi/TIgfjmp-4BA/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIE4oRDAP&rs=AOn4CLAszdqZX--EAnkHuuaA8IXNLSygaA",
+      "type": "video"
+    },
+    {
+      "title": "Train/Dev/Test Sets (C2W1L01)",
+      "url": "https://www.youtube.com/watch?v=1waHlpKiNyY",
+      "description": "YouTube视频: Train/Dev/Test Sets (C2W1L01)",
+      "video_id": "1waHlpKiNyY",
+      "thumbnail": "https://i.ytimg.com/vi/1waHlpKiNyY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvwsnRWe-od1voELde49Mci-xQWg",
+      "type": "video"
+    },
+    {
+      "title": "Unit 1.7 | Evaluating Machine Learning Models | Part 1 | Using Validation Sets",
+      "url": "https://www.youtube.com/watch?v=PmKGsTGz_UQ",
+      "description": "YouTube视频: Unit 1.7 | Evaluating Machine Learning Models | Part 1 | Using Validation Sets",
+      "video_id": "PmKGsTGz_UQ",
+      "thumbnail": "https://i.ytimg.com/vi/PmKGsTGz_UQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAMsf79FOPBh9Eu09YRgoXJyv7XMg",
+      "type": "video"
+    },
+    {
+      "title": "Validation and Test Set Size",
+      "url": "https://www.youtube.com/watch?v=nqEYVzJLR_c",
+      "description": "YouTube视频: Validation and Test Set Size",
+      "video_id": "nqEYVzJLR_c",
+      "thumbnail": "https://i.ytimg.com/vi/nqEYVzJLR_c/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARh_ICYoGTAP&rs=AOn4CLCHdpJZ9iuT3lFJaJuLXoSDdngzXg",
+      "type": "video"
+    },
+    {
+      "title": "Training and Testing Data",
+      "url": "https://www.youtube.com/watch?v=x2dmBUEKQIA",
+      "description": "YouTube视频: Training and Testing Data",
+      "video_id": "x2dmBUEKQIA",
+      "thumbnail": "https://i.ytimg.com/vi/x2dmBUEKQIA/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIF0oTjAP&rs=AOn4CLCdmOUeJih0YDNPSEC1JDgbDY9yUg",
+      "type": "video"
+    },
+    {
+      "title": "Validation Test Set Size Continued",
+      "url": "https://www.youtube.com/watch?v=cgoB-MJObmw",
+      "description": "YouTube视频: Validation Test Set Size Continued",
+      "video_id": "cgoB-MJObmw",
+      "thumbnail": "https://i.ytimg.com/vi/cgoB-MJObmw/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIEAoSjAP&rs=AOn4CLB8vQOB3zRMv2apfcmixq6zj5lTag",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CME295 Transformers & LLMs | Autumn 2025 | Lecture 8 - LLM Evaluation",
+      "url": "https://www.youtube.com/watch?v=8fNP4N46RRo",
+      "description": "YouTube视频: Stanford CME295 Transformers & LLMs | Autumn 2025 | Lecture 8 - LLM Evaluation",
+      "video_id": "8fNP4N46RRo",
+      "thumbnail": "https://i.ytimg.com/vi/8fNP4N46RRo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDh4fji-zlZgeA7Y6U3CYRzAlojAA",
+      "type": "video"
+    },
+    {
+      "title": "How to Use the Kirkpatrick’s 4 Levels of Evaluation Model for Effective L&D Assessment",
+      "url": "https://www.youtube.com/watch?v=eV6e8PZz_WI",
+      "description": "YouTube视频: How to Use the Kirkpatrick’s 4 Levels of Evaluation Model for Effective L&D Assessment",
+      "video_id": "eV6e8PZz_WI",
+      "thumbnail": "https://i.ytimg.com/vi/eV6e8PZz_WI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCS_dhem7z8_BxxfXBGez7jz_V_VA",
+      "type": "video"
+    },
+    {
+      "title": "LLM as a Judge: Scaling AI Evaluation Strategies",
+      "url": "https://www.youtube.com/watch?v=trfUBIDeI1Y",
+      "description": "YouTube视频: LLM as a Judge: Scaling AI Evaluation Strategies",
+      "video_id": "trfUBIDeI1Y",
+      "thumbnail": "https://i.ytimg.com/vi/trfUBIDeI1Y/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDrq3ZQQEV6I7rdoLYM6qxHXPfQBA",
+      "type": "video"
+    },
+    {
+      "title": "Machine Learning Fundamentals: The Confusion Matrix",
+      "url": "https://www.youtube.com/watch?v=Kdsp6soqA7o",
+      "description": "YouTube视频: Machine Learning Fundamentals: The Confusion Matrix",
+      "video_id": "Kdsp6soqA7o",
+      "thumbnail": "https://i.ytimg.com/vi/Kdsp6soqA7o/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANWzFdKxYuWLDRkbP_eqKiqi9dpw",
+      "type": "video"
+    },
+    {
+      "title": "Evaluating and Debugging Non-Deterministic AI Agents",
+      "url": "https://www.youtube.com/watch?v=4u64WEuQHYE",
+      "description": "YouTube视频: Evaluating and Debugging Non-Deterministic AI Agents",
+      "video_id": "4u64WEuQHYE",
+      "thumbnail": "https://i.ytimg.com/vi/4u64WEuQHYE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1Y3-PyeEE8qS72ML5GUb1OjmkDg",
+      "type": "video"
+    },
+    {
+      "title": "The Kirkpatrick Model of Training Evaluation",
+      "url": "https://www.youtube.com/watch?v=7ThFfgocqrc",
+      "description": "YouTube视频: The Kirkpatrick Model of Training Evaluation",
+      "video_id": "7ThFfgocqrc",
+      "thumbnail": "https://i.ytimg.com/vi/7ThFfgocqrc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCwoh10N0GFd_LARbrbKTtXdRv74g",
+      "type": "video"
+    },
+    {
+      "title": "Feature Engineering for AI: Transforming Raw Data into Predictions",
+      "url": "https://www.youtube.com/watch?v=Bg3CjiJ67Cc",
+      "description": "YouTube视频: Feature Engineering for AI: Transforming Raw Data into Predictions",
+      "video_id": "Bg3CjiJ67Cc",
+      "thumbnail": "https://i.ytimg.com/vi/Bg3CjiJ67Cc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0Xa7cZbNCed3LMebQk9lax_cD7A",
+      "type": "video"
+    },
+    {
+      "title": "Intro to Feature Engineering with TensorFlow - Machine Learning Recipes #9",
+      "url": "https://www.youtube.com/watch?v=d12ra3b_M-0",
+      "description": "YouTube视频: Intro to Feature Engineering with TensorFlow - Machine Learning Recipes #9",
+      "video_id": "d12ra3b_M-0",
+      "thumbnail": "https://i.ytimg.com/vi/d12ra3b_M-0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI5_zgf432khqGncxpjelqDVhekA",
+      "type": "video"
+    },
+    {
+      "title": "Feature Engineering | Applied Machine Learning, Part 1",
+      "url": "https://www.youtube.com/watch?v=ABV2YS9jbzE",
+      "description": "YouTube视频: Feature Engineering | Applied Machine Learning, Part 1",
+      "video_id": "ABV2YS9jbzE",
+      "thumbnail": "https://i.ytimg.com/vi/ABV2YS9jbzE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDI4qQtxea0CDlXuyM9iNn2DMtrew",
+      "type": "video"
+    },
+    {
+      "title": "What is Feature Engineering | Feature Engineering for Web Bot Detection",
+      "url": "https://www.youtube.com/watch?v=j-kkH3q0hLE",
+      "description": "YouTube视频: What is Feature Engineering | Feature Engineering for Web Bot Detection",
+      "video_id": "j-kkH3q0hLE",
+      "thumbnail": "https://i.ytimg.com/vi/j-kkH3q0hLE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5MFhxCvZcGzrB7whC-oa0ejcXAQ",
+      "type": "video"
+    },
+    {
+      "title": "Feature Engineering in Machine Learning | Machine Learning Tutorial 2025",
+      "url": "https://www.youtube.com/watch?v=PVVSfqQZ8P0",
+      "description": "YouTube视频: Feature Engineering in Machine Learning | Machine Learning Tutorial 2025",
+      "video_id": "PVVSfqQZ8P0",
+      "thumbnail": "https://i.ytimg.com/vi/PVVSfqQZ8P0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClrf9dYio3N5kjgFvggGQHkSM5_Q",
+      "type": "video"
+    },
+    {
+      "title": "What is Feature Engineering?",
+      "url": "https://www.youtube.com/watch?v=AnZWCB1gpfE",
+      "description": "YouTube视频: What is Feature Engineering?",
+      "video_id": "AnZWCB1gpfE",
+      "thumbnail": "https://i.ytimg.com/vi/AnZWCB1gpfE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDN2JEhOIXaMLl50MWBq0iotbe6dQ",
+      "type": "video"
+    },
+    {
+      "title": "Introduction to Feature Engineering | Introduction to dplyr | Part 4",
+      "url": "https://www.youtube.com/watch?v=nVnAcE-BGvA",
+      "description": "YouTube视频: Introduction to Feature Engineering | Introduction to dplyr | Part 4",
+      "video_id": "nVnAcE-BGvA",
+      "thumbnail": "https://i.ytimg.com/vi/nVnAcE-BGvA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9WAp3JGWRJJtLhzM-eIJDJmjKbQ",
+      "type": "video"
+    },
+    {
+      "title": "Stanford EE104: Introduction to Machine Learning | 2020 | Lecture 5 - features",
+      "url": "https://www.youtube.com/watch?v=FcWpqMTz9jk",
+      "description": "YouTube视频: Stanford EE104: Introduction to Machine Learning | 2020 | Lecture 5 - features",
+      "video_id": "FcWpqMTz9jk",
+      "thumbnail": "https://i.ytimg.com/vi/FcWpqMTz9jk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA6k-zCPay-p-ztc67R4FQUwL-aLw",
+      "type": "video"
+    },
+    {
+      "title": "Indoor Bike Workout Tips & Kit | The Perfect Indoor Training Set Up",
+      "url": "https://www.youtube.com/watch?v=yYDZlWrRkp4",
+      "description": "YouTube视频: Indoor Bike Workout Tips & Kit | The Perfect Indoor Training Set Up",
+      "video_id": "yYDZlWrRkp4",
+      "thumbnail": "https://i.ytimg.com/vi/yYDZlWrRkp4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbCzlWVlPq1SC3LMv6Pvzh41qM8w",
+      "type": "video"
+    },
+    {
+      "title": "Set Up Your Mountain Bike For Indoor Training | How To Choose A Cycle Trainer",
+      "url": "https://www.youtube.com/watch?v=tmHVVECZPhw",
+      "description": "YouTube视频: Set Up Your Mountain Bike For Indoor Training | How To Choose A Cycle Trainer",
+      "video_id": "tmHVVECZPhw",
+      "thumbnail": "https://i.ytimg.com/vi/tmHVVECZPhw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAbGoy-igAauEPjeI1MYDIDJBURQA",
+      "type": "video"
+    },
+    {
+      "title": "Strikeman Laser Firearm Training System Tutorial",
+      "url": "https://www.youtube.com/watch?v=dcw7DH616JQ",
+      "description": "YouTube视频: Strikeman Laser Firearm Training System Tutorial",
+      "video_id": "dcw7DH616JQ",
+      "thumbnail": "https://i.ytimg.com/vi/dcw7DH616JQ/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAUZa7OydkKeLDcKj5uLfpIqk60Lg",
+      "type": "video"
+    },
+    {
+      "title": "Boxing Equipment | What to Buy",
+      "url": "https://www.youtube.com/watch?v=nIUnDWRMuVE",
+      "description": "YouTube视频: Boxing Equipment | What to Buy",
+      "video_id": "nIUnDWRMuVE",
+      "thumbnail": "https://i.ytimg.com/vi/nIUnDWRMuVE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCI_txn6gFmbUTuAaNPGzmoiG5AvA",
+      "type": "video"
+    },
+    {
+      "title": "How I Use My Apple Watch for Running | Marathon Prep",
+      "url": "https://www.youtube.com/watch?v=Ix8ws68R898",
+      "description": "YouTube视频: How I Use My Apple Watch for Running | Marathon Prep",
+      "video_id": "Ix8ws68R898",
+      "thumbnail": "https://i.ytimg.com/vi/Ix8ws68R898/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZDpitFoobEYCMznQKKK0ApOJmSA",
+      "type": "video"
+    },
+    {
+      "title": "TESTING The FENIX 8 NEW STRENGTH WORKOUTS And COACHING PROGRAM",
+      "url": "https://www.youtube.com/watch?v=dDpSMaX4Rck",
+      "description": "YouTube视频: TESTING The FENIX 8 NEW STRENGTH WORKOUTS And COACHING PROGRAM",
+      "video_id": "dDpSMaX4Rck",
+      "thumbnail": "https://i.ytimg.com/vi/dDpSMaX4Rck/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwlUbiATJ0moPAWNqUAkUaCmlmMw",
+      "type": "video"
+    },
+    {
+      "title": "Understanding the Running Fitness Test",
+      "url": "https://www.youtube.com/watch?v=TAE7kAMK-w0",
+      "description": "YouTube视频: Understanding the Running Fitness Test",
+      "video_id": "TAE7kAMK-w0",
+      "thumbnail": "https://i.ytimg.com/vi/TAE7kAMK-w0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBhTRdlETNGVd3GbRKOFx_JPm6djQ",
+      "type": "video"
+    },
+    {
+      "title": "How To Train Indoors For Triathlon - The Treadmill, Turbo Trainer & Pool",
+      "url": "https://www.youtube.com/watch?v=EUB1Kus-_-M",
+      "description": "YouTube视频: How To Train Indoors For Triathlon - The Treadmill, Turbo Trainer & Pool",
+      "video_id": "EUB1Kus-_-M",
+      "thumbnail": "https://i.ytimg.com/vi/EUB1Kus-_-M/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAod1hsNhFgLnZCFjkpL7CDBVYSAw",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS229: Machine Learning - Linear Regression and Gradient Descent |  Lecture 2 (Autumn 2018)",
+      "url": "https://www.youtube.com/watch?v=4b4MUYve_U8",
+      "description": "YouTube视频: Stanford CS229: Machine Learning - Linear Regression and Gradient Descent |  Lecture 2 (Autumn 2018)",
+      "video_id": "4b4MUYve_U8",
+      "thumbnail": "https://i.ytimg.com/vi/4b4MUYve_U8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAC-MRxGWbvDXSjTgeaME9y2PMmTA",
+      "type": "video"
+    },
+    {
+      "title": "Why Linear regression for Machine Learning?",
+      "url": "https://www.youtube.com/watch?v=qxo8p8PtFeA",
+      "description": "YouTube视频: Why Linear regression for Machine Learning?",
+      "video_id": "qxo8p8PtFeA",
+      "thumbnail": "https://i.ytimg.com/vi/qxo8p8PtFeA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCIxOZ75E2RqYyoSJaqbpEIKhYkcQ",
+      "type": "video"
+    },
+    {
+      "title": "Linear Regression, Clearly Explained!!!",
+      "url": "https://www.youtube.com/watch?v=nk2CQITm_eo",
+      "description": "YouTube视频: Linear Regression, Clearly Explained!!!",
+      "video_id": "nk2CQITm_eo",
+      "thumbnail": "https://i.ytimg.com/vi/nk2CQITm_eo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBn-GvvmPAOivuli5JFMphAhPKOvw",
+      "type": "video"
+    },
+    {
+      "title": "Regression: Crash Course Statistics #32",
+      "url": "https://www.youtube.com/watch?v=WWqE7YHR4Jc",
+      "description": "YouTube视频: Regression: Crash Course Statistics #32",
+      "video_id": "WWqE7YHR4Jc",
+      "thumbnail": "https://i.ytimg.com/vi/WWqE7YHR4Jc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDdGo40WgbRs-E_12AwbpGFr7U2lw",
+      "type": "video"
+    },
+    {
+      "title": "Give Me 20 min, I will make Linear Regression Click Forever",
+      "url": "https://www.youtube.com/watch?v=sdcTesMSK8A",
+      "description": "YouTube视频: Give Me 20 min, I will make Linear Regression Click Forever",
+      "video_id": "sdcTesMSK8A",
+      "thumbnail": "https://i.ytimg.com/vi/sdcTesMSK8A/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnvgZ3urE8PyOhRfA_iTzbfF66KQ",
+      "type": "video"
+    },
+    {
+      "title": "The Main Ideas of Fitting a Line to Data (The Main Ideas of Least Squares and Linear Regression.)",
+      "url": "https://www.youtube.com/watch?v=PaFPbb66DxQ",
+      "description": "YouTube视频: The Main Ideas of Fitting a Line to Data (The Main Ideas of Least Squares and Linear Regression.)",
+      "video_id": "PaFPbb66DxQ",
+      "thumbnail": "https://i.ytimg.com/vi/PaFPbb66DxQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBb5tRTv2cemxgzPNamibDdGaMAJg",
+      "type": "video"
+    },
+    {
+      "title": "Statistics 101: Linear Regression, The Very Basics 📈",
+      "url": "https://www.youtube.com/watch?v=ZkjP5RJLQF4",
+      "description": "YouTube视频: Statistics 101: Linear Regression, The Very Basics 📈",
+      "video_id": "ZkjP5RJLQF4",
+      "thumbnail": "https://i.ytimg.com/vi/ZkjP5RJLQF4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0cpDXWdTHccUKeaaxfVwoMw5UgQ",
+      "type": "video"
+    },
+    {
+      "title": "Linear Regression Algorithm with Code Examples - ML for Beginners!",
+      "url": "https://www.youtube.com/watch?v=MkLBNUMc26Y",
+      "description": "YouTube视频: Linear Regression Algorithm with Code Examples - ML for Beginners!",
+      "video_id": "MkLBNUMc26Y",
+      "thumbnail": "https://i.ytimg.com/vi/MkLBNUMc26Y/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDp4UryTMVMvaJVP_gz8CjHHI4zyg",
+      "type": "video"
+    },
+    {
+      "title": "Introduction to Precision, Recall and F1 - Classification Models | | Data Science in Minutes",
+      "url": "https://www.youtube.com/watch?v=jJ7ff7Gcq34",
+      "description": "YouTube视频: Introduction to Precision, Recall and F1 - Classification Models | | Data Science in Minutes",
+      "video_id": "jJ7ff7Gcq34",
+      "thumbnail": "https://i.ytimg.com/vi/jJ7ff7Gcq34/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAfs9Cp6B8OxDAYA09UEImKbpewkQ",
+      "type": "video"
+    },
+    {
+      "title": "ROC and AUC, Clearly Explained!",
+      "url": "https://www.youtube.com/watch?v=4jRBRDbJemM",
+      "description": "YouTube视频: ROC and AUC, Clearly Explained!",
+      "video_id": "4jRBRDbJemM",
+      "thumbnail": "https://i.ytimg.com/vi/4jRBRDbJemM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBeBo4SxYVhrASY1DjHI1WoHytedA",
+      "type": "video"
+    },
+    {
+      "title": "Precision and Recall",
+      "url": "https://www.youtube.com/watch?v=3vT0kSBCLdU",
+      "description": "YouTube视频: Precision and Recall",
+      "video_id": "3vT0kSBCLdU",
+      "thumbnail": "https://i.ytimg.com/vi/3vT0kSBCLdU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC14ckWBN3GSoisaGelASs5pbFZog",
+      "type": "video"
+    },
+    {
+      "title": "Precision-Recall versus Accuracy and the Role of Large Data Sets",
+      "url": "https://www.youtube.com/watch?v=s3zydjHy7WM",
+      "description": "YouTube视频: Precision-Recall versus Accuracy and the Role of Large Data Sets",
+      "video_id": "s3zydjHy7WM",
+      "thumbnail": "https://i.ytimg.com/vi/s3zydjHy7WM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAkmYJpDWudBJrurEZasCfB9mDucw",
+      "type": "video"
+    },
+    {
+      "title": "Precision & Recall for a Machine Learning Model",
+      "url": "https://www.youtube.com/watch?v=dbrRsqlof4w",
+      "description": "YouTube视频: Precision & Recall for a Machine Learning Model",
+      "video_id": "dbrRsqlof4w",
+      "thumbnail": "https://i.ytimg.com/vi/dbrRsqlof4w/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnvU9PMRiHLMBa_GwoFgOjVtlPQw",
+      "type": "video"
+    },
+    {
+      "title": "Bush Precision and Recall - Intro to Machine Learning",
+      "url": "https://www.youtube.com/watch?v=FLpXmoHp7eE",
+      "description": "YouTube视频: Bush Precision and Recall - Intro to Machine Learning",
+      "video_id": "FLpXmoHp7eE",
+      "thumbnail": "https://i.ytimg.com/vi/FLpXmoHp7eE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCmTPqApx9UjEZBGbJ0WuTDat5OBw",
+      "type": "video"
+    },
+    {
+      "title": "Bush Precision and Recall - Intro to Machine Learning",
+      "url": "https://www.youtube.com/watch?v=8fM13xqU2a8",
+      "description": "YouTube视频: Bush Precision and Recall - Intro to Machine Learning",
+      "video_id": "8fM13xqU2a8",
+      "thumbnail": "https://i.ytimg.com/vi/8fM13xqU2a8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCSHhWhTG4gLhV3QXI5SSRja5SuCQ",
+      "type": "video"
+    },
+    {
+      "title": "Supervised vs. Unsupervised Learning",
+      "url": "https://www.youtube.com/watch?v=W01tIRP_Rqs",
+      "description": "YouTube视频: Supervised vs. Unsupervised Learning",
+      "video_id": "W01tIRP_Rqs",
+      "thumbnail": "https://i.ytimg.com/vi/W01tIRP_Rqs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDYgpOZmADzWNksuB7teesiSCOHlw",
+      "type": "video"
+    },
+    {
+      "title": "Supervised Learning: Crash Course AI #2",
+      "url": "https://www.youtube.com/watch?v=4qVRBYAdLAo",
+      "description": "YouTube视频: Supervised Learning: Crash Course AI #2",
+      "video_id": "4qVRBYAdLAo",
+      "thumbnail": "https://i.ytimg.com/vi/4qVRBYAdLAo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBhYOrcsfT7zwIfaOp1m1LP5nEITg",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS229 Machine Learning I Supervised learning setup, LMS I 2022 I Lecture 2",
+      "url": "https://www.youtube.com/watch?v=gqKaVgQxEJ0",
+      "description": "YouTube视频: Stanford CS229 Machine Learning I Supervised learning setup, LMS I 2022 I Lecture 2",
+      "video_id": "gqKaVgQxEJ0",
+      "thumbnail": "https://i.ytimg.com/vi/gqKaVgQxEJ0/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIF0oNjAP&rs=AOn4CLDzLy-Ho_btWFn5fPN7kPP0TR7J_w",
+      "type": "video"
+    },
+    {
+      "title": "Supervised Machine Learning: Crash Course Statistics #36",
+      "url": "https://www.youtube.com/watch?v=jmLid2x9eKg",
+      "description": "YouTube视频: Supervised Machine Learning: Crash Course Statistics #36",
+      "video_id": "jmLid2x9eKg",
+      "thumbnail": "https://i.ytimg.com/vi/jmLid2x9eKg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCcFOviuw-ZZbQ5F0NTsAC3GOHgzw",
+      "type": "video"
+    },
+    {
+      "title": "Yann LeCun | Self-Supervised Learning, JEPA, World Models, and the future of AI",
+      "url": "https://www.youtube.com/watch?v=yUmDRxV0krg",
+      "description": "YouTube视频: Yann LeCun | Self-Supervised Learning, JEPA, World Models, and the future of AI",
+      "video_id": "yUmDRxV0krg",
+      "thumbnail": "https://i.ytimg.com/vi/yUmDRxV0krg/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIFQoNzAP&rs=AOn4CLB24W4XF0cHcMP137DCCvTwMrqw3Q",
+      "type": "video"
+    },
+    {
+      "title": "What is Semi-Supervised Learning?",
+      "url": "https://www.youtube.com/watch?v=C3Lr6Waw66g",
+      "description": "YouTube视频: What is Semi-Supervised Learning?",
+      "video_id": "C3Lr6Waw66g",
+      "thumbnail": "https://i.ytimg.com/vi/C3Lr6Waw66g/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAnAGbpUZtqGtafvx9c2IC6OVHAqg",
+      "type": "video"
+    },
+    {
+      "title": "Machine Learning Crash Course: Classification",
+      "url": "https://www.youtube.com/watch?v=QM0sYbEQSkM",
+      "description": "YouTube视频: Machine Learning Crash Course: Classification",
+      "video_id": "QM0sYbEQSkM",
+      "thumbnail": "https://i.ytimg.com/vi/QM0sYbEQSkM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBDjwtAovmUF5DzDzULFT7tjShbbQ",
+      "type": "video"
+    },
+    {
+      "title": "Lecture 1 \"Supervised Learning Setup\" -Cornell CS4780 Machine Learning for Decision Making SP17",
+      "url": "https://www.youtube.com/watch?v=MrLPzBxG95I",
+      "description": "YouTube视频: Lecture 1 \"Supervised Learning Setup\" -Cornell CS4780 Machine Learning for Decision Making SP17",
+      "video_id": "MrLPzBxG95I",
+      "thumbnail": "https://i.ytimg.com/vi/MrLPzBxG95I/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDF-c4NZiMQbPoxO0iErT_J09kJGA",
+      "type": "video"
+    },
+    {
+      "title": "Gradient",
+      "url": "https://www.youtube.com/watch?v=tIpKfDc295M",
+      "description": "YouTube视频: Gradient",
+      "video_id": "tIpKfDc295M",
+      "thumbnail": "https://i.ytimg.com/vi/tIpKfDc295M/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBE1IROPEdDMoCmeLqycBSo2CIDGg",
+      "type": "video"
+    },
+    {
+      "title": "Partial Derivatives and the Gradient of a Function",
+      "url": "https://www.youtube.com/watch?v=AXH9Xm6Rbfc",
+      "description": "YouTube视频: Partial Derivatives and the Gradient of a Function",
+      "video_id": "AXH9Xm6Rbfc",
+      "thumbnail": "https://i.ytimg.com/vi/AXH9Xm6Rbfc/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDrADM0p706Wfto1gHwSAvD-uxV6w",
+      "type": "video"
+    },
+    {
+      "title": "Gradient descent, how neural networks learn | Deep Learning Chapter 2",
+      "url": "https://www.youtube.com/watch?v=IHZwWFHWa-w",
+      "description": "YouTube视频: Gradient descent, how neural networks learn | Deep Learning Chapter 2",
+      "video_id": "IHZwWFHWa-w",
+      "thumbnail": "https://i.ytimg.com/vi/IHZwWFHWa-w/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCXkoNHU4W8j-qcW-B9HhhHS0AuXw",
+      "type": "video"
+    },
+    {
+      "title": "Gradients and Partial Derivatives",
+      "url": "https://www.youtube.com/watch?v=GkB4vW16QHI",
+      "description": "YouTube视频: Gradients and Partial Derivatives",
+      "video_id": "GkB4vW16QHI",
+      "thumbnail": "https://i.ytimg.com/vi/GkB4vW16QHI/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARgvIHIoETAP&rs=AOn4CLAgnlFTjtxcAuDLpq5ZS5wo6BAatA",
+      "type": "video"
+    },
+    {
+      "title": "Gradient Descent Explained",
+      "url": "https://www.youtube.com/watch?v=i62czvwDlsw",
+      "description": "YouTube视频: Gradient Descent Explained",
+      "video_id": "i62czvwDlsw",
+      "thumbnail": "https://i.ytimg.com/vi/i62czvwDlsw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBH1QBIB9lgF4djA--jjgrHjibH5g",
+      "type": "video"
+    },
+    {
+      "title": "Gradient and graphs",
+      "url": "https://www.youtube.com/watch?v=_-02ze7tf08",
+      "description": "YouTube视频: Gradient and graphs",
+      "video_id": "_-02ze7tf08",
+      "thumbnail": "https://i.ytimg.com/vi/_-02ze7tf08/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD2eyOMoZxjc80Kg2_EN0NcomtAbw",
+      "type": "video"
+    },
+    {
+      "title": "Machine Learning Crash Course: Gradient Descent",
+      "url": "https://www.youtube.com/watch?v=QoK1nNAURw4",
+      "description": "YouTube视频: Machine Learning Crash Course: Gradient Descent",
+      "video_id": "QoK1nNAURw4",
+      "thumbnail": "https://i.ytimg.com/vi/QoK1nNAURw4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8MdNObiOzVipQAkxAt5cfZ8jR6w",
+      "type": "video"
+    },
+    {
+      "title": "Gradient Descent, Step-by-Step",
+      "url": "https://www.youtube.com/watch?v=sDv4f4s2SB8",
+      "description": "YouTube视频: Gradient Descent, Step-by-Step",
+      "video_id": "sDv4f4s2SB8",
+      "thumbnail": "https://i.ytimg.com/vi/sDv4f4s2SB8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLByoNATaof99xyr_lRFJQt5dgHQVg",
+      "type": "video"
+    },
+    {
+      "title": "But what is a neural network? | Deep learning chapter 1",
+      "url": "https://www.youtube.com/watch?v=aircAruvnKk",
+      "description": "YouTube视频: But what is a neural network? | Deep learning chapter 1",
+      "video_id": "aircAruvnKk",
+      "thumbnail": "https://i.ytimg.com/vi/aircAruvnKk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGOJz5xmjyQgBrJNUa1fLox-wUeA",
+      "type": "video"
+    },
+    {
+      "title": "Why Deep Learning Works Unreasonably Well [How Models Learn Part 3]",
+      "url": "https://www.youtube.com/watch?v=qx7hirqgfuU",
+      "description": "YouTube视频: Why Deep Learning Works Unreasonably Well [How Models Learn Part 3]",
+      "video_id": "qx7hirqgfuU",
+      "thumbnail": "https://i.ytimg.com/vi/qx7hirqgfuU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDRVB4U7zZ1fM4Q25NatBXqBWL28A",
+      "type": "video"
+    },
+    {
+      "title": "Lec 01. Introduction to Deep Learning",
+      "url": "https://www.youtube.com/watch?v=6FkRvTtUc-o",
+      "description": "YouTube视频: Lec 01. Introduction to Deep Learning",
+      "video_id": "6FkRvTtUc-o",
+      "thumbnail": "https://i.ytimg.com/vi/6FkRvTtUc-o/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCfuoVeHgwRPPkjRyIa0Z_imsVhwA",
+      "type": "video"
+    },
+    {
+      "title": "Deep Learning - Computerphile",
+      "url": "https://www.youtube.com/watch?v=l42lr8AlrHk",
+      "description": "YouTube视频: Deep Learning - Computerphile",
+      "video_id": "l42lr8AlrHk",
+      "thumbnail": "https://i.ytimg.com/vi/l42lr8AlrHk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD10Pbpd9qGCjXMMSf4iF5kXHt8sQ",
+      "type": "video"
+    },
+    {
+      "title": "PyTorch for Deep Learning & Machine Learning – Full Course",
+      "url": "https://www.youtube.com/watch?v=V_xro1bcAuA",
+      "description": "YouTube视频: PyTorch for Deep Learning & Machine Learning – Full Course",
+      "video_id": "V_xro1bcAuA",
+      "thumbnail": "https://i.ytimg.com/vi/V_xro1bcAuA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8D2s8Zh8YMEdaLTh7V-an3pTcng",
+      "type": "video"
+    },
+    {
+      "title": "Neural Networks Explained in 5 minutes",
+      "url": "https://www.youtube.com/watch?v=jmmW0F0biz0",
+      "description": "YouTube视频: Neural Networks Explained in 5 minutes",
+      "video_id": "jmmW0F0biz0",
+      "thumbnail": "https://i.ytimg.com/vi/jmmW0F0biz0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBZY9iTa5eDilpg1E2Cq1QwKRHkOQ",
+      "type": "video"
+    }
+  ],
+  "code": [
+    {
+      "title": "tensorflow",
+      "url": "https://github.com/tensorflow/tensorflow",
+      "description": "GitHub代码仓库: tensorflow",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "transformers",
+      "url": "https://github.com/huggingface/transformers",
+      "description": "GitHub代码仓库: transformers",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "ML-For-Beginners",
+      "url": "https://github.com/microsoft/ML-For-Beginners",
+      "description": "GitHub代码仓库: ML-For-Beginners",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "awesome-machine-learning",
+      "url": "https://github.com/josephmisiti/awesome-machine-learning",
+      "description": "GitHub代码仓库: awesome-machine-learning",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "scikit-learn",
+      "url": "https://github.com/scikit-learn/scikit-learn",
+      "description": "GitHub代码仓库: scikit-learn",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "url": "https://github.com/ashishpatel26/500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "description": "GitHub代码仓库: 500-AI-Machine-learning-Deep-learning-Computer-vision-NLP-Projects-with-code",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Alzhimers-Disease-Prediction-Using-Deep-learning",
+      "url": "https://github.com/himanshub1007/Alzhimers-Disease-Prediction-Using-Deep-learning",
+      "description": "GitHub代码仓库: Alzhimers-Disease-Prediction-Using-Deep-learning",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "mlflow",
+      "url": "https://github.com/mlflow/mlflow",
+      "description": "GitHub代码仓库: mlflow",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "lm-evaluation-harness",
+      "url": "https://github.com/EleutherAI/lm-evaluation-harness",
+      "description": "GitHub代码仓库: lm-evaluation-harness",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "transformerlab-app",
+      "url": "https://github.com/transformerlab/transformerlab-app",
+      "description": "GitHub代码仓库: transformerlab-app",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "mljar-supervised",
+      "url": "https://github.com/mljar/mljar-supervised",
+      "description": "GitHub代码仓库: mljar-supervised",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "simple-railway-captcha-solver",
+      "url": "https://github.com/JasonLiTW/simple-railway-captcha-solver",
+      "description": "GitHub代码仓库: simple-railway-captcha-solver",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "SimGAN-Captcha",
+      "url": "https://github.com/0b01/SimGAN-Captcha",
+      "description": "GitHub代码仓库: SimGAN-Captcha",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "all-classification-templetes-for-ML",
+      "url": "https://github.com/sayantann11/all-classification-templetes-for-ML",
+      "description": "GitHub代码仓库: all-classification-templetes-for-ML",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "ML-From-Scratch",
+      "url": "https://github.com/eriklindernoren/ML-From-Scratch",
+      "description": "GitHub代码仓库: ML-From-Scratch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "lightning",
+      "url": "https://github.com/scikit-learn-contrib/lightning",
+      "description": "GitHub代码仓库: lightning",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis",
+      "url": "https://github.com/kaushikjadhav01/Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis",
+      "description": "GitHub代码仓库: Stock-Market-Prediction-Web-App-using-Machine-Learning-And-Sentiment-Analysis",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Machine-Learning-Models",
+      "url": "https://github.com/jayshah19949596/Machine-Learning-Models",
+      "description": "GitHub代码仓库: Machine-Learning-Models",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "generative-evaluation-prdc",
+      "url": "https://github.com/clovaai/generative-evaluation-prdc",
+      "description": "GitHub代码仓库: generative-evaluation-prdc",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "PaddleSpeech",
+      "url": "https://github.com/PaddlePaddle/PaddleSpeech",
+      "description": "GitHub代码仓库: PaddleSpeech",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "awesome-self-supervised-learning",
+      "url": "https://github.com/jason718/awesome-self-supervised-learning",
+      "description": "GitHub代码仓库: awesome-self-supervised-learning",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "albert_zh",
+      "url": "https://github.com/brightmart/albert_zh",
+      "description": "GitHub代码仓库: albert_zh",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "lightly",
+      "url": "https://github.com/lightly-ai/lightly",
+      "description": "GitHub代码仓库: lightly",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "xgboost",
+      "url": "https://github.com/dmlc/xgboost",
+      "description": "GitHub代码仓库: xgboost",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "pytorch-cnn-visualizations",
+      "url": "https://github.com/utkuozbulak/pytorch-cnn-visualizations",
+      "description": "GitHub代码仓库: pytorch-cnn-visualizations",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "h2o-3",
+      "url": "https://github.com/h2oai/h2o-3",
+      "description": "GitHub代码仓库: h2o-3",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "uiGradients",
+      "url": "https://github.com/ghosh/uiGradients",
+      "description": "GitHub代码仓库: uiGradients",
+      "source": "GitHub",
+      "type": "code"
+    }
+  ]
+}

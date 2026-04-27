@@ -1,0 +1,208 @@
+{
+  "corpus_path": "data/test_corpora/foundations_ml",
+  "corpus_name": "foundations_ml",
+  "browsing_model": "gpt-4o",
+  "run_mode": "live_openai",
+  "num_documents": 10,
+  "search_metadata": {
+    "num_results": 15,
+    "browsing_model": "gpt-4o",
+    "run_mode": "live_openai",
+    "provenance": "OpenAI Responses API with hosted web_search tool"
+  },
+  "resource_metrics": {
+    "total_resources": 15,
+    "url_live_pct": 100.0,
+    "url_broken_pct": 0.0,
+    "url_unclear_pct": 0.0,
+    "authority_score_pct": 33.33,
+    "low_authority_pct": 0.0,
+    "modality_counts": {
+      "text": 10,
+      "video": 5,
+      "code": 0
+    },
+    "simpson_diversity_index": 0.8889,
+    "domain_distribution": {
+      "datacamp.com": 1,
+      "kdnuggets.com": 1,
+      "linkedin.com": 1,
+      "classcentral.com": 2,
+      "deeplearning.neuromatch.io": 1,
+      "arxiv.org": 3,
+      "openlearning.mit.edu": 2,
+      "reddit.com": 1,
+      "wikipedia.org": 1,
+      "coursera.org": 1,
+      "ocw.mit.edu": 1
+    }
+  },
+  "topics": [
+    {
+      "topic": "Topic A",
+      "resources": [
+        {
+          "title": "Feature Engineering in Machine Learning: A Practical Guide",
+          "url": "https://www.datacamp.com/tutorial/feature-engineering",
+          "snippet": "Comprehensive, hands‑on guide covering encoding, scaling, missing values, feature creation and selection with Python examples, aligning closely with the study notes’ emphasis on transforming raw data into usable representations.",
+          "type": "text",
+          "source_domain": "datacamp.com",
+          "url_status": "LIVE",
+          "selection_reason": "Comprehensive, hands‑on guide covering encoding, scaling, missing values, feature creation and selection with Python examples, aligning closely with the study notes’ emphasis on transforming raw data into usable representations.",
+          "note": "Published March 19, 2025; likely up‑to‑date and practical."
+        },
+        {
+          "title": "Feature Engineering for Beginners",
+          "url": "https://www.kdnuggets.com/feature-engineering-for-beginners",
+          "snippet": "Beginner‑friendly guide introducing key techniques and practical examples in Python, matching the foundational tone of the notes.",
+          "type": "text",
+          "source_domain": "kdnuggets.com",
+          "url_status": "LIVE",
+          "selection_reason": "Beginner‑friendly guide introducing key techniques and practical examples in Python, matching the foundational tone of the notes.",
+          "note": "Published May 16, 2024; still relevant."
+        },
+        {
+          "title": "Applied ML: Feature engineering – Python Tutorial",
+          "url": "https://www.linkedin.com/learning/applied-machine-learning-feature-engineering-23752649/applied-ml-feature-engineering",
+          "snippet": "Video tutorial covering imputation, transformations, encoding, PCA, TF‑IDF and embeddings—broad coverage of feature engineering methods.",
+          "type": "video",
+          "source_domain": "linkedin.com",
+          "url_status": "LIVE",
+          "selection_reason": "Video tutorial covering imputation, transformations, encoding, PCA, TF‑IDF and embeddings—broad coverage of feature engineering methods.",
+          "note": "Accessible via LinkedIn Learning; may require subscription."
+        },
+        {
+          "title": "Understanding Deep Learning Requires Rethinking Generalization",
+          "url": "https://www.classcentral.com/course/youtube-understanding-deep-learning-requires-rethinking-generalization-132152",
+          "snippet": "A 40‑minute lecture exploring overfitting, L2 regularization, dropout, data augmentation, implicit vs explicit regularization, and SGD’s role in generalization—directly relevant to the notes.",
+          "type": "video",
+          "source_domain": "classcentral.com",
+          "url_status": "LIVE",
+          "selection_reason": "A 40‑minute lecture exploring overfitting, L2 regularization, dropout, data augmentation, implicit vs explicit regularization, and SGD’s role in generalization—directly relevant to the notes.",
+          "note": "Free video; advanced level."
+        },
+        {
+          "title": "Tutorial 1: Regularization techniques part 1 — Neuromatch Academy",
+          "url": "https://instructor.deeplearning.neuromatch.io/tutorials/W2D1_Regularization/instructor/W2D1_Tutorial1.html",
+          "snippet": "Hands‑on tutorial from Neuromatch Academy covering overfitting and early stopping, matching the notes’ regularization techniques.",
+          "type": "text",
+          "source_domain": "deeplearning.neuromatch.io",
+          "url_status": "LIVE",
+          "selection_reason": "Hands‑on tutorial from Neuromatch Academy covering overfitting and early stopping, matching the notes’ regularization techniques.",
+          "note": "Recent (crawled 2 months ago); code may require setup."
+        }
+      ]
+    },
+    {
+      "topic": "Topic B",
+      "resources": [
+        {
+          "title": "The Theory Behind Overfitting, Cross Validation, Regularization, Bagging, and Boosting: Tutorial",
+          "url": "https://arxiv.org/abs/1905.12787",
+          "snippet": "Academic tutorial covering overfitting, cross‑validation, L1/L2 regularization, early stopping, bagging and boosting—strong theoretical complement to practical notes.",
+          "type": "text",
+          "source_domain": "arxiv.org",
+          "url_status": "LIVE",
+          "selection_reason": "Academic tutorial covering overfitting, cross‑validation, L1/L2 regularization, early stopping, bagging and boosting—strong theoretical complement to practical notes.",
+          "note": "Published 2019; theory remains foundational."
+        },
+        {
+          "title": "A Tutorial on Regression Analysis: From Linear Models to Deep Learning",
+          "url": "https://arxiv.org/abs/2512.04747",
+          "snippet": "Comprehensive lecture notes bridging linear regression, logistic regression, polynomial and kernel methods, and regularization—aligns with the notes’ emphasis on linear models and their limitations.",
+          "type": "text",
+          "source_domain": "arxiv.org",
+          "url_status": "LIVE",
+          "selection_reason": "Comprehensive lecture notes bridging linear regression, logistic regression, polynomial and kernel methods, and regularization—aligns with the notes’ emphasis on linear models and their limitations.",
+          "note": "Published December 4, 2025; very recent."
+        },
+        {
+          "title": "Machine Learning with Python: from Linear Models to Deep Learning",
+          "url": "https://openlearning.mit.edu/courses-programs/mitx-courses/machine-learning-python-linear-models-deep-learning",
+          "snippet": "MIT course covering representation, overfitting, regularization, generalization, and linear models as a foundation for deep learning.",
+          "type": "text",
+          "source_domain": "openlearning.mit.edu",
+          "url_status": "LIVE",
+          "selection_reason": "MIT course covering representation, overfitting, regularization, generalization, and linear models as a foundation for deep learning.",
+          "note": "Likely structured course; may require enrollment."
+        },
+        {
+          "title": "Just made a visual guide to Linear Regression — great for beginners",
+          "url": "https://www.reddit.com/r/learnmachinelearning/comments/1nmtyjk",
+          "snippet": "Visual, beginner‑friendly video explaining linear regression intuitively—useful for grasping decision boundaries and interpretability.",
+          "type": "video",
+          "source_domain": "reddit.com",
+          "url_status": "LIVE",
+          "selection_reason": "Visual, beginner‑friendly video explaining linear regression intuitively—useful for grasping decision boundaries and interpretability.",
+          "note": "Informal; quality depends on creator."
+        },
+        {
+          "title": "Machine Learning with Python: from Linear Models to Deep Learning",
+          "url": "https://openlearning.mit.edu/courses-programs/mitx-courses/machine-learning-python-linear-models-deep-learning",
+          "snippet": "Covers a wide range of ML fundamentals including supervised/unsupervised learning, algorithms, evaluation, and generalization.",
+          "type": "text",
+          "source_domain": "openlearning.mit.edu",
+          "url_status": "LIVE",
+          "selection_reason": "Covers a wide range of ML fundamentals including supervised/unsupervised learning, algorithms, evaluation, and generalization.",
+          "note": "Same as above; broad foundational coverage."
+        }
+      ]
+    },
+    {
+      "topic": "Topic C",
+      "resources": [
+        {
+          "title": "Scikit‑learn",
+          "url": "https://en.wikipedia.org/wiki/Scikit-learn",
+          "snippet": "Overview of the scikit‑learn library, which implements many fundamental algorithms and evaluation tools referenced in the notes.",
+          "type": "text",
+          "source_domain": "wikipedia.org",
+          "url_status": "LIVE",
+          "selection_reason": "Overview of the scikit‑learn library, which implements many fundamental algorithms and evaluation tools referenced in the notes.",
+          "note": "General overview; may lack depth."
+        },
+        {
+          "title": "Feature Engineering | Coursera",
+          "url": "https://www.coursera.org/learn/feature-engineering",
+          "snippet": "Course module that includes fundamentals of ML, feature engineering, and evaluation practices using BigQuery ML and Keras.",
+          "type": "video",
+          "source_domain": "coursera.org",
+          "url_status": "LIVE",
+          "selection_reason": "Course module that includes fundamentals of ML, feature engineering, and evaluation practices using BigQuery ML and Keras.",
+          "note": "Requires enrollment; includes hands‑on labs."
+        },
+        {
+          "title": "The Theory Behind Overfitting, Cross Validation, Regularization, Bagging, and Boosting: Tutorial",
+          "url": "https://arxiv.org/abs/1905.12787",
+          "snippet": "Covers cross‑validation, generalization error, overfitting, regularization and evaluation metrics—directly relevant to evaluation practices.",
+          "type": "text",
+          "source_domain": "arxiv.org",
+          "url_status": "LIVE",
+          "selection_reason": "Covers cross‑validation, generalization error, overfitting, regularization and evaluation metrics—directly relevant to evaluation practices.",
+          "note": "Theoretical depth; published 2019."
+        },
+        {
+          "title": "Lecture 6: Neural Network Generalization | MIT OpenCourseWare",
+          "url": "https://ocw.mit.edu/courses/6-7960-deep-learning-fall-2024/resources/mit6_7960_f24_lec6_pdf/",
+          "snippet": "Lecture notes focused on neural network generalization—ties evaluation to deep learning context.",
+          "type": "text",
+          "source_domain": "ocw.mit.edu",
+          "url_status": "LIVE",
+          "selection_reason": "Lecture notes focused on neural network generalization—ties evaluation to deep learning context.",
+          "note": "From Fall 2024 course; recent and academic."
+        },
+        {
+          "title": "Understanding Deep Learning Requires Rethinking Generalization",
+          "url": "https://www.classcentral.com/course/youtube-understanding-deep-learning-requires-rethinking-generalization-132152",
+          "snippet": "Explores generalization, regularization, and evaluation in deep learning—useful for understanding validation beyond metrics.",
+          "type": "video",
+          "source_domain": "classcentral.com",
+          "url_status": "LIVE",
+          "selection_reason": "Explores generalization, regularization, and evaluation in deep learning—useful for understanding validation beyond metrics.",
+          "note": "Advanced lecture; free."
+        }
+      ]
+    }
+  ],
+  "timestamp": "2026-04-22T20:47:57.552054"
+}

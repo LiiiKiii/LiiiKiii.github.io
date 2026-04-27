@@ -2,9 +2,9 @@
 
 <div align="center">
 
-**AI-Powered Multimedia Resource Recommendation System**
+**AI-Pedia: An AI-Embedded Multimedia Resource Recommender for AI Education**
 
-An intelligent resource recommendation system focused on AI/Machine Learning domain, capable of automatically extracting keywords from user-uploaded documents, searching multi-source external resources, and filtering the most relevant learning resources using content-based recommendation algorithms.
+An AI-embedded multimedia resource recommender for AI education. The core recommendation pipeline uses interpretable information retrieval and content-based recommendation methods, while LLM support is embedded only as an optional summary enhancement and as an evaluation baseline.
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.0+-green.svg)](https://flask.palletsprojects.com/)
@@ -34,19 +34,19 @@ An intelligent resource recommendation system focused on AI/Machine Learning dom
 
 ## Project Overview
 
-**AI-Pedia** is an intelligent AI/Machine Learning resource recommendation system. The system can:
+**AI-Pedia** is an AI-embedded multimedia resource recommender for AI education. The system can:
 
-- **Document Analysis**: Extract key themes and keywords from user-uploaded AI/ML related documents
+- **Document Analysis**: Extract key themes and keywords from user-uploaded AI-related documents
 - **Multi-Source Search**: Automatically search resources from multiple platforms including Wikipedia, Google Scholar, arXiv, YouTube, GitHub, etc.
 - **Intelligent Recommendation**: Use Content-Based Filtering (CBF) algorithm to filter resources most relevant to user documents
-- **AI Enhancement**: Optionally use OpenAI API to generate resource summaries for smarter content understanding
+- **Embedded LLM Summary Support**: Optionally use OpenAI API to generate resource summaries
 - **Content Cleaning**: Automatically filter non-AI related content, contact information, and other irrelevant information
 
 ## Features
 
 ### Core Features
 
-- **AI Domain Specialized**: Focused on AI/Machine Learning domain, intelligently filtering non-AI related content
+- **AI Domain Specialized**: Focused on the AI domain, intelligently filtering non-AI related content
 - **Multi-Format Support**: Supports TXT and PDF documents (PDF automatically converted to TXT)
 - **Intelligent Keyword Extraction**: Uses TF-IDF and MMR algorithms to extract key themes
 - **Multi-Source Resource Search**:
@@ -54,7 +54,7 @@ An intelligent resource recommendation system focused on AI/Machine Learning dom
   - **Video Resources**: YouTube educational videos
   - **Code Resources**: GitHub, Google Colab, Kaggle, Stack Overflow, etc.
 - **CBF Recommendation System**: Filters most relevant resources based on content similarity
-- **AI Summary Generation**: Optionally use OpenAI API to generate intelligent summaries
+- **Optional LLM Summary Generation**: Optionally use OpenAI API to generate resource summaries
 - **Smart Fallback**: Automatically uses rule-based summary generation when API fails
 - **Content Cleaning**: Automatically removes contact information, department info, and other irrelevant content
 - **Result Packaging**: Automatically packages recommendation results as ZIP files
@@ -227,12 +227,12 @@ app.run(debug=True, port=5001)  # Change to another port
 
 ### 1. Prepare Documents
 
-Prepare a folder containing at least 10 TXT or PDF documents, preferably on AI/Machine Learning topics.
+Prepare a folder containing at least 10 TXT or PDF documents, preferably on AI topics.
 
 **Document Requirements:**
 - Format: TXT or PDF
 - Quantity: At least 10 documents
-- Topic: Recommended to be AI/Machine Learning related (e.g., deep learning, neural networks, natural language processing, etc.)
+- Topic: Recommended to be AI related (e.g., deep learning, neural networks, natural language processing, etc.)
 - Packaging: Compress the folder into ZIP format
 
 ### 2. Upload and Process
@@ -271,20 +271,20 @@ AI-Pedia/Project/
 │   │   ├── index.html          # Main page
 │   │   ├── help.html           # Help page
 │   │   ├── progress.html       # Progress page
-│   │   ├── ai-enhance.html     # AI Enhancement page
+│   │   ├── ai-enhance.html     # Optional LLM summary page
 │   │   └── contact.html        # Contact page
 │   └── static/                 # Static resources
 │       ├── css/                # Styles
 │       │   ├── style.css       # Main styles
 │       │   ├── help.css        # Help page styles
 │       │   ├── progress.css    # Progress page styles
-│       │   ├── ai-enhance.css  # AI Enhancement page styles
+│       │   ├── ai-enhance.css  # Optional LLM summary page styles
 │       │   └── contact.css     # Contact page styles
 │       ├── js/                 # JavaScript files
 │       │   ├── main.js         # Global logic (upload, SSE, i18n, theme, etc.)
 │       │   ├── help.js         # Help page logic
 │       │   ├── progress.js     # Progress page logic
-│       │   ├── ai-enhance.js   # AI Enhancement page logic
+│       │   ├── ai-enhance.js   # Optional LLM summary page logic
 │       │   └── contact.js      # Contact page logic
 │       └── images/
 │           └── home-icon.png   # Site icon
@@ -314,13 +314,6 @@ AI-Pedia/Project/
 │   │   └── results/
 │   └── performance/            # Local deterministic performance tests
 │       └── run_performance_tests.py
-│
-└── docs/                       # Documentation directory
-    ├── STRUCTURE.md            # Project structure documentation
-    ├── TECHNICAL_OVERVIEW.md   # Technical overview
-    ├── EVALUATION.md           # Evaluation documentation
-    ├── INNOVATION.md           # Innovation points
-    └── REFERENCES.md           # References and resources
 ```
 
 ---
@@ -332,7 +325,7 @@ The project includes a dedicated `test/` directory for the **current reproducibl
 - **`test/README.md`**: high-level overview of where evaluation code, corpora, and outputs live  
 - **`test/evaluation_pipeline/`**:
   - quantitative evaluation of keyword extraction, retrieval quality, and ranking quality
-  - supports both legacy single-corpus runs and the current focused multi-corpus setup
+  - supports the current focused multi-corpus setup
   - exports JSON, CSV, LaTeX tables, and paper-ready figures
 - **`test/performance/run_performance_tests.py`**:
   - local deterministic performance benchmarking for the main pipeline stages
@@ -355,7 +348,7 @@ The project includes a dedicated `test/` directory for the **current reproducibl
 4. **AI Keyword Filtering**: Use 70+ AI domain core keywords for secondary filtering
 5. **Result Sorting**: Sort by similarity from high to low, select top 5 resources of each type
 
-### AI Summary Generation
+### Optional LLM Summary Generation
 
 1. **Prioritize OpenAI API**: If an API key is configured, use the configured OpenAI chat model to generate intelligent summaries
 2. **Smart Fallback**:
@@ -421,7 +414,7 @@ SIMILARITY_THRESHOLD = 0.05  # Modify threshold
 ### Q: Recommendation results are not relevant?
 
 **A:** Please ensure:
-- Uploaded documents are on AI/Machine Learning topics
+- Uploaded documents are on AI topics
 - Sufficient number of documents (at least 10)
 - High quality document content
 

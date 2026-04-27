@@ -87,7 +87,7 @@ const helpDetails = {
       <h3>提取方法</h3>
       <ul>
         <li><strong>TF-IDF评分</strong>：衡量词在文档中的重要性，过滤常见词汇</li>
-        <li><strong>语义评分</strong>：基于AI/ML领域词典，提升专业术语的权重</li>
+        <li><strong>语义评分</strong>：基于AI领域词典，提升专业术语的权重</li>
         <li><strong>组合评分</strong>：综合TF-IDF和语义评分，选择最具代表性的关键词</li>
         <li><strong>去噪处理</strong>：过滤引用格式、地址、版权信息等无关内容</li>
       </ul>
@@ -211,7 +211,7 @@ const helpDetails = {
         <li><strong>多源整合</strong>：首次整合Wikipedia、ArXiv、YouTube、GitHub等多个平台资源</li>
         <li><strong>智能推荐</strong>：结合TF-IDF，语义评分与反向比对以达到最佳性能</li>
         <li><strong>实时处理</strong>：采用SSE技术实现实时进度显示，提升用户体验</li>
-        <li><strong>AI摘要生成</strong>：使用OpenAI API为资源生成智能摘要</li>
+        <li><strong>LLM摘要生成</strong>：可选使用OpenAI API为资源生成摘要</li>
       </ul>
       <h3>技术优势</h3>
       <ul>

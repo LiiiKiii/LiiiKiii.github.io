@@ -1,0 +1,207 @@
+{
+  "corpus_path": "data/test_corpora/nlp_transformers",
+  "corpus_name": "nlp_transformers",
+  "browsing_model": "gpt-4o",
+  "run_mode": "live_openai",
+  "num_documents": 10,
+  "search_metadata": {
+    "num_results": 15,
+    "browsing_model": "gpt-4o",
+    "run_mode": "live_openai",
+    "provenance": "OpenAI Responses API with hosted web_search tool"
+  },
+  "resource_metrics": {
+    "total_resources": 15,
+    "url_live_pct": 100.0,
+    "url_broken_pct": 0.0,
+    "url_unclear_pct": 0.0,
+    "authority_score_pct": 40.0,
+    "low_authority_pct": 0.0,
+    "modality_counts": {
+      "text": 9,
+      "video": 5,
+      "code": 1
+    },
+    "simpson_diversity_index": 0.8711,
+    "domain_distribution": {
+      "arxiv.org": 3,
+      "3blue1brown.com": 1,
+      "hyperskill.org": 1,
+      "videolectures.net": 1,
+      "github.io": 3,
+      "github.com": 1,
+      "ibm.com": 1,
+      "wikipedia.org": 2,
+      "classcentral.com": 1,
+      "geeksforgeeks.org": 1
+    }
+  },
+  "topics": [
+    {
+      "topic": "Topic A",
+      "resources": [
+        {
+          "title": "Understanding Transformers and Attention Mechanisms: An Introduction for Applied Mathematicians",
+          "url": "https://arxiv.org/abs/2604.00965",
+          "snippet": "Recent (published April 1, 2026) introduction to attention and transformer variants, including multi-head attention and efficiency improvements, matching the study notes’ focus.",
+          "type": "text",
+          "source_domain": "arxiv.org",
+          "url_status": "LIVE",
+          "selection_reason": "Recent (published April 1, 2026) introduction to attention and transformer variants, including multi-head attention and efficiency improvements, matching the study notes’ focus.",
+          "note": "Highly technical, aimed at applied mathematicians; may be dense for beginners."
+        },
+        {
+          "title": "Attention in transformers, step‑by‑step | Deep Learning Chapter 6",
+          "url": "https://www.3blue1brown.com/lessons/attention/",
+          "snippet": "Visual, intuitive explanation of attention mechanisms in transformers, aligning with the core intuition in the notes.",
+          "type": "video",
+          "source_domain": "3blue1brown.com",
+          "url_status": "LIVE",
+          "selection_reason": "Visual, intuitive explanation of attention mechanisms in transformers, aligning with the core intuition in the notes.",
+          "note": "Excellent for conceptual understanding; less formal than academic sources."
+        },
+        {
+          "title": "Attention Mechanisms in Transformers · Hyperskill",
+          "url": "https://hyperskill.org/learn/step/52060",
+          "snippet": "Structured tutorial covering self‑attention, multi‑head attention, positional encoding, and transformer architecture, directly matching the notes.",
+          "type": "text",
+          "source_domain": "hyperskill.org",
+          "url_status": "LIVE",
+          "selection_reason": "Structured tutorial covering self‑attention, multi‑head attention, positional encoding, and transformer architecture, directly matching the notes.",
+          "note": "Interactive learning platform; may require account."
+        },
+        {
+          "title": "Generative Models II (video lecture by Aaron Courville)",
+          "url": "https://videolectures.net/videos/deeplearning2017_courville_generative_models",
+          "snippet": "Covers autoregressive models, VAEs, GANs in depth, matching the classical generative model families in the notes.",
+          "type": "video",
+          "source_domain": "videolectures.net",
+          "url_status": "LIVE",
+          "selection_reason": "Covers autoregressive models, VAEs, GANs in depth, matching the classical generative model families in the notes.",
+          "note": "Older (2017) but foundational; lacks diffusion and LLM coverage."
+        },
+        {
+          "title": "Denoising Diffusion Models: A Generative Learning Big Bang (CVPR 2023 Tutorial)",
+          "url": "https://cvpr2023-tutorial-diffusion-models.github.io/",
+          "snippet": "Focused tutorial on diffusion models, including slides and recording, aligning with diffusion model content in the notes.",
+          "type": "video",
+          "source_domain": "github.io",
+          "url_status": "LIVE",
+          "selection_reason": "Focused tutorial on diffusion models, including slides and recording, aligning with diffusion model content in the notes.",
+          "note": "Geared toward computer vision applications; may need adaptation for text."
+        }
+      ]
+    },
+    {
+      "topic": "Topic B",
+      "resources": [
+        {
+          "title": "GitHub – generative‑modeling‑explained (diffusion, VAE, autoregressive)",
+          "url": "https://github.com/SHI-Yu-Zhe/generative-modeling-explained",
+          "snippet": "Visualizations and explanations relating diffusion models to VAEs and autoregressive models, matching generative model taxonomy.",
+          "type": "code",
+          "source_domain": "github.com",
+          "url_status": "LIVE",
+          "selection_reason": "Visualizations and explanations relating diffusion models to VAEs and autoregressive models, matching generative model taxonomy.",
+          "note": "Code repository; may require familiarity with ML concepts."
+        },
+        {
+          "title": "Advancing Language Models through Instruction Tuning: Recent Progress and Challenges (EMNLP 2025 Tutorial)",
+          "url": "https://instruction-tuning-tutorial-2025.github.io/",
+          "snippet": "Comprehensive tutorial (slides and video) on instruction tuning, covering supervised fine‑tuning, preference optimization, evaluation—directly aligned with the notes.",
+          "type": "video",
+          "source_domain": "github.io",
+          "url_status": "LIVE",
+          "selection_reason": "Comprehensive tutorial (slides and video) on instruction tuning, covering supervised fine‑tuning, preference optimization, evaluation—directly aligned with the notes.",
+          "note": "Tutorial from EMNLP 2025; highly relevant and recent."
+        },
+        {
+          "title": "What Is Instruction Tuning? | IBM",
+          "url": "https://www.ibm.com/think/topics/instruction-tuning",
+          "snippet": "Clear overview of instruction tuning, its purpose, and relation to fine‑tuning and RLHF, matching the notes’ alignment section.",
+          "type": "text",
+          "source_domain": "ibm.com",
+          "url_status": "LIVE",
+          "selection_reason": "Clear overview of instruction tuning, its purpose, and relation to fine‑tuning and RLHF, matching the notes’ alignment section.",
+          "note": "Corporate blog style; less technical depth."
+        },
+        {
+          "title": "From Language Modeling to Instruction Following: Understanding the Behavior Shift in LLMs after Instruction Tuning",
+          "url": "https://arxiv.org/abs/2310.00492",
+          "snippet": "Academic study analyzing how instruction tuning changes model behavior internally, matching the notes’ focus on alignment and interpretability.",
+          "type": "text",
+          "source_domain": "arxiv.org",
+          "url_status": "LIVE",
+          "selection_reason": "Academic study analyzing how instruction tuning changes model behavior internally, matching the notes’ focus on alignment and interpretability.",
+          "note": "Research paper; technical and interpretive."
+        },
+        {
+          "title": "A Tutorial on the Pretrain‑Finetune Paradigm for Natural Language Processing",
+          "url": "https://arxiv.org/abs/2403.02504",
+          "snippet": "Tutorial covering pretraining and fine‑tuning paradigm, objectives, and applications, directly matching the notes’ pretraining section.",
+          "type": "text",
+          "source_domain": "arxiv.org",
+          "url_status": "LIVE",
+          "selection_reason": "Tutorial covering pretraining and fine‑tuning paradigm, objectives, and applications, directly matching the notes’ pretraining section.",
+          "note": "Recent (2024) and includes code and datasets; good for applied learning."
+        }
+      ]
+    },
+    {
+      "topic": "Topic C",
+      "resources": [
+        {
+          "title": "BERT (language model) – Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/BERT_%28language_model%29",
+          "snippet": "Describes pretraining objectives like masked language modeling and next sentence prediction, matching the notes’ mention of BERT.",
+          "type": "text",
+          "source_domain": "wikipedia.org",
+          "url_status": "LIVE",
+          "selection_reason": "Describes pretraining objectives like masked language modeling and next sentence prediction, matching the notes’ mention of BERT.",
+          "note": "General overview; may lack depth on newer models."
+        },
+        {
+          "title": "CSC6203: Large Language Model Lecture 4: Training LLMs (pretraining objectives)",
+          "url": "https://llm-course.github.io/materials/2024fall/Lecture-4-Training-LLMs.pdf",
+          "snippet": "Lecture slides listing pretraining objectives for language models, directly relevant to the notes.",
+          "type": "text",
+          "source_domain": "github.io",
+          "url_status": "LIVE",
+          "selection_reason": "Lecture slides listing pretraining objectives for language models, directly relevant to the notes.",
+          "note": "Lecture format; may require context from course."
+        },
+        {
+          "title": "Tokenization in NLP: From Basics to Advanced Techniques (YouTube via Class Central)",
+          "url": "https://www.classcentral.com/course/youtube-tokenization-in-nlp-from-basics-to-advanced-techniques-296954",
+          "snippet": "Covers tokenization, embeddings, positional encoding—matching the traditional and deep learning techniques in the notes.",
+          "type": "video",
+          "source_domain": "classcentral.com",
+          "url_status": "LIVE",
+          "selection_reason": "Covers tokenization, embeddings, positional encoding—matching the traditional and deep learning techniques in the notes.",
+          "note": "Hosted via Class Central; video may require YouTube access."
+        },
+        {
+          "title": "Tokenization vs Embeddings – GeeksforGeeks",
+          "url": "https://www.geeksforgeeks.org/nlp/tokenization-vs-embeddings/",
+          "snippet": "Explains tokenization techniques and embeddings with code examples, aligning with the notes’ NLP techniques section.",
+          "type": "text",
+          "source_domain": "geeksforgeeks.org",
+          "url_status": "LIVE",
+          "selection_reason": "Explains tokenization techniques and embeddings with code examples, aligning with the notes’ NLP techniques section.",
+          "note": "Informal tutorial; good for quick reference."
+        },
+        {
+          "title": "Transformer (deep learning) – Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Transformer_%28deep_learning%29",
+          "snippet": "Overview of transformer architecture, tokenization, embeddings, and attention, matching the notes’ modern NLP models.",
+          "type": "text",
+          "source_domain": "wikipedia.org",
+          "url_status": "LIVE",
+          "selection_reason": "Overview of transformer architecture, tokenization, embeddings, and attention, matching the notes’ modern NLP models.",
+          "note": "General overview; may lack depth on implementation."
+        }
+      ]
+    }
+  ],
+  "timestamp": "2026-04-22T20:48:51.953145"
+}

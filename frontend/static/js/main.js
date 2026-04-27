@@ -1,4 +1,4 @@
-// AI多媒体推荐系统 - 主JavaScript文件
+// AI-Pedia - 主JavaScript文件
 
 let currentFolderName = null;
 let processingInterval = null;
@@ -923,7 +923,7 @@ const I18N_MAP = {
     'nav.progress': '研发进度',
     'nav.aiEnhance': 'AI增强',
     'nav.contact': '加入我们',
-    'home.title': 'AI多媒体推荐系统',
+    'home.title': 'AI-Pedia',
     'home.subtitle': '智能推荐，精确匹配',
     'home.step1.title': '上传文件',
     'home.step2.title': '处理中',
@@ -1015,9 +1015,9 @@ const I18N_MAP = {
     'progress.modules.file.title': '文件处理',
     'progress.modules.file.desc': '支持ZIP文件上传、PDF自动转换、文本提取等功能，提供完整的文件处理流程。',
     'progress.modules.keyword.title': '关键词提取',
-    'progress.modules.keyword.desc': '基于TF-IDF和TextRank算法，智能提取文档中的关键主题和概念。',
+    'progress.modules.keyword.desc': '基于TF-IDF和MMR算法，智能提取文档中的关键主题和概念。',
     'progress.modules.search.title': '多源搜索',
-    'progress.modules.search.desc': '集成Wikipedia、YouTube、GitHub等多个数据源，提供全面的资源搜索能力。',
+    'progress.modules.search.desc': '集成Wikipedia、Google Scholar、arXiv、YouTube、GitHub等多个数据源，提供全面的资源搜索能力。',
     'progress.modules.recommend.title': '智能推荐',
     'progress.modules.recommend.desc': '基于相似度计算的推荐算法，为用户推荐最相关的学习资源。',
     'progress.modules.ai.title': 'AI增强',
@@ -1113,7 +1113,7 @@ const I18N_MAP = {
     'nav.progress': 'Progress',
     'nav.aiEnhance': 'AI Enhance',
     'nav.contact': 'Join Us',
-    'home.title': 'Reinforcement Ebook System',
+    'home.title': 'AI-Pedia',
     'home.subtitle': 'Intelligent recommendation, precise matching',
     'home.step1.title': 'Upload Files',
     'home.step2.title': 'Processing',
@@ -1205,9 +1205,9 @@ const I18N_MAP = {
     'progress.modules.file.title': 'File Processing',
     'progress.modules.file.desc': 'Support ZIP upload, PDF conversion and text extraction to form a complete processing pipeline.',
     'progress.modules.keyword.title': 'Keyword Extraction',
-    'progress.modules.keyword.desc': 'Use TF-IDF and TextRank to extract key topics and concepts.',
+    'progress.modules.keyword.desc': 'Use TF-IDF and MMR to extract key topics and concepts.',
     'progress.modules.search.title': 'Multi-source Search',
-    'progress.modules.search.desc': 'Integrate Wikipedia, YouTube, GitHub and other sources for comprehensive search.',
+    'progress.modules.search.desc': 'Integrate Wikipedia, Google Scholar, arXiv, YouTube, GitHub and other sources for comprehensive search.',
     'progress.modules.recommend.title': 'Intelligent Recommendation',
     'progress.modules.recommend.desc': 'Recommend the most relevant learning resources based on similarity scoring.',
     'progress.modules.ai.title': 'AI Enhance',

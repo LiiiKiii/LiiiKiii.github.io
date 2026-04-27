@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI多媒体推荐系统
+AI-Pedia: AI-Embedded Multimedia Resource Recommender
 主应用文件
 
-专注于AI/机器学习领域的智能多媒体资源推荐系统
+面向AI教育的AI嵌入式多媒体资源推荐器
 """
 
 import json
@@ -573,7 +573,7 @@ if __name__ == "__main__":
         print(f"✓ OpenAI API Key: {masked_key} (已设置)")
     else:
         print("⚠ 警告: 未检测到 OPENAI_API_KEY 环境变量")
-        print("  提示: 如需使用AI摘要功能，请设置环境变量")
+        print("  提示: 如需使用LLM摘要功能，请设置环境变量")
         print("  方法: export OPENAI_API_KEY='your-key-here'")
     
     print("=" * 50)

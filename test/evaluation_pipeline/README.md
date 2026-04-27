@@ -19,7 +19,6 @@ The current dissertation evaluation is based on **focused multi-corpus testing**
 The scripts live here, but the corpora are stored outside this folder:
 
 - Focused corpora root: `data/test_corpora/`
-- Legacy single-corpus input: `data/test_corpus/`
 
 Current focused corpora:
 
@@ -48,7 +47,7 @@ Current focused corpora:
 Run from the project root:
 
 ```bash
-python test/evaluation_pipeline/evaluator.py --use-focused-corpora --reuse-cache
+python test/evaluation_pipeline/evaluator.py --reuse-cache
 ```
 
 This runs evaluation across all corpora in `data/test_corpora/` and writes:
@@ -58,14 +57,6 @@ This runs evaluation across all corpora in `data/test_corpora/` and writes:
 - LaTeX tables
 - paper-ready figures
 - per-corpus outputs under `results/<corpus_name>/`
-
-### 2. Single-corpus mode
-
-```bash
-python test/evaluation_pipeline/evaluator.py --corpus data/test_corpus
-```
-
-This mode is still useful for quick debugging or smaller pilot runs.
 
 ## Main outputs
 
@@ -87,7 +78,7 @@ Per-corpus outputs:
 ### Keyword-stage metrics
 
 - **Coverage**: how many documents are touched by the extracted keywords
-- **AI relevance**: how strongly extracted terms align with AI/ML concepts
+- **AI relevance**: how strongly extracted terms align with AI concepts
 - **Diversity**: how non-redundant the keyword set is
 
 ### Resource-stage metrics

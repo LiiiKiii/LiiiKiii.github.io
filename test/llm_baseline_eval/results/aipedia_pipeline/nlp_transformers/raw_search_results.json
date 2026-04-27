@@ -1,0 +1,1079 @@
+{
+  "txt": [
+    {
+      "title": "Large language model - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Large language models ) Type of machine learning model This article's lead section may be too technical for most readers to understand. Please help improve it to make it understandable to non-experts. ( January 2026 ) ( Learn how and when to remove this message ) Part of a series on Machine learning and data mining A large language model ( LLM ) is a computational model designed to perform natural language processing tasks, especially language generation , using statistical patterns learned from large text corpora. LLMs can generate, summarize, translate and parse text in many contexts, and are a foundational technology behind modern chatbots. 1 LLMs can produce text that resembles natural language patterns because they are trained on collections of human-written text. 2 For the same reason, biased or inaccurate training data can make an LLM's output less reliable. 3 As of 2024, the largest and most capable LLMs are all based on transformer architectures, 4 which, according to the 2017 paper Attention Is All You Need , can be more efficient and parallelizable than earlier statistical and recurrent neural network models. 6 Benchmark evaluations for LLMs attempt to measure model reasoning , factual accuracy, alignment , and safety. 7 The number of publications about large language models by year grouped by publication types The training compute of notable large models in FLOPs vs publication date over the period 2010–2024. For overall notable models (top left), frontier models (top right), top language models (bottom left) and top models within leading companies (bottom right). The majority of these models are language models. The training compute of notable large AI models in FLOPs vs publication date over the period 2017–2024. The majority of large models are language models or multimodal models with language capacity. Before the emergence of transformer-based models in 2017, some language models were considered large relative to the computational and data constraints of their time. In the early 1990s, IBM 's statistical models pioneered word alignment techniques for machine translation, laying the groundwork for corpus-based language modeling. In 2001, a smoothed n -gram model , such as those employing Kneser–Ney smoothing , trained on 300 million words, achieved state-of-the-art perplexity on benchmark tests. 12 Following the breakthrough of deep neural networks in image classification around 2012, 13 similar architectures were adapted for language tasks. This shift was marked by the development of word embeddings (e.g., Word2Vec by Mikolov in 2013) and sequence-to-sequence ( seq2seq ) models using LSTM. In 2016, Google transitioned its translation service to neural machine translation (NMT), replacing statistical phrase-based models with deep recurrent neural networks. These early NMT systems used LSTM-based encoder-decoder architectures , as they preceded the invention of transformers. 5 This paper's goal was to improve upon 2014 seq2seq technology, and was based mainly on the attention mechanism developed by Bahdanau et al. 14 15 The following year in 2018, BERT was introduced and quickly became \"ubiquitous\". 16 Though the original transformer has both encoder and decoder blocks, BERT is an encoder-only model. 17 Although decoder-only GPT-1 was introduced in 2018, it was GPT-2 in 2019 that caught widespread attention because OpenAI claimed to have initially deemed it too powerful to release publicly, out of fear of malicious use. 18 GPT-3 in 2020 went a step further and as of 2025 update is available only via API with no offering of downloading the model to execute locally. But it was the 2022 consumer-facing chatbot ChatGPT that received extensive media coverage and public attention. 19 The 2023 GPT-4 was praised for its increased accuracy and as a \"holy grail\" for its multimodal capabilities. 20 OpenAI did not reveal the high-level architecture and the number of parameters of GPT-4. 17 In 2024 OpenAI released the reasoning model OpenAI o1 , which generates long chains of thought before returning a final answer. 21 Many LLMs with parameter counts comparable to those of OpenAI's GPT series have been developed. 22 Since 2022, weights-available models have been gaining popularity, especially at first with BLOOM and LLaMA , though both have restrictions on usage and deployment. Mistral AI 's open-weight models Mistral 7B and Mixtral 8x7B have a more permissive Apache License. In January 2025, DeepSeek released DeepSeek R1, a 671-billion-parameter open-weight model that performs comparably to OpenAI o1 but at a much lower price per token for users. 23 Since 2023, many LLMs have been trained to be multimodal , having the ability to also process or generate other types of data, such as images, audio, or 3D meshes. citation needed Open-weight LLMs have become more influential since 2023.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/large_language_models",
+      "type": "txt"
+    },
+    {
+      "title": "Enhancing Human-Like Responses in Large Language Models",
+      "content": "论文标题: Enhancing Human-Like Responses in Large Language Models\n\n作者: Ethem Yağız Çalık, Talha Rüzgar Akkuş\n\n摘要: This paper explores the advancements in making large language models (LLMs) more human-like. We focus on techniques that enhance natural language understanding, conversational coherence, and emotional intelligence in AI systems. The study evaluates various approaches, including fine-tuning with diverse datasets, incorporating psychological principles, and designing models that better mimic human reasoning patterns. Our findings demonstrate that these enhancements not only improve user interactions but also open new possibilities for AI applications across different domains. Future work will address the ethical implications and potential biases introduced by these human-like attributes.\n\narXiv链接: http://arxiv.org/abs/2501.05032v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2501.05032v2",
+      "type": "txt"
+    },
+    {
+      "title": "Is Self-knowledge and Action Consistent or Not: Investigating Large Language Model's Personality",
+      "content": "论文标题: Is Self-knowledge and Action Consistent or Not: Investigating Large Language Model's Personality\n\n作者: Yiming Ai, Zhiwei He, Ziyin Zhang, Wenhong Zhu, Hongkun Hao\n\n摘要: In this study, we delve into the validity of conventional personality questionnaires in capturing the human-like personality traits of Large Language Models (LLMs). Our objective is to assess the congruence between the personality traits LLMs claim to possess and their demonstrated tendencies in real-world scenarios. By conducting an extensive examination of LLM outputs against observed human response patterns, we aim to understand the disjunction between self-knowledge and action in LLMs.\n\narXiv链接: http://arxiv.org/abs/2402.14679v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2402.14679v2",
+      "type": "txt"
+    },
+    {
+      "title": "Large Language Models Lack Understanding of Character Composition of Words",
+      "content": "论文标题: Large Language Models Lack Understanding of Character Composition of Words\n\n作者: Andrew Shin, Kunitake Kaneko\n\n摘要: Large language models (LLMs) have demonstrated remarkable performances on a wide range of natural language tasks. Yet, LLMs' successes have been largely restricted to tasks concerning words, sentences, or documents, and it remains questionable how much they understand the minimal units of text, namely characters. In this paper, we examine contemporary LLMs regarding their ability to understand character composition of words, and show that most of them fail to reliably carry out even the simple tasks that can be handled by humans with perfection. We analyze their behaviors with comparison to token level performances, and discuss the potential directions for future research.\n\narXiv链接: http://arxiv.org/abs/2405.11357v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2405.11357v3",
+      "type": "txt"
+    },
+    {
+      "title": "Automatic summarization - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Text summarization ) Computer-based method for summarizing a text This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. Find sources: \"Automatic summarization\" – news · newspapers · books · scholar · JSTOR ( April 2022 ) ( Learn how and when to remove this message ) Automatic summarization is the process of shortening a set of data computationally, to create a subset (a summary ) that represents the most important or relevant information within the original content. Artificial intelligence (AI) algorithms are commonly developed and employed to achieve this, specialized for different types of data. Text summarization is usually implemented by natural language processing methods, designed to locate the most informative sentences in a given document. 1 On the other hand, visual content can be summarized using computer vision algorithms. 2 3 4 Video summarization algorithms identify and extract from the original video content the most important frames ( key-frames ), and/or the most important video segments ( key-shots ), normally in a temporally ordered fashion. 5 6 7 8 Video summaries simply retain a carefully selected subset of the original video frames and, therefore, are not identical to the output of video synopsis algorithms, where new video frames are being synthesized based on the original video content. In 2022 Google Docs released an automatic summarization feature. 9 There are two general approaches to automatic summarization: extraction and abstraction. Here, content is extracted from the original data, but the extracted content is not modified in any way. Examples of extracted content include key-phrases that can be used to \"tag\" or index a text document, or key sentences (including headings) that collectively comprise an abstract, and representative images or video segments, as stated above. For text, extraction is analogous to the process of skimming, where the summary (if available), headings and subheadings, figures, the first and last paragraphs of a section, and optionally the first and last sentences in a paragraph are read before one chooses to read the entire document in detail. 10 Other examples of extraction that include key sequences of text in terms of clinical relevance (including patient/problem, intervention, and outcome). 11 Abstractive summarization methods generate new text that did not exist in the original text. 12 This has been applied mainly for text. Abstractive methods build an internal semantic representation of the original content (often called a language model), and then use this representation to create a summary that is closer to what a human might express. Abstraction may transform the extracted content by paraphrasing sections of the source document, to condense a text more strongly than extraction. Such transformation, however, is computationally much more challenging than extraction, involving both natural language processing and often a deep understanding of the domain of the original text in cases where the original document relates to a special field of knowledge. \"Paraphrasing\" is even more difficult to apply to images and videos, which is why most summarization systems are extractive. Approaches aimed at higher summarization quality rely on combined software and human effort. In Machine Aided Human Summarization, extractive techniques highlight candidate passages for inclusion (to which the human adds or removes text). In Human Aided Machine Summarization, a human post-processes software output, in the same way that one edits the output of automatic translation by Google Translate. There are broadly two types of extractive summarization tasks depending on what the summarization program focuses on. The first is generic summarization , which focuses on obtaining a generic summary or abstract of the collection (whether documents, or sets of images, or videos, news stories etc.). The second is query relevant summarization , sometimes called query-based summarization , which summarizes objects specific to a query. Summarization systems are able to create both query relevant text summaries and generic machine-generated summaries depending on what the user needs. An example of a summarization problem is document summarization, which attempts to automatically produce an abstract from a given document. Sometimes one might be interested in generating a summary from a single source document, while others can use multiple source documents (for example, a cluster of articles on the same topic). This problem is called multi-document summarization. A related application is summarizing news articles. Imagine a system, which automatically pulls together news articles on a given topic (from the web), and concisely represents the latest news as a summary.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/text_summarization",
+      "type": "txt"
+    },
+    {
+      "title": "Tone Biased MMR Text Summarization",
+      "content": "论文标题: Tone Biased MMR Text Summarization\n\n作者: Mayank Chaudhari, Aakash Nelson Mattukoyya\n\n摘要: Text summarization is an interesting area for researchers to develop new techniques to provide human like summaries for vast amounts of information. Summarization techniques tend to focus on providing accurate representation of content, and often the tone of the content is ignored. Tone of the content sets a baseline for how a reader perceives the content. As such being able to generate summary with tone that is appropriate for the reader is important. In our work we implement Maximal Marginal Relevance [MMR] based multi-document text summarization and propose a naive model to change tone of the summarization by setting a bias to specific set of words and restricting other words in the summarization output. This bias towards a specified set of words produces a summary whose tone is same as tone of specified words.\n\narXiv链接: http://arxiv.org/abs/1802.09426v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1802.09426v2",
+      "type": "txt"
+    },
+    {
+      "title": "Instructive Dialogue Summarization with Query Aggregations",
+      "content": "论文标题: Instructive Dialogue Summarization with Query Aggregations\n\n作者: Bin Wang, Zhengyuan Liu, Nancy F. Chen\n\n摘要: Conventional dialogue summarization methods directly generate summaries and do not consider user's specific interests. This poses challenges in cases where the users are more focused on particular topics or aspects. With the advancement of instruction-finetuned language models, we introduce instruction-tuning to dialogues to expand the capability set of dialogue summarization models. To overcome the scarcity of instructive dialogue summarization data, we propose a three-step approach to synthesize high-quality query-based summarization triples. This process involves summary-anchored query generation, query filtering, and query-based summary generation. By training a unified model called InstructDS (Instructive Dialogue Summarization) on three summarization datasets with multi-purpose instructive triples, we expand the capability of dialogue summarization models. We evaluate our method on four datasets, including dialogue summarization and dialogue reading comprehension. Experimental re...\n\narXiv链接: http://arxiv.org/abs/2310.10981v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2310.10981v3",
+      "type": "txt"
+    },
+    {
+      "title": "Modeling Endorsement for Multi-Document Abstractive Summarization",
+      "content": "论文标题: Modeling Endorsement for Multi-Document Abstractive Summarization\n\n作者: Logan Lebanoff, Bingqing Wang, Zhe Feng, Fei Liu\n\n摘要: A crucial difference between single- and multi-document summarization is how salient content manifests itself in the document(s). While such content may appear at the beginning of a single document, essential information is frequently reiterated in a set of documents related to a particular topic, resulting in an endorsement effect that increases information salience. In this paper, we model the cross-document endorsement effect and its utilization in multiple document summarization. Our method generates a synopsis from each document, which serves as an endorser to identify salient content from other documents. Strongly endorsed text segments are used to enrich a neural encoder-decoder model to consolidate them into an abstractive summary. The method has a great potential to learn from fewer examples to identify salient content, which alleviates the need for costly retraining when the set of documents is dynamically adjusted. Through extensive experiments on benchmark multi-document su...\n\narXiv链接: http://arxiv.org/abs/2110.07844v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2110.07844v1",
+      "type": "txt"
+    },
+    {
+      "title": "Natural language processing - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Processing of natural language by a computer This article has multiple issues. Please help improve it or discuss these issues on the talk page. ( Learn how and when to remove these messages ) This article needs additional citations for verification. Please help improve this article by adding citations to reliable sources. Unsourced material may be challenged and removed. Find sources: \"Natural language processing\" – news · newspapers · books · scholar · JSTOR ( May 2024 ) ( Learn how and when to remove this message ) This article may need to be rewritten to comply with Wikipedia's quality standards. Relevant discussion may be found on the talk page. The talk page may contain suggestions. ( July 2025 ) This article may be in need of reorganization to comply with Wikipedia's layout guidelines. Please help by editing the article to make improvements to the overall structure. ( July 2025 ) ( Learn how and when to remove this message ) ( Learn how and when to remove this message ) Part of a series on Artificial intelligence (AI) Natural language processing ( NLP ) is the processing of natural language information by a computer. NLP is a subfield of computer science and is closely associated with artificial intelligence. NLP is also related to information retrieval , knowledge representation , computational linguistics , and linguistics more broadly. 1 Major processing tasks in an NLP system include: speech recognition , text classification , natural language understanding , and natural language generation. Natural language processing has its roots in the 1950s. 2 Already in 1950, Alan Turing published an article titled \" Computing Machinery and Intelligence ,\" which proposed what is now called the Turing test as a criterion of intelligence, though at the time that was not articulated as a problem separate from artificial intelligence. The proposed test includes a task that involves the automated interpretation and generation of natural language. A document parsed into an abstract syntax tree The premise of symbolic NLP is often illustrated using John Searle's Chinese room thought experiment: Given a collection of rules (e.g., a Chinese phrasebook, with questions and matching answers), the computer emulates natural language understanding (or other NLP tasks) by applying those rules to the data it confronts. 1950s : The Georgetown experiment in 1954 involved fully automatic translation of more than sixty Russian sentences into English. The authors claimed that within three or five years, machine translation would be a solved problem. 1960s : Some notably successful natural language processing systems developed in the 1960s were SHRDLU , a natural language system working in restricted \" blocks worlds \" with restricted vocabularies, and ELIZA , a simulation of Rogerian psychotherapy, written by Joseph Weizenbaum between 1964 and 1966. Despite using minimal information about human thought or emotion, ELIZA was able to produce interactions that appeared human-like. When the \"patient\" exceeded the very small knowledge base, ELIZA might provide a generic response, for example, responding to \"My head hurts\" with \"Why do you say your head hurts?\". Ross Quillian's successful work on natural language was demonstrated with a vocabulary of only twenty words, because that was all that would fit in a computer memory at the time. 5 1970s : During the 1970s, many programmers began to write \"conceptual ontologies \", which structured real-world information into computer-understandable data. Examples are MARGIE (Schank, 1975), SAM (Cullingford, 1978), PAM (Wilensky, 1978), TaleSpin (Meehan, 1976), QUALM (Lehnert, 1977), Politics (Carbonell, 1979), and Plot Units (Lehnert 1981). During this time, the first chatterbots were written (e.g., PARRY ). 1980s : The 1980s and early 1990s mark the heyday of symbolic methods in NLP. An important development (that eventually led to the statistical turn in the 1990s) was the rising importance of quantitative evaluation in this period. 8 Up until the 1980s, most natural language processing systems were based on complex sets of hand-written rules. Starting in the late 1980s, however, there was a revolution in natural language processing with the introduction of machine learning algorithms for language processing. This shift was influenced by increasing computational power (see Moore's law ) and a decline in the dominance of Chomskyan linguistic theories (e.g. transformational grammar ), whose theoretical underpinnings discouraged the sort of corpus linguistics that underlies the machine-learning approach to language processing. These systems were able to take advantage of existing multilingual textual corpora that had been produced by the Parliament of Canada and the European Union as a result of laws calling for the translation of all governmental proceedings into all official languages of the corresponding systems of government.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/natural_language_processing",
+      "type": "txt"
+    },
+    {
+      "title": "An Open Natural Language Processing Development Framework for EHR-based Clinical Research: A case demonstration using the National COVID Cohort Collaborative (N3C)",
+      "content": "论文标题: An Open Natural Language Processing Development Framework for EHR-based Clinical Research: A case demonstration using the National COVID Cohort Collaborative (N3C)\n\n作者: Sijia Liu, Andrew Wen, Liwei Wang, Huan He, Sunyang Fu\n\n摘要: While we pay attention to the latest advances in clinical natural language processing (NLP), we can notice some resistance in the clinical and translational research community to adopt NLP models due to limited transparency, interpretability, and usability. In this study, we proposed an open natural language processing development framework. We evaluated it through the implementation of NLP algorithms for the National COVID Cohort Collaborative (N3C). Based on the interests in information extraction from COVID-19 related clinical notes, our work includes 1) an open data annotation process using COVID-19 signs and symptoms as the use case, 2) a community-driven ruleset composing platform, and 3) a synthetic text data generation workflow to generate texts for information extraction tasks without involving human subjects. The corpora were derived from texts from three different institutions (Mayo Clinic, University of Kentucky, University of Minnesota). The gold standard annotations were ...\n\narXiv链接: http://arxiv.org/abs/2110.10780v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2110.10780v3",
+      "type": "txt"
+    },
+    {
+      "title": "A Comprehensive Review of State-of-The-Art Methods for Java Code Generation from Natural Language Text",
+      "content": "论文标题: A Comprehensive Review of State-of-The-Art Methods for Java Code Generation from Natural Language Text\n\n作者: Jessica López Espejel, Mahaman Sanoussi Yahaya Alassan, El Mehdi Chouham, Walid Dahhane, El Hassane Ettifouri\n\n摘要: Java Code Generation consists in generating automatically Java code from a Natural Language Text. This NLP task helps in increasing programmers' productivity by providing them with immediate solutions to the simplest and most repetitive tasks. Code generation is a challenging task because of the hard syntactic rules and the necessity of a deep understanding of the semantic aspect of the programming language. Many works tried to tackle this task using either RNN-based, or Transformer-based models. The latter achieved remarkable advancement in the domain and they can be divided into three groups: (1) encoder-only models, (2) decoder-only models, and (3) encoder-decoder models. In this paper, we provide a comprehensive review of the evolution and progress of deep learning models in Java code generation task. We focus on the most important methods and present their merits and limitations, as well as the objective functions used by the community. In addition, we provide a detailed descripti...\n\narXiv链接: http://arxiv.org/abs/2306.06371v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2306.06371v1",
+      "type": "txt"
+    },
+    {
+      "title": "Towards the Study of Morphological Processing of the Tangkhul Language",
+      "content": "论文标题: Towards the Study of Morphological Processing of the Tangkhul Language\n\n作者: Mirinso Shadang, Navanath Saharia, Thoudam Doren Singh\n\n摘要: There is no or little work on natural language processing of Tangkhul language. The current work is a humble beginning of morphological processing of this language using an unsupervised approach. We use a small corpus collected from different sources of text books, short stories and articles of other topics. Based on the experiments carried out, the morpheme identification task using morphessor gives reasonable and interesting output despite using a small corpus.\n\narXiv链接: http://arxiv.org/abs/2006.16212v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2006.16212v1",
+      "type": "txt"
+    },
+    {
+      "title": "AI prediction leads people to forgo guaranteed rewards",
+      "content": "论文标题: AI prediction leads people to forgo guaranteed rewards\n\n作者: Aoi Naito, Hirokazu Shirado\n\n摘要: Artificial intelligence (AI) is understood to affect the content of people's decisions. Here, using a behavioral implementation of the classic Newcomb's paradox in 1,305 participants, we show that AI can also change how people decide. In this paradigm, belief in predictive authority can lead individuals to constrain decision-making, forgoing a guaranteed reward. Over 40% of participants treated AI as such a predictive authority. This significantly increased the odds of forgoing the guaranteed reward by a factor of 3.39 (95% CI: 2.45-4.70) compared with random framing, and reduced earnings by 10.7-42.9%. The effect appeared across AI presentations and decision contexts and persisted even when predictions failed. When people believe AI can predict their behavior, they may self-constrain it in anticipation of that prediction.\n\narXiv链接: http://arxiv.org/abs/2603.28944v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2603.28944v1",
+      "type": "txt"
+    },
+    {
+      "title": "Foundations of GenIR",
+      "content": "论文标题: Foundations of GenIR\n\n作者: Qingyao Ai, Jingtao Zhan, Yiqun Liu\n\n摘要: The chapter discusses the foundational impact of modern generative AI models on information access (IA) systems. In contrast to traditional AI, the large-scale training and superior data modeling of generative AI models enable them to produce high-quality, human-like responses, which brings brand new opportunities for the development of IA paradigms. In this chapter, we identify and introduce two of them in details, i.e., information generation and information synthesis. Information generation allows AI to create tailored content addressing user needs directly, enhancing user experience with immediate, relevant outputs. Information synthesis leverages the ability of generative AI to integrate and reorganize existing information, providing grounded responses and mitigating issues like model hallucination, which is particularly valuable in scenarios requiring precision and external knowledge. This chapter delves into the foundational aspects of generative models, including architecture, ...\n\narXiv链接: http://arxiv.org/abs/2501.02842v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2501.02842v1",
+      "type": "txt"
+    },
+    {
+      "title": "Competing Visions of Ethical AI: A Case Study of OpenAI",
+      "content": "论文标题: Competing Visions of Ethical AI: A Case Study of OpenAI\n\n作者: Melissa Wilfley, Mengting Ai, Madelyn Rose Sanfilippo\n\n摘要: Introduction. AI Ethics is framed distinctly across actors and stakeholder groups. We report results from a case study of OpenAI analysing ethical AI discourse. Method. Research addressed: How has OpenAI's public discourse leveraged 'ethics', 'safety', 'alignment' and adjacent related concepts over time, and what does discourse signal about framing in practice? A structured corpus, differentiating between communication for a general audience and communication with an academic audience, was assembled from public documentation. Analysis. Qualitative content analysis of ethical themes combined inductively derived and deductively applied codes. Quantitative analysis leveraged computational content analysis methods via NLP to model topics and quantify changes in rhetoric over time. Visualizations report aggregate results. For reproducible results, we have released our code at https://github.com/famous-blue-raincoat/AI_Ethics_Discourse. Results. Results indicate that safety and risk discours...\n\narXiv链接: http://arxiv.org/abs/2601.16513v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2601.16513v1",
+      "type": "txt"
+    },
+    {
+      "title": "Single Headed Attention RNN: Stop Thinking With Your Head",
+      "content": "论文标题: Single Headed Attention RNN: Stop Thinking With Your Head\n\n作者: Stephen Merity\n\n摘要: The leading approaches in language modeling are all obsessed with TV shows of my youth - namely Transformers and Sesame Street. Transformers this, Transformers that, and over here a bonfire worth of GPU-TPU-neuromorphic wafer scale silicon. We opt for the lazy path of old and proven techniques with a fancy crypto inspired acronym: the Single Headed Attention RNN (SHA-RNN). The author's lone goal is to show that the entire field might have evolved a different direction if we had instead been obsessed with a slightly different acronym and slightly different result. We take a previously strong language model based only on boring LSTMs and get it to within a stone's throw of a stone's throw of state-of-the-art byte level language model results on enwik8. This work has undergone no intensive hyperparameter optimization and lived entirely on a commodity desktop machine that made the author's small studio apartment far too warm in the midst of a San Franciscan summer. The final results are ac...\n\narXiv链接: http://arxiv.org/abs/1911.11423v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1911.11423v2",
+      "type": "txt"
+    },
+    {
+      "title": "Radiomics-enhanced Deep Multi-task Learning for Outcome Prediction in Head and Neck Cancer",
+      "content": "论文标题: Radiomics-enhanced Deep Multi-task Learning for Outcome Prediction in Head and Neck Cancer\n\n作者: Mingyuan Meng, Lei Bi, Dagan Feng, Jinman Kim\n\n摘要: Outcome prediction is crucial for head and neck cancer patients as it can provide prognostic information for early treatment planning. Radiomics methods have been widely used for outcome prediction from medical images. However, these methods are limited by their reliance on intractable manual segmentation of tumor regions. Recently, deep learning methods have been proposed to perform end-to-end outcome prediction so as to remove the reliance on manual segmentation. Unfortunately, without segmentation masks, these methods will take the whole image as input, such that makes them difficult to focus on tumor regions and potentially unable to fully leverage the prognostic information within the tumor regions. In this study, we propose a radiomics-enhanced deep multi-task framework for outcome prediction from PET/CT images, in the context of HEad and neCK TumOR segmentation and outcome prediction challenge (HECKTOR 2022). In our framework, our novelty is to incorporate radiomics as an enhanc...\n\narXiv链接: http://arxiv.org/abs/2211.05409v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2211.05409v1",
+      "type": "txt"
+    },
+    {
+      "title": "The Anxiety of Influence: Bloom Filters in Transformer Attention Heads",
+      "content": "论文标题: The Anxiety of Influence: Bloom Filters in Transformer Attention Heads\n\n作者: Peter Balogh\n\n摘要: Some transformer attention heads appear to function as membership testers, dedicating themselves to answering the question \"has this token appeared before in the context?\" We identify these heads across four language models (GPT-2 small, medium, and large; Pythia-160M) and show that they form a spectrum of membership-testing strategies. Two heads (L0H1 and L0H5 in GPT-2 small) function as high-precision membership filters with false positive rates of 0-4\\% even at 180 unique context tokens -- well above the $d_\\text{head} = 64$ bit capacity of a classical Bloom filter. A third head (L1H11) shows the classic Bloom filter capacity curve: its false positive rate follows the theoretical formula $p \\approx (1 - e^{-kn/m})^k$ with $R^2 = 1.0$ and fitted capacity $m \\approx 5$ bits, saturating by $n \\approx 20$ unique tokens. A fourth head initially identified as a Bloom filter (L3H0) was reclassified as a general prefix-attention head after confound controls revealed its apparent capacity cu...\n\narXiv链接: http://arxiv.org/abs/2602.17526v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2602.17526v1",
+      "type": "txt"
+    },
+    {
+      "title": "Machine translation - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Computerized translation between natural languages A mobile phone app translating Spanish text into English Part of a series on Translation Types Legal Literary Bible Quran Kural Linguistic validation Medical Regulatory Technical Interpretation Cultural Word-for-word Sense-for-sense Homophonic Theory Translation studies Skopos theory Translation project Translation criticism Dynamic and formal equivalence Contrastive linguistics Polysystem theory Technologies CAT Machine translation Mobile translation Translation management system Dubbing Subtitling Pre-editing Postediting Multimedia translation Localization Dub Glocalization Internationalization Language Software Website Video game Institutional Associations Awards Organizations Schools Related topics Untranslatability Transcription Transliteration Video relay service (VRS) Telephone interpreting Language barrier Fan translation ( of video games ) Fansub Fandub Scanlation Journalistic translation Books and magazines on translation Bible translations by language Translated books List of most translated works Translators Kural translations by language Machine translation is the use of computational techniques to translate text or speech from one language to another, including the contextual, idiomatic, and pragmatic nuances of both languages. While some language models are capable of generating comprehensible results, machine translation tools remain limited by the complexity of language and emotion, often lacking depth and semantic precision. Its quality is influenced by linguistic, grammatical, tonal, and cultural differences, making it inadequate to replace real translators fully. 1 2 Effective improvement in translation quality requires understanding of target society's customs and historical context, and human intervention and visual cues remain necessary in simultaneous interpretation. On the other hand, domain-specific customization, such as for technical documentation or official texts, can yield more stable results, 3 and is commonly employed in multilingual websites and professional databases. 4 5 Initial approaches were mostly rule-based or statistical in nature. However, these methods have since been superseded by neural machine translation 6 and large language models. 7 The origins of machine translation can be traced back to the work of Al-Kindi , a ninth-century Arabic cryptographer who developed techniques for systemic language translation, including cryptanalysis , frequency analysis , and probability and statistics , which are used in modern machine translation. 8 The idea of machine translation later appeared in the 17th century. In 1629, René Descartes proposed a universal language, with equivalent ideas in different tongues sharing one symbol. 9 The idea of using digital computers for translation of natural languages was proposed as early as 1947 by England's A. Booth 10 and Warren Weaver at Rockefeller Foundation in the same year. \"The memorandum written by Warren Weaver in 1949 is perhaps the single most influential publication in the earliest days of machine translation.\" 11 12 Others followed. A demonstration was made in 1954 on the APEXC machine at Birkbeck College ( University of London ) of a rudimentary translation of English into French. Several papers on the topic were published at the time, and even articles in popular journals (for example an article by Cleave and Zacharov in the September 1955 issue of Wireless World ). A similar application, also pioneered at Birkbeck College at the time, was reading and composing Braille texts by computer. (1962) and the National Academy of Sciences formed the Automatic Language Processing Advisory Committee (ALPAC) to study MT (1964). The French Textile Institute also used MT to translate abstracts from and into French, English, German and Spanish (1970); Brigham Young University started a project to translate Mormon texts by automated translation (1971). SYSTRAN , which \"pioneered the field under contracts from the U.S. government\" 19 in the 1960s, was used by Xerox to translate technical manuals (1978). Beginning in the late 1980s, as computational power increased and became less expensive, more interest was shown in statistical models for machine translation. MT became more popular after the advent of computers. 20 SYSTRAN's first implementation system was implemented in 1988 by the online service of the French Postal Service called Minitel. 21 Various computer based translation companies were also launched, including Trados (1984), which was the first to develop and market Translation Memory technology (1989), though this is not the same as MT. The first commercial MT system for Russian / English / German-Ukrainian was developed at Kharkov State University (1991). By 1998, \"for as little as $29.95\" one could \"buy a program for translating in one direction between English and a major European language of your choice\" to run on a PC.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/machine_translation",
+      "type": "txt"
+    },
+    {
+      "title": "Beam Search Strategies for Neural Machine Translation",
+      "content": "论文标题: Beam Search Strategies for Neural Machine Translation\n\n作者: Markus Freitag, Yaser Al-Onaizan\n\n摘要: The basic concept in Neural Machine Translation (NMT) is to train a large Neural Network that maximizes the translation performance on a given parallel corpus. NMT is then using a simple left-to-right beam-search decoder to generate new translations that approximately maximize the trained conditional probability. The current beam search strategy generates the target sentence word by word from left-to- right while keeping a fixed amount of active candidates at each time step. First, this simple search is less adaptive as it also expands candidates whose scores are much worse than the current best. Secondly, it does not expand hypotheses if they are not within the best scoring candidates, even if their scores are close to the best one. The latter one can be avoided by increasing the beam size until no performance improvement can be observed. While you can reach better performance, this has the draw- back of a slower decoding speed. In this paper, we concentrate on speeding up the decoder...\n\narXiv链接: http://arxiv.org/abs/1702.01806v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1702.01806v2",
+      "type": "txt"
+    },
+    {
+      "title": "Semantically-Informed Syntactic Machine Translation: A Tree-Grafting Approach",
+      "content": "论文标题: Semantically-Informed Syntactic Machine Translation: A Tree-Grafting Approach\n\n作者: Kathryn Baker, Michael Bloodgood, Chris Callison-Burch, Bonnie J. Dorr, Nathaniel W. Filardo\n\n摘要: We describe a unified and coherent syntactic framework for supporting a semantically-informed syntactic approach to statistical machine translation. Semantically enriched syntactic tags assigned to the target-language training texts improved translation quality. The resulting system significantly outperformed a linguistically naive baseline model (Hiero), and reached the highest scores yet reported on the NIST 2009 Urdu-English translation task. This finding supports the hypothesis (posed by many researchers in the MT community, e.g., in DARPA GALE) that both syntactic and semantic information are critical for improving translation quality---and further demonstrates that large gains can be achieved for low-resource languages with different word order than English.\n\narXiv链接: http://arxiv.org/abs/1409.7085v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1409.7085v1",
+      "type": "txt"
+    },
+    {
+      "title": "Trivial Transfer Learning for Low-Resource Neural Machine Translation",
+      "content": "论文标题: Trivial Transfer Learning for Low-Resource Neural Machine Translation\n\n作者: Tom Kocmi, Ondřej Bojar\n\n摘要: Transfer learning has been proven as an effective technique for neural machine translation under low-resource conditions. Existing methods require a common target language, language relatedness, or specific training tricks and regimes. We present a simple transfer learning method, where we first train a \"parent\" model for a high-resource language pair and then continue the training on a lowresource pair only by replacing the training corpus. This \"child\" model performs significantly better than the baseline trained for lowresource pair only. We are the first to show this for targeting different languages, and we observe the improvements even for unrelated languages with different alphabets.\n\narXiv链接: http://arxiv.org/abs/1809.00357v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1809.00357v1",
+      "type": "txt"
+    },
+    {
+      "title": "Question answering - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Computer science discipline This article needs to be updated. Please help update this article to reflect recent events or newly available information. ( March 2024 ) Question answering ( QA ) is a computer science discipline within the fields of information retrieval and natural language processing (NLP) that is concerned with building systems that automatically answer questions that are posed by humans in a natural language. 1 A question-answering implementation, usually a computer program, may construct its answers by querying a structured database of knowledge or information, usually a knowledge base. More commonly, question-answering systems can pull answers from an unstructured collection of natural language documents. Some examples of natural language document collections used for question answering systems include reference texts, compiled newswire reports, Wikipedia pages 2 and other World Wide Web pages. Two early question answering systems were BASEBALL 3 and LUNAR. 4 BASEBALL answered questions about Major League Baseball over a period of one year ambiguous. LUNAR answered questions about the geological analysis of rocks returned by the Apollo Moon missions. Both question answering systems were very effective in their chosen domains. citation needed LUNAR was demonstrated at a lunar science convention in 1971 and it was able to answer 90% of the questions in its domain that were posed by people untrained on the system. citation needed Further restricted-domain question answering systems were developed in the following years. The common feature of all these systems is that they had a core database or knowledge system that was hand-written by experts of the chosen domain. The language abilities of BASEBALL and LUNAR used techniques similar to ELIZA and DOCTOR , the first chatterbot programs. SHRDLU was a successful question-answering program developed by Terry Winograd in the late 1960s and early 1970s. It simulated the operation of a robot in a toy world (the \"blocks world\"), and it offered the possibility of asking the robot questions about the state of the world. The strength of this system was the choice of a very specific domain and a very simple world with rules of physics that were easy to encode in a computer program. In the 1970s, knowledge bases were developed that targeted narrower domains of knowledge. The question answering systems developed to interface with these expert systems produced more repeatable clarification needed and valid responses to questions within an area of knowledge. These expert systems closely resembled modern question answering systems except in their internal architecture. Expert systems rely heavily on expert-constructed and organized knowledge bases , whereas many modern question answering systems rely on statistical processing of a large, unstructured, natural language text corpus. The 1970s and 1980s saw the development of comprehensive theories in computational linguistics , which led to the development of ambitious projects in text comprehension and question answering. One example was the Unix Consultant (UC), developed by Robert Wilensky at U.C. Berkeley in the late 1980s. The system answered questions pertaining to the Unix operating system. It had a comprehensive, hand-crafted knowledge base of its domain, and it aimed at phrasing the answer to accommodate various types of users. Another project was LILOG, a text-understanding system that operated on the domain of tourism information in a German city. The systems developed in the UC and LILOG projects never went past the stage of simple demonstrations, but they helped the development of theories on computational linguistics and reasoning. Specialized natural-language question answering systems have been developed, such as EAGLi for health and life scientists. 5 Question answering systems have been extended in recent may be outdated as of April 2023 years to encompass additional domains of knowledge 6 For example, systems have been developed to automatically answer temporal and geospatial questions, questions of definition and terminology, biographical questions, multilingual questions, and questions about the content of audio, images, 7 and video. against Brad Rutter and Ken Jennings , winning by a significant margin. This system uses Wikipedia as knowledge source. 2 The open source framework Haystack by deepset combines open-domain question answering with generative question answering and supports the domain adaptation clarification needed of the underlying clarification needed language models for industry use cases vague. 19 20 Large Language Models (LLMs) [36] like GPT-4 [37] , Gemini [38] are examples of successful QA systems that are enabling more sophisticated understanding and generation of text.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/question_answering",
+      "type": "txt"
+    },
+    {
+      "title": "An Exploration of Data Augmentation and Sampling Techniques for Domain-Agnostic Question Answering",
+      "content": "论文标题: An Exploration of Data Augmentation and Sampling Techniques for Domain-Agnostic Question Answering\n\n作者: Shayne Longpre, Yi Lu, Zhucheng Tu, Chris DuBois\n\n摘要: To produce a domain-agnostic question answering model for the Machine Reading Question Answering (MRQA) 2019 Shared Task, we investigate the relative benefits of large pre-trained language models, various data sampling strategies, as well as query and context paraphrases generated by back-translation. We find a simple negative sampling technique to be particularly effective, even though it is typically used for datasets that include unanswerable questions, such as SQuAD 2.0. When applied in conjunction with per-domain sampling, our XLNet (Yang et al., 2019)-based submission achieved the second best Exact Match and F1 in the MRQA leaderboard competition.\n\narXiv链接: http://arxiv.org/abs/1912.02145v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1912.02145v1",
+      "type": "txt"
+    },
+    {
+      "title": "Generating Answer Candidates for Quizzes and Answer-Aware Question Generators",
+      "content": "论文标题: Generating Answer Candidates for Quizzes and Answer-Aware Question Generators\n\n作者: Kristiyan Vachev, Momchil Hardalov, Georgi Karadzhov, Georgi Georgiev, Ivan Koychev\n\n摘要: In education, open-ended quiz questions have become an important tool for assessing the knowledge of students. Yet, manually preparing such questions is a tedious task, and thus automatic question generation has been proposed as a possible alternative. So far, the vast majority of research has focused on generating the question text, relying on question answering datasets with readily picked answers, and the problem of how to come up with answer candidates in the first place has been largely ignored. Here, we aim to bridge this gap. In particular, we propose a model that can generate a specified number of answer candidates for a given passage of text, which can then be used by instructors to write questions manually or can be passed as an input to automatic answer-aware question generators. Our experiments show that our proposed answer candidate generation model outperforms several baselines.\n\narXiv链接: http://arxiv.org/abs/2108.12898v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2108.12898v1",
+      "type": "txt"
+    },
+    {
+      "title": "SemEval-2015 Task 3: Answer Selection in Community Question Answering",
+      "content": "论文标题: SemEval-2015 Task 3: Answer Selection in Community Question Answering\n\n作者: Preslav Nakov, Lluís Màrquez, Walid Magdy, Alessandro Moschitti, James Glass\n\n摘要: Community Question Answering (cQA) provides new interesting research directions to the traditional Question Answering (QA) field, e.g., the exploitation of the interaction between users and the structure of related posts. In this context, we organized SemEval-2015 Task 3 on \"Answer Selection in cQA\", which included two subtasks: (a) classifying answers as \"good\", \"bad\", or \"potentially relevant\" with respect to the question, and (b) answering a YES/NO question with \"yes\", \"no\", or \"unsure\", based on the list of all answers. We set subtask A for Arabic and English on two relatively different cQA domains, i.e., the Qatar Living website for English, and a Quran-related website for Arabic. We used crowdsourcing on Amazon Mechanical Turk to label a large English training dataset, which we released to the research community. Thirteen teams participated in the challenge with a total of 61 submissions: 24 primary and 37 contrastive. The best systems achieved an official score (macro-averaged F...\n\narXiv链接: http://arxiv.org/abs/1911.11403v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1911.11403v1",
+      "type": "txt"
+    },
+    {
+      "title": "Attention (machine learning) - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia (Redirected from Attention mechanisms ) Machine learning technique Part of a series on Machine learning and data mining Attention mechanism, overview In machine learning , attention is a method that determines the importance of each component in a sequence relative to the other components in that sequence. In natural language processing , importance is represented by \"soft\" weights assigned to each word in a sentence. More generally, attention encodes vectors called token embeddings across a fixed-width sequence that can range from tens to millions of tokens in size. Unlike \"hard\" weights, which are computed during the backwards training pass, \"soft\" weights exist only in the forward pass and therefore change with every step of the input. Earlier designs implemented the attention mechanism in a serial recurrent neural network (RNN) language translation system, but a more recent design, namely the transformer , removed the slower sequential RNN and relied more heavily on the faster parallel attention scheme. Inspired by ideas about attention in humans , the attention mechanism was developed to address the weaknesses of using information from the hidden layers of recurrent neural networks. Recurrent neural networks favor more recent information contained in words at the end of a sentence, while information earlier in the sentence tends to be attenuated. Attention allows a token equal access to any part of a sentence directly, rather than only through the previous state. 1950s–1960s Psychology and biology of attention. Cocktail party effect 1 — focusing on content by filtering out background noise. Filter model of attention , 2 partial report paradigm , and saccade control. 3 1980s Sigma-pi units, 4 higher-order neural networks. 1990s Fast weight controllers and dynamic links between neurons, anticipating key-value mechanisms in attention. 5 6 7 8 1998 The bilateral filter was introduced in image processing. It uses pairwise affinity matrices to propagate relevance across elements. 9 2005 Non-local means extended affinity-based filtering in image denoising, using Gaussian similarity kernels as fixed attention-like weights. 10 2014 seq2seq with RNN + Attention. 11 Attention was introduced to enhance RNN encoder-decoder translation, particularly for long sentences. See Overview section. Attentional Neural Networks introduced a learned feature selection mechanism using top-down cognitive modulation, showing how attention weights can highlight relevant inputs. 12 2015 Attention was extended to vision for image captioning tasks. 13 14 2016 Self-attention was integrated into RNN-based models to capture intra-sequence dependencies. 15 16 Self-attention was explored in decomposable attention models for natural language inference 17 and structured self-attentive sentence embeddings. 2018 Non-local neural networks 22 extended attention to computer vision by capturing long-range dependencies in space and time. Graph attention networks 23 applied attention mechanisms to graph-structured data. 2019–2020 Efficient Transformers, including Reformer, 24 Linformer, 25 and Performer, 26 introduced scalable approximations of attention for long sequences. 2019+ Hopfield networks were reinterpreted as associative memory-based attention systems, 27 and vision transformers (ViTs) achieved competitive results in image classification. 28 Transformers were adopted across scientific domains, including AlphaFold for protein folding, 29 CLIP for vision-language pretraining, 30 and attention-based dense segmentation models like CCNet 31 and DANet. 32 Additional surveys of the attention mechanism in deep learning are provided by Niu et al. 34 The major breakthrough came with self-attention, where each element in the input sequence attends to all others, enabling the model to capture global dependencies. This idea was central to the Transformer architecture , which replaced recurrence with attention mechanisms. As a result, Transformers became the foundation for models like BERT , T5 and generative pre-trained transformers (GPT). Please improve it by verifying the claims made and adding inline citations. ( June 2025 ) ( Learn how and when to remove this message ) The modern era of machine attention was revitalized by grafting an attention mechanism (Fig 1. orange) to an Encoder-Decoder. citation needed Animated sequence of language translation Fig 1. Encoder-decoder with attention. 35 Numerical subscripts (100, 300, 500, 9k, 10k) indicate vector sizes while lettered subscripts i and i − 1 indicate time steps. Pinkish regions in H matrix and w vector are zero values. See Legend for details. Legend Label Description 100 Max. sentence length 300 Embedding size (word dimension) 500 Length of hidden vector 9k, 10k Dictionary size of input output languages respectively. x , Y 9k and 10k 1-hot dictionary vectors. x → x implemented as a lookup table rather than vector multiplication.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/attention_mechanisms",
+      "type": "txt"
+    },
+    {
+      "title": "Benign Overfitting in Token Selection of Attention Mechanism",
+      "content": "论文标题: Benign Overfitting in Token Selection of Attention Mechanism\n\n作者: Keitaro Sakamoto, Issei Sato\n\n摘要: Attention mechanism is a fundamental component of the transformer model and plays a significant role in its success. However, the theoretical understanding of how attention learns to select tokens is still an emerging area of research. In this work, we study the training dynamics and generalization ability of the attention mechanism under classification problems with label noise. We show that, with the characterization of signal-to-noise ratio (SNR), the token selection of attention mechanism achieves benign overfitting, i.e., maintaining high generalization performance despite fitting label noise. Our work also demonstrates an interesting delayed acquisition of generalization after an initial phase of overfitting. Finally, we provide experiments to support our theoretical analysis using both synthetic and real-world datasets.\n\narXiv链接: http://arxiv.org/abs/2409.17625v3\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2409.17625v3",
+      "type": "txt"
+    },
+    {
+      "title": "Integrating Three Mechanisms of Visual Attention for Active Visual Search",
+      "content": "论文标题: Integrating Three Mechanisms of Visual Attention for Active Visual Search\n\n作者: Amir Rasouli, John K. Tsotsos\n\n摘要: Algorithms for robotic visual search can benefit from the use of visual attention methods in order to reduce computational costs. Here, we describe how three distinct mechanisms of visual attention can be integrated and productively used to improve search performance. The first is viewpoint selection as has been proposed earlier using a greedy search over a probabilistic occupancy grid representation. The second is top-down object-based attention using a histogram backprojection method, also previously described. The third is visual saliency. This is novel in the sense that it is not used as a region-of-interest method for the current image but rather as a noncombinatorial form of look-ahead in search for future viewpoint selection. Additionally, the integration of these three attentional schemes within a single framework is unique and not previously studied. We examine our proposed method in scenarios where little or no information regarding the environment is available. Through exten...\n\narXiv链接: http://arxiv.org/abs/1702.04292v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1702.04292v1",
+      "type": "txt"
+    },
+    {
+      "title": "Modeling and Simulation of the Dynamics of the Quick Return Mechanism: A Bond Graph Approach",
+      "content": "论文标题: Modeling and Simulation of the Dynamics of the Quick Return Mechanism: A Bond Graph Approach\n\n作者: Anand Vaz, Thommen G K\n\n摘要: This paper applies the multibond graph approach for rigid multibody systems to model the dynamics of general spatial mechanisms. The commonly used quick return mechanism which comprises of revolute as well as prismatic joints has been chosen as a representative example to demonstrate the application of this technique and its resulting advantages. In this work, the links of the quick return mechanism are modeled as rigid bodies. The rigid links are then coupled at the joints based on the nature of constraint. This alternative method of formulation of system dynamics, using Bond Graphs, offers a rich set of features that include pictorial representation of the dynamics of translation and rotation for each link of the mechanism in the inertial frame, representation and handling of constraints at the joints, depiction of causality, obtaining dynamic reaction forces and moments at various locations in the mechanism and so on. Yet another advantage of this approach is that the coding for sim...\n\narXiv链接: http://arxiv.org/abs/1705.09144v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1705.09144v1",
+      "type": "txt"
+    },
+    {
+      "title": "Sequence - Wikipedia",
+      "content": "From Wikipedia, the free encyclopedia Finite or infinite ordered list of elements A part of an infinite sequence of real numbers (in blue), indexed by a natural number n. This sequence is neither increasing, decreasing, convergent, nor Cauchy. It is, however, bounded (by red dashed lines). In mathematics, a sequence is a collection of objects possibly with repetition, that come in a specified order. Like a set , it contains members (also called elements , or terms ). Unlike a set, the same elements can appear multiple times at different positions in a sequence, and unlike a set, the order does matter. The notion of a sequence can be generalized to an indexed family , defined as a function from an arbitrary index set. For example, (M, A, R, Y) is a sequence of letters with the letter \"M\" first and \"Y\" last. This sequence differs from (A, R, M, Y). Also, the sequence (1, 1, 2, 3, 5, 8) , which contains the number 1 at two different positions, is a valid sequence. Sequences can be finite , as in these examples, or infinite , such as the sequence of positive even integers (2, 4, 6, 8, ...). The length of a finite sequence is defined as the number of elements in the sequence. The position of an element in a sequence is its rank or index ; it is the natural number for which the element is the image. The first element typically has index 0 or 1. In mathematical analysis , a sequence is often denoted by letters in the form of a n {\\displaystyle a_{n}} , b n {\\displaystyle b_{n}} and c n {\\displaystyle c_{n}} , where the subscript n refers to the n th element of the sequence; for example, the n th element of the Fibonacci sequence F {\\displaystyle F} is generally denoted as F n {\\displaystyle F_{n}}. In computing and computer science , finite sequences are usually called strings , words or lists , with the specific technical term chosen depending on the type of object the sequence enumerates and the different ways to represent the sequence in computer memory. Infinite sequences are called streams. The empty sequence ( ) is included in most notions of sequence. It may be excluded depending on the context. A sequence can be thought of as a list of elements with a particular order. 1 2 Sequences are useful in a number of mathematical disciplines for studying functions , spaces , and other mathematical structures using the convergence properties of sequences. In particular, sequences are the basis for series , which are important in differential equations and analysis. Sequences are also of interest in their own right, and can be studied as patterns or puzzles, such as in the study of prime numbers. There are a number of ways to denote a sequence, some of which are more useful for specific types of sequences. One way to specify a sequence is to list all its elements. For example, the first four odd integers form the sequence (1, 3, 5, 7). This notation is used for infinite sequences as well. For instance, the infinite sequence of positive odd integers is written as (1, 3, 5, 7, ...). Because notating sequences with ellipsis leads to ambiguity, listing is most useful for customary infinite sequences which can be easily recognized from their first few elements. Other ways of denoting a sequence are discussed after the examples. A tiling with squares whose sides are successive Fibonacci numbers in length. A prime number is a natural numbers greater than 1 that has no divisors except 1 and itself. Listing the prime numbers in their natural order gives the sequence (2, 3, 5, 7, 11, 13, 17, ...). The prime numbers are widely used in mathematics , particularly in number theory where many results related to them exist. The Fibonacci numbers are a sequence for which each element is the sum of the previous two elements. The zeroth and first elements are 0 and 1, so the sequence is (0, 1, 1, 2, 3, 5, 8, 13, ...). 1 Other sequences have rational numbers as elements. The sequence (.9, .99, .999, .9999, ...) , for instance, approaches the number 1. As another example, π is the limit of the sequence (3, 3.1, 3.14, 3.141, 3.1415, ...) , which is increasing. In fact, every real number can be written as the limit of a sequence of rational numbers (e.g. via its decimal expansion , also see completeness of the real numbers ). A related type of sequence consists of the decimal digits of a real number, for example the sequence of digits of π , (3, 1, 4, 1, 5, 9, ...). This sequence does not have any pattern that is easily discernible by inspection. The elements of a sequence can be functions instead of numbers. For example, the monomial basis for polynomials of a single variable forms the sequence ( x &#x21A6; 1 , x &#x21A6; x , x &#x21A6; x 2 , x &#x21A6; x 3 , &#x2026; ) {\\displaystyle (x\\mapsto 1,x\\mapsto x,x\\mapsto x^{2},x\\mapsto x^{3},\\ldots )} , using arrow notation. The On-Line Encyclopedia of Integer Sequences comprises a large list of examples of integer sequences.",
+      "source": "Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/sequence",
+      "type": "txt"
+    },
+    {
+      "title": "Finding Sequential Patterns from Large Sequence Data",
+      "content": "论文标题: Finding Sequential Patterns from Large Sequence Data\n\n作者: Mahdi Esmaeili, Fazekas Gabor\n\n摘要: Data mining is the task of discovering interesting patterns from large amounts of data. There are many data mining tasks, such as classification, clustering, association rule mining, and sequential pattern mining. Sequential pattern mining finds sets of data items that occur together frequently in some sequences. Sequential pattern mining, which extracts frequent subsequences from a sequence database, has attracted a great deal of interest during the recent data mining research because it is the basis of many applications, such as: web user analysis, stock trend prediction, DNA sequence analysis, finding language or linguistic patterns from natural language texts, and using the history of symptoms to predict certain kind of disease. The diversity of the applications may not be possible to apply a single sequential pattern model to all these problems. Each application may require a unique model and solution. A number of research projects were established in recent years to develop meani...\n\narXiv链接: http://arxiv.org/abs/1002.1150v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1002.1150v1",
+      "type": "txt"
+    },
+    {
+      "title": "Unsupervised Flow-Aligned Sequence-to-Sequence Learning for Video Restoration",
+      "content": "论文标题: Unsupervised Flow-Aligned Sequence-to-Sequence Learning for Video Restoration\n\n作者: Jing Lin, Xiaowan Hu, Yuanhao Cai, Haoqian Wang, Youliang Yan\n\n摘要: How to properly model the inter-frame relation within the video sequence is an important but unsolved challenge for video restoration (VR). In this work, we propose an unsupervised flow-aligned sequence-to-sequence model (S2SVR) to address this problem. On the one hand, the sequence-to-sequence model, which has proven capable of sequence modeling in the field of natural language processing, is explored for the first time in VR. Optimized serialization modeling shows potential in capturing long-range dependencies among frames. On the other hand, we equip the sequence-to-sequence model with an unsupervised optical flow estimator to maximize its potential. The flow estimator is trained with our proposed unsupervised distillation loss, which can alleviate the data discrepancy and inaccurate degraded optical flow issues of previous flow-based methods. With reliable optical flow, we can establish accurate correspondence among multiple frames, narrowing the domain difference between 1D langua...\n\narXiv链接: http://arxiv.org/abs/2205.10195v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2205.10195v2",
+      "type": "txt"
+    },
+    {
+      "title": "The slice spectral sequence for the cyclic group of order p",
+      "content": "论文标题: The slice spectral sequence for the cyclic group of order p\n\n作者: Vigleik Angeltveit\n\n摘要: We describe the slice tower and slice spectral sequence for arbitrary suspensions of the Eilenberg-MacLane spectrum of an arbitrary Mackey functor for the cyclic group of prime order.\n\narXiv链接: http://arxiv.org/abs/2111.06559v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2111.06559v1",
+      "type": "txt"
+    },
+    {
+      "title": "Quantum memories at finite temperature",
+      "content": "论文标题: Quantum memories at finite temperature\n\n作者: Benjamin J. Brown, Daniel Loss, Jiannis K. Pachos, Chris N. Self, James R. Wootton\n\n摘要: To use quantum systems for technological applications we first need to preserve their coherence for macroscopic timescales, even at finite temperature. Quantum error correction has made it possible to actively correct errors that affect a quantum memory. An attractive scenario is the construction of passive storage of quantum information with minimal active support. Indeed, passive protection is the basis of robust and scalable classical technology, physically realized in the form of the transistor and the ferromagnetic hard disk. The discovery of an analogous quantum system is a challenging open problem, plagued with a variety of no-go theorems. Several approaches have been devised to overcome these theorems by taking advantage of their loopholes. Here we review the state-of-the-art developments in this field in an informative and pedagogical way. We give the main principles of self-correcting quantum memories and we analyze several milestone examples from the literature of two-, thre...\n\narXiv链接: http://arxiv.org/abs/1411.6643v4\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1411.6643v4",
+      "type": "txt"
+    },
+    {
+      "title": "Toward Interpretable Music Tagging with Self-Attention",
+      "content": "论文标题: Toward Interpretable Music Tagging with Self-Attention\n\n作者: Minz Won, Sanghyuk Chun, Xavier Serra\n\n摘要: Self-attention is an attention mechanism that learns a representation by relating different positions in the sequence. The transformer, which is a sequence model solely based on self-attention, and its variants achieved state-of-the-art results in many natural language processing tasks. Since music composes its semantics based on the relations between components in sparse positions, adopting the self-attention mechanism to solve music information retrieval (MIR) problems can be beneficial. Hence, we propose a self-attention based deep sequence model for music tagging. The proposed architecture consists of shallow convolutional layers followed by stacked Transformer encoders. Compared to conventional approaches using fully convolutional or recurrent neural networks, our model is more interpretable while reporting competitive results. We validate the performance of our model with the MagnaTagATune and the Million Song Dataset. In addition, we demonstrate the interpretability of the propo...\n\narXiv链接: http://arxiv.org/abs/1906.04972v1\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1906.04972v1",
+      "type": "txt"
+    },
+    {
+      "title": "Primal-Attention: Self-attention through Asymmetric Kernel SVD in Primal Representation",
+      "content": "论文标题: Primal-Attention: Self-attention through Asymmetric Kernel SVD in Primal Representation\n\n作者: Yingyi Chen, Qinghua Tao, Francesco Tonin, Johan A. K. Suykens\n\n摘要: Recently, a new line of works has emerged to understand and improve self-attention in Transformers by treating it as a kernel machine. However, existing works apply the methods for symmetric kernels to the asymmetric self-attention, resulting in a nontrivial gap between the analytical understanding and numerical implementation. In this paper, we provide a new perspective to represent and optimize self-attention through asymmetric Kernel Singular Value Decomposition (KSVD), which is also motivated by the low-rank property of self-attention normally observed in deep layers. Through asymmetric KSVD, $i$) a primal-dual representation of self-attention is formulated, where the optimization objective is cast to maximize the projection variances in the attention outputs; $ii$) a novel attention mechanism, i.e., Primal-Attention, is proposed via the primal representation of KSVD, avoiding explicit computation of the kernel matrix in the dual; $iii$) with KKT conditions, we prove that the stati...\n\narXiv链接: http://arxiv.org/abs/2305.19798v2\n\n请访问链接查看完整论文。",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/2305.19798v2",
+      "type": "txt"
+    }
+  ],
+  "video": [
+    {
+      "title": "Large Language Models explained briefly",
+      "url": "https://www.youtube.com/watch?v=LPZh9BOjkQs",
+      "description": "YouTube视频: Large Language Models explained briefly",
+      "video_id": "LPZh9BOjkQs",
+      "thumbnail": "https://i.ytimg.com/vi/LPZh9BOjkQs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLATsTncbvO7P7_ANyrCKHuFAAI6MQ",
+      "type": "video"
+    },
+    {
+      "title": "How Large Language Models Work",
+      "url": "https://www.youtube.com/watch?v=5sLYAQS9sWQ",
+      "description": "YouTube视频: How Large Language Models Work",
+      "video_id": "5sLYAQS9sWQ",
+      "thumbnail": "https://i.ytimg.com/vi/5sLYAQS9sWQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBMIu1HBggVmDsm-RVixJEYct57kQ",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS229 I Machine Learning I Building Large Language Models (LLMs)",
+      "url": "https://www.youtube.com/watch?v=9vM4p9NN0Ts",
+      "description": "YouTube视频: Stanford CS229 I Machine Learning I Building Large Language Models (LLMs)",
+      "video_id": "9vM4p9NN0Ts",
+      "thumbnail": "https://i.ytimg.com/vi/9vM4p9NN0Ts/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoWDAP&rs=AOn4CLAkzupviVlheO8hQYbTm-UNV-Otmg",
+      "type": "video"
+    },
+    {
+      "title": "What are Large Language Models (LLMs)?",
+      "url": "https://www.youtube.com/watch?v=iR2O2GPbB0E",
+      "description": "YouTube视频: What are Large Language Models (LLMs)?",
+      "video_id": "iR2O2GPbB0E",
+      "thumbnail": "https://i.ytimg.com/vi/iR2O2GPbB0E/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLUEfnN6pWam6B1thmBpK6UCNuCA",
+      "type": "video"
+    },
+    {
+      "title": "Large Language Models (LLMs) Explained",
+      "url": "https://www.youtube.com/watch?v=sg_fuEzFw0g",
+      "description": "YouTube视频: Large Language Models (LLMs) Explained",
+      "video_id": "sg_fuEzFw0g",
+      "thumbnail": "https://i.ytimg.com/vi/sg_fuEzFw0g/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANjBlslfryx2zO2a8C-OBe3ADNCA",
+      "type": "video"
+    },
+    {
+      "title": "THIS is why large language models can understand the world",
+      "url": "https://www.youtube.com/watch?v=UKcWu1l_UNw",
+      "description": "YouTube视频: THIS is why large language models can understand the world",
+      "video_id": "UKcWu1l_UNw",
+      "thumbnail": "https://i.ytimg.com/vi/UKcWu1l_UNw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDPmoRZE6DnaalFvg7oi-1caFzk9w",
+      "type": "video"
+    },
+    {
+      "title": "Richard Sutton – Father of RL thinks LLMs are a dead end",
+      "url": "https://www.youtube.com/watch?v=21EYKqUsPfg",
+      "description": "YouTube视频: Richard Sutton – Father of RL thinks LLMs are a dead end",
+      "video_id": "21EYKqUsPfg",
+      "thumbnail": "https://i.ytimg.com/vi/21EYKqUsPfg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCfKFAwyy5tB6UiHHffh6OkjAl7iw",
+      "type": "video"
+    },
+    {
+      "title": "Current AI Models have 3 Unfixable Problems",
+      "url": "https://www.youtube.com/watch?v=984qBh164fo",
+      "description": "YouTube视频: Current AI Models have 3 Unfixable Problems",
+      "video_id": "984qBh164fo",
+      "thumbnail": "https://i.ytimg.com/vi/984qBh164fo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJtqjpbcnH2xprMbaNo4Ei-QnloQ",
+      "type": "video"
+    },
+    {
+      "title": "How to Write a Summary",
+      "url": "https://www.youtube.com/watch?v=eGWO1ldEhtQ",
+      "description": "YouTube视频: How to Write a Summary",
+      "video_id": "eGWO1ldEhtQ",
+      "thumbnail": "https://i.ytimg.com/vi/eGWO1ldEhtQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-E6tesRA-jOJI_urw4uvYGw1kUA",
+      "type": "video"
+    },
+    {
+      "title": "Summarizing informational text | Reading | Khan Academy",
+      "url": "https://www.youtube.com/watch?v=as7xe8UQEr4",
+      "description": "YouTube视频: Summarizing informational text | Reading | Khan Academy",
+      "video_id": "as7xe8UQEr4",
+      "thumbnail": "https://i.ytimg.com/vi/as7xe8UQEr4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCD6HOfBuPhRxybaULxc8g5qKqLsg",
+      "type": "video"
+    },
+    {
+      "title": "How to Build a Text Summarizer using Huggingface Transformers | Turingtalks",
+      "url": "https://www.youtube.com/watch?v=40OgRKUOmyg",
+      "description": "YouTube视频: How to Build a Text Summarizer using Huggingface Transformers | Turingtalks",
+      "video_id": "40OgRKUOmyg",
+      "thumbnail": "https://i.ytimg.com/vi/40OgRKUOmyg/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhhIGEoYTAP&rs=AOn4CLBaq2u8EXAdzpnYEYZiy26qHxn5dA",
+      "type": "video"
+    },
+    {
+      "title": "How to Summarise a Text in English - Improve English Comprehension",
+      "url": "https://www.youtube.com/watch?v=Z2OGUQ5A44Q",
+      "description": "YouTube视频: How to Summarise a Text in English - Improve English Comprehension",
+      "video_id": "Z2OGUQ5A44Q",
+      "thumbnail": "https://i.ytimg.com/vi/Z2OGUQ5A44Q/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDPFlGJl0b54hAxswx2oVFmD3PuOQ",
+      "type": "video"
+    },
+    {
+      "title": "Summarizing stories | Reading | Khan Academy",
+      "url": "https://www.youtube.com/watch?v=SmnR4AZ-XM8",
+      "description": "YouTube视频: Summarizing stories | Reading | Khan Academy",
+      "video_id": "SmnR4AZ-XM8",
+      "thumbnail": "https://i.ytimg.com/vi/SmnR4AZ-XM8/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLASVwtKM6IdFiAWXkTMl_GIqz0vJg",
+      "type": "video"
+    },
+    {
+      "title": "Text Summarization with AI: What It Is, Why It Matters, and How to Do It",
+      "url": "https://www.youtube.com/watch?v=vHTot4vpJvU",
+      "description": "YouTube视频: Text Summarization with AI: What It Is, Why It Matters, and How to Do It",
+      "video_id": "vHTot4vpJvU",
+      "thumbnail": "https://i.ytimg.com/vi/vHTot4vpJvU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCiPVAzxMpP1GjBrrjU1ZgiPPpYZA",
+      "type": "video"
+    },
+    {
+      "title": "Main Idea | Summarising | Reading Strategies",
+      "url": "https://www.youtube.com/watch?v=LbO3lRXT0ww",
+      "description": "YouTube视频: Main Idea | Summarising | Reading Strategies",
+      "video_id": "LbO3lRXT0ww",
+      "thumbnail": "https://i.ytimg.com/vi/LbO3lRXT0ww/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCpQtg6Cyaz-EW-8lHJ8yckGpETbg",
+      "type": "video"
+    },
+    {
+      "title": "Summarizing Informational Texts - Strategies for Summarizing",
+      "url": "https://www.youtube.com/watch?v=u9goDbbHfSU",
+      "description": "YouTube视频: Summarizing Informational Texts - Strategies for Summarizing",
+      "video_id": "u9goDbbHfSU",
+      "thumbnail": "https://i.ytimg.com/vi/u9goDbbHfSU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBOmj5raWXBg_AAwN-GMhhLZ7JKWA",
+      "type": "video"
+    },
+    {
+      "title": "What is NLP (Natural Language Processing)?",
+      "url": "https://www.youtube.com/watch?v=fLvJ8VdHLA0",
+      "description": "YouTube视频: What is NLP (Natural Language Processing)?",
+      "video_id": "fLvJ8VdHLA0",
+      "thumbnail": "https://i.ytimg.com/vi/fLvJ8VdHLA0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBt1GqOhzJnzhnySSOh6pAml4MYUg",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing: Crash Course AI #7",
+      "url": "https://www.youtube.com/watch?v=oi0JXuL19TA",
+      "description": "YouTube视频: Natural Language Processing: Crash Course AI #7",
+      "video_id": "oi0JXuL19TA",
+      "thumbnail": "https://i.ytimg.com/vi/oi0JXuL19TA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvbfCM9naH47s_xBZLY0UU9TkzsQ",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing: Crash Course Computer Science #36",
+      "url": "https://www.youtube.com/watch?v=fOvTtapxa9c",
+      "description": "YouTube视频: Natural Language Processing: Crash Course Computer Science #36",
+      "video_id": "fOvTtapxa9c",
+      "thumbnail": "https://i.ytimg.com/vi/fOvTtapxa9c/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAy7rmTf8fP2y_fdpMbZ1J6FCItpg",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing with spaCy & Python - Course for Beginners",
+      "url": "https://www.youtube.com/watch?v=dIUTsFT2MeQ",
+      "description": "YouTube视频: Natural Language Processing with spaCy & Python - Course for Beginners",
+      "video_id": "dIUTsFT2MeQ",
+      "thumbnail": "https://i.ytimg.com/vi/dIUTsFT2MeQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDLF0wg8z9YDCbNblwoYHrun4nlBw",
+      "type": "video"
+    },
+    {
+      "title": "Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1)",
+      "url": "https://www.youtube.com/watch?v=fNxaJsNG3-s",
+      "description": "YouTube视频: Natural Language Processing - Tokenization (NLP Zero to Hero - Part 1)",
+      "video_id": "fNxaJsNG3-s",
+      "thumbnail": "https://i.ytimg.com/vi/fNxaJsNG3-s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9Wt-etaXxVl2rulNnvjWLTMtmJQ",
+      "type": "video"
+    },
+    {
+      "title": "What are Word Embeddings?",
+      "url": "https://www.youtube.com/watch?v=wgfSDrqYMJ4",
+      "description": "YouTube视频: What are Word Embeddings?",
+      "video_id": "wgfSDrqYMJ4",
+      "thumbnail": "https://i.ytimg.com/vi/wgfSDrqYMJ4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDIjS3J0LgfaEesrCKAOaCkzTOnmA",
+      "type": "video"
+    },
+    {
+      "title": "7. Natural Language Processing (NLP), Part 1",
+      "url": "https://www.youtube.com/watch?v=IiD3YZkkCmE",
+      "description": "YouTube视频: 7. Natural Language Processing (NLP), Part 1",
+      "video_id": "IiD3YZkkCmE",
+      "thumbnail": "https://i.ytimg.com/vi/IiD3YZkkCmE/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD-RvjsHssaJGuTDTJ4W-nOXA9xGw",
+      "type": "video"
+    },
+    {
+      "title": "You’re Not Behind (Yet): How to Learn AI in 29 Minutes",
+      "url": "https://www.youtube.com/watch?v=9c7zh2MkslY",
+      "description": "YouTube视频: You’re Not Behind (Yet): How to Learn AI in 29 Minutes",
+      "video_id": "9c7zh2MkslY",
+      "thumbnail": "https://i.ytimg.com/vi/9c7zh2MkslY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCTsq4ceUSoZmRW-DZcsxEVWlloiA",
+      "type": "video"
+    },
+    {
+      "title": "Taking AI Doom Seriously For 62 Minutes",
+      "url": "https://www.youtube.com/watch?v=Qg5QXY_qZuI",
+      "description": "YouTube视频: Taking AI Doom Seriously For 62 Minutes",
+      "video_id": "Qg5QXY_qZuI",
+      "thumbnail": "https://i.ytimg.com/vi/Qg5QXY_qZuI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAoCANBU3reeCzaVSG6aNyTSVPP8Q",
+      "type": "video"
+    },
+    {
+      "title": "What is AI ? || Applications and Examples of AI",
+      "url": "https://www.youtube.com/watch?v=RbkiXAZlQ6k",
+      "description": "YouTube视频: What is AI ? || Applications and Examples of AI",
+      "video_id": "RbkiXAZlQ6k",
+      "thumbnail": "https://i.ytimg.com/vi/RbkiXAZlQ6k/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARg2IFUofzAP&rs=AOn4CLDzL_c1o30QyrQ_jS2ljy2cQIVcdg",
+      "type": "video"
+    },
+    {
+      "title": "Musk launches AI-powered site 'Grokipedia' to counter Wikipedia",
+      "url": "https://www.youtube.com/watch?v=4BPDFiipiRs",
+      "description": "YouTube视频: Musk launches AI-powered site 'Grokipedia' to counter Wikipedia",
+      "video_id": "4BPDFiipiRs",
+      "thumbnail": "https://i.ytimg.com/vi/4BPDFiipiRs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDU2mnKny64w1TyCMVUekUcsCj41Q",
+      "type": "video"
+    },
+    {
+      "title": "Valentines Day #valentinesday #love #holidays #holiday",
+      "url": "https://www.youtube.com/watch?v=bS0dG5wdUxU",
+      "description": "YouTube视频: Valentines Day #valentinesday #love #holidays #holiday",
+      "video_id": "bS0dG5wdUxU",
+      "thumbnail": "https://i.ytimg.com/vi/bS0dG5wdUxU/hq720_2.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIEkoTDAP&rs=AOn4CLC1kMjZuRZj-eq1T6rNu-lRLP3xFA",
+      "type": "video"
+    },
+    {
+      "title": "Generative AI explained in 2 minutes",
+      "url": "https://www.youtube.com/watch?v=rwF-X5STYks",
+      "description": "YouTube视频: Generative AI explained in 2 minutes",
+      "video_id": "rwF-X5STYks",
+      "thumbnail": "https://i.ytimg.com/vi/rwF-X5STYks/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBT0ATOUNG88xJaL2i6fruTGW9Dhg",
+      "type": "video"
+    },
+    {
+      "title": "AI For Every One || Basic  || IBM",
+      "url": "https://www.youtube.com/watch?v=gXbJz4AhRaE",
+      "description": "YouTube视频: AI For Every One || Basic  || IBM",
+      "video_id": "gXbJz4AhRaE",
+      "thumbnail": "https://i.ytimg.com/vi/gXbJz4AhRaE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBXRGIJkpxSeZJ822i42v3f22Nk1w",
+      "type": "video"
+    },
+    {
+      "title": "Microsoft Copilot Explained in 6 Minutes",
+      "url": "https://www.youtube.com/watch?v=MuNor5jjhVI",
+      "description": "YouTube视频: Microsoft Copilot Explained in 6 Minutes",
+      "video_id": "MuNor5jjhVI",
+      "thumbnail": "https://i.ytimg.com/vi/MuNor5jjhVI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwUvrglt7kyRLIHzEyc56ptqHR3A",
+      "type": "video"
+    },
+    {
+      "title": "Attention in transformers, step-by-step | Deep Learning Chapter 6",
+      "url": "https://www.youtube.com/watch?v=eMlx5fFNoYc",
+      "description": "YouTube视频: Attention in transformers, step-by-step | Deep Learning Chapter 6",
+      "video_id": "eMlx5fFNoYc",
+      "thumbnail": "https://i.ytimg.com/vi/eMlx5fFNoYc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCEoNWK28wXm8DFfAmqzTt9fug2mg",
+      "type": "video"
+    },
+    {
+      "title": "Attention mechanism: Overview",
+      "url": "https://www.youtube.com/watch?v=fjJOgb-E41w",
+      "description": "YouTube视频: Attention mechanism: Overview",
+      "video_id": "fjJOgb-E41w",
+      "thumbnail": "https://i.ytimg.com/vi/fjJOgb-E41w/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAt-dgQMfGLRziHbb-H27lc9N6nJA",
+      "type": "video"
+    },
+    {
+      "title": "How DeepSeek Rewrote the Transformer [MLA]",
+      "url": "https://www.youtube.com/watch?v=0VLAoVGf_74",
+      "description": "YouTube视频: How DeepSeek Rewrote the Transformer [MLA]",
+      "video_id": "0VLAoVGf_74",
+      "thumbnail": "https://i.ytimg.com/vi/0VLAoVGf_74/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnO_NF1XX_sm1YR-0SfEW5M55roA",
+      "type": "video"
+    },
+    {
+      "title": "How Attention Got So Efficient [GQA/MLA/DSA]",
+      "url": "https://www.youtube.com/watch?v=Y-o545eYjXM",
+      "description": "YouTube视频: How Attention Got So Efficient [GQA/MLA/DSA]",
+      "video_id": "Y-o545eYjXM",
+      "thumbnail": "https://i.ytimg.com/vi/Y-o545eYjXM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBBq0hxajAQB6qzFMMkpDBSrA1Kdw",
+      "type": "video"
+    },
+    {
+      "title": "Attention for Neural Networks, Clearly Explained!!!",
+      "url": "https://www.youtube.com/watch?v=PSs6nxngL6k",
+      "description": "YouTube视频: Attention for Neural Networks, Clearly Explained!!!",
+      "video_id": "PSs6nxngL6k",
+      "thumbnail": "https://i.ytimg.com/vi/PSs6nxngL6k/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBWHe4YuDU1L868dpnsfJ6nW2MvNg",
+      "type": "video"
+    },
+    {
+      "title": "L19.4.3 Multi-Head Attention",
+      "url": "https://www.youtube.com/watch?v=A1eUVxscNq8",
+      "description": "YouTube视频: L19.4.3 Multi-Head Attention",
+      "video_id": "A1eUVxscNq8",
+      "thumbnail": "https://i.ytimg.com/vi/A1eUVxscNq8/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARhlIGUoZTAP&rs=AOn4CLBCeJnhvzretDAUN9NwwJZxl7xhvw",
+      "type": "video"
+    },
+    {
+      "title": "What are Transformers (Machine Learning Model)?",
+      "url": "https://www.youtube.com/watch?v=ZXiruGOCn9s",
+      "description": "YouTube视频: What are Transformers (Machine Learning Model)?",
+      "video_id": "ZXiruGOCn9s",
+      "thumbnail": "https://i.ytimg.com/vi/ZXiruGOCn9s/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDoVV6mNeCGT-G_xiSE_qjuGZVLrg",
+      "type": "video"
+    },
+    {
+      "title": "Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!",
+      "url": "https://www.youtube.com/watch?v=zxQyTK8quyY",
+      "description": "YouTube视频: Transformer Neural Networks, ChatGPT's foundation, Clearly Explained!!!",
+      "video_id": "zxQyTK8quyY",
+      "thumbnail": "https://i.ytimg.com/vi/zxQyTK8quyY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALv5yZKOdXrNcg6aas-RlM5rN-6g",
+      "type": "video"
+    },
+    {
+      "title": "Why Computers Suck At Translation",
+      "url": "https://www.youtube.com/watch?v=GAgp7nXdkLU",
+      "description": "YouTube视频: Why Computers Suck At Translation",
+      "video_id": "GAgp7nXdkLU",
+      "thumbnail": "https://i.ytimg.com/vi/GAgp7nXdkLU/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBkmf84zkvKbgluOVlxhtkRgFE19A",
+      "type": "video"
+    },
+    {
+      "title": "What's inside a neural machine translation system?",
+      "url": "https://www.youtube.com/watch?v=NZTVm_0UTpc",
+      "description": "YouTube视频: What's inside a neural machine translation system?",
+      "video_id": "NZTVm_0UTpc",
+      "thumbnail": "https://i.ytimg.com/vi/NZTVm_0UTpc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBVhtBghYDsln3wI1MlFtnHRQ3zKQ",
+      "type": "video"
+    },
+    {
+      "title": "How Google Translate Turns 134 Languages Into Math | WSJ Tech Behind",
+      "url": "https://www.youtube.com/watch?v=OPTKlycwIkM",
+      "description": "YouTube视频: How Google Translate Turns 134 Languages Into Math | WSJ Tech Behind",
+      "video_id": "OPTKlycwIkM",
+      "thumbnail": "https://i.ytimg.com/vi/OPTKlycwIkM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAk0BC8WL7eMI0SNqCSqetJKPzug",
+      "type": "video"
+    },
+    {
+      "title": "Lecture 10: Neural Machine Translation and Models with Attention",
+      "url": "https://www.youtube.com/watch?v=IxQtK2SjWWM",
+      "description": "YouTube视频: Lecture 10: Neural Machine Translation and Models with Attention",
+      "video_id": "IxQtK2SjWWM",
+      "thumbnail": "https://i.ytimg.com/vi/IxQtK2SjWWM/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLDcaQ8JLSWjd-2ZTI7VTEawe90nQA",
+      "type": "video"
+    },
+    {
+      "title": "A very brief history of machine translation",
+      "url": "https://www.youtube.com/watch?v=2PJ_o6DHuZw",
+      "description": "YouTube视频: A very brief history of machine translation",
+      "video_id": "2PJ_o6DHuZw",
+      "thumbnail": "https://i.ytimg.com/vi/2PJ_o6DHuZw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCzyPMBlOcYB8Drvu2Top9Lx6cFMg",
+      "type": "video"
+    },
+    {
+      "title": "A Future with Machine Translation",
+      "url": "https://www.youtube.com/watch?v=b6COEcZhRAw",
+      "description": "YouTube视频: A Future with Machine Translation",
+      "video_id": "b6COEcZhRAw",
+      "thumbnail": "https://i.ytimg.com/vi/b6COEcZhRAw/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBqsc-M9xVU8Tf-pnvLiGAL7vmnqA",
+      "type": "video"
+    },
+    {
+      "title": "How computers translate human language - Ioannis Papachimonas",
+      "url": "https://www.youtube.com/watch?v=X4BmV2t83SM",
+      "description": "YouTube视频: How computers translate human language - Ioannis Papachimonas",
+      "video_id": "X4BmV2t83SM",
+      "thumbnail": "https://i.ytimg.com/vi/X4BmV2t83SM/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAX3cdvBFKK-nKBjjWyTlwXJkhY7Q",
+      "type": "video"
+    },
+    {
+      "title": "Assessing the impact of machine translation on language | Lise Volkart | TEDxLausanne",
+      "url": "https://www.youtube.com/watch?v=ZzhLoUKKbDU",
+      "description": "YouTube视频: Assessing the impact of machine translation on language | Lise Volkart | TEDxLausanne",
+      "video_id": "ZzhLoUKKbDU",
+      "thumbnail": "https://i.ytimg.com/vi/ZzhLoUKKbDU/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhyIDwoWDAP&rs=AOn4CLDxE6-7qzuWPuy3XotCcskbCUHgow",
+      "type": "video"
+    },
+    {
+      "title": "Sadie Sink, Noah Schnapp & Gaten Matarazzo Answer the Web’s Most Searched Questions | WIRED",
+      "url": "https://www.youtube.com/watch?v=BD44SVoCIFo",
+      "description": "YouTube视频: Sadie Sink, Noah Schnapp & Gaten Matarazzo Answer the Web’s Most Searched Questions | WIRED",
+      "video_id": "BD44SVoCIFo",
+      "thumbnail": "https://i.ytimg.com/vi/BD44SVoCIFo/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDKOomUJ2F-6Jmnbn5fFiLxvk3Maw",
+      "type": "video"
+    },
+    {
+      "title": "Asking and Answering Questions About a Story: Reading Literature",
+      "url": "https://www.youtube.com/watch?v=C2fWZHaNugc",
+      "description": "YouTube视频: Asking and Answering Questions About a Story: Reading Literature",
+      "video_id": "C2fWZHaNugc",
+      "thumbnail": "https://i.ytimg.com/vi/C2fWZHaNugc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAucn7CyA609atch0jGQK7zeXv2sQ",
+      "type": "video"
+    },
+    {
+      "title": "Harvard Professor Answers Iranian Government Questions | Tech Support | WIRED",
+      "url": "https://www.youtube.com/watch?v=NKdyuKXkrPU",
+      "description": "YouTube视频: Harvard Professor Answers Iranian Government Questions | Tech Support | WIRED",
+      "video_id": "NKdyuKXkrPU",
+      "thumbnail": "https://i.ytimg.com/vi/NKdyuKXkrPU/hq720_custom_2.jpg?sqp=CLzKpM8G-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAlfLi0YCiX1KhQ_hOrk7JGaE-CqQ",
+      "type": "video"
+    },
+    {
+      "title": "🧠 How Good is Your General Knowledge? | 50 Questions Challenge 🧐✅",
+      "url": "https://www.youtube.com/watch?v=0TRdXDEfeUI",
+      "description": "YouTube视频: 🧠 How Good is Your General Knowledge? | 50 Questions Challenge 🧐✅",
+      "video_id": "0TRdXDEfeUI",
+      "thumbnail": "https://i.ytimg.com/vi/0TRdXDEfeUI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDqg-ojmMeFO2H4KXelpM0_K5oALg",
+      "type": "video"
+    },
+    {
+      "title": "🤗 Tasks: Question Answering",
+      "url": "https://www.youtube.com/watch?v=ajPx5LwJD-I",
+      "description": "YouTube视频: 🤗 Tasks: Question Answering",
+      "video_id": "ajPx5LwJD-I",
+      "thumbnail": "https://i.ytimg.com/vi/ajPx5LwJD-I/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC8DAbrklkjDq56huv4wPGkalrpYw",
+      "type": "video"
+    },
+    {
+      "title": "Guess The Question From The Answer",
+      "url": "https://www.youtube.com/watch?v=uvfoC_NbWY0",
+      "description": "YouTube视频: Guess The Question From The Answer",
+      "video_id": "uvfoC_NbWY0",
+      "thumbnail": "https://i.ytimg.com/vi/uvfoC_NbWY0/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDwsWYNf1aotmNq0Grh9OPwe5Qj_Q",
+      "type": "video"
+    },
+    {
+      "title": "Why Do You Want to Work Here? (Answer this Tricky Question)",
+      "url": "https://www.youtube.com/watch?v=x-4MewJpaso",
+      "description": "YouTube视频: Why Do You Want to Work Here? (Answer this Tricky Question)",
+      "video_id": "x-4MewJpaso",
+      "thumbnail": "https://i.ytimg.com/vi/x-4MewJpaso/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCR_8M1Shzz5B8Gxr_fsuMdSE98Aw",
+      "type": "video"
+    },
+    {
+      "title": "JENNIE Answers The Web's Most Searched Questions | WIRED",
+      "url": "https://www.youtube.com/watch?v=UGrTMEDAn7I",
+      "description": "YouTube视频: JENNIE Answers The Web's Most Searched Questions | WIRED",
+      "video_id": "UGrTMEDAn7I",
+      "thumbnail": "https://i.ytimg.com/vi/UGrTMEDAn7I/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBQL1brFuO6-TPmsDaf7thzKJQqkw",
+      "type": "video"
+    },
+    {
+      "title": "Attention Mechanism In a nutshell",
+      "url": "https://www.youtube.com/watch?v=oMeIDqRguLY",
+      "description": "YouTube视频: Attention Mechanism In a nutshell",
+      "video_id": "oMeIDqRguLY",
+      "thumbnail": "https://i.ytimg.com/vi/oMeIDqRguLY/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDlLI6A0i0LWC2VeTGq_1KNzQVVRw",
+      "type": "video"
+    },
+    {
+      "title": "Beyond Softmax: The Future of Attention Mechanisms",
+      "url": "https://www.youtube.com/watch?v=pUCWwGR5WmQ",
+      "description": "YouTube视频: Beyond Softmax: The Future of Attention Mechanisms",
+      "video_id": "pUCWwGR5WmQ",
+      "thumbnail": "https://i.ytimg.com/vi/pUCWwGR5WmQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA-OTCdOeQ9A8AdQzSh10GIHs7HDg",
+      "type": "video"
+    },
+    {
+      "title": "Build an LLM from Scratch 3: Coding attention mechanisms",
+      "url": "https://www.youtube.com/watch?v=-Ll8DtpNtvk",
+      "description": "YouTube视频: Build an LLM from Scratch 3: Coding attention mechanisms",
+      "video_id": "-Ll8DtpNtvk",
+      "thumbnail": "https://i.ytimg.com/vi/-Ll8DtpNtvk/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC-UXt5Ko8U_eWM0c18uqYXJg8HwQ",
+      "type": "video"
+    },
+    {
+      "title": "The Slightly Spooky Recamán Sequence - Numberphile",
+      "url": "https://www.youtube.com/watch?v=FGC5TdIiT9U",
+      "description": "YouTube视频: The Slightly Spooky Recamán Sequence - Numberphile",
+      "video_id": "FGC5TdIiT9U",
+      "thumbnail": "https://i.ytimg.com/vi/FGC5TdIiT9U/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAmh05asgAOeQT6aXT9Vt7VwK-1Tw",
+      "type": "video"
+    },
+    {
+      "title": "Math Antics - Number Patterns",
+      "url": "https://www.youtube.com/watch?v=vV7C7bXm4VI",
+      "description": "YouTube视频: Math Antics - Number Patterns",
+      "video_id": "vV7C7bXm4VI",
+      "thumbnail": "https://i.ytimg.com/vi/vV7C7bXm4VI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAd-LoxAXYwnt0eIjWop5H5xDdiCQ",
+      "type": "video"
+    },
+    {
+      "title": "What is the Fibonacci Sequence & the Golden Ratio? Simple Explanation and Examples in Everyday Life",
+      "url": "https://www.youtube.com/watch?v=2tv6Ej6JVho",
+      "description": "YouTube视频: What is the Fibonacci Sequence & the Golden Ratio? Simple Explanation and Examples in Everyday Life",
+      "video_id": "2tv6Ej6JVho",
+      "thumbnail": "https://i.ytimg.com/vi/2tv6Ej6JVho/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDgVYXnGwbhBc8wwsoms-sLVdSXsA",
+      "type": "video"
+    },
+    {
+      "title": "Convergence and Divergence: The Return of Sequences and Series",
+      "url": "https://www.youtube.com/watch?v=L-JqHo4-W4k",
+      "description": "YouTube视频: Convergence and Divergence: The Return of Sequences and Series",
+      "video_id": "L-JqHo4-W4k",
+      "thumbnail": "https://i.ytimg.com/vi/L-JqHo4-W4k/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCglvNEgmp1MLzCOATNTE6oEdb53A",
+      "type": "video"
+    },
+    {
+      "title": "Sequences, Factorials, and Summation Notation",
+      "url": "https://www.youtube.com/watch?v=-DPkqpmm1sI",
+      "description": "YouTube视频: Sequences, Factorials, and Summation Notation",
+      "video_id": "-DPkqpmm1sI",
+      "thumbnail": "https://i.ytimg.com/vi/-DPkqpmm1sI/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDmocmMqc8swaedKXu4KguQshlbdA",
+      "type": "video"
+    },
+    {
+      "title": "The Easy Way to Add Up a Sequence",
+      "url": "https://www.youtube.com/watch?v=FOLG2Of5WLI",
+      "description": "YouTube视频: The Easy Way to Add Up a Sequence",
+      "video_id": "FOLG2Of5WLI",
+      "thumbnail": "https://i.ytimg.com/vi/FOLG2Of5WLI/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAk49VTwbG5FSoWpCZjD9B7gkx2tA",
+      "type": "video"
+    },
+    {
+      "title": "Six Sequences - Numberphile",
+      "url": "https://www.youtube.com/watch?v=VDD6FDhKCYA",
+      "description": "YouTube视频: Six Sequences - Numberphile",
+      "video_id": "VDD6FDhKCYA",
+      "thumbnail": "https://i.ytimg.com/vi/VDD6FDhKCYA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDmM87vYwqxgcLCV-MSAcQ0vKE9zQ",
+      "type": "video"
+    },
+    {
+      "title": "Equations of sequence patterns | Sequences, series and induction | Precalculus | Khan Academy",
+      "url": "https://www.youtube.com/watch?v=_3BnyEr5fG4",
+      "description": "YouTube视频: Equations of sequence patterns | Sequences, series and induction | Precalculus | Khan Academy",
+      "video_id": "_3BnyEr5fG4",
+      "thumbnail": "https://i.ytimg.com/vi/_3BnyEr5fG4/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCG1e0n1R2o1N8CGTGVLlQPrR_7zg",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS231N | Spring 2025 | Lecture 8: Attention and Transformers",
+      "url": "https://www.youtube.com/watch?v=RQowiOF_FvQ",
+      "description": "YouTube视频: Stanford CS231N | Spring 2025 | Lecture 8: Attention and Transformers",
+      "video_id": "RQowiOF_FvQ",
+      "thumbnail": "https://i.ytimg.com/vi/RQowiOF_FvQ/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLApRfiA4jUxlpt8pc81hLZaD3GRIg",
+      "type": "video"
+    },
+    {
+      "title": "Stanford CS224N NLP with Deep Learning | 2023 | Lecture 8 - Self-Attention and Transformers",
+      "url": "https://www.youtube.com/watch?v=LWMzyfvuehA",
+      "description": "YouTube视频: Stanford CS224N NLP with Deep Learning | 2023 | Lecture 8 - Self-Attention and Transformers",
+      "video_id": "LWMzyfvuehA",
+      "thumbnail": "https://i.ytimg.com/vi/LWMzyfvuehA/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLBPPbUfctWwLVhR8gFRslz9Pxt1jA",
+      "type": "video"
+    },
+    {
+      "title": "【機器學習2021】自注意力機制 (Self-attention) (上)",
+      "url": "https://www.youtube.com/watch?v=hYdO9CscNes",
+      "description": "YouTube视频: 【機器學習2021】自注意力機制 (Self-attention) (上)",
+      "video_id": "hYdO9CscNes",
+      "thumbnail": "https://i.ytimg.com/vi/hYdO9CscNes/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gSAAuADigIMCAAQARhYIF4oZTAP&rs=AOn4CLBUC2xMkDLZOv7ADFif6buUAtj0vg",
+      "type": "video"
+    },
+    {
+      "title": "Transformers, the tech behind LLMs | Deep Learning Chapter 5",
+      "url": "https://www.youtube.com/watch?v=wjZofJX0v4M",
+      "description": "YouTube视频: Transformers, the tech behind LLMs | Deep Learning Chapter 5",
+      "video_id": "wjZofJX0v4M",
+      "thumbnail": "https://i.ytimg.com/vi/wjZofJX0v4M/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBIDBL_vgn5H2zkyjwo32PBmvvU2w",
+      "type": "video"
+    }
+  ],
+  "code": [
+    {
+      "title": "Awesome-LLMs-Datasets",
+      "url": "https://github.com/lmmlzn/Awesome-LLMs-Datasets",
+      "description": "GitHub代码仓库: Awesome-LLMs-Datasets",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "bert-extractive-summarizer",
+      "url": "https://github.com/dmmiller612/bert-extractive-summarizer",
+      "description": "GitHub代码仓库: bert-extractive-summarizer",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "text-summarization-tensorflow",
+      "url": "https://github.com/dongjun-Lee/text-summarization-tensorflow",
+      "description": "GitHub代码仓库: text-summarization-tensorflow",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "flair",
+      "url": "https://github.com/flairNLP/flair",
+      "description": "GitHub代码仓库: flair",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "compromise",
+      "url": "https://github.com/spencermountain/compromise",
+      "description": "GitHub代码仓库: compromise",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Awesome-AI-Pedia",
+      "url": "https://github.com/qdleader/Awesome-AI-Pedia",
+      "description": "GitHub代码仓库: Awesome-AI-Pedia",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "The-2024-Pediatric-Sepsis-Challenge-Team-AIMS",
+      "url": "https://github.com/nguefackuriel/The-2024-Pediatric-Sepsis-Challenge-Team-AIMS",
+      "description": "GitHub代码仓库: The-2024-Pediatric-Sepsis-Challenge-Team-AIMS",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "AiPedia",
+      "url": "https://github.com/Frozen-47/AiPedia",
+      "description": "GitHub代码仓库: AiPedia",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "AI2Tutor_Pedia",
+      "url": "https://github.com/Ruby141/AI2Tutor_Pedia",
+      "description": "GitHub代码仓库: AI2Tutor_Pedia",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "pediatric-appendicitis-ai",
+      "url": "https://github.com/duducamargo/pediatric-appendicitis-ai",
+      "description": "GitHub代码仓库: pediatric-appendicitis-ai",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "nelson-pediatric-ai-2467",
+      "url": "https://github.com/appdotbuilder/nelson-pediatric-ai-2467",
+      "description": "GitHub代码仓库: nelson-pediatric-ai-2467",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "AI-Pediatric-Pneumonia-Detection",
+      "url": "https://github.com/labaninabila193-code/AI-Pediatric-Pneumonia-Detection",
+      "description": "GitHub代码仓库: AI-Pediatric-Pneumonia-Detection",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Business-Pedia-AI-web-application",
+      "url": "https://github.com/Sadvi108/Business-Pedia-AI-web-application",
+      "description": "GitHub代码仓库: Business-Pedia-AI-web-application",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "FlashMLA",
+      "url": "https://github.com/deepseek-ai/FlashMLA",
+      "description": "GitHub代码仓库: FlashMLA",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "memory-efficient-attention-pytorch",
+      "url": "https://github.com/lucidrains/memory-efficient-attention-pytorch",
+      "description": "GitHub代码仓库: memory-efficient-attention-pytorch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "MoH",
+      "url": "https://github.com/SkyworkAI/MoH",
+      "description": "GitHub代码仓库: MoH",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "AttentioNN",
+      "url": "https://github.com/zaidalyafeai/AttentioNN",
+      "description": "GitHub代码仓库: AttentioNN",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "MHA2MLA",
+      "url": "https://github.com/JT-Ushio/MHA2MLA",
+      "description": "GitHub代码仓库: MHA2MLA",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "Mega-pytorch",
+      "url": "https://github.com/lucidrains/Mega-pytorch",
+      "description": "GitHub代码仓库: Mega-pytorch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "grouped-query-attention-pytorch",
+      "url": "https://github.com/fkodom/grouped-query-attention-pytorch",
+      "description": "GitHub代码仓库: grouped-query-attention-pytorch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "nmt",
+      "url": "https://github.com/tensorflow/nmt",
+      "description": "GitHub代码仓库: nmt",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "100-Days-of-ML-Code-Chinese-Version",
+      "url": "https://github.com/Avik-Jain/100-Days-of-ML-Code-Chinese-Version",
+      "description": "GitHub代码仓库: 100-Days-of-ML-Code-Chinese-Version",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "FastGPT",
+      "url": "https://github.com/labring/FastGPT",
+      "description": "GitHub代码仓库: FastGPT",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "External-Attention-pytorch",
+      "url": "https://github.com/xmu-xiaoma666/External-Attention-pytorch",
+      "description": "GitHub代码仓库: External-Attention-pytorch",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "faceswap-GAN",
+      "url": "https://github.com/shaoanlu/faceswap-GAN",
+      "description": "GitHub代码仓库: faceswap-GAN",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "pytorch-GAT",
+      "url": "https://github.com/gordicaleksa/pytorch-GAT",
+      "description": "GitHub代码仓库: pytorch-GAT",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "bi-att-flow",
+      "url": "https://github.com/allenai/bi-att-flow",
+      "description": "GitHub代码仓库: bi-att-flow",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "self-attention-cv",
+      "url": "https://github.com/The-AI-Summer/self-attention-cv",
+      "description": "GitHub代码仓库: self-attention-cv",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "awesome-transformer-nlp",
+      "url": "https://github.com/cedrickchee/awesome-transformer-nlp",
+      "description": "GitHub代码仓库: awesome-transformer-nlp",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "keras-attention",
+      "url": "https://github.com/datalogue/keras-attention",
+      "description": "GitHub代码仓库: keras-attention",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "tf-rnn-attention",
+      "url": "https://github.com/ilivans/tf-rnn-attention",
+      "description": "GitHub代码仓库: tf-rnn-attention",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "mermaid",
+      "url": "https://github.com/mermaid-js/mermaid",
+      "description": "GitHub代码仓库: mermaid",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "js-sequence-diagrams",
+      "url": "https://github.com/bramp/js-sequence-diagrams",
+      "description": "GitHub代码仓库: js-sequence-diagrams",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "tsai",
+      "url": "https://github.com/timeseriesAI/tsai",
+      "description": "GitHub代码仓库: tsai",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "pytorch-seq2seq",
+      "url": "https://github.com/bentrevett/pytorch-seq2seq",
+      "description": "GitHub代码仓库: pytorch-seq2seq",
+      "source": "GitHub",
+      "type": "code"
+    },
+    {
+      "title": "LSTM-Neural-Network-for-Time-Series-Prediction",
+      "url": "https://github.com/jaungiers/LSTM-Neural-Network-for-Time-Series-Prediction",
+      "description": "GitHub代码仓库: LSTM-Neural-Network-for-Time-Series-Prediction",
+      "source": "GitHub",
+      "type": "code"
+    }
+  ]
+}

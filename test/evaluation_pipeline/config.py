@@ -12,7 +12,6 @@ import os
 class EvalConfig:
     """Evaluation configuration for reproducible local runs."""
 
-    TEST_CORPUS_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "test_corpus")
     TEST_CORPORA_ROOT = os.path.join(os.path.dirname(__file__), "..", "..", "data", "test_corpora")
     OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "results")
 
