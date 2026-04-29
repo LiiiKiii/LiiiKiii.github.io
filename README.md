@@ -8,7 +8,7 @@ An AI-embedded multimedia resource recommender for AI education. The core recomm
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.0+-green.svg)](https://flask.palletsprojects.com/)
-[![License](https://img.shields.io/badge/License-Apache--2.0-yellow.svg)](LICENSE)
+![License](https://img.shields.io/badge/License-Project--Use-yellow.svg)
 
 [Features](#features) • [Quick Start](#quick-start) • [Project Structure](#project-structure) • [Tech Stack](#tech-stack) • [Usage](#usage)
 
@@ -30,7 +30,6 @@ An AI-embedded multimedia resource recommender for AI education. The core recomm
 - [Development Guide](#development-guide)
 - [FAQ](#faq)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 
@@ -50,9 +49,9 @@ An AI-embedded multimedia resource recommender for AI education. The core recomm
 - **Multi-Format Support**: Supports TXT and PDF documents (PDF automatically converted to TXT)
 - **Intelligent Keyword Extraction**: Uses TF-IDF and MMR algorithms to extract key themes
 - **Multi-Source Resource Search**:
-  - **Text Resources**: Wikipedia, Google Scholar, arXiv, etc.
+  - **Text Resources**: Wikipedia, Google Scholar, arXiv, and related academic sources
   - **Video Resources**: YouTube educational videos
-  - **Code Resources**: GitHub, Google Colab, Kaggle, Stack Overflow, etc.
+  - **Code Resources**: GitHub repositories and implementation-oriented resources
 - **CBF Recommendation System**: Filters most relevant resources based on content similarity
 - **Optional LLM Summary Generation**: Optionally use OpenAI API to generate resource summaries
 - **Smart Fallback**: Automatically uses rule-based summary generation when API fails
@@ -101,11 +100,10 @@ An AI-embedded multimedia resource recommender for AI education. The core recomm
 
 ### Installation Steps
 
-1. **Clone the repository**
+1. **Enter the project directory**
 
 ```bash
-git clone https://github.com/LiiiKiii/Reinforcement-Ebook-System.git
-cd Reinforcement-Ebook-System
+cd /path/to/AI-Pedia/Project/Code
 ```
 
 2. **Install dependencies**
@@ -126,7 +124,7 @@ chmod +x start.sh
 **Method 2: Manual startup**
 
 ```bash
-python app.py
+python3 app.py
 ```
 
 4. **Access the application**
@@ -210,7 +208,7 @@ set OPENAI_API_KEY=your-api-key-here
 
 ```bash
 export OPENAI_API_KEY="your-api-key-here"
-python app.py
+python3 app.py
 ```
 
 > **Note**: If no API Key is configured, the system will automatically use intelligent fallback methods to generate summaries, and all features remain fully functional.
@@ -220,7 +218,7 @@ python app.py
 If the default port 5000 is occupied, you can modify the last line in `app.py`:
 
 ```python
-app.run(debug=True, port=5001)  # Change to another port
+app.run(host="0.0.0.0", port=5001, debug=debug_mode)
 ```
 
 ## Usage
@@ -252,68 +250,49 @@ After processing is complete, click the "Download Recommendation Results" button
 
 - `txt/` - Recommended text resources (irrelevant content already cleaned)
 - `video/` - Recommended video links and descriptions
-- `code/` - Recommended code resources (GitHub, Colab, etc.)
+- `code/` - Recommended code resources and implementation links
 
 ## Project Structure
 
-```
-AI-Pedia/Project/
+```text
+Code/
 ├── app.py                      # Flask main application entry
+├── config.py                   # Shared paths and pipeline settings
 ├── requirements.txt            # Python dependencies list
-├── README.md / README_CH.md    # Project documentation (EN / CN)
+├── README.md                   # Project documentation
+├── DEPLOYMENT.md               # Deployment notes
 ├── start.sh                    # Startup script
-├── LICENSE                     # License file
-├── index.html                  # Root redirect page (redirects to /frontend/, for GitHub Pages)
-│
+├── Dockerfile                  # Container build file
+├── docker-compose.yml          # Local container orchestration
+├── index.html                  # Root redirect page for GitHub Pages
+├── generate_additional_plots.py
 ├── frontend/                   # Frontend code (shared by Flask + GitHub Pages)
 │   ├── index.html              # Pure static home page (GitHub Pages entry)
+│   ├── help.html
+│   ├── progress.html
+│   ├── ai-enhance.html
+│   ├── contact.html
 │   ├── templates/              # HTML templates for Flask rendering
-│   │   ├── index.html          # Main page
-│   │   ├── help.html           # Help page
-│   │   ├── progress.html       # Progress page
-│   │   ├── ai-enhance.html     # Optional LLM summary page
-│   │   └── contact.html        # Contact page
-│   └── static/                 # Static resources
-│       ├── css/                # Styles
-│       │   ├── style.css       # Main styles
-│       │   ├── help.css        # Help page styles
-│       │   ├── progress.css    # Progress page styles
-│       │   ├── ai-enhance.css  # Optional LLM summary page styles
-│       │   └── contact.css     # Contact page styles
-│       ├── js/                 # JavaScript files
-│       │   ├── main.js         # Global logic (upload, SSE, i18n, theme, etc.)
-│       │   ├── help.js         # Help page logic
-│       │   ├── progress.js     # Progress page logic
-│       │   ├── ai-enhance.js   # Optional LLM summary page logic
-│       │   └── contact.js      # Contact page logic
-│       └── images/
-│           └── home-icon.png   # Site icon
-│
+│   └── static/                 # CSS, JS, images
 ├── backend/                    # Backend code
-│   ├── core/                   # Core functional modules
-│   │   ├── __init__.py
-│   │   ├── keyword_extractor.py    # Keyword extraction module
-│   │   ├── resource_searcher.py    # Resource search module
-│   │   ├── recommender.py          # CBF recommendation system
-│   │   └── ai_summarizer.py        # AI summary generation module
+│   ├── core/                   # Core recommendation modules
+│   │   ├── keyword_extractor.py
+│   │   ├── resource_searcher.py
+│   │   ├── recommender.py
+│   │   └── ai_summarizer.py
 │   └── utils/                  # Utility modules
-│       ├── __init__.py
-│       └── file_utils.py       # File processing utilities
-│
-├── data/                       # Data directory (auto-created)
-│   ├── uploads/                # User uploaded files
-│   ├── results/                # Search results
-│   └── outputs/                # Final outputs
-│
-├── test/                       # Testing & evaluation
-│   ├── README.md               # Test overview
-│   ├── evaluation_pipeline/    # Reproducible evaluation scripts and outputs
-│   │   ├── evaluator.py
-│   │   ├── metrics.py
-│   │   ├── config.py
-│   │   └── results/
-│   └── performance/            # Local deterministic performance tests
-│       └── run_performance_tests.py
+│       ├── file_utils.py
+│       └── search_persist.py
+├── data/                       # Runtime data directory
+│   ├── uploads/
+│   ├── results/
+│   ├── outputs/
+│   └── test_corpora/
+└── test/                       # Testing and evaluation
+    ├── README.md
+    ├── evaluation_pipeline/    # Reproducible evaluation scripts and outputs
+    ├── llm_baseline_eval/      # LLM baseline comparison scripts and outputs
+    └── performance/            # Local deterministic performance tests
 ```
 
 ---
@@ -327,6 +306,9 @@ The project includes a dedicated `test/` directory for the **current reproducibl
   - quantitative evaluation of keyword extraction, retrieval quality, and ranking quality
   - supports the current focused multi-corpus setup
   - exports JSON, CSV, LaTeX tables, and paper-ready figures
+- **`test/llm_baseline_eval/`**:
+  - side-by-side comparison between the AI-Pedia pipeline and an LLM-with-browsing baseline
+  - exports JSON and LaTeX artefacts used in the dissertation comparison section
 - **`test/performance/run_performance_tests.py`**:
   - local deterministic performance benchmarking for the main pipeline stages
   - exports reusable summary files for direct inclusion in the dissertation
@@ -384,7 +366,7 @@ def compute_similarity(user_docs, resource_content):
 Modify keyword extraction parameters in `app.py`:
 
 ```python
-keywords = extract_keywords_from_folder(upload_path, top_k=15)  # Modify top_k parameter
+keywords = extract_keywords_from_folder(upload_path, top_k=15)
 ```
 
 ### Adjust Similarity Threshold
@@ -455,14 +437,10 @@ We welcome all forms of contributions!
 - Extend search sources
 - Add tests
 
-## License
-
-This project is licensed under the [Apache-2.0](LICENSE) License.
-
 ## Contact
 
-- **GitHub Issues**: [Submit Issues](https://github.com/LiiiKiii/Reinforcement-Ebook-System/issues)
-- **Project Homepage**: [Visit Project](https://github.com/LiiiKiii/Reinforcement-Ebook-System)
+- **GitHub Issues**: update this link to your final repository before submission if you plan to share a public repo
+- **Project Homepage**: update this link to your final repository homepage if needed
 
 ## Acknowledgments
 

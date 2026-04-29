@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}">
 </head>
 <body>
-  <!-- 导航栏 -->
+  <!-- Nav -->
   <nav class="navbar" id="navbar">
     <div class="navbar-left">
       <a href="/" class="navbar-brand">
@@ -61,7 +61,7 @@
     </div>
   </nav>
 
-  <!-- 移动端下拉菜单 -->
+  <!-- Mobile nav menu -->
   <div class="navbar-menu-dropdown">
     <div class="navbar-center">
       <a href="/" class="nav-link" data-page="home" data-i18n-key="nav.home">首页</a>
@@ -73,12 +73,12 @@
   </div>
 
   <div class="help-container">
-    <!-- 大标题 -->
+    <!-- Page hero -->
     <section class="help-hero">
       <h1 class="help-main-title" data-i18n-key="help.title">帮助</h1>
     </section>
 
-    <!-- About Product 部分 -->
+    <!-- Product section -->
     <section class="help-section">
       <h2 class="help-section-title" data-i18n-key="help.section.product">关于产品</h2>
       <div class="help-carousel-wrapper">
@@ -123,7 +123,7 @@
       </div>
     </section>
 
-    <!-- About AI 部分 -->
+    <!-- AI section -->
     <section class="help-section">
       <h2 class="help-section-title" data-i18n-key="help.section.tech">关于技术</h2>
       <div class="help-carousel-wrapper">
@@ -180,7 +180,7 @@
       </div>
     </section>
 
-    <!-- About Innovation 部分 -->
+    <!-- Innovation section -->
     <section class="help-section">
       <h2 class="help-section-title" data-i18n-key="help.section.innovation">关于创新</h2>
       <div class="help-carousel-wrapper">
@@ -226,7 +226,7 @@
     </section>
   </div>
 
-  <!-- 详细内容模态框 -->
+  <!-- Help detail modal -->
   <div class="help-modal" id="help-modal">
     <div class="help-modal-overlay"></div>
     <div class="help-modal-content">
@@ -237,7 +237,7 @@
         </svg>
       </button>
       <div class="help-modal-body" id="help-modal-body">
-        <!-- 内容将通过JavaScript动态加载 -->
+        <!-- Body filled by help.js -->
       </div>
     </div>
   </div>

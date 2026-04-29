@@ -1,4 +1,3 @@
-/* 加入我们页面样式 - 苹果风格设计 */
 
 .contact-container {
   max-width: 100%;
@@ -13,7 +12,6 @@
   opacity: 1 !important;
 }
 
-/* ========== 苹果风格动画定义 ========== */
 @keyframes appleFadeInUp {
   from {
     opacity: 0;
@@ -36,14 +34,12 @@
   }
 }
 
-/* 苹果官网常用的缓动函数 */
 :root {
   --apple-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --apple-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --apple-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 确保所有动画元素在动画完成后保持状态 */
 .contact-hero,
 .contact-subtitle,
 .contributors-section,
@@ -53,7 +49,6 @@
   animation-fill-mode: forwards;
 }
 
-/* ========== 页面标题动画 ========== */
 
 .contact-hero {
   text-align: center;
@@ -99,7 +94,6 @@ body:not(.light-mode) .contact-subtitle {
   color: #a1a1a6;
 }
 
-/* ========== 贡献者名单样式 ========== */
 
 .contributors-section {
   max-width: 1200px;
@@ -294,7 +288,6 @@ body:not(.light-mode) .avatar-circle {
 }
 
 .contributor-avatar:nth-child(7) .avatar-circle {
-  /* 更淡一点的粉色渐变，但保留一定对比度 */
   background: linear-gradient(135deg, #ffe1f0 0%, #ff9acb 100%);
   color: #ffffff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -305,7 +298,6 @@ body:not(.light-mode) .contributor-avatar:nth-child(7) .avatar-circle {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* ========== 联系表单样式 ========== */
 
 .contact-section {
   max-width: 800px;

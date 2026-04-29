@@ -1,4 +1,3 @@
-/* AI增强页面样式 - 苹果风格设计 */
 
 .ai-enhance-container {
   max-width: 100%;
@@ -13,7 +12,6 @@
   opacity: 1 !important;
 }
 
-/* ========== 苹果风格动画定义 ========== */
 @keyframes appleFadeInUp {
   from {
     opacity: 0;
@@ -36,7 +34,6 @@
   }
 }
 
-/* 苹果官网常用的缓动函数 */
 :root {
   --apple-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --apple-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -89,7 +86,6 @@ body:not(.light-mode) .ai-enhance-subtitle {
   color: #a1a1a6;
 }
 
-/* Scroll Fade In 动画 */
 .scroll-fade-in {
   opacity: 0;
   transform: translateY(50px);
@@ -103,7 +99,6 @@ body:not(.light-mode) .ai-enhance-subtitle {
   transform: translateY(0);
 }
 
-/* Hero Section 内的功能卡片应该立即显示，不需要滚动动画 */
 .ai-enhance-hero .features-section.scroll-fade-in,
 .ai-enhance-hero .feature-card.scroll-fade-in {
   opacity: 1 !important;
@@ -325,7 +320,6 @@ body.light-mode .api-key-toggle-btn:hover {
               border-color 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 确保隐私保护承诺部分在完全可见时完全不透明 */
 .privacy-notice.scroll-fade-in.visible,
 .privacy-notice.scroll-fade-in {
   opacity: 1 !important;
@@ -474,7 +468,6 @@ body.light-mode .feature-description {
   color: #6e6e73;
 }
 
-/* 功能卡片延迟动画 */
 .feature-card.scroll-fade-in:nth-child(1) {
   transition-delay: 0.1s;
 }
@@ -487,7 +480,6 @@ body.light-mode .feature-description {
   transition-delay: 0.3s;
 }
 
-/* 消息提示 */
 .api-message {
   position: fixed;
   top: 100px;
@@ -519,7 +511,6 @@ body.light-mode .feature-description {
   color: #ffffff;
 }
 
-/* 响应式设计 */
 @media (max-width: 768px) {
   .ai-enhance-main-title {
     font-size: 2.5rem;

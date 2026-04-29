@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI-Pedia</title>
-  <!-- 静态版本：直接使用相对路径引用资源 -->
+  <!-- Static build: relative asset paths -->
   <link rel="icon" type="image/png" href="static/images/home-icon.png">
   <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-  <!-- 导航栏 -->
+  <!-- Nav -->
   <nav class="navbar" id="navbar">
     <div class="navbar-left">
       <a href="index.html" class="navbar-brand">
@@ -18,7 +18,7 @@
       </a>
     </div>
     <div class="navbar-center">
-      <!-- 这些链接在纯静态环境下需要对应的静态页面（help.html 等），目前仅首页可用 -->
+      <!-- Static build: other pages are separate HTML files -->
       <a href="index.html" class="nav-link active" data-page="home" data-i18n-key="nav.home">首页</a>
       <a href="help.html" class="nav-link" data-page="help" data-i18n-key="nav.help">帮助</a>
       <a href="progress.html" class="nav-link" data-page="progress" data-i18n-key="nav.progress">研发进度</a>
@@ -62,7 +62,7 @@
     </div>
   </nav>
 
-  <!-- 移动端下拉菜单 -->
+  <!-- Mobile nav menu -->
   <div class="navbar-menu-dropdown">
     <div class="navbar-center">
       <a href="index.html" class="nav-link" data-page="home" data-i18n-key="nav.home">首页</a>
@@ -80,12 +80,12 @@
       <p class="home-subtitle" data-i18n-key="home.subtitle">智能推荐，精确匹配</p>
     </section>
     
-    <!-- 内容包装器 -->
+    <!-- Content wrapper -->
     <div class="content-wrapper">
-    <!-- 主内容区域：左侧 -->
+    <!-- Main column (left) -->
     <div class="main-content" id="main-content">
 
-    <!-- 步骤1: 上传文件夹 -->
+    <!-- Step 1: upload -->
     <section class="card step-card">
       <div class="step-header">
         <span class="step-number">1</span>
@@ -109,7 +109,7 @@
       </div>
     </section>
 
-    <!-- 步骤2: 处理中 -->
+    <!-- Step 2: processing -->
     <section class="card step-card" id="processing-section" style="display: none;">
       <div class="step-header">
         <span class="step-number">2</span>
@@ -165,7 +165,7 @@
       </div>
     </section>
 
-    <!-- 步骤3: 结果展示 -->
+    <!-- Step 3: results -->
     <section class="card step-card" id="results-section" style="display: none;">
       <div class="step-header">
         <span class="step-number">3</span>
@@ -260,9 +260,9 @@
     </section>
     </div>
     
-    <!-- 右侧面板：进度和结果展示 -->
+    <!-- Right column: progress + results -->
     <div class="right-panel" id="right-panel">
-      <!-- 处理进度窗口 -->
+      <!-- Progress panel -->
       <div class="panel-section" id="progress-panel">
         <div class="panel-header">
           <h3 data-i18n-key="home.panel.progress">📊 处理进度</h3>
@@ -274,13 +274,13 @@
         </div>
       </div>
       
-      <!-- 结果展示窗口 -->
+      <!-- Results panel -->
       <div class="panel-section" id="results-panel" style="display: none;">
         <div class="panel-header">
           <h3 data-i18n-key="home.panel.resources">📚 推荐资源</h3>
         </div>
         <div class="panel-content">
-          <!-- 文本资源 -->
+          <!-- Text resources -->
           <div class="resource-category" id="txt-resources">
             <h4 class="category-title">
               <span class="category-icon">📄</span>
@@ -289,7 +289,7 @@
             <div class="resource-list" id="txt-list"></div>
           </div>
           
-          <!-- 视频资源 -->
+          <!-- Video resources -->
           <div class="resource-category" id="video-resources">
             <h4 class="category-title">
               <span class="category-icon">🎥</span>
@@ -298,7 +298,7 @@
             <div class="resource-list" id="video-list"></div>
           </div>
           
-          <!-- 代码资源 -->
+          <!-- Code resources -->
           <div class="resource-category" id="code-resources">
             <h4 class="category-title">
               <span class="category-icon">💻</span>
@@ -312,7 +312,7 @@
     </div>
   </div>
 
-  <!-- 浮窗切换按钮 -->
+  <!-- View toggle FAB -->
   <div class="view-toggle-float" id="view-toggle-float" style="display: none;">
     <button class="view-toggle-btn" id="view-toggle-btn" title="切换视图">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -325,7 +325,7 @@
     </button>
   </div>
 
-  <!-- 静态版本也直接使用 main.js，但上传/处理相关接口在 GitHub Pages 上需要指向你部署的后端地址 -->
+  <!-- Point API base URL to your deployed backend when on GitHub Pages -->
   <script src="static/js/main.js"></script>
 </body>
 </html>

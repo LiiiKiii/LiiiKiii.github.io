@@ -1,55 +1,53 @@
-# AI-Pedia 部署指南
+# AI-Pedia Deployment Guide
 
-## 📋 前提条件
+## Prerequisites
 
-- Docker 20.10+
-- Docker Compose 1.29+
-- 至少 2GB 可用内存
-- （可选）OpenAI API Key 用于摘要生成功能
+- Docker 20.10 or newer
+- Docker Compose 1.29 or newer
+- At least 2 GB of available memory
+- Optional: an OpenAI API key for summary generation
 
-## 🚀 快速部署
+## Quick Deployment
 
-### 方式一：使用 Docker Compose（推荐）
+### Option 1: Docker Compose
 
-1. **克隆项目**
+1. Clone the project
+
 ```bash
 git clone <repository-url>
-cd AI-Pedia/Project
+cd AI-Pedia/Project/Code
 ```
 
-2. **配置环境变量**
+2. Configure environment variables
+
 ```bash
-# 复制环境变量模板
 cp .env.example .env
-
-# 编辑 .env 文件，设置你的 OpenAI API Key（可选）
-nano .env
 ```
 
-3. **启动服务**
-```bash
-# 构建并启动
-docker-compose up -d
+Edit `.env` and set `OPENAI_API_KEY` if you want to enable optional LLM summaries.
 
-# 查看日志
+3. Start the service
+
+```bash
+docker-compose up -d
 docker-compose logs -f ai-pedia
 ```
 
-4. **访问应用**
-打开浏览器访问：`http://localhost:5000`
+4. Open the application
 
-5. **停止服务**
+Visit `http://localhost:5000`
+
+5. Stop the service
+
 ```bash
 docker-compose down
 ```
 
-### 方式二：使用 Docker 直接构建
+### Option 2: Direct Docker Build
 
 ```bash
-# 1. 构建镜像
 docker build -t ai-pedia:latest .
 
-# 2. 运行容器
 docker run -d \
   --name ai-pedia \
   -p 5000:5000 \
@@ -57,269 +55,145 @@ docker run -d \
   -v $(pwd)/data:/app/data \
   ai-pedia:latest
 
-# 3. 查看日志
 docker logs -f ai-pedia
+```
 
-# 4. 停止容器
+Stop and remove the container:
+
+```bash
 docker stop ai-pedia
 docker rm ai-pedia
 ```
 
-### 方式三：本地部署（开发环境）
+### Option 3: Local Python Run
 
-1. **安装 Python 依赖**
+1. Install dependencies
+
 ```bash
 python3 -m venv venv
-source venv/bin/activate  # Linux/Mac
-# 或 venv\Scripts\activate  # Windows
-
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-2. **设置环境变量**
+2. Set environment variables
+
 ```bash
 export OPENAI_API_KEY=your_api_key_here
 export FLASK_ENV=production
 ```
 
-3. **启动应用**
+3. Start the application
+
 ```bash
-python app.py
+python3 app.py
 ```
 
-访问：`http://localhost:5000`
+Then open `http://localhost:5000`.
 
-## 🔧 配置说明
+## Configuration
 
-### 环境变量
+### Environment Variables
 
-| 变量名 | 必需 | 默认值 | 说明 |
-|--------|------|--------|------|
-| `OPENAI_API_KEY` | 否 | - | OpenAI API Key，用于摘要生成。不提供则使用规则回退 |
-| `FLASK_ENV` | 否 | `production` | Flask 运行环境 |
-| `FLASK_DEBUG` | 否 | `False` | Flask 调试模式 |
-| `FLASK_PORT` | 否 | `5000` | 服务端口 |
+| Variable | Required | Default | Description |
+| --- | --- | --- | --- |
+| `OPENAI_API_KEY` | No | - | Optional OpenAI API key for summaries. Without it, the fallback summary logic is used. |
+| `FLASK_ENV` | No | `production` | Flask runtime environment. |
+| `FLASK_DEBUG` | No | `False` | Flask debug mode. |
+| `FLASK_PORT` | No | `5000` | Service port. |
 
-### Pipeline 参数
+### Pipeline Parameters
 
-在 `app.py` 中可以调整以下参数：
+Project settings are centralized in `config.py`. Typical values include:
 
-```python
-# 关键词提取数量
-DEFAULT_KEYWORD_COUNT = 10
+- keyword extraction count
+- search limits per resource type
+- recommendation count per type
+- upload size and minimum document threshold
 
-# CBF 相似度阈值
-SIMILARITY_THRESHOLD = 0.05
+## Monitoring and Maintenance
 
-# 每种类型返回的资源数量
-TOP_K_RESOURCES = 5
-```
+### Health Check
 
-## 📊 监控和维护
-
-### 健康检查
-
-应用提供 `/health` 端点用于健康检查：
+The application exposes a `/health` endpoint:
 
 ```bash
 curl http://localhost:5000/health
 ```
 
-响应：
-```json
-{
-  "status": "healthy",
-  "version": "1.0.0",
-  "services": {
-    "keyword_extractor": "ok",
-    "resource_searcher": "ok",
-    "recommender": "ok"
-  }
-}
-```
+### Logs
 
-### 查看日志
+Docker Compose:
 
-**Docker Compose:**
 ```bash
 docker-compose logs -f ai-pedia
 ```
 
-**Docker:**
+Docker:
+
 ```bash
 docker logs -f ai-pedia
 ```
 
-### 备份数据
+### Data Backup
 
-数据存储在 `data/` 目录：
+Project data is stored under `data/`:
 
 ```bash
-# 备份
 tar -czf ai-pedia-backup-$(date +%Y%m%d).tar.gz data/
+```
 
-# 恢复
+Restore with:
+
+```bash
 tar -xzf ai-pedia-backup-YYYYMMDD.tar.gz
 ```
 
-## 🔒 安全建议
+## Security Notes
 
-1. **保护 API Key**
-   - 不要在代码中硬编码 API Key
-   - 使用环境变量或密钥管理服务
-   - 定期轮换 API Key
+1. Protect API keys
+   - Do not hard-code API keys in source files.
+   - Prefer environment variables.
+   - Rotate keys regularly if they are used.
 
-2. **网络安全**
-   - 在生产环境中使用反向代理（Nginx）
-   - 启用 HTTPS
-   - 限制上传文件大小
+2. Network exposure
+   - Use a reverse proxy such as Nginx in public deployments.
+   - Enable HTTPS if the service is exposed externally.
 
-3. **文件权限**
-   - 确保 `.env` 文件权限为 `600`
-   - 定期清理 `data/uploads` 目录
+3. File handling
+   - Keep upload permissions restricted.
+   - Periodically clean `data/uploads` if needed.
 
-## 🐛 故障排查
+## Troubleshooting
 
-### 问题 1: 容器启动失败
+### Container exits immediately
 
-**症状：** `docker-compose up` 后容器立即退出
-
-**解决方案：**
 ```bash
-# 查看详细日志
 docker-compose logs ai-pedia
-
-# 检查端口是否被占用
 netstat -an | grep 5000
-
-# 尝试使用不同端口
-docker run -d -p 8080:5000 ai-pedia:latest
 ```
 
-### 问题 2: OpenAI API 调用失败
+If port `5000` is busy, remap the host port.
 
-**症状：** 摘要生成失败，回退到规则生成
+### OpenAI calls fail
 
-**解决方案：**
+Check whether the key is set correctly:
+
 ```bash
-# 检查环境变量是否正确设置
 docker-compose exec ai-pedia env | grep OPENAI
-
-# 验证 API Key 格式
-# 应该是：sk-xxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-### 问题 3: 上传文件后处理失败
+### Upload succeeds but processing fails
 
-**症状：** 上传进度显示但无结果
+Check writable directories and restart the service if needed:
 
-**解决方案：**
 ```bash
-# 检查容器内文件权限
 docker-compose exec ai-pedia ls -la data/uploads/
-
-# 重启服务
 docker-compose restart
 ```
 
-## 📈 性能优化
-
-### 增加并发处理
-
-修改 `app.py` 中的线程池大小：
-
-```python
-# 在 app.py 开头添加
-from concurrent.futures import ThreadPoolExecutor
-
-# 创建线程池
-executor = ThreadPoolExecutor(max_workers=4)
-
-# 在处理函数中使用
-executor.submit(process_documents, zip_path)
-```
-
-### 使用 Redis 缓存
-
-对于频繁查询的资源，可以添加 Redis 缓存：
+## Updating a Deployment
 
 ```bash
-# docker-compose.yml 中添加
-services:
-  redis:
-    image: redis:alpine
-    ports:
-      - "6379:6379"
-```
-
-## 🔄 更新部署
-
-```bash
-# 1. 拉取最新代码
 git pull origin main
-
-# 2. 重新构建镜像
-docker-compose build
-
-# 3. 重启服务（保留数据）
-docker-compose up -d
-
-# 4. 清理旧镜像
-docker image prune -a
-```
-
-## 📞 支持
-
-如有问题，请：
-1. 查看日志文件
-2. 检查健康检查端点
-3. 参考本文档的故障排查部分
-
----
-
-## 📝 附录
-
-### 目录结构
-
-```
-AI-Pedia/Project/
-├── app.py                 # Flask 主应用
-├── requirements.txt        # Python 依赖
-├── Dockerfile             # Docker 镜像定义
-├── docker-compose.yml     # Docker Compose 配置
-├── .env.example           # 环境变量模板
-├── .dockerignore          # Docker 忽略文件
-├── backend/               # 后端核心模块
-│   ├── core/             # 核心功能
-│   │   ├── keyword_extractor.py
-│   │   ├── resource_searcher.py
-│   │   ├── recommender.py
-│   │   └── ai_summarizer.py
-│   └── utils/            # 工具函数
-├── frontend/             # 前端模板和静态资源
-│   ├── templates/        # HTML 模板
-│   └── static/           # CSS/JS/图片
-├── data/                 # 数据目录
-│   ├── uploads/          # 上传的文件
-│   ├── results/          # 处理结果
-│   └── outputs/          # 最终输出
-└── test/                 # 测试和评估
-    └── evaluation_pipeline/
-```
-
-### 端口说明
-
-- `5000`: AI-Pedia Web 服务
-
-### 网络配置
-
-默认使用桥接网络 `ai-pedia-network`。如需自定义，修改 `docker-compose.yml`：
-
-```yaml
-networks:
-  ai-pedia-network:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.20.0.0/16
+docker-compose up -d --build
 ```

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-LLM Baseline vs AI-Pedia Comparison Evaluator (v3 -- transparent live/dry-run modes)
+LLM Baseline vs AI-Pedia Comparison Evaluator
 
 Compares the LLM-with-browsing baseline (constrained by no structured pipeline)
 against the full AI-Pedia pipeline on:

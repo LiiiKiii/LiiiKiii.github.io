@@ -1,9 +1,7 @@
-// AI-Pedia - 主JavaScript文件
 
 let currentFolderName = null;
 let processingInterval = null;
 
-// DOM元素
 const folderInput = document.getElementById('folder-input');
 const uploadArea = document.getElementById('upload-area');
 const uploadBtn = document.getElementById('upload-btn');
@@ -13,22 +11,18 @@ const resultsSection = document.getElementById('results-section');
 const progressFill = document.getElementById('progress-fill');
 const progressText = document.getElementById('progress-text');
 const processingDetails = document.getElementById('processing-details');
-// 右侧面板元素
 const rightPanel = document.getElementById('right-panel');
 const progressPanel = document.getElementById('progress-panel');
 const resultsPanel = document.getElementById('results-panel');
 const terminalOutput = document.getElementById('terminal-output');
 
-// 视图切换相关
 let isResourcesOnlyView = false;
 let viewToggleFloat = document.getElementById('view-toggle-float');
 let viewToggleBtn = document.getElementById('view-toggle-btn');
 let viewToggleText = document.getElementById('view-toggle-text');
 const mainContainer = document.getElementById('main-container');
 
-// 初始化
 document.addEventListener('DOMContentLoaded', () => {
-  // 首先加载偏好设置，确保主题在页面渲染前就应用
   loadPreferences();
   triggerPageAnimation();
   setupUploadArea();
@@ -37,38 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
   setupViewToggle();
 });
 
-// 触发页面进入动画
 function triggerPageAnimation() {
-  // 确保容器可见
   const container = document.getElementById('main-container');
   if (container) {
     container.style.opacity = '1';
   }
   
-  // 为所有需要动画的元素重置动画（如果需要重新触发）
   const header = document.querySelector('header');
   const cards = document.querySelectorAll('.step-card');
   
   [header, ...cards].forEach(el => {
     if (el) {
       el.style.animation = 'none';
-      // 强制重排
       void el.offsetHeight;
       el.style.animation = null;
     }
   });
 }
 
-// 设置上传区域
 function setupUploadArea() {
   const uploadBox = uploadArea.querySelector('.upload-box');
   
-  // 点击上传
   uploadBox.addEventListener('click', () => {
     folderInput.click();
   });
   
-  // 文件选择
   folderInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -76,7 +63,6 @@ function setupUploadArea() {
     }
   });
   
-  // 拖拽上传
   uploadBox.addEventListener('dragover', (e) => {
     e.preventDefault();
     uploadBox.style.borderColor = '#764ba2';
@@ -84,14 +70,12 @@ function setupUploadArea() {
   
   uploadBox.addEventListener('dragleave', (e) => {
     e.preventDefault();
-    // 恢复为CSS中定义的默认样式，不再强制改成纯白
     uploadBox.style.borderColor = '#667eea';
     uploadBox.style.background = '';
   });
   
   uploadBox.addEventListener('drop', (e) => {
     e.preventDefault();
-    // 上传结束后同样恢复为默认样式
     uploadBox.style.borderColor = '#667eea';
     uploadBox.style.background = '';
     
@@ -121,7 +105,6 @@ function handleFileSelect(file) {
   showStatus(`${selectedText} ${file.name} (${formatFileSize(file.size)})`, 'info');
 }
 
-// 设置上传按钮
 function setupUploadButton() {
   uploadBtn.addEventListener('click', async () => {
     const file = folderInput.files[0];
@@ -136,7 +119,6 @@ function setupUploadButton() {
   });
 }
 
-// 上传文件
 async function uploadFile(file) {
   uploadBtn.disabled = true;
   const uploadingText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.upload.uploading'] : I18N_MAP['zh-CN']['home.upload.uploading'];
@@ -155,11 +137,9 @@ async function uploadFile(file) {
     
     if (response.ok && data.success) {
       currentFolderName = data.folder_name;
-      // 格式化上传成功消息
       const lang = getCurrentLanguage();
       let message = data.message;
       if (lang === 'en-US') {
-        // 将中文消息转换为英文
         const txtCount = data.original_txt || 0;
         const pdfCount = data.pdf_count || 0;
         const convertedCount = data.converted_txt || 0;
@@ -169,7 +149,6 @@ async function uploadFile(file) {
       const successText = lang === 'en-US' ? I18N_MAP['en-US']['home.upload.success'] : I18N_MAP['zh-CN']['home.upload.success'];
       uploadBtn.textContent = successText;
       
-      // 开始处理
       setTimeout(() => {
         startProcessing(data.folder_name);
       }, 1000);
@@ -187,13 +166,10 @@ async function uploadFile(file) {
   }
 }
 
-// 开始处理（使用SSE实时进度）
 async function startProcessing(folderName) {
-  // 显示右侧面板（单列布局）
   const container = document.getElementById('main-container');
   container.classList.add('has-results');
   
-  // 显示进度窗口，隐藏结果窗口
   progressPanel.style.display = 'block';
   resultsPanel.style.display = 'none';
   
@@ -201,17 +177,13 @@ async function startProcessing(folderName) {
   resultsSection.style.display = 'none';
   updateProgress(0, '准备开始...');
   
-  // 清空终端输出
   terminalOutput.innerHTML = '';
   const startText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.processing.start'] : I18N_MAP['zh-CN']['home.processing.start'];
   addTerminalLine(startText, 'info');
   
-  // 使用fetch + ReadableStream接收SSE事件
   try {
-    // 获取用户保存的OpenAI API key（如果存在）
     const openaiKey = window.getAPIKey ? window.getAPIKey('openai') : null;
     
-    // 构建请求体，包含API key（如果存在）
     const requestBody = { folder_name: folderName };
     if (openaiKey) {
       requestBody.openai_api_key = openaiKey;
@@ -250,7 +222,7 @@ async function startProcessing(folderName) {
       
       buffer += decoder.decode(value, { stream: true });
       const lines = buffer.split('\n');
-      buffer = lines.pop() || ''; // 保留最后一个不完整的行
+      buffer = lines.pop() || ''; // Keep the last incomplete line
       
       for (const line of lines) {
         if (line.trim() === '') continue;
@@ -259,7 +231,6 @@ async function startProcessing(folderName) {
           try {
             const data = JSON.parse(line.slice(6));
             
-            // 处理搜索进度（实时显示当前搜索的关键词）
             if (data.type === 'search_progress') {
               const progress = data.progress;
               
@@ -268,35 +239,27 @@ async function startProcessing(folderName) {
                 addTerminalLine(`${searchingText} ${progress.index}/${progress.total}: "${progress.keyword}"`, 'info');
               }
             }
-            // 处理整体进度
             else {
               currentStep = data.step || currentStep;
               
-              // 更新进度
               if (data.progress !== undefined) {
                 updateProgress(data.progress, data.message || '处理中...', currentStep);
               }
               
-              // 更新终端输出（只显示特定步骤）
               if (data.message) {
-                // 只显示初始化、分析关键词和搜索资源这三个步骤
                 if (data.step in ['start', 'extract_keywords', 'search_resources']) {
                   const lineType = data.step === 'error' ? 'error' : 
                                  data.step === 'complete' ? 'success' : 'info';
                   
-                  // 对于start步骤，只显示details（初始化处理流程）
                   if (data.step === 'start' && data.details) {
                     addTerminalLine(data.details, lineType);
                   }
-                  // 对于extract_keywords步骤，只显示details（分析关键词）
                   else if (data.step === 'extract_keywords' && data.details) {
                     addTerminalLine(data.details, lineType);
                   }
-                  // 对于search_resources步骤，显示message（开始搜索相关资源）
                   else if (data.step === 'search_resources') {
                     let message = data.message;
                     const lang = getCurrentLanguage();
-                    // 翻译"开始搜索相关资源..."
                     if (message && message.includes('开始搜索相关资源')) {
                       message = lang === 'en-US' ? I18N_MAP['en-US']['home.processing.startSearching'] : message;
                     }
@@ -305,17 +268,14 @@ async function startProcessing(folderName) {
                 }
               }
               
-              // 更新处理详情（会自动翻译）
               if (data.details) {
                 updateProcessingDetails(data.details);
               }
               
-              // 如果message包含需要翻译的内容，也更新处理详情
               if (data.message && (data.message.includes('开始搜索相关资源') || data.message.includes('正在搜索文本、视频和代码资源'))) {
                 updateProcessingDetails(data.message);
               }
               
-              // 如果是完成或错误，保存最终数据
               if (data.step === 'complete' && data.success) {
                 finalData = data;
               } else if (data.step === 'error') {
@@ -332,7 +292,6 @@ async function startProcessing(folderName) {
       }
     }
     
-    // 处理完成，显示结果
     if (finalData && finalData.success) {
       const completeText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.processing.complete'] : I18N_MAP['zh-CN']['home.processing.complete'];
       const allCompleteText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.processing.allComplete'] : I18N_MAP['zh-CN']['home.processing.allComplete'];
@@ -340,7 +299,6 @@ async function startProcessing(folderName) {
       addTerminalLine(completeText, 'success');
       updateProcessingDetails(allCompleteText);
       
-      // 显示结果
       setTimeout(() => {
         showResults(finalData);
       }, 500);
@@ -355,31 +313,25 @@ async function startProcessing(folderName) {
   }
 }
 
-// 添加终端输出行
 function addTerminalLine(text, type = 'info') {
   const line = document.createElement('div');
   line.className = `terminal-line ${type}`;
   line.textContent = text;
   terminalOutput.appendChild(line);
-  // 自动滚动到底部
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
-// 显示结果
 function showResults(data) {
   processingSection.style.display = 'none';
   resultsSection.style.display = 'block';
   
-  // 切换到结果面板
   progressPanel.style.display = 'none';
   resultsPanel.style.display = 'block';
   
-  // 显示视图切换浮窗
   if (viewToggleFloat) {
     viewToggleFloat.style.display = 'block';
   }
   
-  // 显示关键词
   const keywordsDisplay = document.getElementById('keywords-display');
   keywordsDisplay.innerHTML = '';
   if (data.keywords && data.keywords.length > 0) {
@@ -391,16 +343,13 @@ function showResults(data) {
     });
   }
   
-  // 显示统计（找到的资源数量）
   if (data.stats) {
     console.log('接收到的stats数据:', data.stats);
     document.getElementById('txt-found').textContent = data.stats.txt_found || 0;
     document.getElementById('video-found').textContent = data.stats.video_found || 0;
     document.getElementById('code-found').textContent = data.stats.code_found || 0;
-    // 推荐的资源数量会在displayResources中根据滑块值动态更新
   }
   
-  // 显示推荐资源
   if (data.recommended_resources) {
     console.log('接收到的recommended_resources数据:', data.recommended_resources);
     displayResources(data.recommended_resources);
@@ -409,22 +358,16 @@ function showResults(data) {
   }
 }
 
-// 存储所有推荐资源（用于动态调整数量）
 let allRecommendedResources = null;
 
-// 显示推荐资源
 function displayResources(resources) {
-  // 保存所有资源
   allRecommendedResources = resources;
   
-  // 根据实际资源数量动态设置滑块最大值并初始化显示
   initResourceSliders(resources);
   
-  // 根据当前滑块值显示资源
   updateResourceDisplay();
 }
 
-// 初始化资源滑块（根据实际资源数量设置最大值）
 function initResourceSliders(resources) {
   const resourceTypes = [
     { type: 'txt', sliderId: 'txt-count-slider', valueId: 'txt-count-value' },
@@ -436,27 +379,22 @@ function initResourceSliders(resources) {
     const slider = document.getElementById(sliderId);
     const valueSpan = document.getElementById(valueId);
     const resourceList = resources[type] || [];
-    const maxCount = Math.max(1, resourceList.length); // 至少为1
+    const maxCount = Math.max(1, resourceList.length); // At least 1
     
     if (slider) {
-      // 设置最大值
       slider.max = maxCount;
       
-      // 如果当前值超过最大值，调整为最大值
       const currentValue = parseInt(slider.value) || 5;
       if (currentValue > maxCount) {
         slider.value = maxCount;
       }
       
-      // 设置初始值（如果资源数量少于5，使用实际数量）
       if (maxCount < 5) {
         slider.value = maxCount;
       }
       
-      // 更新显示值
       valueSpan.textContent = slider.value;
       
-      // 添加事件监听
       slider.addEventListener('input', (e) => {
         const count = parseInt(e.target.value);
         valueSpan.textContent = count;
@@ -466,34 +404,28 @@ function initResourceSliders(resources) {
   });
 }
 
-// 根据当前滑块值更新资源显示
 function updateResourceDisplay() {
   if (!allRecommendedResources) return;
   
-  // 获取每种类型的显示数量
   const txtCount = parseInt(document.getElementById('txt-count-slider')?.value) || 5;
   const videoCount = parseInt(document.getElementById('video-count-slider')?.value) || 5;
   const codeCount = parseInt(document.getElementById('code-count-slider')?.value) || 5;
   
-  // 筛选每种类型的资源
   const filteredResources = {
     txt: (allRecommendedResources.txt || []).slice(0, txtCount),
     video: (allRecommendedResources.video || []).slice(0, videoCount),
     code: (allRecommendedResources.code || []).slice(0, codeCount)
   };
   
-  // 更新统计数字
   document.getElementById('txt-recommended').textContent = filteredResources.txt.length;
   document.getElementById('video-recommended').textContent = filteredResources.video.length;
   document.getElementById('code-recommended').textContent = filteredResources.code.length;
   
-  // 显示资源列表
   displayResourceList('txt', filteredResources.txt, 'txt-list', 'txt-count');
   displayResourceList('video', filteredResources.video, 'video-list', 'video-count');
   displayResourceList('code', filteredResources.code, 'code-list', 'code-count');
 }
 
-// 显示资源列表
 function displayResourceList(type, resources, listId, countId) {
   const listElement = document.getElementById(listId);
   const countElement = document.getElementById(countId);
@@ -516,17 +448,14 @@ function displayResourceList(type, resources, listId, countId) {
     const item = document.createElement('div');
     item.className = 'resource-item';
     
-    // 内容区域
     const contentArea = document.createElement('div');
     contentArea.className = 'resource-content';
     
-    // 1. 标题
     const title = document.createElement('div');
     title.className = 'resource-item-title';
     title.textContent = `${index + 1}. ${resource.title || '无标题'}`;
     contentArea.appendChild(title);
     
-    // 2. 来源和相似度（一行显示）
     const meta = document.createElement('div');
     meta.className = 'resource-item-meta';
     
@@ -548,7 +477,6 @@ function displayResourceList(type, resources, listId, countId) {
     
     contentArea.appendChild(meta);
     
-    // 3. 简介（根据summary_type显示不同格式）
     if (resource.summary) {
       const summaryContainer = document.createElement('div');
       summaryContainer.className = 'resource-item-summary-container';
@@ -559,36 +487,29 @@ function displayResourceList(type, resources, listId, countId) {
       const summaryType = resource.summary_type || 'ai_generated';
       
       if (summaryType === 'abstract') {
-        // Abstract类型：最多显示3行，然后显示More按钮
         const fullText = resource.summary;
         
         summary.className = 'resource-item-summary summary-has-abstract';
         summary.style.position = 'relative';
         
-        // 创建文本容器
         const textWrapper = document.createElement('div');
         textWrapper.className = 'summary-abstract-text-wrapper';
         textWrapper.textContent = fullText;
         summary.appendChild(textWrapper);
         
-        // 检查是否需要More按钮并添加
         const checkAndAddButton = () => {
-          // 先测量完整高度
           textWrapper.style.maxHeight = 'none';
           textWrapper.style.overflow = 'visible';
           const fullHeight = textWrapper.scrollHeight;
           
-          // 计算3行的高度 (line-height 1.7)
           const lineHeight = parseFloat(getComputedStyle(textWrapper).lineHeight);
           const maxHeight = lineHeight * 3;
           
           if (fullHeight > maxHeight) {
-            // 设置折叠状态
             textWrapper.classList.add('summary-abstract-collapsed');
             textWrapper.style.maxHeight = maxHeight + 'px';
             textWrapper.style.overflow = 'hidden';
             
-            // 添加More按钮（放在wrapper外面，这样不会被截断）
             const moreBtn = document.createElement('button');
             moreBtn.className = 'summary-more-btn more-btn-overlay';
             moreBtn.textContent = '...More';
@@ -600,7 +521,6 @@ function displayResourceList(type, resources, listId, countId) {
             
             summary.appendChild(moreBtn);
             
-            // 检查原始内容是否被截断（检查是否以省略号结尾）
             const originalText = fullText.trim();
             const hasTruncation = originalText.endsWith('...') || 
                                   originalText.endsWith('…') ||
@@ -608,7 +528,6 @@ function displayResourceList(type, resources, listId, countId) {
                                    originalText[originalText.length - 1] !== '!' && 
                                    originalText[originalText.length - 1] !== '?');
             
-            // 如果原始内容可能被截断，添加提示
             let seeMoreHint = null;
             if (hasTruncation) {
               seeMoreHint = document.createElement('span');
@@ -635,7 +554,6 @@ function displayResourceList(type, resources, listId, countId) {
                 moreBtn.style.marginRight = '0';
                 moreBtn.classList.remove('more-btn-overlay');
                 
-                // 展开时，如果有提示，添加到文本后面
                 if (seeMoreHint && !textWrapper.contains(seeMoreHint)) {
                   textWrapper.appendChild(seeMoreHint);
                 }
@@ -651,7 +569,6 @@ function displayResourceList(type, resources, listId, countId) {
                 moreBtn.style.marginTop = '0';
                 moreBtn.classList.add('more-btn-overlay');
                 
-                // 收起时，移除提示
                 if (seeMoreHint && textWrapper.contains(seeMoreHint)) {
                   textWrapper.removeChild(seeMoreHint);
                 }
@@ -660,19 +577,15 @@ function displayResourceList(type, resources, listId, countId) {
           }
         };
         
-        // 延迟检查，确保DOM已渲染
         setTimeout(checkAndAddButton, 50);
       } else {
-        // AI生成或Wikipedia简单简介：检查是否需要翻译
         let summaryText = resource.summary;
         const lang = getCurrentLanguage();
         const dict = I18N_MAP[lang] || I18N_MAP['zh-CN'];
         
-        // 检查是否是"这是关于{title}的百科文章。"格式
         const zhPattern = /^这是关于(.+)的百科文章。$/;
         const match = summaryText.match(zhPattern);
         if (match && lang === 'en-US') {
-          // 提取标题并翻译
           const title = match[1];
           summaryText = dict['home.resources.wikipediaArticle'].replace('{title}', title);
         }
@@ -686,12 +599,10 @@ function displayResourceList(type, resources, listId, countId) {
     
     item.appendChild(contentArea);
     
-    // 按钮区域（右下角）
     if (resource.url) {
       const buttonArea = document.createElement('div');
       buttonArea.className = 'resource-item-actions';
       
-      // 前往按钮
       const visitBtn = document.createElement('button');
       visitBtn.className = 'resource-action-btn resource-btn-visit';
       const visitText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.resources.visit'] : I18N_MAP['zh-CN']['home.resources.visit'];
@@ -701,7 +612,6 @@ function displayResourceList(type, resources, listId, countId) {
       };
       buttonArea.appendChild(visitBtn);
       
-      // 下载按钮（视频不显示；Wikipedia 文本不显示；Google Scholar 仅显示前往）
       const isWikipedia = resource.source && resource.source.toLowerCase().includes('wikipedia');
       const isGoogleScholar = resource.source && resource.source.toLowerCase().includes('google scholar');
       if (type !== 'video' && !(type === 'txt' && isWikipedia) && !isGoogleScholar) {
@@ -710,18 +620,14 @@ function displayResourceList(type, resources, listId, countId) {
         const downloadText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.resources.download'] : I18N_MAP['zh-CN']['home.resources.download'];
         downloadBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> ' + downloadText;
         downloadBtn.onclick = async () => {
-          // 对于代码资源（GitHub仓库），直接下载zip文件
           if (type === 'code' && resource.url) {
             const githubUrl = resource.url;
-            // 检查是否是GitHub URL
             const githubMatch = githubUrl.match(/github\.com\/([^\/]+)\/([^\/\?#]+)/);
             if (githubMatch) {
               const owner = githubMatch[1];
-              const repo = githubMatch[2].replace(/\.git$/, '').split('/')[0]; // 移除.git后缀和可能的路径
-              // GitHub zip下载URL：使用HEAD会自动下载默认分支（通常是main或master）
+              const repo = githubMatch[2].replace(/\.git$/, '').split('/')[0]; // Remove the .git suffix and any trailing path
               const zipUrl = `https://github.com/${owner}/${repo}/archive/HEAD.zip`;
               
-              // 创建一个隐藏的链接来触发下载
               const link = document.createElement('a');
               link.href = zipUrl;
               link.download = `${repo}.zip`;
@@ -733,15 +639,12 @@ function displayResourceList(type, resources, listId, countId) {
             }
           }
           
-          // 对于非GitHub代码资源或其他资源，使用原来的逻辑
           try {
-            // 尝试通过fetch获取内容并下载
             const response = await fetch(resource.url);
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            // 根据资源类型设置文件名
             const extension = resource.url.match(/\.([^.]+)$/)?.[1] || 'html';
             const filename = `${(resource.title || 'resource').replace(/[<>:"/\\|?*]/g, '_')}.${extension}`;
             link.download = filename;
@@ -750,7 +653,6 @@ function displayResourceList(type, resources, listId, countId) {
             document.body.removeChild(link);
             window.URL.revokeObjectURL(url);
     } catch (error) {
-            // 如果fetch失败（跨域问题），直接打开链接
             console.warn('无法直接下载，打开链接:', error);
             window.open(resource.url, '_blank', 'noopener,noreferrer');
           }
@@ -766,7 +668,6 @@ function displayResourceList(type, resources, listId, countId) {
 }
 
 
-// 工具函数
 function showStatus(message, type = 'info') {
   uploadStatus.textContent = message;
   uploadStatus.className = `status-message ${type}`;
@@ -779,25 +680,20 @@ function updateProgress(percent, text, currentStep) {
     progressPercent.textContent = Math.round(percent) + '%';
   }
   
-  // 翻译进度文本
   const lang = getCurrentLanguage();
   const dict = I18N_MAP[lang] || I18N_MAP['zh-CN'];
   let translatedText = text;
   
   if (text) {
-    // 翻译"开始搜索相关资源..."
     if (text.includes('开始搜索相关资源')) {
       translatedText = lang === 'en-US' ? dict['home.processing.startSearching'] : text;
     }
-    // 翻译"正在搜索文本、视频和代码资源..."
     else if (text.includes('正在搜索文本、视频和代码资源')) {
       translatedText = lang === 'en-US' ? dict['home.processing.searchingResources'] : text;
     }
-    // 翻译"处理完成！"
     else if (text.includes('处理完成')) {
       translatedText = lang === 'en-US' ? dict['home.processing.complete'].replace('✨ ', '') : text;
     }
-    // 翻译"准备开始..."
     else if (text.includes('准备开始')) {
       translatedText = lang === 'en-US' ? dict['home.processing.preparing'] : text;
     }
@@ -805,14 +701,12 @@ function updateProgress(percent, text, currentStep) {
   
   progressText.textContent = translatedText;
   
-  // 更新步骤状态
   updateProgressSteps(percent, currentStep);
 }
 
 function updateProgressSteps(percent, currentStep) {
   const steps = document.querySelectorAll('.progress-step');
   
-  // 根据步骤名称确定当前步骤索引
   const stepIndexMap = {
     'start': 0,
     'extract_keywords': 1,
@@ -834,7 +728,6 @@ function updateProgressSteps(percent, currentStep) {
     ? stepIndexMap[currentStep] 
     : -1;
   
-  // 如果无法从步骤名称确定，则根据进度百分比推断
   if (currentStepIndex === -1 && currentStep !== 'error') {
     if (percent < 25) {
       currentStepIndex = 0; // start
@@ -854,12 +747,10 @@ function updateProgressSteps(percent, currentStep) {
     const status = step.querySelector('.step-status');
     
     if (currentStepIndex === -1) {
-      // 错误状态
       step.classList.remove('active', 'completed', 'pending');
       indicator.classList.remove('active', 'completed');
       status.textContent = '错误';
     } else if (index < currentStepIndex) {
-      // 已完成
       step.classList.add('completed');
       step.classList.remove('active', 'pending');
       indicator.classList.add('completed');
@@ -867,7 +758,6 @@ function updateProgressSteps(percent, currentStep) {
       const completedText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.progress.status.completed'] : I18N_MAP['zh-CN']['home.progress.status.completed'];
       status.textContent = completedText;
     } else if (index === currentStepIndex) {
-      // 进行中
       step.classList.add('active');
       step.classList.remove('completed', 'pending');
       indicator.classList.add('active');
@@ -875,7 +765,6 @@ function updateProgressSteps(percent, currentStep) {
       const processingText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.progress.status.processing'] : I18N_MAP['zh-CN']['home.progress.status.processing'];
       status.textContent = processingText;
     } else {
-      // 等待中
       step.classList.add('pending');
       step.classList.remove('active', 'completed');
       indicator.classList.remove('active', 'completed');
@@ -891,14 +780,11 @@ function updateProcessingDetails(text) {
   const lang = getCurrentLanguage();
   const dict = I18N_MAP[lang] || I18N_MAP['zh-CN'];
   
-  // 翻译常见的处理详情文本
   let translatedText = text;
   
-  // 翻译"正在搜索文本、视频和代码资源..."
   if (text.includes('正在搜索文本、视频和代码资源')) {
     translatedText = lang === 'en-US' ? dict['home.processing.searchingResources'] : text;
   }
-  // 翻译"开始搜索相关资源..."
   else if (text.includes('开始搜索相关资源')) {
     translatedText = lang === 'en-US' ? dict['home.processing.startSearching'] : text;
   }
@@ -914,7 +800,6 @@ function formatFileSize(bytes) {
   return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
 }
 
-// 简单的中英文文案表
 const I18N_MAP = {
   'zh-CN': {
     'nav.toc': '目录',
@@ -1326,7 +1211,6 @@ function applyLanguage(lang) {
     const key = el.getAttribute('data-i18n-key');
     const text = dict[key];
     if (text) {
-      // 支持纯文本 / HTML / 属性三种模式
       const attr = el.getAttribute('data-i18n-attr');
       if (attr) {
         el.setAttribute(attr, text);
@@ -1338,7 +1222,6 @@ function applyLanguage(lang) {
     }
   });
   
-  // 更新动态内容（进度步骤状态、视图切换按钮等）
   updateDynamicContent(lang);
 }
 
@@ -1346,7 +1229,6 @@ function updateDynamicContent(lang) {
   const dict = I18N_MAP[lang];
   if (!dict) return;
   
-  // 更新进度步骤状态
   const progressSteps = document.querySelectorAll('.progress-step');
   progressSteps.forEach(step => {
     const status = step.querySelector('.step-status');
@@ -1361,7 +1243,6 @@ function updateDynamicContent(lang) {
     }
   });
   
-  // 更新视图切换按钮文本
   const viewToggleText = document.getElementById('view-toggle-text');
   if (viewToggleText) {
     const isResourcesOnly = document.getElementById('main-container')?.classList.contains('resources-only');
@@ -1372,7 +1253,6 @@ function updateDynamicContent(lang) {
     }
   }
   
-  // 更新终端输出中的等待文本
   const terminalOutput = document.getElementById('terminal-output');
   if (terminalOutput && terminalOutput.children.length === 1) {
     const firstLine = terminalOutput.querySelector('.terminal-line');
@@ -1381,13 +1261,11 @@ function updateDynamicContent(lang) {
     }
   }
   
-  // 更新进度文本
   const progressText = document.getElementById('progress-text');
   if (progressText && progressText.textContent) {
     const currentText = progressText.textContent;
     let translatedText = currentText;
     
-    // 翻译常见的进度文本
     if (currentText.includes('开始搜索相关资源')) {
       translatedText = dict['home.processing.startSearching'] || currentText;
     } else if (currentText.includes('正在搜索文本、视频和代码资源')) {
@@ -1401,22 +1279,18 @@ function updateDynamicContent(lang) {
     progressText.textContent = translatedText;
   }
   
-  // 更新处理详情文本
   const processingDetails = document.getElementById('processing-details');
   if (processingDetails && processingDetails.textContent) {
     updateProcessingDetails(processingDetails.textContent);
   }
   
-  // 更新资源列表中的文本（来源、相似度、按钮等）
   const resourceItems = document.querySelectorAll('.resource-item');
   resourceItems.forEach(item => {
-    // 更新来源标签
     const sourceSpan = item.querySelector('.resource-item-source span');
     if (sourceSpan) {
       sourceSpan.textContent = dict['home.resources.source'] || sourceSpan.textContent;
     }
     
-    // 更新相似度标签
     const similaritySpan = item.querySelector('.resource-item-similarity');
     if (similaritySpan) {
       const similarityValue = similaritySpan.textContent.match(/[\d.]+%/);
@@ -1425,7 +1299,6 @@ function updateDynamicContent(lang) {
       }
     }
     
-    // 更新按钮文本
     const visitBtn = item.querySelector('.resource-btn-visit');
     if (visitBtn) {
       const svg = visitBtn.querySelector('svg');
@@ -1442,7 +1315,6 @@ function updateDynamicContent(lang) {
       }
     }
     
-    // 更新摘要中的"这是关于...的百科文章"文本
     const summary = item.querySelector('.resource-item-summary');
     if (summary) {
       const summaryText = summary.textContent;
@@ -1452,7 +1324,6 @@ function updateDynamicContent(lang) {
         const title = match[1];
         summary.textContent = dict['home.resources.wikipediaArticle'].replace('{title}', title);
       } else if (lang === 'zh-CN' && summaryText.includes('This is a Wikipedia article about')) {
-        // 如果从英文切回中文，也需要处理
         const enPattern = /^This is a Wikipedia article about (.+)\.$/;
         const enMatch = summaryText.match(enPattern);
         if (enMatch) {
@@ -1464,9 +1335,7 @@ function updateDynamicContent(lang) {
   });
 }
 
-// 导航栏功能
 function setupNavigation() {
-  // 语言切换
   const languageBtn = document.getElementById('language-btn');
   const languageText = document.getElementById('language-text');
   const htmlRoot = document.getElementById('html-root');
@@ -1480,7 +1349,6 @@ function setupNavigation() {
     });
   }
   
-  // 主题切换
   const themeBtn = document.getElementById('theme-btn');
   const themeIconMoon = document.getElementById('theme-icon-moon');
   const themeIconSun = document.getElementById('theme-icon-sun');
@@ -1500,7 +1368,6 @@ function setupNavigation() {
       const body = document.body;
       const isLightMode = body.classList.contains('light-mode');
       
-      // 直接切换主题，让背景色自然渐变
       if (isLightMode) {
         body.classList.remove('light-mode');
         localStorage.setItem('theme', 'dark');
@@ -1512,34 +1379,28 @@ function setupNavigation() {
       }
     });
     
-    // 初始化主题图标 - 基于保存的主题设置
     const savedTheme = localStorage.getItem('theme');
     updateThemeIcon(savedTheme === 'light');
   }
   
-  // 导航链接点击（当前页面标记为active）
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      // 如果链接指向当前页面，阻止默认行为
       if (link.getAttribute('data-page') === 'home' && window.location.pathname === '/') {
         e.preventDefault();
       }
       
-      // 更新active状态
       navLinks.forEach(l => l.classList.remove('active'));
       link.classList.add('active');
     });
   });
 
-  // 移动端目录按钮下拉
   const menuToggle = document.getElementById('nav-menu-btn');
   if (menuToggle) {
     menuToggle.addEventListener('click', () => {
       document.body.classList.toggle('nav-menu-open');
     });
 
-    // 点击导航链接后自动收起菜单（仅移动端）
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         if (window.innerWidth <= 768) {
@@ -1548,7 +1409,6 @@ function setupNavigation() {
       });
     });
 
-    // 窗口尺寸变化时清理状态
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768) {
         document.body.classList.remove('nav-menu-open');
@@ -1557,14 +1417,11 @@ function setupNavigation() {
   }
 }
 
-// 加载用户偏好设置
 function loadPreferences() {
-  // 加载语言设置
   const savedLanguage = localStorage.getItem('language');
   const lang = savedLanguage || 'zh-CN';
   applyLanguage(lang);
   
-  // 加载主题设置
   const savedTheme = localStorage.getItem('theme');
   const themeIconMoon = document.getElementById('theme-icon-moon');
   const themeIconSun = document.getElementById('theme-icon-sun');
@@ -1584,18 +1441,15 @@ function loadPreferences() {
   }
 }
 
-// 设置视图切换功能
 function setupViewToggle() {
   if (!viewToggleBtn || !viewToggleFloat) return;
   
-  // 使用事件委托，因为按钮内容可能会被替换
   viewToggleFloat.addEventListener('click', (e) => {
     if (e.target.closest('.view-toggle-btn')) {
       toggleResourcesOnlyView();
     }
   });
   
-  // 加载保存的视图偏好（延迟执行，确保resultsPanel已显示）
   setTimeout(() => {
     const savedView = localStorage.getItem('resourcesOnlyView');
     if (savedView === 'true' && mainContainer.classList.contains('has-results') && resultsPanel.style.display !== 'none') {
@@ -1604,17 +1458,14 @@ function setupViewToggle() {
   }, 100);
 }
 
-// 切换仅显示推荐资源视图
 function toggleResourcesOnlyView() {
   if (!mainContainer || !viewToggleBtn) return;
   
   isResourcesOnlyView = !isResourcesOnlyView;
   
   if (isResourcesOnlyView) {
-    // 切换到仅显示推荐资源模式
     mainContainer.classList.add('resources-only');
     
-    // 更新按钮图标和文本
     const fullViewText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.viewToggle.fullView'] : I18N_MAP['zh-CN']['home.viewToggle.fullView'];
     viewToggleBtn.innerHTML = `
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1624,10 +1475,8 @@ function toggleResourcesOnlyView() {
       <span id="view-toggle-text">${fullViewText}</span>
     `;
   } else {
-    // 切换回完整视图
     mainContainer.classList.remove('resources-only');
     
-    // 更新按钮图标和文本
     const resourcesOnlyText = getCurrentLanguage() === 'en-US' ? I18N_MAP['en-US']['home.viewToggle.resourcesOnly'] : I18N_MAP['zh-CN']['home.viewToggle.resourcesOnly'];
     viewToggleBtn.innerHTML = `
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1640,9 +1489,7 @@ function toggleResourcesOnlyView() {
     `;
   }
   
-  // 保存视图偏好
   localStorage.setItem('resourcesOnlyView', isResourcesOnlyView.toString());
   
-  // 重新获取viewToggleText引用
   viewToggleText = document.getElementById('view-toggle-text');
 }

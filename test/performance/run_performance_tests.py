@@ -301,9 +301,9 @@ def main() -> None:
     parser.add_argument("--plots-dir", type=str, default=default_paper_figures_dir())
     args = parser.parse_args()
 
-    print("=== 性能测试（AI-Pedia 本地核心阶段）===")
+    print("=== Performance test: AI-Pedia local core stages ===")
     if not _HAS_PSUTIL:
-        print("(未安装 psutil，仅输出耗时；安装后可得到 CPU/内存: pip install psutil)")
+        print("(psutil not installed; only runtime will be reported. Install it for CPU/memory metrics: pip install psutil)")
 
     corpus_dir = make_temp_corpus()
     results: List[Dict[str, Any]] = []
@@ -341,9 +341,9 @@ def main() -> None:
     save_latex_table(tex_path, results)
     generate_plot(plot_path, results)
 
-    print("\n=== 性能测试结束 ===")
-    print("建议在论文中分别报告 keyword_extraction、ranking_pipeline、local_pipeline 三组结果。")
-    print("导出结果:")
+    print("\n=== Performance test complete ===")
+    print("Suggested paper reporting groups: keyword_extraction, ranking_pipeline, and local_pipeline.")
+    print("Exported results:")
     print(f"- JSON: {json_path}")
     print(f"- CSV: {csv_path}")
     print(f"- LaTeX: {tex_path}")

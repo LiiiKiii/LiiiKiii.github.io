@@ -1,6 +1,4 @@
-/* 研发进度页面样式 - 苹果风格设计 */
 
-/* 注意：body背景样式在style.css中统一设置，这里不覆盖body背景 */
 
 .progress-container {
   max-width: 1200px;
@@ -15,7 +13,6 @@
   opacity: 1 !important;
 }
 
-/* ========== 苹果风格动画定义 ========== */
 @keyframes appleFadeInUp {
   from {
     opacity: 0;
@@ -89,7 +86,6 @@ body:not(.light-mode) .progress-subtitle {
   color: #a1a1a6;
 }
 
-/* ========== 横向时间线（替换原来的三个方块） ========== */
 .progress-overview-timeline {
   margin-bottom: 150px;
   padding-bottom: 80px;
@@ -215,13 +211,11 @@ body.light-mode .overview-timeline-item.in-progress ~ .overview-timeline-item .o
   }
 }
 
-/* ========== 滚动渐入效果 ========== */
 .scroll-fade-in {
   opacity: 0;
   transform: translate3d(0, 50px, 0);
   transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  /* 防止抖动 */
   backface-visibility: hidden;
   perspective: 1000px;
 }
@@ -229,16 +223,13 @@ body.light-mode .overview-timeline-item.in-progress ~ .overview-timeline-item .o
 .scroll-fade-in.visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  /* 完全可见后移除will-change，避免性能问题 */
   will-change: auto;
 }
 
-/* ========== 研发时间线（垂直时间线，保持不变） ========== */
 .progress-timeline {
   margin-top: 120px;
   margin-bottom: 120px;
   padding-top: 60px;
-  /* 防止滚动时抖动 - 使用GPU加速 */
   transform: translateZ(0);
 }
 
@@ -266,7 +257,6 @@ body:not(.light-mode) .section-title {
   display: flex;
   gap: 30px;
   margin-bottom: 80px;
-  /* 防止滚动时抖动 */
   transform: translateZ(0);
   backface-visibility: hidden;
 }
@@ -386,7 +376,6 @@ body:not(.light-mode) .timeline-description {
   transform: translateY(-2px);
 }
 
-/* ========== 功能模块 ========== */
 .progress-modules {
   margin-top: 120px;
   margin-bottom: 0;
@@ -394,7 +383,6 @@ body:not(.light-mode) .timeline-description {
   padding-bottom: 60px;
 }
 
-/* 确保功能模块在底部时完全不透明 */
 .progress-modules.visible,
 .progress-modules.visible .module-card {
   opacity: 1 !important;
@@ -519,7 +507,6 @@ body.light-mode .progress-bar-container {
   text-align: right;
 }
 
-/* ========== 响应式设计 ========== */
 @media (max-width: 1200px) {
   .overview-timeline {
     padding: 50px 30px;
@@ -573,7 +560,6 @@ body.light-mode .progress-bar-container {
     font-size: 2rem;
   }
 
-  /* 移动端时间线视觉增强 */
   .timeline-marker {
     align-items: flex-start;
   }
@@ -592,7 +578,6 @@ body.light-mode .progress-bar-container {
     font-size: 1.25rem;
   }
 
-  /* 移动端研发时间线：保持与桌面类似的左侧竖线布局，只是更加紧凑 */
   .timeline {
     padding: 0 4px;
   }

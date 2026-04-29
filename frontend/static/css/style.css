@@ -9,7 +9,7 @@ body {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   min-height: 100vh;
   padding: 20px;
-  padding-top: 80px; /* 为导航栏留出空间 */
+  padding-top: 80px; /* Leave room for the navigation bar */
   color: #e0e0e0;
   transition: background-image 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               background-color 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
@@ -18,7 +18,6 @@ body {
   overflow-x: hidden;
 }
 
-/* 页面进入动画 */
 .container {
   opacity: 0;
   animation: pageFadeIn 0.6s ease-out forwards;
@@ -33,7 +32,6 @@ body {
   }
 }
 
-/* ========== 苹果风格动画定义 ========== */
 @keyframes appleFadeInUp {
   from {
     opacity: 0;
@@ -45,14 +43,12 @@ body {
   }
 }
 
-/* 苹果官网常用的缓动函数 */
 :root {
   --apple-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --apple-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --apple-smooth: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ========== 首页 Hero Section ========== */
 .home-hero {
   text-align: center;
   padding: 60px 20px 80px;
@@ -97,7 +93,6 @@ body:not(.light-mode) .home-subtitle {
   color: #a1a1a6;
 }
 
-/* 首页元素依次浮现动画 - 苹果风格 */
 .step-card {
   opacity: 0;
   transform: translateY(50px) scale(0.95);
@@ -128,19 +123,16 @@ body:not(.light-mode) .home-subtitle {
   }
 }
 
-/* 确保导航栏不参与动画 */
 .navbar {
   animation: none !important;
   opacity: 1 !important;
 }
 
-/* 亮色模式 */
 body.light-mode {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 50%, #e0eafc 100%);
   color: #2d3748;
 }
 
-/* 需要主题切换的元素统一过渡效果 */
 .nav-link,
 .navbar-btn,
 .navbar-brand,
@@ -154,7 +146,6 @@ select {
               box-shadow 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* 导航栏样式 */
 .navbar {
   position: fixed;
   top: 0;
@@ -209,7 +200,6 @@ body.light-mode .navbar-brand {
   transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
 }
 
-/* 暗色模式下将图标变成白色 */
 body:not(.light-mode) .home-icon {
   filter: brightness(0) invert(1);
 }
@@ -223,7 +213,6 @@ body.light-mode .home-icon {
   transform: scale(1.05);
 }
 
-/* RE文字艺术效果 - 字体样式 */
 .re-text {
   font-size: 1.5rem;
   font-weight: 900;
@@ -237,17 +226,14 @@ body.light-mode .home-icon {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* 暗色模式下的RE文字 - 与图标颜色统一 */
 body:not(.light-mode) .re-text {
   color: #e0e0e0;
 }
 
-/* 亮色模式下的RE文字 - 与图标颜色统一 */
 body.light-mode .re-text {
   color: #2d3748;
 }
 
-/* RE文字悬停效果 */
 .navbar-brand:hover .re-text {
   transform: scale(1.05) translateY(-1px);
   letter-spacing: 5px;
@@ -299,7 +285,6 @@ body.light-mode .nav-link {
   gap: 16px;
 }
 
-/* 移动端目录按钮 */
 .navbar-menu-toggle {
   display: none;
   align-items: center;
@@ -356,7 +341,6 @@ body.light-mode .navbar-menu-toggle {
   border-color: #667eea;
 }
 
-/* 移动端下拉菜单容器 */
 .navbar-menu-dropdown {
   display: none;
   position: fixed;
@@ -441,7 +425,6 @@ body.light-mode .navbar-btn {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* 响应式导航栏 */
 @media (max-width: 768px) {
   .navbar {
     padding: 0 20px;
@@ -474,7 +457,6 @@ body.light-mode .navbar-btn {
     display: none;
   }
 
-  /* 隐藏原有横向菜单，显示目录按钮与下拉 */
   .navbar-center {
     display: none;
   }
@@ -494,7 +476,6 @@ body.light-mode .navbar-btn {
     pointer-events: auto;
   }
 
-  /* 仅在下拉中显示竖排目录 */
   body.nav-menu-open .navbar-menu-dropdown .navbar-center {
     display: flex;
     flex-direction: column;
@@ -523,12 +504,10 @@ body.light-mode .navbar-btn {
   padding: 0 20px;
 }
 
-/* 当有处理结果时，切换到两列布局 */
 .container.has-results {
   max-width: 1600px;
 }
 
-/* Hero Section 始终横跨整个宽度，在顶部 */
 .home-hero {
   width: 100%;
 }
@@ -541,7 +520,6 @@ body.light-mode .navbar-btn {
   width: 100%;
 }
 
-/* 当有处理结果时，主内容和右侧面板在同一行 */
 .container.has-results .content-wrapper {
   display: flex;
   gap: 24px;
@@ -564,7 +542,6 @@ body.light-mode .navbar-btn {
   overflow-y: auto;
 }
 
-/* 当有处理结果时，右侧面板显示在右侧 */
 .container.has-results .right-panel {
   display: block;
   opacity: 0;
@@ -621,7 +598,6 @@ body.light-mode .card {
   border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* step-card的动画已在上面定义，这里移除重复定义 */
 
 .step-header {
   display: flex;
@@ -672,7 +648,6 @@ body.light-mode .hint {
   color: #718096;
 }
 
-/* 上传区域 */
 .upload-area {
   margin: 20px 0;
 }
@@ -684,7 +659,6 @@ body.light-mode .hint {
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  /* 暗色背景下改为浅灰，避免过于刺眼 */
   background: rgba(255, 255, 255, 0.06);
 }
 
@@ -748,7 +722,6 @@ body.light-mode .upload-box small {
   border: 1px solid rgba(33, 150, 243, 0.4);
 }
 
-/* 按钮 */
 .btn {
   padding: 12px 24px;
   border: none;
@@ -797,7 +770,6 @@ body.light-mode .btn-success {
   box-shadow: 0 4px 12px rgba(17, 153, 142, 0.4);
 }
 
-/* 进度条 */
 .progress-container {
   margin: 20px 0;
 }
@@ -878,7 +850,6 @@ body.light-mode .progress-text {
   color: #2d3748;
 }
 
-/* 进度步骤 */
 .progress-steps {
   display: flex;
   flex-direction: column;
@@ -1003,7 +974,6 @@ body.light-mode .processing-details {
   border: 1px solid rgba(0,0,0,0.06);
 }
 
-/* 关键词显示 */
 .keywords-list {
   display: flex;
   flex-wrap: wrap;
@@ -1020,7 +990,6 @@ body.light-mode .processing-details {
   font-weight: 500;
 }
 
-/* 统计卡片 */
 .results-summary,
 .results-stats,
 .download-section {
@@ -1208,7 +1177,6 @@ body.light-mode .stat-label {
   color: #764ba2;
 }
 
-/* 右侧面板样式 */
 .panel-section {
   background: linear-gradient(135deg, #2d2d44 0%, #1e1e2e 100%);
   border-radius: 16px;
@@ -1231,10 +1199,9 @@ body.light-mode .panel-section {
   border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* 推荐资源面板特殊处理 */
 #results-panel.panel-section {
-  max-height: none; /* 移除高度限制，允许内容自然展开 */
-  overflow: visible; /* 允许内容溢出显示 */
+  max-height: none; /* Remove the height limit and allow natural expansion */
+  overflow: visible; /* Allow overflowing content to remain visible */
 }
 
 .panel-header {
@@ -1260,16 +1227,14 @@ body.light-mode .panel-header h3 {
 .panel-content {
   flex: 1;
   overflow-y: auto;
-  min-height: 0; /* 确保 flex 子元素可以收缩 */
+  min-height: 0; /* Allow flex children to shrink */
 }
 
-/* 确保推荐资源面板能够包裹所有内容 */
 #results-panel .panel-content {
-  overflow-y: visible; /* 允许内容自然展开 */
-  max-height: none; /* 移除高度限制 */
+  overflow-y: visible; /* Allow the content to expand naturally */
+  max-height: none; /* Remove the height limit */
 }
 
-/* 终端输出样式 */
 .terminal-output {
   background: #1e1e1e;
   color: #d4d4d4;
@@ -1346,11 +1311,10 @@ body.light-mode .terminal-output {
   color: #dcdcaa;
 }
 
-/* 资源分类样式 */
 .resource-category {
   margin-bottom: 24px;
-  width: 100%; /* 确保占满容器宽度 */
-  box-sizing: border-box; /* 包含 padding 和 border */
+  width: 100%; /* Ensure full container width */
+  box-sizing: border-box; /* Include padding and border in sizing */
 }
 
 .resource-category:last-child {
@@ -1382,8 +1346,8 @@ body.light-mode .category-title {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 100%; /* 确保占满容器宽度 */
-  box-sizing: border-box; /* 包含 padding 和 border */
+  width: 100%; /* Ensure full container width */
+  box-sizing: border-box; /* Include padding and border in sizing */
 }
 
 .resource-item {
@@ -1397,8 +1361,8 @@ body.light-mode .category-title {
   gap: 16px;
   margin-bottom: 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  width: 100%; /* 确保占满容器宽度 */
-  box-sizing: border-box; /* 包含 padding 和 border */
+  width: 100%; /* Ensure full container width */
+  box-sizing: border-box; /* Include padding and border in sizing */
 }
 
 body.light-mode .resource-item {
@@ -1492,7 +1456,6 @@ body.light-mode .resource-item-source strong {
   color: #764ba2;
 }
 
-/* More按钮在折叠状态下的样式（绝对定位时） */
 .summary-more-btn.more-btn-overlay {
   background: rgba(0, 0, 0, 0.5);
   color: #ffffff;
@@ -1514,7 +1477,6 @@ body.light-mode .summary-more-btn.more-btn-overlay:hover {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Abstract折叠状态：最多显示3行 */
 .summary-abstract-text-wrapper.summary-abstract-collapsed {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -1525,7 +1487,6 @@ body.light-mode .summary-more-btn.more-btn-overlay:hover {
   word-break: break-word;
 }
 
-/* Abstract展开状态：显示完整内容 */
 .summary-abstract-text-wrapper.summary-abstract-expanded {
   display: block;
   overflow: visible;
@@ -1549,8 +1510,8 @@ body.light-mode .summary-more-btn.more-btn-overlay:hover {
   flex: 1;
   word-wrap: break-word;
   word-break: break-word;
-  white-space: normal; /* 允许正常换行 */
-  overflow: visible; /* 确保内容不被截断 */
+  white-space: normal; /* Allow normal line wrapping */
+  overflow: visible; /* Make sure content is not clipped */
 }
 
 body.light-mode .resource-item-summary {
@@ -1561,10 +1522,10 @@ body.light-mode .resource-item-summary {
 
 .summary-text {
   display: inline;
-  white-space: normal; /* 允许换行 */
+  white-space: normal; /* Allow wrapping */
   word-wrap: break-word;
   word-break: break-word;
-  max-width: 100%; /* 确保不超出容器 */
+  max-width: 100%; /* Keep content within the container */
 }
 
 .summary-ellipsis {
@@ -1572,7 +1533,6 @@ body.light-mode .resource-item-summary {
   margin: 0 4px;
 }
 
-/* 展开状态下隐藏省略号 */
 .resource-item-summary.expanded .summary-ellipsis {
   display: none !important;
 }
@@ -1685,7 +1645,6 @@ body.light-mode .resource-btn-download {
   font-weight: 600;
 }
 
-/* 响应式设计 */
 @media (max-width: 1200px) {
   .container.has-results .content-wrapper {
     flex-direction: column;
@@ -1695,7 +1654,6 @@ body.light-mode .resource-btn-download {
     width: 100%;
     position: static;
     max-height: none;
-    /* 不再提升到顶部，让其在小屏幕上排在主步骤内容之后 */
   }
   
   .panel-section {
@@ -1735,7 +1693,6 @@ body.light-mode .resource-btn-download {
     width: 100%;
   }
 
-  /* 首页标题和副标题在手机上更紧凑 */
   .home-main-title {
     font-size: 2.4rem;
   }
@@ -1744,13 +1701,11 @@ body.light-mode .resource-btn-download {
     font-size: 1.05rem;
   }
   
-  /* 上传区域在手机上缩小高度 */
   .upload-box {
     padding: 28px 16px;
   }
 }
 
-/* ========== 浮窗切换按钮 ========== */
 .view-toggle-float {
   position: fixed;
   bottom: 30px;
@@ -1796,7 +1751,6 @@ body.light-mode .view-toggle-btn {
   color: white;
 }
 
-/* ========== 仅显示推荐资源模式 ========== */
 .container.resources-only .main-content {
   display: none;
 }
@@ -1819,7 +1773,6 @@ body.light-mode .view-toggle-btn {
   overflow: visible;
 }
 
-/* 资源按行显示 */
 .container.resources-only .panel-content {
   display: flex;
   flex-direction: column;
@@ -1856,7 +1809,6 @@ body.light-mode .container.resources-only .resource-category {
   gap: 20px;
 }
 
-/* 确保资源项在仅显示模式下正确显示 */
 .container.resources-only .resource-item {
   width: 100%;
   box-sizing: border-box;
@@ -1881,4 +1833,3 @@ body.light-mode .container.resources-only .resource-category {
     display: none;
   }
 }
-

@@ -1,6 +1,4 @@
-// 帮助页面JavaScript
 
-// 详细内容数据
 const helpDetails = {
   'our-aim': {
     title: '愿景',
@@ -265,7 +263,6 @@ const helpDetails = {
   }
 };
 
-// 英文版详细内容（只在英文模式下使用）
 const helpDetailsEn = {
   'our-aim': {
     title: 'Vision',
@@ -486,7 +483,6 @@ const helpDetailsEn = {
 };
 
 function getCurrentLanguage() {
-  // 以页面上的 lang 属性为主，保证和当前界面一致
   const htmlRoot = document.getElementById('html-root');
   const attr = htmlRoot && htmlRoot.getAttribute('lang');
   if (attr) return attr;
@@ -494,28 +490,21 @@ function getCurrentLanguage() {
   return saved || 'zh-CN';
 }
 
-// 初始化
 document.addEventListener('DOMContentLoaded', () => {
-  // 首先加载偏好设置，确保主题在页面渲染前就应用
   loadPreferences();
-  // 触发页面进入动画
   triggerPageAnimation();
   initCarousels();
   initModal();
   setupNavigation();
-  // 初始化滚动渐入效果
   initScrollFadeIn();
 });
 
-// 触发页面进入动画
 function triggerPageAnimation() {
-  // 确保容器可见
   const container = document.querySelector('.help-container');
   if (container) {
     container.style.opacity = '1';
   }
   
-  // 强制触发动画 - 确保所有元素都能正确显示
   setTimeout(() => {
     const hero = document.querySelector('.help-hero');
     const productTitle = document.querySelector('#product-carousel')?.closest('.help-section')?.querySelector('.help-section-title');
@@ -524,7 +513,6 @@ function triggerPageAnimation() {
     const aiCards = document.querySelectorAll('#ai-carousel .help-card');
     const buttons = document.querySelectorAll('.help-carousel-btn');
     
-    // 如果动画没有触发，强制显示（fallback）
     setTimeout(() => {
       if (hero && parseFloat(getComputedStyle(hero).opacity) < 0.1) {
         hero.style.opacity = '1';
@@ -555,11 +543,10 @@ function triggerPageAnimation() {
           btn.style.opacity = '1';
         }
       });
-    }, 2000); // 2秒后检查，如果还没显示就强制显示
+    }, 2000); // Check again after 2 seconds and force visibility if needed
   }, 100);
 }
 
-// 初始化轮播
 function initCarousels() {
   const carousels = document.querySelectorAll('.help-carousel');
   
@@ -568,7 +555,6 @@ function initCarousels() {
     const prevBtn = wrapper.querySelector('.help-carousel-btn-prev');
     const nextBtn = wrapper.querySelector('.help-carousel-btn-next');
     
-    // 更新按钮状态
     const updateButtons = () => {
       const isAtStart = carousel.scrollLeft <= 0;
       const isAtEnd = carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 10;
@@ -577,19 +563,14 @@ function initCarousels() {
       nextBtn.disabled = isAtEnd;
     };
     
-    // 初始状态
     updateButtons();
     
-    // 滚动时更新按钮
     carousel.addEventListener('scroll', updateButtons);
     
-    // 窗口大小改变时更新
     window.addEventListener('resize', updateButtons);
     
-    // 按钮点击事件
     prevBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      // 取消任何正在进行的平滑滚动
       carousel.style.scrollBehavior = 'auto';
       carousel.scrollBy({ left: -340, behavior: 'auto' });
       setTimeout(() => {
@@ -599,7 +580,6 @@ function initCarousels() {
     
     nextBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      // 取消任何正在进行的平滑滚动
       carousel.style.scrollBehavior = 'auto';
       carousel.scrollBy({ left: 340, behavior: 'auto' });
       setTimeout(() => {
@@ -607,30 +587,26 @@ function initCarousels() {
       }, 0);
     });
     
-    // 鼠标悬停时自动滚动
     let scrollInterval = null;
-    const scrollSpeed = 8; // 每次滚动的像素数（减小步长）
-    const scrollIntervalTime = 10; // 滚动间隔时间（毫秒）
+    const scrollSpeed = 8; // Pixels per scroll step (reduced step size)
+    const scrollIntervalTime = 10; // Scroll interval in milliseconds
     
-    // 停止滚动的函数
     const stopScrolling = () => {
       if (scrollInterval) {
         clearInterval(scrollInterval);
         scrollInterval = null;
       }
-      // 确保取消任何平滑滚动
       carousel.style.scrollBehavior = 'auto';
     };
     
     prevBtn.addEventListener('mouseenter', () => {
       if (prevBtn.disabled) return;
-      stopScrolling(); // 先停止之前的滚动
-      // 取消平滑滚动行为
+      stopScrolling(); // Stop the previous scrolling first
       carousel.style.scrollBehavior = 'auto';
       scrollInterval = setInterval(() => {
         if (carousel.scrollLeft > 0) {
           carousel.scrollLeft -= scrollSpeed;
-          updateButtons(); // 更新按钮状态
+          updateButtons(); // Update button state
         } else {
           stopScrolling();
         }
@@ -641,14 +617,13 @@ function initCarousels() {
     
     nextBtn.addEventListener('mouseenter', () => {
       if (nextBtn.disabled) return;
-      stopScrolling(); // 先停止之前的滚动
-      // 取消平滑滚动行为
+      stopScrolling(); // Stop the previous scrolling first
       carousel.style.scrollBehavior = 'auto';
       scrollInterval = setInterval(() => {
         const maxScroll = carousel.scrollWidth - carousel.clientWidth;
         if (carousel.scrollLeft < maxScroll) {
           carousel.scrollLeft += scrollSpeed;
-          updateButtons(); // 更新按钮状态
+          updateButtons(); // Update button state
         } else {
           stopScrolling();
         }
@@ -657,7 +632,6 @@ function initCarousels() {
     
     nextBtn.addEventListener('mouseleave', stopScrolling);
     
-    // 触摸滑动支持
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -691,14 +665,12 @@ function initCarousels() {
   });
 }
 
-// 初始化模态框
 function initModal() {
   const modal = document.getElementById('help-modal');
   const closeBtn = modal.querySelector('.help-modal-close');
   const overlay = modal.querySelector('.help-modal-overlay');
   const cards = document.querySelectorAll('.help-card');
   
-  // 卡片点击事件
   cards.forEach(card => {
     card.addEventListener('click', () => {
       const detailId = card.getAttribute('data-detail');
@@ -708,11 +680,9 @@ function initModal() {
     });
   });
   
-  // 关闭按钮
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
   
-  // ESC键关闭
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
       closeModal();
@@ -720,7 +690,6 @@ function initModal() {
   });
 }
 
-// 显示详细内容
 function showDetail(detailId) {
   const lang = getCurrentLanguage();
   let detail = helpDetails[detailId];
@@ -741,22 +710,17 @@ function showDetail(detailId) {
   document.body.style.overflow = 'hidden';
 }
 
-// 关闭模态框
 function closeModal() {
   const modal = document.getElementById('help-modal');
   modal.classList.remove('active');
   document.body.style.overflow = '';
 }
 
-// 初始化滚动渐入效果
 function initScrollFadeIn() {
-  // 处理AI部分
   setupSectionFadeIn('#ai-carousel');
-  // 处理创新部分
   setupSectionFadeIn('#innovation-carousel');
 }
 
-// 通用的section渐入效果设置
 function setupSectionFadeIn(carouselId) {
   const section = document.querySelector(carouselId)?.closest('.help-section');
   if (!section) return;
@@ -765,7 +729,6 @@ function setupSectionFadeIn(carouselId) {
   const cards = section.querySelectorAll(`${carouselId} .help-card`);
   const buttons = section.querySelectorAll('.help-carousel-btn');
   
-  // 初始状态：完全透明
   title.style.opacity = '0';
   title.style.transform = 'translateY(50px)';
   cards.forEach(card => {
@@ -781,14 +744,11 @@ function setupSectionFadeIn(carouselId) {
     const rect = section.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     
-    // 计算元素进入视口的进度
-    // 当元素顶部进入视口80%位置时开始显示
     const elementTop = rect.top;
     const elementHeight = rect.height;
     const triggerPoint = windowHeight * 0.8;
-    const fadeInRange = windowHeight * 0.6; // 渐入范围
+    const fadeInRange = windowHeight * 0.6; // Fade-in range
 
-    // 如果页面已经滚动到接近底部，强制该 section 完全显示
     const doc = document.documentElement;
     const scrollBottom = window.scrollY + window.innerHeight;
     const pageHeight = doc.scrollHeight;
@@ -809,17 +769,13 @@ function setupSectionFadeIn(carouselId) {
     }
     
     if (elementTop < triggerPoint && elementTop > -elementHeight) {
-      // 计算渐入进度 (0 到 1)
-      // 当元素顶部从triggerPoint移动到triggerPoint - fadeInRange时，progress从0到1
       const progress = Math.max(0, Math.min(1, (triggerPoint - elementTop) / fadeInRange));
       
-      // 标题渐入（稍快一些）
       const titleProgress = Math.max(0, Math.min(1, progress * 1.1));
       title.style.opacity = titleProgress.toString();
       title.style.transform = `translateY(${50 * (1 - titleProgress)}px)`;
       
-      // 卡片同时从下往上渐入（移除从左到右的延迟）
-      const cardProgress = Math.max(0, Math.min(1, (progress - 0.15) * 1.2)); // 标题显示后开始
+      const cardProgress = Math.max(0, Math.min(1, (progress - 0.15) * 1.2)); // Start after the title becomes visible
       cards.forEach(card => {
         card.style.opacity = cardProgress.toString();
         const translateY = 50 * (1 - cardProgress);
@@ -827,14 +783,12 @@ function setupSectionFadeIn(carouselId) {
         card.style.transform = `translateY(${translateY}px) scale(${scale})`;
       });
       
-      // 按钮渐入（在卡片显示后）
       const buttonProgress = Math.max(0, Math.min(1, (progress - 0.4) * 2));
       buttons.forEach(btn => {
         btn.style.opacity = buttonProgress.toString();
         btn.style.transform = `translateY(${20 * (1 - buttonProgress)}px)`;
       });
     } else if (elementTop <= -elementHeight) {
-      // 元素完全滚过，确保完全显示
       title.style.opacity = '1';
       title.style.transform = 'translateY(0)';
       cards.forEach(card => {
@@ -846,7 +800,6 @@ function setupSectionFadeIn(carouselId) {
         btn.style.transform = 'translateY(0)';
       });
     } else if (elementTop > triggerPoint) {
-      // 元素还未进入触发区域，保持隐藏
       title.style.opacity = '0';
       title.style.transform = 'translateY(50px)';
       cards.forEach(card => {
@@ -860,7 +813,6 @@ function setupSectionFadeIn(carouselId) {
     }
   };
   
-  // 使用 requestAnimationFrame 优化滚动性能
   let ticking = false;
   const scrollHandler = () => {
     if (!ticking) {
@@ -874,6 +826,5 @@ function setupSectionFadeIn(carouselId) {
   
   window.addEventListener('scroll', scrollHandler, { passive: true });
   
-  // 初始检查
   handleScroll();
 }

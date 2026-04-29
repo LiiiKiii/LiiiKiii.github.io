@@ -1,4 +1,4 @@
-# LLM-with-Browsing Baseline Evaluation (v3)
+# LLM-with-Browsing Baseline Evaluation
 
 ## Purpose
 
@@ -8,9 +8,9 @@ This module implements an LLM-with-browsing baseline for comparison with the AI-
 
 The original evaluation compared `Simple Frequency Baseline` vs `AI-Pedia TF-IDF+MMR` using metrics (keyword AI-relevance, resource AI-relevance) that rely on the same AI-keyword dictionaries used by the pipeline itself. This creates a risk of circularity: the pipeline generates keywords that match the evaluation criteria, making the comparison self-reinforcing rather than genuinely comparative.
 
-## The Solution: LLM-with-Browsing Baseline (v3)
+## The Solution: LLM-with-Browsing Baseline
 
-**Key change from v2**: the baseline now has two transparent execution modes:
+The baseline has two execution modes:
 
 - `live_openai`: uses the OpenAI Responses API with the hosted `web_search` tool when `OPENAI_API_KEY` is configured.
 - `synthetic_dry_run`: uses deterministic local fixtures when no API key is available or a live call fails. These rows are useful for evaluator development and dissertation figure layout, but they are not live LLM outputs.

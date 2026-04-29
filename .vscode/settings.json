@@ -1,9 +1,0 @@
-{
-  "latex-workshop.chktex.args": [
-    "-wall",
-    "-n22",
-    "-e13",
-    "-q",
-    "-lPaper/L3-CS Project Paper Template (LaTeX)/.chktexrc"
-  ]
-}
