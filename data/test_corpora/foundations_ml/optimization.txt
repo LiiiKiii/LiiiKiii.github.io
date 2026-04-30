@@ -1,0 +1,37 @@
+Gradient Descent and Optimization Algorithms
+
+Gradient Descent Fundamentals
+Gradient descent is an optimization algorithm used to minimize the loss function in machine learning models. It iteratively adjusts parameters in the direction that reduces the loss.
+
+Types of Gradient Descent:
+1. Batch Gradient Descent: Uses entire dataset
+2. Stochastic Gradient Descent (SGD): Uses single sample
+3. Mini-batch Gradient Descent: Uses subset of data
+
+Advanced Optimizers:
+1. Momentum: Accelerates convergence
+2. NAG (Nesterov Accelerated Gradient): Lookahead momentum
+3. AdaGrad: Adapts learning rate per parameter
+4. RMSprop: Addresses AdaGrad limitations
+5. Adam: Adaptive Moment Estimation
+6. AdaMax: Adam variant with infinite norm
+7. Nadam: Adam with Nesterov momentum
+
+Learning Rate Strategies:
+- Fixed learning rate
+- Learning rate decay
+- Cyclical learning rates
+- Warm-up and cool-down phases
+
+Regularization Techniques:
+- L1 Regularization (Lasso)
+- L2 Regularization (Ridge)
+- Dropout: Randomly disable neurons
+- Batch Normalization: Normalize layer inputs
+- Early Stopping: Stop when validation error increases
+
+Optimization Challenges:
+- Vanishing gradients: Gradients become too small
+- Exploding gradients: Gradients become too large
+- Saddle points: Points with zero gradient
+- Local minima: Suboptimal solutions
