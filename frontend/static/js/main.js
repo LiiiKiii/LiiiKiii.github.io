@@ -22,6 +22,18 @@ let viewToggleBtn = document.getElementById('view-toggle-btn');
 let viewToggleText = document.getElementById('view-toggle-text');
 const mainContainer = document.getElementById('main-container');
 
+function getStoredOpenAIKey() {
+  try {
+    if (window.getAPIKey && typeof window.getAPIKey === 'function') {
+      return window.getAPIKey('openai');
+    }
+    return localStorage.getItem('api_key_openai') || null;
+  } catch (error) {
+    console.warn('Unable to read the saved OpenAI API key:', error);
+    return null;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   loadPreferences();
   triggerPageAnimation();
@@ -182,7 +194,12 @@ async function startProcessing(folderName) {
   addTerminalLine(startText, 'info');
   
   try {
-    const openaiKey = window.getAPIKey ? window.getAPIKey('openai') : null;
+    const openaiKey = getStoredOpenAIKey();
+    if (openaiKey) {
+      addTerminalLine('OpenAI API key detected. AI summaries will be prioritized.', 'info');
+    } else {
+      addTerminalLine('No OpenAI API key detected. Using the default summary flow.', 'info');
+    }
     
     const requestBody = { folder_name: folderName };
     if (openaiKey) {
@@ -916,8 +933,8 @@ const I18N_MAP = {
     'ai.title': 'AI增强',
     'ai.subtitle': '使用您的API密钥解锁更强大的AI功能',
     'ai.apikey.title': 'API密钥管理',
-    'ai.apikey.desc': '您的API密钥仅存储在本地浏览器中，不会上传到服务器，确保您的隐私安全',
-    'ai.apikey.status.none': '未设置',
+    'ai.apikey.desc': 'Your API key is stored in this browser by default. When you run the recommendation flow, it is sent only to the locally running AI-Pedia service to generate AI summaries and is not persisted there.',
+    'ai.apikey.status.none': 'Not set',
     'ai.apikey.btn.save': '保存',
     'ai.apikey.btn.delete': '删除',
     'ai.feature.summary.title': '智能摘要',
@@ -927,9 +944,9 @@ const I18N_MAP = {
     'ai.feature.qa.title': '智能问答',
     'ai.feature.qa.desc': '基于您的文档内容，提供智能问答服务',
     'ai.privacy.title': '隐私保护承诺',
-    'ai.privacy.item1': '所有API密钥仅存储在您的浏览器本地，不会上传到服务器',
-    'ai.privacy.item2': '我们不会收集、存储或传输您的API密钥信息',
-    'ai.privacy.item3': '您可以随时删除已保存的API密钥',
+    'ai.privacy.item1': '所有API密钥默认存储在您的浏览器本地',
+    'ai.privacy.item2': 'Only when you run the recommendation flow is the key sent to the locally running AI-Pedia backend for AI summaries, and it is not persisted there.',
+    'ai.privacy.item3': 'You can delete saved API keys at any time.',
     'ai.privacy.item4': '建议定期更换API密钥以确保安全',
     'contact.title': '加入我们',
     'contact.subtitle': '共创AI未来',
@@ -1106,7 +1123,7 @@ const I18N_MAP = {
     'ai.title': 'AI Enhance',
     'ai.subtitle': 'Use your API key to unlock advanced AI features',
     'ai.apikey.title': 'API Key Management',
-    'ai.apikey.desc': 'Your API key is stored only in this browser and never sent to our server.',
+    'ai.apikey.desc': 'Your API key is stored in this browser by default. When you run the recommendation flow, it is sent only to the locally running AI-Pedia service to generate AI summaries and is not persisted there.',
     'ai.apikey.status.none': 'Not set',
     'ai.apikey.btn.save': 'Save',
     'ai.apikey.btn.delete': 'Delete',
@@ -1117,8 +1134,8 @@ const I18N_MAP = {
     'ai.feature.qa.title': 'Smart Q&A',
     'ai.feature.qa.desc': 'Answer questions based on the content of your documents.',
     'ai.privacy.title': 'Privacy Commitment',
-    'ai.privacy.item1': 'All API keys are safely stored locally.',
-    'ai.privacy.item2': 'We do not collect, store or transmit your API keys.',
+    'ai.privacy.item1': 'All API keys are stored locally in your browser by default.',
+    'ai.privacy.item2': 'Only when you run the recommendation flow is the key sent to the locally running AI-Pedia backend for AI summaries, and it is not persisted there.',
     'ai.privacy.item3': 'You can delete saved API keys at any time.',
     'ai.privacy.item4': 'We recommend rotating API keys regularly for better security.',
     'contact.title': 'Join Us',

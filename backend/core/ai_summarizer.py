@@ -4,6 +4,7 @@
 
 import os
 import re
+import traceback
 from typing import Dict, Optional
 
 # Try importing OpenAI client
@@ -22,6 +23,7 @@ except ImportError:
 
 
 OPENAI_SUMMARY_MODEL = os.environ.get("OPENAI_SUMMARY_MODEL", "gpt-4o-mini")
+SUMMARY_TARGET_WORDS = "about 90 to 110 words"
 
 
 def get_openai_api_key(api_key_from_request: Optional[str] = None) -> Optional[str]:
@@ -34,7 +36,7 @@ def get_openai_api_key(api_key_from_request: Optional[str] = None) -> Optional[s
     return os.getenv("OPENAI_API_KEY") or os.getenv("OPENAI_KEY")
 
 
-def generate_summary_with_openai(content: str, resource_type: str, title: str = "", max_tokens: int = 150, api_key: Optional[str] = None) -> Optional[str]:
+def generate_summary_with_openai(content: str, resource_type: str, title: str = "", max_tokens: int = 170, api_key: Optional[str] = None) -> Optional[str]:
     """Handle generate summary with openai."""
     if not HAS_OPENAI:
         return None
@@ -47,50 +49,51 @@ def generate_summary_with_openai(content: str, resource_type: str, title: str = 
     try:
             # Build prompt for resource type/length
         if resource_type == "txt":
-            prompt = f"""Write a concise 3-4 sentence summary for the academic resource below.
-
-Cover:
-1. What it is about.
-2. What stands out.
-3. What the learner can gain.
+            prompt = f"""Write a direct summary of {SUMMARY_TARGET_WORDS} for the academic resource below.
 
 Requirements:
-- Keep the summary direct and informative.
-- Do not repeat the title.
-- Avoid vague phrases such as "related to your learning materials".
+1. Use the title and abstract/content snippet to explain the main topic clearly.
+2. Mention the core contribution, method, or idea that stands out.
+3. End with what a learner can gain from reading it.
+4. Do not repeat the title verbatim.
+5. Avoid vague phrases such as "related to your learning materials".
 
 Title: {title}
 
-Content snippet:
+Abstract or content snippet:
 {content}
 
 Summary:"""
         elif resource_type == "video":
-            prompt = f"""Write a concise 2-3 sentence summary for the video resource below.
+            prompt = f"""Write a direct summary of {SUMMARY_TARGET_WORDS} for the video resource below.
 
 Requirements:
-1. Identify the type and source of the video.
-2. Explain clearly what the video teaches or covers.
-3. Add one useful detail or use case if needed.
-4. Do not repeat the title or use vague phrasing.
+1. Use the title and description/content to explain what the video covers.
+2. Mention the main concepts, workflow, or skills the viewer will learn.
+3. Add one concrete detail about the video's focus, level, or likely use case.
+4. Do not repeat the title verbatim.
+5. Avoid vague phrasing.
 
 Title: {title}
 
-Description: {content}
+Description or content snippet:
+{content}
 
 Summary:"""
         elif resource_type == "code":
-            prompt = f"""Write a concise 2-3 sentence summary for the code resource below.
+            prompt = f"""Write a direct summary of {SUMMARY_TARGET_WORDS} for the code resource below.
 
 Requirements:
-1. Identify the type and source of the repository.
-2. Explain what it implements, which technology it uses, or which problem it solves.
-3. Add one useful feature or application scenario if needed.
-4. Do not repeat the title or use vague phrasing.
+1. Use the title and description/content to explain what the repository or codebase does.
+2. Mention the main model, framework, technique, or engineering purpose.
+3. Add one concrete implementation detail, practical use case, or learning value.
+4. Do not repeat the title verbatim.
+5. Avoid vague phrasing.
 
 Title: {title}
 
-Description: {content}
+Description or content snippet:
+{content}
 
 Summary:"""
         
@@ -101,11 +104,11 @@ Summary:"""
             response = client.chat.completions.create(
                 model=OPENAI_SUMMARY_MODEL,
                 messages=[
-                    {"role": "system", "content": "You are a professional academic resource assistant. Write concise summaries that cover: 1) what the resource is about, 2) what stands out, and 3) what the learner can gain. Keep the writing direct and avoid vague phrasing."},
+                    {"role": "system", "content": f"You are a professional academic resource assistant. Write natural summaries of {SUMMARY_TARGET_WORDS}. Each summary should explain what the resource is about, what stands out, and what the learner can gain. Keep the writing direct, specific, and informative."},
                     {"role": "user", "content": prompt}
                 ],
                 max_tokens=max_tokens,
-                temperature=0.7,
+                temperature=0.4,
                 timeout=10
             )
             summary = response.choices[0].message.content.strip()
@@ -115,11 +118,11 @@ Summary:"""
             response = openai.ChatCompletion.create(
                 model=OPENAI_SUMMARY_MODEL,
                 messages=[
-                    {"role": "system", "content": "You are a professional academic resource assistant. Write concise summaries that cover: 1) what the resource is about, 2) what stands out, and 3) what the learner can gain. Keep the writing direct and avoid vague phrasing."},
+                    {"role": "system", "content": f"You are a professional academic resource assistant. Write natural summaries of {SUMMARY_TARGET_WORDS}. Each summary should explain what the resource is about, what stands out, and what the learner can gain. Keep the writing direct, specific, and informative."},
                     {"role": "user", "content": prompt}
                 ],
                 max_tokens=max_tokens,
-                temperature=0.7,
+                temperature=0.4,
                 timeout=10
             )
             summary = response.choices[0].message.content.strip()
@@ -131,6 +134,8 @@ Summary:"""
         return summary if summary else None
         
     except Exception as e:
+        print(f"[ai_summarizer] OpenAI summary generation failed for '{resource_type}' title='{title[:80]}': {e}")
+        traceback.print_exc()
         return None
 
 
@@ -256,6 +261,8 @@ def generate_resource_summary(resource: Dict, resource_type: str, openai_api_key
     description = resource.get("description", "")
     url = resource.get("url", "")
     source = resource.get("source", "")
+    api_key = get_openai_api_key(openai_api_key)
+    abstract_fallback = None
     
     # Text: if arXiv with abstract
     if resource_type == "txt":
@@ -266,11 +273,16 @@ def generate_resource_summary(resource: Dict, resource_type: str, openai_api_key
             is_arxiv = is_arxiv or "arxiv" in (url or "").lower()
             
             if is_arxiv:
-                # Return abstract; UI can expand
-                return {
-                    "summary": abstract,
-                    "summary_type": "abstract"
-                }
+                if api_key:
+                    content = abstract
+                    description = abstract
+                    abstract_fallback = abstract
+                else:
+                    # Return abstract; UI can expand
+                    return {
+                        "summary": abstract,
+                        "summary_type": "abstract"
+                    }
     
     # Assemble text for model
     content_text = ""
@@ -289,12 +301,18 @@ def generate_resource_summary(resource: Dict, resource_type: str, openai_api_key
     
     # Call OpenAI for summary
     # ~100 tokens, structured blurb
-    max_tokens = 100
-    ai_summary = generate_summary_with_openai(content_text, resource_type, title, max_tokens=max_tokens, api_key=openai_api_key)
+    max_tokens = 170
+    ai_summary = generate_summary_with_openai(content_text, resource_type, title, max_tokens=max_tokens, api_key=api_key)
     if ai_summary:
         return {
             "summary": ai_summary,
             "summary_type": "ai_generated"
+        }
+
+    if abstract_fallback:
+        return {
+            "summary": abstract_fallback,
+            "summary_type": "abstract"
         }
     
     # On API failure, branch by type

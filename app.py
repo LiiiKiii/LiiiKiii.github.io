@@ -59,6 +59,15 @@ def _env_flag(name, default=False):
     return value.strip().lower() in {"1", "true", "yes", "on"}
 
 
+def _env_str(name, default):
+    """Read a string environment variable with a fallback."""
+    value = os.getenv(name)
+    if value is None:
+        return default
+    value = value.strip()
+    return value or default
+
+
 
 @app.route("/")
 def index():
@@ -381,7 +390,9 @@ def process_folder():
                     
                     existing_summary = res.get("summary")
                     existing_summary_type = res.get("summary_type")
-                    if existing_summary:
+                    should_regenerate_summary = bool(openai_api_key)
+
+                    if existing_summary and not should_regenerate_summary:
                         resource_data["summary"] = existing_summary
                         resource_data["summary_type"] = existing_summary_type or "cached"
                     else:
@@ -392,8 +403,8 @@ def process_folder():
                             res["summary"] = resource_data["summary"]
                             res["summary_type"] = resource_data["summary_type"]
                         else:
-                            resource_data["summary"] = None
-                            resource_data["summary_type"] = None
+                            resource_data["summary"] = existing_summary if existing_summary else None
+                            resource_data["summary_type"] = existing_summary_type if existing_summary else None
                     
                     if resource_type == "txt":
                         content = res.get("content", "")
@@ -537,9 +548,12 @@ if __name__ == "__main__":
     print(f"Results directory: {RESULTS_DIR}")
     print(f"Output directory: {OUTPUT_DIR}")
     print("=" * 50)
-    print("Open: http://localhost:5000")
+    host = _env_str("APP_HOST", "127.0.0.1")
+    port = int(_env_str("APP_PORT", "5000"))
+    access_host = "localhost" if host in {"127.0.0.1", "0.0.0.0"} else host
+    print(f"Open: http://{access_host}:{port}")
     print("Press Ctrl+C to stop the service")
     print("=" * 50)
     flask_env = os.getenv("FLASK_ENV", "").strip().lower()
     debug_mode = _env_flag("FLASK_DEBUG", default=(flask_env == "development"))
-    app.run(host="0.0.0.0", port=5000, debug=debug_mode)
+    app.run(host=host, port=port, debug=debug_mode)

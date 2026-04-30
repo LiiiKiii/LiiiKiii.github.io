@@ -48,6 +48,7 @@ echo ""
 
 echo "Starting the application..."
 echo "Open: http://localhost:5000"
+echo "To expose it to your local network, run: APP_HOST=0.0.0.0 ./start.sh"
 echo "Press Ctrl+C to stop the service"
 echo ""
 

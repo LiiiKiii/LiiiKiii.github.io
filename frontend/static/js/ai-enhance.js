@@ -66,12 +66,12 @@ function loadAPIKey(keyName, inputElement, statusElement, deleteButton) {
 
 function saveAPIKey(keyName, keyValue, statusElement, deleteButton, inputElement) {
   if (!keyValue) {
-    alert('请输入API密钥');
+    alert('Please enter an API key.');
     return;
   }
   
   if (keyName === 'openai' && !keyValue.startsWith('sk-')) {
-    if (!confirm('OpenAI API密钥通常以"sk-"开头，确定要继续保存吗？')) {
+    if (!confirm('OpenAI API keys usually start with "sk-". Do you want to save it anyway?')) {
       return;
     }
   }
@@ -82,11 +82,11 @@ function saveAPIKey(keyName, keyValue, statusElement, deleteButton, inputElement
   deleteButton.style.display = 'block';
   inputElement.type = 'password';
   
-  showMessage('API密钥已保存（仅存储在本地浏览器）', 'success');
+  showMessage('API key saved.', 'success');
 }
 
 function deleteAPIKey(keyName, inputElement, statusElement, deleteButton) {
-  if (!confirm('确定要删除已保存的API密钥吗？')) {
+  if (!confirm('Are you sure you want to delete the saved API key?')) {
     return;
   }
   
@@ -97,16 +97,15 @@ function deleteAPIKey(keyName, inputElement, statusElement, deleteButton) {
   deleteButton.style.display = 'none';
   inputElement.type = 'password';
   
-  showMessage('API密钥已删除', 'info');
+  showMessage('API key deleted.', 'info');
 }
 
 function updateStatus(statusElement, isSaved) {
-  const lang = (localStorage.getItem('language') || (document.getElementById('html-root')?.getAttribute('lang'))) || 'zh-CN';
   if (isSaved) {
-    statusElement.textContent = lang === 'zh-CN' ? '已保存' : 'Saved';
+    statusElement.textContent = 'Saved';
     statusElement.classList.add('saved');
   } else {
-    statusElement.textContent = lang === 'zh-CN' ? '未设置' : 'Not set';
+    statusElement.textContent = 'Not set';
     statusElement.classList.remove('saved');
   }
 }
